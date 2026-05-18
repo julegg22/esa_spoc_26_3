@@ -122,6 +122,55 @@ def lns(e, ll, d, w, x0, iters=100000, frac=0.12, seed=0, time_budget_s=120.0):
     return best, best_mass, it
 
 
+def _solve_sub(e, ll, d, w, time_limit, threads):
+    """Exact max-weight 3-D matching on a (small) transfer subset."""
+    h = highspy.Highs()
+    h.setOptionValue("output_flag", False)
+    h.setOptionValue("time_limit", float(time_limit))
+    h.setOptionValue("mip_rel_gap", 0.0)
+    if threads:
+        h.setOptionValue("threads", int(threads))
+    h.passModel(build_model(e, ll, d, w))
+    h.run()
+    return (np.asarray(h.getSolution().col_value) > 0.5).astype(np.int8)
+
+
+def mip_lns(e, ll, d, w, x0, drop_frac=0.25, time_per_sub=8.0,
+            seed=0, threads=1, time_budget_s=300.0):
+    """MIP-based LNS: drop a random subset of selected transfers, then
+    EXACTLY re-optimise the freed region (sub-ILP) with HiGHS. Each round
+    is monotone on the region (the kept-minus-dropped state is feasible),
+    so it escapes the greedy local optimum that pure greedy/ejection cannot."""
+    rng = np.random.default_rng(seed)
+    ne, nl, nd = int(e.max()) + 1, int(ll.max()) + 1, int(d.max()) + 1
+    x = x0.copy()
+    best, best_m = x.copy(), float(w[x == 1].sum())
+    t0 = time.time()
+    rounds = 0
+    while time.time() - t0 < time_budget_s:
+        rounds += 1
+        x = best.copy()
+        sel = np.flatnonzero(x)
+        x[rng.choice(sel, size=max(1, int(drop_frac * sel.size)), replace=False)] = 0
+        kept = np.flatnonzero(x)
+        ue = np.zeros(ne, bool)
+        ul = np.zeros(nl, bool)
+        ud = np.zeros(nd, bool)
+        ue[e[kept]] = True  # nodes blocked by kept transfers
+        ul[ll[kept]] = True
+        ud[d[kept]] = True
+        free = (x == 0) & ~ue[e] & ~ul[ll] & ~ud[d]
+        idx = np.flatnonzero(free)
+        if idx.size:
+            sub = _solve_sub(e[idx], ll[idx], d[idx], w[idx],
+                             time_per_sub, threads)
+            x[idx[sub == 1]] = 1
+        m = float(w[x == 1].sum())
+        if m >= best_m:
+            best, best_m = x.copy(), m
+    return best, best_m, rounds
+
+
 def build_model(e, ll, d, w) -> highspy.HighsModel:
     n = w.shape[0]
     # contiguous row blocks: Earth orbits, then Moon orbits, then destinations
@@ -153,18 +202,37 @@ def build_model(e, ll, d, w) -> highspy.HighsModel:
     return model
 
 
-def solve(path, problem, out_dir="solutions/upload", time_limit=1800.0, threads=0):
+def solve(
+    path,
+    problem,
+    out_dir="solutions/upload",
+    time_limit=1800.0,
+    threads=0,
+    warm_start=False,
+    log_file=None,
+    mip_heuristic_effort=None,
+):
     e, ll, d, w = load_instance(path)
     n = w.shape[0]
     model = build_model(e, ll, d, w)
 
     h = highspy.Highs()
     h.setOptionValue("output_flag", False)
+    if log_file:  # L-001: keep the watchdog able to see B&B progress
+        h.setOptionValue("log_file", str(log_file))
+        h.setOptionValue("log_to_console", False)
     h.setOptionValue("time_limit", float(time_limit))
     h.setOptionValue("mip_rel_gap", 0.0)
     if threads:
         h.setOptionValue("threads", int(threads))
+    if mip_heuristic_effort is not None:
+        h.setOptionValue("mip_heuristic_effort", float(mip_heuristic_effort))
     h.passModel(model)
+    if warm_start:  # greedy incumbent → better pruning + improving heuristics
+        gx = greedy(e, ll, d, w)
+        s = highspy.HighsSolution()
+        s.col_value = gx.astype(float).tolist()
+        h.setSolution(s)
     t0 = time.time()
     h.run()
     wall = time.time() - t0
@@ -204,8 +272,70 @@ def solve(path, problem, out_dir="solutions/upload", time_limit=1800.0, threads=
     }
 
 
+def _lns_worker(args):
+    path, seed, drop_frac, time_per_sub, budget = args
+    e, ll, d, w = load_instance(path)
+    g = greedy(e, ll, d, w)
+    best, bm, rounds = mip_lns(
+        e, ll, d, w, g, drop_frac=drop_frac, time_per_sub=time_per_sub,
+        seed=seed, threads=1, time_budget_s=budget,
+    )
+    return float(bm), best.astype(np.int8), int(seed), int(rounds), float(drop_frac)
+
+
+def parallel_mip_lns(path, problem, out_dir="solutions/upload",
+                     n_workers=4, time_budget_s=600.0, time_per_sub=8.0):
+    """Probe→campaign (META.md §6): N parallel MIP-LNS workers, varied
+    drop_frac/seed; keep the best; write the submission artifact."""
+    import multiprocessing as mp
+
+    fracs = [0.15, 0.20, 0.25, 0.30]
+    args = [
+        (path, s, fracs[s % len(fracs)], time_per_sub, time_budget_s)
+        for s in range(n_workers)
+    ]
+    t0 = time.time()
+    with mp.Pool(n_workers) as pool:
+        res = pool.map(_lns_worker, args)
+    bm, bx, seed, rounds, frac = max(res, key=lambda r: r[0])
+
+    e, ll, d, _ = load_instance(path)
+    feasible = all(
+        arr[bx == 1].size == np.unique(arr[bx == 1]).size for arr in (e, ll, d)
+    )
+    out_path = Path(out_dir) / f"{problem}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps(
+            [{"decisionVector": bx.tolist(), "problem": problem,
+              "challenge": CHALLENGE}]
+        )
+    )
+    return {
+        "problem": problem,
+        "method": "parallel_mip_lns",
+        "n_workers": n_workers,
+        "best_mass": bm,
+        "best_seed": seed,
+        "best_drop_frac": frac,
+        "rounds_best": rounds,
+        "n_selected": int(bx.sum()),
+        "feasible": feasible,
+        "wall_s": round(time.time() - t0, 1),
+        "per_worker_mass": sorted(round(r[0], 1) for r in res),
+        "artifact": str(out_path),
+    }
+
+
 if __name__ == "__main__":
-    inst, prob = sys.argv[1], sys.argv[2]
-    tl = float(sys.argv[3]) if len(sys.argv) > 3 else 1800.0
-    res = solve(inst, prob, time_limit=tl)
-    print(json.dumps(res, indent=2))
+    mode = sys.argv[1]
+    if mode == "mip-lns":
+        inst, prob = sys.argv[2], sys.argv[3]
+        budget = float(sys.argv[4]) if len(sys.argv) > 4 else 600.0
+        nw = int(sys.argv[5]) if len(sys.argv) > 5 else 4
+        print(json.dumps(parallel_mip_lns(inst, prob, n_workers=nw,
+                                          time_budget_s=budget), indent=2))
+    else:  # default: single exact solve
+        inst, prob = sys.argv[1], sys.argv[2]
+        tl = float(sys.argv[3]) if len(sys.argv) > 3 else 1800.0
+        print(json.dumps(solve(inst, prob, time_limit=tl), indent=2))

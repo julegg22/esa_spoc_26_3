@@ -85,6 +85,14 @@ stay here.*
   recommendation, give one; user will push back if wrong.
 - **Discuss before committing H-files.** Bootstrap pattern in
   META.md §6.
+- **Ask-but-never-stall.** (User directive 2026-05-18.) Asking back
+  on strategic forks is valued — but if the user may be delayed or
+  unavailable, do **not** block waiting. State the decision clearly
+  (so it can be vetoed), then proceed on own best judgement and keep
+  compute running. Asking and proceeding are not mutually exclusive:
+  pose the question, act on the strongest option, course-correct if
+  the answer differs. Overrides the *stall* failure mode of
+  "discuss before committing", not the discussion itself.
 - **Explicit commit / push approval per scope.** Don't auto-commit
   beyond what was asked.
 - **No AI-attribution trailer** on commits (also codified in

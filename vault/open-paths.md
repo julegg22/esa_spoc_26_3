@@ -25,7 +25,9 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 ### Open (status: open) — at most one active per compute stream (§2)
 
-*(none — H-001 closed refuted; awaiting user choice of child, discuss-before-commit)*
+| H | instance | expected | est. h | ROI | note |
+|---|---|---|---|---|---|
+| [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | Ch1 matching-i/ii | 10 | 6 | 1.7 | **parallel MIP-LNS** — probe 98.5% R3 in 70s; campaign running |
 
 ### Closed
 
@@ -49,6 +51,14 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-18 (H-004 opened: C-A validated)** — Decision made on
+  own judgement ([[user]] *ask-but-never-stall*): committed **C-A
+  parallel MIP-based LNS as H-004 (open)**. Probe (70 s, 1 thread)
+  escaped the greedy optimum: 29792 → **32958 = 98.5 % of
+  `matching-i` rank-3**. C-C (long tuned exact) killed as dominated;
+  4 cores reallocated to the H-004 campaign (4 workers, 600 s),
+  running. Breadth call: **focus** (finish the near-win) over
+  diversify. C-B / H-002 / H-003 deferred drafts.
 - **2026-05-18 (H-001 closed: refuted)** — E-001: default HiGHS
   (79 % R3, 122 % gap), greedy (89 %/88 %), naive+ejection LNS
   (0 improvement — greedy is a provable hard local optimum,
