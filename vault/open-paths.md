@@ -27,7 +27,9 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| [[hypotheses/H-006-ch1-matching-exact-polish\|H-006]] | Ch1 matching-i | 8 | 3 | 2.7 | **exact-polish** (warm-start 33320, big sub-MIPs) — campaign running (1500s) |
+| [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | Ch1 trajectory-matching | 14 | 12 | 1.2 | **PIVOT** — BCP transfers + greedy 3-D assignment (Team HRI proved R3); active branch |
+
+(Compute now: `matching-ii` coop campaign running to bank its ~rank-6 artifact before trajectory work starts.)
 
 ### Closed
 
@@ -35,7 +37,8 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 |---|---|---|
 | [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]]) |
 | [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7) ([[takeaways/T-002-mip-lns-family-validated-but-plateaus\|T-002]]) |
-| [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | **refuted (near-miss)** | coop+adaptive → 33320 = 99.56 % R3 (≈rank-6, ~5 pts) ([[takeaways/T-003-diminishing-returns-need-exact-polish\|T-003]], [[experiments/E-003-ch1-matching-i-coop-mip-lns\|E-003]]) |
+| [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | **refuted (near-miss)** | coop+adaptive → 33320 = 99.56 % R3 (≈rank-6) ([[takeaways/T-003-diminishing-returns-need-exact-polish\|T-003]]) |
+| [[hypotheses/H-006-ch1-matching-exact-polish\|H-006]] | **refuted (ceiling)** | polish → 33338 = 99.6 % R3; HiGHS family exhausted, no Gurobi → pivot ([[takeaways/T-004-ch1-matching-ceiling-pivot\|T-004]], [[experiments/E-004-ch1-matching-i-exact-polish\|E-004]]) |
 
 ### Drafts (priced siblings, §16) — conservative (T-001/T-002)
 
@@ -51,6 +54,15 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-18 (H-006 closed refuted; Ch1-matching line closed; pivot to H-002)**
+  — Exact-polish added only +18 (33320→**33338**, 99.6 % R3) =
+  terminal HiGHS-family ceiling, below rank-5. User: no Gurobi →
+  **Ch1-matching rank-3 infeasible for us**. Decision (user-approved):
+  bank `matching-i` ≈ rank-6 (~5 pts), run `matching-ii` (campaign
+  running), **pivot frontier to H-002 (Ch1 trajectory greedy)** —
+  higher ROI, rank-3 greedy-reachable (Team HRI), user's BCP
+  strength. Stop-rule learned ([[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]):
+  clean halving asymptote ≥2 gens short ⇒ pivot, don't tune.
 - **2026-05-18 (H-005 closed refuted; H-006 opened; Gurobi escalated)**
   — Coop+adaptive MIP-LNS → `matching-i` **33320 = 99.56 % rank-3**
   (≈rank-6, ~5 pts; beat H-004's 33134 but missed rank-3 and the

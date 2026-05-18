@@ -1,21 +1,21 @@
 ---
 id: H-006
 type: hypothesis
-status: open
+status: refuted
 tags: [ch1, lns, milp, improvement]
 
 parent: "[[H-005-ch1-matching-coop-mip-lns]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: []
+children_experiments: ["[[E-004-ch1-matching-i-exact-polish]]"]
 children_hypotheses: []
 concurrent_with: []
 
 created: 2026-05-18
 tested_start: 2026-05-18T18:30:00+02:00
-tested_end:
-duration_testing:
+tested_end: 2026-05-18T18:55:00+02:00
+duration_testing: ~25m
 
-effort_person_hours: 0.5
+effort_person_hours: 0.9
 expected_points: 8           # conservative: close the last 0.44% on matching-i; rank-3 = ~8 (A_1 ×1)
 estimated_effort_h: 3
 priority: 1
@@ -68,6 +68,17 @@ escalating destroy when stuck. Campaign running (harness task
 - E-004 (matching-i exact-polish, 1500 s) — **running**.
 
 ## Analysis (filled at close — §6)
+
+**Refuted by [[experiments/E-004-ch1-matching-i-exact-polish|E-004]].**
+Warm-started large sub-MIPs added only +18 (33 320 → 33 338) over
+1500 s — terminal flattening of the HiGHS family at ~33 340
+(99.6 % of rank-3), below even rank-5. No commercial solver
+available (user). This **closes the Ch1-matching exact line**: per
+[[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]] the stop-rule
+fires (clean halving asymptote ≥2 generations short → pivot, don't
+tune). matching-i banked ≈ rank-6; `matching-ii` campaign running;
+frontier pivots to [[hypotheses/H-002-ch1-trajectory-greedy|H-002]]
+(no child H on the matching line — line abandoned by decision).
 
 ## Next steps / siblings (§16)
 

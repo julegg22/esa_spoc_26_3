@@ -1,7 +1,7 @@
 ---
 id: H-002
 type: hypothesis
-status: draft
+status: open
 tags: [ch1, astrodynamics, bcp, improvement]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
@@ -30,7 +30,14 @@ falsifiable_prediction: >
   (= rank-3 cutoff, [[observations/O-002-leaderboard-2026-05-18|O-002]]
   2026-05-18) from a valid 8400-dim decision vector, within a
   compute budget to be set at promotion.
-modification_rationale:      # null — rooted directly on Q-001
+modification_rationale: >
+  Promoted draft→open 2026-05-18 by the pivot decision in
+  [[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]: the Ch1
+  *matching* line hit a HiGHS ceiling ~0.4 % short of rank-3 with no
+  commercial solver. Trajectory-matching is higher-leverage —
+  ×(4/3)² weight and rank-3 *demonstrably reachable by a greedy*
+  (Team HRI's R3 sub, O-002). Rooted on Q-001; this field records
+  why it became the active branch now.
 
 invalidated_by:
 superseded_by:
