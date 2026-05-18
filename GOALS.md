@@ -11,35 +11,47 @@ fork this file. `META.md` should remain unchanged.
 
 ## 1. Root goal
 
-**Achieve top-3 aggregate standing on SpOC4 by 2026-06-30 AoE.**
+**Reach rank-3 (top-3) standing on every *regular* SpOC4 instance by
+2026-06-30 AoE.**
 
-The campaign's success metric is the aggregate (sum of weighted points
-across all sub-instances) leaderboard standing on SpOC4 at
-<https://optimize.esa.int>. *Top-3 in aggregate*, not top-3 in each
-instance — a strong portfolio across all 7 sub-instances of Ch1+Ch2+Ch3
-beats a narrow specialist showing on one challenge. Late submissions
-(after 2026-06-30 AoE) don't count.
+User directive 2026-05-18: the target is competitive (rank-3-or-better)
+standing on **each** of the six regular instances — Ch1 `matching-i`,
+`matching-ii`, `trajectory-matching` and Ch2 `small`, `medium`,
+`large`. Ch3 (`tie-breaker`) is **deferred** — addressed only after
+the regular instances are secured, and primarily because the global
+tie-break uses it. This supersedes the prior "top-3 *aggregate*"
+framing (kept in git history); a per-instance rank-3 portfolio
+dominates the aggregate anyway since each scoring instance contributes.
+Late submissions (after 2026-06-30 AoE) don't count.
 
-The current rank-3 cutoff (live leaderboard refreshed via
-[[observations/O-007-leaderboard-2026-05-06|O-007]] and
-`scripts/fetch_leaderboards.py`) is the binding falsifiability anchor
-for every active hypothesis. Internal proxies (cardinality fractions,
-internal-simulator MSE, etc.) are *diagnostic*, not closure criteria.
+The current rank-3 cutoff per instance (live leaderboard, read-only
+GraphQL `https://api.optimize.esa.int/graphql/`; snapshot
+[[observations/O-002-leaderboard-2026-05-18|O-002]]) is the binding
+falsifiability anchor for every active hypothesis.
+`scripts/fetch_leaderboards.py` is a stub — fetching is currently done
+via direct read-only GraphQL queries. Internal proxies are
+*diagnostic*, not closure criteria.
 
 ## 2. Sub-goals — challenges
 
 SpOC4 has three challenges; each has graded sub-instances with
 escalating point weights.
 
-- **Challenge 1 — Luna Tomato Logistics (mandatory)** #ch1
-  - 1.beginner.easy / medium (×1 / ×4/3)
-  - 1.advanced (×(4/3)²)
-- **Challenge 2 — Keplerian Tomato TSP (mandatory)** #ch2
-  - 2.easy / medium / hard (×1 / ×4/3 / ×(4/3)²)
-- **Challenge 3 — Luna Tomato Advertising (tie-breaker)** #ch3
+Real instance ids (GraphQL-confirmed, [[observations/O-001-spoc4-problem-grounding|O-001]]):
 
-Top 10 per instance score points. Challenge 3 is used to break ties.
-See `vault/observations/` for grounding notes; `vault/index.md` is the
+- **Challenge 1 — Luna Tomato Logistics (mandatory)** #ch1
+  - `matching-i` — A_1, ×1 (weighted 3-D matching ILP, dim 25000)
+  - `matching-ii` — A_1, ×1 (same, dim 92103)
+  - `trajectory-matching` — A_3, ×(4/3)² (BCP trajectories, dim 8400)
+- **Challenge 2 — Keplerian Tomato TSP (mandatory)** #ch2
+  - `small` — A_1, ×1 (time-dependent ATSP, N=49)
+  - `medium` — A_2, ×4/3 (N=181)
+  - `large` — A_3, ×(4/3)² (N=1051)
+- **Challenge 3 — Luna Tomato Advertising (tie-breaker, deferred)** #ch3
+  - `tie-breaker` — A_0
+
+Top 10 per instance score points. Challenge 3 breaks global ties.
+See `vault/observations/` for grounding; `vault/index.md` is the
 canonical campaign root with current best scores.
 
 ## 3. Strategic / parallel goal

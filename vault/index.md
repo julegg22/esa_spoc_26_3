@@ -27,6 +27,15 @@ the user uploads them manually via the Optimise web UI.
 - Challenge 2 — Keplerian Tomato TSP (mandatory) #ch2
 - Challenge 3 — Luna Tomato Advertising (tie-breaker) #ch3
 
+## Status — 2026-05-18
+
+Fresh-start scaffold rebuilt (commit `42820c5`). Grounding done:
+[[observations/O-001-spoc4-problem-grounding|O-001]] (problems),
+[[observations/O-002-leaderboard-2026-05-18|O-002]] (rank-3 cutoffs +
+competitor analysis). Goal = rank-3 on each regular instance (GOALS.md
+§1). **Frontier bootstrap pending** — see [[open-paths]]. No `H-NNN`
+committed yet (discuss-before-commit, META.md §6). Realized points: 0.
+
 ## Campaign tree
 
 *Update manually as hypotheses land — replace leaf nodes with concrete
