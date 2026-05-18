@@ -1,7 +1,7 @@
 [project]
 name = "esa-spoc-26"
 version = "0.1.0"
-description = "Add your description here"
+description = "ESA SpOC4 campaign — research log + solver code (vault/ + src/)"
 readme = "README.md"
 authors = [
     { name = "JJ" }

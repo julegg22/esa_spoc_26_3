@@ -15,6 +15,14 @@ node where the term is properly defined or first heavily used).
 **Maintenance**: update this file whenever a new acronym is
 introduced. See `META.md §3` for the discipline.
 
+> [!warning] Fresh-start scaffold (2026-05-18)
+> This glossary was inherited from a prior mature campaign. The
+> meanings are correct domain knowledge, but **every `[[primary
+> node]]` link below is a forward-reference** — the H/E/T/C/M/L/O
+> nodes do **not** exist yet in this repo. Links resolve as the
+> campaign produces those nodes. Do not assume a node exists
+> because it is linked here; check the frontier (`open-paths.md`).
+
 ---
 
 ## Vault entry types

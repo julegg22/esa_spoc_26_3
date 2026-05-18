@@ -11,8 +11,8 @@ Personal campaign for ESA's [Space Optimisation Competition 4 (SpOC4)](https://w
 ## Setup on a new machine
 
 ```bash
-git clone https://github.com/julegg22/esa_spoc_26.git
-cd esa_spoc_26
+git clone https://github.com/julegg22/esa_spoc_26_3.git
+cd esa_spoc_26_3
 
 # 1. Upstream starter kit (gitignored — must be re-cloned locally)
 git clone --depth 1 https://github.com/esa/SpOC4.git reference/SpOC4
@@ -22,7 +22,7 @@ pip install pre-commit
 pre-commit install
 ```
 
-**Python env.** Per [`vault/lessons/L-001-windows-requires-miniforge.md`](vault/lessons/L-001-windows-requires-miniforge.md): miniforge + Python 3.13 + conda-forge science stack. The concrete `environment.yml` lands with **H-001** — see [`vault/hypotheses/H-001-windows-miniforge-env-works.md`](vault/hypotheses/H-001-windows-miniforge-env-works.md). On Linux this decision may be revisited; update or supersede L-001 as needed.
+**Python env.** Linux + micromamba (`user.md` working constraints). The `spoc26` env builds from the **draft** [`environment.yml`](environment.yml) (`micromamba create -f environment.yml`). Versions are loose and **not yet validated** — a clean-install env-works hypothesis is the first frontier item (per `META.md §2` baseline rule and `vault/open-paths.md`).
 
 **Claude Code skills.** The repo ships project-local skills under [`.claude/skills/`](.claude/skills/). Claude Code auto-discovers them in this directory; no separate install step. Restart the Claude Code session after fresh clone so the skills appear in the available-skills list. Current set:
 

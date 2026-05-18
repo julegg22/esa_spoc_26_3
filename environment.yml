@@ -1,0 +1,30 @@
+# DRAFT — fresh-start scaffold 2026-05-18.
+#
+# The `spoc26` micromamba env (user.md "Working constraints": Linux,
+# uv + micromamba, no admin). Versions are intentionally loose here;
+# pinning + a clean-install validation is the FIRST frontier item
+# (an env-works hypothesis, per META.md §2 "establish baseline early"
+# and §6 bootstrap). Do not treat this as validated.
+#
+#   micromamba create -f environment.yml
+#   micromamba activate spoc26
+name: spoc26
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  # core science stack
+  - numpy
+  - scipy
+  - matplotlib
+  # astrodynamics (Ch1/Ch2/Ch3) — abbreviations.md
+  - pykep
+  - pygmo
+  - heyoka.py
+  # optimisation solvers
+  - highspy            # HiGHS LP/MIP (Ch1 beginner, Ch2 easy MIP)
+  # - gurobipy         # commercial — add only if a license is available
+  # dev / tooling
+  - ruff
+  - pre-commit
+  - uv

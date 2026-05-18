@@ -1,0 +1,66 @@
+# Obsidian Bases view over hypotheses. Embedded by open-paths.md.
+# Vault root = vault/ (META.md §12). ROI = expected_points / max(estimated_effort_h, 0.25) (META.md §5).
+filters:
+  and:
+    - 'type == "hypothesis"'
+
+formulas:
+  roi: 'if(expected_points && estimated_effort_h, if(estimated_effort_h > 0.25, expected_points / estimated_effort_h, expected_points / 0.25), "")'
+
+properties:
+  status:
+    displayName: Status
+  expected_points:
+    displayName: "Exp. pts"
+  estimated_effort_h:
+    displayName: "Est. h"
+  formula.roi:
+    displayName: ROI
+  priority:
+    displayName: Prio
+
+views:
+  - type: table
+    name: "Frontier (open)"
+    filters:
+      and:
+        - 'status == "open" || status == "testing"'
+    order:
+      - file.name
+      - claim
+      - priority
+      - expected_points
+      - estimated_effort_h
+      - formula.roi
+    sort:
+      - property: formula.roi
+        direction: DESC
+
+  - type: table
+    name: "Drafts (priced siblings §16)"
+    filters:
+      and:
+        - 'status == "draft"'
+    order:
+      - file.name
+      - claim
+      - parent
+      - expected_points
+      - estimated_effort_h
+      - formula.roi
+
+  - type: table
+    name: "Closed"
+    filters:
+      or:
+        - 'status == "corroborated"'
+        - 'status == "refuted"'
+        - 'status == "analyzed"'
+        - 'status == "abandoned"'
+        - 'status == "invalidated"'
+    order:
+      - file.name
+      - status
+      - claim
+      - expected_points
+      - effort_person_hours
