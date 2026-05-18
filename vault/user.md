@@ -68,6 +68,15 @@ stay here.*
   empty? blocked on input? infra hiccup?). Transient infra problems
   get retried or routed around; never let a single failed launch
   end the turn while cores stay idle.
+- **Parallelise runs; expect hard.** (User directive 2026-05-18,
+  confirmed by [[takeaways/T-001-ch1-matching-needs-strong-search|T-001]].)
+  SpOC challenges are *hard* — many local minima, solutions
+  non-trivial (past-SpOC experience). Design every solver
+  multi-core / multi-start by construction (parallel restarts,
+  pygmo archipelago, parallel sub-MIP LNS), not as an afterthought.
+  Be **conservative**: `expected_points` and falsifiable thresholds
+  biased pessimistic; first results are baselines, not wins; never
+  promise a cheap clear of a rank cutoff.
 
 ## Persistent preferences (soft)
 
@@ -88,8 +97,10 @@ stay here.*
 
 ## Strategic preferences (this campaign)
 
-- **Top-3 aggregate leaderboard standing is the primary goal**. 
-  Methodology validation remains a *parallel* deliverable.
+- **Rank-3 on each regular instance is the primary goal** (user
+  directive 2026-05-18; supersedes the earlier "top-3 aggregate"
+  framing — see GOALS.md §1). Ch3 tie-breaker deferred. Methodology
+  validation remains a *parallel* deliverable.
 - **Agent never writes to the internet.** No submissions, no
   forum / GitHub / Discord posts, no PRs / issues, no email. The
   agent produces JSON artefacts under `solutions/upload/` and the

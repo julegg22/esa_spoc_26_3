@@ -1,22 +1,22 @@
 ---
 id: H-001
 type: hypothesis
-status: open
+status: refuted
 tags: [ch1, baseline, milp, optimization]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: []
+children_experiments: ["[[E-001-ch1-matching-first-attempts]]"]
 children_hypotheses: []
 concurrent_with: ["[[H-002-ch1-trajectory-greedy]]", "[[H-003-ch2-small-lambert-metaheuristic]]"]
 
 created: 2026-05-18
-tested_start:
-tested_end:
-duration_testing:
+tested_start: 2026-05-18T16:18:00+02:00
+tested_end: 2026-05-18T17:05:00+02:00
+duration_testing: ~47m
 
-effort_person_hours:
-expected_points: 16          # rank-3 on both A_1 ×1 (8+8); upside 20 at rank-1
+effort_person_hours: 1.8
+expected_points: 16          # PREDICTED; realized 0 — refuted, recalibrate (T-001)
 estimated_effort_h: 2
 priority: 1
 mode: full                   # >2 pts AND cross-instance method learning
@@ -74,10 +74,34 @@ submit (GOALS.md §4); user uploads.
 
 ## Analysis (filled at close — §6)
 
+**Refuted by [[experiments/E-001-ch1-matching-first-attempts|E-001]].**
+Default HiGHS MIP plateaued at 79 % of the `matching-i` rank-3 cutoff
+(122 % gap, weak LP relaxation); weight-greedy reaches 89 %
+(`matching-i`) / 88 % (`matching-ii`) but is a *provable* hard local
+optimum, and greedy-seeded LNS/ejection made zero improvement
+([[lessons/L-001-greedy-localopt-and-suppressed-solver-log|L-001]]).
+No method within the predicted budget cleared rank-3. The claim that
+this is a "solve-in-minutes" ILP is false at default settings.
+Distilled: [[takeaways/T-001-ch1-matching-needs-strong-search|T-001]].
+The refutation is scoped to *cheap/default* methods — a strong
+tuned/long exact solver or parallel strong-search metaheuristic is
+untested and lives in the child hypotheses.
+
 ## Next steps / siblings (§16)
 
-- Drafts on the same fork: [[H-002-ch1-trajectory-greedy]],
+Closure fork (priced **conservatively** per [[user]] *Conservative
+expectations* — challenges hard, many local minima; **parallel by
+construction**). Candidate children, to commit after the user
+chooses (discuss-before-commit, META.md §6):
+
+- **C-A — parallel MIP-based LNS**: destroy a node region, solve the
+  sub-instance exactly with HiGHS, repeat; parallel workers/regions.
+  est ~6 h, expected ~6 (rank-5→3 reach, not assumed).
+- **C-B — parallel multi-start metaheuristic**: SA/Tabu with long
+  ejection chains, many parallel seeds (pygmo archipelago / mp).
+  est ~6 h, expected ~5.
+- **C-C — long tuned warm-started exact**: greedy warm start +
+  HiGHS heuristics/cuts/threads, long wall; Gurobi if licensed.
+  est ~3 h, expected ~5 (uncertain — LP bound weak).
+- Pre-existing draft siblings unaffected: [[H-002-ch1-trajectory-greedy]],
   [[H-003-ch2-small-lambert-metaheuristic]].
-- < 0.5 h variants (in the chosen sibling's body, not separate H):
-  LP-relaxation-then-round fallback if MIP times out; symmetry/
-  presolve tuning; warm-start from a greedy matching.

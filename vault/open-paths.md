@@ -25,19 +25,40 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 ### Open (status: open) — at most one active per compute stream (§2)
 
+*(none — H-001 closed refuted; awaiting user choice of child, discuss-before-commit)*
+
+### Closed
+
+| H | verdict | result |
+|---|---|---|
+| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short of Ch1 rank-3 ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]], [[experiments/E-001-ch1-matching-first-attempts\|E-001]]) |
+
+### Drafts (priced siblings, §16) — conservative repricing (T-001)
+
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | Ch1 matching-i/ii | 16 | 2 | **8.0** | HiGHS MIP, exact, fastest signal — chosen first |
-
-### Drafts (priced siblings, §16) — promote / prune / expire
-
-| H | instance | expected | est. h | ROI | note |
-|---|---|---|---|---|---|
+| H-001 child C-A | Ch1 matching | 6 | 6 | 1.0 | **parallel MIP-based LNS** (destroy → exact sub-solve) |
+| H-001 child C-B | Ch1 matching | 5 | 6 | 0.8 | parallel multi-start SA/Tabu + long ejection chains |
+| H-001 child C-C | Ch1 matching | 5 | 3 | 1.7 | long tuned warm-started exact (± Gurobi) |
 | [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | Ch1 trajectory-matching | 14 | 12 | 1.2 | greedy on BCP transfers (Team HRI proved R3) |
-| [[hypotheses/H-003-ch2-small-lambert-metaheuristic\|H-003]] | Ch2 small | 8 | 8 | 1.0 | Lambert precompute + LNS/GA; unblocks Ch2 med/large |
+| [[hypotheses/H-003-ch2-small-lambert-metaheuristic\|H-003]] | Ch2 small | 8 | 8 | 1.0 | Lambert precompute + LNS/GA |
+
+*Children C-A/C-B/C-C are candidates (not yet H-files) — committed
+after the user picks (META.md §6). Expectations cut per [[user]]
+*Conservative expectations*.*
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-18 (H-001 closed: refuted)** — E-001: default HiGHS
+  (79 % R3, 122 % gap), greedy (89 %/88 %), naive+ejection LNS
+  (0 improvement — greedy is a provable hard local optimum,
+  [[lessons/L-001-greedy-localopt-and-suppressed-solver-log|L-001]]).
+  Cheap methods do not clear Ch1 rank-3. User directive: parallelise,
+  expect hard, be conservative (→ [[user]], [[takeaways/T-001-ch1-matching-needs-strong-search|T-001]]).
+  Valid greedy baselines banked (`solutions/upload/`). Frontier
+  repriced down. **Strategic fork to user**: child C-A/C-B/C-C
+  (parallel MIP-LNS / parallel metaheuristic / long tuned exact) —
+  none committed pending user choice (discuss-before-commit).
 - **2026-05-18 (kickoff)** — Grounding committed
   ([[observations/O-001-spoc4-problem-grounding|O-001]],
   [[observations/O-002-leaderboard-2026-05-18|O-002]]). GOALS.md §1
