@@ -33,8 +33,14 @@ Fresh-start scaffold rebuilt (commit `42820c5`). Grounding done:
 [[observations/O-001-spoc4-problem-grounding|O-001]] (problems),
 [[observations/O-002-leaderboard-2026-05-18|O-002]] (rank-3 cutoffs +
 competitor analysis). Goal = rank-3 on each regular instance (GOALS.md
-§1). **Frontier bootstrap pending** — see [[open-paths]]. No `H-NNN`
-committed yet (discuss-before-commit, META.md §6). Realized points: 0.
+§1). See [[open-paths]] for the live frontier.
+
+**Realized (banked, valid artifacts in `solutions/upload/`):**
+Ch1 `matching-i` ≈ rank-6 (~5 pts), `matching-ii` ≈ rank-5 (~6 pts)
+→ **≈ 11 pts**. Ch1-matching line closed at the HiGHS ceiling
+([[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]); active
+branch pivoted to [[hypotheses/H-002-ch1-trajectory-greedy|H-002]]
+(Ch1 trajectory). Ch2 / Ch3 not yet started.
 
 ## Campaign tree
 

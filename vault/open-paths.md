@@ -29,7 +29,7 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 |---|---|---|---|---|---|
 | [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | Ch1 trajectory-matching | 14 | 12 | 1.2 | **PIVOT** — BCP transfers + greedy 3-D assignment (Team HRI proved R3); active branch |
 
-(Compute now: `matching-ii` coop campaign running to bank its ~rank-6 artifact before trajectory work starts.)
+(Ch1 matching banked: matching-i ≈rank-6 ~5pts, matching-ii ≈rank-5 ~6pts → ≈11 pts total. Compute free → H-002 trajectory build is the active work.)
 
 ### Closed
 
