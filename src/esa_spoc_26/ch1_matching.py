@@ -402,10 +402,23 @@ def parallel_mip_lns(path, problem, out_dir="solutions/upload",
     }
 
 
+def _load_artifact_x(artifact, n):
+    try:
+        v = json.loads(Path(artifact).read_text())[0]["decisionVector"]
+        x = np.asarray(v, dtype=np.int8)
+        return x if x.shape[0] == n else None
+    except Exception:
+        return None
+
+
 def _coop_worker(args):
-    path, seed, budget, time_per_sub, pool_best_path = args
+    path, seed, budget, time_per_sub, pool_best_path, warm_artifact = args
     e, ll, d, w = load_instance(path)
     g = greedy(e, ll, d, w)
+    if warm_artifact:
+        wx = _load_artifact_x(warm_artifact, w.shape[0])
+        if wx is not None and float(w[wx == 1].sum()) > float(w[g == 1].sum()):
+            g = wx  # warm-start from the existing strong incumbent
     best, bm, _ = coop_mip_lns(
         e, ll, d, w, g, seed=seed, threads=1, time_budget_s=budget,
         time_per_sub=time_per_sub, pool_best_path=pool_best_path,
@@ -414,10 +427,11 @@ def _coop_worker(args):
 
 
 def parallel_coop_mip_lns(path, problem, out_dir="solutions/upload",
-                          n_workers=4, time_budget_s=600.0, time_per_sub=8.0):
+                          n_workers=4, time_budget_s=600.0, time_per_sub=8.0,
+                          warm_artifact=None):
     """Cooperative campaign: workers share a global-best file + adaptive
-    escalating destroy. Targets the ~1 % gap to rank-3 that the
-    independent campaign (E-002) plateaued at."""
+    escalating destroy. `warm_artifact` (a prior solutions JSON) seeds the
+    strong incumbent for an exact-polish run with large `time_per_sub`."""
     import multiprocessing as mp
     import tempfile
 
@@ -425,7 +439,7 @@ def parallel_coop_mip_lns(path, problem, out_dir="solutions/upload",
         tempfile.gettempdir(), f"poolbest_{problem}_{os.getpid()}.npy"
     )
     args = [
-        (path, s, time_budget_s, time_per_sub, pool_best)
+        (path, s, time_budget_s, time_per_sub, pool_best, warm_artifact)
         for s in range(n_workers)
     ]
     t0 = time.time()
@@ -463,13 +477,19 @@ def parallel_coop_mip_lns(path, problem, out_dir="solutions/upload",
 
 if __name__ == "__main__":
     mode = sys.argv[1]
-    if mode in ("mip-lns", "coop"):
+    if mode in ("mip-lns", "coop", "polish"):
         inst, prob = sys.argv[2], sys.argv[3]
         budget = float(sys.argv[4]) if len(sys.argv) > 4 else 600.0
         nw = int(sys.argv[5]) if len(sys.argv) > 5 else 4
-        fn = parallel_coop_mip_lns if mode == "coop" else parallel_mip_lns
-        print(json.dumps(fn(inst, prob, n_workers=nw,
-                            time_budget_s=budget), indent=2))
+        if mode == "polish":  # warm-start from current artifact, big sub-MIPs
+            print(json.dumps(parallel_coop_mip_lns(
+                inst, prob, n_workers=nw, time_budget_s=budget,
+                time_per_sub=25.0,
+                warm_artifact=f"solutions/upload/{prob}.json"), indent=2))
+        else:
+            fn = parallel_coop_mip_lns if mode == "coop" else parallel_mip_lns
+            print(json.dumps(fn(inst, prob, n_workers=nw,
+                                time_budget_s=budget), indent=2))
     else:  # default: single exact solve
         inst, prob = sys.argv[1], sys.argv[2]
         tl = float(sys.argv[3]) if len(sys.argv) > 3 else 1800.0

@@ -27,14 +27,15 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | Ch1 matching-i/ii | 8 | 4 | 2.0 | **cooperative+adaptive MIP-LNS** — close the 1% gap; campaign running (1200s) |
+| [[hypotheses/H-006-ch1-matching-exact-polish\|H-006]] | Ch1 matching-i | 8 | 3 | 2.7 | **exact-polish** (warm-start 33320, big sub-MIPs) — campaign running (1500s) |
 
 ### Closed
 
 | H | verdict | result |
 |---|---|---|
-| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short of Ch1 rank-3 ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]]) |
-| [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7, scores pts) ([[takeaways/T-002-mip-lns-family-validated-but-plateaus\|T-002]], [[experiments/E-002-ch1-matching-i-mip-lns-campaign\|E-002]]) |
+| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]]) |
+| [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7) ([[takeaways/T-002-mip-lns-family-validated-but-plateaus\|T-002]]) |
+| [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | **refuted (near-miss)** | coop+adaptive → 33320 = 99.56 % R3 (≈rank-6, ~5 pts) ([[takeaways/T-003-diminishing-returns-need-exact-polish\|T-003]], [[experiments/E-003-ch1-matching-i-coop-mip-lns\|E-003]]) |
 
 ### Drafts (priced siblings, §16) — conservative (T-001/T-002)
 
@@ -50,6 +51,16 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-18 (H-005 closed refuted; H-006 opened; Gurobi escalated)**
+  — Coop+adaptive MIP-LNS → `matching-i` **33320 = 99.56 % rank-3**
+  (≈rank-6, ~5 pts; beat H-004's 33134 but missed rank-3 and the
+  rank-5 fallback). Diminishing-returns ladder confirmed
+  ([[takeaways/T-003-diminishing-returns-need-exact-polish|T-003]],
+  [[experiments/E-003-ch1-matching-i-coop-mip-lns|E-003]]). Promoted
+  **H-006 exact-polish** (warm-start 33320, big sub-MIPs, 1500 s,
+  running). **Escalated to user: Gurobi licence?** — commercial
+  exact solver is the realistic top-field method for the last
+  0.44 %; pivot-to-H-002 is the no-Gurobi fallback.
 - **2026-05-18 (H-004 closed refuted; H-005 opened)** — Campaign:
   parallel MIP-LNS → `matching-i` **33134 = 99.0 % rank-3** (≈rank-7,
   *scores ~4 pts* — first banked progress). Refuted the 600 s

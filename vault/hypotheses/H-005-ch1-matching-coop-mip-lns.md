@@ -1,21 +1,21 @@
 ---
 id: H-005
 type: hypothesis
-status: open
+status: refuted
 tags: [ch1, lns, milp, improvement]
 
 parent: "[[H-004-ch1-matching-mip-lns]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: []
-children_hypotheses: []
+children_experiments: ["[[E-003-ch1-matching-i-coop-mip-lns]]"]
+children_hypotheses: ["[[H-006-ch1-matching-exact-polish]]"]
 concurrent_with: []
 
 created: 2026-05-18
 tested_start: 2026-05-18T18:05:00+02:00
-tested_end:
-duration_testing:
+tested_end: 2026-05-18T18:25:00+02:00
+duration_testing: ~20m
 
-effort_person_hours: 1.0
+effort_person_hours: 1.7
 expected_points: 8           # conservative: aims to narrow/close the 1% gap on matching-i (+ matching-ii reuse)
 estimated_effort_h: 4
 priority: 1
@@ -74,6 +74,19 @@ the 1200 s campaign tests.
   (harness task `bv3i0fo4z`).
 
 ## Analysis (filled at close — §6)
+
+**Refuted by [[experiments/E-003-ch1-matching-i-coop-mip-lns|E-003]].**
+Cooperation + adaptive destroy worked as designed (workers converged
+to a shared 33 318–33 320) and closed ~56 % of the residual gap
+(33 134 → 33 320, 99.56 % of rank-3), beating the H-004 plateau —
+but **missed rank-3 (33 467.83) and the conservative rank-5 fallback
+(33 345) by ~25**. ≈ leaderboard rank-6 (scores ~5 pts). The
+diminishing-returns ladder
+([[takeaways/T-003-diminishing-returns-need-exact-polish|T-003]])
+says the last 0.44 % is not a heuristic-tuning problem. Child
+[[hypotheses/H-006-ch1-matching-exact-polish|H-006]] (large-sub-MIP
+exact polish from this incumbent) promoted + running; Gurobi-licence
+question escalated to the user in parallel.
 
 ## Next steps / siblings (§16)
 
