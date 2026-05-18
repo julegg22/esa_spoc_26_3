@@ -1,0 +1,37 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# External reference code (upstream starter kits, cloned repos)
+reference/
+
+# IDE / editor local state
+.idea/
+.vscode/
+
+# Obsidian local workspace state (per-machine, not portable)
+vault/.obsidian/
+
+# Personal screenshots / scratch (do not commit — may contain sensitive
+# competitor info or PII; stealth-mode submission)
+matching I.png
+matching II.png
+*.scratch.png
+leaderboard/
+
+# Heavy reproducible artefacts (regenerable from scripts/)
+# - dV-grid NPZ files (10-100 MB each); rebuild via
+#   scripts/precompute_dv_grid_ch2.py.
+# - Per-experiment NPZ caches.
+*.npz
+
+# Watchdog runtime state (per-session, machine-local)
+vault/active_runs.json
+.claude/scheduled_tasks.lock

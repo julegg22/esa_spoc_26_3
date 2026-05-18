@@ -1,0 +1,22 @@
+# Package pre-commit hooks — ruff lint/format + standard hygiene.
+# After cloning: `pip install pre-commit && pre-commit install`.
+# To refresh hook versions: `pre-commit autoupdate`.
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.1
+    hooks:
+      - id: ruff-format
+      - id: ruff-check
+        args: [--fix]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=300]  # keeps plot PNGs small per META.md invariant
+      - id: check-yaml
+        files: \.(ya?ml|base)$  # Obsidian .base files are YAML

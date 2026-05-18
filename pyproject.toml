@@ -1,0 +1,38 @@
+[project]
+name = "esa-spoc-26"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "JJ" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+esa-spoc-26 = "esa_spoc_26:main"
+
+[build-system]
+requires = ["uv_build>=0.10.12,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = ["reference/"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+    "B",        # flake8-bugbear
+    "UP",       # pyupgrade
+    "SIM",      # flake8-simplify
+    "RUF",      # ruff-specific
+    "NPY",      # numpy-specific
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011"]  # assert usage is fine in tests
+

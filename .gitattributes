@@ -1,0 +1,14 @@
+# Normalize text files to LF in the repo. Windows working copy can
+# still show CRLF if core.autocrlf=true; what matters is what git
+# stores.
+* text=auto eol=lf
+
+# Binary files: don't touch
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.pdf   binary
+*.gz    binary
+*.zip   binary
+*.npy   binary
+*.npz   binary
