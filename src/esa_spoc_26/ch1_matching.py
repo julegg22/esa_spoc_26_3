@@ -14,6 +14,7 @@ writes solutions/upload/<problem>.json for manual upload.
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -135,6 +136,73 @@ def _solve_sub(e, ll, d, w, time_limit, threads):
     return (np.asarray(h.getSolution().col_value) > 0.5).astype(np.int8)
 
 
+def _read_pool_best(path):
+    try:
+        v = np.load(path, allow_pickle=False)
+        return float(v[0]), v[1:].astype(np.int8)
+    except Exception:
+        return -1.0, None
+
+
+def _write_pool_best(path, mass, x):
+    try:
+        tmp = f"{path}.{os.getpid()}.tmp"
+        np.save(tmp, np.concatenate([[mass], x.astype(np.int8)]))
+        os.replace(tmp + ".npy", path)
+    except Exception:
+        pass
+
+
+def coop_mip_lns(e, ll, d, w, x0, seed=0, threads=1, time_budget_s=600.0,
+                 time_per_sub=8.0, pool_best_path=None, sync_every=20):
+    """Cooperative + adaptive MIP-LNS. Workers share a global-best via
+    `pool_best_path`; a stuck worker escalates destroy size (diversify)
+    and periodically restarts from the shared best. Breaks the per-worker
+    plateau that plain mip_lns hit at ~99 % of rank-3 (H-004/E-002)."""
+    rng = np.random.default_rng(seed)
+    ne, nl, nd = int(e.max()) + 1, int(ll.max()) + 1, int(d.max()) + 1
+    best, best_m = x0.copy(), float(w[x0 == 1].sum())
+    fracs = [0.10, 0.15, 0.20, 0.30, 0.45, 0.65]  # escalates when stuck
+    stuck, fi = 0, seed % 3
+    t0, rounds = time.time(), 0
+    while time.time() - t0 < time_budget_s:
+        rounds += 1
+        x = best.copy()
+        sel = np.flatnonzero(x)
+        x[rng.choice(sel, size=max(1, int(fracs[fi] * sel.size)),
+                      replace=False)] = 0
+        kept = np.flatnonzero(x)
+        ue = np.zeros(ne, bool)
+        ul = np.zeros(nl, bool)
+        ud = np.zeros(nd, bool)
+        ue[e[kept]] = True
+        ul[ll[kept]] = True
+        ud[d[kept]] = True
+        free = (x == 0) & ~ue[e] & ~ul[ll] & ~ud[d]
+        idx = np.flatnonzero(free)
+        if idx.size:
+            x[idx[_solve_sub(e[idx], ll[idx], d[idx], w[idx],
+                             time_per_sub, threads) == 1]] = 1
+        m = float(w[x == 1].sum())
+        if m > best_m + 1e-6:
+            best, best_m = x.copy(), m
+            stuck, fi = 0, seed % 3
+            if pool_best_path:
+                _write_pool_best(pool_best_path, best_m, best)
+        else:
+            stuck += 1
+            if stuck % 8 == 0:  # escalate destroy when plateaued
+                fi = min(fi + 1, len(fracs) - 1)
+        if pool_best_path and rounds % sync_every == 0:
+            gm, gx = _read_pool_best(pool_best_path)
+            if gx is not None and gm > best_m + 1e-6:
+                best, best_m, stuck, fi = gx.copy(), gm, 0, seed % 3
+        if rounds % 25 == 0:
+            print(f"[coop seed={seed} f={fracs[fi]:.2f}] r={rounds} "
+                  f"best={best_m:.1f} t={time.time() - t0:.0f}s", flush=True)
+    return best, best_m, rounds
+
+
 def mip_lns(e, ll, d, w, x0, drop_frac=0.25, time_per_sub=8.0,
             seed=0, threads=1, time_budget_s=300.0):
     """MIP-based LNS: drop a random subset of selected transfers, then
@@ -168,6 +236,13 @@ def mip_lns(e, ll, d, w, x0, drop_frac=0.25, time_per_sub=8.0,
         m = float(w[x == 1].sum())
         if m >= best_m:
             best, best_m = x.copy(), m
+        if rounds % 25 == 0:
+            print(
+                f"[mip_lns seed={seed} drop={drop_frac:.2f}] "
+                f"round={rounds} best={best_m:.1f} "
+                f"elapsed={time.time() - t0:.0f}s",
+                flush=True,
+            )
     return best, best_m, rounds
 
 
@@ -327,14 +402,74 @@ def parallel_mip_lns(path, problem, out_dir="solutions/upload",
     }
 
 
+def _coop_worker(args):
+    path, seed, budget, time_per_sub, pool_best_path = args
+    e, ll, d, w = load_instance(path)
+    g = greedy(e, ll, d, w)
+    best, bm, _ = coop_mip_lns(
+        e, ll, d, w, g, seed=seed, threads=1, time_budget_s=budget,
+        time_per_sub=time_per_sub, pool_best_path=pool_best_path,
+    )
+    return float(bm), best.astype(np.int8), int(seed)
+
+
+def parallel_coop_mip_lns(path, problem, out_dir="solutions/upload",
+                          n_workers=4, time_budget_s=600.0, time_per_sub=8.0):
+    """Cooperative campaign: workers share a global-best file + adaptive
+    escalating destroy. Targets the ~1 % gap to rank-3 that the
+    independent campaign (E-002) plateaued at."""
+    import multiprocessing as mp
+    import tempfile
+
+    pool_best = os.path.join(
+        tempfile.gettempdir(), f"poolbest_{problem}_{os.getpid()}.npy"
+    )
+    args = [
+        (path, s, time_budget_s, time_per_sub, pool_best)
+        for s in range(n_workers)
+    ]
+    t0 = time.time()
+    with mp.Pool(n_workers) as pool:
+        res = pool.map(_coop_worker, args)
+    bm, bx, seed = max(res, key=lambda r: r[0])
+
+    e, ll, d, _ = load_instance(path)
+    feasible = all(
+        arr[bx == 1].size == np.unique(arr[bx == 1]).size for arr in (e, ll, d)
+    )
+    out_path = Path(out_dir) / f"{problem}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps(
+            [{"decisionVector": bx.tolist(), "problem": problem,
+              "challenge": CHALLENGE}]
+        )
+    )
+    if os.path.exists(pool_best):
+        os.remove(pool_best)
+    return {
+        "problem": problem,
+        "method": "parallel_coop_mip_lns",
+        "n_workers": n_workers,
+        "best_mass": bm,
+        "best_seed": seed,
+        "n_selected": int(bx.sum()),
+        "feasible": feasible,
+        "wall_s": round(time.time() - t0, 1),
+        "per_worker_mass": sorted(round(r[0], 1) for r in res),
+        "artifact": str(out_path),
+    }
+
+
 if __name__ == "__main__":
     mode = sys.argv[1]
-    if mode == "mip-lns":
+    if mode in ("mip-lns", "coop"):
         inst, prob = sys.argv[2], sys.argv[3]
         budget = float(sys.argv[4]) if len(sys.argv) > 4 else 600.0
         nw = int(sys.argv[5]) if len(sys.argv) > 5 else 4
-        print(json.dumps(parallel_mip_lns(inst, prob, n_workers=nw,
-                                          time_budget_s=budget), indent=2))
+        fn = parallel_coop_mip_lns if mode == "coop" else parallel_mip_lns
+        print(json.dumps(fn(inst, prob, n_workers=nw,
+                            time_budget_s=budget), indent=2))
     else:  # default: single exact solve
         inst, prob = sys.argv[1], sys.argv[2]
         tl = float(sys.argv[3]) if len(sys.argv) > 3 else 1800.0

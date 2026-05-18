@@ -1,22 +1,22 @@
 ---
 id: H-004
 type: hypothesis
-status: open
+status: refuted
 tags: [ch1, milp, lns, improvement]
 
 parent: "[[H-001-ch1-matching-mip]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: []
-children_hypotheses: []
+children_experiments: ["[[E-002-ch1-matching-i-mip-lns-campaign]]"]
+children_hypotheses: ["[[H-005-ch1-matching-coop-mip-lns]]"]
 concurrent_with: []
 
 created: 2026-05-18
 tested_start: 2026-05-18T17:40:00+02:00
-tested_end:
-duration_testing:
+tested_end: 2026-05-18T17:52:00+02:00
+duration_testing: ~12m (incl. one silent-fail rerun)
 
-effort_person_hours: 1.5
-expected_points: 10          # conservative: rank-3 matching-i likely, matching-ii upside (both A_1 ×1)
+effort_person_hours: 3.0
+expected_points: 10          # PREDICTED; realized ~4 (matching-i ≈ rank-7, scores but not rank-3)
 estimated_effort_h: 6
 priority: 1
 mode: full
@@ -81,7 +81,27 @@ wins. L-001 observability fix applied (solver log to file).
 
 ## Analysis (filled at close — §6)
 
+**Refuted by [[experiments/E-002-ch1-matching-i-mip-lns-campaign|E-002]].**
+The MIP-LNS *family* is validated — it escapes the greedy local
+optimum that refuted H-001, lifting `matching-i` to **33 134 =
+99.0 % of rank-3** (≈ leaderboard rank-7: *scores points*, the first
+real banked progress). But the 600 s independent-parallel prediction
+(≥ 33 467.83) is **refuted**: workers plateau ~1 % short in tight
+basins (33 002–33 134) with no cooperation and a fixed destroy size.
+Distilled: [[takeaways/T-002-mip-lns-family-validated-but-plateaus|T-002]].
+Closure is a *near-miss with a clear next operator*, not a dead end.
+
 ## Next steps / siblings (§16)
+
+- **Promoted child (open):** [[hypotheses/H-005-ch1-matching-coop-mip-lns|H-005]]
+  — cooperative shared-best + adaptive escalating destroy (campaign
+  running). Modification rationale cites [[takeaways/T-002-mip-lns-family-validated-but-plateaus|T-002]].
+- Deferred drafts: C-B parallel metaheuristic;
+  [[hypotheses/H-002-ch1-trajectory-greedy|H-002]];
+  [[hypotheses/H-003-ch2-small-lambert-metaheuristic|H-003]].
+- < 0.5 h variants for the chosen child's body (not separate H):
+  exact-polish phase on the residual; node-cluster destroy;
+  per-round HiGHS warm-start; periodic full restarts.
 
 - Draft siblings (deferred until H-004 closes): C-B parallel
   metaheuristic (SA/Tabu + long ejection chains),

@@ -27,21 +27,20 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | Ch1 matching-i/ii | 10 | 6 | 1.7 | **parallel MIP-LNS** — probe 98.5% R3 in 70s; campaign running |
+| [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | Ch1 matching-i/ii | 8 | 4 | 2.0 | **cooperative+adaptive MIP-LNS** — close the 1% gap; campaign running (1200s) |
 
 ### Closed
 
 | H | verdict | result |
 |---|---|---|
-| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short of Ch1 rank-3 ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]], [[experiments/E-001-ch1-matching-first-attempts\|E-001]]) |
+| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short of Ch1 rank-3 ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]]) |
+| [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7, scores pts) ([[takeaways/T-002-mip-lns-family-validated-but-plateaus\|T-002]], [[experiments/E-002-ch1-matching-i-mip-lns-campaign\|E-002]]) |
 
-### Drafts (priced siblings, §16) — conservative repricing (T-001)
+### Drafts (priced siblings, §16) — conservative (T-001/T-002)
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| H-001 child C-A | Ch1 matching | 6 | 6 | 1.0 | **parallel MIP-based LNS** (destroy → exact sub-solve) |
-| H-001 child C-B | Ch1 matching | 5 | 6 | 0.8 | parallel multi-start SA/Tabu + long ejection chains |
-| H-001 child C-C | Ch1 matching | 5 | 3 | 1.7 | long tuned warm-started exact (± Gurobi) |
+| C-B | Ch1 matching | 5 | 6 | 0.8 | parallel SA/Tabu + long ejection chains (if H-005 plateaus) |
 | [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | Ch1 trajectory-matching | 14 | 12 | 1.2 | greedy on BCP transfers (Team HRI proved R3) |
 | [[hypotheses/H-003-ch2-small-lambert-metaheuristic\|H-003]] | Ch2 small | 8 | 8 | 1.0 | Lambert precompute + LNS/GA |
 
@@ -51,6 +50,16 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-18 (H-004 closed refuted; H-005 opened)** — Campaign:
+  parallel MIP-LNS → `matching-i` **33134 = 99.0 % rank-3** (≈rank-7,
+  *scores ~4 pts* — first banked progress). Refuted the 600 s
+  prediction (plateau ~1 % short, tight isolated basins,
+  [[takeaways/T-002-mip-lns-family-validated-but-plateaus|T-002]],
+  [[experiments/E-002-ch1-matching-i-mip-lns-campaign|E-002]]). First
+  campaign died silently (broken redirect — L-001); relaunched
+  harness-managed + heartbeats. Promoted child **H-005
+  (cooperative+adaptive MIP-LNS)**, campaign running 1200 s. One
+  silent-fail lesson reinforced; focus held on Ch1 matching.
 - **2026-05-18 (H-004 opened: C-A validated)** — Decision made on
   own judgement ([[user]] *ask-but-never-stall*): committed **C-A
   parallel MIP-based LNS as H-004 (open)**. Probe (70 s, 1 thread)
