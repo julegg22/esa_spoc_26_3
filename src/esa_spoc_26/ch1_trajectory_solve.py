@@ -22,8 +22,8 @@ from scipy.optimize import least_squares
 
 from esa_spoc_26.ch1_trajectory import (
     CR3BP_MU_EARTH_MOON,
-    L,
     MU_MOON,
+    L,
     V,
     state2moon,
 )
