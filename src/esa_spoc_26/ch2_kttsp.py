@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import sys
+from pathlib import Path
 
 import numpy as np
 import pykep as pk
@@ -167,6 +168,59 @@ def greedy_wait(kt: KTTSP, start, wait=4.0, d_dep=0.3,
         unvis.discard(j)
         cur = j
     return times + tofs + [float(o) for o in order]
+
+
+def _row_min_dv(args):
+    """Coarse min-Δv from node i to a set of targets (no local refine);
+    fast structural probe. Returns (i, {j: min_dv})."""
+    inst, i, targets, n_t, n_tof, max_time = args
+    kt = _WORKER_KT[0] if _WORKER_KT else KTTSP(inst)
+    tg = np.linspace(0.0, min(40.0, max_time * 0.2), n_t)
+    fg = np.linspace(0.3, 26.0, n_tof)
+    out = {}
+    for j in targets:
+        if j == i:
+            continue
+        b = np.inf
+        for td in tg:
+            for tf in fg:
+                b = min(b, kt.compute_transfer(i, j, float(td), float(tf)))
+        out[j] = b
+    return i, out
+
+
+def structure_quick(inst, sample=None, n_t=8, n_tof=10, n_workers=4):
+    """Fast coarse structural probe (optionally node-sampled for large
+    instances) to compare cheap-edge-graph structure across instances."""
+    import multiprocessing as mp
+
+    kt = KTTSP(inst)
+    n = kt.n
+    nodes = (list(range(n)) if sample is None or sample >= n
+             else sorted(np.random.default_rng(0).choice(
+                 n, sample, replace=False).tolist()))
+    args = [(inst, i, nodes, n_t, n_tof, kt.max_time) for i in nodes]
+    rows = {}
+    with mp.Pool(n_workers, initializer=_init_worker,
+                 initargs=(inst,)) as pool:
+        for i, d in pool.imap_unordered(_row_min_dv, args, chunksize=4):
+            rows[i] = d
+    vals = np.array([v for d in rows.values() for v in d.values()])
+    fin = vals[np.isfinite(vals)]
+    outdeg = np.array([sum(1 for v in rows[i].values() if v <= 100.0)
+                       for i in nodes])
+    pairs = sum(len(d) for d in rows.values())
+    return {
+        "instance": Path(inst).name, "n": n, "sampled_nodes": len(nodes),
+        "pairs_probed": pairs,
+        "frac_le100": round(float((vals <= 100).sum()) / max(pairs, 1), 4),
+        "frac_le600": round(float((vals <= 600).sum()) / max(pairs, 1), 4),
+        "median_min_dv": round(float(np.median(fin)), 1),
+        "p10_min_dv": round(float(np.percentile(fin, 10)), 1),
+        "dead_end_le100_frac": round(float((outdeg == 0).sum())
+                                     / len(nodes), 3),
+        "median_outdeg_le100": float(np.median(outdeg)),
+    }
 
 
 def _edge_worker(args):
@@ -438,5 +492,9 @@ if __name__ == "__main__":
         print(json.dumps(route_small(inst), indent=2))
     elif len(sys.argv) > 1 and sys.argv[1] == "edges":
         print(json.dumps(precompute_edges(inst), indent=2))
+    elif len(sys.argv) > 2 and sys.argv[1] == "struct":
+        smp = int(sys.argv[3]) if len(sys.argv) > 3 else None
+        print(json.dumps(structure_quick(sys.argv[2], sample=smp),
+                         indent=2))
     else:
         print(json.dumps(solve_small(inst), indent=2))
