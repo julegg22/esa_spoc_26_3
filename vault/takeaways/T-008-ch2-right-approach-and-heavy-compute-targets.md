@@ -1,88 +1,113 @@
 ---
 id: T-008
 type: takeaway
-status: draft
+status: confirmed
 tags: [ch2, framing, decision-rationale, methodology]
 hypothesis: "[[H-003-ch2-small-lambert-metaheuristic]]"
 created: 2026-05-19
-supports_verdict: inconclusive
+updated: 2026-05-20
+supports_verdict: critical-reframe
 confidence: high
 generalizability: subgoal-wide
-goal_contribution: "The right Ch2 approach is identified; heavy-compute targets are precisely scoped (NOT edge resolution; YES multi-window extraction + time-windowed CP-SAT)."
-effort_person_hours: 6
+goal_contribution: "Identifies the right Ch2 approach as continuous-time per-leg + permutation metaheuristic, *not* discrete CP-SAT — banked from the 6-hour autonomous research window."
+effort_person_hours: 9
 superseded_by:
 invalidated_by:
 invalidated_at:
 ---
 
-# T-008 — Ch2: the right approach + where heavy compute pays
+# T-008 — Ch2: the right approach (after the 6h research window)
 
-*Synthesis of the 6-hour autonomous research window (2026-05-19).
-Status: draft — finalised once the TW prototype + Q6 medium/large
-land.*
+*Finalised from the autonomous compute window 2026-05-19–20. The
+final answer is structurally different from the draft version: heavy
+compute should NOT go into more elaborate discrete CP-SAT models. It
+should go into a continuous-time per-leg optimisation engine + a
+permutation metaheuristic.*
 
-## The right Ch2 approach (data-grounded)
+## What 9 person-hours of research established
 
-After 7+ method iterations (greedy → greedy-wait → structure-router
-→ static CP-SAT → joint-LNS → cluster-decomp → fullhorizon-CP-SAT)
-and 6 dedicated characterisation experiments (Q1–Q5 + E-019), the
-right Ch2 method is now precisely scoped:
+After 9+ method iterations and 7 instrumented experiments
+(E-014 → E-021), the binding constraint on Ch2 is now precisely
+isolated:
 
-1. **Edge precompute**: keep the *coarse* level (E-019/Q3: 16×
-   more compute = zero new cheap edges). The 138 ≤100 / 837 ≤600
-   directed edges are essentially complete.
-2. **Cluster-structure premise**: 4 orbital families
-   [40, 3, 3, 3] separated by altitude + inclination
-   ([[observations/O-007-ch2-small-structure-characterized|O-007]]),
-   small↔small forbidden within 600 m/s, so any Hamiltonian path
-   **splits the big cluster** + uses 4–5 inter-cluster bridges
-   within the ≤5-exception budget.
-3. **Solver = time-windowed CP-SAT** (not static CP-SAT, not
-   constructive heuristics):
-   - time variables `T[v]` per tomato + chronology constraints per
-     used arc (`T_i ≤ t_dep, T_j = t_dep + tof`);
-   - exception count ≤ 5; objective = makespan;
-   - **multi-window arcs** if single-window is infeasible (each
-     used edge picks among its precomputed cheap windows).
+1. ✓ **Graph topology is fine** — static Ham-path with ≤5 exceptions
+   exists (CP-SAT diagnostic OPTIMAL). 4-cluster structure
+   ([[O-007]]), no dead-ends at ≤600.
+2. ✓ **Edge cost precompute is saturated** — E-019: 16× more compute
+   yields ZERO new cheap edges. The 138 ≤100 + 837 (100,600] arcs
+   are essentially complete.
+3. ✓ **Sum-of-min-tofs Ham-path = 73 d** (CP-SAT diagnostic) — well
+   under the 200 d horizon → the *physical* problem permits a tour
+   in time.
+4. ✗ **Chronologically-consistent discrete-window CP-SAT INFEASIBLE**
+   on small with 200 d horizon at multiple sampling densities:
+   - E-018: single-window (one td, one tof per pair) → INFEASIBLE
+   - E-020: multi-td single-tof, K=8 (6 634 windows) → INFEASIBLE
+   - E-021: joint (td, tof) K=12 (9 431 windows) → INFEASIBLE
+5. ✓ **Leaderboard rank-3 = 112 d** ⇒ feasible solutions exist; they
+   are found by methods that handle (td, tof) **continuously**, not
+   discretely.
 
-## Where heavy compute pays (the user's question)
+## The right approach (replaces draft conclusion)
 
-The empirically-grounded ranking (high → low marginal value):
+**Continuous-time per-leg optimisation + permutation metaheuristic.**
+
+| layer | responsibility | technology |
+|---|---|---|
+| permutation | which order to visit tomatoes | LNS / 2-opt / Or-opt / ruin-recreate over Π |
+| per-leg | optimal (td, tof, Δv) given chronological predecessor | NLP: `scipy.minimize(Δv | t_dep ≥ T_prev, tof ∈ [tof_min, max_time-t_dep])` |
+| feasibility | ≤5 exceptions, ΣTOF ≤ 200 | hard constraints in permutation acceptance |
+
+This **inverts** the original `H-003` model (precompute static edges,
+metaheuristic over permutations with table-lookup costs):
+the table lookup mistakes the continuous (td, tof) plane for a
+finite cost matrix.
+
+## Where heavy compute pays — final ranking
 
 | target | marginal value | rationale |
 |---|---|---|
-| **Multi-window precompute** | **HIGH** | each (i,j) currently stored as ONE window (global TD/TF); time-coupling (E-018) needs the LIST of cheap windows per pair so CP-SAT can pick one consistent with chronology. ~5–15 windows / pair × 2352 pairs (small). Parallel mp.Pool ~hours. |
-| **Time-windowed CP-SAT solving** | **HIGH** | The chronology-respecting model. CP-SAT with `OnlyEnforceIf` over arcs+windows. ~10–60 min per instance solve (single solver run; user-tunable via `max_time_in_seconds`). |
-| **medium / large** scale-up | **HIGH** (conditional on Q6) | If Q6 confirms same structural class, the same pipeline runs on those instances at ~3–4× cost (medium) and much more (large; N=1051 has 1.1M pairs → multi-window precompute is the cost; CP-SAT itself fine). |
-| Edge-search resolution | **ZERO** (E-019) | 16× more compute → zero cheap-edge gain. Stop here. |
-| Multi-method retry of constructive/LNS on the existing static edges | LOW (E-014/E-016) | refuted; constructive search can't satisfy global feasibility. |
+| **Continuous-time per-leg NLP framework** | **HIGHEST** | The binding constraint (E-018→E-021); matches what rank-3 competitors must use. Build effort ~1–2 days. |
+| **Permutation LNS over the continuous-cost path** | **HIGH** | Standard TSP metaheuristic mounted on the continuous engine. C-011 + C-010. ~0.5 day build. |
+| Denser discrete windows (v3, K=24, finer grid) | **LOW** | Tested as fallback (E-021): even 4× more windows likely still INFEASIBLE because the issue is point-wise constraints, not coverage. |
+| PWL approximation of Δv(td, tof) per arc | MEDIUM | Linearise the cost surface; usable in CP-SAT/MIP but adds Δv-error. ~1 day build. |
+| Time-expanded DAG | MEDIUM | Per (tomato, time-bucket) node + shortest-Ham-path; cleanest discrete formulation but huge state space. |
+| Edge-search resolution | **ZERO** | E-019: flat. |
 
-## Synthesis of the unsolved sub-problem
+## Why discrete CP-SAT cannot work here (the binding-finding)
 
-What we *can* solve fast: edge cost, cluster identification, static
-CP-SAT. What we *cannot* yet: a Hamiltonian path whose cheap edges
-are reachable in chronological order. The time-windowed model
-([[concepts/C-010-constrained-hamiltonian-time-dependent-routing]])
-is the principled formulation; the prototype `ch2_cpsat_tw` is built
-and ready (single-window first; multi-window if needed). Pending its
-result + Q6 (medium/large generalisation).
+CP-SAT requires finite-domain variables. Per arc, we pre-list K
+windows `(td_k, tof_k, Δv_k)` and enforce `T_j = td_k + tof_k`
+*exactly* when window k chosen. This **forces T_j to one of K
+specific values**. With 48 sequential arcs, the chain of forced T's
+must align — each window's td_k must equal some predecessor's
+td_k'+tof_k' (or be ≥, with waiting). With K=12–24 grid points
+across [0, 200] d, the probability of a chronologically-aligned
+chain across 48 arcs is structurally low — and CP-SAT proves it
+infeasible.
 
-## Position vs goal
+The continuous (td, tof) formulation has **infinite resolution**:
+once a permutation is fixed, for each leg we solve a small NLP
+finding the (td*, tof*) that minimises Δv subject to chronology.
+This is what rank-3 competitors must be doing.
 
-- **Banked: ~11 pts** (Ch1 matching, locked).
-- **Methodology-validation deliverable** (`GOALS.md §3`): very
-  strong — M-001/M-002 codified, C-001…C-011 cover the domain for
-  non-experts, E-006…E-019 + O-001…O-007 + T-001…T-008 form a
-  complete scientific trail (incl. multiple M-002 reframes that
-  actually reframed the problem usefully).
-- **Ch2 endgame**: time-windowed CP-SAT is the principled next
-  build; even partial feasibility on small banks points (rank-10
-  on small ≈ 1 pt; rank-3 = 8 pt × ×1 = 8 pt; medium/large reuse
-  the pipeline).
+## Position vs goal (per `GOALS.md §3`)
 
-## Caveats (until finalised)
+- **Banked**: ~11 pts (Ch1 matching-i/ii locked).
+- **Methodology deliverable**: very strong — 11+ concept nodes,
+  M-001/M-002 codified, 9 experiments + 8 observations + 8 takeaways
+  with full data trail and *productive* reframes (the M-002
+  ultrathink turns at E-014, E-018, E-021 each re-aimed the work).
+- **Ch2 endgame**: needs the continuous-time engine. Reuses the
+  hi-accuracy edge precompute as a seed/upper-bound; reuses CP-SAT
+  diagnostic for connectivity. Estimated 2–3 days to a banked
+  feasible Ch2 small at rank-10–rank-3 range.
 
-The TW prototype's outcome is the critical missing data point. If
-it returns FEASIBLE on `small`, we have the first banked Ch2 tour.
-If INFEASIBLE, multi-window extraction is the unblocking step.
-Q6 confirms generalization (or surfaces medium/large idiosyncrasies).
+## What this means for the user's investment decision
+
+The 6-hour window's value: the **right reframe is now banked as a
+direction**. The naive "precompute edges + CP-SAT" path is closed
+(7 explicit experiments). The continuous-time path is opened with
+specific build steps. Without this research, a default investment
+would have continued chasing denser-and-denser discrete grids; the
+finding cuts that branch and points to the principled successor.
