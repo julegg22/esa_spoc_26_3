@@ -6,7 +6,7 @@ tags: [ch1, astrodynamics, bcp, improvement]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: []
+children_experiments: ["[[E-006-h002-first-direct-transfer-attempt]]"]
 children_hypotheses: []
 concurrent_with: ["[[H-001-ch1-matching-mip]]", "[[H-003-ch2-small-lambert-metaheuristic]]"]
 
@@ -63,7 +63,23 @@ optimisation.
 See frontmatter; sharpen the compute budget and the transfer-model
 fidelity threshold when promoted from draft to open (META.md §16).
 
+## Progress (open, 2026-05-19)
+
+Foundation on the **official-mirror oracle** (corrected after the
+[[lessons/L-002-udp-served-via-graphql-not-git|L-002]] catch).
+Verified pieces: Step 1 exact Earth/Moon orbit state generators;
+Step 2 arrival-ΔV / LOI solver (`solve_arrival_dv`). Step 3 (direct
+2-impulse shooter) first attempt **missed** — lunar closest-approach
+~11 000 km vs the tight LOI band
+([[experiments/E-006-h002-first-direct-transfer-attempt|E-006]]).
+
 ## Next steps
 
-Promote after H-001 closes (or in parallel if a second compute
-stream opens — concurrent_with H-001/H-003).
+- Implement a proper **cislunar differential corrector**:
+  multi-variable shooting (DV0 vector + TOF + departure phase + t0)
+  targeting `|r_moon| = aL`; stronger seed (CR3BP transfer / pykep
+  Lambert-arc / manifold) than patched-conic.
+- On a valid single transfer: sweep (e,l) pairs → discounted-mass
+  matrix → reuse the `ch1_matching` MIP-LNS for the 3-D assignment →
+  emit `solutions/upload/trajectory-matching.json`; validate vs the
+  rank-3 cutoff 452 819.87.
