@@ -59,6 +59,13 @@ available; competitors at 33 468–33 556 almost certainly use one.
 - **Next move:** finish `matching-ii` bank, then open H-002
   (Ch1 trajectory greedy) as the active branch.
 
+**Addendum 2026-05-19:** a 1 h warm-started cooperative polish on
+`matching-ii` moved 72 018 → **72 037** (+19, <0.03 %) — still
+≈ rank-5 (rank-4 ≈ 72 089, rank-3 = 72 101). Empirically seals the
+ceiling and the stop-rule: no further Ch1-matching compute. Banked
+artifact updated (monotone); rank tier / points unchanged (~11 pts
+total). All cores → H-002.
+
 ## Caveats
 
 If a commercial/academic Gurobi licence later appears, revisit
