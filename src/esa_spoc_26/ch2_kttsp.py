@@ -170,6 +170,84 @@ def greedy_wait(kt: KTTSP, start, wait=4.0, d_dep=0.3,
     return times + tofs + [float(o) for o in order]
 
 
+def _windows_worker(args):
+    """Per-pair cheap-window extractor: scan Δv vs t_dep at fixed tof
+    (the pair's precomputed-optimal TF[i,j]); return up to K windows
+    (representative t_dep values) where Δv ≤ thr_max. Each window =
+    a contiguous t_dep region where Δv ≤ thr_max; we keep ONE
+    representative per window (the local minimum)."""
+    inst, i, j, tof_fix, max_time, thr_max, max_k, step = args
+    kt = _WORKER_KT[0] if _WORKER_KT else KTTSP(inst)
+    n_pts = int((max_time - tof_fix - 0.5) / step) + 1
+    if n_pts < 2:
+        return i, j, []
+    tds = np.linspace(0.0, max_time - tof_fix - 0.5, n_pts)
+    dvs = np.array([kt.compute_transfer(i, j, float(td), float(tof_fix))
+                    for td in tds])
+    # find contiguous regions where dv ≤ thr_max; per region pick the arg-min
+    mask = (dvs <= thr_max) & np.isfinite(dvs)
+    if not mask.any():
+        return i, j, []
+    wins = []
+    k = 0
+    while k < n_pts:
+        if not mask[k]:
+            k += 1
+            continue
+        start = k
+        while k < n_pts and mask[k]:
+            k += 1
+        end = k
+        seg_dv = dvs[start:end]
+        idx = start + int(np.argmin(seg_dv))
+        wins.append((float(dvs[idx]), float(tds[idx]), float(tof_fix)))
+    # sort by Δv (best first); keep up to max_k well-separated by t_dep
+    wins.sort()
+    kept = []
+    for w in wins:
+        if all(abs(w[1] - k[1]) > 1.0 for k in kept):
+            kept.append(w)
+            if len(kept) >= max_k:
+                break
+    return i, j, kept
+
+
+def precompute_windows(inst,
+                       npz_in="/home/julian/Projects/esa_spoc_26_3/edges_small.npz",
+                       npz_out="/home/julian/Projects/esa_spoc_26_3/windows_small.npz",
+                       max_k=8, thr_max=600.0, step=0.5, n_workers=4):
+    """Parallel cheap-window precompute: per ordered pair (i,j), list
+    up to max_k windows (Δv, t_dep, tof=TF[i,j]) with Δv ≤ thr_max,
+    derived from a fine t_dep scan over [0, max_time-tof]. Output is a
+    compact npz: per-pair array of windows (padded with inf)."""
+    import multiprocessing as mp
+
+    kt = KTTSP(inst)
+    n = kt.n
+    TF = np.load(npz_in)["tf"]
+    args = [(inst, i, j, float(TF[i, j]) if TF[i, j] > 0 else 1.0,
+             kt.max_time, thr_max, max_k, step)
+            for i in range(n) for j in range(n) if i != j]
+    W = np.full((n, n, max_k, 3), np.inf)
+    counts = np.zeros((n, n), dtype=int)
+    with mp.Pool(n_workers, initializer=_init_worker,
+                 initargs=(inst,)) as pool:
+        for i, j, wins in pool.imap_unordered(_windows_worker, args,
+                                              chunksize=16):
+            for k, w in enumerate(wins):
+                W[i, j, k] = w
+            counts[i, j] = len(wins)
+    np.savez(npz_out, W=W, counts=counts)
+    cheap_total = int((W[..., 0] <= 100).sum())
+    exc_total = int(((W[..., 0] > 100) & (W[..., 0] <= 600)).sum())
+    return {"n": n, "max_k": max_k, "windows_le100": cheap_total,
+            "windows_100_600": exc_total,
+            "avg_windows_per_pair": float(counts.mean()),
+            "max_windows_pair": int(counts.max()),
+            "pairs_with_any_le100": int(((W[..., 0] <= 100).any(axis=-1)).sum()),
+            "saved": npz_out}
+
+
 def structure_accurate_sampled(inst, sample=60, n_workers=4, seed=0):
     """Q6: hi-accuracy `_edge_worker` over a node-sample; stats only.
     For medium/large to test whether the small instance's cluster/
@@ -563,5 +641,7 @@ if __name__ == "__main__":
         smp = int(sys.argv[3]) if len(sys.argv) > 3 else 60
         print(json.dumps(structure_accurate_sampled(sys.argv[2],
                                                     sample=smp), indent=2))
+    elif len(sys.argv) > 1 and sys.argv[1] == "windows":
+        print(json.dumps(precompute_windows(inst), indent=2))
     else:
         print(json.dumps(solve_small(inst), indent=2))
