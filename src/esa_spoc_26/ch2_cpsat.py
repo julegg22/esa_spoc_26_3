@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 from ortools.sat.python import cp_model
 
-from esa_spoc_26.ch2_kttsp import CHALLENGE, KTTSP, _leg_retime
+from esa_spoc_26.ch2_kttsp import CHALLENGE, KTTSP
 
 
 def solve_cpsat(inst, problem="small",
@@ -77,22 +77,20 @@ def solve_cpsat(inst, problem="small",
         return {"problem": problem, "feasible": False,
                 "note": f"CP-SAT path recovery incomplete ({len(order)})"}
 
-    # chronological re-timing on the official-mirror scorer
-    times, tofs, t_ready, exc = [], [], 0.0, 0
-    for k in range(n - 1):
-        dv, td, tf = _leg_retime(kt, order[k], order[k + 1], t_ready,
-                                 window=14.0)
-        times.append(td)
-        tofs.append(tf)
-        t_ready = td + tf
-        exc += int(dv > kt.dv_thr)
-    x = times + tofs + [float(o) for o in order]
+    # chronological re-timing — FULL HORIZON (E-015 fix): cheap windows
+    # recur on the synodic-beat period; the prior 14-d window was the
+    # bug, not the CP-SAT model. Reuse the verified ch2_lns full-horizon
+    # decoder so the search spans [t_ready, max_time].
+    import esa_spoc_26.ch2_lns as L
+    L._KT = kt
+    x, _, mk, n_exc, n_bad = L.decode(order)
     f = kt.fitness(x)
     feas = kt.is_feasible(f)
     res = {"problem": problem, "n": n, "makespan_d": f[0],
            "perm_c": f[1], "dv_c": f[2], "time_c": f[3], "exc_c": f[4],
            "feasible": feas, "rank3_small_d": 111.76,
-           "cpsat_status": int(st), "retimed_exc": exc}
+           "cpsat_status": int(st), "retimed_exc": n_exc,
+           "retimed_bad": n_bad, "decode_mk": round(mk, 3)}
     if feas:
         p = Path(out) / f"{problem}.json"
         p.parent.mkdir(parents=True, exist_ok=True)
