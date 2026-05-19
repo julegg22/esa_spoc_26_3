@@ -45,13 +45,13 @@ introduced. See `META.md §3` for the discipline.
 
 | abbr | meaning | primary node |
 |---|---|---|
-| BCP | Bicircular Problem (Earth + Moon + Sun, restricted 4-body) | [[concepts/C-006-bicircular-problem]] |
-| CR3BP | Circular Restricted 3-Body Problem (Earth + Moon, autonomous) | [[concepts/C-006-bicircular-problem]] |
+| BCP | Bicircular Problem (Earth + Moon + Sun, restricted 4-body) | [[concepts/C-001-cr3bp-and-bicircular-problem]] |
+| CR3BP | Circular Restricted 3-Body Problem (Earth + Moon, autonomous) | [[concepts/C-001-cr3bp-and-bicircular-problem]] |
 | BVP | Boundary Value Problem (Lambert is a 2-point BVP) | [[concepts/C-001-lambert-two-point-bvp]] |
 | IVP | Initial Value Problem (BCP propagation is an IVP) | [[concepts/C-006-bicircular-problem]] |
 | ODE | Ordinary Differential Equation (heyoka integrates ODEs) | [[concepts/C-006-bicircular-problem]] |
 | SOI | Sphere of Influence (gravitational dominance boundary) | [[concepts/C-003-sphere-of-influence-patched-conics]] |
-| LOI | Lunar Orbit Insertion (capture burn at Moon-relative periapsis) | [[concepts/C-005-lunar-orbit-insertion]] |
+| LOI | Lunar Orbit Insertion (capture burn at Moon-relative periapsis) | [[concepts/C-002-delta-v-rocket-equation-loi]] |
 | TOF | Time of Flight (transfer arc duration) | [[concepts/C-001-lambert-two-point-bvp]] |
 | GTO | Geostationary Transfer Orbit (mentioned for departure-energy context) | various Ch1 H |
 | LEO | Low Earth Orbit | various Ch1 H |
@@ -94,15 +94,15 @@ introduced. See `META.md §3` for the discipline.
 
 | abbr | meaning | primary node |
 |---|---|---|
-| LP | Linear Programming | [[concepts/C-002-highs-mip-solver]] |
-| MIP / MILP | (Mixed-)Integer Linear Programming | [[concepts/C-002-highs-mip-solver]] |
+| LP | Linear Programming | [[concepts/C-004-mip-and-mip-lns]] |
+| MIP / MILP | (Mixed-)Integer Linear Programming | [[concepts/C-004-mip-and-mip-lns]] |
 | IPM | Interior Point Method (LP / convex algorithm) | [[methodology/M-005-cut-engagement-threshold-scales-with-instance-size]] |
-| HiGHS | "High performance Software for Linear programming" — open-source LP/MIP solver | [[concepts/C-002-highs-mip-solver]] |
+| HiGHS | "High performance Software for Linear programming" — open-source LP/MIP solver | [[concepts/C-004-mip-and-mip-lns]] |
 | TSP | Traveling Salesperson Problem | [[hypotheses/H-031-ch2-easy-mip]] |
 | ATSP | Asymmetric TSP (direction-dependent costs) | [[hypotheses/H-031-ch2-easy-mip]] |
 | MTZ | Miller-Tucker-Zemlin (subtour elimination via time variables) | [[hypotheses/H-031-ch2-easy-mip]] |
 | DFJ | Dantzig-Fulkerson-Johnson (subtour elimination via lazy cuts) | [[hypotheses/H-031-ch2-easy-mip]] |
-| LNS | Large Neighborhood Search (ruin + recreate metaheuristic) | [[hypotheses/H-017a-lns-easy]] |
+| LNS | Large Neighborhood Search (ruin + recreate metaheuristic) | [[concepts/C-004-mip-and-mip-lns]] |
 | SA | Simulated Annealing (Metropolis acceptance) | [[hypotheses/H-035-ch2-easy-sa-lns-with-precomp]] |
 | GA | Genetic Algorithm (population + crossover + mutation) | [[hypotheses/H-037-ch2-easy-memetic-ga]] |
 | MA | Memetic Algorithm (GA + inner local search) | [[concepts/C-010-memetic-algorithm]] |
