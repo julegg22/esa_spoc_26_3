@@ -1,7 +1,7 @@
 ---
 id: H-002
 type: hypothesis
-status: open
+status: analyzed
 tags: [ch1, astrodynamics, bcp, improvement]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
@@ -63,7 +63,21 @@ optimisation.
 See frontmatter; sharpen the compute budget and the transfer-model
 fidelity threshold when promoted from draft to open (META.md §16).
 
-## Progress (open, 2026-05-19)
+## Status: ANALYZED — PAUSED (timeboxed 2026-05-19)
+
+Per user ROI decision (T-005 escalation): the validation pipeline
+is fully proven (E-008) and **banked as a reusable asset**, but
+no positive-mass transfer was found. The single timeboxed global
+attempt (pygmo SaDE over backward-construction params, official
+fitness objective) **did not** reach positive mass (champion =
+penalty plateau). H-002 is **paused**, not refuted — the binding
+difficulty is global low-ΔV Sun-assisted trajopt
+([[takeaways/T-005-ch1-advanced-is-a-global-trajopt-problem|T-005]]).
+Frontier pivots to **Ch2 (H-003)**; revisit H-002 only if Ch2 is
+secured or a stronger trajopt is warranted. Closure takeaway:
+[[takeaways/T-005-ch1-advanced-is-a-global-trajopt-problem|T-005]].
+
+## Progress (history)
 
 Foundation on the **official-mirror oracle** (corrected after the
 [[lessons/L-002-udp-served-via-graphql-not-git|L-002]] catch).

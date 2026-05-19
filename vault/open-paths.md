@@ -27,9 +27,9 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | Ch1 trajectory-matching | 14 | 12 | 1.2 | **PIVOT** — BCP transfers + greedy 3-D assignment (Team HRI proved R3); active branch |
+| [[hypotheses/H-003-ch2-small-lambert-metaheuristic\|H-003]] | Ch2 small | 8 | 8 | 1.0 | **ACTIVE** — Ch2 KTTSP (time-dependent orbital ATSP, O-005); greenfield, rank-3 ≤111.76 d |
 
-(Ch1 matching banked: matching-i ≈rank-6 ~5pts, matching-ii ≈rank-5 ~6pts → ≈11 pts total. Compute free → H-002 trajectory build is the active work.)
+(Ch1 matching banked ≈11 pts. H-002 timeboxed→paused (pipeline asset, T-005). Compute pivots to Ch2 per user 2026-05-19.)
 
 ### Closed
 
@@ -38,15 +38,15 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 | [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]]) |
 | [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7) ([[takeaways/T-002-mip-lns-family-validated-but-plateaus\|T-002]]) |
 | [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | **refuted (near-miss)** | coop+adaptive → 33320 = 99.56 % R3 (≈rank-6) ([[takeaways/T-003-diminishing-returns-need-exact-polish\|T-003]]) |
-| [[hypotheses/H-006-ch1-matching-exact-polish\|H-006]] | **refuted (ceiling)** | polish → 33338 = 99.6 % R3; HiGHS family exhausted, no Gurobi → pivot ([[takeaways/T-004-ch1-matching-ceiling-pivot\|T-004]], [[experiments/E-004-ch1-matching-i-exact-polish\|E-004]]) |
+| [[hypotheses/H-006-ch1-matching-exact-polish\|H-006]] | **refuted (ceiling)** | polish → 33338 = 99.6 % R3; HiGHS family exhausted, no Gurobi → pivot ([[takeaways/T-004-ch1-matching-ceiling-pivot\|T-004]]) |
+| [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | **analyzed — paused** | pipeline proven (E-008) but no positive-mass transfer; global-trajopt problem; timeboxed per user ([[takeaways/T-005-ch1-advanced-is-a-global-trajopt-problem\|T-005]]) |
 
-### Drafts (priced siblings, §16) — conservative (T-001/T-002)
+### Drafts (priced siblings, §16)
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| C-B | Ch1 matching | 5 | 6 | 0.8 | parallel SA/Tabu + long ejection chains (if H-005 plateaus) |
-| [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | Ch1 trajectory-matching | 14 | 12 | 1.2 | greedy on BCP transfers (Team HRI proved R3) |
-| [[hypotheses/H-003-ch2-small-lambert-metaheuristic\|H-003]] | Ch2 small | 8 | 8 | 1.0 | Lambert precompute + LNS/GA |
+| C-B | Ch1 matching | 5 | 6 | 0.8 | parallel SA/Tabu (only if Ch2 secured) |
+| H-002 revival | Ch1 trajectory | 14 | 20+ | 0.7 | global Sun-assisted trajopt (T-005); only if Ch2 secured |
 
 *Children C-A/C-B/C-C are candidates (not yet H-files) — committed
 after the user picks (META.md §6). Expectations cut per [[user]]
@@ -54,6 +54,17 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-19 (H-002 timeboxed→paused; pivot to Ch2 H-003)** — Five
+  shooting iterations (E-006..E-011) + one timeboxed pygmo global
+  attempt: validation pipeline fully proven (E-008, banked asset)
+  but no positive-mass transfer — the binding difficulty is global
+  low-ΔV Sun-assisted trajopt
+  ([[takeaways/T-005-ch1-advanced-is-a-global-trajopt-problem|T-005]];
+  frame/Moon-motion verified bit-exact, *not* the bug). Per user ROI
+  decision, **H-002 paused**, **H-003 (Ch2 small) promoted active**.
+  Ch2 grounded ([[observations/O-005-ch2-kttsp-official-udp|O-005]],
+  [[concepts/C-006-lambert-problem-and-orbital-tsp|C-006]]):
+  time-dependent orbital ATSP, rank-3 small ≤ 111.76 d.
 - **2026-05-18 (H-006 closed refuted; Ch1-matching line closed; pivot to H-002)**
   — Exact-polish added only +18 (33320→**33338**, 99.6 % R3) =
   terminal HiGHS-family ceiling, below rank-5. User: no Gurobi →

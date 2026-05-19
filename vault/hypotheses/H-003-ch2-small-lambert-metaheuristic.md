@@ -1,7 +1,7 @@
 ---
 id: H-003
 type: hypothesis
-status: draft
+status: open
 tags: [ch2, astrodynamics, lambert, metaheuristic]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
