@@ -78,6 +78,30 @@ def state2moon(posvel):
     return pk.ic2par([x_MF, y_MF, z_MF], [vx_MF, vy_MF, vz_MF], MU_MOON)
 
 
+def earth_orbit_state(a_e, e_e, i_e, raan, argp, ea):
+    """Synodic BCP state lying exactly on the Earth orbit (a_e,e_e,i_e)
+    [SI]. Exact inverse of `state2earth` (free knobs: raan, argp, EA).
+    Round-trips through state2earth/_match_orbit to machine precision."""
+    r, v = pk.par2ic([a_e, e_e, i_e, raan, argp, ea], MU_EARTH)
+    x, y, z = r[0] / L - CR3BP_MU_EARTH_MOON, r[1] / L, r[2] / L
+    vx = v[0] / V + y
+    vy = v[1] / V - CR3BP_MU_EARTH_MOON - x
+    vz = v[2] / V
+    return [[x, y, z], [vx, vy, vz]]
+
+
+def moon_orbit_state(a_m, e_m, i_m, raan, argp, ea):
+    """Synodic BCP state lying exactly on the Moon orbit (a_m,e_m,i_m)
+    [SI]. Exact inverse of `state2moon` (the arrival target family)."""
+    r, v = pk.par2ic([a_m, e_m, i_m, raan, argp, ea], MU_MOON)
+    x = r[0] / L + 1.0 - CR3BP_MU_EARTH_MOON
+    y, z = r[1] / L, r[2] / L
+    vx = v[0] / V + y
+    vy = v[1] / V + (1.0 - CR3BP_MU_EARTH_MOON) - x
+    vz = v[2] / V
+    return [[x, y, z], [vx, vy, vz]]
+
+
 def propagate(posvel, t0, DVs, Ts):
     x, y, z = hy.make_vars("x", "y", "z")  # only x,y,z used in event exprs
     dyn = bcp_dyn()
@@ -198,3 +222,17 @@ if __name__ == "__main__":
     print("earth", udp.earth_data.shape, "moon", udp.moon_data.shape,
           "ltl_dict", len(udp.ltl_dict))
     print("empty solution fitness:", udp.fitness([-1] + [0.0] * 20))
+
+    # round-trip: state on Earth/Moon orbit 0 must re-derive its (a,e,i)
+    aE, eE, iE = udp.earth_data[0]
+    pv = earth_orbit_state(aE, eE, iE, 0.4, 1.1, 0.7)
+    el = state2earth(pv)
+    print(f"Earth round-trip: target=({aE:.3f},{eE:.3e},{iE:.3e}) "
+          f"got=({el[0]:.3f},{el[1]:.3e},{el[2]:.3e}) "
+          f"match={udp._match_orbit(el, aE, eE, iE)}")
+    aM, eM, iM = udp.moon_data[0]
+    pv = moon_orbit_state(aM, eM, iM, 0.4, 1.1, 0.7)
+    el = state2moon(pv)
+    print(f"Moon  round-trip: target=({aM:.3f},{eM:.3e},{iM:.3e}) "
+          f"got=({el[0]:.3f},{el[1]:.3e},{el[2]:.3e}) "
+          f"match={udp._match_orbit(el, aM, eM, iM)}")
