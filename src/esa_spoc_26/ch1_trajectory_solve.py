@@ -189,14 +189,36 @@ def solve_transfer_dc(udp, idE, idL, n_ea=6, t0_grid=(0.0, np.pi)):
     D = L
     best_row, best_mass, best_err = None, -1.0, np.inf
 
+    # Moon centre in the state2earth Earth-centred frame: x_EF=(x+μ)L,
+    # synodic Moon x=1−μ ⇒ Moon centre at (L, 0, 0).
+    moon_ctr = np.array([D, 0.0, 0.0])
+
     for ea in np.linspace(0.0, 2 * np.pi, n_ea, endpoint=False):
         r0, v0 = pk.par2ic([aE, eE, iE, 0.0, 0.0, ea], MU_EARTH)
+        r0 = np.array(r0)
+        v0 = np.array(v0)
         r0n = np.linalg.norm(r0)
         a_t = 0.5 * (r0n + D)
-        v_peri = np.sqrt(MU_EARTH * (2.0 / r0n - 1.0 / a_t))
-        vhat = np.array(v0) / np.linalg.norm(v0)
-        dv0_seed = (v_peri * vhat - np.array(v0)) / V
-        tof_seed = np.pi * np.sqrt(a_t**3 / MU_EARTH) / T
+        tof_seed = np.pi * np.sqrt(a_t**3 / MU_EARTH) / T  # Hohmann ½-period
+        # Lambert (Earth two-body) departure→Moon vicinity: proper v1
+        # aimed at the lunar geometry (E-009 fix: patched-conic seed was
+        # only a prograde kick → hyperbolic arrival).
+        dv0_seed = None
+        try:
+            lp = pk.lambert_problem(r0.tolist(), moon_ctr.tolist(),
+                                    tof_seed * T, MU_EARTH, False, 0)
+            v1 = np.array(lp.get_v1()[0])
+            cand = (v1 - v0) / V
+            if np.all(np.isfinite(cand)):
+                dv0_seed = cand
+        except Exception:
+            dv0_seed = None
+        if dv0_seed is None:  # 180°-singular Lambert / failure → patched-conic
+            vhat = v0 / np.linalg.norm(v0)
+            v_peri = np.sqrt(MU_EARTH * (2.0 / r0n - 1.0 / a_t))
+            dv0_seed = (v_peri * vhat - v0) / V
+        if not np.all(np.isfinite(dv0_seed)):
+            continue  # degenerate departure geometry — skip this phase
         pv0 = earth_orbit_state(aE, eE, iE, 0.0, 0.0, ea)
 
         v_circ = np.sqrt(MU_MOON / aM)  # target speed at LLO radius
