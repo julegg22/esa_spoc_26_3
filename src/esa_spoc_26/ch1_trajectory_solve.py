@@ -18,13 +18,17 @@ from __future__ import annotations
 
 import numpy as np
 import pykep as pk
-from scipy.optimize import least_squares
+from scipy.optimize import least_squares, minimize_scalar
 
 from esa_spoc_26.ch1_trajectory import (
     CR3BP_MU_EARTH_MOON,
+    MU_EARTH,
     MU_MOON,
     L,
+    T,
     V,
+    earth_orbit_state,
+    propagate,
     state2moon,
 )
 
@@ -77,6 +81,202 @@ def solve_arrival_dv(posvel_arr, a_m, e_m, i_m, tol=1e-6):
     return dv2, el
 
 
+def _r_moon(posvel):
+    r, _ = _moon_inertial(posvel)
+    return np.linalg.norm(r)
+
+
+_TA = None  # cached BCP integrator (avoid per-call rebuild; ~100× faster)
+
+
+def _ta():
+    global _TA
+    if _TA is None:
+        import heyoka as hy
+
+        from esa_spoc_26.ch1_trajectory import (
+            BCP_MU_S,
+            BCP_OMEGA_S,
+            BCP_RHO_S,
+            bcp_dyn,
+        )
+
+        _TA = hy.taylor_adaptive(bcp_dyn(), [0.0] * 6, tol=1e-12)
+        _TA.pars[:] = [CR3BP_MU_EARTH_MOON, BCP_MU_S, BCP_RHO_S, BCP_OMEGA_S]
+    return _TA
+
+
+_MU = CR3BP_MU_EARTH_MOON
+_RE2 = ((6378137.0 + 99000.0) / L) ** 2     # Earth keep-out (R⊕+99 km)
+_RM2 = ((1737400.0 + 30000.0) / L) ** 2     # Moon keep-out (R☾+30 km)
+
+
+def track_to_perilune(pv0, t0, dv0, tmax, n=4000):
+    """Integrate the BCP from pv0 (DV0 applied), sampling to the closest
+    lunar approach. Returns (t_rel, state6, min_r_moon_m, impacted)."""
+    ta = _ta()
+    ta.time = t0
+    ta.state[:] = [pv0[0][0], pv0[0][1], pv0[0][2],
+                   pv0[1][0] + dv0[0], pv0[1][1] + dv0[1],
+                   pv0[1][2] + dv0[2]]
+    best_d, best_t, best_s = np.inf, 0.0, ta.state.copy()
+    dt = tmax / n
+    for k in range(1, n + 1):
+        try:
+            ta.propagate_until(t0 + k * dt)
+        except Exception:
+            return best_t, best_s, best_d * L, True
+        x, y, z = ta.state[0], ta.state[1], ta.state[2]
+        if (x + _MU) ** 2 + y * y + z * z < _RE2:
+            return best_t, best_s, best_d * L, True
+        dm = (x - (1 - _MU)) ** 2 + y * y + z * z
+        if dm < _RM2:
+            return best_t, best_s, best_d * L, True
+        d = np.sqrt(dm)
+        if d < best_d:
+            best_d, best_t, best_s = d, k * dt, ta.state.copy()
+    return best_t, best_s, best_d * L, False
+
+
+def solve_transfer_dc(udp, idE, idL, n_ea=6, t0_grid=(0.0, np.pi)):
+    """Differential-corrected 2-impulse transfer (C-005). Patched-conic
+    seed → least_squares on [DV0(3), TOF] driving the closest lunar
+    approach to aL → DV2 via solve_arrival_dv. Multi-start over the
+    Earth-departure phase and the Sun phase t0. Returns the best valid
+    (row21, mass, dv_ms, dt_d) or (None, best_min_dist_err_m)."""
+    aE, eE, iE = udp.earth_data[idE]
+    aM, eM, iM = udp.moon_data[idL]
+    D = L
+    best_row, best_mass, best_err = None, -1.0, np.inf
+
+    for ea in np.linspace(0.0, 2 * np.pi, n_ea, endpoint=False):
+        r0, v0 = pk.par2ic([aE, eE, iE, 0.0, 0.0, ea], MU_EARTH)
+        r0n = np.linalg.norm(r0)
+        a_t = 0.5 * (r0n + D)
+        v_peri = np.sqrt(MU_EARTH * (2.0 / r0n - 1.0 / a_t))
+        vhat = np.array(v0) / np.linalg.norm(v0)
+        dv0_seed = (v_peri * vhat - np.array(v0)) / V
+        tof_seed = np.pi * np.sqrt(a_t**3 / MU_EARTH) / T
+        pv0 = earth_orbit_state(aE, eE, iE, 0.0, 0.0, ea)
+
+        for t0 in t0_grid:
+            def resid(p, _pv0=pv0, _t0=t0):
+                _, _, dmin, imp = track_to_perilune(
+                    _pv0, _t0, p[:3], max(p[3], 0.05))
+                if imp:
+                    return [10.0]
+                return [(dmin - aM) / L]
+
+            x0 = np.array([*dv0_seed, tof_seed])
+            sol = least_squares(resid, x0, method="trf",
+                                xtol=1e-10, max_nfev=60)
+            dv0 = sol.x[:3]
+            tcl, _s, dmin, imp = track_to_perilune(
+                pv0, t0, dv0, max(sol.x[3], 0.05))
+            best_err = min(best_err, abs(dmin - aM))
+            if imp or abs(dmin - aM) > aM * 1e-3:
+                continue
+
+            # consistency: localise T1 with the OFFICIAL propagate
+            # (tol 1e-16) — the scorer's truth, not the fast tracker.
+            def off_err(t1, _dv0=dv0, _t0=t0, _pv0=pv0):
+                pv = propagate(_pv0, _t0, [list(_dv0), [0, 0, 0],
+                                           [0, 0, 0]], [max(t1, 1e-4), 0.0])
+                return np.inf if len(pv) == 0 else abs(_r_moon(pv) - aM)
+
+            ts = np.linspace(0.6 * tcl, 1.4 * tcl, 25)
+            t1 = min(ts, key=off_err)
+            r1 = minimize_scalar(
+                off_err, bracket=(0.92 * t1, t1, 1.08 * t1),
+                method="brent", options={"xtol": 1e-9, "maxiter": 40})
+            t1 = max(r1.x, 1e-4)
+            pv_off = propagate(pv0, t0, [list(dv0), [0, 0, 0], [0, 0, 0]],
+                               [t1, 0.0])
+            if len(pv_off) == 0 or abs(_r_moon(pv_off) - aM) > aM * 1e-3:
+                continue
+            dvr = solve_arrival_dv(pv_off, aM, eM, iM)
+            if dvr is None:
+                continue
+            dv2, _ = dvr
+            tcl = t1
+            dv_ms = (np.linalg.norm(dv0) + np.linalg.norm(dv2)) * V
+            row = [idE, idL, 0, t0, *pv0[0], *pv0[1],
+                   *dv0.tolist(), 0.0, 0.0, 0.0, *dv2.tolist(),
+                   float(tcl), 0.0]
+            f = udp.fitness(row)[0]
+            if f < 0 and -f > best_mass:
+                best_mass = -f
+                best_row = row
+                dt_d = tcl * T * pk.SEC2DAY
+                best_pack = (row, -f, dv_ms, dt_d)
+    if best_row is not None:
+        return best_pack
+    return None, best_err
+
+
+def solve_transfer_direct(udp, idE, idL, n_phase=16, t0=0.0, raan=0.0,
+                          argp=0.0):
+    """Direct 2-impulse transfer (patched-conic seed → BCP correction).
+    Synodic frame ⇒ Moon fixed at (1−μ,0,0); only t0 (Sun phase) matters.
+    Returns (row21, mass, dv_ms, dt_d) for the best VALID transfer found,
+    else (None, best_closest_approach_err_m)."""
+    aE, eE, iE = udp.earth_data[idE]
+    aM, eM, iM = udp.moon_data[idL]
+    D = L  # Earth–Moon distance (non-dim 1) in SI
+    best_err = np.inf
+
+    for ea in np.linspace(0.0, 2 * np.pi, n_phase, endpoint=False):
+        r0, v0 = pk.par2ic([aE, eE, iE, raan, argp, ea], MU_EARTH)
+        r0n = np.linalg.norm(r0)
+        a_t = 0.5 * (r0n + D)
+        v_peri = np.sqrt(MU_EARTH * (2.0 / r0n - 1.0 / a_t))
+        vhat = np.array(v0) / np.linalg.norm(v0)
+        dv0_inert = v_peri * vhat - np.array(v0)
+        tof_seed = np.pi * np.sqrt(a_t**3 / MU_EARTH) / T  # non-dim
+
+        pv0 = earth_orbit_state(aE, eE, iE, raan, argp, ea)
+        dv0 = (dv0_inert / V).tolist()
+
+        def closest(scale_tof, _pv0=pv0, _dv0=dv0, _ts=tof_seed):
+            pv = propagate(_pv0, t0, [_dv0, [0, 0, 0], [0, 0, 0]],
+                           [scale_tof * _ts, 0.0])
+            if len(pv) == 0:
+                return None
+            return pv, abs(_r_moon(pv) - aM)
+
+        # coarse TOF scan, then 1-D refine on the best
+        cand = [(s, closest(s)) for s in np.linspace(0.6, 1.6, 11)]
+        cand = [(s, c) for s, c in cand if c is not None]
+        if not cand:
+            continue
+        s_b = min(cand, key=lambda z: z[1][1])[0]
+        sol = least_squares(
+            lambda s: (closest(s[0])[1] if closest(s[0]) else 1e9),
+            [s_b], bounds=([0.5], [1.8]), xtol=1e-10, max_nfev=30,
+        )
+        c = closest(sol.x[0])
+        if c is None:
+            continue
+        pv_a, err = c
+        if err < best_err:
+            best_err = err
+        if err > aM * 1e-3:  # not near LOI band — try next phase
+            continue
+        dv2_res = solve_arrival_dv(pv_a, aM, eM, iM)
+        if dv2_res is None:
+            continue
+        dv2, _ = dv2_res
+        tof = sol.x[0] * tof_seed
+        dv_ms = (np.linalg.norm(dv0) + np.linalg.norm(dv2)) * V
+        dt_d = tof * T * pk.SEC2DAY
+        row = [idE, idL, 0, t0, *pv0[0], *pv0[1],
+               *dv0, 0.0, 0.0, 0.0, *dv2.tolist(), tof, 0.0]
+        f = udp.fitness(row)[0]
+        if f < 0:  # valid (negated mass)
+            return row, -f, dv_ms, dt_d, err
+    return None, best_err
+
+
 if __name__ == "__main__":  # isolation tests
     from esa_spoc_26.ch1_trajectory import LtlTrajectory, moon_orbit_state
 
@@ -102,3 +302,17 @@ if __name__ == "__main__":  # isolation tests
         el = state2moon(fixed)
         print(f"perturbed: |DV2|={np.linalg.norm(dv2)*V:.3f} m/s, "
               f"match_after={udp._match_orbit(el, aM, eM, iM)}")
+
+    # (3) differential-corrected transfer attempt, Earth 0 → Moon 0
+    import time as _t
+
+    t0 = _t.time()
+    res = solve_transfer_dc(udp, 0, 0, n_ea=4, t0_grid=(0.0,))
+    dt = _t.time() - t0
+    if res[0] is None:
+        print(f"DC transfer E0→M0: NO valid transfer in {dt:.0f}s; "
+              f"best |Δr_moon|={res[1]:.3e} m (LOI band ≈ {aM:.0f} m)")
+    else:
+        row, mass, dv_ms, dt_d = res
+        print(f"DC transfer E0→M0 VALID in {dt:.0f}s: mass={mass:.1f} kg, "
+              f"ΔV={dv_ms:.1f} m/s, ΔT={dt_d:.2f} d")
