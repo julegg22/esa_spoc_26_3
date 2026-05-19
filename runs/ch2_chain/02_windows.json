@@ -1,0 +1,10 @@
+{
+  "n": 49,
+  "max_k": 8,
+  "windows_le100": 425,
+  "windows_100_600": 6209,
+  "avg_windows_per_pair": 2.763015410245731,
+  "max_windows_pair": 8,
+  "pairs_with_any_le100": 138,
+  "saved": "/home/julian/Projects/esa_spoc_26_3/windows_small.npz"
+}

@@ -1,0 +1,27 @@
+{
+  "n": 49,
+  "max_k": 24,
+  "tofs": [
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    2.0,
+    2.75,
+    4.0,
+    5.5,
+    8.0,
+    11.0,
+    16.0,
+    20.0,
+    24.0,
+    30.0,
+    36.0
+  ],
+  "windows_le100": 1253,
+  "windows_100_600": 17398,
+  "avg_windows_per_pair": 7.768013327780092,
+  "pairs_with_any_le100": 138,
+  "median_tof_le100": 20.0,
+  "saved": "/home/julian/Projects/esa_spoc_26_3/windows2d_small.npz"
+}

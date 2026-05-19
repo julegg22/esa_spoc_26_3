@@ -84,25 +84,46 @@ def static_perm_cpsat(
     return order, st
 
 
-def chronological_nlp(kt, perm):
+def chronological_nlp(kt, perm, verbose=False, arr_weight=0.5):
     """Refine a permutation via chronological NLP per-leg.
-    Returns (decision_vector, fitness, feasible) or (None, None, False)."""
+    Each leg's NLP minimises (arrival_time + Δv/arr_weight) under
+    chronology + tight per-leg budget = (max_time - t_ready) / legs_left.
+    Returns (decision_vector, fitness, feasible, diag) tuple."""
     n = kt.n
     if len(perm) != n or len(set(perm)) != n:
-        return None, None, False
+        return None, None, False, {"err": "bad perm"}
     t = 0.0
     times, tofs = [], []
     dvs = []
     exc = 0
     for i in range(n - 1):
-        r = solve_leg_nlp(kt, perm[i], perm[i + 1], t)
+        legs_left = n - 1 - i
+        # Per-leg time budget: stay within fair share + slack
+        fair = (kt.max_time - t) / max(legs_left, 1)
+        t_budget = min(kt.max_time, t + fair * 4.0)
+        # If exception budget gone, force dv ≤ dv_thr
+        dv_cap = kt.dv_thr if exc >= kt.n_exc else kt.dv_exc
+        r = solve_leg_nlp(kt, perm[i], perm[i + 1], t,
+                          t_budget=t_budget, dv_cap=dv_cap,
+                          arr_weight=arr_weight)
         if r is None:
-            return None, None, False
+            if verbose:
+                print(f"  leg {i}: ({perm[i]}→{perm[i+1]}) at t_ready={t:.2f} NLP NONE",
+                      flush=True)
+            return None, None, False, {"err": "leg_none", "leg": i,
+                                       "t_ready": t,
+                                       "i_j": (int(perm[i]), int(perm[i + 1])),
+                                       "dvs": dvs}
         dv, td, tof = r
         is_exc = dv > kt.dv_thr
         if is_exc and exc >= kt.n_exc:
-            # try restricting tof to find ≤thr solution? (skip for now)
-            return None, None, False
+            if verbose:
+                print(f"  leg {i}: dv={dv:.1f} would exceed exc budget",
+                      flush=True)
+            return None, None, False, {"err": "exc_budget", "leg": i,
+                                       "t_ready": t,
+                                       "dv": dv,
+                                       "dvs": dvs}
         times.append(td)
         tofs.append(tof)
         dvs.append(dv)
@@ -110,10 +131,13 @@ def chronological_nlp(kt, perm):
             exc += 1
         t = td + tof
         if t > kt.max_time + 1e-6:
-            return None, None, False
+            if verbose:
+                print(f"  leg {i}: makespan {t:.1f} > max_time", flush=True)
+            return None, None, False, {"err": "horizon", "leg": i,
+                                       "t": t, "dvs": dvs}
     x = times + tofs + [float(o) for o in perm]
     f = kt.fitness(x)
-    return x, f, kt.is_feasible(f)
+    return x, f, kt.is_feasible(f), {"dvs": dvs, "max_dv": max(dvs)}
 
 
 def solve(inst, problem="small",
@@ -129,14 +153,14 @@ def solve(inst, problem="small",
         return {"problem": problem, "feasible": False,
                 "cpsat_status": st, "cpsat_s": round(cp_s, 1)}
     t1 = time.time()
-    x, f, feas = chronological_nlp(kt, perm)
+    x, f, feas, diag = chronological_nlp(kt, perm, verbose=True)
     nlp_s = time.time() - t1
     if x is None:
         return {"problem": problem, "n": kt.n,
                 "perm": [int(p) for p in perm],
                 "cpsat_s": round(cp_s, 1),
                 "feasible": False, "nlp_s": round(nlp_s, 1),
-                "note": "chronological NLP failed"}
+                "note": "chronological NLP failed", "diag": diag}
     res = {"problem": problem, "n": kt.n,
            "perm": [int(p) for p in perm],
            "cpsat_s": round(cp_s, 1), "nlp_s": round(nlp_s, 1),

@@ -1,0 +1,11 @@
+[2026-05-20T00:44:37] === [1/5] TW (single-window) PROTOTYPE (180 s, small) ===
+[2026-05-20T00:44:39] rc=0
+[2026-05-20T00:44:39] === [2/5] precompute_windows (small, parallel mp.Pool) ===
+[2026-05-20T00:46:19] rc=0
+[2026-05-20T00:46:19] === [3/5] Multi-window CP-SAT (600 s) DECISIVE ===
+[2026-05-20T00:46:33] rc=0
+[2026-05-20T00:46:33] === [4/5] Q6 MEDIUM structure (sample=30) ===
+[2026-05-20T00:52:00] rc=0
+[2026-05-20T00:52:00] === [5/5] Q6 LARGE structure (sample=30) ===
+[2026-05-20T00:52:21] rc=0
+[2026-05-20T00:52:21] === CHAIN DONE ===

@@ -1,0 +1,8 @@
+{
+  "problem": "small",
+  "n": 49,
+  "mw_status": "INFEASIBLE",
+  "n_edges": 953,
+  "n_windows": 9431,
+  "feasible": false
+}

@@ -25,42 +25,84 @@ import sys
 import time
 from pathlib import Path
 
+import numpy as np
 from scipy.optimize import minimize
 
 from esa_spoc_26.ch2_kttsp import CHALLENGE, KTTSP
 
 
-def solve_leg_nlp(kt, i, j, t_ready, tof_cap=40.0, seeds_td=None,
-                  seeds_tof=None):
-    """Solve min Δv(td, tof) for arc (i, j) starting after t_ready.
-    Multi-start Nelder-Mead. Returns (Δv, td, tof) or None."""
-    if seeds_td is None:
-        seeds_td = [t_ready + 0.05, t_ready + 1.0, t_ready + 5.0,
-                    t_ready + 15.0, t_ready + 30.0]
-    if seeds_tof is None:
-        seeds_tof = [0.5, 1.5, 4.0, 12.0, 30.0]
-    best = None
+def solve_leg_nlp(kt, i, j, t_ready, t_budget=None, dv_cap=600.0,
+                  arr_weight=1.0, n_td=12, n_tof=10):
+    """Solve for arc (i, j) starting after t_ready, ending ≤ t_budget.
+    Coarse 2D scan of Δv(td, tof) (n_td × n_tof grid) followed by NLP
+    refinement of the K best local-minima seeds. Returns (Δv, td, tof)
+    of the *best feasible* solution, or None.
 
-    def f(x):
+    Objective (smaller is better):  arr + Δv / arr_weight + pen(Δv>cap)
+    """
+    if t_budget is None:
+        t_budget = kt.max_time
+    if t_budget - t_ready < 0.5:
+        return None
+    tds = np.linspace(t_ready + 0.05, max(t_ready + 0.06,
+                                          t_budget - 0.5), n_td)
+    # tof scales with available window
+    tof_max = max(0.5, t_budget - t_ready - 0.05)
+    tofs = np.linspace(0.4, min(tof_max, 36.0), n_tof)
+    # Grid scan
+    grid = np.full((n_td, n_tof), np.inf)
+    for a, td in enumerate(tds):
+        for b, tof in enumerate(tofs):
+            if td + tof > t_budget + 1e-6:
+                continue
+            grid[a, b] = kt.compute_transfer(i, j, float(td), float(tof))
+    # Pick K best grid cells as NLP seeds
+    flat = grid.flatten()
+    if np.isinf(flat).all():
+        return None
+    K = min(8, int((flat <= dv_cap + 200).sum()))
+    if K <= 0:
+        K = 4
+    seed_idx = np.argpartition(flat, K)[:K]
+    best = None  # (combined_cost, Δv, td, tof)
+
+    def cost_fn(x):
         td, tof = x
-        if td < t_ready - 1e-6 or tof < 0.4 or td + tof > kt.max_time:
-            return 1e6   # outside feasible region; soft penalty
-        return kt.compute_transfer(i, j, float(td), float(tof))
+        if td < t_ready - 1e-6 or tof < 0.4 or td + tof > t_budget + 1e-6:
+            return 1e8
+        dv = kt.compute_transfer(i, j, float(td), float(tof))
+        pen = max(0.0, dv - dv_cap) * 1000.0
+        return td + tof + dv / max(arr_weight, 1e-6) + pen
 
-    for td0 in seeds_td:
-        for tof0 in seeds_tof:
-            if td0 + tof0 >= kt.max_time:
-                continue
-            try:
-                r = minimize(f, [td0, tof0], method="Nelder-Mead",
-                             options={"xatol": 0.01, "fatol": 0.5,
-                                      "maxiter": 200})
-            except Exception:
-                continue
-            if (r.fun <= kt.dv_exc + 1e-6
-                    and (best is None or r.fun < best[0])):
-                best = (float(r.fun), float(r.x[0]), float(r.x[1]))
-    return best
+    for idx in seed_idx:
+        a, b = divmod(int(idx), n_tof)
+        td0, tof0 = float(tds[a]), float(tofs[b])
+        if td0 + tof0 >= t_budget:
+            continue
+        try:
+            r = minimize(cost_fn, [td0, tof0], method="Nelder-Mead",
+                         options={"xatol": 0.01, "fatol": 0.5,
+                                  "maxiter": 150})
+        except Exception:
+            continue
+        td, tof = float(r.x[0]), float(r.x[1])
+        if td < t_ready - 1e-6 or td + tof > t_budget + 1e-6 or tof < 0.4:
+            continue
+        dv = kt.compute_transfer(i, j, td, tof)
+        if dv <= dv_cap + 1e-6:
+            c = td + tof + dv / max(arr_weight, 1e-6)
+            if best is None or c < best[0]:
+                best = (c, float(dv), td, tof)
+    if best is None:
+        # fallback: just take grid-min cell if it's ≤ dv_cap
+        mn_idx = int(np.argmin(flat))
+        a, b = divmod(mn_idx, n_tof)
+        td0, tof0 = float(tds[a]), float(tofs[b])
+        dv0 = float(grid[a, b])
+        if dv0 <= dv_cap + 1e-6 and td0 + tof0 <= t_budget + 1e-6:
+            return (dv0, td0, tof0)
+        return None
+    return (best[1], best[2], best[3])
 
 
 def greedy_nlp(kt, start=0, deadline=120.0, prefer_normal=True,

@@ -303,8 +303,9 @@ def _windows2d_worker(args):
 def precompute_windows_2d(
     inst,
     npz_out="/home/julian/Projects/esa_spoc_26_3/windows2d_small.npz",
-    max_k=12, thr_max=600.0, td_step=1.0,
-    tofs=(0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 24.0, 36.0),
+    max_k=24, thr_max=600.0, td_step=0.5,
+    tofs=(0.5, 0.75, 1.0, 1.5, 2.0, 2.75, 4.0, 5.5, 8.0, 11.0,
+          16.0, 20.0, 24.0, 30.0, 36.0),
     n_workers=4,
 ):
     """Joint (td, tof)-grid window precompute. Per pair (i,j), scans
