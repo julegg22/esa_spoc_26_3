@@ -78,7 +78,7 @@ def solve_mw(inst, problem="small",
 
     s = cp_model.CpSolver()
     s.parameters.max_time_in_seconds = float(max_s)
-    s.parameters.num_workers = 8
+    s.parameters.num_workers = 4
     st = s.Solve(m)
     status = {cp_model.OPTIMAL: "OPTIMAL", cp_model.FEASIBLE: "FEASIBLE",
               cp_model.INFEASIBLE: "INFEASIBLE",
