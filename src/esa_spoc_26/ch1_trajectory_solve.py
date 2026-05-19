@@ -199,13 +199,20 @@ def solve_transfer_dc(udp, idE, idL, n_ea=6, t0_grid=(0.0, np.pi)):
         tof_seed = np.pi * np.sqrt(a_t**3 / MU_EARTH) / T
         pv0 = earth_orbit_state(aE, eE, iE, 0.0, 0.0, ea)
 
+        v_circ = np.sqrt(MU_MOON / aM)  # target speed at LLO radius
+
         for t0 in t0_grid:
-            def resid(p, _pv0=pv0, _t0=t0):
-                _, _, dmin, imp = track_to_perilune(
+            def resid(p, _pv0=pv0, _t0=t0, _vc=v_circ):
+                _, s, dmin, imp = track_to_perilune(
                     _pv0, _t0, p[:3], max(p[3], 0.05))
-                if imp:
-                    return [10.0]
-                return [(dmin - aM) / L]
+                if imp or s is None:
+                    return [10.0, 10.0]
+                _, v_mf = _moon_inertial([[s[0], s[1], s[2]],
+                                          [s[3], s[4], s[5]]])
+                # (a) hit LLO radius, (b) arrive at circular speed so
+                # the LOI burn (DV2) collapses to near-zero (E-008).
+                return [(dmin - aM) / L,
+                        (np.linalg.norm(v_mf) - _vc) / _vc]
 
             x0 = np.array([*dv0_seed, tof_seed])
             sol = least_squares(resid, x0, method="trf",

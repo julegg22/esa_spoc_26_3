@@ -6,7 +6,7 @@ tags: [ch1, astrodynamics, bcp, improvement]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: ["[[E-006-h002-first-direct-transfer-attempt]]", "[[E-007-h002-differential-corrector-breakthrough]]", "[[E-008-h002-pipeline-valid-dv-regime-wrong]]"]
+children_experiments: ["[[E-006-h002-first-direct-transfer-attempt]]", "[[E-007-h002-differential-corrector-breakthrough]]", "[[E-008-h002-pipeline-valid-dv-regime-wrong]]", "[[E-009-h002-dv-aware-diverges-from-patched-conic]]"]
 children_hypotheses: []
 concurrent_with: ["[[H-001-ch1-matching-mip]]", "[[H-003-ch2-small-lambert-metaheuristic]]"]
 
