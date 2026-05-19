@@ -108,6 +108,12 @@ stay here.*
   wait to be asked. Codified in `META.md §11`; rationale +
   publication framing in
   [[methodology/M-001-proactive-concept-capture|M-001]].
+- **Stuck ⇒ ultrathink/reframe (hard, 2026-05-19).** When a branch
+  is stuck, before the next move: change perspective, think
+  out-of-the-box (*what did the designer make hard on purpose?*),
+  and audit load-bearing assumptions against ground truth
+  (verified-vs-believed). Codified in `META.md §15`;
+  [[methodology/M-002-stuck-triggers-ultrathink-reframe|M-002]].
 
 ## Strategic preferences (this campaign)
 

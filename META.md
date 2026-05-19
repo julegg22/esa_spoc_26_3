@@ -698,6 +698,17 @@ message, "campaign close", or `/clear`-equivalent), the assistant
 - [ ] Refutations across the branch clustering on a shared axis? → M-018?
 - [ ] Active branch open at session-end without decisive verdict? → brief M-018 ideation pass?
 
+> [!important] Stuck ⇒ ultrathink before the next move
+> (Hard rule, [[methodology/M-002-stuck-triggers-ultrathink-reframe|M-002]].)
+> Any M-018 step-back **must** include an explicit ultrathink pass
+> *before* proposing the next branch: (1) change perspective
+> (forward↔backward, local↔global, search↔structure); (2) think
+> out-of-the-box — *what would the problem designer make hard on
+> purpose?*; (3) **audit every load-bearing assumption against
+> ground truth** (the official scorer/code, not prose) and state
+> each as verified-vs-believed. Re-grounding the problem *model*,
+> not just re-pricing the frontier.
+
 **If any answer is yes-but-procedure-not-run, the session does
 not close until the procedure is done.** This is the control
 point that distinguishes:
