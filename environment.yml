@@ -23,6 +23,9 @@ dependencies:
   - heyoka.py
   # optimisation solvers
   - highspy            # HiGHS LP/MIP (Ch1 beginner, Ch2 easy MIP)
+  - pip
+  - pip:
+      - ortools        # CP-SAT for Ch2 constrained-Hamiltonian-path (L-003)
   # - gurobipy         # commercial — add only if a license is available
   # dev / tooling
   - ruff
