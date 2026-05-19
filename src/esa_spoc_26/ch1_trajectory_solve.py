@@ -28,9 +28,22 @@ from esa_spoc_26.ch1_trajectory import (
     T,
     V,
     earth_orbit_state,
+    moon_orbit_state,
     propagate,
     state2moon,
 )
+
+
+def _earth_inertial(posvel):
+    """Synodic state → Earth-centred inertial (r,v) SI (state2earth's map)."""
+    [x, y, z], [vx, vy, vz] = posvel
+    r = np.array([(x + CR3BP_MU_EARTH_MOON) * L, y * L, z * L])
+    v = np.array([
+        (vx - y) * V,
+        (vy + x) * V + CR3BP_MU_EARTH_MOON * V,
+        vz * V,
+    ])
+    return r, v
 
 
 def _moon_inertial(posvel):
@@ -82,6 +95,58 @@ def solve_arrival_dv(posvel_arr, a_m, e_m, i_m, tol=1e-6):
     # velocity-only impulse at fixed position: synodic DV2 = Δv_inertial / V
     dv2 = (sol.x - v_mf) / V
     return dv2, el
+
+
+def solve_departure_dv(d_state, a_e, e_e, i_e, tol=1e-6):
+    """Earth-side mirror of solve_arrival_dv. Given a backward-shot
+    departure-side state, build the on-Earth-orbit `posvel0` (circular
+    at the achieved radius, incl i_e — within the official 384 m a-tol)
+    and the burn DV0 the official forward propagate must apply.
+    Returns (posvel0, dv0[3], el) or None if radius out of a-tol."""
+    r_ef, v_cur = _earth_inertial(d_state)
+    r = np.linalg.norm(r_ef)
+    if abs(r - a_e) >= L * tol:
+        return None
+    speed = np.sqrt(MU_EARTH / r)
+    r_hat = r_ef / r
+    h_dir = np.array([np.sin(i_e), 0.0, np.cos(i_e)])
+    t_hat = np.cross(h_dir, r_hat)
+    nn = np.linalg.norm(t_hat)
+    t_hat = t_hat / nn if nn > 1e-12 else np.array([0.0, 1.0, 0.0])
+    v_seed = speed * t_hat
+
+    def resid(vv):
+        el = pk.ic2par(r_ef.tolist(), vv.tolist(), MU_EARTH)
+        return [(el[0] - r) / L, el[1], el[2] - i_e]
+
+    sol = least_squares(resid, v_seed, xtol=1e-14, ftol=1e-14, gtol=1e-14)
+    el = pk.ic2par(r_ef.tolist(), sol.x.tolist(), MU_EARTH)
+    if not (abs(el[0] - a_e) / L < tol and abs(el[1] - e_e) < tol
+            and abs(el[2] - i_e) < tol):
+        return None
+    mu = CR3BP_MU_EARTH_MOON
+    x, y, z = r_ef / L
+    x -= mu
+    vo = sol.x  # circular orbit inertial velocity
+    pos = [x, y, z]
+    v_orb = [vo[0] / V + y, vo[1] / V - mu - x, vo[2] / V]
+    posvel0 = [pos, v_orb]
+    dv0 = ((v_cur - sol.x) / V).tolist()  # forward burn = D.v − orbit.v
+    return posvel0, dv0, el
+
+
+def _back_state(arr_pos, v_pre, t_arr, tof):
+    """Backward-propagate the BCP from (arr_pos, v_pre) at t_arr for
+    `tof` (to t_arr−tof). Returns the departure-side 6-state or None."""
+    ta = _ta()
+    ta.time = t_arr
+    ta.state[:] = [arr_pos[0], arr_pos[1], arr_pos[2],
+                   v_pre[0], v_pre[1], v_pre[2]]
+    try:
+        ta.propagate_until(t_arr - tof)
+    except Exception:
+        return None
+    return ta.state.copy()
 
 
 def _r_moon(posvel):
@@ -346,6 +411,72 @@ def solve_transfer_direct(udp, idE, idL, n_phase=16, t0=0.0, raan=0.0,
     return None, best_err
 
 
+def solve_transfer_back(udp, idE, idL, n_seed=8, tof_grid=(3.0, 5.0, 8.0)):
+    """Backward shooting (M-018 pivot). The LLO arrival is an EXACT
+    initial condition; backward-propagate to the forgiving Earth side
+    (384 m a-tol). Variables: LLO arrival ν, LOI ΔV (retro), TOF, Sun
+    phase. Returns best valid (row21, mass, dv_ms, dt_d) or
+    (None, best_earth_radius_err_m)."""
+    aE, eE, iE = udp.earth_data[idE]
+    aL, eL, iL = udp.moon_data[idL]
+    best_pack, best_mass, best_err = None, -1.0, np.inf
+    rng = np.random.default_rng(0)
+
+    for tof_d in tof_grid:
+        tof = tof_d * 86400.0 / T
+        for _k in range(n_seed):
+            nuM = rng.uniform(0, 2 * np.pi)
+            OmM = rng.uniform(0, 2 * np.pi)
+            # seed: retro LOI ~ a few hundred m/s (the burn we minimise)
+            dv2_seed = np.array([0.0, 0.0, 0.0])
+            arr = moon_orbit_state(aL, eL, iL, OmM, 0.0, nuM)
+            # pre-LOI Moon-relative speed for a retro insertion guess
+            _, vmf = _moon_inertial(arr)
+            sp = np.linalg.norm(vmf)
+            dv2_seed = (vmf / sp) * (300.0 / V) if sp > 0 else dv2_seed
+
+            def resid(p, _OmM=OmM, _tof=tof):
+                nu, t_arr = p[0], p[1]
+                dv2 = p[2:5]
+                a = moon_orbit_state(aL, eL, iL, _OmM, 0.0, nu)
+                S = [a[0], [a[1][0] - dv2[0], a[1][1] - dv2[1],
+                            a[1][2] - dv2[2]]]
+                D = _back_state(S[0], S[1], t_arr, _tof)
+                if D is None:
+                    return [10.0]
+                r_ef, _ = _earth_inertial([[D[0], D[1], D[2]],
+                                           [D[3], D[4], D[5]]])
+                return [(np.linalg.norm(r_ef) - aE) / L]
+
+            x0 = np.array([nuM, 0.0, *dv2_seed])
+            sol = least_squares(resid, x0, method="trf",
+                                xtol=1e-10, max_nfev=80)
+            nu, t_arr = sol.x[0], sol.x[1]
+            dv2 = sol.x[2:5]
+            arr = moon_orbit_state(aL, eL, iL, OmM, 0.0, nu)
+            S = [arr[0], [arr[1][0] - dv2[0], arr[1][1] - dv2[1],
+                          arr[1][2] - dv2[2]]]
+            D = _back_state(S[0], S[1], t_arr, tof)
+            if D is None:
+                continue
+            d_state = [[D[0], D[1], D[2]], [D[3], D[4], D[5]]]
+            r_ef, _ = _earth_inertial(d_state)
+            best_err = min(best_err, abs(np.linalg.norm(r_ef) - aE))
+            dep = solve_departure_dv(d_state, aE, eE, iE)
+            if dep is None:
+                continue
+            posvel0, dv0, _ = dep
+            row = [idE, idL, 0, t_arr - tof, *posvel0[0], *posvel0[1],
+                   *dv0, 0.0, 0.0, 0.0, *dv2.tolist(), float(tof), 0.0]
+            f = udp.fitness(row)[0]
+            if f < 0 and -f > best_mass:
+                dvms = (np.linalg.norm(dv0) + np.linalg.norm(dv2)) * V
+                best_mass = -f
+                best_pack = (row, -f, dvms,
+                             (t_arr - (t_arr - tof)) * T * pk.SEC2DAY)
+    return best_pack if best_pack else (None, best_err)
+
+
 if __name__ == "__main__":  # isolation tests
     from esa_spoc_26.ch1_trajectory import LtlTrajectory, moon_orbit_state
 
@@ -385,3 +516,16 @@ if __name__ == "__main__":  # isolation tests
         row, mass, dv_ms, dt_d = res
         print(f"DC transfer E0→M0 VALID in {dt:.0f}s: mass={mass:.1f} kg, "
               f"ΔV={dv_ms:.1f} m/s, ΔT={dt_d:.2f} d")
+
+    # (4) backward-shooting attempt (M-018 pivot), Earth 0 → Moon 0
+    t0 = _t.time()
+    rb = solve_transfer_back(udp, 0, 0, n_seed=6, tof_grid=(3.0, 5.0, 8.0))
+    dt = _t.time() - t0
+    if rb[0] is None:
+        print(f"BACK transfer E0->M0: NO valid in {dt:.0f}s; "
+              f"best earth-radius err={rb[1]:.3e} m "
+              f"(aE~{udp.earth_data[0][0]:.0f})")
+    else:
+        row, mass, dv_ms, dt_d = rb
+        print(f"BACK transfer E0→M0 VALID in {dt:.0f}s: mass={mass:.1f} kg,"
+              f" ΔV={dv_ms:.1f} m/s, ΔT={dt_d:.2f} d")
