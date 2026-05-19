@@ -6,7 +6,7 @@ tags: [ch2, astrodynamics, lambert, metaheuristic]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: ["[[E-012-ch2-greedy-baseline-infeasible]]", "[[E-013-ch2-structure-sparse-cheap-graph]]", "[[E-014-ch2-constructive-routers-refuted]]"]
+children_experiments: ["[[E-012-ch2-greedy-baseline-infeasible]]", "[[E-013-ch2-structure-sparse-cheap-graph]]", "[[E-014-ch2-constructive-routers-refuted]]", "[[E-015-ch2-cpsat-optimal-but-time-coupling-breaks]]"]
 children_hypotheses: []
 concurrent_with: ["[[H-001-ch1-matching-mip]]", "[[H-002-ch1-trajectory-greedy]]"]
 
