@@ -102,7 +102,7 @@ introduced. See `META.md §3` for the discipline.
 | ATSP | Asymmetric TSP (direction-dependent costs) | [[hypotheses/H-031-ch2-easy-mip]] |
 | MTZ | Miller-Tucker-Zemlin (subtour elimination via time variables) | [[hypotheses/H-031-ch2-easy-mip]] |
 | DFJ | Dantzig-Fulkerson-Johnson (subtour elimination via lazy cuts) | [[hypotheses/H-031-ch2-easy-mip]] |
-| LNS | Large Neighborhood Search (ruin + recreate metaheuristic) | [[concepts/C-004-mip-and-mip-lns]] |
+| LNS | Large Neighborhood Search (ruin + recreate metaheuristic) | [[concepts/C-011-metaheuristic-local-search-routing]] |
 | SA | Simulated Annealing (Metropolis acceptance) | [[hypotheses/H-035-ch2-easy-sa-lns-with-precomp]] |
 | GA | Genetic Algorithm (population + crossover + mutation) | [[hypotheses/H-037-ch2-easy-memetic-ga]] |
 | MA | Memetic Algorithm (GA + inner local search) | [[concepts/C-010-memetic-algorithm]] |
@@ -113,13 +113,13 @@ introduced. See `META.md §3` for the discipline.
 | L-BFGS-B | Limited-memory BFGS with Bounds (scipy default for bounded smooth optimisation) | [[concepts/C-009-differential-evolution]] |
 | PMX | Partial-Matched Crossover (permutation crossover for GA) | [[concepts/C-010-memetic-algorithm]] |
 | BLX-α | Blend Crossover with parameter α (real-valued GA crossover) | [[hypotheses/H-037-ch2-easy-memetic-ga]] |
-| 2-opt | Tour-edit operator: reverse a sub-segment of the permutation | [[concepts/C-010-memetic-algorithm]] |
-| Or-opt | Tour-edit operator: relocate a sub-segment within the permutation | [[hypotheses/H-036-ch2-easy-beam-recreate-lns]] |
+| 2-opt | Tour-edit operator: reverse a sub-segment of the permutation | [[concepts/C-011-metaheuristic-local-search-routing]] |
+| Or-opt | Tour-edit operator: relocate a sub-segment within the permutation | [[concepts/C-011-metaheuristic-local-search-routing]] |
 | PSO | Particle Swarm Optimization | [[concepts/C-010-memetic-algorithm]] *(comparison)* |
 | BO | Bayesian Optimization | [[concepts/C-009-differential-evolution]] *(comparison)* |
-| CP | Constraint Programming | [[concepts/C-011-cp-sat]] |
-| CP-SAT | OR-Tools' hybrid CP + SAT solver | [[concepts/C-011-cp-sat]] |
-| SAT | Boolean satisfiability problem | [[concepts/C-011-cp-sat]] |
+| CP | Constraint Programming | [[concepts/C-009-constraint-programming-cp-sat]] |
+| CP-SAT | OR-Tools' hybrid CP + SAT solver | [[concepts/C-009-constraint-programming-cp-sat]] |
+| SAT | Boolean satisfiability problem | [[concepts/C-009-constraint-programming-cp-sat]] |
 | NSGA-II | Non-dominated Sorting Genetic Algorithm II (multi-objective Pareto GA) | [[methodology/M-015-cardinality-vs-constraint-satisfaction-framing]] |
 
 ---
