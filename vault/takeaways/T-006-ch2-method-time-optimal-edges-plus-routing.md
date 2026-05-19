@@ -56,8 +56,19 @@ connectivity and the time-optimal edge cost.
 - **Next move:** build the time-optimal edge precompute, re-probe
   density, then the constrained router; bank `small`.
 
+## Step-1 result (2026-05-19)
+
+Parallel time-optimal edge precompute over the **full 200-d
+horizon** (1.5-d global scan + Nelder-Mead): **138 ≤100 m/s edges,
+0 dead-end nodes** (vs 74/9 coarse, 89/3 local) — confirms M-002:
+the "infeasible" appearance was grid-resolution; a feasible
+constrained-Hamiltonian structure exists. `edges_small.npz` =
+{dv, td, tf} matrices. Router (step 2) is now unblocked.
+
 ## Caveats
 
-If even the true cheap graph stays too sparse for a ≤5-exception
-Hamiltonian path, the instance may demand exploiting orbital
-*clusters* explicitly (sequence within near-co-orbital families).
+Edge cost is time-windowed (the stored (t_dep,tof) is the isolated
+global min; chaining needs cheap windows reachable in chronological
+order — windows recur ~periodically, so per-order timing re-solve
+is required). If a ≤5-exception Hamiltonian path is still elusive,
+exploit orbital *clusters* explicitly.

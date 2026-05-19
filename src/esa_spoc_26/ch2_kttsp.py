@@ -169,6 +169,74 @@ def greedy_wait(kt: KTTSP, start, wait=4.0, d_dep=0.3,
     return times + tofs + [float(o) for o in order]
 
 
+def _edge_worker(args):
+    """min Δv for ordered pair (i,j): global t_dep scan over [0,max_time]
+    + tof grid + built-in multi-rev → top-K seeds → Nelder-Mead polish.
+    Returns (i, j, best_dv, t_dep, tof)."""
+    inst, i, j, max_time, min_tof = args
+    kt = _WORKER_KT[0] if _WORKER_KT else KTTSP(inst)
+    from scipy.optimize import minimize
+
+    t_grid = np.arange(0.0, max_time - 1.0, 1.5)          # 1.5-d global
+    tof_grid = np.concatenate([np.arange(0.2, 4, 0.3),
+                               np.arange(4, 30, 2.0)])
+    cands = []
+    for td in t_grid:
+        for tf in tof_grid:
+            dv = kt.compute_transfer(i, j, float(td), float(tf))
+            cands.append((dv, float(td), float(tf)))
+    cands.sort(key=lambda c: c[0])
+    best = cands[0]
+    for _dv0, td0, tf0 in cands[:6]:          # refine the 6 best basins
+        try:
+            r = minimize(
+                lambda p: kt.compute_transfer(
+                    i, j, max(p[0], 0.0),
+                    min(max(p[1], min_tof), max_time)),
+                np.array([td0, tf0]), method="Nelder-Mead",
+                options={"xatol": 1e-3, "fatol": 1e-2, "maxiter": 80},
+            )
+            if r.fun < best[0]:
+                best = (float(r.fun), float(max(r.x[0], 0.0)),
+                        float(min(max(r.x[1], min_tof), max_time)))
+        except Exception:
+            pass
+    return (i, j, best[0], best[1], best[2])
+
+
+_WORKER_KT = []
+
+
+def _init_worker(inst):
+    _WORKER_KT.append(KTTSP(inst))
+
+
+def precompute_edges(inst, n_workers=4,
+                     out="/home/julian/Projects/esa_spoc_26_3/edges_small.npz"):
+    """Parallel time-optimal per-edge Δv matrix + realizing (t_dep,tof)."""
+    import multiprocessing as mp
+
+    kt = KTTSP(inst)
+    n, mt, mtof = kt.n, kt.max_time, kt.min_tof
+    args = [(inst, i, j, mt, mtof)
+            for i in range(n) for j in range(n) if i != j]
+    DV = np.full((n, n), np.inf)
+    TD = np.zeros((n, n))
+    TF = np.zeros((n, n))
+    with mp.Pool(n_workers, initializer=_init_worker,
+                 initargs=(inst,)) as pool:
+        for i, j, dv, td, tf in pool.imap_unordered(_edge_worker, args,
+                                                    chunksize=16):
+            DV[i, j], TD[i, j], TF[i, j] = dv, td, tf
+    np.savez(out, dv=DV, td=TD, tf=TF)
+    le100 = int((DV <= 100).sum())
+    return {"n": n, "edges_le100": le100,
+            "edges_100_600": int(((DV > 100) & (DV <= 600)).sum()),
+            "dead_end_le100": int(((DV <= 100).sum(axis=1) == 0).sum()),
+            "median_outdeg_le100": float(np.median((DV <= 100).sum(axis=1))),
+            "saved": out}
+
+
 def analyze_structure(kt: KTTSP, n_t=10, n_tof=14):
     """M-002 ultrathink probe: pairwise min-Δv over a (t_dep,tof,rev)
     search → reveal the cheap-edge graph structure (is Ch2 a clustered
@@ -225,6 +293,76 @@ def analyze_structure(kt: KTTSP, n_t=10, n_tof=14):
     }
 
 
+def _leg_retime(kt, i, j, t_ready, window=10.0):
+    """Min Δv for (i,j) with t_dep ≥ t_ready over a few orbital periods
+    (cheap windows recur) + tof + multi-rev + local polish.
+    Returns (dv, t_dep, tof)."""
+    from scipy.optimize import minimize
+
+    tg = np.arange(t_ready, min(t_ready + window, kt.max_time - 0.5), 0.25)
+    fg = np.concatenate([np.arange(0.2, 4, 0.3), np.arange(4, 28, 2.0)])
+    best = (np.inf, t_ready, 1.0)
+    for td in tg:
+        for tf in fg:
+            if td + tf > kt.max_time:
+                continue
+            dv = kt.compute_transfer(i, j, float(td), float(tf))
+            if dv < best[0]:
+                best = (dv, float(td), float(tf))
+    try:
+        r = minimize(
+            lambda p: kt.compute_transfer(
+                i, j, max(p[0], t_ready),
+                min(max(p[1], kt.min_tof), kt.max_time - max(p[0], t_ready))),
+            np.array([best[1], best[2]]), method="Nelder-Mead",
+            options={"xatol": 1e-3, "fatol": 1e-2, "maxiter": 60})
+        if r.fun < best[0]:
+            td = max(r.x[0], t_ready)
+            best = (float(r.fun), float(td),
+                    float(min(max(r.x[1], kt.min_tof),
+                              kt.max_time - td)))
+    except Exception:
+        pass
+    return best
+
+
+def route(kt, DV, start, rng):
+    """Cheap-graph-guided nearest-feasible-arrival router with per-leg
+    windowed re-timing and a ≤n_exc exception budget. The DV matrix
+    restricts/orders candidates so we don't strand (E-012 failure)."""
+    n = kt.n
+    unvis = set(range(n)) - {start}
+    order, times, tofs = [start], [], []
+    cur, t_ready, exc = start, 0.0, 0
+    while unvis:
+        # candidate priority: cheap-graph successors first
+        cheap = [j for j in unvis if DV[cur, j] <= 100.0]
+        pool = cheap if cheap else list(unvis)
+        rng.shuffle(pool)
+        best = None  # (is_exc, arrival, dv, j, t_dep, tof)
+        for j in pool[:max(6, len(pool) // 3)]:
+            dv, td, tf = _leg_retime(kt, cur, j, t_ready)
+            if dv > kt.dv_exc + 1e-6:
+                continue
+            is_exc = dv > kt.dv_thr
+            if is_exc and exc >= kt.n_exc:
+                continue
+            key = (is_exc, td + tf, dv)
+            if best is None or key < best[:3]:
+                best = (is_exc, td + tf, dv, j, td, tf)
+        if best is None:
+            return None
+        is_exc, arr, dv, j, td, tf = best
+        times.append(td)
+        tofs.append(tf)
+        t_ready = arr
+        exc += int(is_exc)
+        order.append(j)
+        unvis.discard(j)
+        cur = j
+    return times + tofs + [float(o) for o in order]
+
+
 def solve_small(inst, problem="small", n_starts=8,
                 out="/home/julian/Projects/esa_spoc_26_3/solutions/upload"):
     """Multi-start greedy_wait; keep the best FEASIBLE tour by makespan;
@@ -253,11 +391,47 @@ def solve_small(inst, problem="small", n_starts=8,
             "artifact": str(p)}
 
 
+def route_small(inst, problem="small", n_starts=20,
+                npz="/home/julian/Projects/esa_spoc_26_3/edges_small.npz",
+                out="/home/julian/Projects/esa_spoc_26_3/solutions/upload"):
+    """Structure-aware router: multi-start cheap-graph routing with
+    per-leg re-timing; keep best FEASIBLE by makespan; bank artifact."""
+    from pathlib import Path
+
+    kt = KTTSP(inst)
+    DV = np.load(npz)["dv"]
+    rng = np.random.default_rng(0)
+    best_x = best_f = None
+    starts = list(dict.fromkeys(
+        int(v) for v in np.linspace(0, kt.n - 1,
+                                    min(n_starts, kt.n), dtype=int)))
+    for s in starts:
+        x = route(kt, DV, s, rng)
+        if x is None:
+            continue
+        f = kt.fitness(x)
+        if kt.is_feasible(f) and (best_f is None or f[0] < best_f[0]):
+            best_x, best_f = x, f
+    if best_x is None:
+        return {"problem": problem, "feasible": False,
+                "note": "router found no feasible tour"}
+    p = Path(out) / f"{problem}.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps([{"decisionVector": best_x,
+                              "problem": problem, "challenge": CHALLENGE}]))
+    return {"problem": problem, "n": kt.n, "makespan_d": best_f[0],
+            "feasible": True, "rank3_small_d": 111.76, "artifact": str(p)}
+
+
 if __name__ == "__main__":
     inst = (
         "reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
         "Salesperson Problem/problems/easy.kttsp")
     if len(sys.argv) > 1 and sys.argv[1] == "probe":
         print(json.dumps(analyze_structure(KTTSP(inst)), indent=2))
+    elif len(sys.argv) > 1 and sys.argv[1] == "route":
+        print(json.dumps(route_small(inst), indent=2))
+    elif len(sys.argv) > 1 and sys.argv[1] == "edges":
+        print(json.dumps(precompute_edges(inst), indent=2))
     else:
         print(json.dumps(solve_small(inst), indent=2))
