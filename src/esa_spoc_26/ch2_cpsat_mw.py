@@ -23,7 +23,7 @@ SCALE = 1000  # millidays
 
 
 def solve_mw(inst, problem="small",
-             npz_w="/home/julian/Projects/esa_spoc_26_3/windows_small.npz",
+             npz_w="/home/julian/Projects/esa_spoc_26_3/windows2d_small.npz",
              out="/home/julian/Projects/esa_spoc_26_3/solutions/upload",
              max_s=600.0):
     kt = KTTSP(inst)

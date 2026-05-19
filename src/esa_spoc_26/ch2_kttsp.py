@@ -201,14 +201,16 @@ def _windows_worker(args):
         seg_dv = dvs[start:end]
         idx = start + int(np.argmin(seg_dv))
         wins.append((float(dvs[idx]), float(tds[idx]), float(tof_fix)))
-    # sort by Δv (best first); keep up to max_k well-separated by t_dep
-    wins.sort()
+    # Temporal-coverage diversification: split td range into max_k bins,
+    # take the best (lowest Δv) representative from each bin. Ensures
+    # windows span the full [0, max_time-tof] range so a chronologically
+    # chainable Hamiltonian path has flexibility per arc.
+    edges = np.linspace(0.0, max_time - tof_fix, max_k + 1)
     kept = []
-    for w in wins:
-        if all(abs(w[1] - k[1]) > 1.0 for k in kept):
-            kept.append(w)
-            if len(kept) >= max_k:
-                break
+    for b in range(max_k):
+        cands = [w for w in wins if edges[b] <= w[1] < edges[b + 1]]
+        if cands:
+            kept.append(min(cands))   # min by Δv (first tuple element)
     return i, j, kept
 
 
@@ -245,6 +247,99 @@ def precompute_windows(inst,
             "avg_windows_per_pair": float(counts.mean()),
             "max_windows_pair": int(counts.max()),
             "pairs_with_any_le100": int(((W[..., 0] <= 100).any(axis=-1)).sum()),
+            "saved": npz_out}
+
+
+def _windows2d_worker(args):
+    """Joint (td, tof) scan: per pair (i,j), build a 2D grid of Δv
+    over (td, tof), find local minima ≤ thr_max, return up to max_k
+    representatives diversified across BOTH td and tof. The single-tof
+    precompute was infeasible at the chronological level because the
+    static-optimal tof was ~33d on cheap pairs → 48 legs >> 200d cap.
+    Short-tof low-Δv windows exist when orbital phasing aligns; the
+    joint scan finds them."""
+    inst, i, j, max_time, thr_max, max_k, tofs, td_step = args
+    kt = _WORKER_KT[0] if _WORKER_KT else KTTSP(inst)
+    cand = []  # (Δv, td, tof) tuples ≤ thr_max
+    for tof in tofs:
+        if tof + 0.5 >= max_time:
+            continue
+        n_pts = max(2, int((max_time - tof - 0.5) / td_step) + 1)
+        tds = np.linspace(0.0, max_time - tof - 0.5, n_pts)
+        dvs = np.array([kt.compute_transfer(i, j, float(td), float(tof))
+                        for td in tds])
+        mask = (dvs <= thr_max) & np.isfinite(dvs)
+        if not mask.any():
+            continue
+        k = 0
+        while k < n_pts:
+            if not mask[k]:
+                k += 1
+                continue
+            start = k
+            while k < n_pts and mask[k]:
+                k += 1
+            seg = dvs[start:k]
+            idx = start + int(np.argmin(seg))
+            cand.append((float(dvs[idx]), float(tds[idx]), float(tof)))
+    if not cand:
+        return i, j, []
+    # Diversify across (td, tof) 2D plane: split td range × tof range
+    # into a sqrt(max_k) × sqrt(max_k) grid, pick min-Δv per cell.
+    nx = ny = int(np.ceil(np.sqrt(max_k)))
+    td_edges = np.linspace(0.0, max_time, nx + 1)
+    tof_edges = np.linspace(min(tofs), max(tofs) + 1e-6, ny + 1)
+    bins = {}  # (tx, ty) -> best (Δv, td, tof)
+    for (dv, td, tof) in cand:
+        tx = min(nx - 1, int(np.searchsorted(td_edges, td, "right") - 1))
+        ty = min(ny - 1, int(np.searchsorted(tof_edges, tof, "right") - 1))
+        key = (tx, ty)
+        if key not in bins or dv < bins[key][0]:
+            bins[key] = (dv, td, tof)
+    kept = sorted(bins.values())[:max_k]
+    return i, j, kept
+
+
+def precompute_windows_2d(
+    inst,
+    npz_out="/home/julian/Projects/esa_spoc_26_3/windows2d_small.npz",
+    max_k=12, thr_max=600.0, td_step=1.0,
+    tofs=(0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 24.0, 36.0),
+    n_workers=4,
+):
+    """Joint (td, tof)-grid window precompute. Per pair (i,j), scans
+    Δv(td, tof) over the cartesian product of td_grid × tof_grid, finds
+    local minima ≤ thr_max, returns up to max_k diversified
+    representatives covering both axes. Critical when rank-3 makespan
+    is tight (~112d / 49 nodes ⇒ avg leg 2.3d) but single-tof
+    precompute had median tof 33d."""
+    import multiprocessing as mp
+
+    kt = KTTSP(inst)
+    n = kt.n
+    tofs = tuple(t for t in tofs if t < kt.max_time)
+    args = [(inst, i, j, kt.max_time, thr_max, max_k, tofs, td_step)
+            for i in range(n) for j in range(n) if i != j]
+    W = np.full((n, n, max_k, 3), np.inf)
+    counts = np.zeros((n, n), dtype=int)
+    with mp.Pool(n_workers, initializer=_init_worker,
+                 initargs=(inst,)) as pool:
+        for i, j, wins in pool.imap_unordered(_windows2d_worker, args,
+                                              chunksize=8):
+            for k, w in enumerate(wins):
+                W[i, j, k] = w
+            counts[i, j] = len(wins)
+    np.savez(npz_out, W=W, counts=counts)
+    return {"n": n, "max_k": max_k, "tofs": list(tofs),
+            "windows_le100": int((W[..., 0] <= 100).sum()),
+            "windows_100_600": int(((W[..., 0] > 100)
+                                    & (W[..., 0] <= 600)).sum()),
+            "avg_windows_per_pair": float(counts.mean()),
+            "pairs_with_any_le100": int(((W[..., 0] <= 100)
+                                         .any(axis=-1)).sum()),
+            "median_tof_le100": float(np.median(
+                W[..., 2][W[..., 0] <= 100])) if (W[..., 0] <= 100).any()
+                                              else float("nan"),
             "saved": npz_out}
 
 
@@ -643,5 +738,7 @@ if __name__ == "__main__":
                                                     sample=smp), indent=2))
     elif len(sys.argv) > 1 and sys.argv[1] == "windows":
         print(json.dumps(precompute_windows(inst), indent=2))
+    elif len(sys.argv) > 1 and sys.argv[1] == "windows2d":
+        print(json.dumps(precompute_windows_2d(inst), indent=2))
     else:
         print(json.dumps(solve_small(inst), indent=2))
