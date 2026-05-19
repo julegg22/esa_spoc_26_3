@@ -47,36 +47,39 @@ def _moon_inertial(posvel):
 
 
 def solve_arrival_dv(posvel_arr, a_m, e_m, i_m, tol=1e-6):
-    """Min-norm synodic DV2 s.t. state2moon(arrival+DV2) == (a_m,e_m,i_m).
-    Returns (dv2[3], el) or None if the arrival radius is infeasible for
-    this near-circular target (caller must re-target the coast)."""
+    """Min-norm synodic DV2 so the official `_match_orbit(a_m,e_m,i_m)`
+    passes. Key: the official a-tolerance is L·tol (≈384 m), so if the
+    arrival radius r is within that of a_m, a **circular** orbit at
+    radius r with inclination i_m is accepted (a'=r within tol of a_m;
+    e'≈0 within tol of e_m~1e-7; i'=i_m). We target that achievable
+    orbit, then validate against the official target. Returns
+    (dv2[3], el) or None if r is outside the a-tolerance."""
     r_mf, v_mf = _moon_inertial(posvel_arr)
     r = np.linalg.norm(r_mf)
-    if not (a_m * (1 - e_m) - 1.0 <= r <= a_m * (1 + e_m) + 1.0):
-        return None  # radius out of perilune/apolune band → shooter fixes
+    if abs(r - a_m) >= L * tol:
+        return None  # radius outside the official a-tolerance → coast fixes
 
-    # vis-viva speed for the target orbit at this radius
-    speed = np.sqrt(MU_MOON * (2.0 / r - 1.0 / a_m))
+    speed = np.sqrt(MU_MOON / r)  # circular at the achieved radius
     r_hat = r_mf / r
-    # seed: circular-ish velocity ⟂ r in a plane of inclination i_m
     h_dir = np.array([np.sin(i_m), 0.0, np.cos(i_m)])
     t_hat = np.cross(h_dir, r_hat)
     n = np.linalg.norm(t_hat)
     t_hat = t_hat / n if n > 1e-12 else np.array([0.0, 1.0, 0.0])
     v_seed = speed * t_hat
 
+    # target the *achievable* circular orbit (a=r, e=0, i=i_m)
     def resid(v_mf_try):
         el = pk.ic2par(r_mf.tolist(), v_mf_try.tolist(), MU_MOON)
-        return [(el[0] - a_m) / L, el[1] - e_m, el[2] - i_m]
+        return [(el[0] - r) / L, el[1], el[2] - i_m]
 
     sol = least_squares(resid, v_seed, xtol=1e-14, ftol=1e-14, gtol=1e-14)
     el = pk.ic2par(r_mf.tolist(), sol.x.tolist(), MU_MOON)
+    # validate against the OFFICIAL target (a_m, e_m, i_m)
     ok = (abs(el[0] - a_m) / L < tol and abs(el[1] - e_m) < tol
           and abs(el[2] - i_m) < tol)
     if not ok:
         return None
     # velocity-only impulse at fixed position: synodic DV2 = Δv_inertial / V
-    # (the ±x,y cross-terms and constant offset cancel in the difference)
     dv2 = (sol.x - v_mf) / V
     return dv2, el
 
@@ -101,7 +104,11 @@ def _ta():
             bcp_dyn,
         )
 
-        _TA = hy.taylor_adaptive(bcp_dyn(), [0.0] * 6, tol=1e-12)
+        # MUST match the official scorer's tol (1e-16): over a multi-day
+        # sensitive 3-body arc a looser tol diverges >> the 384 m
+        # a-tolerance, so the DC would optimise a trajectory the scorer
+        # never sees (E-008 failure mode; see C-005 sensitivity caveat).
+        _TA = hy.taylor_adaptive(bcp_dyn(), [0.0] * 6, tol=1e-16)
         _TA.pars[:] = [CR3BP_MU_EARTH_MOON, BCP_MU_S, BCP_RHO_S, BCP_OMEGA_S]
     return _TA
 
@@ -111,31 +118,64 @@ _RE2 = ((6378137.0 + 99000.0) / L) ** 2     # Earth keep-out (R⊕+99 km)
 _RM2 = ((1737400.0 + 30000.0) / L) ** 2     # Moon keep-out (R☾+30 km)
 
 
-def track_to_perilune(pv0, t0, dv0, tmax, n=4000):
-    """Integrate the BCP from pv0 (DV0 applied), sampling to the closest
-    lunar approach. Returns (t_rel, state6, min_r_moon_m, impacted)."""
+def _state_at(pv0, t0, dv0, trel):
+    """Reset the cached integrator to the post-DV0 state and propagate
+    to t0+trel; return the 6-state (or None on integration failure)."""
     ta = _ta()
     ta.time = t0
     ta.state[:] = [pv0[0][0], pv0[0][1], pv0[0][2],
                    pv0[1][0] + dv0[0], pv0[1][1] + dv0[1],
                    pv0[1][2] + dv0[2]]
-    best_d, best_t, best_s = np.inf, 0.0, ta.state.copy()
+    try:
+        ta.propagate_until(t0 + max(trel, 0.0))
+    except Exception:
+        return None
+    return ta.state.copy()
+
+
+def _rm_nd(s):
+    return np.sqrt((s[0] - (1 - _MU)) ** 2 + s[1] ** 2 + s[2] ** 2)
+
+
+def track_to_perilune(pv0, t0, dv0, tmax, n=3000):
+    """Closest lunar approach. Cheap *incremental* fine sweep (one
+    continuous integration) to bracket the perilune, then parabolic
+    vertex interpolation + one exact re-integration (sub-metre).
+    Returns (t_peri, state6, r_peri_m, impacted)."""
+    ta = _ta()
+    ta.time = t0
+    ta.state[:] = [pv0[0][0], pv0[0][1], pv0[0][2],
+                   pv0[1][0] + dv0[0], pv0[1][1] + dv0[1],
+                   pv0[1][2] + dv0[2]]
     dt = tmax / n
+    best_d, best_k, best_s = np.inf, 1, ta.state.copy()
     for k in range(1, n + 1):
         try:
             ta.propagate_until(t0 + k * dt)
         except Exception:
-            return best_t, best_s, best_d * L, True
+            return best_k * dt, best_s, best_d * L, True
         x, y, z = ta.state[0], ta.state[1], ta.state[2]
         if (x + _MU) ** 2 + y * y + z * z < _RE2:
-            return best_t, best_s, best_d * L, True
-        dm = (x - (1 - _MU)) ** 2 + y * y + z * z
-        if dm < _RM2:
-            return best_t, best_s, best_d * L, True
-        d = np.sqrt(dm)
+            return best_k * dt, best_s, best_d * L, True
+        if (x - (1 - _MU)) ** 2 + y * y + z * z < _RM2:
+            return best_k * dt, best_s, best_d * L, True
+        d = np.sqrt((x - (1 - _MU)) ** 2 + y * y + z * z)
         if d < best_d:
-            best_d, best_t, best_s = d, k * dt, ta.state.copy()
-    return best_t, best_s, best_d * L, False
+            best_d, best_k, best_s = d, k, ta.state.copy()
+    # parabolic vertex from the 3 samples bracketing the discrete min
+    if 1 < best_k < n:
+        sm = _state_at(pv0, t0, dv0, (best_k - 1) * dt)
+        sp = _state_at(pv0, t0, dv0, (best_k + 1) * dt)
+        if sm is not None and sp is not None:
+            rm, r0, rp = _rm_nd(sm), best_d, _rm_nd(sp)
+            den = rm - 2 * r0 + rp
+            if abs(den) > 1e-18:
+                frac = 0.5 * (rm - rp) / den  # vertex offset in [-1,1]·dt
+                t_star = (best_k + np.clip(frac, -1.0, 1.0)) * dt
+                sv = _state_at(pv0, t0, dv0, t_star)
+                if sv is not None and _rm_nd(sv) < best_d:
+                    return t_star, sv, _rm_nd(sv) * L, False
+    return best_k * dt, best_s, best_d * L, False
 
 
 def solve_transfer_dc(udp, idE, idL, n_ea=6, t0_grid=(0.0, np.pi)):
