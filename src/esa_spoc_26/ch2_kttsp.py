@@ -231,28 +231,40 @@ def _edge_worker(args):
     kt = _WORKER_KT[0] if _WORKER_KT else KTTSP(inst)
     from scipy.optimize import minimize
 
-    t_grid = np.arange(0.0, max_time - 1.0, 1.5)          # 1.5-d global
-    tof_grid = np.concatenate([np.arange(0.2, 4, 0.3),
-                               np.arange(4, 30, 2.0)])
+    # HIGH-ACCURACY (E-017): fine t_dep over the FULL horizon + long
+    # multi-rev TOF + many local-opt seeds. Cheap windows are narrow &
+    # recur on the synodic-beat period; multi-rev needs long TOF.
+    t_grid = np.arange(0.0, max_time - 0.5, 1.0)
+    tof_grid = np.concatenate([np.arange(0.2, 6, 0.25),
+                               np.arange(6, 80, 2.5)])
     cands = []
     for td in t_grid:
         for tf in tof_grid:
+            if td + tf > max_time:
+                continue
             dv = kt.compute_transfer(i, j, float(td), float(tf))
             cands.append((dv, float(td), float(tf)))
     cands.sort(key=lambda c: c[0])
     best = cands[0]
-    for _dv0, td0, tf0 in cands[:6]:          # refine the 6 best basins
+    seen = []
+    for _dv0, td0, tf0 in cands:             # refine up to 15 distinct basins
+        if any(abs(td0 - s) < 3.0 for s in seen):
+            continue
+        seen.append(td0)
+        if len(seen) > 15:
+            break
         try:
             r = minimize(
                 lambda p: kt.compute_transfer(
                     i, j, max(p[0], 0.0),
-                    min(max(p[1], min_tof), max_time)),
+                    min(max(p[1], min_tof), max_time - max(p[0], 0.0))),
                 np.array([td0, tf0]), method="Nelder-Mead",
-                options={"xatol": 1e-3, "fatol": 1e-2, "maxiter": 80},
+                options={"xatol": 1e-4, "fatol": 1e-3, "maxiter": 150},
             )
             if r.fun < best[0]:
-                best = (float(r.fun), float(max(r.x[0], 0.0)),
-                        float(min(max(r.x[1], min_tof), max_time)))
+                td = float(max(r.x[0], 0.0))
+                best = (float(r.fun), td,
+                        float(min(max(r.x[1], min_tof), max_time - td)))
         except Exception:
             pass
     return (i, j, best[0], best[1], best[2])
