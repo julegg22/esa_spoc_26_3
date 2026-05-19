@@ -11,10 +11,9 @@ These are the primary raw material for the campaign's
 
 ## Index
 
-*(none yet — fresh-start scaffold, 2026-05-18)*
-
 | id | kind | scope | generalizability | status |
 |---|---|---|---|---|
+| [[M-001-proactive-concept-capture\|M-001]] | process-pattern | concept-capture | cross-campaign | confirmed |
 
 ## Proto-paper themes
 

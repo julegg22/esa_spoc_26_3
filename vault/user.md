@@ -102,6 +102,12 @@ stay here.*
   it as a `C-NNN` note in `vault/concepts/`. If the user explicitly
   says "save as concept" (or similar), commit without asking.
   Concept type defined in META.md §11.
+- **Proactive concept capture (hard, 2026-05-19).** Whenever a *new*
+  concept (domain or tool) materially appears in a node/dialogue,
+  write its non-expert `C-NNN` primer in the same commit — don't
+  wait to be asked. Codified in `META.md §11`; rationale +
+  publication framing in
+  [[methodology/M-001-proactive-concept-capture|M-001]].
 
 ## Strategic preferences (this campaign)
 

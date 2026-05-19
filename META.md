@@ -505,11 +505,17 @@ depend on. Written when:
   fresh-context Claude) wouldn't know without background.
 - The user asks for an explanation in-session and opts to preserve
   it.
+- **A new concept materially appears** in any node body or dialogue
+  — write its **non-expert** primer in the *same working unit /
+  commit*, proactively, not deferred until asked. This is a
+  continuous obligation (the concept-side analogue of *commit-on-
+  learn*). Rationale + publication framing:
+  [[methodology/M-001-proactive-concept-capture]].
 
 Concept notes are stable substrate — not append-only, but revise by
 supersession (`status: superseded` + link) rather than rewrite when
-understanding deepens. Ask before committing a concept unless the
-user has explicitly said "save as concept".
+understanding deepens. Proactive capture is the default (per M-001);
+no need to ask first.
 
 **Methodology (`M-NNN`).** Atomic, citable insight about our
 **research process** — the Human + Claude Code dialogue, the
