@@ -170,6 +170,57 @@ def greedy_wait(kt: KTTSP, start, wait=4.0, d_dep=0.3,
     return times + tofs + [float(o) for o in order]
 
 
+def structure_accurate_sampled(inst, sample=60, n_workers=4, seed=0):
+    """Q6: hi-accuracy `_edge_worker` over a node-sample; stats only.
+    For medium/large to test whether the small instance's cluster/
+    feasibility structure generalises at the same edge-search resolution."""
+    import multiprocessing as mp
+
+    kt = KTTSP(inst)
+    n = kt.n
+    nodes = (list(range(n)) if sample >= n
+             else sorted(np.random.default_rng(seed).choice(
+                 n, sample, replace=False).tolist()))
+    pairs = [(inst, i, j, kt.max_time, kt.min_tof)
+             for i in nodes for j in nodes if i != j]
+    M = {}
+    with mp.Pool(n_workers, initializer=_init_worker,
+                 initargs=(inst,)) as pool:
+        for i, j, dv, _td, _tf in pool.imap_unordered(
+                _edge_worker, pairs, chunksize=16):
+            M[(i, j)] = dv
+    vals = np.array(list(M.values()))
+    fin = vals[np.isfinite(vals)]
+    # cluster the sampled subgraph at ≤100
+    idx = {g: k for k, g in enumerate(nodes)}
+    A = np.zeros((len(nodes), len(nodes)), int)
+    for (i, j), d in M.items():
+        if d <= 100.0:
+            A[idx[i], idx[j]] = 1
+            A[idx[j], idx[i]] = 1
+    import scipy.sparse as sp
+    from scipy.sparse.csgraph import connected_components
+    nc, lab = connected_components(sp.csr_matrix(A), directed=False)
+    sizes = sorted(np.bincount(lab).tolist(), reverse=True)
+    outdeg = np.array([sum(M.get((nodes[k], nodes[m]), np.inf) <= 100
+                           for m in range(len(nodes)))
+                       for k in range(len(nodes))])
+    return {
+        "instance": Path(inst).name, "n": n, "sampled_nodes": len(nodes),
+        "pairs": len(M),
+        "frac_le100": round(float((vals <= 100).mean()), 4),
+        "frac_le600": round(float((vals <= 600).mean()), 4),
+        "median_min_dv": round(float(np.median(fin)), 1),
+        "p10_min_dv": round(float(np.percentile(fin, 10)), 1),
+        "min_min_dv": round(float(fin.min()), 1),
+        "le100_components_in_sample": nc,
+        "le100_component_sizes_top": sizes[:8],
+        "dead_end_le100_frac": round(float((outdeg == 0).sum())
+                                     / len(nodes), 3),
+        "median_outdeg_le100": float(np.median(outdeg)),
+    }
+
+
 def _row_min_dv(args):
     """Coarse min-Δv from node i to a set of targets (no local refine);
     fast structural probe. Returns (i, {j: min_dv})."""
@@ -508,5 +559,9 @@ if __name__ == "__main__":
         smp = int(sys.argv[3]) if len(sys.argv) > 3 else None
         print(json.dumps(structure_quick(sys.argv[2], sample=smp),
                          indent=2))
+    elif len(sys.argv) > 2 and sys.argv[1] == "structacc":
+        smp = int(sys.argv[3]) if len(sys.argv) > 3 else 60
+        print(json.dumps(structure_accurate_sampled(sys.argv[2],
+                                                    sample=smp), indent=2))
     else:
         print(json.dumps(solve_small(inst), indent=2))
