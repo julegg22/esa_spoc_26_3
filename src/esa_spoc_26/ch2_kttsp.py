@@ -309,13 +309,16 @@ def _leg_retime(kt, i, j, t_ready, window=10.0):
             dv = kt.compute_transfer(i, j, float(td), float(tf))
             if dv < best[0]:
                 best = (dv, float(td), float(tf))
+    def _obj(p):
+        d = kt.compute_transfer(
+            i, j, max(p[0], t_ready),
+            min(max(p[1], kt.min_tof), kt.max_time - max(p[0], t_ready)))
+        return d if np.isfinite(d) else 1e12  # guard nan/inf (E-013 warn)
+
     try:
-        r = minimize(
-            lambda p: kt.compute_transfer(
-                i, j, max(p[0], t_ready),
-                min(max(p[1], kt.min_tof), kt.max_time - max(p[0], t_ready))),
-            np.array([best[1], best[2]]), method="Nelder-Mead",
-            options={"xatol": 1e-3, "fatol": 1e-2, "maxiter": 60})
+        r = minimize(_obj, np.array([best[1], best[2]]),
+                     method="Nelder-Mead",
+                     options={"xatol": 1e-3, "fatol": 1e-2, "maxiter": 60})
         if r.fun < best[0]:
             td = max(r.x[0], t_ready)
             best = (float(r.fun), float(td),
@@ -335,12 +338,14 @@ def route(kt, DV, start, rng):
     order, times, tofs = [start], [], []
     cur, t_ready, exc = start, 0.0, 0
     while unvis:
-        # candidate priority: cheap-graph successors first
-        cheap = [j for j in unvis if DV[cur, j] <= 100.0]
-        pool = cheap if cheap else list(unvis)
-        rng.shuffle(pool)
+        # principled shortlist (no random truncation — that strands
+        # the tour falsely): all cheap-graph successors + the next best
+        # by precomputed static Δv (a good proxy for retimed cost).
+        uv = sorted(unvis, key=lambda j: DV[cur, j])
+        cheap = [j for j in uv if DV[cur, j] <= 100.0]
+        shortlist = cheap + [j for j in uv if j not in cheap][:8]
         best = None  # (is_exc, arrival, dv, j, t_dep, tof)
-        for j in pool[:max(6, len(pool) // 3)]:
+        for j in shortlist:
             dv, td, tf = _leg_retime(kt, cur, j, t_ready)
             if dv > kt.dv_exc + 1e-6:
                 continue
@@ -391,7 +396,7 @@ def solve_small(inst, problem="small", n_starts=8,
             "artifact": str(p)}
 
 
-def route_small(inst, problem="small", n_starts=20,
+def route_small(inst, problem="small", n_starts=6,
                 npz="/home/julian/Projects/esa_spoc_26_3/edges_small.npz",
                 out="/home/julian/Projects/esa_spoc_26_3/solutions/upload"):
     """Structure-aware router: multi-start cheap-graph routing with
