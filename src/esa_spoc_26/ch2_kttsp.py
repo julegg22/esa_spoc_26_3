@@ -124,28 +124,140 @@ def greedy(kt: KTTSP, start=0, tof_grid=None):
     return times + tofs + [float(o) for o in order]
 
 
-def solve_small(inst, problem="small",
+def greedy_wait(kt: KTTSP, start, wait=4.0, d_dep=0.3,
+                tof_grid=None, prefer_normal=True):
+    """Earliest-feasible-arrival greedy WITH waiting. From each tomato,
+    scan departure times t_dep∈[t_ready, t_ready+wait] and a TOF grid;
+    pick the (j, t_dep, tof) feasible (Δv≤dv_thr, else an exception ≤5)
+    minimising arrival time t_dep+tof (≈ makespan). Chronology holds by
+    construction (t_dep ≥ t_ready = previous arrival)."""
+    if tof_grid is None:
+        tof_grid = np.concatenate([np.arange(0.2, 4, 0.4),
+                                   np.arange(4, 20, 1.5)])
+    n = kt.n
+    unvis = set(range(n)) - {start}
+    order, times, tofs = [start], [], []
+    cur, t_ready, exc = start, 0.0, 0
+    while unvis:
+        best = None  # (arr, t_dep, tof, j, is_exc, dv)
+        for j in unvis:
+            for t_dep in np.arange(t_ready, t_ready + wait + 1e-9, d_dep):
+                for tf in tof_grid:
+                    if t_dep + tf > kt.max_time:
+                        continue
+                    dv = kt.compute_transfer(cur, j, float(t_dep), float(tf))
+                    if dv > kt.dv_exc + 1e-6:
+                        continue
+                    is_exc = dv > kt.dv_thr
+                    if is_exc and exc >= kt.n_exc:
+                        continue
+                    arr = t_dep + tf
+                    rank = (arr, dv) if not prefer_normal else (
+                        is_exc, arr, dv)
+                    if best is None or rank < best[0]:
+                        best = (rank, float(t_dep), float(tf), j, is_exc)
+        if best is None:
+            return None
+        _, t_dep, tf, j, is_exc = best
+        times.append(t_dep)
+        tofs.append(tf)
+        t_ready = t_dep + tf
+        exc += int(is_exc)
+        order.append(j)
+        unvis.discard(j)
+        cur = j
+    return times + tofs + [float(o) for o in order]
+
+
+def analyze_structure(kt: KTTSP, n_t=10, n_tof=14):
+    """M-002 ultrathink probe: pairwise min-Δv over a (t_dep,tof,rev)
+    search → reveal the cheap-edge graph structure (is Ch2 a clustered
+    constrained-Hamiltonian-path problem?)."""
+    n = kt.n
+    t_grid = np.linspace(0.0, min(20.0, kt.max_time * 0.1), n_t)
+    tof_grid = np.concatenate([np.arange(0.2, 4, 0.3),
+                               np.arange(4, 25, 2.0)])[:n_tof]
+    from scipy.optimize import minimize
+
+    def edge_min(i, j):
+        # coarse grid → seed → Nelder-Mead local polish (cheap Δv
+        # windows are narrow; multi-rev handled inside compute_transfer)
+        best, seed = np.inf, (0.0, 1.0)
+        for td in t_grid:
+            for tf in tof_grid:
+                dv = kt.compute_transfer(i, j, float(td), float(tf))
+                if dv < best:
+                    best, seed = dv, (float(td), float(tf))
+        try:
+            r = minimize(
+                lambda p: kt.compute_transfer(
+                    i, j, max(p[0], 0.0),
+                    min(max(p[1], kt.min_tof), kt.max_time)),
+                np.array(seed), method="Nelder-Mead",
+                options={"xatol": 1e-3, "fatol": 1e-2, "maxiter": 60},
+            )
+            best = min(best, float(r.fun))
+        except Exception:
+            pass
+        return best
+
+    M = np.full((n, n), np.inf)
+    for i in range(n):
+        for j in range(n):
+            if i != j:
+                M[i, j] = edge_min(i, j)
+    finite = M[np.isfinite(M)]
+    le100 = int((M <= 100).sum())
+    le600 = int(((M > 100) & (M <= 600)).sum())
+    outdeg100 = (M <= 100).sum(axis=1)
+    return {
+        "n": n,
+        "pairs": n * (n - 1),
+        "min_dv_m_s": {"min": float(finite.min()),
+                       "median": float(np.median(finite)),
+                       "p10": float(np.percentile(finite, 10)),
+                       "max_finite": float(finite.max())},
+        "edges_le100": le100,
+        "edges_100_600": le600,
+        "nodes_with_no_le100_out": int((outdeg100 == 0).sum()),
+        "min_outdeg_le100": int(outdeg100.min()),
+        "median_outdeg_le100": float(np.median(outdeg100)),
+    }
+
+
+def solve_small(inst, problem="small", n_starts=8,
                 out="/home/julian/Projects/esa_spoc_26_3/solutions/upload"):
+    """Multi-start greedy_wait; keep the best FEASIBLE tour by makespan;
+    bank the artifact. Establishes the early valid Ch2 baseline."""
+    from pathlib import Path
+
     kt = KTTSP(inst)
-    x = greedy(kt)
-    if x is None:
+    starts = np.linspace(0, kt.n - 1, min(n_starts, kt.n), dtype=int)
+    best_x, best_f = None, None
+    for s in dict.fromkeys(int(v) for v in starts):
+        x = greedy_wait(kt, s)
+        if x is None:
+            continue
+        f = kt.fitness(x)
+        if kt.is_feasible(f) and (best_f is None or f[0] < best_f[0]):
+            best_x, best_f = x, f
+    if best_x is None:
         return {"problem": problem, "feasible": False,
-                "note": "greedy found no feasible next leg"}
-    f = kt.fitness(x)
-    feas = kt.is_feasible(f)
-    if feas:
-        from pathlib import Path
-        p = Path(out) / f"{problem}.json"
-        p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(json.dumps([{"decisionVector": x, "problem": problem,
-                                  "challenge": CHALLENGE}]))
-    return {"problem": problem, "n": kt.n, "makespan_d": f[0],
-            "perm_c": f[1], "dv_c": f[2], "time_c": f[3], "exc_c": f[4],
-            "feasible": feas, "rank3_small_d": 111.76}
+                "note": "no feasible tour across starts (greedy_wait)"}
+    p = Path(out) / f"{problem}.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps([{"decisionVector": best_x, "problem": problem,
+                              "challenge": CHALLENGE}]))
+    return {"problem": problem, "n": kt.n, "makespan_d": best_f[0],
+            "feasible": True, "rank3_small_d": 111.76,
+            "artifact": str(p)}
 
 
 if __name__ == "__main__":
-    inst = sys.argv[1] if len(sys.argv) > 1 else (
+    inst = (
         "reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
         "Salesperson Problem/problems/easy.kttsp")
-    print(json.dumps(solve_small(inst), indent=2))
+    if len(sys.argv) > 1 and sys.argv[1] == "probe":
+        print(json.dumps(analyze_structure(KTTSP(inst)), indent=2))
+    else:
+        print(json.dumps(solve_small(inst), indent=2))
