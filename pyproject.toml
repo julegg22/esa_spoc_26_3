@@ -33,6 +33,11 @@ select = [
     "NPY",      # numpy-specific
 ]
 
+ignore = [
+    "RUF002",  # ambiguous unicode in docstrings — math notation (μ, θ, ×, ², ẍ) is intentional
+    "RUF003",  # ambiguous unicode in comments — same
+]
+
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["B011"]  # assert usage is fine in tests
 
