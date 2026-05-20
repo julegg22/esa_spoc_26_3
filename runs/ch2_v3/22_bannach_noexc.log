@@ -1,0 +1,21 @@
+Time-expanded model: n=49, n_t=51 (dt=4.0d)
+Arcs: coasting=2450, transfer=18651
+Vars: 21200, solving with HiGHS time_limit=300.0s...
+Status: HighsModelStatus.kTimeLimit, wall=300.1s, obj=inf
+{
+  "problem": "small",
+  "n": 49,
+  "n_t": 51,
+  "dt": 4.0,
+  "n_coast": 2450,
+  "n_xfer": 18651,
+  "n_vars": 21200,
+  "wall_s": 300.1,
+  "status": "HighsModelStatus.kTimeLimit",
+  "obj": Infinity,
+  "rank3_small_d": 111.76,
+  "n_used_xfers": 0,
+  "start": null,
+  "end": null,
+  "mk_var": 0.0
+}

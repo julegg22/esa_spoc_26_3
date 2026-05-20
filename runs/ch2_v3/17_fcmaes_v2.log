@@ -1,0 +1,17 @@
+Problem: n=49, dim=145, bounds shape=(145,)
+Warm-start: encoded mk=142.989 (expect 142.989)
+Launching 32 parallel CMA-ES runs (sigmas: 0.02, 0.1, 0.3), max_evals=30000, workers=4
+  seed=3: fun=142.989
+  seed=0: fun=142.989
+  seed=2: fun=142.989
+  seed=1: fun=142.989
+  seed=6: fun=142.989
+  seed=5: fun=142.989
+  seed=4: fun=142.989
+  seed=7: fun=142.989
+  seed=9: fun=142.989
+  seed=8: fun=142.989
+  seed=10: fun=142.989
+  seed=11: fun=142.989
+  seed=12: fun=142.989
+  seed=13: fun=142.989

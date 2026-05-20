@@ -1,0 +1,17 @@
+Time-expanded model: n=49, n_t=26 (dt=8.0d)
+Arcs: coasting=1225, transfer=15877
+Vars: 17201, solving with HiGHS time_limit=300.0s...
+Status: HighsModelStatus.kInfeasible, wall=7.7s, obj=inf
+{
+  "problem": "small",
+  "n": 49,
+  "n_t": 26,
+  "dt": 8.0,
+  "n_coast": 1225,
+  "n_xfer": 15877,
+  "n_vars": 17201,
+  "wall_s": 7.7,
+  "status": "HighsModelStatus.kInfeasible",
+  "obj": Infinity,
+  "rank3_small_d": 111.76
+}

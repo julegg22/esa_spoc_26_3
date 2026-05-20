@@ -76,10 +76,16 @@ def build_arcs(kt, windows_npz, grid):
                 arr = td + tof
                 if arr > kt.max_time + 1e-6:
                     continue
-                t_idx = _snap_to_grid(td, grid)
-                tp_idx = _snap_to_grid(arr, grid)
+                # Snap td DOWN (floor) and arr UP (ceil) so short arcs
+                # don't collapse to self-loops at coarse dt.
+                step = grid[1] - grid[0]
+                t_idx = max(0, min(len(grid) - 1, int(td / step)))
+                tp_idx = min(len(grid) - 1,
+                             int(np.ceil(arr / step)))
                 if tp_idx <= t_idx:
-                    continue   # must advance time
+                    tp_idx = t_idx + 1
+                if tp_idx >= len(grid):
+                    continue   # arc exceeds horizon
                 transfers.append((i, t_idx, j, tp_idx, float(dv)))
     return coasts, transfers
 
@@ -87,7 +93,7 @@ def build_arcs(kt, windows_npz, grid):
 def build_and_solve(inst, problem="small",
                     npz_w="/home/julian/Projects/esa_spoc_26_3/windows2d_small.npz",
                     out="/home/julian/Projects/esa_spoc_26_3/solutions/upload",
-                    dt=2.0, max_s=600.0):
+                    dt=2.0, max_s=600.0, drop_exception_budget=False):
     kt = KTTSP(inst)
     n = kt.n
     grid = _build_time_grid(kt.max_time, dt)
@@ -202,39 +208,11 @@ def build_and_solve(inst, problem="small",
             # ⇒ Use the AGGREGATED form below, drop per-(α, t).
             pass  # see aggregated flow constraints below
 
-    # Aggregated flow per-(α, t): inflow - outflow = 0 for INTERIOR vertices
-    # AND start/end markers handled at α-level.
-    # We use a TWO-LAYER encoding:
-    # (a) Per-(α, t) conservation when (α, t) is INTERIOR (not start vertex
-    #     and not end vertex):  inflow == outflow
-    # (b) Per-α: Σ (inflow - outflow) over all t = -s[α] + e[α]
-    # Together: enforces ≤1 outflow from start, ≤1 inflow to end, balance
-    # elsewhere.
-    # Implementation: per-(α, t) constraint inflow - outflow == 0 EXCEPT
-    # we relax for (α, 0) by allowing surplus inflow = +s[α], and for
-    # any (α, t) we allow deficit = -e[α].
-    # To keep simple: just enforce per-α-summed constraint:
-    for a in range(n):
-        rows = []
-        # outflow over all (α, t): all coasting from (α, *) + transfers from (α, *)
-        for (aa, t), idx in c_idx.items():
-            if aa == a:
-                rows.append((idx, -1.0))
-        for (aa, tt, bb, tp), idx in x_idx.items():
-            if aa == a:
-                rows.append((idx, -1.0))
-        # inflow over all (α, t): coasting INTO (α, *) (i.e., from (α, t-1)) + transfers TO (α, *)
-        # Coasting from (a, t-1) to (a, t) IS counted as outflow at (a,t-1) but also inflow at (a,t)
-        # net inside-a flow = 0 (canceled). So we just add transfers IN:
-        for (aa, tt, bb, tp), idx in x_idx.items():
-            if bb == a:
-                rows.append((idx, 1.0))
-        # net inflow - outflow = +s[α] - e[α]
-        # (source has surplus +1 outflow; sink has surplus +1 inflow)
-        rows.append((s_idx[a], 1.0))
-        rows.append((e_idx[a], -1.0))
-        if rows:
-            add_row(rows, lower=0.0, upper=0.0)
+    # NOTE: per-α aggregated flow conservation is REDUNDANT with the
+    # per-(α, t) constraints below (and would be wrong if including
+    # coasting arcs, since those cancel out under α-aggregation).
+    # We rely solely on per-(α, t) constraints, which together imply
+    # the per-α aggregate.
 
     # Per-(α, t) conservation: inflow == outflow (for INTERIOR vertices)
     # but with relaxation for (α, 0) (start can have +1) and ENDS:
@@ -283,7 +261,7 @@ def build_and_solve(inst, problem="small",
     for key, idx in x_idx.items():
         if dv_lookup.get(key, 0) > kt.dv_thr:
             exc_rows.append((idx, 1.0))
-    if exc_rows:
+    if exc_rows and not drop_exception_budget:
         add_row(exc_rows, upper=float(kt.n_exc))
 
     # Makespan: mk ≥ t' * x_arc for every transfer arc (with big-M)
@@ -384,4 +362,7 @@ if __name__ == "__main__":
             "Salesperson Problem/problems/easy.kttsp")
     dt = float(sys.argv[1]) if len(sys.argv) > 1 else 2.0
     ms = float(sys.argv[2]) if len(sys.argv) > 2 else 600.0
-    print(json.dumps(build_and_solve(inst, dt=dt, max_s=ms), indent=2))
+    drop_exc = (len(sys.argv) > 3 and sys.argv[3] == "noexc")
+    print(json.dumps(build_and_solve(inst, dt=dt, max_s=ms,
+                                     drop_exception_budget=drop_exc),
+                     indent=2))
