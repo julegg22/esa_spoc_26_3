@@ -1,0 +1,306 @@
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 387.4,
+  "n_full": 0,
+  "results_summary": [
+    {
+      "start": 0,
+      "legs": 16,
+      "ok": false
+    },
+    {
+      "start": 1,
+      "legs": 24,
+      "ok": false
+    },
+    {
+      "start": 2,
+      "legs": 39,
+      "ok": false
+    },
+    {
+      "start": 3,
+      "legs": 37,
+      "ok": false
+    },
+    {
+      "start": 6,
+      "legs": 11,
+      "ok": false
+    },
+    {
+      "start": 4,
+      "legs": 26,
+      "ok": false
+    },
+    {
+      "start": 5,
+      "legs": 39,
+      "ok": false
+    },
+    {
+      "start": 7,
+      "legs": 37,
+      "ok": false
+    },
+    {
+      "start": 8,
+      "legs": 28,
+      "ok": false
+    },
+    {
+      "start": 9,
+      "legs": 23,
+      "ok": false
+    },
+    {
+      "start": 10,
+      "legs": 39,
+      "ok": false
+    },
+    {
+      "start": 11,
+      "legs": 27,
+      "ok": false
+    },
+    {
+      "start": 12,
+      "legs": 39,
+      "ok": false
+    },
+    {
+      "start": 13,
+      "legs": 35,
+      "ok": false
+    },
+    {
+      "start": 14,
+      "legs": 35,
+      "ok": false
+    },
+    {
+      "start": 15,
+      "legs": 24,
+      "ok": false
+    },
+    {
+      "start": 16,
+      "legs": 43,
+      "ok": false
+    },
+    {
+      "start": 19,
+      "legs": 18,
+      "ok": false
+    },
+    {
+      "start": 18,
+      "legs": 43,
+      "ok": false
+    },
+    {
+      "start": 17,
+      "legs": 26,
+      "ok": false
+    },
+    {
+      "start": 22,
+      "legs": 9,
+      "ok": false
+    },
+    {
+      "start": 20,
+      "legs": 31,
+      "ok": false
+    },
+    {
+      "start": 23,
+      "legs": 44,
+      "ok": false
+    },
+    {
+      "start": 21,
+      "legs": 38,
+      "ok": false
+    },
+    {
+      "start": 24,
+      "legs": 30,
+      "ok": false
+    },
+    {
+      "start": 25,
+      "legs": 34,
+      "ok": false
+    },
+    {
+      "start": 26,
+      "legs": 36,
+      "ok": false
+    },
+    {
+      "start": 27,
+      "legs": 40,
+      "ok": false
+    },
+    {
+      "start": 28,
+      "legs": 24,
+      "ok": false
+    },
+    {
+      "start": 29,
+      "legs": 20,
+      "ok": false
+    },
+    {
+      "start": 30,
+      "legs": 23,
+      "ok": false
+    },
+    {
+      "start": 31,
+      "legs": 17,
+      "ok": false
+    },
+    {
+      "start": 32,
+      "legs": 40,
+      "ok": false
+    },
+    {
+      "start": 33,
+      "legs": 37,
+      "ok": false
+    },
+    {
+      "start": 34,
+      "legs": 45,
+      "ok": false
+    },
+    {
+      "start": 35,
+      "legs": 35,
+      "ok": false
+    },
+    {
+      "start": 36,
+      "legs": 16,
+      "ok": false
+    },
+    {
+      "start": 37,
+      "legs": 24,
+      "ok": false
+    },
+    {
+      "start": 39,
+      "legs": 15,
+      "ok": false
+    },
+    {
+      "start": 38,
+      "legs": 29,
+      "ok": false
+    },
+    {
+      "start": 40,
+      "legs": 37,
+      "ok": false
+    },
+    {
+      "start": 41,
+      "legs": 39,
+      "ok": false
+    },
+    {
+      "start": 42,
+      "legs": 40,
+      "ok": false
+    },
+    {
+      "start": 43,
+      "legs": 25,
+      "ok": false
+    },
+    {
+      "start": 44,
+      "legs": 29,
+      "ok": false
+    },
+    {
+      "start": 45,
+      "legs": 21,
+      "ok": false
+    },
+    {
+      "start": 46,
+      "legs": 39,
+      "ok": false
+    },
+    {
+      "start": 47,
+      "legs": 27,
+      "ok": false
+    },
+    {
+      "start": 48,
+      "legs": 22,
+      "ok": false
+    }
+  ],
+  "rank3_small_d": 111.76,
+  "best_partial": {
+    "start": 34,
+    "legs": 45,
+    "perm_so_far": [
+      34,
+      23,
+      18,
+      46,
+      12,
+      10,
+      41,
+      2,
+      25,
+      22,
+      13,
+      20,
+      40,
+      44,
+      5,
+      47,
+      36,
+      31,
+      37,
+      9,
+      48,
+      45,
+      15,
+      28,
+      1,
+      29,
+      30,
+      19,
+      43,
+      0,
+      39,
+      8,
+      38,
+      24,
+      6,
+      35,
+      26,
+      21,
+      7,
+      3,
+      42,
+      14,
+      33,
+      27,
+      16,
+      32
+    ]
+  }
+}
