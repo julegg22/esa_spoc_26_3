@@ -1,0 +1,16 @@
+Model: n=49, arcs=966, windows=18651
+Variables: x=966, y=18651, T=49, s=49, e=49, u=49, mk=1 → total 19814
+Warm-start from /home/julian/Projects/esa_spoc_26_3/solutions/upload/small.json (mk=142.989)
+Solving...
+Status: HighsModelStatus.kTimeLimit, wall=1200.3s
+{
+  "problem": "small",
+  "n": 49,
+  "n_arcs": 966,
+  "n_windows": 18651,
+  "wall_s": 1200.3,
+  "status": "HighsModelStatus.kTimeLimit",
+  "obj": Infinity,
+  "rank3_small_d": 111.76,
+  "mk": 0.0
+}
