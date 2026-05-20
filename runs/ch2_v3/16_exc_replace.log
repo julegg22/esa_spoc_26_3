@@ -1,0 +1,34 @@
+Initial: mk=142.989, perm=[34, 23, 18, 46, 12, 10, 41, 2, 25, 22, 13, 20, 40, 44, 5, 47, 36, 31, 37, 9, 48, 45, 15, 28, 1, 4, 17, 11, 29, 30, 19, 43, 0, 39, 8, 38, 24, 6, 35, 26, 21, 33, 14, 42, 3, 7, 32, 27, 16]
+Exception arcs: [(2, 18, 46, np.float64(565.1871255155836)), (24, 1, 4, np.float64(575.6645125135694)), (27, 11, 29, np.float64(567.6542818022381)), (40, 21, 33, np.float64(527.6995690285289)), (45, 7, 32, np.float64(591.5836576784176))]
+
+--- Removing 46 (dest of exception arc 18→46 @ 565.2 m/s) ---
+    pos=3: mk=142.989
+  best mk=142.989 (Δ=0.000), wall=55.5s
+
+--- Removing 4 (dest of exception arc 1→4 @ 575.7 m/s) ---
+    pos=25: mk=142.989
+  best mk=142.989 (Δ=0.000), wall=85.4s
+
+--- Removing 29 (dest of exception arc 11→29 @ 567.7 m/s) ---
+    pos=22: mk=171.165
+    pos=24: mk=167.560
+    pos=25: mk=167.560
+    pos=28: mk=142.989
+  best mk=142.989 (Δ=0.000), wall=53.7s
+
+--- Removing 33 (dest of exception arc 21→33 @ 527.7 m/s) ---
+    pos=41: mk=142.989
+  best mk=142.989 (Δ=0.000), wall=59.6s
+
+--- Removing 32 (dest of exception arc 7→32 @ 591.6 m/s) ---
+    pos=46: mk=142.989
+  best mk=142.989 (Δ=0.000), wall=91.2s
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 345.5,
+  "initial_mk": 142.989,
+  "final_mk": 142.989,
+  "improvement_d": 0.0,
+  "rank3_small_d": 111.76
+}
