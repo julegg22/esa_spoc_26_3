@@ -55,6 +55,17 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-20 (H-003 polished to 142.99 d; 7 local-search methods converge)** — Continued
+  SA (3×5000 iters, T=80, mixed moves) yielded 1 improvement (143.79→142.99
+  via 2-opt at iter 77 of seed=2). Subsequent: cluster-first opener
+  (refuted, E-024-prelim), MILP Phase 1 cold+warm-start (TimeLimit,
+  no feasible — grid incompatible with NLP refinement), and targeted
+  exception-replacement (0 improvements on all 5 exception destinations,
+  alternatives 167-171d). **Seven distinct local-search methods converge
+  at 142.99 d ⇒ robust local optimum** under the find_transfer+
+  cluster-insertion+chronological-walk framework. Architectural change
+  (full PWL MILP, 4-7d build + Gurobi licence) is the remaining path to
+  close the 31d gap to rank-3 (111.76d). Commits up to 532b573.
 - **2026-05-20 (H-003 banked at 143.79 d after 2-opt polish; pipeline validated)** — After
   E-018 → E-021 chained refutations of discrete CP-SAT (single-window,
   joint (td, tof), 3-mode per-arc — all proven INFEASIBLE), the
