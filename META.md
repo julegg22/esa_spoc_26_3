@@ -92,6 +92,24 @@ defines the canonical tree.
 >   package install in flight) get retried or routed around — they
 >   never silently end the turn while cores remain idle. Procedure
 >   in [[methodology/M-020-idle-cores-are-bugs|M-020]].
+> - **Family-breadth before depth.** The frontier always has
+>   priced hypotheses from **≥ 2 approach families**
+>   ([[methodology/M-003-approach-family-inventory|M-003]]). When
+>   3+ methods *in the same family* converge at the same value,
+>   fire the orthogonal-pivot watchdog
+>   ([[methodology/M-004-convergence-watchdog-across-families|M-004]]):
+>   list 2 untried families, run cheap smoke probes, then decide
+>   whether to commit. Local-search refinement past convergence
+>   without an orthogonal-family probe attempt is an explicit
+>   violation.
+> - **Toolchain audit at bootstrap.** Before any code, inventory
+>   the env (`pip list`), read every helper file in the starter
+>   kit, and inspect any submission / reference URLs. Unusual
+>   libraries are intel about the intended approach. Procedure in
+>   [[lessons/L-005-toolchain-audit-at-task-bootstrap|L-005]].
+>   External intel (winners' toolchains, problem-class libraries)
+>   completes the picture per
+>   [[methodology/M-005-external-intel-survey|M-005]].
 
 ## 3. Vault layout
 
