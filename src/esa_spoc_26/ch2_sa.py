@@ -79,27 +79,28 @@ def cluster_bridge_move(perm, rng, cluster=(4, 17, 11)):
 
 
 def ruin_recreate(kt, perm, rng, k=4):
-    """Remove k random nodes (not the first/start), greedy-reinsert."""
+    """Remove k random nodes (not position 0), greedy-reinsert by partial-
+    walk feasibility. Only the FINAL full perm is checked via fitness;
+    intermediate insertions use walk_perm_chrono on the partial chain."""
     n = len(perm)
     rm_idx = rng.choice(np.arange(1, n), size=k, replace=False).tolist()
     removed = [perm[i] for i in rm_idx]
     rng.shuffle(removed)
-    base = [perm[i] for i in range(n) if i not in rm_idx]
-    # Walk base, then greedy-insert removed at best feasible position
-    # Simplistic: insert each removed at the position with min Δmk
-    # (full re-eval per insertion — costly).
-    cur = list(base)
+    cur = [perm[i] for i in range(n) if i not in rm_idx]
     for node in removed:
-        best = (float("inf"), None, None)
+        best = None  # (intermediate_mk, cand)
         for pos in range(1, len(cur) + 1):
             cand = [*cur[:pos], node, *cur[pos:]]
-            mk, _x, feas = evaluate(kt, cand)
-            if feas and mk < best[0]:
-                best = (mk, pos, cand)
-        if best[1] is None:
+            times, tofs, _, ok, _, _ = walk_perm_chrono(kt, cand)
+            if not ok:
+                continue
+            mk = times[-1] + tofs[-1] if times else 0.0
+            if best is None or mk < best[0]:
+                best = (mk, cand)
+        if best is None:
             return None
-        cur = best[2]
-    return cur
+        cur = best[1]
+    return cur if len(cur) == n else None
 
 
 def sa(kt, perm0, n_iters=600, T_start=8.0, T_end=0.05,

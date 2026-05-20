@@ -1,0 +1,15 @@
+start=23: legs=44, missing=[4, 8, 11, 17]
+insertions tried: 1080, feasible (per fitness): 0
+{
+  "start": 23,
+  "legs_partial": 44,
+  "missing": [
+    4,
+    8,
+    11,
+    17
+  ],
+  "n_feasible_insertions": null,
+  "wall_s": 2204.7,
+  "feasible": false
+}
