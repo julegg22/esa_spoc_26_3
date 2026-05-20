@@ -1,3 +1,17 @@
 Initial mk: 143.791, n=49
   [it 700] best=143.791, cur=182.996, T=34.578, acc=34, imp=0, none=33, infeas=632, wall=1576.9s
   [it 1000] best=143.791, cur=183.480, T=24.137, acc=49, imp=0, none=45, infeas=902, wall=2142.6s
+  [it 4900] best=143.791, cur=169.465, T=0.225, acc=128, imp=0, none=251, infeas=4447, wall=9651.5s
+SA done: best=143.791, accepted=128/5000, improvements=0, wall=9820.6s
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 9821.1,
+  "initial_mk": 143.791,
+  "final_mk": 143.791,
+  "feasible": true,
+  "improvement_d": 0.0,
+  "n_iters": 5000,
+  "seed": 0,
+  "rank3_small_d": 111.76
+}
