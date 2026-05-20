@@ -1,0 +1,12 @@
+Initial makespan: 143.791
+  iter 1: best mk=143.79, wall=3002.1s
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 3002.7,
+  "initial_mk": 143.791,
+  "final_mk": 143.791,
+  "feasible": true,
+  "improvement_d": 0.0,
+  "rank3_small_d": 111.76
+}
