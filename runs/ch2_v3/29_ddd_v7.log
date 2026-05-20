@@ -1,0 +1,122 @@
+[iter 0] n_intervals_total=196, transfers=5235, coasts=147
+  status=HighsModelStatus.kOptimal, mk=100.0, wall=9.82s, n_used=48
+  perm complete; fitness=[25.5, 0, 0, -38, 0], feas=False
+[iter 1] n_intervals_total=392, transfers=10532, coasts=343
+  status=HighsModelStatus.kTimeLimit, mk=inf, wall=180.03s, n_used=0
+[iter 2] n_intervals_total=784, transfers=15486, coasts=735
+  status=HighsModelStatus.kTimeLimit, mk=inf, wall=180.11s, n_used=0
+[iter 3] n_intervals_total=1568, transfers=17811, coasts=1519
+  status=HighsModelStatus.kTimeLimit, mk=inf, wall=180.05s, n_used=0
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 554.3,
+  "iters": 4,
+  "rank3_small_d": 111.76,
+  "history": [
+    {
+      "status": "HighsModelStatus.kOptimal",
+      "wall_s": 9.82,
+      "obj": 100.0,
+      "n_vars": 5481,
+      "n_intervals": 196,
+      "n_xfer": 5235,
+      "n_used_xfers": 48,
+      "start": 41,
+      "end": 32,
+      "mk_var": 100.0,
+      "transfers_summary": {
+        "n_used": 48
+      },
+      "iter": 0,
+      "fitness": [
+        25.5,
+        0,
+        0,
+        -38,
+        0
+      ],
+      "feasible": false,
+      "perm": [
+        41,
+        10,
+        12,
+        46,
+        2,
+        25,
+        23,
+        18,
+        34,
+        22,
+        13,
+        20,
+        40,
+        44,
+        5,
+        47,
+        36,
+        31,
+        37,
+        17,
+        4,
+        11,
+        9,
+        48,
+        15,
+        45,
+        1,
+        28,
+        29,
+        30,
+        19,
+        43,
+        0,
+        39,
+        8,
+        38,
+        24,
+        6,
+        35,
+        26,
+        21,
+        7,
+        42,
+        3,
+        33,
+        14,
+        16,
+        27,
+        32
+      ]
+    },
+    {
+      "status": "HighsModelStatus.kTimeLimit",
+      "wall_s": 180.03,
+      "obj": Infinity,
+      "n_vars": 10974,
+      "n_intervals": 392,
+      "n_xfer": 10532,
+      "iter": 1
+    },
+    {
+      "status": "HighsModelStatus.kTimeLimit",
+      "wall_s": 180.11,
+      "obj": Infinity,
+      "n_vars": 16320,
+      "n_intervals": 784,
+      "n_xfer": 15486,
+      "iter": 2
+    },
+    {
+      "status": "HighsModelStatus.kTimeLimit",
+      "wall_s": 180.05,
+      "obj": Infinity,
+      "n_vars": 19429,
+      "n_intervals": 1568,
+      "n_xfer": 17811,
+      "iter": 3
+    }
+  ],
+  "best_mk": null,
+  "best_perm": null
+}

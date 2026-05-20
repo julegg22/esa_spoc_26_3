@@ -1,0 +1,5 @@
+[iter 0] n_intervals_total=196, transfers=5235, coasts=147
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=15.28s, n_used=0
+[iter 1] n_intervals_total=392, transfers=10532, coasts=343
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=78.83s, n_used=0
+[iter 2] n_intervals_total=784, transfers=15486, coasts=735

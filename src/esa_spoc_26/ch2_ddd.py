@@ -118,7 +118,8 @@ def build_interval_model(kt, npz_w, intervals_per_a):
 
 
 def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
-                        max_s=120.0, drop_exception=False):
+                        max_s=120.0, drop_exception=False,
+                        minimal=True):
     """Solve the MILP for the time-interval network. Returns
     (status, solution_dict, perm_recovered_or_None)."""
     n = kt.n
@@ -180,33 +181,30 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
         if in_rows:
             add(in_rows, lower=1.0, upper=1.0)
 
-    # Flow per-(α, k) interval-vertex
-    for a in range(n):
-        bps = intervals_per_a[a]
-        n_iv = len(bps) - 1
-        for k in range(n_iv):
-            rows = []
-            # Coast in
-            if k > 0 and (a, k - 1) in c_idx:
-                rows.append((c_idx[(a, k - 1)], 1.0))
-            # Transfers in
-            for (aa, kk, bb, kp), idx in x_idx.items():
-                if bb == a and kp == k:
-                    rows.append((idx, 1.0))
-            # Coast out
-            if k < n_iv - 1 and (a, k) in c_idx:
-                rows.append((c_idx[(a, k)], -1.0))
-            # Transfers out
-            for (aa, kk, bb, kp), idx in x_idx.items():
-                if aa == a and kk == k:
-                    rows.append((idx, -1.0))
-            # Source / sink markers
-            if k == 0:
-                rows.append((s_idx[a], 1.0))
-            if k == n_iv - 1:
-                rows.append((e_idx[a], -1.0))
-            if rows:
-                add(rows, lower=0.0, upper=0.0)
+    # Per-(α, k) flow conservation: only enforced when NOT minimal mode
+    # (minimal mode relies on MTZ + per-α Ham-path constraints).
+    if not minimal:
+        for a in range(n):
+            bps = intervals_per_a[a]
+            n_iv = len(bps) - 1
+            for k in range(n_iv):
+                rows = []
+                if k > 0 and (a, k - 1) in c_idx:
+                    rows.append((c_idx[(a, k - 1)], 1.0))
+                for (aa, kk, bb, kp), idx in x_idx.items():
+                    if bb == a and kp == k:
+                        rows.append((idx, 1.0))
+                if k < n_iv - 1 and (a, k) in c_idx:
+                    rows.append((c_idx[(a, k)], -1.0))
+                for (aa, kk, bb, kp), idx in x_idx.items():
+                    if aa == a and kk == k:
+                        rows.append((idx, -1.0))
+                if k == 0:
+                    rows.append((s_idx[a], 1.0))
+                if k == n_iv - 1:
+                    rows.append((e_idx[a], -1.0))
+                if rows:
+                    add(rows, lower=0.0, upper=0.0)
 
     # Exception budget
     if not drop_exception:
@@ -229,14 +227,46 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
     u_idx = {a: u_base + a for a in range(n)}
     for _ in range(n):
         h.addVar(0.0, float(n - 1))   # u_α continuous in [0, n-1]
-    # u of start = 0 → u_α ≤ M(1 - s[α]) is too restrictive in MILP.
-    # Use a softer form: u_α ≥ 1 if s[α]=0 (interior or end has u ≥ 1).
-    # Skip; the MTZ chain implicitly fixes the order.
+    # u[start_α] = 0: u_α ≤ (n-1)·(1 - s_α)
+    for a in range(n):
+        add([(u_idx[a], 1.0), (s_idx[a], float(n - 1))],
+            upper=float(n - 1))
+    # MTZ chain: u_a - u_b + n · x ≤ n - 1 for each transfer arc
     for (a, k, b, kp, _dv, _td, _tof) in transfers:
-        # u_a - u_b + n · x ≤ n - 1
         add([(u_idx[a], 1.0), (u_idx[b], -1.0),
              (x_idx[(a, k, b, kp)], float(n))],
             upper=float(n - 1))
+
+    # Chronology — T_α continuous, "arrival time at α".
+    # For each incoming arc to α: T_α = end_time[(α, kp)] when x = 1.
+    # For each outgoing arc from α: T_α ≤ start_time[(α, k)] when x = 1.
+    # Big-M form (M = kt.max_time + 10).
+    M = kt.max_time + 10.0
+    T_base = mk_idx + 1 + n
+    T_a_idx = {a: T_base + a for a in range(n)}
+    for _ in range(n):
+        h.addVar(0.0, kt.max_time)   # T_α continuous
+    # T_start = 0: T_α ≤ M·(1 - s_α) → T_α + M·s_α ≤ M
+    for a in range(n):
+        add([(T_a_idx[a], 1.0), (s_idx[a], M)], upper=M)
+    # For each transfer arc:
+    #   T_β ≥ end_time[(β, kp)] − M(1 − x)   ⇒ T_β + M·x ≥ end + M − M (move terms)
+    #   T_β ≤ end_time[(β, kp)] + M(1 − x)   ⇒ T_β − M·x ≤ end + M − M
+    # For T_α ≤ start_time[(α, k)] + M(1 − x):
+    #   T_α + M·x ≤ start + M
+    for (a, k, b, kp, _dv, td_repr, tof_repr) in transfers:
+        x = x_idx[(a, k, b, kp)]
+        # Use the arc's REPRESENTATIVE (td, tof), not interval boundaries
+        td_actual = float(td_repr)
+        arr_actual = float(td_repr + tof_repr)
+        # When x=1: T_β = arr_actual
+        add([(T_a_idx[b], 1.0), (x, M)], upper=arr_actual + M)
+        add([(T_a_idx[b], 1.0), (x, -M)], lower=arr_actual - M)
+        # When x=1: T_α ≤ td_actual (depart no later than this arc's td)
+        add([(T_a_idx[a], 1.0), (x, M)], upper=td_actual + M)
+    # mk ≥ T_α for all α (so mk is the maximum arrival time)
+    for a in range(n):
+        add([(mk_idx, 1.0), (T_a_idx[a], -1.0)], lower=0.0)
 
     h.setOptionValue("time_limit", float(max_s))
     h.setOptionValue("mip_rel_gap", 0.02)
@@ -276,36 +306,38 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
 
 def reconstruct_and_check(kt, used_transfers, start_a):
     """Build a decision vector from used transfers and check feasibility.
-    Returns (perm, times, tofs, dvs, fitness, feasible) or None on
-    inconsistency."""
+    With per-α Ham constraints, each α has exactly one out-arc. Build
+    adj_by_alpha[α] = (β, td, tof) and follow the α-chain."""
     n = kt.n
     if not used_transfers:
         return None
-    # Build adjacency: (a, k) → (b, kp, td, tof)
+    # adj_by_alpha: α → (β, td, tof). Per-α Ham constraint ⇒ unique.
     adj = {}
     for (a, k, b, kp, _dv, td, tof) in used_transfers:
-        adj[(a, k)] = (b, kp, td, tof)
-    # Find start vertex (start_a at the smallest interval index from which
-    # there's an outgoing arc — typically (start_a, 0))
-    cur = None
-    for k in range(50):
-        if (start_a, k) in adj:
-            cur = (start_a, k)
-            break
-    if cur is None:
-        return None
+        if a in adj:
+            # multiple out arcs — Ham constraint violated; take the
+            # smallest-k as canonical (chronologically earliest)
+            prev_b, prev_td, prev_tof = adj[a]
+            if td < prev_td:
+                adj[a] = (b, td, tof)
+        else:
+            adj[a] = (b, td, tof)
     perm = [start_a]
     times, tofs = [], []
     visited = {start_a}
+    cur = start_a
     for _ in range(n - 1):
         if cur not in adj:
             break
-        b, kp, td, tof = adj[cur]
+        b, td, tof = adj[cur]
+        if b in visited:
+            # subtour detected; stop
+            break
         perm.append(b)
         times.append(td)
         tofs.append(tof)
         visited.add(b)
-        cur = (b, kp)
+        cur = b
     return perm, times, tofs
 
 

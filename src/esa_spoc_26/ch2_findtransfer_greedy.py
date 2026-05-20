@@ -198,7 +198,10 @@ def search(inst, problem="small",
 
 if __name__ == "__main__":
     import sys
-    inst = ("reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
-            "Salesperson Problem/problems/easy.kttsp")
+    # Default to small (easy) instance; override via CLI arg 2
+    instance_name = sys.argv[2] if len(sys.argv) > 2 else "easy"
+    inst = (f"reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
+            f"Salesperson Problem/problems/{instance_name}.kttsp")
     starts = int(sys.argv[1]) if len(sys.argv) > 1 else 49
-    print(json.dumps(search(inst, n_starts=starts), indent=2))
+    print(json.dumps(search(inst, n_starts=starts,
+                            problem=instance_name), indent=2))
