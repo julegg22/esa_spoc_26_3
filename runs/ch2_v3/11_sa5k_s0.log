@@ -1,0 +1,3 @@
+Initial mk: 143.791, n=49
+  [it 700] best=143.791, cur=182.996, T=34.578, acc=34, imp=0, none=33, infeas=632, wall=1576.9s
+  [it 1000] best=143.791, cur=183.480, T=24.137, acc=49, imp=0, none=45, infeas=902, wall=2142.6s
