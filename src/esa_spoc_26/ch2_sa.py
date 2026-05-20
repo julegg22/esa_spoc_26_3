@@ -38,8 +38,11 @@ def evaluate(kt, perm):
 
 def two_opt_move(perm, rng):
     n = len(perm)
-    i = rng.integers(0, n - 1)
-    j = rng.integers(i + 2, n)
+    if n < 4:
+        return None
+    # i in [0, n-3] so i+2 <= n-1 and rng.integers(i+2, n) is valid
+    i = int(rng.integers(0, n - 2))
+    j = int(rng.integers(i + 2, n))
     return perm[:i + 1] + perm[i + 1:j + 1][::-1] + perm[j + 1:]
 
 
@@ -53,6 +56,30 @@ def or_opt_move(perm, rng):
     rem = perm[:k] + perm[k + 1:]
     pos = target if target < k else target - 1
     return [*rem[:pos], node, *rem[pos:]]
+
+
+def big_segment_reverse(perm, rng, cluster=(4, 17, 11), seg_len=(3, 8)):
+    """Reverse a contiguous big-cluster sub-segment, *not crossing* the
+    small cluster. Stronger than 2-opt by avoiding the brittle bridge
+    region; useful when cluster moves are nearly always infeasible."""
+    n = len(perm)
+    cset = set(cluster)
+    cidx = [i for i, v in enumerate(perm) if v in cset]
+    if not cidx:
+        return None
+    c_lo, c_hi = min(cidx), max(cidx)
+    # Pick reverse window on EITHER side of the cluster
+    L = int(rng.integers(seg_len[0], seg_len[1] + 1))
+    if rng.random() < 0.5:
+        if c_lo - L - 1 <= 1:
+            return None
+        s = int(rng.integers(1, c_lo - L - 1))
+    else:
+        if c_hi + 1 + L >= n - 1:
+            return None
+        s = int(rng.integers(c_hi + 1, n - L - 1))
+    e = s + L
+    return perm[:s] + perm[s:e + 1][::-1] + perm[e + 1:]
 
 
 def cluster_bridge_move(perm, rng, cluster=(4, 17, 11)):
@@ -78,18 +105,24 @@ def cluster_bridge_move(perm, rng, cluster=(4, 17, 11)):
     return [*rem[:new_pos], *perm_in, *rem[new_pos:]]
 
 
-def ruin_recreate(kt, perm, rng, k=4):
-    """Remove k random nodes (not position 0), greedy-reinsert by partial-
-    walk feasibility. Only the FINAL full perm is checked via fitness;
-    intermediate insertions use walk_perm_chrono on the partial chain."""
+def ruin_recreate(kt, perm, rng, k=3, n_pos_sample=8):
+    """Remove k random nodes (not position 0), greedy-reinsert each at
+    the best of `n_pos_sample` randomly-sampled positions (cheap, not
+    exhaustive). Returns None if any node has no feasible insertion."""
     n = len(perm)
+    if k >= n - 1:
+        return None
     rm_idx = rng.choice(np.arange(1, n), size=k, replace=False).tolist()
     removed = [perm[i] for i in rm_idx]
     rng.shuffle(removed)
     cur = [perm[i] for i in range(n) if i not in rm_idx]
     for node in removed:
         best = None  # (intermediate_mk, cand)
-        for pos in range(1, len(cur) + 1):
+        positions = list(range(1, len(cur) + 1))
+        if len(positions) > n_pos_sample:
+            positions = rng.choice(positions, size=n_pos_sample,
+                                   replace=False).tolist()
+        for pos in positions:
             cand = [*cur[:pos], node, *cur[pos:]]
             times, tofs, _, ok, _, _ = walk_perm_chrono(kt, cand)
             if not ok:
@@ -103,13 +136,13 @@ def ruin_recreate(kt, perm, rng, k=4):
     return cur if len(cur) == n else None
 
 
-def sa(kt, perm0, n_iters=600, T_start=8.0, T_end=0.05,
-       move_weights=None, intensify_every=80, seed=0, verbose=True):
+def sa(kt, perm0, n_iters=600, T_start=80.0, T_end=0.2,
+       move_weights=None, intensify_every=100, seed=0, verbose=True):
     """Run SA from perm0; return (best_perm, best_x, best_mk)."""
     rng = np.random.default_rng(seed)
     if move_weights is None:
-        move_weights = {"2opt": 0.4, "oropt": 0.3,
-                        "cluster": 0.15, "ruin": 0.15}
+        move_weights = {"2opt": 0.25, "oropt": 0.20, "bigseg": 0.40,
+                        "cluster": 0.10, "ruin": 0.05}
     cur_perm = list(perm0)
     cur_mk, cur_x, ok = evaluate(kt, cur_perm)
     if not ok:
@@ -122,6 +155,8 @@ def sa(kt, perm0, n_iters=600, T_start=8.0, T_end=0.05,
     t0 = time.time()
     n_acc = 0
     n_imp = 0
+    n_none = 0   # move returned None / bad shape
+    n_infeas = 0  # candidate evaluated infeasible
     for it in range(n_iters):
         move = rng.choice(list(move_weights.keys()),
                           p=list(move_weights.values()))
@@ -129,18 +164,22 @@ def sa(kt, perm0, n_iters=600, T_start=8.0, T_end=0.05,
             cand = two_opt_move(cur_perm, rng)
         elif move == "oropt":
             cand = or_opt_move(cur_perm, rng)
+        elif move == "bigseg":
+            cand = big_segment_reverse(cur_perm, rng)
         elif move == "cluster":
             cand = cluster_bridge_move(cur_perm, rng)
         elif move == "ruin":
-            cand = ruin_recreate(kt, cur_perm, rng, k=4)
+            cand = ruin_recreate(kt, cur_perm, rng, k=3)
         else:
             cand = None
         if cand is None or len(cand) != len(cur_perm) \
                 or len(set(cand)) != len(cur_perm):
+            n_none += 1
             T *= cooling
             continue
         mk, x, ok = evaluate(kt, cand)
         if not ok:
+            n_infeas += 1
             T *= cooling
             continue
         d = mk - cur_mk
@@ -160,10 +199,10 @@ def sa(kt, perm0, n_iters=600, T_start=8.0, T_end=0.05,
                           flush=True)
         T *= cooling
         if (it + 1) % intensify_every == 0 and verbose:
-            print(f"  [intensify] iter {it}: best={best_mk:.3f}, "
-                  f"cur={cur_mk:.3f}, T={T:.3f}, "
-                  f"wall={time.time()-t0:.1f}s, acc={n_acc}, imp={n_imp}",
-                  flush=True)
+            print(f"  [it {it+1}] best={best_mk:.3f}, cur={cur_mk:.3f}, "
+                  f"T={T:.3f}, acc={n_acc}, imp={n_imp}, "
+                  f"none={n_none}, infeas={n_infeas}, "
+                  f"wall={time.time()-t0:.1f}s", flush=True)
     if verbose:
         print(f"SA done: best={best_mk:.3f}, accepted={n_acc}/{n_iters}, "
               f"improvements={n_imp}, wall={time.time()-t0:.1f}s",
