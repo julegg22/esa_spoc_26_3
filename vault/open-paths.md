@@ -1,7 +1,7 @@
 ---
 id: OPEN-PATHS
 type: frontier
-updated: 2026-05-18
+updated: 2026-05-20
 tags: [frontier]
 ---
 
@@ -27,9 +27,10 @@ ROI = expected_points / max(estimated_effort_h, 0.25).
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| [[hypotheses/H-003-ch2-small-lambert-metaheuristic\|H-003]] | Ch2 small | 8 | 8 | 1.0 | **ACTIVE** — Ch2 KTTSP (time-dependent orbital ATSP, O-005); greenfield, rank-3 ≤111.76 d |
+| H-003 polish | Ch2 small | +2–4 | 4 | 0.75 | reduce 145.8d → 112d via 2-opt + multi-seed insertion; topk running |
+| H-007 (Ch2 medium) | Ch2 medium | 8 | 12 | 0.67 | reuse find_transfer + cluster-insertion pipeline; same structure (Q6 confirmed pending) |
 
-(Ch1 matching banked ≈11 pts. H-002 timeboxed→paused (pipeline asset, T-005). Compute pivots to Ch2 per user 2026-05-19.)
+(Ch1 matching banked ≈11 pts. **Ch2 small banked 145.80 d = ~3–5 pts** via E-022 find_transfer + cluster-insertion. H-002 paused.)
 
 ### Closed
 
@@ -54,6 +55,19 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-20 (H-003 banked at 145.80 d; pipeline validated)** — After
+  E-018 → E-021 chained refutations of discrete CP-SAT (single-window,
+  joint (td, tof), 3-mode per-arc — all proven INFEASIBLE), the
+  breakthrough came from re-reading the official `find_transfer`
+  helper: it returns the EARLIEST tof at fixed t_start where Δv ≤ thr,
+  inverting the precompute target. Parallel `greedy_findxfer` over 49
+  starts (mp.Pool, 4 workers) → best partial = 45 legs from start=34,
+  missing the 3-node small cluster {17, 11, 4}. Cluster-insertion LNS
+  (46 positions × 6 orderings) inserts the small cluster mid-tour via
+  two 540–576 m/s exception bridges → **first banked Ch2 small at
+  makespan 145.80 d, 4 of 5 exceptions used**. Ratio to rank-3 (111.76):
+  1.305 ⇒ likely rank 6–10 (~3–5 pts). Polish frontier opened
+  (top-K insertion + 2-opt). E-022; T-008 v2; commits 9a4ae68 + topk.
 - **2026-05-19 (H-002 timeboxed→paused; pivot to Ch2 H-003)** — Five
   shooting iterations (E-006..E-011) + one timeboxed pygmo global
   attempt: validation pipeline fully proven (E-008, banked asset)

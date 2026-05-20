@@ -1,0 +1,17 @@
+Greedy partial computation (mp pool)...
+top 10 partials by legs:
+  start=34, legs=45, missing=[4, 11, 17]
+  start=23, legs=44, missing=[4, 8, 11, 17]
+  start=18, legs=43, missing=[4, 6, 11, 17, 24]
+  start=16, legs=43, missing=[4, 11, 17, 21, 26]
+  start=42, legs=40, missing=[4, 11, 16, 17, 21, 26, 27, 32]
+  start=32, legs=40, missing=[1, 4, 11, 15, 17, 21, 26, 28]
+  start=27, legs=40, missing=[1, 4, 11, 15, 17, 21, 26, 28]
+  start=46, legs=39, missing=[1, 4, 11, 15, 17, 18, 23, 28, 34]
+  start=41, legs=39, missing=[1, 4, 11, 15, 17, 18, 23, 28, 34]
+  start=12, legs=39, missing=[1, 4, 11, 15, 17, 18, 23, 28, 34]
+
+Inserting [4, 11, 17] into partial(start=34, legs=45)
+  BEST INSERTION: mk=145.80, n_feas=48
+
+Inserting [4, 8, 11, 17] into partial(start=23, legs=44)
