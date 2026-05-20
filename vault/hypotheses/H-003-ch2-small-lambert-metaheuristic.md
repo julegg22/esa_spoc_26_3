@@ -14,8 +14,9 @@ created: 2026-05-18
 tested_start: 2026-05-18
 tested_end: 2026-05-20
 duration_testing: 2 days
-verdict: confirmed (banked at makespan 145.80d, 4/5 exceptions; rank-3 = 111.76d; ratio 1.305 ⇒ ~3–5 pts at rank 6–10)
+verdict: confirmed (banked at makespan 143.79d after 2-opt polish; rank-3 = 111.76d; ratio 1.286 ⇒ ~3–5 pts at rank 6–10)
 banked: solutions/upload/small.json
+polish_history: "145.80 (E-022 cluster-insertion) → 144.49 (2-opt round 1, 1 swap) → 143.79 (2-opt round 2, 1 swap, converged)"
 
 effort_person_hours:
 expected_points: 8           # rank-3 on A_1 ×1

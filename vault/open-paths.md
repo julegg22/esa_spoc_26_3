@@ -55,7 +55,7 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
-- **2026-05-20 (H-003 banked at 145.80 d; pipeline validated)** — After
+- **2026-05-20 (H-003 banked at 143.79 d after 2-opt polish; pipeline validated)** — After
   E-018 → E-021 chained refutations of discrete CP-SAT (single-window,
   joint (td, tof), 3-mode per-arc — all proven INFEASIBLE), the
   breakthrough came from re-reading the official `find_transfer`
@@ -65,9 +65,10 @@ after the user picks (META.md §6). Expectations cut per [[user]]
   missing the 3-node small cluster {17, 11, 4}. Cluster-insertion LNS
   (46 positions × 6 orderings) inserts the small cluster mid-tour via
   two 540–576 m/s exception bridges → **first banked Ch2 small at
-  makespan 145.80 d, 4 of 5 exceptions used**. Ratio to rank-3 (111.76):
-  1.305 ⇒ likely rank 6–10 (~3–5 pts). Polish frontier opened
-  (top-K insertion + 2-opt). E-022; T-008 v2; commits 9a4ae68 + topk.
+  makespan 145.80 d, 4 of 5 exceptions used**. Subsequent 2-opt polish
+  (two 25-min rounds, one swap per round, converged) →
+  **143.79 d**. Ratio to rank-3 (111.76): 1.286
+  ⇒ likely rank 6–10 (~3–5 pts). E-022, polish; commits up to 741fdca.
 - **2026-05-19 (H-002 timeboxed→paused; pivot to Ch2 H-003)** — Five
   shooting iterations (E-006..E-011) + one timeboxed pygmo global
   attempt: validation pipeline fully proven (E-008, banked asset)
