@@ -40,4 +40,5 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["B011"]  # assert usage is fine in tests
+"src/esa_spoc_26/ch2_bannach_milp.py" = ["B007"]  # tuple-key dict iteration: unpacked vars used selectively
 
