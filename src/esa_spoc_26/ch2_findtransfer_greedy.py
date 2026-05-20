@@ -125,31 +125,50 @@ def greedy_findxfer(kt, start, tof_window=12.0, n_steps=120,
     return perm, times, tofs, dvs, True
 
 
+_WORKER_KT_FX = [None]
+
+
+def _init_worker_fx(inst):
+    _WORKER_KT_FX[0] = KTTSP(inst)
+
+
+def _worker_search(args):
+    st, tof_window, n_steps = args
+    kt = _WORKER_KT_FX[0]
+    perm, times, tofs, dvs, ok = greedy_findxfer(
+        kt, start=st, tof_window=tof_window, n_steps=n_steps,
+        verbose=False)
+    return st, perm, times, tofs, dvs, ok
+
+
 def search(inst, problem="small",
            out="/home/julian/Projects/esa_spoc_26_3/solutions/upload",
-           tof_window=12.0, n_steps=120, n_starts=49, verbose=False):
+           tof_window=12.0, n_steps=120, n_starts=49, n_workers=4,
+           verbose=False):
+    import multiprocessing as mp
     kt = KTTSP(inst)
     best_full = None
     best_partial = None
     results = []
     t0 = time.time()
-    for st in range(min(n_starts, kt.n)):
-        if time.time() - t0 > 1800:
-            break
-        perm, times, tofs, dvs, ok = greedy_findxfer(
-            kt, start=st, tof_window=tof_window, n_steps=n_steps,
-            verbose=verbose)
-        legs = len(perm) - 1
-        if ok and legs == kt.n - 1:
-            mk = times[-1] + tofs[-1]
-            results.append({"start": st, "mk": round(mk, 2), "legs": legs,
-                            "n_exc": sum(1 for d in dvs if d > kt.dv_thr)})
-            if best_full is None or mk < best_full[0]:
-                best_full = (mk, st, perm, times, tofs, dvs)
-        else:
-            results.append({"start": st, "legs": legs, "ok": ok})
-            if best_partial is None or legs > best_partial[0]:
-                best_partial = (legs, st, perm, times, tofs, dvs)
+    args = [(st, tof_window, n_steps)
+            for st in range(min(n_starts, kt.n))]
+    with mp.Pool(n_workers, initializer=_init_worker_fx,
+                 initargs=(inst,)) as pool:
+        for st, perm, times, tofs, dvs, ok in pool.imap_unordered(
+                _worker_search, args):
+            legs = len(perm) - 1
+            if ok and legs == kt.n - 1:
+                mk = times[-1] + tofs[-1]
+                results.append({"start": st, "mk": round(mk, 2),
+                                "legs": legs,
+                                "n_exc": sum(1 for d in dvs if d > kt.dv_thr)})
+                if best_full is None or mk < best_full[0]:
+                    best_full = (mk, st, perm, times, tofs, dvs)
+            else:
+                results.append({"start": st, "legs": legs, "ok": ok})
+                if best_partial is None or legs > best_partial[0]:
+                    best_partial = (legs, st, perm, times, tofs, dvs)
     wall = time.time() - t0
     info = {"problem": problem, "n": kt.n, "wall_s": round(wall, 1),
             "n_full": sum(1 for r in results if r.get("legs") == kt.n - 1),
