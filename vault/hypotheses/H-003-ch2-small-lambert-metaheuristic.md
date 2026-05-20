@@ -1,19 +1,21 @@
 ---
 id: H-003
 type: hypothesis
-status: open
+status: closed (banked rank-6–10 estimate; polish frontier open)
 tags: [ch2, astrodynamics, lambert, metaheuristic]
 
 parent: "[[Q-001-rank3-each-regular-instance]]"
 question: "[[Q-001-rank3-each-regular-instance]]"
-children_experiments: ["[[E-012-ch2-greedy-baseline-infeasible]]", "[[E-013-ch2-structure-sparse-cheap-graph]]", "[[E-014-ch2-constructive-routers-refuted]]", "[[E-015-ch2-cpsat-optimal-but-time-coupling-breaks]]", "[[E-016-ch2-lns-infeasible-cluster-structure]]", "[[E-017-ch2-cluster-infeasible-root-cause]]"]
+children_experiments: ["[[E-012-ch2-greedy-baseline-infeasible]]", "[[E-013-ch2-structure-sparse-cheap-graph]]", "[[E-014-ch2-constructive-routers-refuted]]", "[[E-015-ch2-cpsat-optimal-but-time-coupling-breaks]]", "[[E-016-ch2-lns-infeasible-cluster-structure]]", "[[E-017-ch2-cluster-infeasible-root-cause]]", "[[E-018-ch2-cpsat-fullhorizon-still-infeasible]]", "[[E-019-ch2-edge-compute-marginal-value-zero]]", "[[E-020-ch2-cpsat-mw-singletof-infeasible]]", "[[E-021-ch2-cpsat-mw-v2-infeasible-diagnostics]]", "[[E-022-ch2-banked-145d-cluster-insertion]]"]
 children_hypotheses: []
 concurrent_with: ["[[H-001-ch1-matching-mip]]", "[[H-002-ch1-trajectory-greedy]]"]
 
 created: 2026-05-18
-tested_start:
-tested_end:
-duration_testing:
+tested_start: 2026-05-18
+tested_end: 2026-05-20
+duration_testing: 2 days
+verdict: confirmed (banked at makespan 145.80d, 4/5 exceptions; rank-3 = 111.76d; ratio 1.305 ⇒ ~3–5 pts at rank 6–10)
+banked: solutions/upload/small.json
 
 effort_person_hours:
 expected_points: 8           # rank-3 on A_1 ×1
