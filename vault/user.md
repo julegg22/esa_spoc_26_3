@@ -114,6 +114,13 @@ stay here.*
   and audit load-bearing assumptions against ground truth
   (verified-vs-believed). Codified in `META.md §15`;
   [[methodology/M-002-stuck-triggers-ultrathink-reframe|M-002]].
+- **Never wait for user choice — always continue (hard, 2026-05-20).**
+  Strengthening of *ask-but-never-stall*. When facing a decision
+  point that calls for user input, commit to the strongest option
+  on own judgement and proceed without delay. Posing the question
+  is fine, but never let it gate compute. The user explicitly
+  prefers parallel-progress over wait-for-confirmation; veto-after-
+  the-fact is the recovery channel.
 
 ## Strategic preferences (this campaign)
 
