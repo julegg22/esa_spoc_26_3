@@ -1,0 +1,16 @@
+Initial perm: [34, 23, 18, 46, 12]...[3, 7, 27, 16, 32]
+Initial makespan: 144.493
+  2-opt (45,47): mk 144.49 → 143.79 (Δ=0.70)
+  iter 1: best mk=143.79, wall=1429.5s
+  iter 2: best mk=143.79, wall=2700.8s
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 2701.3,
+  "initial_mk": 144.493,
+  "final_mk": 143.791,
+  "feasible": true,
+  "improvement_d": 0.702,
+  "rank3_small_d": 111.76,
+  "artifact": "/home/julian/Projects/esa_spoc_26_3/solutions/upload/small.json"
+}
