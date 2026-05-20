@@ -160,15 +160,25 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
     add([(s_idx[a], 1.0) for a in range(n)], lower=1.0, upper=1.0)
     add([(e_idx[a], 1.0) for a in range(n)], lower=1.0, upper=1.0)
 
-    # Departure: each α must depart at least once OR be end
+    # Hamiltonian-path enforcement: EXACTLY 1 outgoing per α (transfer-out
+    # or be end). And EXACTLY 1 incoming per α (transfer-in or be start).
     for a in range(n):
-        rows = []
+        # outgoing
+        out_rows = []
         for (aa, k, b, kp), idx in x_idx.items():
             if aa == a:
-                rows.append((idx, 1.0))
-        rows.append((e_idx[a], 1.0))
-        if rows:
-            add(rows, lower=1.0)
+                out_rows.append((idx, 1.0))
+        out_rows.append((e_idx[a], 1.0))
+        if out_rows:
+            add(out_rows, lower=1.0, upper=1.0)
+        # incoming
+        in_rows = []
+        for (aa, k, b, kp), idx in x_idx.items():
+            if b == a:
+                in_rows.append((idx, 1.0))
+        in_rows.append((s_idx[a], 1.0))
+        if in_rows:
+            add(in_rows, lower=1.0, upper=1.0)
 
     # Flow per-(α, k) interval-vertex
     for a in range(n):
@@ -212,6 +222,22 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
         add([(mk_idx, 1.0), (x_idx[(a, k, b, kp)], -float(end_time[(b, kp)]))],
             lower=0.0)
 
+    # MTZ subtour elimination (per-α): u_α ∈ [0, n-1]; for each transfer
+    # arc x_{(α,k),(β,k')}: u_α - u_β + n·x ≤ n - 1. Enforces u_β = u_α+1
+    # when arc used (single connected chain).
+    u_base = mk_idx + 1
+    u_idx = {a: u_base + a for a in range(n)}
+    for _ in range(n):
+        h.addVar(0.0, float(n - 1))   # u_α continuous in [0, n-1]
+    # u of start = 0 → u_α ≤ M(1 - s[α]) is too restrictive in MILP.
+    # Use a softer form: u_α ≥ 1 if s[α]=0 (interior or end has u ≥ 1).
+    # Skip; the MTZ chain implicitly fixes the order.
+    for (a, k, b, kp, _dv, _td, _tof) in transfers:
+        # u_a - u_b + n · x ≤ n - 1
+        add([(u_idx[a], 1.0), (u_idx[b], -1.0),
+             (x_idx[(a, k, b, kp)], float(n))],
+            upper=float(n - 1))
+
     h.setOptionValue("time_limit", float(max_s))
     h.setOptionValue("mip_rel_gap", 0.02)
     t0 = time.time()
@@ -226,8 +252,9 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
               "obj": obj, "n_vars": n_vars,
               "n_intervals": n_intervals,
               "n_xfer": n_xfer}
-    if status not in (highspy.HighsModelStatus.kOptimal,
-                      highspy.HighsModelStatus.kFeasible):
+    # HiGHS uses kOptimal (final) and kTimeLimit / kObjectiveBound
+    # for intermediate-feasible. Accept any status with a non-inf obj.
+    if obj is None or not np.isfinite(obj):
         return status, result, None
 
     # Recover perm
@@ -242,7 +269,8 @@ def solve_interval_milp(kt, intervals_per_a, coasts, transfers,
     result["start"] = start_a
     result["end"] = end_a
     result["mk_var"] = sol.col_value[mk_idx]
-    result["transfers"] = used
+    # numpy → python for JSON serialisation
+    result["transfers_summary"] = {"n_used": len(used)}
     return status, result, used
 
 

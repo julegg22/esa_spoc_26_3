@@ -1,0 +1,33 @@
+[iter 0] n_intervals_total=196, transfers=5235, coasts=147
+  status=HighsModelStatus.kOptimal, mk=200.0, wall=2.23s, n_used=78
+  perm incomplete (3/49); refining
+[iter 1] n_intervals_total=392, transfers=10532, coasts=343
+  status=HighsModelStatus.kOptimal, mk=200.0, wall=12.51s, n_used=69
+  perm incomplete (2/49); refining
+[iter 2] n_intervals_total=784, transfers=15486, coasts=735
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=19.5s, n_used=0
+[iter 3] n_intervals_total=1568, transfers=17811, coasts=1519
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=29.31s, n_used=0
+[iter 4] n_intervals_total=3136, transfers=18562, coasts=3087
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=66.72s, n_used=0
+[iter 5] n_intervals_total=6272, transfers=18647, coasts=6223
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=41.49s, n_used=0
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_ddd.py", line 394, in <module>
+    print(json.dumps(ddd(inst, n_init=n_init, max_iters=max_iters,
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         milp_time_s=mt, total_time_s=tt), indent=2))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/json/__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type int64 is not JSON serializable

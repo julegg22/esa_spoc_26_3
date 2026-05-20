@@ -1,0 +1,93 @@
+[iter 0] n_intervals_total=196, transfers=5235, coasts=147
+  status=HighsModelStatus.kOptimal, mk=200.0, wall=2.02s, n_used=48
+  perm incomplete (2/49); refining
+[iter 1] n_intervals_total=392, transfers=10532, coasts=343
+  status=HighsModelStatus.kOptimal, mk=200.0, wall=14.12s, n_used=48
+  perm incomplete (11/49); refining
+[iter 2] n_intervals_total=784, transfers=15486, coasts=735
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=32.05s, n_used=0
+[iter 3] n_intervals_total=1568, transfers=17811, coasts=1519
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=35.31s, n_used=0
+[iter 4] n_intervals_total=3136, transfers=18562, coasts=3087
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=41.86s, n_used=0
+[iter 5] n_intervals_total=6272, transfers=18647, coasts=6223
+  status=HighsModelStatus.kInfeasible, mk=inf, wall=36.86s, n_used=0
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 192.6,
+  "iters": 6,
+  "rank3_small_d": 111.76,
+  "history": [
+    {
+      "status": "HighsModelStatus.kOptimal",
+      "wall_s": 2.02,
+      "obj": 200.0,
+      "n_vars": 5481,
+      "n_intervals": 196,
+      "n_xfer": 5235,
+      "n_used_xfers": 48,
+      "start": 9,
+      "end": 39,
+      "mk_var": 200.0,
+      "transfers_summary": {
+        "n_used": 48
+      },
+      "iter": 0
+    },
+    {
+      "status": "HighsModelStatus.kOptimal",
+      "wall_s": 14.12,
+      "obj": 200.0,
+      "n_vars": 10974,
+      "n_intervals": 392,
+      "n_xfer": 10532,
+      "n_used_xfers": 48,
+      "start": 6,
+      "end": 36,
+      "mk_var": 200.0,
+      "transfers_summary": {
+        "n_used": 48
+      },
+      "iter": 1
+    },
+    {
+      "status": "HighsModelStatus.kInfeasible",
+      "wall_s": 32.05,
+      "obj": Infinity,
+      "n_vars": 16320,
+      "n_intervals": 784,
+      "n_xfer": 15486,
+      "iter": 2
+    },
+    {
+      "status": "HighsModelStatus.kInfeasible",
+      "wall_s": 35.31,
+      "obj": Infinity,
+      "n_vars": 19429,
+      "n_intervals": 1568,
+      "n_xfer": 17811,
+      "iter": 3
+    },
+    {
+      "status": "HighsModelStatus.kInfeasible",
+      "wall_s": 41.86,
+      "obj": Infinity,
+      "n_vars": 21748,
+      "n_intervals": 3136,
+      "n_xfer": 18562,
+      "iter": 4
+    },
+    {
+      "status": "HighsModelStatus.kInfeasible",
+      "wall_s": 36.86,
+      "obj": Infinity,
+      "n_vars": 24969,
+      "n_intervals": 6272,
+      "n_xfer": 18647,
+      "iter": 5
+    }
+  ],
+  "best_mk": null,
+  "best_perm": null
+}

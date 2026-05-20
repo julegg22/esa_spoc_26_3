@@ -1,0 +1,18 @@
+[iter 0] n_intervals_total=196, transfers=5235, coasts=147
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_ddd.py", line 420, in <module>
+    print(json.dumps(ddd(inst, n_init=n_init, max_iters=max_iters,
+                     ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         milp_time_s=mt, total_time_s=tt), indent=2))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_ddd.py", line 340, in ddd
+    _status, info, used = solve_interval_milp(
+                          ~~~~~~~~~~~~~~~~~~~^
+        kt, intervals_per_a, coasts, transfers, max_s=milp_time_s)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_ddd.py", line 228, in solve_interval_milp
+    u_idx = {a: h.numCols for a in range(n)}
+                ^^^^^^^^^
+AttributeError: 'Highs' object has no attribute 'numCols'
