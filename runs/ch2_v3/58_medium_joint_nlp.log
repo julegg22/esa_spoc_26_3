@@ -1,0 +1,18 @@
+Initial: mk=274.5171 d
+Joint NLP: 360 vars, 540 inequality constraints, warm-start mk=274.5171
+Optimization terminated successfully    (Exit mode 0)
+            Current function value: 274.5169715095907
+            Iterations: 4
+            Function evaluations: 5
+            Gradient evaluations: 4
+  SLSQP done: status=0, nit=4, fun=274.5170, wall=32.0s
+Polished: mk=274.5170, fitness=[np.float64(274.5169715095907), 0, 0, 0, 0], feas=True
+{
+  "problem": "medium",
+  "n": 181,
+  "initial_mk": 274.5170643051061,
+  "polished_mk": 274.5169715095907,
+  "feasible": true,
+  "delta_d": 9.279551539975728e-05,
+  "rank3_small_d": 111.76
+}

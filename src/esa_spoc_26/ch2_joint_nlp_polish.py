@@ -98,8 +98,11 @@ def joint_polish(kt, perm, times0, tofs0, cap_per_leg,
 def main(in_path="/home/julian/Projects/esa_spoc_26_3/solutions/upload/small.json",
          out="/home/julian/Projects/esa_spoc_26_3/solutions/upload",
          problem="small", maxiter=300):
+    # Map problem name to KTTSP instance filename
+    inst_name = {"small": "easy", "medium": "medium",
+                 "large": "large"}.get(problem, problem)
     inst = ("reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
-            "Salesperson Problem/problems/easy.kttsp")
+            f"Salesperson Problem/problems/{inst_name}.kttsp")
     kt = KTTSP(inst)
     with open(in_path) as fh:
         data = json.load(fh)
