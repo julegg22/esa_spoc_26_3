@@ -1,0 +1,110 @@
+=== pass 1 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 17.4,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 2 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.3,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 3 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.4,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 4 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.8,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 5 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.6,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 6 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.2,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 7 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 17.3,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 8 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 18.4,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 9 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.4,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}
+=== pass 10 ===
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 17.2,
+  "initial_mk": 142.9202261255974,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.0,
+  "rank3_small_d": 111.76
+}

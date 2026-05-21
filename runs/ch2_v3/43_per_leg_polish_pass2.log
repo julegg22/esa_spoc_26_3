@@ -1,0 +1,15 @@
+Initial: mk=142.9528 d
+Original exceptions: 5
+Polished: mk=142.9202, fitness=[142.9202261255974, 0, 0, 0, 0], feas=True
+Δmk = 0.0326 d, wall=16.8 s
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 16.8,
+  "initial_mk": 142.95281297011005,
+  "polished_mk": 142.9202261255974,
+  "feasible": true,
+  "delta_d": 0.03258684451265026,
+  "rank3_small_d": 111.76,
+  "banked": "/home/julian/Projects/esa_spoc_26_3/solutions/upload/small.json"
+}
