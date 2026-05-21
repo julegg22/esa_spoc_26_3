@@ -81,8 +81,10 @@ def cluster_missing_nodes(kt, missing, thr_cheap=100.0):
 
 def insert_cluster(kt, partial_perm, cluster):
     """Enumerate all positions × all orderings of `cluster` in
-    `partial_perm`; return the best feasible insertion or None.
-    Skips combinatorial explosions (k > 5)."""
+    `partial_perm`; return the best chronologically-feasible
+    insertion or None. For PARTIAL perms (length < n), uses
+    walk_perm_chrono feasibility (legs all reachable + Δv ≤ exc).
+    Final-perm fitness check is the caller's responsibility."""
     if len(cluster) > 5:
         return None
     L = len(partial_perm)
@@ -95,17 +97,19 @@ def insert_cluster(kt, partial_perm, cluster):
             times, tofs, _, ok, _, _ = walk_perm_chrono(kt, cand)
             if not ok:
                 continue
+            if not times:
+                continue
             mk = times[-1] + tofs[-1]
-            x = times + tofs + [float(v) for v in cand]
-            f = kt.fitness(x)
-            if kt.is_feasible(f) and (best is None or mk < best[0]):
+            if best is None or mk < best[0]:
                 best = (mk, cand, times, tofs)
     return best
 
 
 def greedy_insert_node(kt, perm, node, tof_window=18.0, n_steps=180):
     """Re-insert a single node into perm at the best position by
-    chronological walk + makespan minimisation."""
+    chronological walk + makespan minimisation. Returns the best
+    chronologically-feasible insertion; final-perm fitness check is
+    the caller's responsibility."""
     best = None
     for pos in range(1, len(perm) + 1):
         cand = [*perm[:pos], node, *perm[pos:]]
@@ -113,10 +117,10 @@ def greedy_insert_node(kt, perm, node, tof_window=18.0, n_steps=180):
             kt, cand, tof_window=tof_window, n_steps=n_steps)
         if not ok:
             continue
-        mk = times[-1] + tofs[-1] if times else 0.0
-        x = times + tofs + [float(v) for v in cand]
-        f = kt.fitness(x)
-        if kt.is_feasible(f) and (best is None or mk < best[0]):
+        if not times:
+            continue
+        mk = times[-1] + tofs[-1]
+        if best is None or mk < best[0]:
             best = (mk, cand, times, tofs)
     return best
 
