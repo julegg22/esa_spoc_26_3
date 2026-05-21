@@ -34,7 +34,8 @@ from esa_spoc_26.ch2_kttsp import CHALLENGE, KTTSP
 
 
 def optimise_leg(kt, i, j, t_ready, dv_cap, wait_max=30.0,
-                 tof_min=None, tof_max=None, n_starts=8):
+                 tof_min=None, tof_max=None, n_starts=8,
+                 original_td=None, original_tof=None):
     """Find (td, tof) minimising arrival = td + tof subject to
     Δv(i, j, td, tof) ≤ dv_cap, td ≥ t_ready, tof_min ≤ tof ≤ tof_max,
     td + tof ≤ kt.max_time. Multi-start scipy.minimize."""
@@ -63,7 +64,21 @@ def optimise_leg(kt, i, j, t_ready, dv_cap, wait_max=30.0,
     for td_off in td_offsets:
         for tof_s in tofs_seed:
             seeds.append([t_ready + td_off, tof_s])
+    # ALSO seed from the original (td, tof) if provided — anchors the
+    # search at a known-feasible point so we never degrade.
+    if original_td is not None and original_tof is not None:
+        td_orig = max(float(original_td), t_ready)
+        seeds.append([td_orig, float(original_tof)])
+    # Pre-evaluate seeds to find a starting "best"
     best = None  # (arrival, td, tof, dv)
+    if original_td is not None and original_tof is not None:
+        td_o = max(float(original_td), t_ready)
+        tof_o = float(original_tof)
+        if (td_o + tof_o <= kt.max_time + 1e-6
+                and tof_o >= tof_min - 1e-6):
+            dv_o = kt.compute_transfer(i, j, td_o, tof_o)
+            if dv_o <= dv_cap + 1e-6:
+                best = (td_o + tof_o, td_o, tof_o, dv_o)
     for s in seeds:
         if s[0] + s[1] > kt.max_time:
             continue
@@ -122,7 +137,13 @@ def polish(inst, problem="small",
     for k in range(n - 1):
         i, j = perm[k], perm[k + 1]
         cap = cap_per_leg[k]
-        result = optimise_leg(kt, i, j, t_ready, cap)
+        # Use the original (td, tof) — shifted to t_ready if needed —
+        # as a warm-start seed so the polish never degrades.
+        orig_td = max(times0[k], t_ready)
+        orig_tof = tofs0[k]
+        result = optimise_leg(kt, i, j, t_ready, cap,
+                              original_td=orig_td,
+                              original_tof=orig_tof)
         if result is None:
             # Fallback: keep original
             td_orig = max(times0[k], t_ready)

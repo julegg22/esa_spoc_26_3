@@ -1,0 +1,14 @@
+Initial: mk=142.9888 d
+Original exceptions: 5
+Polished: mk=199.8094, fitness=[199.80942153372666, 0, 0, 0, 0], feas=True
+Δmk = -56.8206 d, wall=13.7 s
+{
+  "problem": "small",
+  "n": 49,
+  "wall_s": 13.7,
+  "initial_mk": 142.9888268156424,
+  "polished_mk": 199.80942153372666,
+  "feasible": true,
+  "delta_d": -56.820594718084266,
+  "rank3_small_d": 111.76
+}
