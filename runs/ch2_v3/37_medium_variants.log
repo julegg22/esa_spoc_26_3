@@ -1,0 +1,251 @@
+Sweep: 40 (start, mode) variants
+{
+  "problem": "medium",
+  "wall_s": 6754.6,
+  "n_variants": 40,
+  "rows": [
+    {
+      "start": 0,
+      "mode": "dv",
+      "legs": 92,
+      "ok": false
+    },
+    {
+      "start": 0,
+      "mode": "tof",
+      "legs": 108,
+      "ok": false
+    },
+    {
+      "start": 0,
+      "mode": "arrival",
+      "legs": 109,
+      "ok": false
+    },
+    {
+      "start": 0,
+      "mode": "hybrid",
+      "legs": 112,
+      "ok": false
+    },
+    {
+      "start": 1,
+      "mode": "arrival",
+      "legs": 53,
+      "ok": false
+    },
+    {
+      "start": 1,
+      "mode": "tof",
+      "legs": 53,
+      "ok": false
+    },
+    {
+      "start": 1,
+      "mode": "hybrid",
+      "legs": 53,
+      "ok": false
+    },
+    {
+      "start": 1,
+      "mode": "dv",
+      "legs": 108,
+      "ok": false
+    },
+    {
+      "start": 2,
+      "mode": "arrival",
+      "legs": 88,
+      "ok": false
+    },
+    {
+      "start": 2,
+      "mode": "tof",
+      "legs": 88,
+      "ok": false
+    },
+    {
+      "start": 2,
+      "mode": "dv",
+      "legs": 116,
+      "ok": false
+    },
+    {
+      "start": 2,
+      "mode": "hybrid",
+      "legs": 92,
+      "ok": false
+    },
+    {
+      "start": 3,
+      "mode": "arrival",
+      "legs": 137,
+      "ok": false
+    },
+    {
+      "start": 3,
+      "mode": "dv",
+      "legs": 140,
+      "ok": false
+    },
+    {
+      "start": 3,
+      "mode": "tof",
+      "legs": 147,
+      "ok": false
+    },
+    {
+      "start": 3,
+      "mode": "hybrid",
+      "legs": 155,
+      "ok": false
+    },
+    {
+      "start": 4,
+      "mode": "arrival",
+      "legs": 130,
+      "ok": false
+    },
+    {
+      "start": 4,
+      "mode": "dv",
+      "legs": 128,
+      "ok": false
+    },
+    {
+      "start": 4,
+      "mode": "hybrid",
+      "legs": 125,
+      "ok": false
+    },
+    {
+      "start": 4,
+      "mode": "tof",
+      "legs": 136,
+      "ok": false
+    },
+    {
+      "start": 5,
+      "mode": "arrival",
+      "legs": 114,
+      "ok": false
+    },
+    {
+      "start": 5,
+      "mode": "dv",
+      "legs": 116,
+      "ok": false
+    },
+    {
+      "start": 5,
+      "mode": "hybrid",
+      "legs": 93,
+      "ok": false
+    },
+    {
+      "start": 5,
+      "mode": "tof",
+      "legs": 124,
+      "ok": false
+    },
+    {
+      "start": 6,
+      "mode": "arrival",
+      "legs": 132,
+      "ok": false
+    },
+    {
+      "start": 6,
+      "mode": "dv",
+      "legs": 135,
+      "ok": false
+    },
+    {
+      "start": 6,
+      "mode": "tof",
+      "legs": 143,
+      "ok": false
+    },
+    {
+      "start": 6,
+      "mode": "hybrid",
+      "legs": 133,
+      "ok": false
+    },
+    {
+      "start": 7,
+      "mode": "arrival",
+      "legs": 77,
+      "ok": false
+    },
+    {
+      "start": 7,
+      "mode": "dv",
+      "legs": 110,
+      "ok": false
+    },
+    {
+      "start": 7,
+      "mode": "tof",
+      "legs": 90,
+      "ok": false
+    },
+    {
+      "start": 7,
+      "mode": "hybrid",
+      "legs": 130,
+      "ok": false
+    },
+    {
+      "start": 8,
+      "mode": "dv",
+      "legs": 108,
+      "ok": false
+    },
+    {
+      "start": 8,
+      "mode": "arrival",
+      "legs": 118,
+      "ok": false
+    },
+    {
+      "start": 8,
+      "mode": "tof",
+      "legs": 124,
+      "ok": false
+    },
+    {
+      "start": 8,
+      "mode": "hybrid",
+      "legs": 133,
+      "ok": false
+    },
+    {
+      "start": 9,
+      "mode": "arrival",
+      "legs": 86,
+      "ok": false
+    },
+    {
+      "start": 9,
+      "mode": "dv",
+      "legs": 95,
+      "ok": false
+    },
+    {
+      "start": 9,
+      "mode": "tof",
+      "legs": 102,
+      "ok": false
+    },
+    {
+      "start": 9,
+      "mode": "hybrid",
+      "legs": 105,
+      "ok": false
+    }
+  ],
+  "best_partial_legs": 155,
+  "best_partial_start": 3,
+  "best_partial_mode": "hybrid"
+}
