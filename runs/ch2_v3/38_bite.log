@@ -1,0 +1,38 @@
+BiteOpt: n=49, dim=145
+Warm-start: mk=142.989
+Launching 16 BiteOpt runs, max_evals=30000, workers=4
+  seed=2: fun=142.989
+  seed=1: fun=142.989
+  seed=0: fun=142.989
+  seed=3: fun=142.989
+  seed=5: fun=142.989
+  seed=7: fun=142.989
+  seed=4: fun=142.989
+  seed=6: fun=142.989
+  seed=8: fun=142.989
+  seed=9: fun=142.989
+  seed=10: fun=142.989
+  seed=11: fun=142.989
+  seed=12: fun=142.989
+  seed=15: fun=142.989
+  seed=14: fun=142.989
+  seed=13: fun=142.989
+{
+  "problem": "small",
+  "wall_s": 2618.9,
+  "max_evals": 30000,
+  "n_retries": 16,
+  "best_fitness": 142.9888268156424,
+  "best_seed": 2,
+  "rank3_small_d": 111.76,
+  "fitness": [
+    142.9888268156424,
+    0,
+    0,
+    0,
+    0
+  ],
+  "feasible": true,
+  "banked": "/home/julian/Projects/esa_spoc_26_3/solutions/upload/small.json",
+  "banked_mk": 142.9888268156424
+}
