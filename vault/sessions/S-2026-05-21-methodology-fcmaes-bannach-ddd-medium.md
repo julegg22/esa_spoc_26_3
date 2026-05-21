@@ -124,3 +124,46 @@ user direction.
 **Pivot direction**: Ch2 medium (158/180 stall on 22-node missing
 cluster) and Ch3 tie-breaker remain unattempted. Medium needs a
 fundamentally new pipeline (cluster-FIRST or bi-directional greedy).
+
+## Continuation late evening — Ch2 medium FIRST FEASIBLE banked
+
+**Banked Ch2 medium at 274.52 d** (181/181 nodes, feasible).
+
+Pipeline (codified in `ch2_subtour_insert_fast.py`):
+1. Greedy `find_transfer` with `kt.n_exc` patched to 1 — reserves 4
+   excs for cluster-insertion bridges. Stalls at 133 nodes.
+2. Cluster missing 48 nodes by Δv proximity → `[20, 20, 3, 2, 2, 1]`.
+3. For each big cluster, build greedy sub-tour through cluster
+   nodes only (typically 0 internal excs, ~5 d total ToF).
+4. Bridge-prefilter insertion: pre-walk partial → cached visit
+   times. For each candidate position, check if bridge arc
+   `partial[p-1] → sub[0]` feasible at `t_{p-1}`. Full-walk only
+   survivors. Pick lowest mk satisfying n_exc budget.
+5. Iterate over all big clusters; then `insert_cluster` handles the
+   small ones.
+6. Polish: per-leg NLP shaves 0.22 d → joint SLSQP confirms floor.
+
+**Wall**: ~75 min for full medium pipeline (greedy + 2×sub-tour +
+small clusters + polish). Polish chain: 274.74 → 274.52 → 274.52 d.
+
+## Ch2 large (n=1051) — pipeline doesn't scale
+
+- Single greedy at n_exc=0 cap (start=0 hybrid): **150/1051 = 14%**
+  coverage in 98 min wall. 5/5 excs reserved but only marginally
+  better since transfers themselves are sparse.
+- Parallel multi-start (6 workers × ~135 min CPU each = 2.25 h wall):
+  killed without completion. Pipeline doesn't scale to n=1051.
+- To bank large would need: hierarchical decomposition (cluster
+  the 1051 nodes upfront into ~50 supernodes, route meta-graph,
+  expand sub-clusters) OR Gurobi MILP (user-rejected).
+
+## Banked state at session close
+
+- **Ch1** matching-I, matching-II: 11 pts banked
+- **Ch2 small**: 142.9183 d (floor for our toolchain)
+- **Ch2 medium**: **274.5170 d** ← NEW (first ever feasible)
+- **Ch2 large**: not feasible (pipeline doesn't scale)
+- **Ch3** tie-breaker: untried
+
+Biggest progress: **medium banked**. Floor analysis on small
+confirms toolchain limits. Large requires research-grade approach.
