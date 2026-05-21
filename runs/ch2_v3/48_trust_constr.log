@@ -1,0 +1,16 @@
+Initial: mk=142.9183 d
+trust-constr: 96 vars, 48 dv + 96 linear cons, warm-start mk=142.9183
+/home/julian/micromamba/envs/spoc26/lib/python3.13/site-packages/scipy/optimize/_differentiable_functions.py:385: UserWarning: delta_grad == 0.0. Check if the approximated function is linear. If the function is linear better results can be obtained by defining the Hessian as zero instead of using quasi-Newton approximations.
+  self.H.update(self.x - self.x_prev, self.g - self.g_prev)
+  trust-constr done: status=0, nit=400, fun=142.9463, wall=243.3s
+Polished: mk=142.9463, fitness=[np.float64(142.94631297267188), 0, 0, -1, 0], feas=False
+{
+  "problem": "small",
+  "n": 49,
+  "safety_margin": 0.0005,
+  "initial_mk": 142.9182848692414,
+  "polished_mk": 142.94631297267188,
+  "feasible": false,
+  "delta_d": -0.02802810343047213,
+  "rank3_small_d": 111.76
+}

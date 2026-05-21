@@ -1,0 +1,11 @@
+Initial mk=142.9202
+big segments: [(3, 24), (28, 45)] (lengths [22, 18])
+{
+  "problem": "small",
+  "wall_s": 344.6,
+  "initial_mk": 142.9202261255974,
+  "final_mk": 142.9888268156424,
+  "delta_d": -0.06860069004500247,
+  "feasible": true,
+  "rank3_small_d": 111.76
+}

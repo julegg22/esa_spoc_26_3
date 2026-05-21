@@ -1,0 +1,19 @@
+Initial: mk=142.9202
+ILS start: mk=142.9888
+  kick 0: infeasible
+  kick 1: infeasible
+  kick 2: infeasible
+  kick 3: infeasible
+  kick 4: infeasible
+  kick 5: infeasible
+{
+  "problem": "small",
+  "wall_s": 6.6,
+  "initial_mk": 142.9202261255974,
+  "best_mk": 142.9888268156424,
+  "feasible": true,
+  "delta_d": -0.06860069004500247,
+  "n_kicks": 6,
+  "seed": 0,
+  "rank3_small_d": 111.76
+}
