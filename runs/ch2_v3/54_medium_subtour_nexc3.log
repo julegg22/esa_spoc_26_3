@@ -1,0 +1,131 @@
+Partial: 135/181, missing: 46
+Clusters: [20, 20, 2, 2, 1, 1]
+Found 20 sub-tours; using top 10 (wall=5.6s)
+Pre-walked partial: visit times [0.00..177.78]
+Sub 0 fwd (start=179, total=4.76):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=72 (after node 133, t_bridge=103.33): mk=198.030, n_exc=5 ✓
+  bridges passed=26, walked=26
+  ✓ NEW BEST: mk=198.030
+Sub 0 rev (start=126, total=4.76):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=81 (after node 74, t_bridge=110.90): mk=206.454, n_exc=5 ✓
+  p=83 (after node 172, t_bridge=113.00): mk=201.540, n_exc=5 ✓
+  bridges passed=26, walked=26
+Sub 1 fwd (start=60, total=4.86):
+  p=66 (after node 77, t_bridge=98.62): mk=221.596, n_exc=5 ✓
+  p=68 (after node 154, t_bridge=100.22): mk=221.395, n_exc=5 ✓
+  p=70 (after node 158, t_bridge=100.82): mk=206.454, n_exc=5 ✓
+  p=72 (after node 133, t_bridge=103.33): mk=206.454, n_exc=5 ✓
+  p=76 (after node 121, t_bridge=107.24): mk=206.454, n_exc=5 ✓
+  p=89 (after node 100, t_bridge=118.02): mk=206.445, n_exc=5 ✓
+  p=90 (after node 176, t_bridge=120.17): mk=203.434, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 1 rev (start=179, total=4.86):
+  p=66 (after node 77, t_bridge=98.62): mk=214.275, n_exc=5 ✓
+  p=68 (after node 154, t_bridge=100.22): mk=210.365, n_exc=5 ✓
+  p=70 (after node 158, t_bridge=100.82): mk=206.454, n_exc=5 ✓
+  p=73 (after node 78, t_bridge=104.78): mk=206.454, n_exc=5 ✓
+  p=85 (after node 58, t_bridge=115.71): mk=201.540, n_exc=5 ✓
+  bridges passed=26, walked=26
+Sub 2 fwd (start=112, total=5.16):
+  p=66 (after node 77, t_bridge=98.62): mk=211.267, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=201.540, n_exc=5 ✓
+  p=70 (after node 158, t_bridge=100.82): mk=200.738, n_exc=5 ✓
+  p=83 (after node 172, t_bridge=113.00): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 2 rev (start=33, total=5.16):
+  p=66 (after node 77, t_bridge=98.62): mk=208.359, n_exc=5 ✓
+  p=71 (after node 13, t_bridge=102.07): mk=206.454, n_exc=5 ✓
+  p=77 (after node 171, t_bridge=107.59): mk=206.454, n_exc=5 ✓
+  p=79 (after node 117, t_bridge=108.79): mk=201.540, n_exc=5 ✓
+  p=84 (after node 113, t_bridge=114.26): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 3 fwd (start=126, total=5.26):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=200.738, n_exc=5 ✓
+  bridges passed=26, walked=26
+Sub 3 rev (start=99, total=5.26):
+  p=66 (after node 77, t_bridge=98.62): mk=201.540, n_exc=5 ✓
+  p=74 (after node 22, t_bridge=104.93): mk=200.738, n_exc=5 ✓
+  p=75 (after node 114, t_bridge=106.09): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+  ✓ NEW BEST: mk=198.030
+Sub 4 fwd (start=92, total=5.26):
+  p=66 (after node 77, t_bridge=98.62): mk=208.359, n_exc=5 ✓
+  p=70 (after node 158, t_bridge=100.82): mk=206.454, n_exc=5 ✓
+  p=71 (after node 13, t_bridge=102.07): mk=206.454, n_exc=5 ✓
+  p=73 (after node 78, t_bridge=104.78): mk=200.738, n_exc=5 ✓
+  p=75 (after node 114, t_bridge=106.09): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 4 rev (start=33, total=5.26):
+  p=66 (after node 77, t_bridge=98.62): mk=214.275, n_exc=5 ✓
+  p=68 (after node 154, t_bridge=100.22): mk=206.454, n_exc=5 ✓
+  p=73 (after node 78, t_bridge=104.78): mk=201.540, n_exc=5 ✓
+  p=87 (after node 50, t_bridge=116.41): mk=200.738, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 5 fwd (start=33, total=5.26):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=200.738, n_exc=5 ✓
+  p=70 (after node 158, t_bridge=100.82): mk=200.738, n_exc=5 ✓
+  p=76 (after node 121, t_bridge=107.24): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 5 rev (start=112, total=5.26):
+  p=66 (after node 77, t_bridge=98.62): mk=214.275, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=209.261, n_exc=5 ✓
+  p=72 (after node 133, t_bridge=103.33): mk=206.454, n_exc=5 ✓
+  p=73 (after node 78, t_bridge=104.78): mk=206.454, n_exc=5 ✓
+  p=75 (after node 114, t_bridge=106.09): mk=201.540, n_exc=5 ✓
+  p=76 (after node 121, t_bridge=107.24): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 6 fwd (start=97, total=5.36):
+  p=66 (after node 77, t_bridge=98.62): mk=221.596, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=214.275, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=206.454, n_exc=5 ✓
+  p=74 (after node 22, t_bridge=104.93): mk=201.540, n_exc=5 ✓
+  p=75 (after node 114, t_bridge=106.09): mk=198.030, n_exc=5 ✓
+  bridges passed=26, walked=26
+Sub 6 rev (start=95, total=5.36):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=74 (after node 22, t_bridge=104.93): mk=200.738, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 7 fwd (start=93, total=5.36):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=201.540, n_exc=5 ✓
+  p=78 (after node 66, t_bridge=108.04): mk=201.540, n_exc=5 ✓
+  p=82 (after node 49, t_bridge=111.65): mk=200.738, n_exc=5 ✓
+  bridges passed=26, walked=26
+Sub 7 rev (start=0, total=5.36):
+  p=66 (after node 77, t_bridge=98.62): mk=214.275, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=210.365, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=208.359, n_exc=5 ✓
+  p=71 (after node 13, t_bridge=102.07): mk=200.738, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 8 fwd (start=42, total=5.36):
+  p=66 (after node 77, t_bridge=98.62): mk=221.596, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=214.275, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=206.454, n_exc=5 ✓
+  p=76 (after node 121, t_bridge=107.24): mk=201.540, n_exc=5 ✓
+  p=86 (after node 65, t_bridge=116.06): mk=200.738, n_exc=5 ✓
+  bridges passed=26, walked=26
+Sub 8 rev (start=95, total=5.36):
+  p=66 (after node 77, t_bridge=98.62): mk=214.275, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=208.359, n_exc=5 ✓
+  p=68 (after node 154, t_bridge=100.22): mk=206.454, n_exc=5 ✓
+  p=74 (after node 22, t_bridge=104.93): mk=200.738, n_exc=5 ✓
+  p=90 (after node 176, t_bridge=120.17): mk=199.727, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 9 fwd (start=40, total=5.76):
+  p=66 (after node 77, t_bridge=98.62): mk=206.454, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=200.738, n_exc=5 ✓
+  p=73 (after node 78, t_bridge=104.78): mk=198.030, n_exc=5 ✓
+  bridges passed=25, walked=25
+Sub 9 rev (start=33, total=5.76):
+  p=66 (after node 77, t_bridge=98.62): mk=208.359, n_exc=5 ✓
+  p=67 (after node 72, t_bridge=99.57): mk=201.540, n_exc=5 ✓
+  p=68 (after node 154, t_bridge=100.22): mk=200.738, n_exc=5 ✓
+  p=69 (after node 43, t_bridge=100.37): mk=200.738, n_exc=5 ✓
+  bridges passed=25, walked=25
+Search wall=655.4s
+Sub-tour inserted: mk=198.030, n=155/181, n_exc=5
+Remaining clusters to insert: [20, 2, 2, 1, 1]

@@ -1,0 +1,9 @@
+Partial: 156/181, missing: 25
+Clusters: [20, 2, 2, 1]
+Big cluster (20): [0, 126, 119, 112, 99, 97, 95, 93, 92, 60, 179, 42, 40, 161, 33, 160, 21, 146, 141, 136]
+Best sub-tour: total_tof=4.76d, exc=0, perm=[179, 97, 42, 60, 40, 92, 33, 146, 112, 141, 160, 0, 99, 93, 161, 21, 136, 95, 119, 126], wall=5.6s
+Inserting sub-tour at all positions...
+FAILED: no feasible insertion of sub-tour
+{
+  "status": "no_insert"
+}

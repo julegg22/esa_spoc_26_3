@@ -1,0 +1,4 @@
+Trying start=3 hybrid with n_exc=3 cap (reserve 2 for bridges)
+Result: legs=134, excs_used=3, ok=False, wall=669s
+Missing 46 nodes
+saved /tmp/medium_partial_nexc3.json

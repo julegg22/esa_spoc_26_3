@@ -1,0 +1,29 @@
+Partial: 156/181, missing: 25
+Clusters: [20, 2, 2, 1]
+Found 20 sub-tours; using top 5 (wall=5.6s)
+Pre-walked partial: visit times [0.00..189.66]
+Sub 0 fwd (start=179, total=4.76):
+  bridges passed=26, walked=26
+Sub 0 rev (start=126, total=4.76):
+  bridges passed=26, walked=26
+Sub 1 fwd (start=60, total=4.86):
+  bridges passed=25, walked=25
+Sub 1 rev (start=179, total=4.86):
+  bridges passed=26, walked=26
+Sub 2 fwd (start=112, total=5.16):
+  bridges passed=25, walked=25
+Sub 2 rev (start=33, total=5.16):
+  bridges passed=25, walked=25
+Sub 3 fwd (start=126, total=5.26):
+  bridges passed=26, walked=26
+Sub 3 rev (start=99, total=5.26):
+  bridges passed=25, walked=25
+Sub 4 fwd (start=92, total=5.26):
+  bridges passed=25, walked=25
+Sub 4 rev (start=33, total=5.26):
+  bridges passed=25, walked=25
+Search wall=494.1s
+FAILED: no feasible insertion
+{
+  "status": "no_insert"
+}

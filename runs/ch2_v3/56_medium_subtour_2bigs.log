@@ -1,0 +1,42 @@
+Partial: 133/181, missing: 48
+Clusters: [20, 20, 3, 2, 2, 1]
+Big clusters: [20, 20], small: [3, 2, 2, 1]
+
+=== BIG CLUSTER 1/2 (20 nodes) ===
+  Found 20 sub-tours; using top 5 (wall=6.0s)
+  sub 0 fwd (start=179, total=4.76): mk=211.067, n_exc=3 ✓
+  sub 2 rev (start=33, total=5.16): mk=211.067, n_exc=3 ✓
+  sub 4 fwd (start=92, total=5.26): mk=211.067, n_exc=3 ✓
+  Search wall=325.9s
+  After big 0: n=153/181, mk=211.067, n_exc=3
+
+=== BIG CLUSTER 2/2 (20 nodes) ===
+  Found 20 sub-tours; using top 5 (wall=5.4s)
+  sub 0 fwd (start=57, total=4.96): mk=227.209, n_exc=5 ✓
+  sub 0 rev (start=124, total=4.96): mk=227.209, n_exc=5 ✓
+  sub 1 fwd (start=177, total=4.96): mk=221.493, n_exc=5 ✓
+  Search wall=393.9s
+  After big 1: n=173/181, mk=221.493, n_exc=5
+
+=== SMALL CLUSTERS (4) ===
+Remaining clusters to insert: [3, 2, 2, 1]
+  Cluster [41, 85, 169]: mk=233.777
+  Cluster [7, 122]: mk=257.640
+  Cluster [10, 11]: mk=272.682
+  Cluster [51]: mk=274.737
+FINAL: mk=274.7374, fitness=[274.73743016759784, 0, 0, 0, 0], feas=True
+BANKED: /home/julian/Projects/esa_spoc_26_3/solutions/upload/medium.json
+{
+  "problem": "medium",
+  "n": 181,
+  "mk": 274.73743016759784,
+  "feasible": true,
+  "fitness": [
+    274.73743016759784,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "banked": "/home/julian/Projects/esa_spoc_26_3/solutions/upload/medium.json"
+}
