@@ -1,0 +1,9 @@
+Partial: 159 nodes; missing: 22
+Clustering 22 missing nodes...
+  found 2 clusters: [20, 2]
+  cluster 0 too big (20); deferring
+  cluster 1 ([62, 91]): mk=235.72, wall=485.7s
+Greedy-fill 20 remaining: [0, 21, 33, 40, 42, 60, 92, 93, 95, 97, 99, 112, 119, 126, 136, 141, 146, 160, 161, 179]
+  node 0: NO feasible insertion
+  node 21: NO feasible insertion
+  node 33: NO feasible insertion

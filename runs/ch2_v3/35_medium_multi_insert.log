@@ -1,0 +1,21 @@
+Partial: 159 nodes; missing: 22
+Clustering 22 missing nodes...
+  found 2 clusters: [20, 2]
+  cluster 0 too big (20); deferring
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_multi_cluster_insert.py", line 225, in <module>
+    main(inst, partial_path, problem=problem)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_multi_cluster_insert.py", line 198, in main
+    full_perm, times, tofs = multi_cluster_insert(kt, partial, missing)
+                             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_multi_cluster_insert.py", line 146, in multi_cluster_insert
+    result = insert_cluster(kt, cur_perm, c)
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_multi_cluster_insert.py", line 100, in insert_cluster
+    f = kt.fitness(x)
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_kttsp.py", line 73, in fitness
+    dv = self.compute_transfer(order[i], order[i + 1],
+                                         ~~~~~^^^^^^^
+IndexError: list index out of range
