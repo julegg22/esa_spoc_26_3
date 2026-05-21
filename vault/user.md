@@ -121,6 +121,16 @@ stay here.*
   is fine, but never let it gate compute. The user explicitly
   prefers parallel-progress over wait-for-confirmation; veto-after-
   the-fact is the recovery channel.
+- **Claiming "stuck" auto-triggers M-003 (hard, 2026-05-21).** Any
+  message that frames the state as "waiting for user decision",
+  "exhausted in autonomous mode", "all paths require user
+  investment", or similar terminal-stuck language **must** be
+  preceded by an explicit M-003 family-inventory rethink: list all
+  approach families, mark which are tried/refuted/not-tried, and
+  pick the highest-ROI untried family to pursue. Asserted-exhaustion
+  without this rethink is a methodology violation. The user has
+  shown twice (2026-05-21) that what looks "exhausted" usually has
+  unexamined family-level alternatives.
 
 ## Strategic preferences (this campaign)
 
