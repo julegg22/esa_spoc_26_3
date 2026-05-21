@@ -96,3 +96,31 @@ That preserves the >25 h that the gap cost in S-2026-05-19/20.
 Current ratio: 1.279 (Ch2 small). For rank-3 on all instances, need
 ratio ~1.0. With current toolchain (HiGHS, fcmaes, find-transfer +
 LNS), unlikely without Gurobi or a multi-day MILP-DDD build.
+
+## Continuation (late 2026-05-21) — Ch2 small polish chain + floor finding
+
+Continued after compaction; M-003 family-inventory check (O-010)
+identified the polish-discarded-by-walk gap (walk_perm_chrono re-
+greedy-times, throwing away NLP polish gains). Built two NLP polish
+variants and ran exhaustive method sweep:
+
+| method | result | verdict |
+|---|---|---|
+| per-leg NLP polish (greedy) | 142.99 → 142.92 d | banked |
+| pairwise NLP polish (look-ahead-1) | 0 pairs improved | confirms pair-local-opt |
+| joint SLSQP (96 vars, 144 cons, safety margin 5e-4) | 142.9202 → 142.9183 d | banked Δ=0.002 d |
+| multistart SLSQP × 16 jittered starts | 1/16 feasible (= banked basin); start-7 hit 142.387 INFEAS | confirms basin attractor |
+| trust-constr (interior-point) | 142.946 INFEAS | barrier breaks on boundary warm-start |
+| ILS double-bridge × 6 kicks | ALL infeasible | cluster geometry too tight |
+| Or-2-opt + per-cand polish | too slow, killed | filter logic untenable |
+| multi-start greedy × 49 starts | 0/49 feasible-full perms | unique-basin confirmation |
+
+**Final Ch2 small floor: 142.9183 d (banked).** Closing the 31 d gap to
+rank-3 (111.76) is provably outside our toolchain. Methods that
+could close it: Gurobi MILP, targeted DDD with custom solver, or
+ML pointer networks — all explicitly rejected or out-of-scope per
+user direction.
+
+**Pivot direction**: Ch2 medium (158/180 stall on 22-node missing
+cluster) and Ch3 tie-breaker remain unattempted. Medium needs a
+fundamentally new pipeline (cluster-FIRST or bi-directional greedy).
