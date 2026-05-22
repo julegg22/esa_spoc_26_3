@@ -1,0 +1,503 @@
+Multi-start hierarchical: n=1051, k=50
+Built 50 sub-tours in 9344s; caching to /tmp/large_subtours_k50.pkl
+
+Trying meta_route from each of 50 clusters
+  added cluster 35 (4 nodes), perm=18/1051, n_exc=3, t_cur=49.6d, exc_bridge=True
+  added cluster 16 (18 nodes), perm=36/1051, n_exc=3, t_cur=109.7d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=46/1051, n_exc=3, t_cur=140.6d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=65/1051, n_exc=3, t_cur=190.6d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=84/1051, n_exc=4, t_cur=233.8d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=95/1051, n_exc=4, t_cur=261.4d, exc_bridge=False
+  meta_route walk fail after cluster 41
+  added cluster 14 (19 nodes), perm=32/1051, n_exc=0, t_cur=95.1d, exc_bridge=False
+  added cluster 30 (17 nodes), perm=49/1051, n_exc=0, t_cur=137.6d, exc_bridge=False
+  added cluster 39 (25 nodes), perm=74/1051, n_exc=1, t_cur=209.4d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=80/1051, n_exc=2, t_cur=226.9d, exc_bridge=False
+  added cluster 47 (5 nodes), perm=85/1051, n_exc=2, t_cur=243.7d, exc_bridge=False
+  added cluster 12 (10 nodes), perm=95/1051, n_exc=4, t_cur=284.2d, exc_bridge=True
+  meta_route walk fail after cluster 5
+  added cluster 20 (22 nodes), perm=44/1051, n_exc=0, t_cur=36.0d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=61/1051, n_exc=0, t_cur=48.8d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=70/1051, n_exc=0, t_cur=55.6d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=92/1051, n_exc=0, t_cur=79.0d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=117/1051, n_exc=0, t_cur=98.2d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=136/1051, n_exc=2, t_cur=142.5d, exc_bridge=True
+  added cluster 49 (11 nodes), perm=147/1051, n_exc=2, t_cur=170.5d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=157/1051, n_exc=2, t_cur=199.9d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=176/1051, n_exc=2, t_cur=256.3d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=194/1051, n_exc=2, t_cur=311.7d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=198/1051, n_exc=4, t_cur=326.9d, exc_bridge=True
+  meta_route walk fail after cluster 41
+  added cluster 42 (8 nodes), perm=20/1051, n_exc=0, t_cur=10.3d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=33/1051, n_exc=0, t_cur=16.9d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=46/1051, n_exc=0, t_cur=27.2d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=65/1051, n_exc=0, t_cur=42.0d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=87/1051, n_exc=0, t_cur=62.9d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=103/1051, n_exc=0, t_cur=72.3d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=117/1051, n_exc=0, t_cur=83.3d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=128/1051, n_exc=0, t_cur=92.1d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=141/1051, n_exc=0, t_cur=105.4d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=150/1051, n_exc=0, t_cur=113.7d, exc_bridge=False
+  added cluster 44 (21 nodes), perm=171/1051, n_exc=2, t_cur=168.2d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=176/1051, n_exc=2, t_cur=188.8d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=189/1051, n_exc=3, t_cur=222.4d, exc_bridge=True
+  added cluster 9 (20 nodes), perm=209/1051, n_exc=4, t_cur=278.0d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=223/1051, n_exc=5, t_cur=312.2d, exc_bridge=False
+  meta_route walk fail after cluster 45
+  added cluster 20 (22 nodes), perm=39/1051, n_exc=0, t_cur=21.1d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=48/1051, n_exc=0, t_cur=29.3d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=73/1051, n_exc=0, t_cur=47.4d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=95/1051, n_exc=0, t_cur=62.2d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=117/1051, n_exc=0, t_cur=81.2d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=136/1051, n_exc=2, t_cur=124.6d, exc_bridge=True
+  added cluster 49 (11 nodes), perm=147/1051, n_exc=2, t_cur=149.4d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=157/1051, n_exc=2, t_cur=178.7d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=176/1051, n_exc=2, t_cur=230.8d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=194/1051, n_exc=2, t_cur=283.5d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=198/1051, n_exc=4, t_cur=298.5d, exc_bridge=True
+  meta_route walk fail after cluster 41
+  added cluster 33 (11 nodes), perm=23/1051, n_exc=2, t_cur=58.7d, exc_bridge=False
+  added cluster 46 (19 nodes), perm=42/1051, n_exc=3, t_cur=130.8d, exc_bridge=False
+  added cluster 17 (21 nodes), perm=63/1051, n_exc=4, t_cur=168.8d, exc_bridge=False
+  added cluster 13 (19 nodes), perm=82/1051, n_exc=5, t_cur=217.0d, exc_bridge=False
+  meta_route walk fail after cluster 35
+  added cluster 45 (5 nodes), perm=19/1051, n_exc=2, t_cur=49.3d, exc_bridge=False
+  added cluster 33 (11 nodes), perm=30/1051, n_exc=4, t_cur=79.7d, exc_bridge=True
+  added cluster 46 (19 nodes), perm=49/1051, n_exc=5, t_cur=141.3d, exc_bridge=False
+  meta_route walk fail after cluster 17
+  added cluster 42 (8 nodes), perm=21/1051, n_exc=0, t_cur=9.8d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=34/1051, n_exc=0, t_cur=18.2d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=48/1051, n_exc=0, t_cur=29.2d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=61/1051, n_exc=0, t_cur=39.0d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=80/1051, n_exc=0, t_cur=50.0d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=92/1051, n_exc=0, t_cur=63.8d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=114/1051, n_exc=0, t_cur=85.1d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=123/1051, n_exc=0, t_cur=90.6d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=134/1051, n_exc=0, t_cur=100.1d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=150/1051, n_exc=0, t_cur=117.6d, exc_bridge=False
+  added cluster 46 (19 nodes), perm=169/1051, n_exc=2, t_cur=173.7d, exc_bridge=True
+  added cluster 33 (11 nodes), perm=180/1051, n_exc=3, t_cur=203.6d, exc_bridge=False
+  added cluster 12 (10 nodes), perm=190/1051, n_exc=4, t_cur=234.5d, exc_bridge=False
+  meta_route walk fail after cluster 10
+  added cluster 37 (19 nodes), perm=29/1051, n_exc=0, t_cur=67.9d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=48/1051, n_exc=1, t_cur=111.7d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=59/1051, n_exc=1, t_cur=135.9d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=77/1051, n_exc=1, t_cur=177.1d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=94/1051, n_exc=2, t_cur=186.9d, exc_bridge=True
+  added cluster 2 (22 nodes), perm=116/1051, n_exc=2, t_cur=203.2d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=138/1051, n_exc=2, t_cur=222.5d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=147/1051, n_exc=2, t_cur=230.9d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=172/1051, n_exc=2, t_cur=248.8d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=194/1051, n_exc=2, t_cur=267.6d, exc_bridge=False
+  meta_route stalled at 11 clusters
+  added cluster 14 (19 nodes), perm=39/1051, n_exc=1, t_cur=98.9d, exc_bridge=False
+  added cluster 30 (17 nodes), perm=56/1051, n_exc=1, t_cur=141.1d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=69/1051, n_exc=1, t_cur=179.5d, exc_bridge=False
+  added cluster 39 (25 nodes), perm=94/1051, n_exc=2, t_cur=253.3d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=99/1051, n_exc=3, t_cur=267.1d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=105/1051, n_exc=5, t_cur=280.3d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=110/1051, n_exc=5, t_cur=296.8d, exc_bridge=False
+  meta_route stalled at 8 clusters
+  added cluster 33 (11 nodes), perm=31/1051, n_exc=2, t_cur=114.4d, exc_bridge=False
+  added cluster 27 (15 nodes), perm=46/1051, n_exc=4, t_cur=145.0d, exc_bridge=False
+  meta_route walk fail after cluster 44
+  added cluster 43 (11 nodes), perm=27/1051, n_exc=0, t_cur=19.7d, exc_bridge=False
+  added cluster 32 (19 nodes), perm=46/1051, n_exc=0, t_cur=35.8d, exc_bridge=False
+  added cluster 36 (17 nodes), perm=63/1051, n_exc=0, t_cur=51.7d, exc_bridge=False
+  added cluster 14 (19 nodes), perm=82/1051, n_exc=1, t_cur=102.9d, exc_bridge=True
+  added cluster 30 (17 nodes), perm=99/1051, n_exc=1, t_cur=141.2d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=112/1051, n_exc=1, t_cur=179.5d, exc_bridge=False
+  added cluster 9 (20 nodes), perm=132/1051, n_exc=2, t_cur=233.9d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=146/1051, n_exc=3, t_cur=265.8d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=151/1051, n_exc=4, t_cur=282.7d, exc_bridge=False
+  meta_route walk fail after cluster 27
+  added cluster 33 (11 nodes), perm=21/1051, n_exc=3, t_cur=43.6d, exc_bridge=True
+  added cluster 46 (19 nodes), perm=40/1051, n_exc=4, t_cur=115.4d, exc_bridge=False
+  added cluster 17 (21 nodes), perm=61/1051, n_exc=5, t_cur=151.2d, exc_bridge=False
+  meta_route walk fail after cluster 5
+  added cluster 35 (4 nodes), perm=23/1051, n_exc=3, t_cur=47.6d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=41/1051, n_exc=3, t_cur=106.9d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=51/1051, n_exc=3, t_cur=136.8d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=70/1051, n_exc=3, t_cur=188.1d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=89/1051, n_exc=4, t_cur=233.9d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=100/1051, n_exc=4, t_cur=263.1d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=109/1051, n_exc=5, t_cur=270.5d, exc_bridge=True
+  added cluster 18 (25 nodes), perm=134/1051, n_exc=5, t_cur=292.7d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=156/1051, n_exc=5, t_cur=311.5d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=178/1051, n_exc=5, t_cur=332.6d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=195/1051, n_exc=5, t_cur=346.3d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=217/1051, n_exc=5, t_cur=362.7d, exc_bridge=False
+  meta_route stalled at 13 clusters
+  added cluster 30 (17 nodes), perm=36/1051, n_exc=0, t_cur=94.1d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=49/1051, n_exc=0, t_cur=133.1d, exc_bridge=False
+  added cluster 9 (20 nodes), perm=69/1051, n_exc=1, t_cur=187.0d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=83/1051, n_exc=2, t_cur=216.8d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=88/1051, n_exc=3, t_cur=227.5d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=94/1051, n_exc=5, t_cur=243.0d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=99/1051, n_exc=5, t_cur=259.8d, exc_bridge=False
+  meta_route stalled at 8 clusters
+  added cluster 3 (12 nodes), perm=21/1051, n_exc=0, t_cur=12.2d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=29/1051, n_exc=0, t_cur=18.4d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=40/1051, n_exc=0, t_cur=27.6d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=56/1051, n_exc=0, t_cur=40.9d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=70/1051, n_exc=0, t_cur=53.6d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=83/1051, n_exc=0, t_cur=64.7d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=96/1051, n_exc=0, t_cur=75.8d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=115/1051, n_exc=0, t_cur=86.6d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=137/1051, n_exc=0, t_cur=106.6d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=150/1051, n_exc=0, t_cur=116.1d, exc_bridge=False
+  added cluster 23 (14 nodes), perm=164/1051, n_exc=2, t_cur=148.8d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=169/1051, n_exc=2, t_cur=159.5d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=182/1051, n_exc=3, t_cur=196.7d, exc_bridge=True
+  added cluster 9 (20 nodes), perm=202/1051, n_exc=4, t_cur=250.2d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=216/1051, n_exc=5, t_cur=282.2d, exc_bridge=False
+  meta_route walk fail after cluster 45
+  added cluster 8 (10 nodes), perm=28/1051, n_exc=0, t_cur=70.6d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=47/1051, n_exc=0, t_cur=121.0d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=66/1051, n_exc=1, t_cur=162.4d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=77/1051, n_exc=1, t_cur=188.6d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=94/1051, n_exc=2, t_cur=200.9d, exc_bridge=True
+  added cluster 25 (9 nodes), perm=103/1051, n_exc=2, t_cur=207.1d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=128/1051, n_exc=2, t_cur=224.9d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=150/1051, n_exc=2, t_cur=246.1d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=172/1051, n_exc=2, t_cur=266.3d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=194/1051, n_exc=2, t_cur=285.6d, exc_bridge=False
+  meta_route stalled at 11 clusters
+  added cluster 5 (12 nodes), perm=33/1051, n_exc=2, t_cur=47.4d, exc_bridge=False
+  added cluster 33 (11 nodes), perm=44/1051, n_exc=3, t_cur=81.5d, exc_bridge=False
+  added cluster 46 (19 nodes), perm=63/1051, n_exc=4, t_cur=143.1d, exc_bridge=False
+  meta_route walk fail after cluster 44
+  added cluster 2 (22 nodes), perm=47/1051, n_exc=0, t_cur=39.9d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=64/1051, n_exc=0, t_cur=52.5d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=86/1051, n_exc=0, t_cur=70.5d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=95/1051, n_exc=0, t_cur=76.6d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=117/1051, n_exc=0, t_cur=96.2d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=135/1051, n_exc=1, t_cur=140.6d, exc_bridge=True
+  added cluster 8 (10 nodes), perm=145/1051, n_exc=1, t_cur=172.1d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=164/1051, n_exc=1, t_cur=223.8d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=183/1051, n_exc=2, t_cur=267.1d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=194/1051, n_exc=2, t_cur=294.6d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=198/1051, n_exc=4, t_cur=310.8d, exc_bridge=True
+  meta_route walk fail after cluster 41
+  added cluster 21 (13 nodes), perm=32/1051, n_exc=0, t_cur=13.3d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=46/1051, n_exc=0, t_cur=20.6d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=68/1051, n_exc=0, t_cur=41.8d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=84/1051, n_exc=0, t_cur=54.8d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=92/1051, n_exc=0, t_cur=61.3d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=101/1051, n_exc=0, t_cur=65.9d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=113/1051, n_exc=0, t_cur=75.8d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=124/1051, n_exc=0, t_cur=82.2d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=137/1051, n_exc=0, t_cur=90.2d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=150/1051, n_exc=0, t_cur=105.7d, exc_bridge=False
+  added cluster 12 (10 nodes), perm=160/1051, n_exc=2, t_cur=124.7d, exc_bridge=True
+  added cluster 35 (4 nodes), perm=164/1051, n_exc=4, t_cur=132.0d, exc_bridge=True
+  added cluster 16 (18 nodes), perm=182/1051, n_exc=4, t_cur=176.2d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=201/1051, n_exc=5, t_cur=217.5d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=212/1051, n_exc=5, t_cur=243.9d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=222/1051, n_exc=5, t_cur=270.3d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=241/1051, n_exc=5, t_cur=321.9d, exc_bridge=False
+  meta_route stalled at 18 clusters
+  added cluster 25 (9 nodes), perm=31/1051, n_exc=0, t_cur=23.4d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=48/1051, n_exc=0, t_cur=37.3d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=73/1051, n_exc=0, t_cur=60.5d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=95/1051, n_exc=0, t_cur=73.9d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=117/1051, n_exc=0, t_cur=93.1d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=127/1051, n_exc=1, t_cur=124.4d, exc_bridge=True
+  added cluster 37 (19 nodes), perm=146/1051, n_exc=1, t_cur=178.5d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=165/1051, n_exc=2, t_cur=220.3d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=176/1051, n_exc=2, t_cur=246.8d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=194/1051, n_exc=2, t_cur=300.1d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=198/1051, n_exc=4, t_cur=313.6d, exc_bridge=True
+  meta_route walk fail after cluster 41
+  added cluster 28 (14 nodes), perm=27/1051, n_exc=0, t_cur=10.3d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=46/1051, n_exc=0, t_cur=25.7d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=68/1051, n_exc=0, t_cur=47.0d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=84/1051, n_exc=0, t_cur=58.2d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=93/1051, n_exc=0, t_cur=62.9d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=105/1051, n_exc=0, t_cur=74.4d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=113/1051, n_exc=0, t_cur=78.6d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=126/1051, n_exc=0, t_cur=86.9d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=137/1051, n_exc=0, t_cur=96.3d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=150/1051, n_exc=0, t_cur=108.9d, exc_bridge=False
+  added cluster 5 (12 nodes), perm=162/1051, n_exc=2, t_cur=141.0d, exc_bridge=True
+  added cluster 33 (11 nodes), perm=173/1051, n_exc=3, t_cur=171.4d, exc_bridge=False
+  added cluster 13 (19 nodes), perm=192/1051, n_exc=4, t_cur=218.0d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=196/1051, n_exc=5, t_cur=232.7d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=214/1051, n_exc=5, t_cur=294.9d, exc_bridge=False
+  meta_route walk fail after cluster 48
+  added cluster 47 (5 nodes), perm=11/1051, n_exc=2, t_cur=17.5d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=24/1051, n_exc=3, t_cur=59.3d, exc_bridge=True
+  added cluster 14 (19 nodes), perm=43/1051, n_exc=3, t_cur=112.5d, exc_bridge=False
+  added cluster 30 (17 nodes), perm=60/1051, n_exc=3, t_cur=151.3d, exc_bridge=False
+  added cluster 39 (25 nodes), perm=85/1051, n_exc=4, t_cur=220.9d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=90/1051, n_exc=5, t_cur=241.8d, exc_bridge=False
+  meta_route stalled at 7 clusters
+  added cluster 47 (5 nodes), perm=19/1051, n_exc=1, t_cur=52.7d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=32/1051, n_exc=2, t_cur=95.6d, exc_bridge=True
+  added cluster 30 (17 nodes), perm=49/1051, n_exc=2, t_cur=136.8d, exc_bridge=False
+  added cluster 39 (25 nodes), perm=74/1051, n_exc=3, t_cur=206.5d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=80/1051, n_exc=4, t_cur=223.8d, exc_bridge=False
+  meta_route walk fail after cluster 27
+  added cluster 4 (17 nodes), perm=39/1051, n_exc=0, t_cur=29.3d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=61/1051, n_exc=0, t_cur=49.5d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=86/1051, n_exc=0, t_cur=74.6d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=95/1051, n_exc=0, t_cur=80.8d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=117/1051, n_exc=0, t_cur=96.0d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=136/1051, n_exc=1, t_cur=142.7d, exc_bridge=True
+  added cluster 48 (19 nodes), perm=155/1051, n_exc=2, t_cur=182.3d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=166/1051, n_exc=2, t_cur=211.9d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=176/1051, n_exc=2, t_cur=242.5d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=194/1051, n_exc=3, t_cur=290.0d, exc_bridge=True
+  added cluster 35 (4 nodes), perm=198/1051, n_exc=5, t_cur=301.4d, exc_bridge=True
+  meta_route stalled at 12 clusters
+  added cluster 2 (22 nodes), perm=31/1051, n_exc=0, t_cur=23.4d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=53/1051, n_exc=0, t_cur=41.1d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=70/1051, n_exc=0, t_cur=54.2d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=92/1051, n_exc=0, t_cur=72.7d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=117/1051, n_exc=0, t_cur=92.7d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=127/1051, n_exc=1, t_cur=118.6d, exc_bridge=True
+  added cluster 37 (19 nodes), perm=146/1051, n_exc=1, t_cur=171.3d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=165/1051, n_exc=2, t_cur=212.6d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=176/1051, n_exc=2, t_cur=241.1d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=194/1051, n_exc=2, t_cur=290.0d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=198/1051, n_exc=4, t_cur=301.4d, exc_bridge=True
+  meta_route walk fail after cluster 41
+  added cluster 35 (4 nodes), perm=16/1051, n_exc=2, t_cur=53.3d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=34/1051, n_exc=2, t_cur=107.6d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=44/1051, n_exc=2, t_cur=136.7d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=63/1051, n_exc=2, t_cur=188.1d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=82/1051, n_exc=3, t_cur=234.0d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=93/1051, n_exc=3, t_cur=262.3d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=118/1051, n_exc=4, t_cur=283.1d, exc_bridge=True
+  added cluster 20 (22 nodes), perm=140/1051, n_exc=4, t_cur=299.5d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=149/1051, n_exc=4, t_cur=305.9d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=171/1051, n_exc=4, t_cur=323.0d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=193/1051, n_exc=4, t_cur=344.1d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=210/1051, n_exc=4, t_cur=355.2d, exc_bridge=False
+  meta_route stalled at 13 clusters
+  added cluster 44 (21 nodes), perm=36/1051, n_exc=4, t_cur=62.1d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=41/1051, n_exc=4, t_cur=79.2d, exc_bridge=False
+  meta_route walk fail after cluster 45
+  added cluster 38 (11 nodes), perm=25/1051, n_exc=0, t_cur=11.0d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=38/1051, n_exc=0, t_cur=17.3d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=51/1051, n_exc=0, t_cur=28.0d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=70/1051, n_exc=0, t_cur=41.6d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=82/1051, n_exc=0, t_cur=52.0d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=90/1051, n_exc=0, t_cur=58.9d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=112/1051, n_exc=0, t_cur=78.5d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=125/1051, n_exc=0, t_cur=91.0d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=134/1051, n_exc=0, t_cur=96.9d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=150/1051, n_exc=0, t_cur=114.5d, exc_bridge=False
+  added cluster 46 (19 nodes), perm=169/1051, n_exc=2, t_cur=171.8d, exc_bridge=True
+  added cluster 33 (11 nodes), perm=180/1051, n_exc=3, t_cur=203.4d, exc_bridge=False
+  added cluster 12 (10 nodes), perm=190/1051, n_exc=4, t_cur=232.5d, exc_bridge=False
+  meta_route walk fail after cluster 10
+  added cluster 28 (14 nodes), perm=30/1051, n_exc=0, t_cur=12.3d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=49/1051, n_exc=0, t_cur=31.2d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=71/1051, n_exc=0, t_cur=52.0d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=84/1051, n_exc=0, t_cur=61.0d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=96/1051, n_exc=0, t_cur=73.9d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=104/1051, n_exc=0, t_cur=78.9d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=115/1051, n_exc=0, t_cur=88.5d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=128/1051, n_exc=0, t_cur=101.9d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=137/1051, n_exc=0, t_cur=109.9d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=150/1051, n_exc=0, t_cur=122.0d, exc_bridge=False
+  added cluster 46 (19 nodes), perm=169/1051, n_exc=2, t_cur=177.5d, exc_bridge=True
+  added cluster 33 (11 nodes), perm=180/1051, n_exc=3, t_cur=207.4d, exc_bridge=False
+  added cluster 12 (10 nodes), perm=190/1051, n_exc=4, t_cur=244.1d, exc_bridge=False
+  meta_route walk fail after cluster 41
+  added cluster 9 (20 nodes), perm=37/1051, n_exc=1, t_cur=90.4d, exc_bridge=False
+  added cluster 14 (19 nodes), perm=56/1051, n_exc=1, t_cur=144.6d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=70/1051, n_exc=2, t_cur=176.6d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=75/1051, n_exc=3, t_cur=190.9d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=81/1051, n_exc=5, t_cur=204.0d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=86/1051, n_exc=5, t_cur=220.8d, exc_bridge=False
+  meta_route stalled at 7 clusters
+  added cluster 19 (19 nodes), perm=32/1051, n_exc=0, t_cur=19.7d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=48/1051, n_exc=0, t_cur=35.2d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=57/1051, n_exc=0, t_cur=41.4d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=69/1051, n_exc=0, t_cur=51.0d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=77/1051, n_exc=0, t_cur=58.7d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=99/1051, n_exc=0, t_cur=83.4d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=112/1051, n_exc=0, t_cur=93.5d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=123/1051, n_exc=0, t_cur=102.9d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=136/1051, n_exc=0, t_cur=111.4d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=150/1051, n_exc=0, t_cur=123.8d, exc_bridge=False
+  added cluster 26 (12 nodes), perm=162/1051, n_exc=3, t_cur=163.1d, exc_bridge=True
+  added cluster 35 (4 nodes), perm=166/1051, n_exc=4, t_cur=174.8d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=184/1051, n_exc=4, t_cur=221.1d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=203/1051, n_exc=5, t_cur=264.4d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=214/1051, n_exc=5, t_cur=295.0d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=224/1051, n_exc=5, t_cur=320.4d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=243/1051, n_exc=5, t_cur=367.6d, exc_bridge=False
+  meta_route stalled at 18 clusters
+  added cluster 11 (16 nodes), perm=35/1051, n_exc=0, t_cur=29.5d, exc_bridge=False
+  added cluster 43 (11 nodes), perm=46/1051, n_exc=0, t_cur=38.3d, exc_bridge=False
+  added cluster 36 (17 nodes), perm=63/1051, n_exc=0, t_cur=54.1d, exc_bridge=False
+  added cluster 9 (20 nodes), perm=83/1051, n_exc=2, t_cur=100.5d, exc_bridge=True
+  added cluster 14 (19 nodes), perm=102/1051, n_exc=2, t_cur=151.7d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=116/1051, n_exc=3, t_cur=184.2d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=121/1051, n_exc=4, t_cur=196.7d, exc_bridge=False
+  meta_route walk fail after cluster 22
+  added cluster 5 (12 nodes), perm=23/1051, n_exc=2, t_cur=62.4d, exc_bridge=False
+  added cluster 17 (21 nodes), perm=44/1051, n_exc=3, t_cur=95.2d, exc_bridge=False
+  added cluster 13 (19 nodes), perm=63/1051, n_exc=4, t_cur=139.2d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=67/1051, n_exc=5, t_cur=151.9d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=85/1051, n_exc=5, t_cur=198.9d, exc_bridge=False
+  meta_route walk fail after cluster 48
+  added cluster 31 (13 nodes), perm=35/1051, n_exc=0, t_cur=15.3d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=54/1051, n_exc=0, t_cur=32.2d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=66/1051, n_exc=0, t_cur=41.6d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=74/1051, n_exc=0, t_cur=48.6d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=87/1051, n_exc=0, t_cur=61.6d, exc_bridge=False
+  added cluster 7 (13 nodes), perm=100/1051, n_exc=0, t_cur=71.4d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=116/1051, n_exc=0, t_cur=82.4d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=125/1051, n_exc=0, t_cur=87.9d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=136/1051, n_exc=0, t_cur=96.4d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=150/1051, n_exc=0, t_cur=105.5d, exc_bridge=False
+  added cluster 40 (18 nodes), perm=168/1051, n_exc=2, t_cur=152.5d, exc_bridge=True
+  added cluster 5 (12 nodes), perm=180/1051, n_exc=4, t_cur=189.7d, exc_bridge=True
+  added cluster 33 (11 nodes), perm=191/1051, n_exc=5, t_cur=218.1d, exc_bridge=False
+  meta_route walk fail after cluster 13
+  added cluster 16 (18 nodes), perm=22/1051, n_exc=1, t_cur=75.7d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=32/1051, n_exc=1, t_cur=101.2d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=51/1051, n_exc=1, t_cur=148.9d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=70/1051, n_exc=2, t_cur=189.9d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=81/1051, n_exc=2, t_cur=220.2d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=103/1051, n_exc=3, t_cur=237.0d, exc_bridge=True
+  added cluster 4 (17 nodes), perm=120/1051, n_exc=3, t_cur=249.4d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=145/1051, n_exc=3, t_cur=271.0d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=167/1051, n_exc=3, t_cur=289.6d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=189/1051, n_exc=3, t_cur=307.0d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=198/1051, n_exc=3, t_cur=314.6d, exc_bridge=False
+  meta_route stalled at 12 clusters
+  added cluster 32 (19 nodes), perm=36/1051, n_exc=0, t_cur=28.4d, exc_bridge=False
+  added cluster 11 (16 nodes), perm=52/1051, n_exc=0, t_cur=41.3d, exc_bridge=False
+  added cluster 43 (11 nodes), perm=63/1051, n_exc=0, t_cur=50.8d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=77/1051, n_exc=2, t_cur=79.1d, exc_bridge=True
+  added cluster 45 (5 nodes), perm=82/1051, n_exc=3, t_cur=97.0d, exc_bridge=False
+  added cluster 33 (11 nodes), perm=93/1051, n_exc=5, t_cur=124.7d, exc_bridge=True
+  meta_route walk fail after cluster 27
+  added cluster 48 (19 nodes), perm=38/1051, n_exc=1, t_cur=94.1d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=49/1051, n_exc=1, t_cur=114.8d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=59/1051, n_exc=1, t_cur=144.3d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=77/1051, n_exc=2, t_cur=184.2d, exc_bridge=True
+  added cluster 20 (22 nodes), perm=99/1051, n_exc=3, t_cur=201.0d, exc_bridge=True
+  added cluster 18 (25 nodes), perm=124/1051, n_exc=3, t_cur=220.9d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=141/1051, n_exc=3, t_cur=232.9d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=163/1051, n_exc=3, t_cur=252.1d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=185/1051, n_exc=3, t_cur=266.6d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=194/1051, n_exc=3, t_cur=273.4d, exc_bridge=False
+  meta_route stalled at 11 clusters
+  added cluster 7 (13 nodes), perm=24/1051, n_exc=0, t_cur=10.8d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=36/1051, n_exc=0, t_cur=22.5d, exc_bridge=False
+  added cluster 42 (8 nodes), perm=44/1051, n_exc=0, t_cur=29.1d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=57/1051, n_exc=0, t_cur=39.7d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=76/1051, n_exc=0, t_cur=52.8d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=90/1051, n_exc=0, t_cur=65.6d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=106/1051, n_exc=0, t_cur=75.1d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=119/1051, n_exc=0, t_cur=85.1d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=128/1051, n_exc=0, t_cur=91.4d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=150/1051, n_exc=0, t_cur=110.2d, exc_bridge=False
+  added cluster 44 (21 nodes), perm=171/1051, n_exc=2, t_cur=167.2d, exc_bridge=True
+  added cluster 47 (5 nodes), perm=176/1051, n_exc=2, t_cur=187.7d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=189/1051, n_exc=3, t_cur=221.5d, exc_bridge=True
+  added cluster 9 (20 nodes), perm=209/1051, n_exc=4, t_cur=274.1d, exc_bridge=False
+  added cluster 6 (14 nodes), perm=223/1051, n_exc=5, t_cur=308.4d, exc_bridge=False
+  meta_route walk fail after cluster 45
+  added cluster 22 (6 nodes), perm=31/1051, n_exc=2, t_cur=82.9d, exc_bridge=False
+  added cluster 47 (5 nodes), perm=36/1051, n_exc=2, t_cur=93.5d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=41/1051, n_exc=4, t_cur=109.3d, exc_bridge=True
+  meta_route walk fail after cluster 33
+  added cluster 13 (19 nodes), perm=37/1051, n_exc=3, t_cur=84.0d, exc_bridge=True
+  added cluster 35 (4 nodes), perm=41/1051, n_exc=4, t_cur=96.5d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=59/1051, n_exc=4, t_cur=152.8d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=78/1051, n_exc=5, t_cur=196.7d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=89/1051, n_exc=5, t_cur=229.7d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=99/1051, n_exc=5, t_cur=256.6d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=118/1051, n_exc=5, t_cur=307.1d, exc_bridge=False
+  meta_route stalled at 8 clusters
+  added cluster 35 (4 nodes), perm=10/1051, n_exc=2, t_cur=32.4d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=28/1051, n_exc=2, t_cur=92.8d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=38/1051, n_exc=2, t_cur=118.9d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=57/1051, n_exc=2, t_cur=171.9d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=76/1051, n_exc=3, t_cur=211.8d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=87/1051, n_exc=3, t_cur=240.2d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=109/1051, n_exc=4, t_cur=257.2d, exc_bridge=True
+  added cluster 18 (25 nodes), perm=134/1051, n_exc=4, t_cur=279.6d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=156/1051, n_exc=4, t_cur=297.5d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=165/1051, n_exc=4, t_cur=302.7d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=187/1051, n_exc=4, t_cur=321.4d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=204/1051, n_exc=4, t_cur=337.7d, exc_bridge=False
+  meta_route stalled at 13 clusters
+  added cluster 7 (13 nodes), perm=21/1051, n_exc=0, t_cur=9.0d, exc_bridge=False
+  added cluster 3 (12 nodes), perm=33/1051, n_exc=0, t_cur=21.6d, exc_bridge=False
+  added cluster 28 (14 nodes), perm=47/1051, n_exc=0, t_cur=31.5d, exc_bridge=False
+  added cluster 31 (13 nodes), perm=60/1051, n_exc=0, t_cur=40.6d, exc_bridge=False
+  added cluster 29 (16 nodes), perm=76/1051, n_exc=0, t_cur=54.2d, exc_bridge=False
+  added cluster 19 (19 nodes), perm=95/1051, n_exc=0, t_cur=70.7d, exc_bridge=False
+  added cluster 15 (9 nodes), perm=104/1051, n_exc=0, t_cur=77.1d, exc_bridge=False
+  added cluster 34 (22 nodes), perm=126/1051, n_exc=0, t_cur=97.2d, exc_bridge=False
+  added cluster 38 (11 nodes), perm=137/1051, n_exc=0, t_cur=105.7d, exc_bridge=False
+  added cluster 21 (13 nodes), perm=150/1051, n_exc=0, t_cur=117.6d, exc_bridge=False
+  added cluster 0 (14 nodes), perm=164/1051, n_exc=2, t_cur=168.2d, exc_bridge=True
+  added cluster 35 (4 nodes), perm=168/1051, n_exc=4, t_cur=176.6d, exc_bridge=True
+  added cluster 16 (18 nodes), perm=186/1051, n_exc=4, t_cur=228.9d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=205/1051, n_exc=5, t_cur=272.9d, exc_bridge=False
+  added cluster 49 (11 nodes), perm=216/1051, n_exc=5, t_cur=300.4d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=226/1051, n_exc=5, t_cur=322.2d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=245/1051, n_exc=5, t_cur=370.7d, exc_bridge=False
+  meta_route stalled at 18 clusters
+  added cluster 36 (17 nodes), perm=28/1051, n_exc=0, t_cur=22.5d, exc_bridge=False
+  added cluster 32 (19 nodes), perm=47/1051, n_exc=0, t_cur=38.1d, exc_bridge=False
+  added cluster 11 (16 nodes), perm=63/1051, n_exc=0, t_cur=51.7d, exc_bridge=False
+  added cluster 1 (13 nodes), perm=76/1051, n_exc=1, t_cur=97.1d, exc_bridge=True
+  added cluster 30 (17 nodes), perm=93/1051, n_exc=1, t_cur=136.5d, exc_bridge=False
+  added cluster 39 (25 nodes), perm=118/1051, n_exc=2, t_cur=208.4d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=124/1051, n_exc=3, t_cur=225.6d, exc_bridge=False
+  added cluster 47 (5 nodes), perm=129/1051, n_exc=3, t_cur=240.7d, exc_bridge=False
+  added cluster 12 (10 nodes), perm=139/1051, n_exc=5, t_cur=277.6d, exc_bridge=True
+  meta_route stalled at 10 clusters
+  added cluster 47 (5 nodes), perm=26/1051, n_exc=1, t_cur=37.4d, exc_bridge=False
+  added cluster 45 (5 nodes), perm=31/1051, n_exc=3, t_cur=52.3d, exc_bridge=True
+  added cluster 33 (11 nodes), perm=42/1051, n_exc=5, t_cur=81.7d, exc_bridge=True
+  meta_route walk fail after cluster 46
+  added cluster 33 (11 nodes), perm=16/1051, n_exc=3, t_cur=42.9d, exc_bridge=True
+  added cluster 46 (19 nodes), perm=35/1051, n_exc=5, t_cur=98.6d, exc_bridge=False
+  meta_route walk fail after cluster 17
+  added cluster 33 (11 nodes), perm=30/1051, n_exc=3, t_cur=84.0d, exc_bridge=False
+  added cluster 27 (15 nodes), perm=45/1051, n_exc=5, t_cur=118.3d, exc_bridge=False
+  meta_route stalled at 3 clusters
+  added cluster 1 (13 nodes), perm=18/1051, n_exc=1, t_cur=52.7d, exc_bridge=True
+  added cluster 14 (19 nodes), perm=37/1051, n_exc=1, t_cur=103.7d, exc_bridge=False
+  added cluster 30 (17 nodes), perm=54/1051, n_exc=1, t_cur=142.1d, exc_bridge=False
+  added cluster 39 (25 nodes), perm=79/1051, n_exc=2, t_cur=218.0d, exc_bridge=False
+  added cluster 22 (6 nodes), perm=85/1051, n_exc=3, t_cur=244.0d, exc_bridge=False
+  added cluster 27 (15 nodes), perm=100/1051, n_exc=5, t_cur=286.8d, exc_bridge=True
+  meta_route stalled at 7 clusters
+  added cluster 49 (11 nodes), perm=30/1051, n_exc=1, t_cur=71.9d, exc_bridge=False
+  added cluster 8 (10 nodes), perm=40/1051, n_exc=1, t_cur=98.4d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=59/1051, n_exc=1, t_cur=146.5d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=77/1051, n_exc=1, t_cur=195.6d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=94/1051, n_exc=2, t_cur=210.1d, exc_bridge=True
+  added cluster 25 (9 nodes), perm=103/1051, n_exc=2, t_cur=216.1d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=128/1051, n_exc=2, t_cur=231.9d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=150/1051, n_exc=2, t_cur=251.8d, exc_bridge=False
+  added cluster 2 (22 nodes), perm=172/1051, n_exc=2, t_cur=267.2d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=194/1051, n_exc=2, t_cur=284.8d, exc_bridge=False
+  meta_route stalled at 11 clusters
+  added cluster 8 (10 nodes), perm=21/1051, n_exc=0, t_cur=33.3d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=40/1051, n_exc=0, t_cur=81.2d, exc_bridge=False
+  added cluster 48 (19 nodes), perm=59/1051, n_exc=1, t_cur=125.4d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=77/1051, n_exc=1, t_cur=172.6d, exc_bridge=False
+  added cluster 4 (17 nodes), perm=94/1051, n_exc=2, t_cur=182.5d, exc_bridge=True
+  added cluster 2 (22 nodes), perm=116/1051, n_exc=2, t_cur=199.9d, exc_bridge=False
+  added cluster 24 (22 nodes), perm=138/1051, n_exc=2, t_cur=218.8d, exc_bridge=False
+  added cluster 18 (25 nodes), perm=163/1051, n_exc=2, t_cur=236.5d, exc_bridge=False
+  added cluster 20 (22 nodes), perm=185/1051, n_exc=2, t_cur=256.5d, exc_bridge=False
+  added cluster 25 (9 nodes), perm=194/1051, n_exc=2, t_cur=264.1d, exc_bridge=False
+  meta_route stalled at 11 clusters
+ALL starts failed meta_route
+{
+  "status": "all_fail"
+}

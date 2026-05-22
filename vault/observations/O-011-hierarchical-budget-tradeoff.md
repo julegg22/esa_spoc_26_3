@@ -96,3 +96,38 @@ Hierarchical v2 banked: NO feasible 1051-node solution yet. The
 14% (v1) and 8% (v2 meta-route) coverage are below leaderboard
 threshold. Rank-3 = 2072.84 d but only for FEASIBLE full tours.
 Ch2 large remains 0 points.
+
+## Update — multi-start meta-route experiment (2026-05-22 PM)
+
+After v2 single-start reached 84 nodes, I tried meta-route from
+EACH of 50 clusters as start (`ch2_hierarchical_multistart.py`).
+Result: **best 210 / 1051 nodes** (vs v2's 84 — a 2.5× improvement
+from cluster-ordering optimization alone).
+
+Across 50 starts, the meta-route distribution:
+- Most starts stalled at 3-7 clusters / 40-100 nodes
+- A handful of "lucky" starts chained 11-13 clusters / 190-210 nodes
+- None reached > 13 clusters before stalling on either budget
+  exhaustion or walk failure
+
+**Confirmation of the hard ceiling**: ~210 nodes is the asymptotic
+reach of hierarchical with k=50 + 5-exc budget, regardless of
+start node. The mathematical bound: with 5 exc bridges admissible,
+the meta-route can visit at most ~6 exception-bridged clusters
+PLUS the chain of cheap-bridge-connected ones reachable from any
+exception entry point. In our cluster graph, "cheap-chains" have
+length ~7-8 (per 2-clusters joined by exception arc, ~3 cheap chain
+per side).
+
+## Implication: hierarchical alone CANNOT bank Ch2 large.
+
+Need a fundamentally different machinery:
+- **Gurobi MILP on Bannach time-expanded ILP** (user-rejected)
+- **Two-level recursive decomposition** with sub-tour insertion
+  WITHIN each big cluster (multi-day build, may yield ~600-900
+  nodes)
+- **RL pointer network** trained on the structure (multi-day)
+- **A solver from a competitor team** (out of scope)
+
+Ch2 large remains 0 points for our toolchain. The 210-node hard
+ceiling is a confirmed reproducible finding.
