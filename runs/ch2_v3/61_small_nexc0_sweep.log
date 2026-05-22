@@ -1,0 +1,17 @@
+Small (easy): n=49, n_exc default=5
+  start=3 hybrid: legs=4, excs=0, ok=False, wall=7.7s
+  start=3 arrival: legs=4, excs=0, ok=False, wall=7.7s
+  start=16 hybrid: legs=2, excs=0, ok=False, wall=10.7s
+  start=16 arrival: legs=2, excs=0, ok=False, wall=10.7s
+  start=18 hybrid: legs=2, excs=0, ok=False, wall=10.7s
+  start=18 arrival: legs=2, excs=0, ok=False, wall=10.8s
+  start=23 hybrid: legs=2, excs=0, ok=False, wall=10.8s
+  start=23 arrival: legs=2, excs=0, ok=False, wall=10.7s
+  start=27 hybrid: legs=2, excs=0, ok=False, wall=10.8s
+  start=27 arrival: legs=2, excs=0, ok=False, wall=10.8s
+  start=32 hybrid: legs=2, excs=0, ok=False, wall=10.9s
+  start=32 arrival: legs=2, excs=0, ok=False, wall=10.9s
+  start=34 hybrid: legs=2, excs=0, ok=False, wall=10.8s
+  start=34 arrival: legs=2, excs=0, ok=False, wall=10.9s
+BEST: start=3 hybrid, legs=4, missing=44: [0, 1, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48]
+saved

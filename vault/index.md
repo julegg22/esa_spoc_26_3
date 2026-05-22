@@ -40,7 +40,26 @@ Ch1 `matching-i` ≈ rank-6 (~5 pts), `matching-ii` ≈ rank-5 (~6 pts)
 → **≈ 11 pts**. Ch1-matching line closed at the HiGHS ceiling
 ([[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]); active
 branch pivoted to [[hypotheses/H-002-ch1-trajectory-greedy|H-002]]
-(Ch1 trajectory). Ch2 / Ch3 not yet started.
+(Ch1 trajectory). **Ch2 small banked at 142.92 d (vs R3 cutoff
+111.76, ratio 1.279); Ch2 medium banked at 274.52 d — projects R1
+on the 2026-05-18 leaderboard (R1=298.56, 8% lead)**. Ch2 large
+attempted via hierarchical decomposition (C-019); Ch3 not yet
+started.
+
+## Concepts banked this campaign
+
+- [[concepts/C-017-subtour-bridge-insertion-large-clusters|C-017]]:
+  sub-tour bridge insertion for k > 5 missing clusters.
+- [[concepts/C-018-reserved-budget-construction|C-018]]: reserved-
+  budget greedy (cap construction's resource use to preserve
+  budget for repair).
+- [[concepts/C-019-hierarchical-orbital-element-decomposition|C-019]]:
+  hierarchical orbital-element decomposition for very-large TSP.
+- [[concepts/C-020-bridge-prefilter|C-020]]: bridge-prefilter
+  for fast LNS candidate evaluation.
+- [[methodology/M-006-idle-pivot-on-unmet-targets|M-006]]: no
+  idle in autonomous-loop while rank-3 targets are unmet (hard
+  rule, refinement of M-003).
 
 ## Campaign tree
 
