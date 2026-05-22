@@ -1,0 +1,15 @@
+Hierarchical large: n=1051, k_clusters=50
+Clustering: 0.1s, sizes=[np.int64(47), np.int64(41), np.int64(41), np.int64(36), np.int64(36), np.int64(36), np.int64(34), np.int64(31), np.int64(31), np.int64(30)]...
+Sub-tours: 50 built, 12 fully cover their cluster (6985.6s)
+  Total perm-covered: 737 (314 truly missing)
+  added cluster 13 (19 nodes), perm=33/1051, n_exc=2, t_cur=115.2d, exc_bridge=False
+  added cluster 35 (4 nodes), perm=37/1051, n_exc=3, t_cur=129.8d, exc_bridge=False
+  added cluster 37 (19 nodes), perm=56/1051, n_exc=4, t_cur=185.8d, exc_bridge=True
+  added cluster 8 (10 nodes), perm=66/1051, n_exc=4, t_cur=218.7d, exc_bridge=False
+  added cluster 16 (18 nodes), perm=84/1051, n_exc=5, t_cur=268.4d, exc_bridge=False
+  meta_route walk fail after cluster 48
+Meta-route: 13.8s
+{
+  "status": "no_meta_route",
+  "n_clusters": 50
+}

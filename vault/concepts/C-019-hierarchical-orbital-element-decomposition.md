@@ -89,9 +89,33 @@ Clustering on M would split true orbit families artificially.
 ## In practice
 
 `src/esa_spoc_26/ch2_hierarchical_large.py` implements this for
-Ch2 large. v1 (no phase scan): 11/50 clusters fully covered, 150
-nodes total at t=112d. v2 (8 start times × 4 start nodes per
-cluster + max_exc=1 internal): launched E-030, result pending.
+Ch2 large.
+
+- **v1** (no phase scan, max_exc=0 internal): 11/50 clusters fully
+  covered, meta-route 150 nodes at t=112d.
+- **v2** (8 time-starts × 4 node-starts per cluster, max_exc=1
+  internal): 12/50 fully covered, 737 partial-covered, meta-route
+  6 clusters / 84 nodes feasible before exception budget (5/5)
+  saturates.
+
+## Critical finding — exception-budget vs cluster-count tradeoff
+
+The structural bottleneck for n=1051 hierarchical:
+
+- k=50 clusters → 49 inter-cluster bridges. With 5 exc budget,
+  only 5 can be exception arcs; 44 must be cheap. Meta-route
+  saturates after ~6 transitions (mostly exception-using).
+- k=20 clusters → 19 bridges. Tighter; same saturation risk.
+- k=6 clusters → 5 bridges. ALL bridges could use excs. But intra-
+  cluster sub-tour through ~175 nodes is itself Ch2-medium-scale,
+  and our greedy subtour fails on phase mismatch for large
+  clusters.
+- k=4 clusters → 3 bridges. Plenty of budget; intra-cluster
+  sub-tour through ~260 nodes is the hard part.
+
+Open angle: combine hierarchical with intra-cluster sub-tour
+that uses C-017 sub-tour-bridge-insertion RECURSIVELY (i.e.,
+treat each cluster as a Ch2-medium-like sub-problem).
 
 ## References
 
