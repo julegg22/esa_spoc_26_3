@@ -1,0 +1,19 @@
+Loaded: a_start=54, c_end=138, valid_cuts=179
+  cut=187 (1/179): walk failed at arc 336 after 1s
+  cut=188 (2/179): walk failed at arc 336 after 2s
+  cut=189 (3/179): walk failed at arc 336 after 3s
+  cut=190 (4/179): walk failed at arc 336 after 4s
+  cut=191 (5/179): walk failed at arc 336 after 5s
+  cut=207 (21/179): walk failed at arc 336 after 23s
+  cut=227 (41/179): walk failed at arc 336 after 44s
+  cut=271 (61/179): walk failed at arc 336 after 66s
+  cut=291 (81/179): walk failed at arc 336 after 88s
+  cut=311 (101/179): walk failed at arc 336 after 109s
+  cut=331 (121/179): walk failed at arc 336 after 131s
+  cut=351 (141/179): walk failed at arc 336 after 152s
+  cut=371 (161/179): walk failed at arc 336 after 174s
+
+Done in 194s, best mk=None
+{
+  "status": "no_feasible"
+}

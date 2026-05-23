@@ -1,0 +1,4 @@
+Forbidding 144 (86) → 555 (327)
+OR-tools done in 600s: 1 INF arcs, total cheap_dv=11161
+INF arcs found: [(542, 689, np.float64(10000.0))]
+  arc 542 → 689: actual min dv = 672.5

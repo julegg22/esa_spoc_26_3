@@ -177,6 +177,48 @@ Ch2 large structurally cracked open (4-comp topology + forced
 assignment identified), but banking the perm requires building the
 joint timing optimizer. Pending future session.
 
+### Final blocker (2026-05-23 PM): comp 2 has no feasible 1-exception Hamilton
+
+Investigated whether comp 2's "INF arc" (forced because cheap subgraph
+non-Hamiltonian) admits dv ≤ dv_exc=600. Iteratively forbidding each
+INF arc and re-running OR-tools 600s:
+
+| iteration | INF arc found | min dv (m/s) | within dv_exc? |
+|---|---|---|---|
+| 0 | 144 → 555 | 791.8 | ✗ |
+| 1 | 542 → 689 | 672.5 | ✗ |
+| 2 | 542 → 846 | 605.8 | ✗ |
+| 3 | 542 → 289 | 614.5 | ✗ |
+
+Pattern: node 542 keeps surfacing as a "leaf" in the cheap subgraph
+with no cheap-arc out-neighbors beyond a small set. The minimum-dv
+arc to close comp 2's Hamilton is stuck around 600-800 m/s — none
+fit within the exception cap.
+
+**Definitive conclusion**: with our cheap-arc graph (k_nn=200 +
+6×6 grid + max_revs=20 Lambert), Ch2 large cannot be banked via
+the "comp 2 Hamilton + 3 small-comp insertions within 5-exc budget"
+strategy. The geometric reality: comp 2 has a structural
+bottleneck where any closing arc costs more than dv_exc.
+
+TGMA's banked 1251d must use a different transfer-cost
+representation OR Gurobi MILP on the canonical Bannach formulation.
+Out of scope for our toolchain.
+
+### Banked state at session close
+
+| target | banked | placement |
+|---|---|---|
+| Ch1 matching-I, matching-II | banked | within R3 |
+| Ch1 trajectory | not attempted | 0 pts (needs global trajopt) |
+| Ch2 small | 142.9183 d | floor (~3-5 pts, below R3=111.76) |
+| Ch2 medium | **274.5170 d** | **R1 projection** (vs TGMA's 298.56) |
+| Ch2 large | not feasible | 0 pts (structural barrier) |
+| Ch3 tie-breaker | not attempted | 0 pts |
+
+The single highest-impact win of this campaign: Ch2 medium banked
+at R1, projecting ~8% lead over the leaderboard's best.
+
 ## Implication: hierarchical alone CANNOT bank Ch2 large.
 
 Need a fundamentally different machinery:

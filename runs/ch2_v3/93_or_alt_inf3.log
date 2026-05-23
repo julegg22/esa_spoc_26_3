@@ -1,0 +1,3 @@
+Forbidden: [(144, 555), (542, 689), (542, 846)]
+New INF arcs: [(542, 289)], wall=600s
+  542 → 289: actual min dv = 614.5 ✗ over
