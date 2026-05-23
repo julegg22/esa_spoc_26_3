@@ -227,6 +227,56 @@ def matching_pursuit(target, A_cand, meta, mse_thresh=0.05, max_iter=300,
     return selected_idx, current, cur_mse, history
 
 
+def prune_redundant(udp, A_cand, meta, selected_idx, mse_thresh,
+                     verbose=True):
+    """Remove spacecraft whose removal doesn't break feasibility.
+    After feasibility achieved, greedily prune redundant entries.
+
+    Score by frequency: sort by least-recently-added; try to remove
+    each.
+    """
+    # Build chromosome from selected_meta_list, then check which can
+    # be removed without breaking MSE ≤ thresh.
+    selected_meta = [meta[k] for k in selected_idx]
+    chrom = build_chromosome(udp, selected_meta)
+    f_init = udp.fitness(chrom, postprocess=True)
+    init_mse = float(f_init[2])
+    init_count = int(f_init[1])
+    if verbose:
+        print(f"  Pre-prune: count={init_count}, mse={init_mse:.5f}",
+              flush=True)
+    # Convert to (orbit_id, slot) form for fine-grained removal
+    # Strategy: try removing each candidate idx one at a time
+    kept = list(range(len(selected_idx)))
+    n_removed = 0
+    progress = True
+    while progress:
+        progress = False
+        for i in range(len(kept) - 1, -1, -1):
+            trial = [selected_idx[j] for j in kept if j != kept[i]]
+            trial_meta = [meta[k] for k in trial]
+            trial_chrom = build_chromosome(udp, trial_meta)
+            f_trial = udp.fitness(trial_chrom, postprocess=True)
+            trial_mse = float(f_trial[2])
+            if trial_mse <= mse_thresh:
+                kept.pop(i)
+                n_removed += 1
+                progress = True
+                if verbose and n_removed % 5 == 0:
+                    print(f"  prune step: removed {n_removed}, "
+                          f"remaining={len(kept)}, mse={trial_mse:.5f}",
+                          flush=True)
+    final_sel = [selected_idx[j] for j in kept]
+    final_meta = [meta[k] for k in final_sel]
+    final_chrom = build_chromosome(udp, final_meta)
+    f_final = udp.fitness(final_chrom, postprocess=True)
+    if verbose:
+        print(f"  Post-prune: count={int(f_final[1])}, "
+              f"mse={float(f_final[2]):.5f}, removed={n_removed}",
+              flush=True)
+    return final_sel, final_chrom, f_final
+
+
 def build_chromosome(udp, selected_meta_list):
     """Construct a UDP-format chromosome.
 
@@ -327,11 +377,15 @@ def main(problem="signal", out="/home/julian/Projects/esa_spoc_26_3/solutions/up
             if feasible:
                 break
 
-    selected_meta = [meta[k] for k in selected_idx]
-    chromosome = build_chromosome(udp, selected_meta)
-
-    # Verify via UDP fitness
-    f = udp.fitness(chromosome, postprocess=True)
+    # PRUNE REDUNDANT (only if feasible)
+    if feasible:
+        print(f"\nPruning redundant spacecraft...", flush=True)
+        selected_idx, chromosome, f = prune_redundant(
+            udp, A_cand, meta, selected_idx, udp.mse_thresh)
+    else:
+        selected_meta = [meta[k] for k in selected_idx]
+        chromosome = build_chromosome(udp, selected_meta)
+        f = udp.fitness(chromosome, postprocess=True)
     print(f"\nUDP fitness: {f}", flush=True)
     obj, num_selected, mse_check = f[0][0], f[1], f[2]
     print(f"  obj={obj}, num_selected={num_selected}, mse={mse_check:.5f}",

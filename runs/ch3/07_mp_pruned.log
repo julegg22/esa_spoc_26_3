@@ -1,0 +1,261 @@
+Loading UDP...
+UDP: n_orbits=779 (DRO=188, Lyap=291, Axial=300)
+target len=2710, mse_thresh=0.05
+
+Building candidate matrix (n_phases_dro=200, n_phases_other=200)...
+  A_cand shape: (2710, 155800), wall=30.9s
+
+Matching pursuit (max_iter=1000)...
+  iter 0: ('dro', 179) ph=4.34, score=100.0000, mse=0.42804, n_sel=1
+  iter 1: ('dro', 179) ph=3.55, score=80.0000, mse=0.39852, n_sel=2
+  iter 2: ('dro', 181) ph=3.46, score=52.0000, mse=0.37934, n_sel=3
+  iter 3: ('dro', 168) ph=5.87, score=44.0000, mse=0.36310, n_sel=4
+  iter 4: ('dro', 164) ph=1.54, score=38.0000, mse=0.34908, n_sel=5
+  iter 5: ('dro', 171) ph=3.30, score=37.0000, mse=0.33542, n_sel=6
+  iter 6: ('lyap', 206) ph=5.91, score=34.0000, mse=0.32288, n_sel=7
+  iter 7: ('lyap', 237) ph=4.24, score=32.0000, mse=0.31107, n_sel=8
+  iter 8: ('lyap', 220) ph=1.01, score=29.0000, mse=0.30037, n_sel=9
+  iter 9: ('lyap', 289) ph=2.67, score=29.0000, mse=0.28967, n_sel=10
+  iter 10: ('lyap', 202) ph=3.02, score=26.0000, mse=0.28007, n_sel=11
+  iter 11: ('lyap', 212) ph=3.08, score=26.0000, mse=0.27048, n_sel=12
+  iter 12: ('lyap', 259) ph=2.89, score=23.0000, mse=0.26199, n_sel=13
+  iter 13: ('lyap', 232) ph=2.10, score=22.0000, mse=0.25387, n_sel=14
+  iter 14: ('lyap', 234) ph=4.74, score=22.0000, mse=0.24576, n_sel=15
+  iter 15: ('lyap', 218) ph=2.51, score=19.0000, mse=0.23875, n_sel=16
+  iter 16: ('lyap', 233) ph=3.08, score=19.0000, mse=0.23173, n_sel=17
+  iter 17: ('lyap', 159) ph=2.48, score=17.0000, mse=0.22546, n_sel=18
+  iter 18: ('lyap', 171) ph=3.58, score=17.0000, mse=0.21919, n_sel=19
+  iter 19: ('dro', 161) ph=2.07, score=16.0000, mse=0.21328, n_sel=20
+  iter 20: ('lyap', 243) ph=4.02, score=16.0000, mse=0.20738, n_sel=21
+  iter 21: ('lyap', 206) ph=3.39, score=14.0000, mse=0.20221, n_sel=22
+  iter 22: ('lyap', 218) ph=2.01, score=13.0000, mse=0.19742, n_sel=23
+  iter 23: ('lyap', 190) ph=5.09, score=10.0000, mse=0.19373, n_sel=24
+  iter 24: ('lyap', 236) ph=5.37, score=9.0000, mse=0.19041, n_sel=25
+  iter 25: ('lyap', 102) ph=1.41, score=8.0000, mse=0.18745, n_sel=26
+  iter 26: ('lyap', 271) ph=0.88, score=8.0000, mse=0.18450, n_sel=27
+  iter 27: ('lyap', 155) ph=3.61, score=7.0000, mse=0.18192, n_sel=28
+  iter 28: ('lyap', 199) ph=5.97, score=7.0000, mse=0.17934, n_sel=29
+  iter 29: ('dro', 151) ph=4.87, score=5.0000, mse=0.17749, n_sel=30
+  iter 40: ('axial', 173) ph=3.52, score=2.0000, mse=0.16421, n_sel=41
+  iter 44: no improving candidate; stopping
+  Wall: 7.6s, n_selected=44, final_mse=0.16310
+  Feasible (MSE ≤ 0.05)? False
+
+--- Round 1 ---
+  After add: added=1000, n=1044, mse=0.16310
+  After swap: n=1044, mse=0.04945, feasible=True
+
+Pruning redundant spacecraft...
+  Pre-prune: count=56, mse=0.04945
+  prune step: removed 5, remaining=1039, mse=0.04945
+  prune step: removed 10, remaining=1034, mse=0.04945
+  prune step: removed 15, remaining=1029, mse=0.04945
+  prune step: removed 20, remaining=1024, mse=0.04945
+  prune step: removed 25, remaining=1019, mse=0.04945
+  prune step: removed 30, remaining=1014, mse=0.04945
+  prune step: removed 35, remaining=1009, mse=0.04945
+  prune step: removed 40, remaining=1004, mse=0.04945
+  prune step: removed 45, remaining=999, mse=0.04945
+  prune step: removed 50, remaining=994, mse=0.04945
+  prune step: removed 55, remaining=989, mse=0.04945
+  prune step: removed 60, remaining=984, mse=0.04945
+  prune step: removed 65, remaining=979, mse=0.04945
+  prune step: removed 70, remaining=974, mse=0.04945
+  prune step: removed 75, remaining=969, mse=0.04945
+  prune step: removed 80, remaining=964, mse=0.04945
+  prune step: removed 85, remaining=959, mse=0.04945
+  prune step: removed 90, remaining=954, mse=0.04945
+  prune step: removed 95, remaining=949, mse=0.04945
+  prune step: removed 100, remaining=944, mse=0.04945
+  prune step: removed 105, remaining=939, mse=0.04945
+  prune step: removed 110, remaining=934, mse=0.04945
+  prune step: removed 115, remaining=929, mse=0.04945
+  prune step: removed 120, remaining=924, mse=0.04945
+  prune step: removed 125, remaining=919, mse=0.04945
+  prune step: removed 130, remaining=914, mse=0.04945
+  prune step: removed 135, remaining=909, mse=0.04945
+  prune step: removed 140, remaining=904, mse=0.04945
+  prune step: removed 145, remaining=899, mse=0.04945
+  prune step: removed 150, remaining=894, mse=0.04945
+  prune step: removed 155, remaining=889, mse=0.04945
+  prune step: removed 160, remaining=884, mse=0.04945
+  prune step: removed 165, remaining=879, mse=0.04945
+  prune step: removed 170, remaining=874, mse=0.04945
+  prune step: removed 175, remaining=869, mse=0.04945
+  prune step: removed 180, remaining=864, mse=0.04945
+  prune step: removed 185, remaining=859, mse=0.04945
+  prune step: removed 190, remaining=854, mse=0.04945
+  prune step: removed 195, remaining=849, mse=0.04945
+  prune step: removed 200, remaining=844, mse=0.04945
+  prune step: removed 205, remaining=839, mse=0.04945
+  prune step: removed 210, remaining=834, mse=0.04945
+  prune step: removed 215, remaining=829, mse=0.04945
+  prune step: removed 220, remaining=824, mse=0.04945
+  prune step: removed 225, remaining=819, mse=0.04945
+  prune step: removed 230, remaining=814, mse=0.04945
+  prune step: removed 235, remaining=809, mse=0.04945
+  prune step: removed 240, remaining=804, mse=0.04945
+  prune step: removed 245, remaining=799, mse=0.04945
+  prune step: removed 250, remaining=794, mse=0.04945
+  prune step: removed 255, remaining=789, mse=0.04945
+  prune step: removed 260, remaining=784, mse=0.04945
+  prune step: removed 265, remaining=779, mse=0.04945
+  prune step: removed 270, remaining=774, mse=0.04945
+  prune step: removed 275, remaining=769, mse=0.04945
+  prune step: removed 280, remaining=764, mse=0.04945
+  prune step: removed 285, remaining=759, mse=0.04945
+  prune step: removed 290, remaining=754, mse=0.04945
+  prune step: removed 295, remaining=749, mse=0.04945
+  prune step: removed 300, remaining=744, mse=0.04945
+  prune step: removed 305, remaining=739, mse=0.04945
+  prune step: removed 310, remaining=734, mse=0.04945
+  prune step: removed 315, remaining=729, mse=0.04945
+  prune step: removed 320, remaining=724, mse=0.04945
+  prune step: removed 325, remaining=719, mse=0.04945
+  prune step: removed 330, remaining=714, mse=0.04945
+  prune step: removed 335, remaining=709, mse=0.04945
+  prune step: removed 340, remaining=704, mse=0.04945
+  prune step: removed 345, remaining=699, mse=0.04945
+  prune step: removed 350, remaining=694, mse=0.04945
+  prune step: removed 355, remaining=689, mse=0.04945
+  prune step: removed 360, remaining=684, mse=0.04945
+  prune step: removed 365, remaining=679, mse=0.04945
+  prune step: removed 370, remaining=674, mse=0.04945
+  prune step: removed 375, remaining=669, mse=0.04945
+  prune step: removed 380, remaining=664, mse=0.04945
+  prune step: removed 385, remaining=659, mse=0.04945
+  prune step: removed 390, remaining=654, mse=0.04945
+  prune step: removed 395, remaining=649, mse=0.04945
+  prune step: removed 400, remaining=644, mse=0.04945
+  prune step: removed 405, remaining=639, mse=0.04945
+  prune step: removed 410, remaining=634, mse=0.04945
+  prune step: removed 415, remaining=629, mse=0.04945
+  prune step: removed 420, remaining=624, mse=0.04945
+  prune step: removed 425, remaining=619, mse=0.04945
+  prune step: removed 430, remaining=614, mse=0.04945
+  prune step: removed 435, remaining=609, mse=0.04945
+  prune step: removed 440, remaining=604, mse=0.04945
+  prune step: removed 445, remaining=599, mse=0.04945
+  prune step: removed 450, remaining=594, mse=0.04945
+  prune step: removed 455, remaining=589, mse=0.04945
+  prune step: removed 460, remaining=584, mse=0.04945
+  prune step: removed 465, remaining=579, mse=0.04945
+  prune step: removed 470, remaining=574, mse=0.04945
+  prune step: removed 475, remaining=569, mse=0.04945
+  prune step: removed 480, remaining=564, mse=0.04945
+  prune step: removed 485, remaining=559, mse=0.04945
+  prune step: removed 490, remaining=554, mse=0.04945
+  prune step: removed 495, remaining=549, mse=0.04945
+  prune step: removed 500, remaining=544, mse=0.04945
+  prune step: removed 505, remaining=539, mse=0.04945
+  prune step: removed 510, remaining=534, mse=0.04945
+  prune step: removed 515, remaining=529, mse=0.04945
+  prune step: removed 520, remaining=524, mse=0.04945
+  prune step: removed 525, remaining=519, mse=0.04945
+  prune step: removed 530, remaining=514, mse=0.04945
+  prune step: removed 535, remaining=509, mse=0.04945
+  prune step: removed 540, remaining=504, mse=0.04945
+  prune step: removed 545, remaining=499, mse=0.04945
+  prune step: removed 550, remaining=494, mse=0.04945
+  prune step: removed 555, remaining=489, mse=0.04945
+  prune step: removed 560, remaining=484, mse=0.04945
+  prune step: removed 565, remaining=479, mse=0.04945
+  prune step: removed 570, remaining=474, mse=0.04945
+  prune step: removed 575, remaining=469, mse=0.04945
+  prune step: removed 580, remaining=464, mse=0.04945
+  prune step: removed 585, remaining=459, mse=0.04945
+  prune step: removed 590, remaining=454, mse=0.04945
+  prune step: removed 595, remaining=449, mse=0.04945
+  prune step: removed 600, remaining=444, mse=0.04945
+  prune step: removed 605, remaining=439, mse=0.04945
+  prune step: removed 610, remaining=434, mse=0.04945
+  prune step: removed 615, remaining=429, mse=0.04945
+  prune step: removed 620, remaining=424, mse=0.04945
+  prune step: removed 625, remaining=419, mse=0.04945
+  prune step: removed 630, remaining=414, mse=0.04945
+  prune step: removed 635, remaining=409, mse=0.04945
+  prune step: removed 640, remaining=404, mse=0.04945
+  prune step: removed 645, remaining=399, mse=0.04945
+  prune step: removed 650, remaining=394, mse=0.04945
+  prune step: removed 655, remaining=389, mse=0.04945
+  prune step: removed 660, remaining=384, mse=0.04945
+  prune step: removed 665, remaining=379, mse=0.04945
+  prune step: removed 670, remaining=374, mse=0.04945
+  prune step: removed 675, remaining=369, mse=0.04945
+  prune step: removed 680, remaining=364, mse=0.04945
+  prune step: removed 685, remaining=359, mse=0.04945
+  prune step: removed 690, remaining=354, mse=0.04945
+  prune step: removed 695, remaining=349, mse=0.04945
+  prune step: removed 700, remaining=344, mse=0.04945
+  prune step: removed 705, remaining=339, mse=0.04945
+  prune step: removed 710, remaining=334, mse=0.04945
+  prune step: removed 715, remaining=329, mse=0.04945
+  prune step: removed 720, remaining=324, mse=0.04945
+  prune step: removed 725, remaining=319, mse=0.04945
+  prune step: removed 730, remaining=314, mse=0.04945
+  prune step: removed 735, remaining=309, mse=0.04945
+  prune step: removed 740, remaining=304, mse=0.04945
+  prune step: removed 745, remaining=299, mse=0.04945
+  prune step: removed 750, remaining=294, mse=0.04945
+  prune step: removed 755, remaining=289, mse=0.04945
+  prune step: removed 760, remaining=284, mse=0.04945
+  prune step: removed 765, remaining=279, mse=0.04945
+  prune step: removed 770, remaining=274, mse=0.04945
+  prune step: removed 775, remaining=269, mse=0.04945
+  prune step: removed 780, remaining=264, mse=0.04945
+  prune step: removed 785, remaining=259, mse=0.04945
+  prune step: removed 790, remaining=254, mse=0.04945
+  prune step: removed 795, remaining=249, mse=0.04945
+  prune step: removed 800, remaining=244, mse=0.04945
+  prune step: removed 805, remaining=239, mse=0.04945
+  prune step: removed 810, remaining=234, mse=0.04945
+  prune step: removed 815, remaining=229, mse=0.04945
+  prune step: removed 820, remaining=224, mse=0.04945
+  prune step: removed 825, remaining=219, mse=0.04945
+  prune step: removed 830, remaining=214, mse=0.04945
+  prune step: removed 835, remaining=209, mse=0.04945
+  prune step: removed 840, remaining=204, mse=0.04945
+  prune step: removed 845, remaining=199, mse=0.04945
+  prune step: removed 850, remaining=194, mse=0.04945
+  prune step: removed 855, remaining=189, mse=0.04945
+  prune step: removed 860, remaining=184, mse=0.04945
+  prune step: removed 865, remaining=179, mse=0.04945
+  prune step: removed 870, remaining=174, mse=0.04945
+  prune step: removed 875, remaining=169, mse=0.04945
+  prune step: removed 880, remaining=164, mse=0.04945
+  prune step: removed 885, remaining=159, mse=0.04945
+  prune step: removed 890, remaining=154, mse=0.04945
+  prune step: removed 895, remaining=149, mse=0.04945
+  prune step: removed 900, remaining=144, mse=0.04945
+  prune step: removed 905, remaining=139, mse=0.04945
+  prune step: removed 910, remaining=134, mse=0.04945
+  prune step: removed 915, remaining=129, mse=0.04945
+  prune step: removed 920, remaining=124, mse=0.04945
+  prune step: removed 925, remaining=119, mse=0.04945
+  prune step: removed 930, remaining=114, mse=0.04945
+  prune step: removed 935, remaining=109, mse=0.04945
+  prune step: removed 940, remaining=104, mse=0.04945
+  prune step: removed 945, remaining=99, mse=0.04945
+  prune step: removed 950, remaining=94, mse=0.04945
+  prune step: removed 955, remaining=89, mse=0.04945
+  prune step: removed 960, remaining=84, mse=0.04945
+  prune step: removed 965, remaining=79, mse=0.04945
+  prune step: removed 970, remaining=74, mse=0.04945
+  prune step: removed 975, remaining=69, mse=0.04945
+  prune step: removed 980, remaining=64, mse=0.04945
+  prune step: removed 985, remaining=59, mse=0.04945
+  prune step: removed 990, remaining=54, mse=0.04945
+  Post-prune: count=50, mse=0.04982, removed=994
+
+UDP fitness: ([np.int64(50)], np.int64(50), np.float64(0.04981549815498155))
+  obj=50, num_selected=50, mse=0.04982
+
+BANKED to /home/julian/Projects/esa_spoc_26_3/solutions/upload/signal.json
+{
+  "n_orbits": 779,
+  "selected_n": 50,
+  "mse": 0.04981549815498155,
+  "feasible": true,
+  "obj": 50.0,
+  "banked": "/home/julian/Projects/esa_spoc_26_3/solutions/upload/signal.json"
+}
