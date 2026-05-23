@@ -1,0 +1,5 @@
+
+=== (0,0) ===
+  Lambert: total dv = 3557 m/s (dv1=3263, dv2=294, tof=80d), wall=1s
+  arrival_dv failed; endpoint not near LLO
+  DC failed (wall=1s)

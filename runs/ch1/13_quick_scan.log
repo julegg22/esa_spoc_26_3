@@ -1,0 +1,25 @@
+Quick scan: 2000 random pairs (of 160k) × 8 workers
+  ... 50/2000 done, pos=0, wall=234s, ETA=9115s
+  ... 100/2000 done, pos=0, wall=465s, ETA=8840s
+  ... 150/2000 done, pos=0, wall=475s, ETA=5859s
+  ... 200/2000 done, pos=0, wall=696s, ETA=6261s
+  ... 250/2000 done, pos=0, wall=913s, ETA=6389s
+  ... 300/2000 done, pos=0, wall=947s, ETA=5366s
+  ... 350/2000 done, pos=0, wall=1160s, ETA=5470s
+  ... 400/2000 done, pos=0, wall=1200s, ETA=4801s
+  ... 450/2000 done, pos=0, wall=1412s, ETA=4862s
+  ... 500/2000 done, pos=0, wall=1610s, ETA=4830s
+  ... 550/2000 done, pos=0, wall=1660s, ETA=4378s
+  ... 600/2000 done, pos=0, wall=1878s, ETA=4383s
+  ... 650/2000 done, pos=0, wall=2078s, ETA=4316s
+  ... 700/2000 done, pos=0, wall=2140s, ETA=3973s
+  ... 750/2000 done, pos=0, wall=2350s, ETA=3916s
+  ... 800/2000 done, pos=0, wall=2388s, ETA=3583s
+  ... 850/2000 done, pos=0, wall=2603s, ETA=3522s
+  ... 900/2000 done, pos=0, wall=2809s, ETA=3433s
+  ... 950/2000 done, pos=0, wall=2847s, ETA=3147s
+  ... 1000/2000 done, pos=0, wall=3065s, ETA=3065s
+  ... 1050/2000 done, pos=0, wall=3253s, ETA=2943s
+  ... 1100/2000 done, pos=0, wall=3316s, ETA=2713s
+  ... 1150/2000 done, pos=0, wall=3532s, ETA=2611s
+  ... 1200/2000 done, pos=0, wall=3563s, ETA=2375s
