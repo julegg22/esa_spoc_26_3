@@ -1,0 +1,4 @@
+Comp 2: 601 nodes
+D shape: (601, 601), attempting 3600s OR-tools
+OR-tools done: INF arcs=1, total_dv=11092, wall=3600s
+Saved to /tmp/large_comp2_hamilton_3600s.pkl

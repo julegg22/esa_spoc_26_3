@@ -119,6 +119,64 @@ exception entry point. In our cluster graph, "cheap-chains" have
 length ~7-8 (per 2-clusters joined by exception arc, ~3 cheap chain
 per side).
 
+## 2026-05-23 ultrathink — cheap-arc-graph + OR-tools deep dive
+
+User ultrathink-prompted a fresh exploration. Perspectives:
+
+### P1: Cheap-arc graph (built in 121s + 860s for dense)
+- Sparse (k_nn=80, 4×4 grid): 25,493 cheap edges, mean degree 24.3
+- Dense (k_nn=200, 6×6 grid): **59,539 cheap edges, mean degree 56.6,
+  ZERO isolated nodes**
+- **4 strongly-connected components**: sizes [601, 150, 150, 150]
+- **ZERO cross-bridges between any pair of small components** at
+  dv_exc=600 (verified at 30×30 grid + tof up to 300d; src=902 to
+  ALL 150 in comp 1: best dv=2666.4 m/s, 4× exception cap)
+
+### P2: NN-greedy on dense cheap-arc graph
+- 50 starts × NN: best **584/1051 nodes** (vs hierarchical 210)
+- Plateau at ~580 because budget exhausts before all 4 comps reachable
+
+### P3: Component-aware via OR-tools
+- OR-tools 3600s on comp 2 (601 nodes): Hamilton path with **1 INF
+  arc** (min achievable)
+- OR-tools 600s on small comps 0/1/3: Hamilton **cycles** with 0
+  INF arcs
+
+### The math of feasibility
+- Arrangement: `[small_a, seg1, small_b, seg2, small_c]`
+- 5 elements, 4 inter-comp transitions × 1 exc each = 4 excs
+- + 1 internal INF arc in comp 2 = 5 excs total = EXACTLY budget ✓
+- **Forced assignment** by bridge topology:
+  - small_a=comp 1 (only comp 1 bridges INTO comp2_path[0]=582)
+  - small_c=comp 0 (only comp 0 bridges FROM comp2_path[-1]=205)
+  - small_b=comp 3 (remaining)
+
+### Why we can't bank yet
+- 179/600 cut positions admit valid (entry, exit) cycle-predecessor
+  pairs for small_b=comp 3
+- 13,000+ candidate assemblies (179 cuts × 75 cycle endpoint
+  combinations) but **walk_perm_chrono fails chronologically** for
+  ALL: the bridge `(td_pref, tof_pref)` prescribed in the bridge
+  table doesn't align with the cumulative time during the
+  sequential walk
+- Walking with `find_earliest_transfer` greedy at t_ready misses
+  the narrow bridge feasibility windows
+
+### What's actually missing
+- A **joint NLP optimization** over all 1051 (td, tof) variables
+  (similar to small/medium polish but at scale). With 2100 vars
+  and ~3000 constraints, scipy SLSQP would take hours.
+- OR: an iterative time-aware walker that progressively
+  reschedules bridges via constraint satisfaction.
+- OR: switching to the canonical Bannach time-expanded MILP with
+  Gurobi (rejected).
+
+### Status
+
+Ch2 large structurally cracked open (4-comp topology + forced
+assignment identified), but banking the perm requires building the
+joint timing optimizer. Pending future session.
+
 ## Implication: hierarchical alone CANNOT bank Ch2 large.
 
 Need a fundamentally different machinery:
@@ -131,3 +189,44 @@ Need a fundamentally different machinery:
 
 Ch2 large remains 0 points for our toolchain. The 210-node hard
 ceiling is a confirmed reproducible finding.
+
+## Update — Perspective 1+2 cheap-arc-graph exploration (2026-05-23 AM)
+
+Per user ultrathink prompt for orthogonal angles:
+
+### Sparse cheap-arc graph (k_nn=80, 4×4 grid, 121s build)
+- 25,493 cheap edges, mean degree 24.3
+- NN-greedy on this graph: **530/1051 nodes** (vs 84 hierarchical)
+- 5/5 excs used; plateau at ~530
+
+### Dense cheap-arc graph (k_nn=200, 6×6 grid, 860s build)
+- 59,539 cheap edges, mean degree 56.6, **0 isolated nodes**
+- NN-greedy: **584/1051 nodes** (slight improvement)
+
+### Component analysis (CRITICAL FINDING)
+- The dense cheap-arc graph has exactly **4 strongly-connected
+  components**: sizes [601, 150, 150, 150]
+- ZERO inter-component cheap arcs (mathematically separable)
+- With 5 exc budget: only 3 needed for inter-component bridges
+  → 2 spare for intra-component recovery
+- The 4-component structure matches the orbital architecture
+
+### Intra-component Hamilton path is hard
+- Component 2 (601 nodes, dense): NN-greedy + 200 randomized
+  restarts + 20k backtrack budget → best 558/601 (93%)
+- Each small component (150 nodes): 128/150–143/150 (85–95%)
+- NN-style heuristics ALONE cannot find full Hamilton paths in
+  these dense directed graphs (mean degree 91 for 601-node
+  component, n/2 = 300, Ghouila-Houri threshold not met)
+
+### What's still needed
+- **OR-tools / LKH-3 gold-standard TSP solver** on each
+  component's intra-graph. With 56.6 avg degree, almost
+  certainly admits a Hamilton path — just needs a stronger
+  algorithm than NN+backtrack.
+- Once intra-Hamiltons found, the 3-exc-bridge inter-component
+  stitching should produce a feasible 1051-node tour.
+
+### Best partial reached: 584/1051 (~56% coverage)
+Status: substantially better than hierarchical's 210 but still
+no feasible bank.

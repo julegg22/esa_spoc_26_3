@@ -1,0 +1,8 @@
+Components: [601, 150, 150, 150]
+  comp 2 (601): cycle has 3 INF arcs (too many)
+  comp 0 (150): cycle in 600s, dv=5504, INF arcs=0
+  comp 1 (150): cycle in 600s, dv=5249, INF arcs=0
+  comp 3 (150): cycle in 600s, dv=4874, INF arcs=0
+{
+  "status": "cycle_failed"
+}

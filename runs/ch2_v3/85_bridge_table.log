@@ -1,0 +1,32 @@
+Building bridge table: 601 comp 2 nodes × 3 small comps each × 2 directions
+  out: 50/601, wall=263s, ETA=2903s
+  out: 100/601, wall=522s, ETA=2616s
+  out: 150/601, wall=526s, ETA=1583s
+  out: 200/601, wall=787s, ETA=1577s
+  out: 250/601, wall=1051s, ETA=1475s
+  out: 300/601, wall=1063s, ETA=1066s
+  out: 350/601, wall=1328s, ETA=953s
+  out: 400/601, wall=1361s, ETA=684s
+  out: 450/601, wall=1622s, ETA=544s
+  out: 500/601, wall=1865s, ETA=377s
+  out: 550/601, wall=1892s, ETA=175s
+  out: 600/601, wall=2021s, ETA=3s
+Out scan done: 2021s
+  in: 50/601, wall=252s, ETA=2782s
+  in: 100/601, wall=497s, ETA=2488s
+  in: 150/601, wall=506s, ETA=1520s
+  in: 200/601, wall=752s, ETA=1508s
+  in: 250/601, wall=989s, ETA=1389s
+  in: 300/601, wall=1012s, ETA=1015s
+  in: 350/601, wall=1252s, ETA=898s
+  in: 400/601, wall=1281s, ETA=644s
+  in: 450/601, wall=1516s, ETA=509s
+  in: 500/601, wall=1752s, ETA=354s
+  in: 550/601, wall=1776s, ETA=165s
+  in: 600/601, wall=1896s, ETA=3s
+In scan done: 1896s
+Out bridges per comp 2 node: min=0, mean=109.1, max=147
+In bridges per comp 2 node: min=0, mean=118.3, max=150
+Comp 2 nodes with ANY out-bridge: 514/601
+Comp 2 nodes with ANY in-bridge: 519/601
+Saved to /tmp/large_comp2_bridge_table.pkl

@@ -1,0 +1,22 @@
+Cheap-arc graph: n=1051, k_nn=80, td_grid=4, tof_grid=4
+k-NN: 0.1s
+Candidate pairs (k_nn × n): 84080
+td: [   0.  950. 1900. 2850.]
+tof: [ 0.05       10.03333333 20.01666667 30.        ]
+  scanned 50000/84080, cheap_edges=15637, rate=698/s, ETA=49s
+
+Scan done in 121s (25493 cheap of 84080 candidates)
+Out-degree: min=0, mean=24.3, max=68
+In-degree: min=0, mean=24.3, max=95
+Isolated nodes (out=0): 23, (in=0): 34
+Saved to /tmp/large_cheap_arc_graph_knn80.pkl
+{
+  "n_pairs_scanned": 84080,
+  "n_cheap_edges": 25493,
+  "out_deg_mean": 24.255946717411987,
+  "in_deg_mean": 24.255946717411987,
+  "n_isolated_out": 23,
+  "n_isolated_in": 34,
+  "wall_s": 120.83192467689514,
+  "cache": "/tmp/large_cheap_arc_graph_knn80.pkl"
+}

@@ -1,0 +1,20 @@
+Cycles: A=1(150) B=3(150) C=0(150)
+Comp2 path[0]=582, path[-1]=205
+Small_a=1 at start: 54 options
+Small_c=0 at end: 138 options
+Valid cuts admitting small_b=3: 179/600
+
+Assembling and walking (early-exit on first feasible)...
+  cut=206 (20/179): walk failed
+  cut=226 (40/179): walk failed
+  cut=270 (60/179): walk failed
+  cut=290 (80/179): walk failed
+  cut=310 (100/179): walk failed
+  cut=330 (120/179): walk failed
+  cut=350 (140/179): walk failed
+  cut=370 (160/179): walk failed
+
+Search wall: 238s; tried=179, walked=0, feasible=0
+{
+  "status": "no_feasible_assembly"
+}
