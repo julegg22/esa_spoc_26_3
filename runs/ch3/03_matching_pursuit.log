@@ -1,0 +1,28 @@
+Loading UDP...
+UDP: n_orbits=779 (DRO=188, Lyap=291, Axial=300)
+target len=2710, mse_thresh=0.05
+
+Building candidate matrix (n_phases_dro=40, n_phases_other=40)...
+  A_cand shape: (2710, 31160), wall=4.7s
+
+Matching pursuit (max_iter=200)...
+  iter 0: selected ('dro', 187) phase=5.03, mse=0.46790, n_sel=1
+  iter 1: selected ('dro', 187) phase=0.16, mse=0.47823, n_sel=2
+  iter 2: selected ('dro', 187) phase=3.77, mse=0.48708, n_sel=3
+  iter 3: selected ('dro', 187) phase=1.73, mse=0.50923, n_sel=4
+  iter 4: selected ('dro', 187) phase=2.83, mse=0.52989, n_sel=5
+  iter 5: selected ('dro', 187) phase=1.41, mse=0.53395, n_sel=6
+  iter 6: selected ('dro', 187) phase=5.18, mse=0.53506, n_sel=7
+  iter 7: no positive-score candidate; stopping
+  Wall: 0.3s, n_selected=7, final_mse=0.53506
+  Feasible (MSE ≤ 0.05)? False
+
+UDP fitness: ([np.float64(4399.3281573751265)], np.int64(5), np.float64(0.529889298892989))
+  obj=4399.3281573751265, num_selected=5, mse=0.52989
+{
+  "n_orbits": 779,
+  "selected_n": 5,
+  "mse": 0.529889298892989,
+  "feasible": false,
+  "obj": 4399.3281573751265
+}

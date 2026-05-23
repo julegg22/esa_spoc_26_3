@@ -1,0 +1,21 @@
+Loading UDP...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch3_matching_pursuit.py", line 271, in <module>
+    print(json.dumps(main(max_iter=mi, n_phases_dro=npd,
+                     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          n_phases_other=npo), indent=2))
+                          ^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch3_matching_pursuit.py", line 213, in main
+    udp = load_udp()
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch3_matching_pursuit.py", line 51, in load_udp
+    import lta_udp
+  File "/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 3 Luna Tomato Advertising/lta_udp.py", line 874, in <module>
+    udp = celestial_morse_code()
+  File "/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 3 Luna Tomato Advertising/lta_udp.py", line 57, in __init__
+    self.db_dro = np.loadtxt(self._get_file_path("data/spoc4/cmc/db_dro.txt"), delimiter=",", skiprows=1)
+                             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 3 Luna Tomato Advertising/lta_udp.py", line 143, in _get_file_path
+    raise FileNotFoundError(f"File '{path}' does not exist.")
+FileNotFoundError: File '/data/spoc4/cmc/db_dro.txt' does not exist.

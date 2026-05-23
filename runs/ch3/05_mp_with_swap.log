@@ -1,0 +1,212 @@
+Loading UDP...
+UDP: n_orbits=779 (DRO=188, Lyap=291, Axial=300)
+target len=2710, mse_thresh=0.05
+
+Building candidate matrix (n_phases_dro=100, n_phases_other=100)...
+  A_cand shape: (2710, 77900), wall=11.9s
+
+Matching pursuit (max_iter=1000)...
+  iter 0: ('dro', 179) ph=4.34, score=100.0000, mse=0.42804, n_sel=1
+  iter 1: ('dro', 179) ph=3.58, score=80.0000, mse=0.39852, n_sel=2
+  iter 2: ('dro', 181) ph=3.46, score=52.0000, mse=0.37934, n_sel=3
+  iter 3: ('dro', 168) ph=5.97, score=44.0000, mse=0.36310, n_sel=4
+  iter 4: ('dro', 164) ph=1.57, score=36.0000, mse=0.34982, n_sel=5
+  iter 5: ('dro', 171) ph=3.27, score=35.0000, mse=0.33690, n_sel=6
+  iter 6: ('lyap', 206) ph=5.91, score=33.0000, mse=0.32472, n_sel=7
+  iter 7: ('lyap', 202) ph=3.02, score=31.0000, mse=0.31328, n_sel=8
+  iter 8: ('lyap', 221) ph=5.34, score=30.0000, mse=0.30221, n_sel=9
+  iter 9: ('dro', 168) ph=1.57, score=28.0000, mse=0.29188, n_sel=10
+  iter 10: ('lyap', 212) ph=3.08, score=26.0000, mse=0.28229, n_sel=11
+  iter 11: ('lyap', 243) ph=4.02, score=24.0000, mse=0.27343, n_sel=12
+  iter 12: ('lyap', 218) ph=2.51, score=23.0000, mse=0.26494, n_sel=13
+  iter 13: ('lyap', 243) ph=0.25, score=23.0000, mse=0.25646, n_sel=14
+  iter 14: ('dro', 164) ph=1.38, score=22.0000, mse=0.24834, n_sel=15
+  iter 15: ('lyap', 259) ph=2.89, score=22.0000, mse=0.24022, n_sel=16
+  iter 16: ('lyap', 208) ph=2.76, score=19.0000, mse=0.23321, n_sel=17
+  iter 17: ('lyap', 31) ph=4.34, score=16.0000, mse=0.22731, n_sel=18
+  iter 18: ('lyap', 270) ph=5.22, score=16.0000, mse=0.22140, n_sel=19
+  iter 19: ('lyap', 188) ph=0.82, score=15.0000, mse=0.21587, n_sel=20
+  iter 20: ('lyap', 237) ph=4.59, score=13.0000, mse=0.21107, n_sel=21
+  iter 21: ('lyap', 290) ph=4.52, score=13.0000, mse=0.20627, n_sel=22
+  iter 22: ('lyap', 137) ph=0.94, score=9.0000, mse=0.20295, n_sel=23
+  iter 23: ('lyap', 191) ph=4.78, score=9.0000, mse=0.19963, n_sel=24
+  iter 24: ('dro', 157) ph=0.63, score=8.0000, mse=0.19668, n_sel=25
+  iter 25: ('lyap', 191) ph=2.14, score=8.0000, mse=0.19373, n_sel=26
+  iter 26: ('lyap', 206) ph=3.39, score=8.0000, mse=0.19077, n_sel=27
+  iter 27: ('lyap', 214) ph=5.47, score=6.0000, mse=0.18856, n_sel=28
+  iter 28: ('dro', 154) ph=5.72, score=5.0000, mse=0.18672, n_sel=29
+  iter 29: ('lyap', 48) ph=5.03, score=5.0000, mse=0.18487, n_sel=30
+  iter 40: ('dro', 1) ph=0.69, score=1.0000, mse=0.17528, n_sel=41
+  iter 44: no improving candidate; stopping
+  Wall: 3.7s, n_selected=44, final_mse=0.17417
+  Feasible (MSE ≤ 0.05)? False
+
+Expanded greedy (accept non-worsening)...
+  it 0: add ('dro', 0), mse=0.17417, n=45
+  it 1: add ('dro', 0), mse=0.17417, n=46
+  it 2: add ('dro', 0), mse=0.17417, n=47
+  it 3: add ('dro', 0), mse=0.17417, n=48
+  it 4: add ('dro', 0), mse=0.17417, n=49
+  it 5: add ('dro', 0), mse=0.17417, n=50
+  it 6: add ('dro', 0), mse=0.17417, n=51
+  it 7: add ('dro', 0), mse=0.17417, n=52
+  it 8: add ('dro', 0), mse=0.17417, n=53
+  it 9: add ('dro', 0), mse=0.17417, n=54
+  it 10: add ('dro', 0), mse=0.17417, n=55
+  it 11: add ('dro', 0), mse=0.17417, n=56
+  it 12: add ('dro', 0), mse=0.17417, n=57
+  it 13: add ('dro', 0), mse=0.17417, n=58
+  it 14: add ('dro', 0), mse=0.17417, n=59
+  it 15: add ('dro', 0), mse=0.17417, n=60
+  it 16: add ('dro', 0), mse=0.17417, n=61
+  it 17: add ('dro', 0), mse=0.17417, n=62
+  it 18: add ('dro', 0), mse=0.17417, n=63
+  it 19: add ('dro', 0), mse=0.17417, n=64
+  it 30: add ('dro', 0), mse=0.17417, n=75
+  it 60: add ('dro', 0), mse=0.17417, n=105
+  it 90: add ('dro', 0), mse=0.17417, n=135
+  it 120: add ('dro', 0), mse=0.17417, n=165
+  it 150: add ('dro', 0), mse=0.17417, n=195
+  it 180: add ('dro', 0), mse=0.17417, n=225
+  it 210: add ('dro', 0), mse=0.17417, n=255
+  it 240: add ('dro', 0), mse=0.17417, n=285
+  it 270: add ('dro', 0), mse=0.17417, n=315
+  it 300: add ('dro', 0), mse=0.17417, n=345
+  it 330: add ('dro', 0), mse=0.17417, n=375
+  it 360: add ('dro', 0), mse=0.17417, n=405
+  it 390: add ('dro', 0), mse=0.17417, n=435
+  it 420: add ('dro', 0), mse=0.17417, n=465
+  it 450: add ('dro', 0), mse=0.17417, n=495
+  it 480: add ('dro', 0), mse=0.17417, n=525
+  it 510: add ('dro', 0), mse=0.17417, n=555
+  it 540: add ('dro', 0), mse=0.17417, n=585
+  it 570: add ('dro', 0), mse=0.17417, n=615
+  it 600: add ('dro', 0), mse=0.17417, n=645
+  it 630: add ('dro', 0), mse=0.17417, n=675
+  it 660: add ('dro', 0), mse=0.17417, n=705
+  it 690: add ('dro', 0), mse=0.17417, n=735
+  it 720: add ('dro', 0), mse=0.17417, n=765
+  it 750: add ('dro', 0), mse=0.17417, n=795
+  it 780: add ('dro', 0), mse=0.17417, n=825
+  it 810: add ('dro', 0), mse=0.17417, n=855
+  it 840: add ('dro', 0), mse=0.17417, n=885
+  it 870: add ('dro', 0), mse=0.17417, n=915
+  it 900: add ('dro', 0), mse=0.17417, n=945
+  it 930: add ('dro', 0), mse=0.17417, n=975
+  it 960: add ('dro', 0), mse=0.17417, n=1005
+  it 990: add ('dro', 0), mse=0.17417, n=1035
+
+Local search swap...
+  swap 1: rm idx 0 (cand 17969) → add 17967, mse=0.17011
+  swap 2: rm idx 1 (cand 17957) → add 17958, mse=0.16937
+  swap 3: rm idx 2 (cand 18155) → add 14787, mse=0.15867
+  swap 4: rm idx 3 (cand 16895) → add 33540, mse=0.15646
+  swap 5: rm idx 5 (cand 17152) → add 32782, mse=0.14649
+  swap 6: rm idx 2 (cand 14787) → add 39503, mse=0.14465
+  swap 7: rm idx 9 (cand 16825) → add 51963, mse=0.14059
+  swap 8: rm idx 4 (cand 16425) → add 15766, mse=0.13948
+  swap 9: rm idx 10 (cand 40049) → add 34258, mse=0.13875
+  swap 10: rm idx 14 (cand 16422) → add 28615, mse=0.13690
+  swap 11: rm idx 15 (cand 44746) → add 42051, mse=0.13653
+  swap 12: rm idx 0 (cand 17967) → add 17969, mse=0.13579
+  swap 13: rm idx 4 (cand 15766) → add 30955, mse=0.13542
+  swap 14: rm idx 5 (cand 32782) → add 31734, mse=0.13395
+  swap 15: rm idx 10 (cand 34258) → add 44238, mse=0.13321
+  swap 16: rm idx 14 (cand 28615) → add 15767, mse=0.13247
+  swap 17: rm idx 15 (cand 42051) → add 76302, mse=0.13210
+  swap 18: rm idx 16 (cand 39644) → add 15239, mse=0.12952
+  swap 19: rm idx 17 (cand 21969) → add 22069, mse=0.12915
+  swap 20: rm idx 18 (cand 45883) → add 46183, mse=0.12841
+  swap 21: rm idx 20 (cand 42573) → add 15863, mse=0.12694
+  swap 22: rm idx 12 (cand 40640) → add 33051, mse=0.12657
+  swap 23: rm idx 4 (cand 30955) → add 38604, mse=0.12583
+  swap 24: rm idx 22 (cand 32515) → add 41935, mse=0.12472
+  swap 25: rm idx 19 (cand 37613) → add 26947, mse=0.12435
+  swap 26: rm idx 4 (cand 38604) → add 38993, mse=0.12399
+  swap 27: rm idx 23 (cand 37976) → add 14849, mse=0.12251
+  swap 28: rm idx 24 (cand 15710) → add 25921, mse=0.12177
+  swap 29: rm idx 15 (cand 76302) → add 76502, mse=0.12140
+  swap 30: rm idx 30 (cand 26289) → add 43418, mse=0.12030
+  swap 31: rm idx 28 (cand 15491) → add 31346, mse=0.11882
+  swap 32: rm idx 31 (cand 5864) → add 36153, mse=0.11808
+  swap 33: rm idx 33 (cand 7065) → add 27820, mse=0.11734
+  swap 34: rm idx 24 (cand 25921) → add 35656, mse=0.11661
+  swap 35: rm idx 25 (cand 37934) → add 21348, mse=0.11587
+  swap 36: rm idx 34 (cand 8171) → add 46056, mse=0.11550
+  swap 37: rm idx 35 (cand 16423) → add 40649, mse=0.11144
+  swap 38: rm idx 22 (cand 41935) → add 27323, mse=0.11107
+  swap 39: rm idx 26 (cand 39454) → add 38657, mse=0.11033
+  swap 40: rm idx 12 (cand 33051) → add 45027, mse=0.10996
+  swap 41: rm idx 39 (cand 92) → add 31292, mse=0.10923
+  swap 42: rm idx 40 (cand 111) → add 14346, mse=0.10849
+  swap 43: rm idx 41 (cand 131) → add 42421, mse=0.10664
+  swap 44: rm idx 42 (cand 8057) → add 65256, mse=0.10627
+  swap 45: rm idx 43 (cand 10897) → add 36670, mse=0.10554
+  swap 46: rm idx 1 (cand 17958) → add 17959, mse=0.10517
+  swap 47: rm idx 32 (cand 41476) → add 13882, mse=0.10406
+  swap 48: rm idx 1 (cand 17959) → add 17961, mse=0.10332
+  swap 49: rm idx 31 (cand 36153) → add 31164, mse=0.10295
+  swap 50: rm idx 1 (cand 17961) → add 39840, mse=0.10221
+  swap 51: rm idx 0 (cand 17969) → add 17968, mse=0.10148
+  swap 52: rm idx 3 (cand 33540) → add 43266, mse=0.10000
+  swap 53: rm idx 5 (cand 31734) → add 39845, mse=0.09742
+  swap 54: rm idx 8 (cand 40985) → add 33243, mse=0.09668
+  swap 55: rm idx 3 (cand 43266) → add 42850, mse=0.09520
+  swap 56: rm idx 0 (cand 17968) → add 17969, mse=0.09446
+  swap 57: rm idx 12 (cand 45027) → add 33540, mse=0.09225
+  swap 58: rm idx 14 (cand 15767) → add 14581, mse=0.09041
+  swap 59: rm idx 21 (cand 47872) → add 30531, mse=0.08967
+  swap 60: rm idx 23 (cand 14849) → add 15618, mse=0.08782
+  swap 61: rm idx 24 (cand 35656) → add 16572, mse=0.08745
+  swap 62: rm idx 8 (cand 33243) → add 28785, mse=0.08708
+  swap 63: rm idx 16 (cand 15239) → add 40655, mse=0.08598
+  swap 64: rm idx 11 (cand 43164) → add 42567, mse=0.08561
+  swap 65: rm idx 8 (cand 28785) → add 44283, mse=0.08487
+  swap 66: rm idx 24 (cand 16572) → add 35656, mse=0.08450
+  swap 67: rm idx 28 (cand 31346) → add 31446, mse=0.08339
+  swap 68: rm idx 29 (cand 23680) → add 28482, mse=0.08229
+  swap 69: rm idx 30 (cand 43418) → add 26289, mse=0.07897
+  swap 70: rm idx 33 (cand 27820) → add 38829, mse=0.07860
+  swap 71: rm idx 37 (cand 34004) → add 44210, mse=0.07823
+  swap 72: rm idx 0 (cand 17969) → add 15687, mse=0.07749
+  swap 73: rm idx 2 (cand 39503) → add 42834, mse=0.07675
+  swap 74: rm idx 4 (cand 38993) → add 18869, mse=0.07638
+  swap 75: rm idx 0 (cand 15687) → add 41315, mse=0.07565
+  swap 76: rm idx 6 (cand 39494) → add 38894, mse=0.07454
+  swap 77: rm idx 7 (cand 39048) → add 40382, mse=0.07343
+  swap 78: rm idx 8 (cand 44283) → add 44383, mse=0.07122
+  swap 79: rm idx 11 (cand 42567) → add 39394, mse=0.07011
+  swap 80: rm idx 14 (cand 14581) → add 25831, mse=0.06863
+  swap 81: rm idx 19 (cand 26947) → add 37385, mse=0.06790
+  swap 82: rm idx 12 (cand 33540) → add 40887, mse=0.06679
+  swap 83: rm idx 6 (cand 38894) → add 14792, mse=0.06642
+  swap 84: rm idx 21 (cand 30531) → add 42760, mse=0.06605
+  swap 85: rm idx 24 (cand 35656) → add 16572, mse=0.06494
+  swap 86: rm idx 16 (cand 40655) → add 30531, mse=0.06458
+  swap 87: rm idx 22 (cand 27323) → add 42051, mse=0.06421
+  swap 88: rm idx 16 (cand 30531) → add 28358, mse=0.06384
+  swap 89: rm idx 9 (cand 51963) → add 42806, mse=0.06347
+  swap 90: rm idx 4 (cand 18869) → add 14787, mse=0.06310
+  swap 91: rm idx 15 (cand 76502) → add 46943, mse=0.06236
+  swap 92: rm idx 10 (cand 44238) → add 32782, mse=0.06125
+  swap 93: rm idx 14 (cand 25831) → add 43149, mse=0.06089
+  swap 94: rm idx 17 (cand 22069) → add 42018, mse=0.05867
+  swap 95: rm idx 25 (cand 21348) → add 44758, mse=0.05830
+  swap 96: rm idx 29 (cand 28482) → add 28782, mse=0.05756
+  swap 97: rm idx 33 (cand 38829) → add 15767, mse=0.05424
+  swap 98: rm idx 15 (cand 46943) → add 45643, mse=0.05387
+  swap 99: rm idx 38 (cand 62350) → add 62450, mse=0.05351
+  swap 100: rm idx 40 (cand 14346) → add 25946, mse=0.05166
+  swap 101: rm idx 29 (cand 28782) → add 28882, mse=0.05129
+  no improving swap found, stopping
+  After swap: n=44, mse=0.05129, feasible=False
+
+UDP fitness: ([np.float64(3897.869498835622)], np.int64(44), np.float64(0.05129151291512915))
+  obj=3897.869498835622, num_selected=44, mse=0.05129
+{
+  "n_orbits": 779,
+  "selected_n": 44,
+  "mse": 0.05129151291512915,
+  "feasible": false,
+  "obj": 3897.869498835622
+}

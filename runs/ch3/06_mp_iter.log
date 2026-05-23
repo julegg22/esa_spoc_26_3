@@ -1,0 +1,59 @@
+Loading UDP...
+UDP: n_orbits=779 (DRO=188, Lyap=291, Axial=300)
+target len=2710, mse_thresh=0.05
+
+Building candidate matrix (n_phases_dro=200, n_phases_other=200)...
+  A_cand shape: (2710, 155800), wall=36.6s
+
+Matching pursuit (max_iter=1000)...
+  iter 0: ('dro', 179) ph=4.34, score=100.0000, mse=0.42804, n_sel=1
+  iter 1: ('dro', 179) ph=3.55, score=80.0000, mse=0.39852, n_sel=2
+  iter 2: ('dro', 181) ph=3.46, score=52.0000, mse=0.37934, n_sel=3
+  iter 3: ('dro', 168) ph=5.87, score=44.0000, mse=0.36310, n_sel=4
+  iter 4: ('dro', 164) ph=1.54, score=38.0000, mse=0.34908, n_sel=5
+  iter 5: ('dro', 171) ph=3.30, score=37.0000, mse=0.33542, n_sel=6
+  iter 6: ('lyap', 206) ph=5.91, score=34.0000, mse=0.32288, n_sel=7
+  iter 7: ('lyap', 237) ph=4.24, score=32.0000, mse=0.31107, n_sel=8
+  iter 8: ('lyap', 220) ph=1.01, score=29.0000, mse=0.30037, n_sel=9
+  iter 9: ('lyap', 289) ph=2.67, score=29.0000, mse=0.28967, n_sel=10
+  iter 10: ('lyap', 202) ph=3.02, score=26.0000, mse=0.28007, n_sel=11
+  iter 11: ('lyap', 212) ph=3.08, score=26.0000, mse=0.27048, n_sel=12
+  iter 12: ('lyap', 259) ph=2.89, score=23.0000, mse=0.26199, n_sel=13
+  iter 13: ('lyap', 232) ph=2.10, score=22.0000, mse=0.25387, n_sel=14
+  iter 14: ('lyap', 234) ph=4.74, score=22.0000, mse=0.24576, n_sel=15
+  iter 15: ('lyap', 218) ph=2.51, score=19.0000, mse=0.23875, n_sel=16
+  iter 16: ('lyap', 233) ph=3.08, score=19.0000, mse=0.23173, n_sel=17
+  iter 17: ('lyap', 159) ph=2.48, score=17.0000, mse=0.22546, n_sel=18
+  iter 18: ('lyap', 171) ph=3.58, score=17.0000, mse=0.21919, n_sel=19
+  iter 19: ('dro', 161) ph=2.07, score=16.0000, mse=0.21328, n_sel=20
+  iter 20: ('lyap', 243) ph=4.02, score=16.0000, mse=0.20738, n_sel=21
+  iter 21: ('lyap', 206) ph=3.39, score=14.0000, mse=0.20221, n_sel=22
+  iter 22: ('lyap', 218) ph=2.01, score=13.0000, mse=0.19742, n_sel=23
+  iter 23: ('lyap', 190) ph=5.09, score=10.0000, mse=0.19373, n_sel=24
+  iter 24: ('lyap', 236) ph=5.37, score=9.0000, mse=0.19041, n_sel=25
+  iter 25: ('lyap', 102) ph=1.41, score=8.0000, mse=0.18745, n_sel=26
+  iter 26: ('lyap', 271) ph=0.88, score=8.0000, mse=0.18450, n_sel=27
+  iter 27: ('lyap', 155) ph=3.61, score=7.0000, mse=0.18192, n_sel=28
+  iter 28: ('lyap', 199) ph=5.97, score=7.0000, mse=0.17934, n_sel=29
+  iter 29: ('dro', 151) ph=4.87, score=5.0000, mse=0.17749, n_sel=30
+  iter 40: ('axial', 173) ph=3.52, score=2.0000, mse=0.16421, n_sel=41
+  iter 44: no improving candidate; stopping
+  Wall: 7.7s, n_selected=44, final_mse=0.16310
+  Feasible (MSE ≤ 0.05)? False
+
+--- Round 1 ---
+  After add: added=1000, n=1044, mse=0.16310
+  After swap: n=1044, mse=0.04945, feasible=True
+
+UDP fitness: ([np.int64(56)], np.int64(56), np.float64(0.04944649446494465))
+  obj=56, num_selected=56, mse=0.04945
+
+BANKED to /home/julian/Projects/esa_spoc_26_3/solutions/upload/signal.json
+{
+  "n_orbits": 779,
+  "selected_n": 56,
+  "mse": 0.04944649446494465,
+  "feasible": true,
+  "obj": 56.0,
+  "banked": "/home/julian/Projects/esa_spoc_26_3/solutions/upload/signal.json"
+}
