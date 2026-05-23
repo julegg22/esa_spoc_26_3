@@ -1,0 +1,13 @@
+UDP: nE=400, nL=400, LTL pairs=160000
+Searching 2 × 2 = 4 (E, L) pairs
+
+Best idD per idL identified for 400 idL
+  (0, 0): ERR minimize() got an unexpected keyword argument 'logger'
+  (0, 1): ERR minimize() got an unexpected keyword argument 'logger'
+  (1, 0): ERR minimize() got an unexpected keyword argument 'logger'
+  (1, 1): ERR minimize() got an unexpected keyword argument 'logger'
+
+Found 0 positive-mass transfers in 0s
+{
+  "status": "no_positive_mass"
+}
