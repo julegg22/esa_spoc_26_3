@@ -1,0 +1,12 @@
+Lambert smoke (idE=0, idL=0):
+  aE=6.5 Mm, eE=0.000, iE=0.000
+  aM=1.8 Mm, eM=0.000, iM=0.000
+  Searched 69984 Lambert problems in 2s
+  Best Lambert: |dv1|=3218, |dv2|=495, total=3713 m/s
+  Implied mass: 980 kg
+  Params: raan_e=1.05, argp_e=2.09, ea_e=0.52, tof=30d
+
+  Raw Lambert UDP fitness: 0.0000
+
+  Running BCP differential corrector...
+  ✗ DC rejected by UDP (fit=0.0000, cost=1.50e+04, wall=0.3s)

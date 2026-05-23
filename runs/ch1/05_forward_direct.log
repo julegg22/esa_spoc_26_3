@@ -1,0 +1,28 @@
+Forward Hohmann-based solver, (E, L) ∈ [0,4]×[0,4]
+  ✓ (0,0): mass=12.6 kg, dv=6947 m/s, dt=8.8 d, wall=7.7s
+  (0,1): no_valid, err=3.1692130027804524, wall=8.5s
+  (0,2): no_valid, err=2.530590689741075, wall=8.6s
+  (0,3): no_valid, err=3.332514952868223, wall=8.6s
+  (0,4): no_valid, err=2.68922009319067, wall=8.5s
+  (1,0): no_valid, err=25380014.39187839, wall=8.7s
+  (1,1): no_valid, err=25354014.735392116, wall=8.7s
+  (1,2): no_valid, err=25315415.452197287, wall=8.8s
+  (1,3): no_valid, err=25362438.320606444, wall=8.5s
+  (1,4): no_valid, err=25325992.45720914, wall=8.8s
+  (2,0): no_valid, err=197204394.2978217, wall=7.4s
+  (2,1): no_valid, err=197178394.5618715, wall=7.4s
+  (2,2): no_valid, err=197139795.36289927, wall=7.4s
+  (2,3): no_valid, err=197186818.23139918, wall=7.4s
+  (2,4): no_valid, err=197150372.36656913, wall=7.4s
+  (3,0): no_valid, err=165719523.03440318, wall=7.3s
+  (3,1): no_valid, err=165693523.29845297, wall=7.3s
+  (3,2): no_valid, err=165654924.09948075, wall=7.3s
+  (3,3): no_valid, err=165701946.96798065, wall=7.3s
+  (3,4): no_valid, err=165665501.1031506, wall=7.3s
+  (4,0): no_valid, err=190391470.55990335, wall=7.3s
+  (4,1): no_valid, err=190365470.82395315, wall=7.3s
+  (4,2): no_valid, err=190326871.62498093, wall=7.3s
+  (4,3): no_valid, err=190373894.49348083, wall=7.3s
+  (4,4): no_valid, err=190337448.62865078, wall=7.3s
+
+Total positive: 1/25
