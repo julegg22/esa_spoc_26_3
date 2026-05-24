@@ -1,0 +1,38 @@
+Testing eccentric-arrival fix on previously failed pairs:
+
+=== Pair (0,0): aE=6545km iE=0.00, aL=1838km eL=0.000 iL=0.00 ===
+  ✓ tof=5d ea=(4.71,1.57): mass=99kg dv=6470m/s
+  ✓ tof=5d ea=(4.71,2.36): mass=277kg dv=5678m/s
+  ✓ tof=8d ea=(5.50,2.36): mass=281kg dv=5661m/s
+  ✓ tof=8d ea=(5.50,3.14): mass=477kg dv=4978m/s
+  ✓ tof=11d ea=(5.50,3.14): mass=819kg dv=4063m/s
+  BEST: mass=819kg dv=4063m/s in 111s (8 valid)
+
+=== Pair (27,116): aE=6580km iE=0.11, aL=1890km eL=0.015 iL=0.02 ===
+  ✓ tof=8d ea=(5.50,2.36): mass=169kg dv=6133m/s
+  ✓ tof=8d ea=(5.50,3.14): mass=332kg dv=5469m/s
+  BEST: mass=332kg dv=5469m/s in 114s (6 valid)
+
+=== Pair (15,78): aE=7468km iE=0.18, aL=1889km eL=0.025 iL=0.03 ===
+  ✓ tof=5d ea=(3.93,2.36): mass=55kg dv=6702m/s
+  ✓ tof=5d ea=(3.93,3.14): mass=221kg dv=5906m/s
+  ✓ tof=11d ea=(0.00,3.14): mass=332kg dv=5470m/s
+  BEST: mass=332kg dv=5470m/s in 121s (7 valid)
+
+=== Pair (267,181): aE=42449km iE=0.10, aL=5273km eL=0.651 iL=0.73 ===
+  ✓ tof=5d ea=(0.00,0.79): mass=388kg dv=5270m/s
+  ✓ tof=5d ea=(3.14,0.79): mass=704kg dv=4341m/s
+  ✓ tof=5d ea=(3.93,0.79): mass=1024kg dv=3623m/s
+  ✓ tof=5d ea=(3.93,1.57): mass=2037kg dv=2069m/s
+  BEST: mass=2037kg dv=2069m/s in 91s (90 valid)
+
+=== Pair (266,234): aE=42116km iE=0.23, aL=5314km eL=0.639 iL=0.66 ===
+  ✓ tof=5d ea=(0.00,0.79): mass=377kg dv=5308m/s
+  ✓ tof=5d ea=(3.14,0.79): mass=665kg dv=4443m/s
+  ✓ tof=5d ea=(3.93,0.79): mass=800kg dv=4109m/s
+  ✓ tof=5d ea=(3.93,1.57): mass=1211kg dv=2887m/s
+  BEST: mass=1211kg dv=2887m/s in 94s (93 valid)
+
+=== Pair (294,315): aE=24592km iE=0.02, aL=3067km eL=0.000 iL=0.47 ===
+  ✓ tof=5d ea=(2.36,2.36): mass=9kg dv=6164m/s
+  BEST: mass=9kg dv=6164m/s in 115s (58 valid)
