@@ -97,34 +97,35 @@ def solve_arrival_dv(posvel_arr, a_m, e_m, i_m, tol=1e-6):
 
     best_dv2 = None
     best_dv2_norm = np.inf
-    # Multi-seed: ± direction × range of inclination tilts
-    tilts = [0.0] if i_m < 1e-6 else np.linspace(0.0, i_m, 3)
+    best_el = None
+    # Multi-seed: v_mf (for on-orbit) + ± direction × inclination tilts
+    seeds = [v_mf]
+    tilts = [0.0] if i_m < 0.01 else [0.0, i_m, -i_m]
     for sign in (1, -1):
         for tilt in tilts:
             c, s = np.cos(tilt), np.sin(tilt)
-            # Rodrigues: rotate t_xy around r_hat by tilt
             t_rot = (t_xy * c + np.cross(r_hat, t_xy) * s
                      + r_hat * np.dot(r_hat, t_xy) * (1 - c))
             tn = np.linalg.norm(t_rot)
-            if tn < 1e-12:
-                continue
-            v_seed = sign * v_mag_seed * t_rot / tn
-            try:
-                sol = least_squares(resid, v_seed, xtol=1e-14,
-                                     ftol=1e-14, gtol=1e-14)
-            except Exception:
-                continue
-            try:
-                el = pk.ic2par(r_mf.tolist(), sol.x.tolist(), MU_MOON)
-            except Exception:
-                continue
-            if (abs(el[0] - a_m) / L < tol and abs(el[1] - e_m) < tol
-                    and abs(el[2] - i_m) < tol):
-                dv2 = (sol.x - v_mf) / V
-                if np.linalg.norm(dv2) < best_dv2_norm:
-                    best_dv2 = dv2
-                    best_dv2_norm = np.linalg.norm(dv2)
-                    best_el = el
+            if tn > 1e-12:
+                seeds.append(sign * v_mag_seed * t_rot / tn)
+    for v_seed in seeds:
+        try:
+            sol = least_squares(resid, v_seed, xtol=1e-12,
+                                 ftol=1e-12, max_nfev=50)
+        except Exception:
+            continue
+        try:
+            el = pk.ic2par(r_mf.tolist(), sol.x.tolist(), MU_MOON)
+        except Exception:
+            continue
+        if (abs(el[0] - a_m) / L < tol and abs(el[1] - e_m) < tol
+                and abs(el[2] - i_m) < tol):
+            dv2 = (sol.x - v_mf) / V
+            if np.linalg.norm(dv2) < best_dv2_norm:
+                best_dv2 = dv2
+                best_dv2_norm = np.linalg.norm(dv2)
+                best_el = el
     if best_dv2 is None:
         return None
     return best_dv2, best_el

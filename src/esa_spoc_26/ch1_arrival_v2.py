@@ -71,18 +71,8 @@ def solve_arrival_eccentric(posvel_arr, a_m, e_m, i_m, mu=0.01215058439470971,
     else:
         t_xy = np.array([0.0, 1.0, 0.0])
 
-    # Generate ~12 candidate initial velocities to seed least_squares
-    seeds = []
-    for sign in (1, -1):
-        for inc_tilt in np.linspace(0.0, i_m if i_m > 0 else 0.0, 4):
-            # Rotate t_xy around r_hat by inc_tilt
-            R_axis = r_hat
-            c, s = np.cos(inc_tilt), np.sin(inc_tilt)
-            # Rodrigues' rotation: rotate t_xy by inc_tilt around r_hat
-            t_rot = t_xy * c + np.cross(R_axis, t_xy) * s \
-                + R_axis * np.dot(R_axis, t_xy) * (1 - c)
-            seeds.append(sign * v_mag * t_rot / np.linalg.norm(t_rot))
-
+    # Generate small number of candidate seeds (speed-optimized)
+    # First try ± tangential in synodic-XY plane; only add inclined tilts if needed
     def resid(v_try, r=r_mf):
         try:
             el = pk.ic2par(r.tolist(), v_try.tolist(), MU_MOON)
@@ -92,24 +82,46 @@ def solve_arrival_eccentric(posvel_arr, a_m, e_m, i_m, mu=0.01215058439470971,
             return [1e6] * 3
         return [(el[0] - a_m) / L, el[1] - e_m, el[2] - i_m]
 
-    for seed_v in seeds:
+    def try_seed(seed_v):
         try:
             sol = least_squares(resid, seed_v, method="trf",
-                                 xtol=1e-14, ftol=1e-14, max_nfev=80)
+                                 xtol=1e-12, ftol=1e-12, max_nfev=50)
         except Exception:
-            continue
+            return None
         try:
             el = pk.ic2par(r_mf.tolist(), sol.x.tolist(), MU_MOON)
         except Exception:
-            continue
-        # Validate against the OFFICIAL target
+            return None
         if (abs(el[0] - a_m) / L < tol and abs(el[1] - e_m) < tol
                 and abs(el[2] - i_m) < tol):
-            dv2_inertial = sol.x - v_mf
-            dv2_syn = dv2_inertial / V
-            if np.linalg.norm(dv2_syn) < best_dv2_norm:
-                best_dv2 = dv2_syn
-                best_dv2_norm = np.linalg.norm(dv2_syn)
+            return sol.x
+        return None
+
+    # Generate seeds: ± sign × tilts + the input v_mf itself (for on-orbit cases).
+    seeds = [v_mf]  # zero-dv2 seed first
+    if i_m > 0.01:
+        tilts = [0.0, i_m, -i_m]
+    else:
+        tilts = [0.0]
+    for sign in (1, -1):
+        for tilt in tilts:
+            if abs(tilt) < 1e-10:
+                seeds.append(sign * v_mag * t_xy)
+            else:
+                c, s = np.cos(tilt), np.sin(tilt)
+                t_rot = (t_xy * c + np.cross(r_hat, t_xy) * s
+                         + r_hat * np.dot(r_hat, t_xy) * (1 - c))
+                tn = np.linalg.norm(t_rot)
+                if tn > 1e-12:
+                    seeds.append(sign * v_mag * t_rot / tn)
+
+    for seed_v in seeds:
+        v_found = try_seed(seed_v)
+        if v_found is not None:
+            dv2 = (v_found - v_mf) / V
+            if np.linalg.norm(dv2) < best_dv2_norm:
+                best_dv2 = dv2
+                best_dv2_norm = np.linalg.norm(dv2)
 
     if best_dv2 is None:
         return None
