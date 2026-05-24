@@ -27,24 +27,30 @@ the user uploads them manually via the Optimise web UI.
 - Challenge 2 — Keplerian Tomato TSP (mandatory) #ch2
 - Challenge 3 — Luna Tomato Advertising (tie-breaker) #ch3
 
-## Status — 2026-05-18
+## Status — 2026-05-24
 
-Fresh-start scaffold rebuilt (commit `42820c5`). Grounding done:
-[[observations/O-001-spoc4-problem-grounding|O-001]] (problems),
-[[observations/O-002-leaderboard-2026-05-18|O-002]] (rank-3 cutoffs +
-competitor analysis). Goal = rank-3 on each regular instance (GOALS.md
-§1). See [[open-paths]] for the live frontier.
+Ch1 trajectory breakthrough today: solve_arrival_dv eccentric-orbit
+bug found and fixed (see [[lessons/L-012-solver-assumption-audit-before-research-grade-verdict|L-012]],
+[[sessions/S-2026-05-24-eccentric-orbit-breakthrough|S-2026-05-24]],
+top-level `LESSONS-LEARNED.md`). Per-pair masses jumped 50-100× —
+(0,0) coplanar: 14.82 → 819 kg; GEO+eL=0.65: FAIL → 2037 kg.
+Production sweep with eccentric-aware solver pending (current
+implementation too slow at 15× original solver time; needs trimming).
 
 **Realized (banked, valid artifacts in `solutions/upload/`):**
 Ch1 `matching-i` ≈ rank-6 (~5 pts), `matching-ii` ≈ rank-5 (~6 pts)
 → **≈ 11 pts**. Ch1-matching line closed at the HiGHS ceiling
-([[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]); active
-branch pivoted to [[hypotheses/H-002-ch1-trajectory-greedy|H-002]]
-(Ch1 trajectory). **Ch2 small banked at 142.92 d (vs R3 cutoff
-111.76, ratio 1.279); Ch2 medium banked at 274.52 d — projects R1
-on the 2026-05-18 leaderboard (R1=298.56, 8% lead)**. Ch2 large
-attempted via hierarchical decomposition (C-019); Ch3 not yet
-started.
+([[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]). Ch1
+trajectory bank still at 14.82 kg pending sweep result. **Ch2 small
+banked at 142.92 d (vs R3 cutoff 111.76, ratio 1.279); Ch2 medium
+banked at 274.52 d — projects R1 on the 2026-05-18 leaderboard
+(R1=298.56, 8% lead)**. Ch2 large attempted via hierarchical
+decomposition (C-019); Ch3 banked at 50 spacecraft (MSE=0.04982).
+
+**Ch1 trajectory path forward**: optimize eccentric-arrival solver
+speed (trim seeds 8→2, max_nfev 50→20), run production sweep on top
+2000 Hohmann-theoretical pairs, Hungarian-assign 400, bank. Expected
+mass: 200,000-500,000 kg (rank 3-5 territory).
 
 ## Concepts banked this campaign
 
