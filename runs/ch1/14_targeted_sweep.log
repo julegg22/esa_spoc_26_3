@@ -1,0 +1,6 @@
+Targeted sweep: 201 pairs × 8 workers
+  ... 25/201 done, pos=0, wall=876s, ETA=6167s
+  ... 50/201 done, pos=0, wall=1723s, ETA=5204s
+  ... 75/201 done, pos=0, wall=2589s, ETA=4350s
+  ... 100/201 done, pos=0, wall=3426s, ETA=3460s
+  ... 125/201 done, pos=0, wall=3531s, ETA=2147s

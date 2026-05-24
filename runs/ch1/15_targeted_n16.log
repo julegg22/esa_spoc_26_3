@@ -1,0 +1,28 @@
+Targeted sweep: 401 pairs × 8 workers
+  ✓ (0,0): mass=15 kg, dv=6933, total_pos=1
+  ... 25/401 done, pos=1, wall=590s, ETA=8870s
+  ... 50/401 done, pos=1, wall=1166s, ETA=8185s
+  ... 75/401 done, pos=1, wall=1749s, ETA=7602s
+  ... 100/401 done, pos=1, wall=2306s, ETA=6940s
+  ... 125/401 done, pos=1, wall=2397s, ETA=5293s
+  ... 150/401 done, pos=1, wall=2954s, ETA=4942s
+  ... 175/401 done, pos=1, wall=3529s, ETA=4557s
+  ... 200/401 done, pos=1, wall=4054s, ETA=4074s
+  ... 225/401 done, pos=1, wall=4602s, ETA=3600s
+  ... 250/401 done, pos=1, wall=4717s, ETA=2849s
+  ... 275/401 done, pos=1, wall=5293s, ETA=2425s
+  ... 300/401 done, pos=1, wall=5857s, ETA=1972s
+  ... 325/401 done, pos=1, wall=6502s, ETA=1520s
+  ... 350/401 done, pos=1, wall=6642s, ETA=968s
+  ... 375/401 done, pos=1, wall=7235s, ETA=502s
+  ... 400/401 done, pos=1, wall=7590s, ETA=19s
+
+Done: 1/401 positive in 7590s
+Hungarian: 1 transfers, total = 15 kg
+UDP verify: fitness=-14.8, mass=15 kg
+BANKED (improved from 12.6 → 14.8 kg): /home/julian/Projects/esa_spoc_26_3/solutions/upload/trajectory.json
+{
+  "status": "evaluated",
+  "mass": 14.822874787274031,
+  "n_transfers": 1
+}
