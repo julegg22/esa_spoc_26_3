@@ -54,6 +54,16 @@ defines the canonical tree.
 >   surprises us in a way future-us would want to know, write an
 >   `L-NNN` lesson before moving on. Cost ≈ 2 minutes; skipping it
 >   guarantees re-discovery.
+> - **Solver-assumption audit before "hard" verdict.** Before declaring
+>   a benchmark requires research-grade techniques or fundamentally
+>   harder methods, perform a 3-step audit: (a) compute the theoretical
+>   bound for the metric and compare to current achievement — if the
+>   ratio is >100×, suspect solver bug, not problem difficulty; (b) for
+>   each implicit assumption in your solver (e.g. circular target,
+>   linear approximation, fixed parameter), verify against the actual
+>   data distribution; (c) test the solver on ≥10 inputs spanning the
+>   data's diversity, not just the easiest cases. Skipping this audit
+>   cost 5 days on Ch1 trajectory in May 2026 — see `LESSONS-LEARNED.md`.
 > - **Commit on learn.** Observations and lessons are written *when
 >   their content becomes known*, not batched at session end. The
 >   vault's value depends on timestamps matching the moment a fact

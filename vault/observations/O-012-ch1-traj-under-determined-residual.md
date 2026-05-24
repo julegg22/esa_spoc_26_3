@@ -1,12 +1,21 @@
 ---
 id: O-012
 type: observation
-status: confirmed
-tags: [ch1, trajectory, residual, ultrathink, bug-diagnosis]
+status: partial — adjacent bug only
+tags: [ch1, trajectory, residual, ultrathink, bug-diagnosis, superseded]
 source: "Ultrathink session 2026-05-23 PM after Ch3 banking"
 created: 2026-05-23
 referenced_by: ["[[H-007-bannach-ddd-targeted-refinement]]"]
 ---
+
+> **⚠️ POST-2026-05-24 NOTE:** This observation diagnosed a real but
+> ADJACENT bug (under-determined residual in solve_transfer_back).
+> The *actual* root cause of Ch1 trajectory's poor mass was
+> `solve_arrival_dv` rejecting eccentric Moon orbits. See
+> [[LESSONS-LEARNED.md]] for the full diagnosis. The 14.82 kg result
+> this note explained is technically correct, but the conclusion
+> "needs research-grade fix" is wrong post-eccentric-orbit-fix.
+
 
 # O-012 — Ch1 trajectory's "20km/s monsters" trace to under-determined residual
 

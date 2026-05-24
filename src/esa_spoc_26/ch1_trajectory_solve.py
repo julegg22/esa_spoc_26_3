@@ -61,40 +61,73 @@ def _moon_inertial(posvel):
 
 def solve_arrival_dv(posvel_arr, a_m, e_m, i_m, tol=1e-6):
     """Min-norm synodic DV2 so the official `_match_orbit(a_m,e_m,i_m)`
-    passes. Key: the official a-tolerance is L·tol (≈384 m), so if the
-    arrival radius r is within that of a_m, a **circular** orbit at
-    radius r with inclination i_m is accepted (a'=r within tol of a_m;
-    e'≈0 within tol of e_m~1e-7; i'=i_m). We target that achievable
-    orbit, then validate against the official target. Returns
-    (dv2[3], el) or None if r is outside the a-tolerance."""
+    passes. Targets the actual (a_m, e_m, i_m) orbit, not a circular
+    proxy — works for eccentric Moon orbits (eL up to 0.65 in the
+    dataset). For e_m≈0 reduces to circularize-at-r as before.
+
+    FIX 2026-05-24: the previous version required |r - a_m| < 384m,
+    only correct for circular orbits. Eccentric orbits have valid
+    arrival radii in [a_m(1-e_m), a_m(1+e_m)] — 150/400 Moon orbits
+    were being rejected. See LESSONS-LEARNED.md.
+
+    Returns (dv2[3], el) or None if r is outside the orbit's r-window."""
     r_mf, v_mf = _moon_inertial(posvel_arr)
     r = np.linalg.norm(r_mf)
-    if abs(r - a_m) >= L * tol:
-        return None  # radius outside the official a-tolerance → coast fixes
+    # Eccentric-orbit-aware r-window check
+    r_min = a_m * (1.0 - e_m)
+    r_max = a_m * (1.0 + e_m)
+    if r < r_min - L * tol or r > r_max + L * tol:
+        return None  # radius outside the orbit's possible range
 
-    speed = np.sqrt(MU_MOON / r)  # circular at the achieved radius
+    # Build seed velocity candidates: in-plane tangential, ± both directions,
+    # tilted by i_m for inclined orbits. least_squares converges to a (a,e,i)
+    # match in 1-2 iterations from a good seed.
+    v_mag_seed = np.sqrt(max(MU_MOON * (2.0 / r - 1.0 / a_m), 1.0))
     r_hat = r_mf / r
-    h_dir = np.array([np.sin(i_m), 0.0, np.cos(i_m)])
-    t_hat = np.cross(h_dir, r_hat)
-    n = np.linalg.norm(t_hat)
-    t_hat = t_hat / n if n > 1e-12 else np.array([0.0, 1.0, 0.0])
-    v_seed = speed * t_hat
+    rxy = np.array([r_mf[0], r_mf[1], 0.0])
+    rxy_n = np.linalg.norm(rxy)
+    t_xy = (np.array([-r_mf[1], r_mf[0], 0.0]) / rxy_n
+            if rxy_n > 1e-6 else np.array([0.0, 1.0, 0.0]))
 
-    # target the *achievable* circular orbit (a=r, e=0, i=i_m)
     def resid(v_mf_try):
         el = pk.ic2par(r_mf.tolist(), v_mf_try.tolist(), MU_MOON)
-        return [(el[0] - r) / L, el[1], el[2] - i_m]
+        if not np.all(np.isfinite(el[:3])):
+            return [1e6] * 3
+        return [(el[0] - a_m) / L, el[1] - e_m, el[2] - i_m]
 
-    sol = least_squares(resid, v_seed, xtol=1e-14, ftol=1e-14, gtol=1e-14)
-    el = pk.ic2par(r_mf.tolist(), sol.x.tolist(), MU_MOON)
-    # validate against the OFFICIAL target (a_m, e_m, i_m)
-    ok = (abs(el[0] - a_m) / L < tol and abs(el[1] - e_m) < tol
-          and abs(el[2] - i_m) < tol)
-    if not ok:
+    best_dv2 = None
+    best_dv2_norm = np.inf
+    # Multi-seed: ± direction × range of inclination tilts
+    tilts = [0.0] if i_m < 1e-6 else np.linspace(0.0, i_m, 3)
+    for sign in (1, -1):
+        for tilt in tilts:
+            c, s = np.cos(tilt), np.sin(tilt)
+            # Rodrigues: rotate t_xy around r_hat by tilt
+            t_rot = (t_xy * c + np.cross(r_hat, t_xy) * s
+                     + r_hat * np.dot(r_hat, t_xy) * (1 - c))
+            tn = np.linalg.norm(t_rot)
+            if tn < 1e-12:
+                continue
+            v_seed = sign * v_mag_seed * t_rot / tn
+            try:
+                sol = least_squares(resid, v_seed, xtol=1e-14,
+                                     ftol=1e-14, gtol=1e-14)
+            except Exception:
+                continue
+            try:
+                el = pk.ic2par(r_mf.tolist(), sol.x.tolist(), MU_MOON)
+            except Exception:
+                continue
+            if (abs(el[0] - a_m) / L < tol and abs(el[1] - e_m) < tol
+                    and abs(el[2] - i_m) < tol):
+                dv2 = (sol.x - v_mf) / V
+                if np.linalg.norm(dv2) < best_dv2_norm:
+                    best_dv2 = dv2
+                    best_dv2_norm = np.linalg.norm(dv2)
+                    best_el = el
+    if best_dv2 is None:
         return None
-    # velocity-only impulse at fixed position: synodic DV2 = Δv_inertial / V
-    dv2 = (sol.x - v_mf) / V
-    return dv2, el
+    return best_dv2, best_el
 
 
 def solve_departure_dv(d_state, a_e, e_e, i_e, tol=1e-6):

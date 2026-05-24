@@ -1,7 +1,7 @@
 ---
 id: O-002
 type: observation
-status: confirmed
+status: confirmed (numbers); reframed (gap interpretation)
 tags: [baseline, ch1, ch2]
 source: "read-only GraphQL query https://api.optimize.esa.int/graphql/ (problem.solutions{rank score user}) 2026-05-18, best-per-user reduction"
 created: 2026-05-18
@@ -9,6 +9,13 @@ referenced_by: []
 supersedes:
 superseded_by:
 ---
+
+> **⚠️ POST-2026-05-24 NOTE:** The leaderboard numbers here are correct,
+> but our interpretation of "30000× gap on Ch1 trajectory" as
+> structural / research-grade-needed was wrong. The gap was entirely
+> due to a solve_arrival_dv bug rejecting eccentric Moon orbits. See
+> [[LESSONS-LEARNED.md]].
+
 
 # O-002 — Leaderboard snapshot 2026-05-18 (regular instances)
 
