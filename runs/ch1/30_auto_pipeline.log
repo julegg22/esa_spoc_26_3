@@ -1,0 +1,201 @@
+[19:02:02] ===== AUTO-PIPELINE START =====
+[19:02:02] Phase 0: waiting for production sweep to finish...
+[19:04:02] Sweep still running, last:   [ 170/500] valid=170 top=[2348,2337,2318]kg wall=5565s ETA=10802s
+[19:06:02] Sweep still running, last:   [ 170/500] valid=170 top=[2348,2337,2318]kg wall=5565s ETA=10802s
+[19:08:02] Sweep still running, last:   [ 170/500] valid=170 top=[2348,2337,2318]kg wall=5565s ETA=10802s
+[19:10:02] Sweep still running, last:   [ 180/500] valid=180 top=[2348,2337,2318]kg wall=6021s ETA=10704s
+[19:12:02] Sweep still running, last:   [ 190/500] valid=190 top=[2357,2348,2337]kg wall=6116s ETA=9978s
+[19:14:02] Sweep still running, last:   [ 190/500] valid=190 top=[2357,2348,2337]kg wall=6116s ETA=9978s
+[19:16:02] Sweep still running, last:   [ 190/500] valid=190 top=[2357,2348,2337]kg wall=6116s ETA=9978s
+[19:18:03] Sweep still running, last:   [ 190/500] valid=190 top=[2357,2348,2337]kg wall=6116s ETA=9978s
+[19:20:03] Sweep still running, last:   [ 200/500] valid=200 top=[2357,2348,2337]kg wall=6532s ETA=9799s
+[19:22:03] Sweep still running, last:   [ 200/500] valid=200 top=[2357,2348,2337]kg wall=6532s ETA=9799s
+[19:24:03] Sweep still running, last:   [ 200/500] valid=200 top=[2357,2348,2337]kg wall=6532s ETA=9799s
+[19:26:03] Sweep still running, last:   [ 200/500] valid=200 top=[2357,2348,2337]kg wall=6532s ETA=9799s
+[19:28:03] Sweep still running, last:   [ 220/500] valid=220 top=[2357,2348,2337]kg wall=7094s ETA=9028s
+[19:30:03] Sweep still running, last:   [ 220/500] valid=220 top=[2357,2348,2337]kg wall=7094s ETA=9028s
+[19:32:03] Sweep still running, last:   [ 220/500] valid=220 top=[2357,2348,2337]kg wall=7094s ETA=9028s
+[19:34:03] Sweep still running, last:   [ 220/500] valid=220 top=[2357,2348,2337]kg wall=7094s ETA=9028s
+[19:36:03] Sweep still running, last:   [ 230/500] valid=230 top=[2357,2348,2337]kg wall=7557s ETA=8871s
+[19:38:03] Sweep still running, last:   [ 240/500] valid=240 top=[2357,2348,2337]kg wall=7625s ETA=8260s
+[19:40:03] Sweep still running, last:   [ 240/500] valid=240 top=[2357,2348,2337]kg wall=7625s ETA=8260s
+[19:42:03] Sweep still running, last:   [ 240/500] valid=240 top=[2357,2348,2337]kg wall=7625s ETA=8260s
+[19:44:04] Sweep still running, last:   [ 240/500] valid=240 top=[2357,2348,2337]kg wall=7625s ETA=8260s
+[19:46:04] Sweep still running, last:   [ 250/500] valid=250 top=[2357,2348,2337]kg wall=8101s ETA=8101s
+[19:48:04] Sweep still running, last:   [ 250/500] valid=250 top=[2357,2348,2337]kg wall=8101s ETA=8101s
+[19:50:04] Sweep still running, last:   [ 250/500] valid=250 top=[2357,2348,2337]kg wall=8101s ETA=8101s
+[19:52:04] Sweep still running, last:   [ 260/500] valid=260 top=[2357,2348,2337]kg wall=8551s ETA=7893s
+[19:54:04] Sweep still running, last:   [ 270/500] valid=270 top=[2357,2348,2337]kg wall=8641s ETA=7361s
+[19:56:04] Sweep still running, last:   [ 270/500] valid=270 top=[2357,2348,2337]kg wall=8641s ETA=7361s
+[19:58:04] Sweep still running, last:   [ 270/500] valid=270 top=[2357,2348,2337]kg wall=8641s ETA=7361s
+[20:00:04] Sweep still running, last:   [ 270/500] valid=270 top=[2357,2348,2337]kg wall=8641s ETA=7361s
+[20:02:04] Sweep still running, last:   [ 280/500] valid=280 top=[2357,2348,2337]kg wall=9075s ETA=7131s
+[20:04:04] Sweep still running, last:   [ 280/500] valid=280 top=[2357,2348,2337]kg wall=9075s ETA=7131s
+[20:06:04] Sweep still running, last:   [ 280/500] valid=280 top=[2357,2348,2337]kg wall=9075s ETA=7131s
+[20:08:05] Sweep still running, last:   [ 290/500] valid=290 top=[2357,2348,2337]kg wall=9517s ETA=6891s
+[20:10:05] Sweep still running, last:   [ 300/500] valid=300 top=[2357,2348,2337]kg wall=9642s ETA=6428s
+[20:12:05] Sweep still running, last:   [ 300/500] valid=300 top=[2357,2348,2337]kg wall=9642s ETA=6428s
+[20:14:05] Sweep still running, last:   [ 300/500] valid=300 top=[2357,2348,2337]kg wall=9642s ETA=6428s
+[20:16:05] Sweep still running, last:   [ 300/500] valid=300 top=[2357,2348,2337]kg wall=9642s ETA=6428s
+[20:18:05] Sweep still running, last:   [ 310/500] valid=310 top=[2357,2348,2337]kg wall=10080s ETA=6178s
+[20:20:05] Sweep still running, last:   [ 320/500] valid=320 top=[2357,2348,2337]kg wall=10236s ETA=5757s
+[20:22:05] Sweep still running, last:   [ 320/500] valid=320 top=[2357,2348,2337]kg wall=10236s ETA=5757s
+[20:24:05] Sweep still running, last:   [ 320/500] valid=320 top=[2357,2348,2337]kg wall=10236s ETA=5757s
+[20:26:05] Sweep still running, last:   [ 320/500] valid=320 top=[2357,2348,2337]kg wall=10236s ETA=5757s
+[20:28:05] Sweep still running, last:   [ 330/500] valid=330 top=[2357,2348,2337]kg wall=10618s ETA=5470s
+[20:30:05] Sweep still running, last:   [ 330/500] valid=330 top=[2357,2348,2337]kg wall=10618s ETA=5470s
+[20:32:05] Sweep still running, last:   [ 330/500] valid=330 top=[2357,2348,2337]kg wall=10618s ETA=5470s
+[20:34:06] Sweep still running, last:   [ 340/500] valid=340 top=[2362,2362,2357]kg wall=11059s ETA=5204s
+[20:36:06] Sweep still running, last:   [ 350/500] valid=350 top=[2362,2362,2357]kg wall=11156s ETA=4781s
+[20:38:06] Sweep still running, last:   [ 350/500] valid=350 top=[2362,2362,2357]kg wall=11156s ETA=4781s
+[20:40:06] Sweep still running, last:   [ 350/500] valid=350 top=[2362,2362,2357]kg wall=11156s ETA=4781s
+[20:42:06] Sweep still running, last:   [ 350/500] valid=350 top=[2362,2362,2357]kg wall=11156s ETA=4781s
+[20:44:06] Sweep still running, last:   [ 360/500] valid=360 top=[2362,2362,2357]kg wall=11586s ETA=4506s
+[20:46:06] Sweep still running, last:   [ 360/500] valid=360 top=[2362,2362,2357]kg wall=11586s ETA=4506s
+[20:48:06] Sweep still running, last:   [ 360/500] valid=360 top=[2362,2362,2357]kg wall=11586s ETA=4506s
+[20:50:06] Sweep still running, last:   [ 370/500] valid=370 top=[2362,2362,2357]kg wall=12046s ETA=4232s
+[20:52:06] Sweep still running, last:   [ 380/500] valid=380 top=[2362,2362,2357]kg wall=12120s ETA=3827s
+[20:54:06] Sweep still running, last:   [ 380/500] valid=380 top=[2362,2362,2357]kg wall=12120s ETA=3827s
+[20:56:06] Sweep still running, last:   [ 380/500] valid=380 top=[2362,2362,2357]kg wall=12120s ETA=3827s
+[20:58:07] Sweep still running, last:   [ 380/500] valid=380 top=[2362,2362,2357]kg wall=12120s ETA=3827s
+[21:00:07] Sweep still running, last:   [ 390/500] valid=390 top=[2362,2362,2357]kg wall=12595s ETA=3552s
+[21:02:07] Sweep still running, last:   [ 400/500] valid=400 top=[2362,2362,2357]kg wall=12660s ETA=3165s
+[21:04:07] Sweep still running, last:   [ 400/500] valid=400 top=[2362,2362,2357]kg wall=12660s ETA=3165s
+[21:06:07] Sweep still running, last:   [ 400/500] valid=400 top=[2362,2362,2357]kg wall=12660s ETA=3165s
+[21:08:07] Sweep still running, last:   [ 410/500] valid=410 top=[2362,2362,2357]kg wall=13127s ETA=2882s
+[21:10:07] Sweep still running, last:   [ 410/500] valid=410 top=[2362,2362,2357]kg wall=13127s ETA=2882s
+[21:12:07] Sweep still running, last:   [ 410/500] valid=410 top=[2362,2362,2357]kg wall=13127s ETA=2882s
+[21:14:07] Sweep still running, last:   [ 410/500] valid=410 top=[2362,2362,2357]kg wall=13127s ETA=2882s
+[21:16:07] Sweep still running, last:   [ 420/500] valid=420 top=[2362,2362,2357]kg wall=13574s ETA=2585s
+[21:18:07] Sweep still running, last:   [ 430/500] valid=430 top=[2362,2362,2357]kg wall=13650s ETA=2222s
+[21:20:07] Sweep still running, last:   [ 430/500] valid=430 top=[2362,2362,2357]kg wall=13650s ETA=2222s
+[21:22:08] Sweep still running, last:   [ 430/500] valid=430 top=[2362,2362,2357]kg wall=13650s ETA=2222s
+[21:24:08] Sweep still running, last:   [ 430/500] valid=430 top=[2362,2362,2357]kg wall=13650s ETA=2222s
+[21:26:08] Sweep still running, last:   [ 440/500] valid=440 top=[2362,2362,2357]kg wall=14113s ETA=1924s
+[21:28:08] Sweep still running, last:   [ 440/500] valid=440 top=[2362,2362,2357]kg wall=14113s ETA=1924s
+[21:30:08] Sweep still running, last:   [ 440/500] valid=440 top=[2362,2362,2357]kg wall=14113s ETA=1924s
+[21:32:08] Sweep still running, last:   [ 450/500] valid=450 top=[2362,2362,2357]kg wall=14525s ETA=1614s
+[21:34:08] Sweep still running, last:   [ 460/500] valid=460 top=[2362,2362,2357]kg wall=14656s ETA=1274s
+[21:36:08] Sweep still running, last:   [ 460/500] valid=460 top=[2362,2362,2357]kg wall=14656s ETA=1274s
+[21:38:08] Sweep still running, last:   [ 460/500] valid=460 top=[2362,2362,2357]kg wall=14656s ETA=1274s
+[21:40:08] Sweep still running, last:   [ 460/500] valid=460 top=[2362,2362,2357]kg wall=14656s ETA=1274s
+[21:42:08] Sweep still running, last:   [ 470/500] valid=470 top=[2362,2362,2357]kg wall=15099s ETA=964s
+[21:44:08] Sweep still running, last:   [ 480/500] valid=480 top=[2362,2362,2357]kg wall=15206s ETA=634s
+[21:46:08] Sweep still running, last:   [ 480/500] valid=480 top=[2362,2362,2357]kg wall=15206s ETA=634s
+[21:48:09] Sweep still running, last:   [ 480/500] valid=480 top=[2362,2362,2357]kg wall=15206s ETA=634s
+[21:50:09] Sweep still running, last:   [ 490/500] valid=490 top=[2362,2362,2357]kg wall=15630s ETA=319s
+[21:52:09] Sweep still running, last:   [ 490/500] valid=490 top=[2362,2362,2357]kg wall=15630s ETA=319s
+[21:54:09] Sweep still running, last: BANKED: 15 → 37253 kg (20 transfers)
+[21:54:09] Phase 0: sweep complete.
+[21:54:09] Baseline bank:
+  Mass: 37253 kg, transfers: 20
+[21:54:11] WARN: sweep_results.json missing (running sweep predates that feature)
+[21:54:11] ===== Phase 1A: Nelder-Mead polish per pair =====
+Reading bank: /home/julian/Projects/esa_spoc_26_3/solutions/upload/trajectory.json
+Bank has 8400 elements (400 rows)
+Active rows: 20
+Baseline mass: 37253 kg
+
+Polishing 20 rows with 8 workers...
+  [  4] 2263 → 2566 kg (+303)
+  [  5] 2246 → 2550 kg (+304)
+  [  8] 1770 → 1965 kg (+195)
+  [  9] 1734 → 1858 kg (+124)
+  [  6] 2228 → 2462 kg (+234)
+  [  7] 2037 → 2087 kg (+50)
+  [  2] 2314 → 2584 kg (+269)
+  [  3] 2314 → 2598 kg (+284)
+  [  0] 2342 → 2544 kg (+202)
+  [  1] 2330 → 2628 kg (+298)
+  [ 14] 1543 → 1795 kg (+252)
+  [ 15] 1524 → 1849 kg (+325)
+  [ 10] 1731 → 1984 kg (+254)
+  [ 11] 1701 → 1865 kg (+163)
+  [ 16] 1484 → 1663 kg (+179)
+  [ 17] 1484 → 1656 kg (+172)
+  [ 12] 1699 → 2046 kg (+348)
+  [ 13] 1663 → 1850 kg (+187)
+  [ 18] 1555 → 1873 kg (+318)
+  [ 19] 1291 → 1407 kg (+115)
+
+Polish done in 115s: 20/20 improved, +4577 kg total
+
+New total mass: 41830 kg (was 37253)
+BANKED polished: 37253 → 41830 kg
+[21:56:09] After 1A:
+  Mass: 41830 kg, transfers: 20
+[21:56:11] ===== Phase 1B: 3-impulse mid-course polish =====
+Reading bank: /home/julian/Projects/esa_spoc_26_3/solutions/upload/trajectory.json
+Active rows: 20
+Baseline mass: 41830 kg
+
+3-impulse polish on 20 rows with 8 workers...
+  [  4] 2566 → 2567 kg (+1)
+  [  8] 1965 → 1967 kg (+2)
+  [  9] 1858 → 1859 kg (+1)
+  [ 15] 1849 → 1854 kg (+5)
+  [  7] 2087 → 2368 kg (+281)
+  [ 11] 1865 → 2012 kg (+147)
+  [ 18] 1873 → 1878 kg (+5)
+  [ 19] 1407 → 1407 kg (+1)
+  [ 12] 2046 → 2049 kg (+3)
+  [ 13] 1850 → 1999 kg (+149)
+  [ 16] 1663 → 1795 kg (+132)
+  [ 17] 1656 → 1819 kg (+163)
+
+3-impulse polish done in 171s: 12/20 improved, +890 kg total
+BANKED 3-impulse: 41830 → 42719 kg
+[21:59:05] After 1B:
+  Mass: 42719 kg, transfers: 20
+[21:59:07] ===== Phase 1C: extended sweep on pairs #500-#2000 =====
+Pre-computing Hohmann ranking for all 160000 pairs...
+Selected pairs ranked #500-#2000: top 4089 kg, bottom 3935 kg
+
+Launching parallel solver (8 workers)...
+  [  10/1500] valid=10 top=[2318,2312,2272]kg wall=545s ETA=81223s
+  [  20/1500] valid=20 top=[2318,2312,2272]kg wall=1081s ETA=80027s
+  [  30/1500] valid=30 top=[2318,2312,2272]kg wall=1152s ETA=56447s
+  [  40/1500] valid=40 top=[2318,2312,2272]kg wall=1666s ETA=60824s
+  [  50/1500] valid=50 top=[2318,2312,2272]kg wall=2065s ETA=59881s
+  [  60/1500] valid=60 top=[2318,2312,2272]kg wall=2242s ETA=53811s
+  [  70/1500] valid=70 top=[2318,2312,2272]kg wall=2744s ETA=56051s
+  [  80/1500] valid=80 top=[2318,2312,2282]kg wall=2882s ETA=51148s
+  [  90/1500] valid=90 top=[2318,2312,2282]kg wall=3336s ETA=52271s
+  [ 100/1500] valid=100 top=[2318,2312,2282]kg wall=3797s ETA=53158s
+  [ 110/1500] valid=110 top=[2318,2312,2296]kg wall=3931s ETA=49670s
+[23:08:53] Phase 1C had errors
+[23:08:53] ===== Phase 1D: Hungarian rebank combining all results =====
+From existing bank: 20 (idE,idL) pairs
+From runs/ch1/extended_results.json: 100 new/better pairs (total now 120)
+
+Hungarian on 120 candidate pairs...
+Selected 20 transfers, sum mass = 42719 kg
+
+Assigning unique idD (greedy by cld * remaining_time)...
+
+UDP verify: total mass = 42719 kg from 20 transfers
+Existing bank 42719 kg >= new 42719
+[23:08:56] After 1D:
+  Mass: 42719 kg, transfers: 20
+[23:08:58] ===== Phase 1E: re-polish =====
+Reading bank: /home/julian/Projects/esa_spoc_26_3/solutions/upload/trajectory.json
+Bank has 8400 elements (400 rows)
+Active rows: 20
+Baseline mass: 42719 kg
+
+Polishing 20 rows with 8 workers...
+  [ 10] 1984 → 1988 kg (+4)
+  [  3] 2598 → 2599 kg (+0)
+  [  6] 2462 → 2524 kg (+62)
+  [  0] 2544 → 2544 kg (+0)
+  [  5] 2550 → 2587 kg (+37)
+
+Polish done in 34s: 5/20 improved, +104 kg total
+
+New total mass: 42824 kg (was 42719)
+BANKED polished: 42719 → 42824 kg
+Reading bank: /home/julian/Projects/esa_spoc_26_3/solutions/upload/trajectory.json
+Active rows: 20
+Baseline mass: 42824 kg
+
+3-impulse polish on 20 rows with 8 workers...
