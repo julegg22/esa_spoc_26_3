@@ -1,7 +1,7 @@
 ---
 id: OPEN-PATHS
 type: frontier
-updated: 2026-05-20
+updated: 2026-05-24
 tags: [frontier]
 ---
 
@@ -18,17 +18,31 @@ tags: [frontier]
 
 ![[frontier.base]]
 
-## Selection (2026-05-18)
+## Selection (2026-05-24)
 
 Bootstrapped under [[questions/Q-001-rank3-each-regular-instance|Q-001]].
 ROI = expected_points / max(estimated_effort_h, 0.25).
+
+**MAJOR REFRAME 2026-05-24**: Ch1 trajectory bug fix
+([[lessons/L-012-solver-assumption-audit-before-research-grade-verdict|L-012]])
+unlocked the whole problem. Per-pair masses jumped 50-100×. Active
+sweep running; bank pending. Tier 1 improvements (polish, 3-impulse,
+extended sweep) reach rank-3+. Tier 2/3 push toward rank-1.
 
 ### Open (status: open) — at most one active per compute stream (§2)
 
 | H | instance | expected | est. h | ROI | note |
 |---|---|---|---|---|---|
-| H-003 polish | Ch2 small | +2–4 | 4 | 0.75 | reduce 145.8d → 112d via 2-opt + multi-seed insertion; topk running |
-| H-007 (Ch2 medium) | Ch2 medium | 8 | 12 | 0.67 | reuse find_transfer + cluster-insertion pipeline; same structure (Q6 confirmed pending) |
+| Active sweep (in_progress) | Ch1 trajectory | ~10-12 | 6h compute | ~1.7 | 500 pairs, ETA ~3h; expected 200-500k kg banked |
+| Tier 1A polish (queued) | Ch1 trajectory | +1-2 | 1-2h | 1.0 | Nelder-Mead per pair; ready in scripts/ch1_polish_chromosome.py |
+| Tier 1B 3-impulse (queued) | Ch1 trajectory | +2-3 | 2-3h | 1.0 | dv1 mid-course; ready in scripts/ch1_3impulse_polish.py |
+| Tier 1C extend (queued) | Ch1 trajectory | +2-4 | 6h | 0.5 | pairs #500-2000; ready in scripts/ch1_extend_sweep.py |
+| [[H-008]] Tier 2: raan_e/t0 | Ch1 trajectory | +2-3 | 4-8 | 0.5 | sweep 3 free DOF; needs Tier 1 first |
+| [[H-009]] Tier 3: WSB | Ch1 trajectory | +5-8 | 16-32 | 0.3 | Sun-assisted ballistic capture; rank-1 ambition |
+| [[H-010]] Tier 3: back-shoot | Ch1 trajectory | +2-3 | 4-6 | 0.5 | fix O-012 residual; targets high-iE pairs |
+| [[H-011]] Tier 3: STM-DC | Ch1 trajectory | +3-5 | 16-24 | 0.2 | heyoka variational; enables full 160k sweep |
+| H-003 polish | Ch2 small | +2-4 | 4 | 0.75 | reduce 142.92 → 112d; LARGE ARCHITECTURAL change required |
+| H-007 (Ch2 medium) | Ch2 medium | 8 | 12 | 0.67 | reuse find_transfer + cluster-insertion pipeline |
 
 (Ch1 matching banked ≈11 pts. **Ch2 small banked 145.80 d = ~3–5 pts** via E-022 find_transfer + cluster-insertion. H-002 paused.)
 
@@ -55,6 +69,18 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-05-24 (Ch1 trajectory unlocked; Tier 2/3 hypotheses opened)** —
+  Bug in solve_arrival_dv (rejected eccentric Moon orbits) found and
+  fixed ([[lessons/L-012-solver-assumption-audit-before-research-grade-verdict|L-012]],
+  [[sessions/S-2026-05-24-eccentric-orbit-breakthrough|S-2026-05-24]]).
+  Per-pair masses jumped 50-100×. Production sweep on top 500 pairs
+  running (8 workers, ETA ~3h). Tier 1 improvement scripts ready
+  (polish, 3-impulse, extend, rebank). Opened Tier 2/3 hypotheses
+  for path beyond rank-3 toward rank-1:
+  [[hypotheses/H-008-ch1-tier2-raan-t0-sweep|H-008]] (raan/argp/t0),
+  [[hypotheses/H-009-ch1-tier3-wsb-sun-assisted|H-009]] (WSB),
+  [[hypotheses/H-010-ch1-tier3-backward-shooting-fix|H-010]] (backward shooting),
+  [[hypotheses/H-011-ch1-tier3-stm-based-dc|H-011]] (STM-based DC).
 - **2026-05-20 (H-003 polished to 142.99 d; 7 local-search methods converge)** — Continued
   SA (3×5000 iters, T=80, mixed moves) yielded 1 improvement (143.79→142.99
   via 2-opt at iter 77 of seed=2). Subsequent: cluster-first opener
