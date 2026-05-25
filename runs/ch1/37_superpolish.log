@@ -1,0 +1,32 @@
+Bank has 158 active transfers
+Baseline mass: 109739 kg
+
+Super-polish on 8 workers...
+  [ 35] 1407 → 1520 kg (+113)
+Process ForkPoolWorker-5:
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 856, in next
+    item = self._items.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_superpolish.py", line 197, in <module>
+    main(n_workers=n_workers)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_superpolish.py", line 167, in main
+    for idx, new_row, new_mass, orig_mass in p.imap_unordered(
+                                             ~~~~~~~~~~~~~~~~^
+            _polish_task, active, chunksize=2):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 451, in <genexpr>
+    return (item for chunk in result for item in chunk)
+                              ^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 861, in next
+    self._cond.wait(timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/threading.py", line 359, in wait
+    waiter.acquire()
+    ~~~~~~~~~~~~~~^^
+KeyboardInterrupt

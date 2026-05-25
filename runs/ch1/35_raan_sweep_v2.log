@@ -1,0 +1,28 @@
+Used idL: 159, Unused: 241
+Computing top-3 idE per unused idL...
+Candidate pairs: 723
+Estimated wall: ~5.0h on 8 workers (6x ICs per pair)
+
+Launching parallel solver...
+  [  10/723] valid=10 unique_idL=4 top=[1673,1432,1269]kg wall=1009s ETA=71931s
+  [  20/723] valid=20 unique_idL=8 top=[1673,1432,1269]kg wall=1905s ETA=66951s
+  [  30/723] valid=30 unique_idL=11 top=[1673,1432,1414]kg wall=1999s ETA=46172s
+  [  40/723] valid=40 unique_idL=14 top=[1757,1684,1673]kg wall=2832s ETA=48365s
+  [  50/723] valid=50 unique_idL=17 top=[1759,1757,1716]kg wall=3646s ETA=49080s
+  [  60/723] valid=60 unique_idL=21 top=[1759,1757,1716]kg wall=3918s ETA=43298s
+  [  70/723] valid=70 unique_idL=24 top=[1759,1757,1716]kg wall=4686s ETA=43711s
+  [  80/723] valid=80 unique_idL=27 top=[1759,1757,1717]kg wall=4970s ETA=39946s
+  [  90/723] valid=90 unique_idL=30 top=[1759,1757,1717]kg wall=5790s ETA=40726s
+  [ 100/723] valid=100 unique_idL=34 top=[1760,1759,1757]kg wall=6383s ETA=39767s
+  [ 110/723] valid=110 unique_idL=37 top=[1760,1759,1757]kg wall=6930s ETA=38619s
+  [ 120/723] valid=120 unique_idL=40 top=[1760,1759,1757]kg wall=7605s ETA=38214s
+  [ 130/723] valid=130 unique_idL=44 top=[1760,1759,1757]kg wall=8171s ETA=37274s
+  [ 140/723] valid=140 unique_idL=47 top=[1760,1759,1757]kg wall=8729s ETA=36350s
+  [ 150/723] valid=150 unique_idL=50 top=[1760,1759,1757]kg wall=9405s ETA=35927s
+  [ 160/723] valid=160 unique_idL=54 top=[1760,1759,1757]kg wall=10005s ETA=35203s
+  [ 170/723] valid=170 unique_idL=57 top=[1760,1759,1757]kg wall=10455s ETA=34010s
+  [ 180/723] valid=180 unique_idL=62 top=[1760,1759,1757]kg wall=11271s ETA=34000s
+  [ 190/723] valid=190 unique_idL=64 top=[1760,1759,1757]kg wall=11836s ETA=33202s
+  [ 200/723] valid=200 unique_idL=68 top=[1760,1759,1757]kg wall=12303s ETA=32172s
+  [ 210/723] valid=210 unique_idL=71 top=[1760,1759,1757]kg wall=13048s ETA=31875s
+  [ 220/723] valid=220 unique_idL=74 top=[1760,1759,1757]kg wall=13460s ETA=30774s

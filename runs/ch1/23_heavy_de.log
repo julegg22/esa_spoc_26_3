@@ -1,0 +1,38 @@
+Pair (267,185): aE=42449km iE=0.10, aL=5280km iL=0.55
+Theoretical Hohmann + plane change ~2200 m/s → ~1700 kg expected
+
+Starting scipy differential_evolution (popsize=15, maxiter=150, workers=8)...
+Expected wall: 20-30 min.
+  [t=16s] best_obj=861508.20 convergence=0.0016
+  [t=29s] best_obj=861508.20 convergence=0.0017
+  [t=42s] best_obj=392356.94 convergence=0.0019
+  [t=55s] best_obj=392356.94 convergence=0.0025
+  [t=68s] best_obj=392356.94 convergence=0.0029
+  [t=82s] best_obj=392356.94 convergence=0.0036
+  [t=95s] best_obj=392356.94 convergence=0.0064
+  [t=134s] best_obj=392356.94 convergence=0.0079
+  [t=177s] best_obj=392356.94 convergence=0.0144
+  [t=219s] best_obj=392356.94 convergence=0.0144
+  [t=262s] best_obj=392356.94 convergence=0.0144
+  [t=303s] best_obj=392356.94 convergence=0.0144
+  [t=346s] best_obj=392356.94 convergence=0.0129
+  [t=388s] best_obj=392356.94 convergence=0.0129
+  [t=430s] best_obj=392356.94 convergence=0.0129
+  [t=472s] best_obj=392356.94 convergence=0.0125
+  [t=515s] best_obj=392356.94 convergence=0.0117
+  [t=558s] best_obj=392356.94 convergence=0.0117
+  [t=601s] best_obj=392356.94 convergence=0.0109
+  [t=643s] best_obj=392356.94 convergence=0.0099
+  [t=685s] best_obj=392356.94 convergence=0.0099
+  [t=727s] best_obj=392356.94 convergence=0.0099
+  [t=770s] best_obj=392356.94 convergence=0.0097
+  [t=812s] best_obj=392356.94 convergence=0.0097
+  [t=857s] best_obj=392356.94 convergence=0.0097
+  [t=903s] best_obj=392356.94 convergence=0.0097
+  [t=920s] best_obj=392356.94 convergence=0.0097
+  [t=934s] best_obj=392356.94 convergence=0.0096
+  [t=947s] best_obj=296602.92 convergence=0.0092
+  [t=960s] best_obj=296602.92 convergence=0.0091
+
+DE done in 960s, final obj=296602.92
+FAILED: no feasibility (best penalty 296602.92)

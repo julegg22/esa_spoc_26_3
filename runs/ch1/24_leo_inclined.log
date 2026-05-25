@@ -1,0 +1,19 @@
+LEO Earth orbits (a<10000km, e<0.05): 258
+Test pairs: 36
+Solving in parallel (8 workers, 192 ICs/pair, ~30-60s/pair)...
+
+  ✗ E 27(iE=0.11)→L116(iL=0.02): FAIL in 360s
+  ✗ E 27(iE=0.11)→L 79(iL=0.08): FAIL in 361s
+  ✗ E 27(iE=0.11)→L 78(iL=0.03): FAIL in 362s
+  ✗ E 15(iE=0.18)→L 79(iL=0.08): FAIL in 369s
+  ✗ E 15(iE=0.18)→L 78(iL=0.03): FAIL in 379s
+  ✗ E  8(iE=0.31)→L116(iL=0.02): FAIL in 403s
+  ✗ E  8(iE=0.31)→L 79(iL=0.08): FAIL in 405s
+  ✗ E  8(iE=0.31)→L 78(iL=0.03): FAIL in 405s
+  ✗ E328(iE=0.82)→L 95(iL=0.26): FAIL in 266s
+  ✗ E328(iE=0.82)→L 88(iL=0.23): FAIL in 270s
+  ✗ E328(iE=0.82)→L134(iL=0.24): FAIL in 271s
+  ✗ E233(iE=1.20)→L 95(iL=0.26): FAIL in 275s
+  ✗ E233(iE=1.20)→L 88(iL=0.23): FAIL in 266s
+  ✗ E233(iE=1.20)→L134(iL=0.24): FAIL in 272s
+  ✗ E 15(iE=0.18)→L116(iL=0.02): FAIL in 384s

@@ -1,0 +1,50 @@
+Earth buckets: LEO=359, MEO=21, GEO+=20
+Moon i range: 0–1.57 rad
+
+Testing 20 pairs:
+  E 30 (a=7415km i=1.41) → L 17 (a=1868km i=0.11)
+  E 31 (a=7405km i=1.05) → L 26 (a=1861km i=1.26)
+  E154 (a=6919km i=1.50) → L 63 (a=1870km i=0.17)
+  E155 (a=6925km i=0.08) → L 76 (a=1896km i=1.50)
+  E232 (a=7656km i=0.12) → L105 (a=1875km i=0.50)
+  E251 (a=7351km i=0.19) → L137 (a=1848km i=1.05)
+  E264 (a=42032km i=0.31) → L144 (a=1863km i=1.28)
+  E266 (a=42116km i=0.23) → L173 (a=4948km i=0.76)
+  E267 (a=42449km i=0.10) → L185 (a=5280km i=0.55)
+  E268 (a=42582km i=0.27) → L198 (a=4671km i=0.55)
+  E269 (a=42659km i=0.21) → L218 (a=4977km i=0.63)
+  E273 (a=42914km i=0.29) → L241 (a=4802km i=0.75)
+  E281 (a=24721km i=0.10) → L265 (a=4508km i=0.61)
+  E287 (a=24677km i=0.20) → L270 (a=5276km i=0.55)
+  E288 (a=24496km i=0.29) → L291 (a=4327km i=0.55)
+  E289 (a=24318km i=0.23) → L299 (a=5105km i=0.70)
+  E291 (a=24658km i=0.28) → L305 (a=3067km i=0.47)
+  E294 (a=24592km i=0.02) → L315 (a=3067km i=0.47)
+  E314 (a=7034km i=0.55) → L349 (a=3094km i=0.62)
+  E347 (a=7080km i=0.10) → L377 (a=3051km i=0.34)
+
+Solving...
+  E 30→L 17 (aE=7415km iE=1.41, aL=1868km iL=0.11): FAIL in 521s
+  E154→L 63 (aE=6919km iE=1.50, aL=1870km iL=0.17): FAIL in 528s
+  E 31→L 26 (aE=7405km iE=1.05, aL=1861km iL=1.26): FAIL in 593s
+  E266→L173 (aE=42116km iE=0.23, aL=4948km iL=0.76): FAIL in 612s
+  E155→L 76 (aE=6925km iE=0.08, aL=1896km iL=1.50): FAIL in 763s
+  E232→L105 (aE=7656km iE=0.12, aL=1875km iL=0.50): FAIL in 838s
+  E251→L137 (aE=7351km iE=0.19, aL=1848km iL=1.05): FAIL in 850s
+  E267→L185 (aE=42449km iE=0.10, aL=5280km iL=0.55): FAIL in 612s
+  E264→L144 (aE=42032km iE=0.31, aL=1863km iL=1.28): FAIL in 1153s
+  E268→L198 (aE=42582km iE=0.27, aL=4671km iL=0.55): FAIL in 626s
+  E269→L218 (aE=42659km iE=0.21, aL=4977km iL=0.63): FAIL in 622s
+  E273→L241 (aE=42914km iE=0.29, aL=4802km iL=0.75): FAIL in 605s
+  E287→L270 (aE=24677km iE=0.20, aL=5276km iL=0.55): FAIL in 608s
+  E281→L265 (aE=24721km iE=0.10, aL=4508km iL=0.61): FAIL in 712s
+  E288→L291 (aE=24496km iE=0.29, aL=4327km iL=0.55): FAIL in 663s
+  E289→L299 (aE=24318km iE=0.23, aL=5105km iL=0.70): FAIL in 530s
+  E314→L349 (aE=7034km iE=0.55, aL=3094km iL=0.62): FAIL in 463s
+  E291→L305 (aE=24658km iE=0.28, aL=3067km iL=0.47): FAIL in 547s
+  E294→L315 (aE=24592km iE=0.02, aL=3067km iL=0.47): FAIL in 565s
+  E347→L377 (aE=7080km iE=0.10, aL=3051km iL=0.34): FAIL in 509s
+
+=== Summary: 0/20 valid in 1727s ===
+
+Results saved to /home/julian/Projects/esa_spoc_26_3/runs/ch1/19_validate_diverse.json

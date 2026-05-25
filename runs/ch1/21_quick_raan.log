@@ -1,0 +1,6 @@
+Pair (267, 185): aE=42449km iE=0.101 (GEO)
+                    aL=5280km iL=0.548
+|Δi|=0.45 rad
+Theoretical Hohmann + plane change ~ 2200 m/s → ~1700 kg expected
+
+  ... 600 ICs done, 0 valid, elapsed 267s

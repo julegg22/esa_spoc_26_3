@@ -1,0 +1,7 @@
+Used idL: 159, Unused: 241
+Computing top-3 idE per unused idL...
+Candidate pairs: 723
+Estimated wall: ~5.0h on 8 workers (6x ICs per pair)
+
+Launching parallel solver...
+  [  10/723] valid=10 unique_idL=4 top=[1467,1332,1198]kg wall=3502s ETA=249673s
