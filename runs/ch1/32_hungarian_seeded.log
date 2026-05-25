@@ -1,0 +1,71 @@
+Computing Hohmann theoretical 400x400 matrix...
+Hungarian on theoretical matrix...
+Primary 400 pairs sum: 576321 kg (theoretical)
+Candidate pool (incl. 3 alternatives/idE): 1200 pairs
+  idL coverage: 400/400 distinct idLs
+  Estimated wall: 1.7h on 8 workers
+
+Launching parallel solver...
+  [  20/1200] valid=6 unique_idE=2 unique_idL=4 top=[883,839,819]kg wall=794s ETA=46862s
+  [  40/1200] valid=13 unique_idE=5 unique_idL=5 top=[883,839,819]kg wall=1496s ETA=43389s
+  [  60/1200] valid=25 unique_idE=9 unique_idL=9 top=[883,839,819]kg wall=2107s ETA=40042s
+  [  80/1200] valid=37 unique_idE=13 unique_idL=13 top=[1050,1027,997]kg wall=2869s ETA=40170s
+  [ 100/1200] valid=39 unique_idE=15 unique_idL=14 top=[1050,1027,997]kg wall=3540s ETA=38939s
+  [ 120/1200] valid=49 unique_idE=18 unique_idL=18 top=[1050,1027,997]kg wall=4278s ETA=38501s
+  [ 140/1200] valid=57 unique_idE=21 unique_idL=21 top=[1050,1027,997]kg wall=5021s ETA=38016s
+  [ 160/1200] valid=62 unique_idE=22 unique_idL=22 top=[1050,1027,997]kg wall=5660s ETA=36789s
+  [ 180/1200] valid=72 unique_idE=26 unique_idL=26 top=[1050,1027,997]kg wall=6395s ETA=36241s
+  [ 200/1200] valid=81 unique_idE=29 unique_idL=27 top=[1050,1027,997]kg wall=6993s ETA=34966s
+  [ 220/1200] valid=89 unique_idE=32 unique_idL=29 top=[1050,1027,997]kg wall=7923s ETA=35294s
+  [ 240/1200] valid=95 unique_idE=35 unique_idL=31 top=[1050,1027,997]kg wall=8485s ETA=33939s
+  [ 260/1200] valid=100 unique_idE=36 unique_idL=32 top=[1050,1027,997]kg wall=9036s ETA=32669s
+  [ 280/1200] valid=109 unique_idE=39 unique_idL=35 top=[1050,1027,997]kg wall=9674s ETA=31786s
+  [ 300/1200] valid=109 unique_idE=39 unique_idL=35 top=[1050,1027,997]kg wall=10134s ETA=30402s
+  [ 320/1200] valid=109 unique_idE=39 unique_idL=35 top=[1050,1027,997]kg wall=10792s ETA=29678s
+  [ 340/1200] valid=122 unique_idE=44 unique_idL=40 top=[1050,1027,997]kg wall=11454s ETA=28972s
+  [ 360/1200] valid=132 unique_idE=47 unique_idL=43 top=[1050,1027,997]kg wall=12096s ETA=28225s
+  [ 380/1200] valid=141 unique_idE=50 unique_idL=46 top=[1050,1027,997]kg wall=12777s ETA=27572s
+  [ 400/1200] valid=148 unique_idE=52 unique_idL=48 top=[1050,1027,997]kg wall=13358s ETA=26717s
+  [ 420/1200] valid=152 unique_idE=54 unique_idL=50 top=[1050,1027,997]kg wall=14050s ETA=26094s
+  [ 440/1200] valid=158 unique_idE=56 unique_idL=52 top=[1050,1027,997]kg wall=14597s ETA=25213s
+  [ 460/1200] valid=161 unique_idE=57 unique_idL=53 top=[1050,1032,1027]kg wall=15188s ETA=24433s
+  [ 480/1200] valid=167 unique_idE=60 unique_idL=55 top=[1050,1032,1027]kg wall=15878s ETA=23817s
+  [ 500/1200] valid=175 unique_idE=63 unique_idL=56 top=[1050,1032,1027]kg wall=16468s ETA=23055s
+  [ 520/1200] valid=182 unique_idE=65 unique_idL=59 top=[1050,1032,1027]kg wall=17222s ETA=22521s
+  [ 540/1200] valid=189 unique_idE=67 unique_idL=61 top=[1050,1032,1027]kg wall=17824s ETA=21785s
+  [ 560/1200] valid=195 unique_idE=69 unique_idL=63 top=[1050,1032,1027]kg wall=18409s ETA=21039s
+  [ 580/1200] valid=204 unique_idE=72 unique_idL=66 top=[1050,1032,1027]kg wall=19206s ETA=20531s
+  [ 600/1200] valid=207 unique_idE=73 unique_idL=67 top=[1050,1032,1027]kg wall=19830s ETA=19830s
+  [ 620/1200] valid=221 unique_idE=78 unique_idL=72 top=[1050,1032,1027]kg wall=20563s ETA=19237s
+  [ 640/1200] valid=229 unique_idE=81 unique_idL=74 top=[1050,1032,1027]kg wall=21241s ETA=18586s
+  [ 660/1200] valid=236 unique_idE=83 unique_idL=76 top=[1050,1032,1027]kg wall=21742s ETA=17789s
+  [ 680/1200] valid=241 unique_idE=86 unique_idL=79 top=[1050,1034,1032]kg wall=22322s ETA=17070s
+  [ 700/1200] valid=249 unique_idE=88 unique_idL=81 top=[1693,1619,1050]kg wall=22968s ETA=16406s
+  [ 720/1200] valid=257 unique_idE=90 unique_idL=83 top=[1693,1619,1050]kg wall=23593s ETA=15729s
+  [ 740/1200] valid=268 unique_idE=94 unique_idL=87 top=[1693,1619,1050]kg wall=24309s ETA=15111s
+  [ 760/1200] valid=278 unique_idE=97 unique_idL=90 top=[1693,1619,1050]kg wall=24963s ETA=14452s
+  [ 780/1200] valid=290 unique_idE=102 unique_idL=95 top=[1693,1619,1519]kg wall=25784s ETA=13884s
+  [ 800/1200] valid=310 unique_idE=109 unique_idL=101 top=[2253,2218,2200]kg wall=26364s ETA=13182s
+  [ 820/1200] valid=330 unique_idE=115 unique_idL=107 top=[2295,2253,2229]kg wall=26983s ETA=12504s
+  [ 840/1200] valid=350 unique_idE=121 unique_idL=112 top=[2318,2309,2295]kg wall=27518s ETA=11793s
+  [ 860/1200] valid=370 unique_idE=128 unique_idL=119 top=[2318,2309,2295]kg wall=28494s ETA=11265s
+  [ 880/1200] valid=390 unique_idE=135 unique_idL=126 top=[2318,2309,2295]kg wall=29337s ETA=10668s
+  [ 900/1200] valid=408 unique_idE=141 unique_idL=131 top=[2318,2309,2295]kg wall=30018s ETA=10006s
+  [ 920/1200] valid=418 unique_idE=144 unique_idL=135 top=[2318,2309,2295]kg wall=30653s ETA=9329s
+  [ 940/1200] valid=427 unique_idE=147 unique_idL=137 top=[2318,2309,2295]kg wall=31498s ETA=8712s
+  [ 960/1200] valid=433 unique_idE=149 unique_idL=139 top=[2318,2309,2295]kg wall=32029s ETA=8007s
+  [ 980/1200] valid=437 unique_idE=151 unique_idL=141 top=[2318,2309,2295]kg wall=32661s ETA=7332s
+  [1000/1200] valid=445 unique_idE=153 unique_idL=143 top=[2318,2309,2295]kg wall=33342s ETA=6668s
+  [1020/1200] valid=450 unique_idE=155 unique_idL=144 top=[2318,2309,2295]kg wall=34094s ETA=6017s
+  [1040/1200] valid=458 unique_idE=159 unique_idL=146 top=[2318,2309,2295]kg wall=34887s ETA=5367s
+  [1060/1200] valid=468 unique_idE=162 unique_idL=149 top=[2318,2309,2295]kg wall=35510s ETA=4690s
+  [1080/1200] valid=474 unique_idE=164 unique_idL=151 top=[2318,2309,2295]kg wall=35973s ETA=3997s
+  [1100/1200] valid=481 unique_idE=167 unique_idL=152 top=[2318,2309,2295]kg wall=36602s ETA=3327s
+  [1120/1200] valid=487 unique_idE=170 unique_idL=154 top=[2318,2309,2295]kg wall=37495s ETA=2678s
+  [1140/1200] valid=490 unique_idE=171 unique_idL=155 top=[2318,2309,2295]kg wall=38051s ETA=2003s
+  [1160/1200] valid=493 unique_idE=172 unique_idL=156 top=[2318,2309,2295]kg wall=38611s ETA=1331s
+  [1180/1200] valid=495 unique_idE=172 unique_idL=156 top=[2318,2309,2295]kg wall=39182s ETA=664s
+  [1200/1200] valid=506 unique_idE=176 unique_idL=159 top=[2318,2309,2295]kg wall=39677s ETA=0s
+
+Done in 39677s: 506/1200 valid, 176 unique idE, 159 unique idL
+Results saved to /home/julian/Projects/esa_spoc_26_3/runs/ch1/hungarian_seeded_results.json

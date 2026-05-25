@@ -1,0 +1,23 @@
+Currently used idE: 20
+Unused idE: 380
+Computing top-3 idL per unused idE...
+Total candidate pairs: 1140
+Estimated wall: 1.6h on 8 workers
+
+Launching parallel solver...
+  [  10/1140] valid=0 unique_idE=0 top=[]kg wall=484s ETA=54748s
+  [  20/1140] valid=6 unique_idE=2 top=[934,883,839]kg wall=795s ETA=44515s
+  [  30/1140] valid=11 unique_idE=4 top=[934,883,839]kg wall=1143s ETA=42282s
+  [  40/1140] valid=15 unique_idE=5 top=[934,883,839]kg wall=1469s ETA=40392s
+  [  50/1140] valid=21 unique_idE=7 top=[934,883,839]kg wall=1821s ETA=39692s
+  [  60/1140] valid=27 unique_idE=9 top=[934,883,839]kg wall=2101s ETA=37812s
+  [  70/1140] valid=32 unique_idE=11 top=[1055,1050,1027]kg wall=2566s ETA=39219s
+  [  80/1140] valid=39 unique_idE=13 top=[1055,1050,1027]kg wall=2734s ETA=36231s
+  [  90/1140] valid=40 unique_idE=14 top=[1055,1050,1027]kg wall=3030s ETA=35356s
+  [ 100/1140] valid=41 unique_idE=15 top=[1055,1050,1027]kg wall=3462s ETA=36010s
+  [ 110/1140] valid=44 unique_idE=16 top=[1055,1050,1027]kg wall=3896s ETA=36482s
+  [ 120/1140] valid=51 unique_idE=18 top=[1055,1050,1027]kg wall=4203s ETA=35723s
+  [ 130/1140] valid=55 unique_idE=20 top=[1055,1050,1027]kg wall=4702s ETA=36530s
+  [ 140/1140] valid=61 unique_idE=21 top=[1055,1050,1027]kg wall=5057s ETA=36120s
+  [ 150/1140] valid=61 unique_idE=21 top=[1055,1050,1027]kg wall=5462s ETA=36048s
+  [ 160/1140] valid=64 unique_idE=22 top=[1055,1050,1027]kg wall=5584s ETA=34200s
