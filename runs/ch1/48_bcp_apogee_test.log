@@ -1,0 +1,6 @@
+BCP-tracked apogee 3-impulse test:
+      pair desc                          mass   dv0   dv1   dv2   tot
+  (  0,  0) coplanar control (banked 819)   365  3140  1133  1077  5350 (1017s)
+  (213, 19) LEO+iL=1.07 (banked 5)           1  3080  1176  1190  5446 (1150s)
+  (303,109) LEO+iL=1.08 (banked 24)        585  3019   651   990  4660 (1482s)
+  (244,105) LEO+iL=0.50 (banked 49)        374  3088  1161  1069  5318 (1164s)
