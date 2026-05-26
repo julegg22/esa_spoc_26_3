@@ -1,0 +1,9 @@
+Bank: 158 idE, 158 idL
+Unused idE: 242
+Candidates: 726 pairs
+Estimated wall: ~1.3h
+  [  10/726] valid=0 new_idE=0 top=[]kg wall=1190s ETA=85183s
+[2026-05-26 04:54:12.673] [heyoka] [warning] event detection skipped due to an invalid timestep value of nan
+  [  20/726] valid=0 new_idE=0 top=[]kg wall=2033s ETA=71760s
+  [  30/726] valid=0 new_idE=0 top=[]kg wall=2761s ETA=64046s
+  [  40/726] valid=0 new_idE=0 top=[]kg wall=3460s ETA=59347s
