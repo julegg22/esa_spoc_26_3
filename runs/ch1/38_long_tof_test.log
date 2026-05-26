@@ -1,0 +1,45 @@
+Testing long TOF on bottom 20 transfers:
+  [156] (213, 19): mass=5 iE=0.20 iL=1.07
+  [157] ( 11,217): mass=22 iE=0.46 iL=0.72
+  [155] ( 24,308): mass=23 iE=0.16 iL=0.72
+  [154] (303,109): mass=24 iE=0.19 iL=1.08
+  [153] (227,315): mass=27 iE=0.41 iL=0.47
+  [152] (343, 70): mass=30 iE=0.06 iL=1.25
+  [151] (313, 69): mass=30 iE=0.13 iL=1.44
+  [150] (136,268): mass=38 iE=0.58 iL=0.56
+  [149] (306,360): mass=39 iE=0.39 iL=0.61
+  [148] (244,105): mass=49 iE=0.34 iL=0.50
+  [147] ( 57,218): mass=52 iE=0.56 iL=0.63
+  [146] ( 54,364): mass=54 iE=0.42 iL=0.32
+  [145] (372,141): mass=55 iE=0.09 iL=1.57
+  [144] (356,117): mass=55 iE=0.24 iL=0.05
+  [143] (106, 81): mass=56 iE=0.04 iL=1.06
+  [142] (109, 73): mass=59 iE=0.14 iL=0.77
+  [141] ( 43,399): mass=70 iE=0.37 iL=0.46
+  [140] (214,344): mass=75 iE=0.40 iL=0.37
+  [139] (301, 47): mass=80 iE=0.10 iL=1.53
+  [138] (130,389): mass=84 iE=0.05 iL=0.35
+
+Launching parallel long-TOF search...
+  (136,268) 38 → 124 kg (+86) tof=15d t0=1.57
+  (227,315) no long-TOF improvement
+  (213, 19) no long-TOF improvement
+  ( 24,308) no long-TOF improvement
+  ( 11,217) no long-TOF improvement
+  (343, 70) no long-TOF improvement
+  (313, 69) 30 → 179 kg (+150) tof=15d t0=1.57
+  (303,109) 24 → 24 kg (+1) tof=15d t0=3.14
+  (306,360) 39 → 109 kg (+70) tof=15d t0=1.57
+  ( 57,218) 52 → 75 kg (+22) tof=40d t0=3.14
+  (244,105) 49 → 240 kg (+190) tof=15d t0=1.57
+  ( 54,364) 54 → 59 kg (+5) tof=25d t0=3.14
+  (356,117) no long-TOF improvement
+  (372,141) no long-TOF improvement
+  (106, 81) no long-TOF improvement
+  (109, 73) no long-TOF improvement
+  ( 43,399) 70 → 93 kg (+23) tof=15d t0=3.14
+  (130,389) no long-TOF improvement
+  (214,344) 75 → 87 kg (+12) tof=15d t0=3.14
+  (301, 47) 80 → 161 kg (+81) tof=15d t0=1.57
+
+Long-TOF test done in 2441s: 10/20 improved, +640 kg
