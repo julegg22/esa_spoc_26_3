@@ -1,0 +1,7 @@
+Testing plane-change-at-apogee 3-impulse:
+      pair desc                             mass   dv0   dv1   dv2   tot
+  (  0,  0) coplanar control (sanity)         534  3140   515  1152  4807 (500s)
+  (213, 19) LEO+iE=0.20, iL=1.07 (worst)        1  3080  1660  1907  6647 (439s)
+  (303,109) LEO+iE=0.19, iL=1.08              507  3019   525  1342  4887 (450s)
+  (244,105) LEO+iE=0.34, iL=0.50              475  3112   568  1306  4986 (460s)
+  (227,315) LEO+iE=0.41, iL=0.47                9  2809  1080  1606  5495 (289s)
