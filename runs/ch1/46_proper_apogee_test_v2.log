@@ -1,0 +1,5 @@
+Testing PROPER PHASING apogee 3-impulse:
+      pair desc                    mass   dv0   dv1   dv2   tot
+  (  0,  0) coplanar control         132  3140   834  2335  6309 T1=5.0d (993s)
+  (213, 19) LEO+iL=1.07            FAIL (884s)
+  (303,109) LEO+iL=1.08            FAIL (895s)

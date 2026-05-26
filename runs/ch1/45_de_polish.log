@@ -1,0 +1,25 @@
+158 transfers, baseline 120794kg
+Estimated wall: ~20 min
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 856, in next
+    item = self._items.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_de_polish.py", line 181, in <module>
+    main(int(sys.argv[1]) if len(sys.argv) > 1 else 8)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_de_polish.py", line 154, in main
+    for idx, new_row, new_mass, orig_mass in p.imap_unordered(
+                                             ~~~~~~~~~~~~~~~~^
+            _task, active, chunksize=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 861, in next
+    self._cond.wait(timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/threading.py", line 359, in wait
+    waiter.acquire()
+    ~~~~~~~~~~~~~~^^
+KeyboardInterrupt
