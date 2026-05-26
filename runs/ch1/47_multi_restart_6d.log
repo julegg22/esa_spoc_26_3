@@ -1,0 +1,6 @@
+Multi-restart 6-D DC test:
+      pair desc                    mass
+[2026-05-26 15:42:14.001] [heyoka] [warning] polynomial root finding during event detection returned a nonzero errno with message 'Numerical argument out of domain'
+[2026-05-26 15:42:14.014] [heyoka] [warning] polynomial root finding during event detection returned a nonzero errno with message 'Numerical argument out of domain'
+[2026-05-26 15:42:14.107] [heyoka] [warning] polynomial root finding during event detection returned a nonzero errno with message 'Numerical argument out of domain'
+[2026-05-26 15:42:14.201] [heyoka] [warning] polynomial root finding during event detection returned a nonzero errno with message 'Numerical argument out of domain'
