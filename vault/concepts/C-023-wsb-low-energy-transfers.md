@@ -127,6 +127,22 @@ propagations × 120 days, each ~10s heyoka = 20 min per pair.
   is too compute-heavy for the scale we need (200+ pairs). Submit
   current bank.
 
+## When to come back to B1/B2/B3 (deferred fallback)
+
+Per user direction 2026-05-27: keep B1/B2/B3 as a *fallback plan when
+approaching top ranks*. Once WSB lands and bank reaches ~350k+ kg, the
+remaining gap is bug-fixable territory:
+
+| state | next step |
+|---|---|
+| bank < 250k kg | focus on WSB / Sun-assist |
+| bank 250–350k kg | implement B1 (apolune) carefully on a single
+   pair, validate >100 kg gain before scaling |
+| bank > 350k kg | implement B2 (drop pv_tgt) + B3 (joint NLP), do
+   final polish pass |
+
+Implementation hand-off notes in audit `A-2026-05-27` § ⚠️ READ THIS FIRST.
+
 ## Cross-references
 - A-2026-05-27 — the audit that motivated this pivot
 - S-2026-05-27 — bugfix attempts session

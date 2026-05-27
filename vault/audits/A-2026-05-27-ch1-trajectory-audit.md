@@ -1,9 +1,45 @@
 ---
 date: 2026-05-27
-tags: [audit, ch1, trajectory, bcp-apogee, bugs, structural]
-status: COMPLETE — multiple bugs found, top hypothesis identified
+tags: [audit, ch1, trajectory, bcp-apogee, bugs, structural, deferred-fallback]
+status: BUGFIXES DEFERRED — B4+B5 landed (+543 kg); B1/B2/B3 = fallback when approaching top ranks
 bank_at_audit: 186,636 kg / 294 transfers
+bank_after_audit: 187,179 kg / 295 transfers
 target: 453,000 (R3) / 473,332 (R1)
+user_directive: "keep careful b1, b2 and b3 as fallback plan when approaching top ranks" (2026-05-27)
+---
+
+## ⚠️ READ THIS FIRST (post-attempt update)
+
+Per user direction 2026-05-27, **B1 (apolune plane-change), B2 (drop pv_tgt),
+and B3 (joint NLP) are DEFERRED FALLBACK** — to be revisited when we
+approach top-rank territory and want to squeeze the last ~70k kg out of
+the architecture. The current strategic pivot is **WSB / Sun-assisted
+transfers** (see `C-023`) because the leaderboard's 3320 m/s avg dv is
+*below* the impulsive Hohmann minimum, which no B-fix can close.
+
+Implementation hand-off notes for the future B1/B2/B3 attempt:
+- `src/esa_spoc_26/ch1_bcp_apolune.py` — B1 skeleton (track_to_target_r);
+  works for LMO (collapses to track_to_perilune) but a *high-eL* test
+  pair was never run end-to-end. Validate first on (277, 189) or similar
+  before scaling.
+- `src/esa_spoc_26/ch1_two_impulse.py` — B2 attempt via Lambert; the
+  rotation between Lambert's inertial frame and synodic propagator
+  is the gotcha that ate 2 hours. The fix is in the latest commit
+  but only (277, 189) succeeded; coplanar LMO needs precise targeting
+  that Lambert-to-Moon-center can't give (impactor trajectories).
+- `src/esa_spoc_26/ch1_nlp_solver.py` — B3 joint NLP; Nelder-Mead too
+  slow because each propagate() rebuilds heyoka. Must use the cached
+  `_ta()` and switch to gradient-based (SLSQP with finite differences
+  or autograd via heyoka's variational eqs).
+- `scripts/ch1_b2_polish.py` — pragmatic B2: just add raan_l/argp_l
+  to the existing C-022 sweep. 1024 ICs/pair × 295 pairs ≈ 3h wall.
+  Never run to completion in 2026-05-27 session.
+
+Conservative estimate (re-confirmed by attempt analysis): **+70k kg
+combined** (+30-50k from B1, +15-30k from B2, +20-40k from B3) — but
+the gain only materializes with careful implementation, not the
+"quick fix" framing the original audit suggested.
+
 ---
 # A-2026-05-27 — Ch1 trajectory pipeline audit (ultrathink)
 
