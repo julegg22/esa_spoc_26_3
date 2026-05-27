@@ -72,16 +72,26 @@ to bank.** Closes ~30% of the R3 gap.
 
 ## Implementation plan (3-tiered)
 
-### Tier 0 — confirmation experiment (1 day)
-Verify WSB exists in our problem instance:
-- Pick 5 LEO+LMO test pairs currently at ~500 kg
-- For each, sweep (dv0_magnitude ∈ [3.10, 3.20] km/s, dv0_direction
-  ∈ ±10°, TOF ∈ [60, 120] days)
-- Propagate full BCP, find perilune passes, evaluate
-  solve_arrival_eccentric at each
-- **Success criterion**: at least one pair finds m > 1100 kg
-- Confirms that the BCP dynamics support low-energy transfers in
-  *this specific problem instance*
+### Tier 0 — confirmation experiment (RAN 2026-05-27, INCONCLUSIVE)
+Ran `scripts/ch1_wsb_tier0.py` on 10 LEO+LMO bank pairs at 300-700 kg.
+**Result: 0/10 improved.** Diagnostic showed 1058 perilune events found
+across all 1920 configs, but the *closest approach* to Moon was 55,830 km
+— 29× the target LMO altitude (~1900 km from Moon center).
+
+**Conclusion: WSB physics does NOT make LMO *targeting* easier.** It
+only makes the LOI burn *cheaper* once the spacecraft is on a capture
+orbit. For LMO (low-eL Moon) targets, the spacecraft still needs precise
+Hohmann-like targeting to enter Moon's SOI at the right altitude —
+random dv0 perturbation gives 50,000+ km perilune distances.
+
+**Where Tier 0-style probes WOULD work**: high-eL Moon targets
+(r_apo = aL·(1+eL) up to 8 × 10⁶ m). The r-range is 100× wider, so
+random sweeps can land in-range. But our existing C-022 solver already
+extracts ~80-95% of physics ceiling on these (top transfer at 2628 kg
+vs ~3000 kg ceiling). Marginal improvement.
+
+**Where Tier 0-style probes CAN'T work**: LMO targets (essentially a
+point in r-space). Needs proper manifold targeting (Tier 1).
 
 ### Tier 1 — manifold-targeting (2 days)
 Implement a manifold-targeting differential corrector:
