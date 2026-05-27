@@ -1,0 +1,28 @@
+Bank: 284 idE, 284 idL
+Unused: 116 idE, 116 idL
+Candidates: 1160 pairs (116 idE × K=10)
+  [  50/1160] valid=0 uE=0 uL=0 top=[]kg wall=504s ETA=11191s
+  [ 100/1160] valid=3 uE=1 uL=3 top=[302,265,200]kg wall=874s ETA=9269s
+  [ 150/1160] valid=8 uE=3 uL=5 top=[490,486,335]kg wall=1197s ETA=8061s
+  [ 200/1160] valid=9 uE=4 uL=5 top=[490,486,335]kg wall=1587s ETA=7617s
+  [ 250/1160] valid=9 uE=4 uL=5 top=[490,486,335]kg wall=1928s ETA=7019s
+  [ 300/1160] valid=12 uE=5 uL=5 top=[490,486,335]kg wall=2336s ETA=6696s
+  [ 350/1160] valid=19 uE=7 uL=6 top=[490,486,335]kg wall=2630s ETA=6087s
+  [ 400/1160] valid=19 uE=7 uL=6 top=[490,486,335]kg wall=3003s ETA=5706s
+  [ 450/1160] valid=28 uE=10 uL=8 top=[490,486,335]kg wall=3346s ETA=5280s
+  [ 500/1160] valid=28 uE=10 uL=8 top=[490,486,335]kg wall=3756s ETA=4958s
+  [ 550/1160] valid=33 uE=11 uL=8 top=[490,486,335]kg wall=4158s ETA=4611s
+  [ 600/1160] valid=35 uE=12 uL=8 top=[551,546,490]kg wall=4466s ETA=4168s
+  [ 650/1160] valid=38 uE=13 uL=8 top=[551,546,490]kg wall=4800s ETA=3766s
+  [ 700/1160] valid=41 uE=14 uL=8 top=[551,546,490]kg wall=5222s ETA=3432s
+  [ 750/1160] valid=45 uE=16 uL=8 top=[551,546,490]kg wall=5506s ETA=3010s
+  [ 800/1160] valid=45 uE=16 uL=8 top=[551,546,490]kg wall=5890s ETA=2651s
+  [ 850/1160] valid=49 uE=17 uL=8 top=[551,546,490]kg wall=6246s ETA=2278s
+  [ 900/1160] valid=56 uE=19 uL=11 top=[551,546,490]kg wall=6525s ETA=1885s
+  [ 950/1160] valid=58 uE=20 uL=13 top=[551,546,490]kg wall=6862s ETA=1517s
+  [1000/1160] valid=63 uE=21 uL=13 top=[551,546,490]kg wall=7203s ETA=1152s
+  [1050/1160] valid=64 uE=22 uL=13 top=[551,546,490]kg wall=7641s ETA=801s
+  [1100/1160] valid=66 uE=23 uL=13 top=[551,546,517]kg wall=7963s ETA=434s
+  [1150/1160] valid=71 uE=25 uL=13 top=[551,546,517]kg wall=8277s ETA=72s
+
+Done in 8314s: 71/1160 valid, 25 unused idE, 13 unused idL

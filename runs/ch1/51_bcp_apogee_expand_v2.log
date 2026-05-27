@@ -1,0 +1,7 @@
+Bank: 158 idE, 158 idL
+Unused idE: 242
+Candidates: 726 pairs
+Est wall: ~91 min
+  [  10/726] valid=10 new_idE=4 top=[548,533,487]kg wall=709s ETA=50748s
+  [  20/726] valid=20 new_idE=7 top=[574,560,548]kg wall=1447s ETA=51079s
+  [  30/726] valid=30 new_idE=11 top=[574,560,548]kg wall=2237s ETA=51888s

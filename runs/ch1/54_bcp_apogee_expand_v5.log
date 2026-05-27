@@ -1,0 +1,5 @@
+Bank: 164 idE, 164 idL
+Unused: 236 idE, 236 idL
+Candidates: 708 pairs (236 idE × K=3)
+Est wall: ~66 min
+  [  10/708] valid=10 uE=4 uL=8 top=[548,544,474]kg wall=1189s ETA=83007s

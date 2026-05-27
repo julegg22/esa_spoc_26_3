@@ -1,0 +1,9 @@
+Bank: 164 idE, 164 idL
+Unused: 236 idE, 236 idL
+Sampled 5 unused idEs (aE quintile-sampled):
+  idE=145 aE=6.773e+06
+  idE=226 aE=6.937e+06
+  idE=160 aE=7.192e+06
+  idE=115 aE=7.335e+06
+  idE=209 aE=7.658e+06
+Candidates: 1180 pairs (236 idL × 5 idE)

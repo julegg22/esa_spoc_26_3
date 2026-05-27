@@ -1,0 +1,5 @@
+Bank: 294 idE, 294 idL
+Unused: 106 idE, 106 idL
+Candidates: 530 pairs (106 idE × K=5)
+  [  50/530] valid=0 uE=0 uL=0 top=[]kg wall=1157s ETA=11105s
+  [ 100/530] valid=0 uE=0 uL=0 top=[]kg wall=1939s ETA=8337s

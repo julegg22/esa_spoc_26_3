@@ -1,0 +1,8 @@
+Used idE: 158
+Unused idE: 242
+Candidates: 726 pairs
+Est wall: ~91 min
+  [  10/726] valid=10 new_idE=4 top=[577,560,555]kg wall=749s ETA=53593s
+  [  20/726] valid=20 new_idE=7 top=[583,577,565]kg wall=1515s ETA=53496s
+  [  30/726] valid=30 new_idE=11 top=[583,577,565]kg wall=2324s ETA=53924s
+  [  40/726] valid=40 new_idE=14 top=[610,583,581]kg wall=2765s ETA=47418s

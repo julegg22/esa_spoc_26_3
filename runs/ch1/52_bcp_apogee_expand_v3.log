@@ -1,0 +1,16 @@
+Bank: 161 idE, 161 idL
+Unused: 239 idE, 239 idL
+Candidates: 717 unique (unused_idE, unused_idL) pairs
+Est wall: ~90 min
+  [  10/717] valid=10 uE=3 uL=4 top=[757,672,1]kg wall=675s ETA=47720s
+  [  20/717] valid=20 uE=3 uL=7 top=[757,757,672]kg wall=996s ETA=34719s
+  [  30/717] valid=30 uE=3 uL=11 top=[834,827,757]kg wall=1368s ETA=31327s
+  [  40/717] valid=40 uE=3 uL=14 top=[834,827,810]kg wall=1732s ETA=29307s
+  [  50/717] valid=50 uE=3 uL=17 top=[834,828,827]kg wall=2308s ETA=30789s
+  [  60/717] valid=60 uE=3 uL=20 top=[834,828,827]kg wall=2712s ETA=29695s
+  [  70/717] valid=70 uE=3 uL=24 top=[834,828,827]kg wall=3117s ETA=28810s
+  [  80/717] valid=80 uE=3 uL=27 top=[844,834,828]kg wall=3484s ETA=27741s
+  [  90/717] valid=90 uE=3 uL=30 top=[844,834,828]kg wall=3972s ETA=27670s
+  [ 100/717] valid=100 uE=3 uL=34 top=[844,834,828]kg wall=4425s ETA=27301s
+  [ 110/717] valid=110 uE=3 uL=38 top=[844,834,828]kg wall=4791s ETA=26435s
+  [ 120/717] valid=120 uE=3 uL=40 top=[844,834,828]kg wall=5155s ETA=25647s
