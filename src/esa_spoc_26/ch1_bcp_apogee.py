@@ -34,13 +34,21 @@ R_MOON_SI = 384400e3
 
 
 def syn_to_inertial_earth(pv_syn, t):
+    """Earth-centered (r, v) in synodic-basis-at-instant convention.
+
+    AUDIT FIX B6 (2026-05-28): previously applied R(t) rotation to convert
+    to *fixed* inertial basis. The resulting dv was then used as-if it were
+    in the synodic basis — silently flipping the x-component sign for
+    t=π trajectories (impactors). Removed the rotation: result is in the
+    same convention as state2earth, which makes the dv directly usable
+    as a synodic-basis Δv (orbital elements being basis-invariant).
+    The `t` parameter is unused but kept for backwards-compat.
+    """
     x, y, z = pv_syn[0]
     vx, vy, vz = pv_syn[1]
     r_syn = np.array([x + MU, y, z])
     v_syn_inertial = np.array([vx - y, vy + (x + MU), vz])
-    c, s = np.cos(t), np.sin(t)
-    R = np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
-    return R @ r_syn * L, R @ v_syn_inertial * V
+    return r_syn * L, v_syn_inertial * V
 
 
 def try_bcp_apogee_3impulse(udp, idE, idL, raan_e, argp_e, ea_dep, t0,
