@@ -1,0 +1,37 @@
+Scanning 160000 (idE, idL) pairs for Hohmann feasibility...
+Est wall: 8 props/pair × ~0.1 sec = ~267 min
+  [  5000/160000] feasible=341 (6.8%) wall=547s ETA=16960s
+  [ 10000/160000] feasible=1103 (11.0%) wall=1104s ETA=16563s
+  [ 15000/160000] feasible=1103 (7.4%) wall=1637s ETA=15820s
+  [ 20000/160000] feasible=1553 (7.8%) wall=2175s ETA=15228s
+  [ 25000/160000] feasible=1867 (7.5%) wall=2713s ETA=14651s
+  [ 30000/160000] feasible=2097 (7.0%) wall=3259s ETA=14122s
+  [ 35000/160000] feasible=2447 (7.0%) wall=3795s ETA=13554s
+  [ 40000/160000] feasible=2697 (6.7%) wall=4325s ETA=12974s
+  [ 45000/160000] feasible=2977 (6.6%) wall=4849s ETA=12393s
+  [ 50000/160000] feasible=3277 (6.6%) wall=5383s ETA=11843s
+  [ 55000/160000] feasible=3577 (6.5%) wall=5917s ETA=11295s
+  [ 60000/160000] feasible=3958 (6.6%) wall=6451s ETA=10751s
+  [ 65000/160000] feasible=4358 (6.7%) wall=6987s ETA=10212s
+  [ 70000/160000] feasible=5308 (7.6%) wall=7534s ETA=9686s
+  [ 75000/160000] feasible=5626 (7.5%) wall=8067s ETA=9143s
+  [ 80000/160000] feasible=5805 (7.3%) wall=8607s ETA=8607s
+  [ 85000/160000] feasible=6251 (7.4%) wall=9152s ETA=8075s
+  [ 90000/160000] feasible=6401 (7.1%) wall=9677s ETA=7527s
+  [ 95000/160000] feasible=7136 (7.5%) wall=10215s ETA=6990s
+  [100000/160000] feasible=7963 (8.0%) wall=10752s ETA=6451s
+  [105000/160000] feasible=8887 (8.5%) wall=11316s ETA=5927s
+  [110000/160000] feasible=9422 (8.6%) wall=11899s ETA=5409s
+  [115000/160000] feasible=10604 (9.2%) wall=12467s ETA=4878s
+  [120000/160000] feasible=11409 (9.5%) wall=13021s ETA=4340s
+  [125000/160000] feasible=11463 (9.2%) wall=13557s ETA=3796s
+  [130000/160000] feasible=11753 (9.0%) wall=14085s ETA=3250s
+  [135000/160000] feasible=11833 (8.8%) wall=14623s ETA=2708s
+  [140000/160000] feasible=12202 (8.7%) wall=15168s ETA=2167s
+  [145000/160000] feasible=12490 (8.6%) wall=15694s ETA=1624s
+  [150000/160000] feasible=12640 (8.4%) wall=16228s ETA=1082s
+  [155000/160000] feasible=12790 (8.3%) wall=16744s ETA=540s
+  [160000/160000] feasible=13090 (8.2%) wall=17270s ETA=0s
+
+Scan done in 17270s
+Total feasible (any Hohmann seed reaches target r-range): 13090 / 160000 (8.2%)
