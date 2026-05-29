@@ -1,0 +1,8 @@
+Tier 1 had 6256 candidates; Tier 2 polishes top 1500
+Tier 1 mass range of selected: 2215 → 1093 kg
+Per-pair grid 192 ICs × ~0.3 sec. Est wall: ~180 min
+  [  50/1500] valid=50 top5=[1862,1718,1715,1709,1707]kg wall=3078s ETA=89259s
+  [ 100/1500] valid=100 top5=[1904,1898,1889,1876,1862]kg wall=5622s ETA=78713s
+  [ 150/1500] valid=150 top5=[1915,1904,1898,1889,1876]kg wall=8116s ETA=73040s
+  [ 200/1500] valid=200 top5=[1924,1915,1912,1910,1904]kg wall=10588s ETA=68819s
+  [ 250/1500] valid=250 top5=[1939,1938,1924,1922,1921]kg wall=13168s ETA=65841s

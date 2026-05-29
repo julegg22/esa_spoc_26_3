@@ -52,7 +52,13 @@ def _hohmann_dv0_synbasis(pv0):
 
 
 def _task(args):
-    """Light eval: try 8 Hohmann seeds, return best mass via 2-impulse."""
+    """Light eval: try 8 Hohmann seeds, return best m_l (not m_d).
+
+    BUGFIX 2026-05-29: Saving UDP fitness here would apply the c_ld
+    discount with the placeholder idD=0, throwing away candidates whose
+    c_ld[idL,0] is tiny. Hungarian rebank chooses idD anyway, so we
+    should save raw m_l (rocket equation only).
+    """
     idE, idL = args
     udp = _UDP[0]
     aE, eE, iE = udp.earth_data[idE]
@@ -73,7 +79,6 @@ def _task(args):
                     continue
                 if imp:
                     continue
-                # Quick arrival evaluation at perilune state
                 pv_arr = [list(state[:3]), list(state[3:6])]
                 res = solve_arrival_eccentric(pv_arr, aL, eL, iL)
                 if res is None:
@@ -85,27 +90,39 @@ def _task(args):
                 dv_total = dv0_mag + dv2_mag
                 if dv_total > 12000:
                     continue
-                mass = math.exp(-dv_total / ISP_G0) * 5000.0 - 500.0
-                if mass < 0:
+                m_l = math.exp(-dv_total / ISP_G0) * 5000.0 - 500.0
+                if m_l < 50:
                     continue
-                # Build row for verification (T2=0 for 2-impulse)
+                # Verify trajectory is VALID (orbit match) by checking UDP
+                # WITHOUT using its discounted mass — try a high-c_ld idD to
+                # avoid rejection at validation step.
                 T1 = t_peri
                 row = [idE, idL, 0, t0, *pv0[0], *pv0[1],
                         dv0[0], dv0[1], dv0[2],
                         0.0, 0.0, 0.0,
                         float(dv2[0]), float(dv2[1]), float(dv2[2]),
                         T1, 0.0]
-                # Verify via UDP fitness
+                # Find best-c_ld idD for validation
+                best_d = 0
+                best_cld = -1.0
+                for d in range(400):
+                    if (idL, d) in udp.ltl_dict:
+                        c = udp.ltl_dict[(idL, d)]
+                        if c > best_cld:
+                            best_cld = c
+                            best_d = d
+                row[2] = best_d
                 chr_p = list(row)
                 pad = (udp.dim - len(chr_p)) // 21
                 for _ in range(pad):
                     chr_p.extend([-1.0] + [0.0] * 20)
                 f = udp.fitness(chr_p)[0]
                 if f >= 0:
-                    continue
-                actual_mass = -f
-                if best is None or actual_mass > best[0]:
-                    best = (actual_mass, row, dv_total)
+                    continue  # trajectory invalid (orbit match failed)
+                # Save raw m_l (rocket eq), NOT the UDP-discounted m_d
+                # (Rebank script recomputes m_l from row dv components.)
+                if best is None or m_l > best[0]:
+                    best = (m_l, row, dv_total)
     return idE, idL, best
 
 

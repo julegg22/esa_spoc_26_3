@@ -123,7 +123,20 @@ def try_bcp_apogee_3impulse(udp, idE, idL, raan_e, argp_e, ea_dep, t0,
         return None
     dv2_syn, _ = dv2_res
 
-    row = [idE, idL, 0, t0, *pv0[0], *pv0[1],
+    # BUGFIX 2026-05-29: use BEST-c_ld idD for validation, return raw m_l.
+    # Previously used idD=0; for idLs where c_ld[idL,0] is small, valid
+    # trajectories with m_l=300 kg got rejected because m_d = min(m_l,
+    # (200-dt)*c_ld) was near zero. Hungarian rebank computes m_l from
+    # dv components anyway, so the m_d-filter was throwing away good pairs.
+    best_d = 0
+    best_cld = -1.0
+    for d in range(400):
+        if (idL, d) in udp.ltl_dict:
+            c = udp.ltl_dict[(idL, d)]
+            if c > best_cld:
+                best_cld = c
+                best_d = d
+    row = [idE, idL, best_d, t0, *pv0[0], *pv0[1],
             *dv0_syn.tolist(), *dv1_syn.tolist(), *dv2_syn.tolist(),
             T1, T2]
     chr_padded = list(row)
@@ -133,10 +146,14 @@ def try_bcp_apogee_3impulse(udp, idE, idL, raan_e, argp_e, ea_dep, t0,
     f = udp.fitness(chr_padded)[0]
     if f >= 0:
         return None
-    mass = -f
+    # Compute raw m_l from dv components (NOT the UDP-discounted m_d)
     dv_ms = (np.linalg.norm(dv0_syn) + np.linalg.norm(dv1_syn)
               + np.linalg.norm(dv2_syn)) * V
-    return mass, row, dv_ms
+    import math as _m
+    m_l = _m.exp(-dv_ms / (311.0 * 9.80665)) * 5000.0 - 500.0
+    if m_l <= 0:
+        return None
+    return m_l, row, dv_ms
 
 
 if __name__ == "__main__":
