@@ -67,6 +67,31 @@ goal, sub-goals, goal-domain rules) and `META.md` for *how* we work
 toward those goals (research methodology, vault structure,
 invariants). Adhere to the spirit of both.
 
+## 5a. Investigation discipline (anti-oscillation + bug-surfacing)
+
+This project uses an explicit **anti-oscillation** discipline. When
+investigation has cycled ≥3 times between competing explanations for an
+observed gap, or when you find yourself proposing a "new structural
+insight" / "real lever" / "what we missed", **STOP** and consult
+`vault/methodology/M-applying-methodology-triggers.md`. The trigger
+table there is **not optional** — it's the project's expected workflow.
+
+Key triggers (full list in the doc):
+- "Saturated / plateau / ceiling" claim → per-instance check on 3-5
+  cases before concluding (aggregate metrics can match wrong hypotheses)
+- Solver rejects >30% of candidates → instrument silent reject paths
+- New lever proposal → must fit a row of the quantitative gap
+  decomposition OR explain the unexplained residual
+- Default values added → hostile-default audit (what if maximally
+  adversarial?)
+
+The general methodology (project-agnostic, blog-post-ready):
+- `vault/methodology/M-general-anti-oscillation-discipline.md`
+- `vault/methodology/M-general-bug-surfacing-for-scientific-code.md`
+
+The Ch1 trigger case that originated these:
+- `vault/methodology/M-2026-05-29-systematic-bug-surfacing.md`
+
 ## 6. Commit conventions
 
 - **No AI-attribution trailer.** Do not append `Co-Authored-By:` or
