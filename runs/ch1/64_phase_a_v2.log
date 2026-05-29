@@ -1,0 +1,15 @@
+Score matrix…
+Already tested: 2095 pairs
+To evaluate: 8000 pairs (K=20)
+Est wall: ~167 min
+  [  100/8000] valid=54 top5=[387,375,327,326,324]kg wall=1245s ETA=98353s
+  [  200/8000] valid=137 top5=[488,387,375,365,360]kg wall=2386s ETA=93044s
+  [  300/8000] valid=210 top5=[491,489,489,488,488]kg wall=3579s ETA=91860s
+  [  400/8000] valid=297 top5=[491,489,489,488,488]kg wall=4497s ETA=85448s
+  [  500/8000] valid=365 top5=[491,489,489,488,488]kg wall=5196s ETA=77935s
+  [  600/8000] valid=424 top5=[491,489,489,488,488]kg wall=6535s ETA=80601s
+  [  700/8000] valid=501 top5=[573,572,570,569,569]kg wall=7645s ETA=79727s
+  [  800/8000] valid=572 top5=[573,572,570,569,569]kg wall=8289s ETA=74601s
+  [  900/8000] valid=647 top5=[573,572,570,569,569]kg wall=9167s ETA=72314s
+  [ 1000/8000] valid=715 top5=[573,572,570,569,569]kg wall=10407s ETA=72852s
+  [ 1100/8000] valid=802 top5=[573,572,570,569,569]kg wall=11472s ETA=71959s

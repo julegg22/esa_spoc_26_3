@@ -1,0 +1,7 @@
+[22:21:43] Waiting for polish PID 1046556 to finish...
+[03:35:45] Polish finished. Launching Phase A.
+Computing physics-based score matrix (400×400)…
+Already tested: 2095 pairs
+Candidates to evaluate: 12000
+Est wall: ~88 min
+  [  200/12000] valid=164 top5=[620,609,595,569,569]kg wall=2758s ETA=162750s

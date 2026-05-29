@@ -1,0 +1,23 @@
+Selected 10 LEO+LMO pairs (300-700 kg) for WSB probe:
+  (335,  26) bank=312 kg
+  ( 37,  45) bank=325 kg
+  (385,  43) bank=325 kg
+  ( 83, 148) bank=327 kg
+  (258,  80) bank=330 kg
+  ( 91, 115) bank=330 kg
+  (393,  75) bank=331 kg
+  (347,  36) bank=333 kg
+  (398,  56) bank=335 kg
+  (148,  38) bank=338 kg
+
+Probe per pair: 8 starts × 6 scale × 5 tilt × 2 axes × 5 TOF = 2400 configs
+  ( 83,148) bank=327 → FAIL [20s elapsed]
+  ( 91,115) bank=330 → FAIL [20s elapsed]
+  (335, 26) bank=312 → FAIL [21s elapsed]
+  (385, 43) bank=325 → FAIL [21s elapsed]
+  (258, 80) bank=330 → FAIL [21s elapsed]
+  (347, 36) bank=333 → FAIL [21s elapsed]
+  ( 37, 45) bank=325 → FAIL [21s elapsed]
+  (393, 75) bank=331 → FAIL [21s elapsed]
+  (148, 38) bank=338 → FAIL [29s elapsed]
+  (398, 56) bank=335 → FAIL [30s elapsed]

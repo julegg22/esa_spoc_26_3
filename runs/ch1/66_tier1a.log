@@ -1,0 +1,5 @@
+[07:51:02] Waiting for CMA-ES PID 1087118 to finish...
+[07:57:02] CMA-ES finished. Launching Tier 1A.
+High-eL Moon orbits (aL>3M, eL>0.4): 150
+Pairs to evaluate: 2250
+Per-pair: 2304 ICs. Est wall: ~3240 min
