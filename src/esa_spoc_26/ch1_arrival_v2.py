@@ -82,10 +82,10 @@ def solve_arrival_eccentric(posvel_arr, a_m, e_m, i_m, mu=0.01215058439470971,
             return [1e6] * 3
         return [(el[0] - a_m) / L, el[1] - e_m, el[2] - i_m]
 
-    def try_seed(seed_v):
+    def try_seed(seed_v, nfev=80):
         try:
             sol = least_squares(resid, seed_v, method="trf",
-                                 xtol=1e-12, ftol=1e-12, max_nfev=50)
+                                 xtol=1e-14, ftol=1e-14, max_nfev=nfev)
         except Exception:
             return None
         try:
@@ -97,10 +97,10 @@ def solve_arrival_eccentric(posvel_arr, a_m, e_m, i_m, mu=0.01215058439470971,
             return sol.x
         return None
 
-    # Generate seeds: ± sign × tilts + the input v_mf itself (for on-orbit cases).
-    seeds = [v_mf]  # zero-dv2 seed first
-    if i_m > 0.01:
-        tilts = [0.0, i_m, -i_m]
+    # Seeds: v_mf (on-orbit shortcut) + ± × full tilt range [0, i_m] (4-point grid)
+    seeds = [v_mf]
+    if i_m > 1e-6:
+        tilts = np.linspace(0.0, i_m, 4)
     else:
         tilts = [0.0]
     for sign in (1, -1):
