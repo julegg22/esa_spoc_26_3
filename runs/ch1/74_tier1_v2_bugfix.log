@@ -1,0 +1,18 @@
+Loaded 13090 feasibles from matrix
+Already tested: 10642, NEW to evaluate: 6547
+Est wall: ~14 min
+  [  500/6547] valid=57 top5=[833,830,825,823,823]kg wall=88s ETA=1070s
+  [ 1000/6547] valid=140 top5=[847,846,842,841,841]kg wall=166s ETA=920s
+  [ 1500/6547] valid=222 top5=[923,923,922,915,910]kg wall=248s ETA=835s
+  [ 2000/6547] valid=312 top5=[923,923,922,915,910]kg wall=329s ETA=747s
+  [ 2500/6547] valid=494 top5=[923,923,922,915,910]kg wall=396s ETA=642s
+  [ 3000/6547] valid=592 top5=[985,975,972,959,954]kg wall=471s ETA=557s
+  [ 3500/6547] valid=681 top5=[985,975,972,959,954]kg wall=560s ETA=487s
+  [ 4000/6547] valid=786 top5=[1152,1151,1145,1140,1140]kg wall=638s ETA=406s
+  [ 4500/6547] valid=897 top5=[1152,1151,1145,1140,1140]kg wall=702s ETA=320s
+  [ 5000/6547] valid=912 top5=[1152,1151,1145,1140,1140]kg wall=799s ETA=247s
+  [ 5500/6547] valid=1161 top5=[2213,2208,2205,2202,2197]kg wall=878s ETA=167s
+  [ 6000/6547] valid=1541 top5=[2213,2208,2205,2202,2197]kg wall=947s ETA=86s
+  [ 6500/6547] valid=1749 top5=[2213,2208,2205,2202,2197]kg wall=1018s ETA=7s
+
+Tier 1 done in 1024s: 1756/6547 valid
