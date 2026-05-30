@@ -1,0 +1,13 @@
+PATH C VALIDATION: heavy NLP (5 restarts × 4800 evals = 24k/pair)
+Test pairs: [(8, 175), (38, 157), (260, 193), (227, 315), (291, 224)]
+Expected wall: ~30-60 min on 8 workers
+
+  (260, 193) bank=1407 → heavy_nlp=1243 | theory=2214 | 56% — MID (50-90%)  [540s]
+  (291, 224) bank=506 → heavy_nlp=1 | theory=1792 | 0% — FAIL (<50%)  [586s]
+  (227, 315) bank=27 → heavy_nlp=8 | theory=985 | 1% — FAIL (<50%)  [1178s]
+  (  8, 175) bank=951 → heavy_nlp=951 | theory=958 | 99% — PASS (≥90% theory)  [1365s]
+  ( 38, 157) bank=841 → heavy_nlp=841 | theory=922 | 91% — PASS (≥90% theory)  [1449s]
+
+Total wall: 1450s
+PATH C VERDICT: 2/5 reached ≥90% of theoretical
+  → MIXED signal; per-pair physics determines whether multi-shoot helps
