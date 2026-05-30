@@ -62,3 +62,39 @@ R1: 101.65
 ## Memory pointers
 - `ch2-small-audit-2026-05-30.md` — audit findings (cheap graph 4-comp, hostile wait_dt=1.0 default)
 
+
+## Additional attempts (autonomous loop continuation)
+
+After user said "feel free to use heavier compute" + "now you can continue":
+
+- **E-507 CP-SAT fine table** (2h budget): Returned INFEASIBLE in 77s with top_k=15.
+  Increased to top_k=60 with coarse table: UNKNOWN in 120s, no feasible found.
+  Model formulation issue (likely top_k cuts cells the bank perm uses).
+- **E-510 table-greedy multi-start**: 0/49 starts produced a feasible tour.
+  Pure-greedy from table dies on directed dead-ends (same problem as beam search).
+
+## Decisive observation
+
+The bank perm at 142.89d was constructed via `greedy_findxfer` (Lambert-based, with waiting) + `insert_lns` (sub-tour chain insertion). That combination is what produces feasible 49-node tours.
+
+Pure table-based construction CANNOT replicate this — the 4-component graph with 5.9% cheap density and many directed dead-ends requires backtracking-aware construction.
+
+Bank is feasible. Many LNS variants validated 30k+ unique perms via Lambert: none beats 142.89. The local-opt basin is genuine and deep.
+
+## Honest assessment for R1 (101.65 d)
+
+R1 requires a fundamentally different solver architecture:
+
+1. **Specialized time-dependent TSP solver** (e.g., Concorde with custom cost
+   function for time-coupling, ALNS with destroy-and-repair that respects
+   chronological feasibility, branch-and-cut with time-window relaxation).
+2. **Manual analysis of bridge structure**: 5 exception slots, 3 needed
+   structurally. The 2 "free" slots could enable different cluster traversal
+   orders if placed correctly.
+3. **Reading competition reports**: Team HRI's 101.65 likely uses a published
+   method — worth searching SpOC4 paper / GitHub for solver code.
+
+None of these fit autonomous-tick cadence. Multi-day deliberate work needed.
+
+## Bank final state
+- Ch2 small: 142.8913 d (R3=111.76, R1=101.65). Backup at small.json.bak.20260530.
