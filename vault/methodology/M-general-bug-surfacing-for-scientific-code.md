@@ -42,8 +42,37 @@ Concrete form: for any solver output, compute a closed-form lower or
 upper bound. The solver's output should fall within (and ideally near)
 that bound.
 
-When solver output is >2× off from the analytical bound: a bug exists.
-Either in the solver, or in your understanding of what it should compute.
+When solver output is >2× off from the analytical bound: investigate.
+Possible causes (in order of likelihood):
+1. The bound assumes a configuration the solver's architecture can't
+   reach (= the bound is REACHABILITY-INCOMPATIBLE — see refinement below)
+2. A bug in the solver
+3. A wrong understanding of what the solver should compute
+
+### Refinement: REACHABILITY-AWARE oracles
+
+Lesson learned 2026-05-30: a first-principles bound that assumes a
+specific configuration (e.g., "spacecraft perilune exactly equals target
+orbit apoapsis") is only reachable if the architecture can actually
+achieve that configuration. For grid-search + DC architectures, the
+phasing precision required may be unreachable.
+
+Refinement: when computing a theoretical max, document the configuration
+assumption it requires. Then ASK whether your implementation can
+realistically reach that configuration. If not, the bound is an
+inappropriate oracle (predicts unreachable upside).
+
+In practice:
+- Use the bound to ORDER candidates (relative ranking, not absolute target)
+- Use the bound to detect "actual << bound" as a SIGNAL to investigate
+  (could be unreachable config OR bug)
+- Don't claim "we have N kg of headroom" without verifying N is
+  architecturally reachable
+
+When unsure: run the implementation on 5-10 pairs. If actual ≈ bound on
+SOME but far below on most, the bound is reachable in special
+configurations only. Quantify what fraction of cases reach within X% of
+bound — THAT'S the real headroom estimate.
 
 ## Principle 2: Per-instance check before aggregate conclusions
 
