@@ -13,11 +13,14 @@ import numpy as np
 
 
 def fast_walk(perm, cheap_tbl, exc_tbl, quantum, n_exc_budget=5,
-              window_q=200, T_max_d=200.0):
+              window_q=200, T_max_d=200.0, exc_policy='cheap_unless_infeasible',
+              exc_threshold_d=2.0):
     """Greedy chronological walk using table. O(n * window_q) lookups.
 
-    For each leg, find earliest arrival in window [t_min_q, t_min_q+window_q].
-    cheap preferred; exc only if strictly faster AND budget allows.
+    exc_policy:
+      - 'cheap_unless_infeasible': use cheap whenever feasible; exc only fallback
+      - 'cheap_unless_savings': use cheap unless exc saves > exc_threshold_d days
+      - 'opportunistic': use exc whenever strictly faster than cheap
     """
     n = len(perm)
     T = cheap_tbl.shape[2]
@@ -54,19 +57,24 @@ def fast_walk(perm, cheap_tbl, exc_tbl, quantum, n_exc_budget=5,
             if exc_mask.any():
                 best_exc_idx = int(np.argmin(np.where(exc_mask, exc_arr, np.inf)))
                 best_exc = float(exc_arr[best_exc_idx])
-        # Choose best (cheap unless exc strictly faster)
+        # Choose by policy
         if best_cheap == np.inf and best_exc == np.inf:
             return None, None, None, exc_used, False
-        if best_cheap <= best_exc:
-            sel_idx = best_cheap_idx
-            sel_tof = float(cs[sel_idx])
-            sel_arr = best_cheap
-            use_exc_flag = False
-        else:
+        if exc_policy == 'cheap_unless_infeasible':
+            use_exc_flag = (best_cheap == np.inf)
+        elif exc_policy == 'cheap_unless_savings':
+            use_exc_flag = (best_cheap == np.inf) or \
+                (best_exc + exc_threshold_d < best_cheap)
+        else:  # opportunistic
+            use_exc_flag = best_cheap > best_exc
+        if use_exc_flag:
             sel_idx = best_exc_idx
             sel_tof = float(es[sel_idx])
             sel_arr = best_exc
-            use_exc_flag = True
+        else:
+            sel_idx = best_cheap_idx
+            sel_tof = float(cs[sel_idx])
+            sel_arr = best_cheap
         if sel_arr > T_max_d:
             return None, None, None, exc_used, False
         t_dep_q = t_min_q + sel_idx

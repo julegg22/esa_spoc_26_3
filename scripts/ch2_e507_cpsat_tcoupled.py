@@ -43,7 +43,7 @@ def load_table(fine: bool):
     return d['cheap'], d['exc'], d['t_starts']
 
 
-def build_and_solve(fine=False, time_limit_s=1800, top_k_per_pair=15,
+def build_and_solve(fine=False, time_limit_s=1800, top_k_per_pair=60,
                      warm_start_perm=None):
     kt = KTTSP(INST)
     cheap, exc, t_starts = load_table(fine)
