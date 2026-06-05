@@ -1,0 +1,30 @@
+Precompute ULTRAFINE: n=49, pairs=2352, t_starts=4000 (Δ=0.05d), tofs=160, total=1,505,280,000
+Est wall: ~157 min
+  100/2352  rate=0.0/s  elapsed=2105s  eta=47404s
+  200/2352  rate=0.1/s  elapsed=3938s  eta=42372s
+  300/2352  rate=0.0/s  elapsed=6007s  eta=41090s
+  400/2352  rate=0.1/s  elapsed=7558s  eta=36882s
+  500/2352  rate=0.1/s  elapsed=9259s  eta=34294s
+  600/2352  rate=0.1/s  elapsed=11505s  eta=33596s
+  700/2352  rate=0.1/s  elapsed=13136s  eta=31000s
+  800/2352  rate=0.1/s  elapsed=15538s  eta=30145s
+  900/2352  rate=0.0/s  elapsed=18463s  eta=29788s
+  1000/2352  rate=0.0/s  elapsed=20048s  eta=27104s
+  1100/2352  rate=0.1/s  elapsed=21707s  eta=24706s
+  1200/2352  rate=0.1/s  elapsed=23988s  eta=23028s
+  1300/2352  rate=0.0/s  elapsed=26049s  eta=21080s
+  1400/2352  rate=0.0/s  elapsed=28088s  eta=19100s
+  1500/2352  rate=0.1/s  elapsed=29677s  eta=16857s
+  1600/2352  rate=0.1/s  elapsed=31892s  eta=14989s
+  1700/2352  rate=0.0/s  elapsed=34347s  eta=13173s
+  1800/2352  rate=0.1/s  elapsed=35954s  eta=11026s
+  1900/2352  rate=0.1/s  elapsed=37593s  eta=8943s
+  2000/2352  rate=0.1/s  elapsed=39245s  eta=6907s
+  2100/2352  rate=0.1/s  elapsed=40849s  eta=4902s
+  2200/2352  rate=0.1/s  elapsed=42430s  eta=2932s
+  2300/2352  rate=0.1/s  elapsed=44036s  eta=996s
+
+Done in 44652s (744 min)
+Saved /tmp/ch2_small_tcoupled_ultrafine.npz
+Cheap cells: 454971/9408000 = 4.84%
+Exc cells:   3347005/9408000 = 35.58%

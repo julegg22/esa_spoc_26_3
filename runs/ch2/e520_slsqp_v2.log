@@ -1,0 +1,54 @@
+E-520 SLSQP multi-start on bank perm.
+Current bank: mk=142.835867d  feasible=True  start=34 end=32
+Exception legs: [2, 7, 21, 24, 45] (count=5)
+
+--- Start 0: bank ---
+  mk=142.835864d  feasible=True  wall=1.1s  slsqp_ok=True
+
+--- Start 1 (scale=0.20) ---
+  mk=143.534861d  feasible=False  wall=1.8s
+
+--- Start 2 (scale=0.30) ---
+  mk=143.256194d  feasible=False  wall=1.0s
+
+--- Start 3 (scale=0.40) ---
+  mk=142.660903d  feasible=False  wall=2.1s
+
+--- Start 4 (scale=0.50) ---
+  mk=144.359697d  feasible=False  wall=1.1s
+
+--- Start 5 (scale=0.60) ---
+  mk=143.960792d  feasible=False  wall=1.0s
+
+--- Start 6 (scale=0.70) ---
+  mk=146.017647d  feasible=False  wall=1.7s
+
+--- Start 7 (scale=0.80) ---
+  mk=146.074238d  feasible=False  wall=1.0s
+
+--- Start 8 (scale=0.90) ---
+  mk=149.013248d  feasible=False  wall=2.4s
+
+--- Start 9 (scale=1.00) ---
+  mk=147.608582d  feasible=False  wall=1.0s
+
+--- Start 10 (scale=1.10) ---
+  mk=144.095459d  feasible=False  wall=1.9s
+
+--- Start 11 (scale=1.20) ---
+  mk=148.231998d  feasible=False  wall=0.9s
+
+--- Start 12 (scale=1.30) ---
+  mk=147.300778d  feasible=False  wall=2.5s
+
+--- Start 13 (scale=1.40) ---
+  mk=146.621877d  feasible=False  wall=4.2s
+
+--- Start 14 (scale=1.50) ---
+  mk=151.746894d  feasible=False  wall=1.1s
+
+--- Start 15 (scale=1.60) ---
+  mk=152.650939d  feasible=False  wall=3.1s
+
+=== E-520 best: mk=142.835867d feasible=True ===
+  delta from bank entry: +0.000000d

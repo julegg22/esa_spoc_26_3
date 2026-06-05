@@ -1,0 +1,11 @@
+E-521 SLSQP-polished perm search. bank_mk=142.8359d. n_cands=200, workers=4
+Generated 200 candidate perms.
+  cand=0/200 elapsed=2s eta=358s  walk_ok=0 slsqp_polished=0 feas=0 under_bank=0
+  cand=100/200 elapsed=37s eta=37s  walk_ok=1 slsqp_polished=0 feas=0 under_bank=0
+
+=== E-521 done in 1.2min ===
+  walk_ok: 6/200
+  SLSQP-polished: 5
+  SLSQP-polished feasible: 3
+  under bank (142.8359): 0
+  best slsqp_mk: 142.8359d

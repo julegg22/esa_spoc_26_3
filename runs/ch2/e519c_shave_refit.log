@@ -1,0 +1,4 @@
+E-519c shave-and-refit on bank perm. start=34 end=32
+Bank: mk=142.8359d  fit=[142.83586746291655, 0, 0, 0, 0]  feas=True
+Legs: 48; cheap=43 exc=5
+  pass 0 leg 47: t=142.3399 tof=0.4938 → shaved 0.0021d mk=142.8338d (leg wall 0.9s)

@@ -1,0 +1,61 @@
+E-524 multi-start (greedy + insert_lns + SLSQP). bank_mk=142.2897d  workers=6
+Starts: 49, params: tof_window=18, n_steps=240, wait_steps=12, wait_dt=0.5
+  start= 5 partial=40 missing=9 (insert skipped)
+  start= 2 partial=37 missing=12 (insert skipped)
+  start= 3 partial=38 missing=11 (insert skipped)
+  start= 4 partial=27 missing=22 (insert skipped)
+  start= 1 partial=25 missing=24 (insert skipped)
+  start= 0 partial=17 missing=32 (insert skipped)
+  start= 7 partial=41 missing=8 (insert skipped)
+  start= 6 partial=12 missing=37 (insert skipped)
+  start=10 partial=40 missing=9 (insert skipped)
+  start= 9 partial=24 missing=25 (insert skipped)
+  [10/49] elapsed=335s full=0 feas=0 under_bank=0
+  start= 8 partial=29 missing=20 (insert skipped)
+  start=11 partial=28 missing=21 (insert skipped)
+  start=12 partial=40 missing=9 (insert skipped)
+  start=14 partial=36 missing=13 (insert skipped)
+  start=16 partial=44 missing=5 (insert skipped)
+  start=13 partial=36 missing=13 (insert skipped)
+  start=15 partial=25 missing=24 (insert skipped)
+  start=17 partial=27 missing=22 (insert skipped)
+  start=18 partial=43 missing=6 (insert skipped)
+  start=19 partial=19 missing=30 (insert skipped)
+  [20/49] elapsed=651s full=0 feas=0 under_bank=0
+  start=20 partial=32 missing=17 (insert skipped)
+  start=21 partial=39 missing=10 (insert skipped)
+  start=22 partial=38 missing=11 (insert skipped)
+  start=24 partial=13 missing=36 (insert skipped)
+  start=26 partial=37 missing=12 (insert skipped)
+  start=25 partial=35 missing=14 (insert skipped)
+  start=27 partial=41 missing=8 (insert skipped)
+  start=28 partial=25 missing=24 (insert skipped)
+  start=29 partial=21 missing=28 (insert skipped)
+  start=32 partial=44 missing=5 (insert skipped)
+  [30/49] elapsed=978s full=0 feas=0 under_bank=0
+  start=31 partial=18 missing=31 (insert skipped)
+  start=33 partial=41 missing=8 (insert skipped)
+  start=30 partial=24 missing=25 (insert skipped)
+  start=35 partial=33 missing=16 (insert skipped)
+  start=36 partial=17 missing=32 (insert skipped)
+  start=37 partial=25 missing=24 (insert skipped)
+  start=38 partial=30 missing=19 (insert skipped)
+  start=39 partial=16 missing=33 (insert skipped)
+  start=40 partial=38 missing=11 (insert skipped)
+  start=41 partial=37 missing=12 (insert skipped)
+  [40/49] elapsed=1363s full=0 feas=0 under_bank=0
+  start=42 partial=41 missing=8 (insert skipped)
+  start=23 partial=46 walk_mk= 164.95 → slsqp_mk=164.9528 exc=4 feas=YES
+  start=44 partial=30 missing=19 (insert skipped)
+  start=43 partial=26 missing=23 (insert skipped)
+  start=45 partial=22 missing=27 (insert skipped)
+  start=46 partial=42 missing=7 (insert skipped)
+  start=47 partial=28 missing=21 (insert skipped)
+  start=48 partial=23 missing=26 (insert skipped)
+  start=34 partial=46 walk_mk= 146.80 → slsqp_mk=146.8022 exc=4 feas=YES
+
+=== E-524 done in 28.0min ===
+  full tours obtained: 2/49
+  SLSQP-feasible:      2
+  under bank (142.2897): 0
+  best polished mk: 142.2897d (start=None)

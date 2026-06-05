@@ -1,0 +1,62 @@
+E-521 SLSQP-polished perm search. bank_mk=142.8359d. n_cands=5000, workers=6
+Generated 5000 candidate perms.
+  cand=0/5000 elapsed=3s eta=13977s  walk_ok=0 slsqp_polished=0 feas=0 under_bank=0
+  cand=100/5000 elapsed=38s eta=1861s  walk_ok=1 slsqp_polished=0 feas=0 under_bank=0
+  cand=200/5000 elapsed=76s eta=1819s  walk_ok=6 slsqp_polished=5 feas=3 under_bank=0
+  cand=300/5000 elapsed=111s eta=1741s  walk_ok=9 slsqp_polished=7 feas=5 under_bank=0
+  cand=400/5000 elapsed=144s eta=1660s  walk_ok=11 slsqp_polished=8 feas=5 under_bank=0
+  cand=500/5000 elapsed=178s eta=1604s  walk_ok=11 slsqp_polished=8 feas=5 under_bank=0
+  cand=600/5000 elapsed=212s eta=1551s  walk_ok=14 slsqp_polished=11 feas=8 under_bank=0
+  cand=700/5000 elapsed=244s eta=1500s  walk_ok=14 slsqp_polished=11 feas=8 under_bank=0
+  cand=800/5000 elapsed=281s eta=1473s  walk_ok=18 slsqp_polished=13 feas=10 under_bank=0
+  cand=900/5000 elapsed=316s eta=1440s  walk_ok=19 slsqp_polished=14 feas=11 under_bank=0
+  cand=1000/5000 elapsed=349s eta=1394s  walk_ok=19 slsqp_polished=14 feas=11 under_bank=0
+  cand=1100/5000 elapsed=386s eta=1367s  walk_ok=19 slsqp_polished=14 feas=11 under_bank=0
+  cand=1200/5000 elapsed=420s eta=1331s  walk_ok=25 slsqp_polished=18 feas=15 under_bank=0
+  cand=1300/5000 elapsed=452s eta=1286s  walk_ok=27 slsqp_polished=19 feas=16 under_bank=0
+  cand=1400/5000 elapsed=489s eta=1257s  walk_ok=30 slsqp_polished=21 feas=18 under_bank=0
+  cand=1500/5000 elapsed=521s eta=1215s  walk_ok=32 slsqp_polished=22 feas=18 under_bank=0
+  cand=1600/5000 elapsed=555s eta=1180s  walk_ok=34 slsqp_polished=23 feas=19 under_bank=0
+  cand=1700/5000 elapsed=588s eta=1142s  walk_ok=36 slsqp_polished=24 feas=20 under_bank=0
+  cand=1800/5000 elapsed=623s eta=1107s  walk_ok=39 slsqp_polished=26 feas=22 under_bank=0
+  cand=1900/5000 elapsed=659s eta=1075s  walk_ok=39 slsqp_polished=26 feas=22 under_bank=0
+  cand=2000/5000 elapsed=693s eta=1039s  walk_ok=40 slsqp_polished=26 feas=22 under_bank=0
+  cand=2100/5000 elapsed=729s eta=1007s  walk_ok=43 slsqp_polished=29 feas=25 under_bank=0
+  cand=2200/5000 elapsed=763s eta=971s  walk_ok=48 slsqp_polished=34 feas=30 under_bank=0
+  cand=2300/5000 elapsed=797s eta=936s  walk_ok=50 slsqp_polished=36 feas=32 under_bank=0
+  cand=2400/5000 elapsed=831s eta=900s  walk_ok=52 slsqp_polished=37 feas=33 under_bank=0
+  cand=2500/5000 elapsed=865s eta=865s  walk_ok=53 slsqp_polished=38 feas=34 under_bank=0
+  cand=2600/5000 elapsed=904s eta=834s  walk_ok=56 slsqp_polished=41 feas=37 under_bank=0
+  cand=2700/5000 elapsed=936s eta=797s  walk_ok=56 slsqp_polished=41 feas=37 under_bank=0
+  >>> new best slsqp_mk=142.2897d (cand=2726, walk_mk=142.2897)
+  cand=2800/5000 elapsed=967s eta=760s  walk_ok=59 slsqp_polished=42 feas=38 under_bank=1
+  cand=2900/5000 elapsed=1002s eta=725s  walk_ok=61 slsqp_polished=43 feas=39 under_bank=1
+  cand=3000/5000 elapsed=1035s eta=690s  walk_ok=64 slsqp_polished=45 feas=40 under_bank=1
+  cand=3100/5000 elapsed=1067s eta=654s  walk_ok=65 slsqp_polished=46 feas=41 under_bank=1
+  cand=3200/5000 elapsed=1098s eta=617s  walk_ok=66 slsqp_polished=46 feas=41 under_bank=1
+  cand=3300/5000 elapsed=1132s eta=583s  walk_ok=67 slsqp_polished=47 feas=42 under_bank=1
+  cand=3400/5000 elapsed=1166s eta=549s  walk_ok=68 slsqp_polished=47 feas=42 under_bank=1
+  cand=3500/5000 elapsed=1201s eta=515s  walk_ok=71 slsqp_polished=50 feas=45 under_bank=1
+  cand=3600/5000 elapsed=1235s eta=480s  walk_ok=71 slsqp_polished=50 feas=45 under_bank=1
+  cand=3700/5000 elapsed=1270s eta=446s  walk_ok=74 slsqp_polished=52 feas=46 under_bank=1
+  cand=3800/5000 elapsed=1305s eta=412s  walk_ok=74 slsqp_polished=52 feas=46 under_bank=1
+  cand=3900/5000 elapsed=1341s eta=378s  walk_ok=75 slsqp_polished=53 feas=47 under_bank=1
+  cand=4000/5000 elapsed=1373s eta=343s  walk_ok=79 slsqp_polished=56 feas=50 under_bank=1
+  cand=4100/5000 elapsed=1407s eta=309s  walk_ok=79 slsqp_polished=56 feas=50 under_bank=1
+  cand=4200/5000 elapsed=1441s eta=274s  walk_ok=83 slsqp_polished=58 feas=52 under_bank=1
+  cand=4300/5000 elapsed=1475s eta=240s  walk_ok=84 slsqp_polished=58 feas=52 under_bank=1
+  cand=4400/5000 elapsed=1509s eta=206s  walk_ok=88 slsqp_polished=59 feas=53 under_bank=1
+  cand=4500/5000 elapsed=1544s eta=172s  walk_ok=90 slsqp_polished=61 feas=55 under_bank=1
+  cand=4600/5000 elapsed=1575s eta=137s  walk_ok=91 slsqp_polished=62 feas=56 under_bank=1
+  cand=4700/5000 elapsed=1605s eta=102s  walk_ok=97 slsqp_polished=65 feas=59 under_bank=1
+  cand=4800/5000 elapsed=1641s eta=68s  walk_ok=98 slsqp_polished=66 feas=60 under_bank=1
+  cand=4900/5000 elapsed=1680s eta=34s  walk_ok=102 slsqp_polished=70 feas=64 under_bank=1
+
+=== E-521 done in 28.5min ===
+  walk_ok: 109/5000
+  SLSQP-polished: 76
+  SLSQP-polished feasible: 70
+  under bank (142.8359): 1
+  best slsqp_mk: 142.2897d
+
+>>> BANKED: 142.2897d (0.5462d under prev)

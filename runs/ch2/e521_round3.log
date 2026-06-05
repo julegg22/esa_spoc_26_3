@@ -1,0 +1,60 @@
+E-521 SLSQP-polished perm search. bank_mk=142.2897d. n_cands=5000, workers=6
+Generated 5000 candidate perms.
+  cand=0/5000 elapsed=3s eta=14351s  walk_ok=0 slsqp_polished=0 feas=0 under_bank=0
+  cand=100/5000 elapsed=38s eta=1838s  walk_ok=2 slsqp_polished=2 feas=2 under_bank=0
+  cand=200/5000 elapsed=74s eta=1777s  walk_ok=3 slsqp_polished=2 feas=2 under_bank=0
+  cand=300/5000 elapsed=108s eta=1684s  walk_ok=3 slsqp_polished=2 feas=2 under_bank=0
+  cand=400/5000 elapsed=146s eta=1677s  walk_ok=5 slsqp_polished=3 feas=3 under_bank=0
+  cand=500/5000 elapsed=180s eta=1620s  walk_ok=7 slsqp_polished=3 feas=3 under_bank=0
+  cand=600/5000 elapsed=215s eta=1575s  walk_ok=8 slsqp_polished=4 feas=4 under_bank=0
+  cand=700/5000 elapsed=246s eta=1512s  walk_ok=8 slsqp_polished=4 feas=4 under_bank=0
+  cand=800/5000 elapsed=284s eta=1490s  walk_ok=10 slsqp_polished=5 feas=5 under_bank=0
+  cand=900/5000 elapsed=315s eta=1434s  walk_ok=11 slsqp_polished=5 feas=5 under_bank=0
+  cand=1000/5000 elapsed=350s eta=1400s  walk_ok=11 slsqp_polished=5 feas=5 under_bank=0
+  cand=1100/5000 elapsed=386s eta=1367s  walk_ok=12 slsqp_polished=6 feas=6 under_bank=0
+  cand=1200/5000 elapsed=422s eta=1337s  walk_ok=12 slsqp_polished=6 feas=6 under_bank=0
+  cand=1300/5000 elapsed=455s eta=1294s  walk_ok=12 slsqp_polished=6 feas=6 under_bank=0
+  cand=1400/5000 elapsed=491s eta=1262s  walk_ok=13 slsqp_polished=7 feas=7 under_bank=0
+  cand=1500/5000 elapsed=527s eta=1230s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=1600/5000 elapsed=561s eta=1193s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=1700/5000 elapsed=597s eta=1158s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=1800/5000 elapsed=637s eta=1132s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=1900/5000 elapsed=666s eta=1087s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=2000/5000 elapsed=700s eta=1050s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=2100/5000 elapsed=733s eta=1012s  walk_ok=14 slsqp_polished=8 feas=8 under_bank=0
+  cand=2200/5000 elapsed=771s eta=981s  walk_ok=15 slsqp_polished=8 feas=8 under_bank=0
+  cand=2300/5000 elapsed=805s eta=945s  walk_ok=15 slsqp_polished=8 feas=8 under_bank=0
+  cand=2400/5000 elapsed=837s eta=907s  walk_ok=15 slsqp_polished=8 feas=8 under_bank=0
+  cand=2500/5000 elapsed=874s eta=874s  walk_ok=15 slsqp_polished=8 feas=8 under_bank=0
+  cand=2600/5000 elapsed=910s eta=840s  walk_ok=16 slsqp_polished=8 feas=8 under_bank=0
+  cand=2700/5000 elapsed=948s eta=807s  walk_ok=16 slsqp_polished=8 feas=8 under_bank=0
+  cand=2800/5000 elapsed=983s eta=772s  walk_ok=17 slsqp_polished=9 feas=9 under_bank=0
+  cand=2900/5000 elapsed=1017s eta=736s  walk_ok=18 slsqp_polished=10 feas=10 under_bank=0
+  cand=3000/5000 elapsed=1048s eta=699s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3100/5000 elapsed=1084s eta=664s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3200/5000 elapsed=1117s eta=628s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3300/5000 elapsed=1155s eta=595s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3400/5000 elapsed=1190s eta=560s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3500/5000 elapsed=1228s eta=526s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3600/5000 elapsed=1259s eta=489s  walk_ok=20 slsqp_polished=10 feas=10 under_bank=0
+  cand=3700/5000 elapsed=1293s eta=454s  walk_ok=21 slsqp_polished=11 feas=11 under_bank=0
+  cand=3800/5000 elapsed=1327s eta=419s  walk_ok=22 slsqp_polished=11 feas=11 under_bank=0
+  cand=3900/5000 elapsed=1363s eta=384s  walk_ok=24 slsqp_polished=13 feas=13 under_bank=0
+  cand=4000/5000 elapsed=1397s eta=349s  walk_ok=26 slsqp_polished=14 feas=14 under_bank=0
+  cand=4100/5000 elapsed=1431s eta=314s  walk_ok=27 slsqp_polished=15 feas=14 under_bank=0
+  cand=4200/5000 elapsed=1466s eta=279s  walk_ok=27 slsqp_polished=15 feas=14 under_bank=0
+  cand=4300/5000 elapsed=1503s eta=245s  walk_ok=29 slsqp_polished=17 feas=16 under_bank=0
+  cand=4400/5000 elapsed=1540s eta=210s  walk_ok=30 slsqp_polished=18 feas=17 under_bank=0
+  cand=4500/5000 elapsed=1576s eta=175s  walk_ok=30 slsqp_polished=18 feas=17 under_bank=0
+  cand=4600/5000 elapsed=1613s eta=140s  walk_ok=30 slsqp_polished=18 feas=17 under_bank=0
+  cand=4700/5000 elapsed=1646s eta=105s  walk_ok=32 slsqp_polished=20 feas=19 under_bank=0
+  cand=4800/5000 elapsed=1681s eta=70s  walk_ok=32 slsqp_polished=20 feas=19 under_bank=0
+  cand=4900/5000 elapsed=1713s eta=35s  walk_ok=33 slsqp_polished=21 feas=20 under_bank=0
+
+=== E-521 done in 29.1min ===
+  walk_ok: 34/5000
+  SLSQP-polished: 21
+  SLSQP-polished feasible: 20
+  under bank (142.2897): 0
+  best slsqp_mk: 142.2897d
+  pool size (mk < 142.7897): 17

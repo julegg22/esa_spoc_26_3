@@ -1,0 +1,12 @@
+E-519b leg refinement on bank perm. start=34 end=32
+Bank: mk=142.8359d  fit=[142.83586746291655, 0, 0, 0, 0]  feasible=True
+Legs: 48; cheap=43 exc=5
+  -- pass 0: 0 improvements, total shaved 0.0000d, mk=142.8359d
+  no more improvements; stopping.
+
+Final: mk=142.8359d  fit=[142.83586746291655, 0, 0, 0, 0]  feasible=True
+Total shaved from bank: 0.0000d
+
+>>> BANKED: 142.8359d (0.0554d under prev)
+
+=== E-519b VERDICT ===  refutes walk_perm_chrono-as-optimal (C6 confirmed)

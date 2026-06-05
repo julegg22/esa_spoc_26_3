@@ -1,0 +1,15 @@
+E-517 bridge enumeration. bank mk=142.8913 start=34 end=32
+Components: 4
+  comp 0: 40 nodes  members=[0, 1, 2, 3, 5]...
+  comp 1: 3 nodes  members=[4, 11, 17]...
+  comp 2: 3 nodes  members=[16, 27, 32]...
+  comp 3: 3 nodes  members=[18, 23, 34]...
+big=|40|, start_c=|3|, mid_c=|3|, end_c=|3|
+comp0 cheap arc count = 120 / 1560 = 7.7%
+Enumerated 240 candidate perms.
+
+E-517 done in 21.0 min
+feas counts: S1=0 S2=0
+perms with exactly 3 inter-comp exc: 0
+  best S1: no feasible
+  best S2: no feasible

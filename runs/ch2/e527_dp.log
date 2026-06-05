@@ -1,0 +1,33 @@
+Loading ultrafine table...
+  loaded in 0.1s. shape=(49, 49, 4000) q=0.05d T=4000 horizon=200.0d
+  cheap cells: 454971 (4.74%)
+  exc   cells: 3347005 (34.85%)
+
+Bank perm: start=34 end=32 n_legs=48
+
+Precomputing per-leg arrival buckets + actual tofs...
+  done in 0.6s
+
+Forward DP (this may take a few minutes due to large T)...
+  step  0: 1 reachable states
+  step  8: 14207 reachable states
+  step 16: 4657 reachable states
+  step 24: 6577 reachable states
+  step 32: 2490 reachable states
+  step 40: 1858 reachable states
+  done in 208.7s. last reachable step: 48
+
+DP optimum on bank perm: mk_dij (bucket-quantized) = 126.4500d (exc_used=5, sink_bucket=2529)
+  n_exc_legs in DP reconstruction: 5
+  first 5 legs (dep_d, tof_d, isexc): [(0.0, 0.0752, 0), (0.1, 0.7272, 0), (1.2, 0.3761, 1), (1.6, 1.3792, 0), (3.0, 1.1786, 0)]
+
+Validating reconstructed (times, tofs) via UDP fitness...
+  UDP fitness: [126.42547169327736, 0, 0, 0, 0] (feasible=True)
+  UDP makespan: 126.425472d
+  vs BANK = 142.2897d → delta = +15.8642d
+
+=== E-527 VERDICT ===
+refutes bank-as-perm-loc-opt — new bank candidate
+DP found UDP-feasible mk=126.4255d < bank 142.2897d. The SLSQP-polish bank was locally optimal but not globally on its perm.
+
+>>> BANKED: 126.425472d (15.8642d under prev)

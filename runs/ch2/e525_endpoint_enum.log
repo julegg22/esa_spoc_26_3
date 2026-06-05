@@ -1,0 +1,14 @@
+E-525 endpoint-config enumeration. bank_mk=142.2897d  start=34 end=32
+Total candidates: 216 = 6 configs × 3 starts × 2 start-orders × 3 ends × 2 end-orders
+  cid=210 start=34 end=16 walk= 142.39 → slsqp=142.3899d feas=YES
+  cid=212 start=34 end=27 walk= 142.89 → slsqp=142.8913d feas=YES
+  cid=213 start=34 end=27 walk= 142.59 → slsqp=142.5905d feas=YES
+  cid=214 start=34 end=32 walk= 142.29 → slsqp=142.2897d feas=YES
+  cid=211 start=34 end=16 walk= 142.59 → slsqp=142.5903d feas=YES
+  cid=215 start=34 end=32 walk= 142.39 → slsqp=142.3899d feas=YES
+
+=== E-525 done in 410s ===
+  walk-feasible: 36/216
+  polished-feasible: 6
+  under bank (142.2897): 0
+  best mk: 142.2897d (start=None, end=None)

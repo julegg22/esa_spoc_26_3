@@ -1,0 +1,2521 @@
+E-516 multi-day GA: bank=142.8913, R3=111.76, R1=101.65
+Islands=8, pop_size=20, T_max=24.0h
+OR-Tools seeds: 10
+  [is=5] init pop=20 feas=2 best=142.89
+  [is=6] init pop=20 feas=2 best=142.89
+  [is=3] init pop=20 feas=2 best=142.89
+  [is=4] init pop=20 feas=2 best=142.89
+  [is=1] init pop=20 feas=2 best=142.89
+  [is=2] init pop=20 feas=2 best=142.89
+  [is=0] init pop=20 feas=2 best=142.89
+  [is=7] init pop=20 feas=2 best=142.89
+  [is=3 gen=6 t=301s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=9 t=354s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=11 t=302s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=9 t=358s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=9 t=329s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=9 t=330s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=7 t=302s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=10 t=322s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=17 t=662s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=14 t=636s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=17 t=679s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=17 t=636s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=21 t=656s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=17 t=614s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=17 t=663s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=18 t=630s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=23 t=945s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=27 t=986s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=27 t=1004s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=26 t=943s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=29 t=962s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=24 t=921s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=27 t=947s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=26 t=1020s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=31] injected diversity (5)
+  [is=3 gen=31 t=1341s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=36] injected diversity (5)
+  [is=6 gen=36 t=1372s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=36] injected diversity (5)
+  [is=4 gen=36 t=1327s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=35] injected diversity (5)
+  [is=1 gen=35 t=1323s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=35] injected diversity (5)
+  [is=0 gen=35 t=1342s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=33] injected diversity (5)
+  [is=5 gen=33 t=1468s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=31] injected diversity (5)
+  [is=2 gen=31 t=1393s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=36] injected diversity (5)
+  [is=7 gen=36 t=1389s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=41 t=1643s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=46 t=1678s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=46 t=1627s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=44 t=1649s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=45 t=1644s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=41 t=1701s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=42 t=1799s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=45 t=1704s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=55 t=1983s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=52 t=1967s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=56 t=1936s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=55 t=1968s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=54 t=1972s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=52 t=2124s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=51 t=2036s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=55 t=2011s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=65 t=2238s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=62 t=2317s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=63 t=2291s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=61 t=2318s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=64 t=2313s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=62 t=2443s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=60 t=2373s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=68 t=2345s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=67] injected diversity (5)
+  [is=3 gen=67 t=2708s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=74] injected diversity (5)
+  [is=1 gen=74 t=2694s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=69] injected diversity (5)
+  [is=6 gen=69 t=2779s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=72] injected diversity (5)
+  [is=4 gen=72 t=2732s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=72] injected diversity (5)
+  [is=0 gen=72 t=2678s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=66] injected diversity (5)
+  [is=2 gen=66 t=2729s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=76] injected diversity (5)
+  [is=7 gen=76 t=2750s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=69] injected diversity (5)
+  [is=5 gen=69 t=2887s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=76 t=3018s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=80 t=3033s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=83 t=3018s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=79 t=3103s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=81 t=2991s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=75 t=3044s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=85 t=3074s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=78 t=3239s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=84 t=3369s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=91 t=3355s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=91 t=3340s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=90 t=3295s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=92 t=3416s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=81 t=3358s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=94 t=3386s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=86 t=3598s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=92 t=3678s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=100 t=3671s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=100 t=3724s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=98 t=3664s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=102 t=3626s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=91 t=3684s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=102 t=3688s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=97 t=3910s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=100] injected diversity (5)
+  [is=3 gen=100 t=4046s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=105] injected diversity (5)
+  [is=1 gen=105 t=4021s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=108] injected diversity (5)
+  [is=4 gen=108 t=4093s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=112] injected diversity (5)
+  [is=0 gen=112 t=4045s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=108] injected diversity (5)
+  [is=6 gen=108 t=4168s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=100] injected diversity (5)
+  [is=2 gen=100 t=4087s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=110] injected diversity (5)
+  [is=7 gen=110 t=4146s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=103] injected diversity (5)
+  [is=5 gen=103 t=4310s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=116 t=4328s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=109 t=4367s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=119 t=4409s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=116 t=4474s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=122 t=4366s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=109 t=4413s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=121 t=4461s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=111 t=4614s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=129 t=4641s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=121 t=4697s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=131 t=4725s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=117 t=4721s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=132 t=4696s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=125 t=4816s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=128 t=4771s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=121 t=4944s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=139 t=4957s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=129 t=5048s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=140 t=5052s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=125 t=5029s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=143 t=5017s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=134 t=5155s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=139 t=5094s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=132 t=5252s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=147] injected diversity (5)
+  [is=1 gen=147 t=5382s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=135] injected diversity (5)
+  [is=3 gen=135 t=5442s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=149] injected diversity (5)
+  [is=4 gen=149 t=5490s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=136] injected diversity (5)
+  [is=2 gen=136 t=5462s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=139] injected diversity (5)
+  [is=6 gen=139 t=5551s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=149] injected diversity (5)
+  [is=0 gen=149 t=5449s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=140] injected diversity (5)
+  [is=5 gen=140 t=5644s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=149] injected diversity (5)
+  [is=7 gen=149 t=5544s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=156 t=5690s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=145 t=5749s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=146 t=5851s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=158 t=5802s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=147 t=5774s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=157 t=5770s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=150 t=5978s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=159 t=5853s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=165 t=6020s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=157 t=6063s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=166 t=6109s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=156 t=6162s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=158 t=6083s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=164 t=6075s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=163 t=6288s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=168 t=6169s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=174 t=6337s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=167 t=6384s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=174 t=6427s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=165 t=6493s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=170 t=6410s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=171 t=6392s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=172 t=6613s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=177 t=6495s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=181] injected diversity (5)
+  [is=1 gen=181 t=6728s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=175] injected diversity (5)
+  [is=3 gen=175 t=6820s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=182] injected diversity (5)
+  [is=4 gen=182 t=6814s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=171] injected diversity (5)
+  [is=6 gen=171 t=6900s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=180] injected diversity (5)
+  [is=0 gen=180 t=6813s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=177] injected diversity (5)
+  [is=2 gen=177 t=6849s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=180] injected diversity (5)
+  [is=5 gen=180 t=7023s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=184] injected diversity (5)
+  [is=7 gen=184 t=6890s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=189 t=7030s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=191 t=7118s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=182 t=7148s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=179 t=7205s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=189 t=7113s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=185 t=7175s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=192 t=7192s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=191 t=7342s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=197 t=7364s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=199 t=7426s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=191 t=7450s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=190 t=7507s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=201 t=7425s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=191 t=7477s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=202 t=7498s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=202 t=7702s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=207 t=7702s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=211 t=7731s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=200 t=7803s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=198 t=7849s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=209 t=7743s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=201 t=7827s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=212 t=7823s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=211 t=8019s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=216] injected diversity (5)
+  [is=1 gen=216 t=8131s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=206] injected diversity (5)
+  [is=3 gen=206 t=8179s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=223] injected diversity (5)
+  [is=4 gen=223 t=8177s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=205] injected diversity (5)
+  [is=6 gen=205 t=8259s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=218] injected diversity (5)
+  [is=0 gen=218 t=8201s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=208] injected diversity (5)
+  [is=2 gen=208 t=8238s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=221] injected diversity (5)
+  [is=7 gen=221 t=8241s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=219] injected diversity (5)
+  [is=5 gen=219 t=8446s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=215 t=8487s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=225 t=8464s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=236 t=8513s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=214 t=8584s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=229 t=8514s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=218 t=8555s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=231 t=8551s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=228 t=8761s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=232 t=8778s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=227 t=8819s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=247 t=8824s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=224 t=8925s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=238 t=8821s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=227 t=8894s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=241 t=8874s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=238 t=9089s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=243 t=9108s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=235 t=9145s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=256 t=9127s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=249 t=9145s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=233 t=9262s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=238 t=9213s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=249 t=9195s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=246 t=9423s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=249] injected diversity (5)
+  [is=1 gen=249 t=9441s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=265] injected diversity (5)
+  [is=4 gen=265 t=9489s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=241] injected diversity (5)
+  [is=3 gen=241 t=9519s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=238] injected diversity (5)
+  [is=6 gen=238 t=9615s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=257] injected diversity (5)
+  [is=0 gen=257 t=9590s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=257] injected diversity (5)
+  [is=7 gen=257 t=9597s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=252] injected diversity (5)
+  [is=5 gen=252 t=9793s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=246] injected diversity (5)
+  [is=2 gen=246 t=9719s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=258 t=9743s] best=142.89 avg=152.21 feas/pop=4/20 all_seen=3
+  [is=4 gen=272 t=9793s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=253 t=9840s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=247 t=9933s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=267 t=9894s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=264 t=9907s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=262 t=10102s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=256 t=10042s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=280 t=10095s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=270 t=10093s] best=142.89 avg=150.35 feas/pop=5/20 all_seen=3
+  [is=3 gen=263 t=10159s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=258 t=10250s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=275 t=10218s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=277 t=10230s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=272 t=10426s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=264 t=10351s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=290 t=10440s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=278 t=10438s] best=142.89 avg=150.35 feas/pop=5/20 all_seen=3
+  [is=3 gen=272 t=10491s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=269 t=10602s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=285 t=10542s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=284 t=10556s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=282 t=10741s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=274 t=10659s] best=142.89 avg=167.69 feas/pop=3/20 all_seen=3
+  [is=4 gen=296] injected diversity (5)
+  [is=4 gen=296 t=10814s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=286] injected diversity (5)
+  [is=1 gen=286 t=10834s] best=142.89 avg=149.33 feas/pop=7/20 all_seen=3
+  [is=3 gen=279] injected diversity (5)
+  [is=3 gen=279 t=10910s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=276] injected diversity (5)
+  [is=6 gen=276 t=11039s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=293] injected diversity (5)
+  [is=0 gen=293 t=10954s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=293] injected diversity (5)
+  [is=7 gen=293 t=10965s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=291] injected diversity (5)
+  [is=5 gen=291 t=11160s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=282] injected diversity (5)
+  [is=2 gen=282 t=11077s] best=142.89 avg=167.69 feas/pop=3/20 all_seen=3
+  [is=4 gen=305 t=11148s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=295 t=11137s] best=142.89 avg=149.02 feas/pop=8/20 all_seen=3
+  [is=3 gen=288 t=11220s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=284 t=11357s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=303 t=11270s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=302 t=11285s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=291 t=11388s] best=142.89 avg=167.69 feas/pop=3/20 all_seen=3
+  [is=5 gen=299 t=11493s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=316 t=11456s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=303 t=11457s] best=142.89 avg=145.82 feas/pop=8/20 all_seen=3
+  [is=3 gen=298 t=11536s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=290 t=11657s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=312 t=11580s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=311 t=11597s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=301 t=11705s] best=142.89 avg=167.69 feas/pop=3/20 all_seen=3
+  [is=5 gen=309 t=11820s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=326 t=11770s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=310 t=11757s] best=142.89 avg=145.82 feas/pop=8/20 all_seen=3
+  [is=3 gen=308 t=11842s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=298 t=11967s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=323 t=11901s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=320 t=11901s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=312 t=12016s] best=142.89 avg=172.72 feas/pop=4/20 all_seen=3
+  [is=5 gen=320 t=12137s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=335] injected diversity (5)
+  [is=4 gen=335 t=12218s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=317] injected diversity (5)
+  [is=1 gen=317 t=12213s] best=142.89 avg=145.93 feas/pop=9/20 all_seen=3
+  [is=3 gen=317] injected diversity (5)
+  [is=3 gen=317 t=12340s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=306] injected diversity (5)
+  [is=6 gen=306 t=12406s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=327] injected diversity (5)
+  [is=7 gen=327 t=12306s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=332] injected diversity (5)
+  [is=0 gen=332 t=12321s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=328] injected diversity (5)
+  [is=5 gen=328 t=12504s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=322] injected diversity (5)
+  [is=2 gen=322 t=12443s] best=142.89 avg=172.65 feas/pop=5/20 all_seen=3
+  [is=1 gen=327 t=12518s] best=142.89 avg=145.74 feas/pop=11/20 all_seen=3
+  [is=4 gen=343 t=12541s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=327 t=12651s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=317 t=12718s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=336 t=12634s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=342 t=12650s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=339 t=12809s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=332 t=12747s] best=142.89 avg=175.17 feas/pop=6/20 all_seen=3
+  [is=1 gen=339 t=12831s] best=142.89 avg=146.02 feas/pop=15/20 all_seen=3
+  [is=4 gen=354 t=12853s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=337 t=12979s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=327 t=13021s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=352 t=12956s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=344 t=12955s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=350 t=13131s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=343 t=13051s] best=142.89 avg=178.33 feas/pop=8/20 all_seen=3
+  [is=4 gen=364 t=13177s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=347 t=13169s] best=142.89 avg=145.76 feas/pop=15/20 all_seen=3
+  [is=3 gen=345 t=13300s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=339 t=13335s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=353 t=13258s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=362 t=13289s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=360 t=13455s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=349 t=13366s] best=142.89 avg=178.33 feas/pop=8/20 all_seen=3
+  [is=4 gen=372] injected diversity (5)
+  [is=4 gen=372 t=13566s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=355] injected diversity (5)
+  [is=1 gen=355 t=13565s] best=142.89 avg=145.76 feas/pop=15/20 all_seen=3
+  [is=7 gen=359] injected diversity (5)
+  [is=7 gen=359 t=13629s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=348] injected diversity (5)
+  [is=6 gen=348 t=13756s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=352] injected diversity (5)
+  [is=3 gen=352 t=13751s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=370] injected diversity (5)
+  [is=5 gen=370 t=13847s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=370] injected diversity (5)
+  [is=0 gen=370 t=13745s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=356] injected diversity (5)
+  [is=2 gen=356 t=13822s] best=142.89 avg=178.33 feas/pop=8/20 all_seen=3
+  [is=4 gen=381 t=13871s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=362 t=13890s] best=142.89 avg=145.50 feas/pop=15/20 all_seen=3
+  [is=7 gen=370 t=13950s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=362 t=14071s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=357 t=14105s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=379 t=14176s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=377 t=14052s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=364 t=14136s] best=142.89 avg=179.39 feas/pop=9/20 all_seen=3
+  [is=4 gen=390 t=14191s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=370 t=14210s] best=142.89 avg=145.19 feas/pop=17/20 all_seen=3
+  [is=7 gen=381 t=14260s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=373 t=14385s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=366 t=14415s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=387 t=14368s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=387 t=14533s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=373 t=14445s] best=142.89 avg=179.51 feas/pop=11/20 all_seen=3
+  [is=4 gen=401 t=14492s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=376 t=14516s] best=142.89 avg=145.06 feas/pop=18/20 all_seen=3
+  [is=7 gen=391 t=14571s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=382 t=14712s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=376 t=14746s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=394 t=14670s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=397 t=14848s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=380 t=14758s] best=142.89 avg=179.51 feas/pop=11/20 all_seen=3
+  [is=4 gen=411] injected diversity (5)
+  [is=4 gen=411 t=14942s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=385] injected diversity (5)
+  [is=1 gen=385 t=14965s] best=142.89 avg=144.19 feas/pop=15/20 all_seen=3
+  [is=7 gen=399] injected diversity (5)
+  [is=7 gen=399 t=15028s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=384] injected diversity (5)
+  [is=6 gen=384 t=15190s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=404] injected diversity (5)
+  [is=5 gen=404 t=15201s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=403] injected diversity (5)
+  [is=0 gen=403 t=15127s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=388] injected diversity (5)
+  [is=3 gen=388 t=15216s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=389] injected diversity (5)
+  [is=2 gen=389 t=15208s] best=142.89 avg=178.92 feas/pop=12/20 all_seen=3
+  [is=4 gen=421 t=15276s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=392 t=15281s] best=142.89 avg=143.93 feas/pop=15/20 all_seen=3
+  [is=7 gen=409 t=15359s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=411 t=15512s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=393 t=15530s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=410 t=15438s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=400 t=15533s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=432 t=15595s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=400 t=15585s] best=142.89 avg=143.93 feas/pop=15/20 all_seen=3
+  [is=2 gen=397 t=15567s] best=142.89 avg=178.92 feas/pop=12/20 all_seen=3
+  [is=7 gen=418 t=15668s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=420 t=15841s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=403 t=15854s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=409 t=15855s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=420 t=15778s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=410 t=15888s] best=142.89 avg=143.81 feas/pop=17/20 all_seen=3
+  [is=2 gen=403 t=15884s] best=142.89 avg=178.92 feas/pop=12/20 all_seen=3
+  [is=4 gen=443 t=15926s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=428 t=15978s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=429 t=16155s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=412 t=16171s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=420 t=16177s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=430 t=16131s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=413 t=16193s] best=142.89 avg=180.19 feas/pop=14/20 all_seen=3
+  [is=4 gen=449] injected diversity (5)
+  [is=4 gen=449 t=16320s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=417] injected diversity (5)
+  [is=1 gen=417 t=16443s] best=142.89 avg=143.15 feas/pop=15/20 all_seen=3
+  [is=6 gen=419] injected diversity (5)
+  [is=6 gen=419 t=16536s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=437] injected diversity (5)
+  [is=7 gen=437 t=16414s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=438] injected diversity (5)
+  [is=5 gen=438 t=16580s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=428] injected diversity (5)
+  [is=3 gen=428 t=16549s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=435] injected diversity (5)
+  [is=0 gen=435 t=16525s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=456 t=16631s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=419] injected diversity (5)
+  [is=2 gen=419 t=16604s] best=142.89 avg=179.67 feas/pop=15/20 all_seen=3
+  [is=7 gen=447 t=16727s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=428 t=16854s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=429 t=16791s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=3 gen=436 t=16858s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=449 t=16933s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=445 t=16849s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=427 t=16914s] best=142.89 avg=179.67 feas/pop=15/20 all_seen=3
+  [is=4 gen=467 t=16950s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=438 t=17094s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=7 gen=458 t=17046s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=437 t=17184s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=445 t=17168s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=459 t=17250s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=454 t=17172s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=434 t=17223s] best=142.89 avg=179.67 feas/pop=15/20 all_seen=3
+  [is=4 gen=475 t=17260s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=466 t=17362s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=446 t=17422s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=3 gen=451 t=17471s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=447 t=17532s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=467 t=17571s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=462 t=17484s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=441 t=17531s] best=142.89 avg=178.24 feas/pop=16/20 all_seen=3
+  [is=4 gen=484] injected diversity (5)
+  [is=4 gen=484 t=17687s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=454] injected diversity (5)
+  [is=1 gen=454 t=17804s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=6 gen=455] injected diversity (5)
+  [is=6 gen=455 t=17905s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=475] injected diversity (5)
+  [is=5 gen=475 t=17948s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=461] injected diversity (5)
+  [is=3 gen=461 t=17931s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=475] injected diversity (5)
+  [is=7 gen=475 t=17838s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=471] injected diversity (5)
+  [is=0 gen=471 t=17903s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=496 t=17993s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=448] injected diversity (5)
+  [is=2 gen=448 t=17983s] best=142.89 avg=176.57 feas/pop=15/20 all_seen=3
+  [is=1 gen=462 t=18122s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=6 gen=463 t=18225s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=484 t=18269s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=470 t=18263s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=484 t=18182s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=482 t=18211s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=505 t=18308s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=455 t=18292s] best=142.89 avg=176.08 feas/pop=17/20 all_seen=3
+  [is=1 gen=471 t=18453s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=6 gen=475 t=18545s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=494 t=18591s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=494 t=18489s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=481 t=18595s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=491 t=18513s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=515 t=18638s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=464 t=18605s] best=142.89 avg=174.15 feas/pop=18/20 all_seen=3
+  [is=1 gen=479 t=18763s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=6 gen=486 t=18861s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=505 t=18903s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=504 t=18803s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=490 t=18905s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=502 t=18823s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=471 t=18941s] best=142.89 avg=174.15 feas/pop=18/20 all_seen=3
+  [is=4 gen=524] injected diversity (5)
+  [is=4 gen=524 t=19079s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=493] injected diversity (5)
+  [is=6 gen=493 t=19283s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=488] injected diversity (5)
+  [is=1 gen=488 t=19229s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=5 gen=514] injected diversity (5)
+  [is=5 gen=514 t=19315s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=498] injected diversity (5)
+  [is=3 gen=498 t=19302s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=513] injected diversity (5)
+  [is=7 gen=513 t=19207s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=533 t=19384s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=514] injected diversity (5)
+  [is=0 gen=514 t=19321s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=481] injected diversity (5)
+  [is=2 gen=481 t=19366s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=505 t=19584s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=497 t=19535s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=7 gen=520 t=19509s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=523 t=19659s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=510 t=19621s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=523 t=19640s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=543 t=19709s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=487 t=19706s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=513 t=19931s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=529 t=19813s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=506 t=19876s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=5 gen=534 t=19962s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=517 t=19945s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=531 t=19966s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=554 t=20038s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=493 t=20012s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=6 gen=522 t=20243s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=513 t=20183s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=5 gen=542 t=20264s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=539 t=20143s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=527 t=20261s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=503 t=20316s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=3
+  [is=0 gen=543 t=20294s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=564] injected diversity (5)
+  [is=4 gen=564 t=20472s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=531] injected diversity (5)
+  [is=6 gen=531 t=20598s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=521] injected diversity (5)
+  [is=1 gen=521 t=20571s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=5 gen=550] injected diversity (5)
+  [is=5 gen=550 t=20666s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=537] injected diversity (5)
+  [is=3 gen=537 t=20636s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=548] injected diversity (5)
+  [is=7 gen=548 t=20545s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=574 t=20777s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=508] injected diversity (5)
+  [is=2 gen=508 t=20758s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=0 gen=549] injected diversity (5)
+  [is=0 gen=549 t=20739s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=542 t=20916s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=527 t=20886s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=558 t=20849s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=559 t=21002s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=546 t=20982s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=583 t=21092s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=517 t=21067s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=3
+  [is=0 gen=558 t=21092s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=554 t=21220s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=534 t=21195s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=7 gen=571 t=21174s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=567 t=21320s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=555 t=21304s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=593 t=21412s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=527 t=21379s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=3
+  [is=0 gen=566 t=21399s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=564 t=21531s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=580 t=21474s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=544 t=21544s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=5 gen=577 t=21635s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=564 t=21626s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=532 t=21683s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=3
+  [is=0 gen=574 t=21728s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=600] injected diversity (5)
+  [is=4 gen=600 t=21861s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=571] injected diversity (5)
+  [is=6 gen=571 t=22002s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=590] injected diversity (5)
+  [is=7 gen=590 t=21877s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=549] injected diversity (5)
+  [is=1 gen=549 t=21974s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=3 gen=569] injected diversity (5)
+  [is=3 gen=569 t=22021s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=586] injected diversity (5)
+  [is=5 gen=586 t=22099s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=542] injected diversity (5)
+  [is=2 gen=542 t=22132s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=4 gen=609 t=22177s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=581] injected diversity (5)
+  [is=0 gen=581 t=22157s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=580 t=22319s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=600 t=22199s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=562 t=22275s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=3 gen=578 t=22339s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=595 t=22438s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=617 t=22499s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=549 t=22476s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=0 gen=588 t=22457s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=610 t=22518s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=569 t=22582s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=6 gen=589 t=22654s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=585 t=22641s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=603 t=22739s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=626 t=22822s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=564 t=22818s] best=142.89 avg=170.80 feas/pop=19/20 all_seen=3
+  [is=0 gen=599 t=22803s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=623 t=22830s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=578 t=22896s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=6 gen=600 t=22966s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=591 t=22959s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=612 t=23043s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=608 t=23136s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=574 t=23169s] best=142.89 avg=170.88 feas/pop=20/20 all_seen=3
+  [is=4 gen=633] injected diversity (5)
+  [is=4 gen=633 t=23242s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=606] injected diversity (5)
+  [is=6 gen=606 t=23355s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=586] injected diversity (5)
+  [is=1 gen=586 t=23344s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=632] injected diversity (5)
+  [is=7 gen=632 t=23293s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=600] injected diversity (5)
+  [is=3 gen=600 t=23420s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=620] injected diversity (5)
+  [is=5 gen=620 t=23537s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=646 t=23547s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=580] injected diversity (5)
+  [is=2 gen=580 t=23567s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=616 t=23682s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=615] injected diversity (5)
+  [is=0 gen=615 t=23569s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=593 t=23652s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=7 gen=642 t=23616s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=610 t=23775s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=628 t=23870s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=656 t=23849s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=586 t=23873s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=0 gen=623 t=23898s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=625 t=24025s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=599 t=23965s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=7 gen=650 t=23937s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=619 t=24076s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=638 t=24206s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=666 t=24182s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=595 t=24174s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=3
+  [is=6 gen=633 t=24329s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=634 t=24227s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=610 t=24298s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=7 gen=660 t=24243s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=627 t=24384s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=647 t=24512s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=603 t=24476s] best=142.89 avg=170.80 feas/pop=19/20 all_seen=3
+  [is=4 gen=675] injected diversity (5)
+  [is=4 gen=675 t=24616s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=643 t=24558s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=641] injected diversity (5)
+  [is=6 gen=641 t=24734s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=668] injected diversity (5)
+  [is=7 gen=668 t=24691s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=621] injected diversity (5)
+  [is=1 gen=621 t=24781s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=3 gen=634] injected diversity (5)
+  [is=3 gen=634 t=24833s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=655] injected diversity (5)
+  [is=5 gen=655 t=24909s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=684 t=24923s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=652 t=25037s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=610] injected diversity (5)
+  [is=2 gen=610 t=24968s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=0 gen=650] injected diversity (5)
+  [is=0 gen=650 t=24977s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=677 t=25024s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=643 t=25148s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=631 t=25117s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=5 gen=663 t=25241s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=694 t=25283s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=616 t=25270s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=662 t=25370s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=657 t=25316s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=685 t=25364s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=652 t=25463s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=639 t=25465s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=5 gen=675 t=25566s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=704 t=25594s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=625 t=25574s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=6 gen=670 t=25691s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=668 t=25628s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=693 t=25672s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=662 t=25817s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=686 t=25875s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=648 t=25806s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=2 gen=631 t=25890s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=4 gen=709] injected diversity (5)
+  [is=4 gen=709 t=25969s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=678 t=25947s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=679] injected diversity (5)
+  [is=6 gen=679 t=26107s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=701] injected diversity (5)
+  [is=7 gen=701 t=26085s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=652] injected diversity (5)
+  [is=1 gen=652 t=26162s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=3 gen=668] injected diversity (5)
+  [is=3 gen=668 t=26210s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=694] injected diversity (5)
+  [is=5 gen=694 t=26254s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=718 t=26272s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=641] injected diversity (5)
+  [is=2 gen=641 t=26294s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=689 t=26422s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=685] injected diversity (5)
+  [is=0 gen=685 t=26349s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=711 t=26413s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=703 t=26567s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=661 t=26494s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=3 gen=678 t=26540s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=729 t=26592s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=649 t=26599s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=700 t=26777s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=694 t=26683s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=721 t=26726s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=675 t=26828s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=5 gen=712 t=26917s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=689 t=26885s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=656 t=26904s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=4 gen=737 t=26947s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=709 t=27082s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=705 t=27007s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=730 t=27039s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=684 t=27153s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=3
+  [is=3 gen=698 t=27200s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=721 t=27241s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=664 t=27245s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=4 gen=745] injected diversity (5)
+  [is=4 gen=745 t=27335s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=713 t=27319s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=715] injected diversity (5)
+  [is=6 gen=715 t=27514s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=739] injected diversity (5)
+  [is=7 gen=739 t=27444s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=728] injected diversity (5)
+  [is=5 gen=728 t=27641s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=705] injected diversity (5)
+  [is=3 gen=705 t=27605s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=691] injected diversity (5)
+  [is=1 gen=691 t=27601s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=4 gen=756 t=27654s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=671] injected diversity (5)
+  [is=2 gen=671 t=27671s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=0 gen=720] injected diversity (5)
+  [is=0 gen=720 t=27683s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=725 t=27828s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=747 t=27776s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=715 t=27905s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=739 t=27971s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=700 t=27909s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=4 gen=770 t=27968s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=679 t=27971s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=0 gen=728 t=27989s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=736 t=28143s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=757 t=28097s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=721 t=28221s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=747 t=28278s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=780 t=28271s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=711 t=28270s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=2 gen=689 t=28280s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=0 gen=738 t=28300s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=746 t=28452s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=767 t=28412s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=731 t=28567s] best=142.89 avg=155.92 feas/pop=3/20 all_seen=3
+  [is=5 gen=758 t=28634s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=721 t=28581s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=2 gen=700 t=28580s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=0 gen=746 t=28610s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=790] injected diversity (5)
+  [is=4 gen=790 t=28769s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=755] injected diversity (5)
+  [is=6 gen=755 t=28830s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=776] injected diversity (5)
+  [is=7 gen=776 t=28753s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=764] injected diversity (5)
+  [is=5 gen=764 t=29028s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=737] injected diversity (5)
+  [is=3 gen=737 t=28997s] best=142.89 avg=155.92 feas/pop=3/20 all_seen=3
+  [is=4 gen=798 t=29077s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=727] injected diversity (5)
+  [is=1 gen=727 t=29066s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=6 gen=765 t=29140s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=785 t=29060s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=708] injected diversity (5)
+  [is=2 gen=708 t=29107s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=0 gen=753] injected diversity (5)
+  [is=0 gen=753 t=29092s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=773 t=29338s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=749 t=29353s] best=142.89 avg=157.20 feas/pop=4/20 all_seen=4
+  [is=1 gen=733 t=29367s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=4 gen=808 t=29401s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=775 t=29456s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=796 t=29379s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=715 t=29449s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=0 gen=765 t=29422s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=785 t=29651s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=757 t=29686s] best=142.89 avg=157.20 feas/pop=4/20 all_seen=4
+  [is=1 gen=744 t=29680s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=6 gen=786 t=29766s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=816 t=29721s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=807 t=29683s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=775 t=29722s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=722 t=29796s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=5 gen=796 t=29972s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=766 t=29987s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=1 gen=754 t=29997s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=4 gen=822] injected diversity (5)
+  [is=4 gen=822 t=30078s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=783 t=30045s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=728 t=30120s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=7 gen=815] injected diversity (5)
+  [is=7 gen=815 t=30106s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=794] injected diversity (5)
+  [is=6 gen=794 t=30247s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=771] injected diversity (5)
+  [is=3 gen=771 t=30325s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=5 gen=802] injected diversity (5)
+  [is=5 gen=802 t=30419s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=831 t=30395s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=762] injected diversity (5)
+  [is=1 gen=762 t=30400s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=826 t=30412s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=802 t=30550s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=792] injected diversity (5)
+  [is=0 gen=792 t=30449s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=733] injected diversity (5)
+  [is=2 gen=733 t=30535s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=3 gen=778 t=30655s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=5 gen=811 t=30723s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=840 t=30696s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=770 t=30725s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=7 gen=835 t=30721s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=810 t=30883s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=801 t=30809s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=743 t=30842s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=5 gen=819 t=31029s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=787 t=30991s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=4 gen=851 t=31010s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=778 t=31051s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=7 gen=846 t=31054s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=818 t=31205s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=751 t=31182s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=0 gen=809 t=31165s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=829 t=31343s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=795 t=31345s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=1 gen=785 t=31355s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=4 gen=860] injected diversity (5)
+  [is=4 gen=860 t=31466s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=853] injected diversity (5)
+  [is=7 gen=853 t=31449s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=819 t=31470s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=758 t=31542s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=6 gen=826] injected diversity (5)
+  [is=6 gen=826 t=31673s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=803] injected diversity (5)
+  [is=3 gen=803 t=31743s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=5 gen=838] injected diversity (5)
+  [is=5 gen=838 t=31801s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=868 t=31786s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=797] injected diversity (5)
+  [is=1 gen=797 t=31833s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=862 t=31803s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=762] injected diversity (5)
+  [is=2 gen=762 t=31881s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=835 t=31995s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=824] injected diversity (5)
+  [is=0 gen=824 t=31897s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=812 t=32075s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=5 gen=846 t=32129s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=880 t=32104s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=807 t=32148s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=7 gen=873 t=32122s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=767 t=32184s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=3
+  [is=6 gen=848 t=32299s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=833 t=32217s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=820 t=32383s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=5 gen=854 t=32438s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=887 t=32406s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=817 t=32468s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=7 gen=884 t=32443s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=774 t=32527s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=3
+  [is=6 gen=857 t=32616s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=843 t=32572s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=862 t=32752s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=829 t=32727s] best=142.89 avg=154.34 feas/pop=5/20 all_seen=4
+  [is=1 gen=827 t=32803s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=4 gen=897] injected diversity (5)
+  [is=4 gen=897 t=32860s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=782 t=32833s] best=142.89 avg=170.46 feas/pop=17/20 all_seen=4
+  [is=7 gen=891] injected diversity (5)
+  [is=7 gen=891 t=32811s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=852 t=32917s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=866] injected diversity (5)
+  [is=6 gen=866 t=33056s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=869] injected diversity (5)
+  [is=5 gen=869 t=33148s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=837] injected diversity (5)
+  [is=3 gen=837 t=33132s] best=142.89 avg=152.43 feas/pop=6/20 all_seen=4
+  [is=4 gen=909 t=33178s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=836] injected diversity (5)
+  [is=1 gen=836 t=33197s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=900 t=33151s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=790] injected diversity (5)
+  [is=2 gen=790 t=33238s] best=142.89 avg=168.33 feas/pop=15/20 all_seen=5
+  [is=6 gen=875 t=33393s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=858] injected diversity (5)
+  [is=0 gen=858 t=33300s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=878 t=33456s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=847 t=33466s] best=142.89 avg=151.25 feas/pop=8/20 all_seen=4
+  [is=4 gen=921 t=33528s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=842 t=33513s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=908 t=33454s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=798 t=33555s] best=142.89 avg=168.33 feas/pop=15/20 all_seen=5
+  [is=6 gen=884 t=33699s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=866 t=33616s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=889 t=33764s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=857 t=33808s] best=142.89 avg=150.32 feas/pop=9/20 all_seen=4
+  [is=4 gen=932 t=33830s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=917 t=33758s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=852 t=33829s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=2 gen=808 t=33900s] best=142.89 avg=168.33 feas/pop=15/20 all_seen=5
+  [is=6 gen=893 t=34034s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=874 t=33977s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=901 t=34116s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=865 t=34129s] best=142.89 avg=150.32 feas/pop=9/20 all_seen=4
+  [is=1 gen=857 t=34132s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=3
+  [is=4 gen=940] injected diversity (5)
+  [is=4 gen=940 t=34226s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=816 t=34215s] best=142.89 avg=168.41 feas/pop=16/20 all_seen=5
+  [is=7 gen=926] injected diversity (5)
+  [is=7 gen=926 t=34193s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=882 t=34291s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=902] injected diversity (5)
+  [is=6 gen=902 t=34448s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=908] injected diversity (5)
+  [is=5 gen=908 t=34526s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=950 t=34542s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=872] injected diversity (5)
+  [is=3 gen=872 t=34567s] best=142.89 avg=148.97 feas/pop=11/20 all_seen=4
+  [is=1 gen=864] injected diversity (5)
+  [is=1 gen=864 t=34541s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=935 t=34504s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=822] injected diversity (5)
+  [is=2 gen=822 t=34610s] best=142.89 avg=167.97 feas/pop=15/20 all_seen=5
+  [is=6 gen=911 t=34759s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=888] injected diversity (5)
+  [is=0 gen=888 t=34702s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=918 t=34860s] best=142.89 avg=162.76 feas/pop=3/20 all_seen=3
+  [is=4 gen=960 t=34846s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=879 t=34913s] best=142.89 avg=148.46 feas/pop=12/20 all_seen=4
+  [is=7 gen=944 t=34830s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=877 t=34897s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=2 gen=831 t=34938s] best=142.89 avg=168.16 feas/pop=17/20 all_seen=5
+  [is=6 gen=920 t=35080s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=898 t=35053s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=929 t=35198s] best=142.89 avg=162.76 feas/pop=3/20 all_seen=3
+  [is=4 gen=966 t=35147s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=954 t=35138s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=884 t=35204s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=3
+  [is=3 gen=891 t=35246s] best=142.89 avg=147.99 feas/pop=15/20 all_seen=4
+  [is=2 gen=839 t=35295s] best=142.89 avg=168.16 feas/pop=17/20 all_seen=5
+  [is=6 gen=927 t=35392s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=908 t=35375s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=939 t=35502s] best=142.89 avg=162.76 feas/pop=3/20 all_seen=3
+  [is=1 gen=893 t=35534s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=3
+  [is=3 gen=899 t=35594s] best=142.89 avg=147.39 feas/pop=17/20 all_seen=4
+  [is=7 gen=962] injected diversity (5)
+  [is=7 gen=962 t=35529s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=975] injected diversity (5)
+  [is=4 gen=975 t=35613s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=849 t=35642s] best=142.89 avg=168.24 feas/pop=18/20 all_seen=5
+  [is=6 gen=934] injected diversity (5)
+  [is=6 gen=934 t=35797s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=917 t=35709s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=947] injected diversity (5)
+  [is=5 gen=947 t=35873s] best=142.89 avg=162.76 feas/pop=3/20 all_seen=3
+  [is=7 gen=971 t=35837s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=906] injected diversity (5)
+  [is=3 gen=906 t=35944s] best=142.89 avg=143.53 feas/pop=15/20 all_seen=4
+  [is=4 gen=983 t=35925s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=901] injected diversity (5)
+  [is=1 gen=901 t=35931s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=2 gen=854] injected diversity (5)
+  [is=2 gen=854 t=36014s] best=142.89 avg=167.23 feas/pop=15/20 all_seen=5
+  [is=6 gen=945 t=36118s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=955 t=36180s] best=142.89 avg=162.76 feas/pop=3/20 all_seen=3
+  [is=0 gen=926] injected diversity (5)
+  [is=0 gen=926 t=36100s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=980 t=36139s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=910 t=36233s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=3 gen=912 t=36275s] best=142.89 avg=143.53 feas/pop=15/20 all_seen=4
+  [is=4 gen=992 t=36280s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=862 t=36323s] best=142.89 avg=167.23 feas/pop=15/20 all_seen=5
+  [is=6 gen=955 t=36446s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=967 t=36534s] best=142.89 avg=165.34 feas/pop=4/20 all_seen=3
+  [is=0 gen=936 t=36417s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=989 t=36468s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1001 t=36589s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=922 t=36622s] best=142.89 avg=143.49 feas/pop=16/20 all_seen=4
+  [is=1 gen=921 t=36586s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=3
+  [is=2 gen=869 t=36645s] best=142.89 avg=167.23 feas/pop=15/20 all_seen=5
+  [is=6 gen=964 t=36761s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=978 t=36852s] best=142.89 avg=167.91 feas/pop=6/20 all_seen=3
+  [is=0 gen=946 t=36741s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=927 t=36928s] best=142.89 avg=143.49 feas/pop=16/20 all_seen=4
+  [is=1 gen=930 t=36918s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=4 gen=1008] injected diversity (5)
+  [is=4 gen=1008 t=36941s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=998] injected diversity (5)
+  [is=7 gen=998 t=36888s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=876 t=36987s] best=142.89 avg=167.23 feas/pop=15/20 all_seen=5
+  [is=0 gen=955 t=37062s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=971] injected diversity (5)
+  [is=6 gen=971 t=37220s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=986] injected diversity (5)
+  [is=5 gen=986 t=37230s] best=142.89 avg=168.64 feas/pop=7/20 all_seen=3
+  [is=4 gen=1019 t=37295s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=932] injected diversity (5)
+  [is=3 gen=932 t=37317s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=937] injected diversity (5)
+  [is=1 gen=937 t=37298s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=7 gen=1009 t=37247s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=881] injected diversity (5)
+  [is=2 gen=881 t=37410s] best=142.89 avg=167.23 feas/pop=15/20 all_seen=5
+  [is=5 gen=1002 t=37555s] best=142.89 avg=170.08 feas/pop=11/20 all_seen=4
+  [is=6 gen=983 t=37565s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=963] injected diversity (5)
+  [is=0 gen=963 t=37458s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1025 t=37601s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=945 t=37624s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1017 t=37549s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=944 t=37618s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=2 gen=888 t=37739s] best=142.89 avg=167.05 feas/pop=15/20 all_seen=5
+  [is=5 gen=1015 t=37878s] best=142.89 avg=170.87 feas/pop=15/20 all_seen=4
+  [is=0 gen=971 t=37770s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=994 t=37895s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1037 t=37910s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=952 t=37954s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1027 t=37898s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=956 t=37968s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=2 gen=896 t=38049s] best=142.89 avg=167.42 feas/pop=16/20 all_seen=6
+  [is=6 gen=1005 t=38205s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=980 t=38104s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1034 t=38236s] best=142.89 avg=171.29 feas/pop=20/20 all_seen=5
+  [is=3 gen=962 t=38264s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=4 gen=1046] injected diversity (5)
+  [is=4 gen=1046 t=38322s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1033] injected diversity (5)
+  [is=7 gen=1033 t=38261s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=966 t=38325s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=2 gen=903 t=38362s] best=142.89 avg=167.42 feas/pop=16/20 all_seen=6
+  [is=0 gen=990 t=38434s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1043] injected diversity (5)
+  [is=5 gen=1043 t=38569s] best=142.89 avg=170.70 feas/pop=15/20 all_seen=5
+  [is=6 gen=1013] injected diversity (5)
+  [is=6 gen=1013 t=38575s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1056 t=38635s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1044 t=38579s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=969] injected diversity (5)
+  [is=3 gen=969 t=38686s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=970] injected diversity (5)
+  [is=1 gen=970 t=38684s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=5 gen=1060 t=38881s] best=142.89 avg=171.06 feas/pop=19/20 all_seen=5
+  [is=2 gen=911] injected diversity (5)
+  [is=2 gen=911 t=38789s] best=142.89 avg=166.87 feas/pop=15/20 all_seen=6
+  [is=6 gen=1022 t=38876s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=998] injected diversity (5)
+  [is=0 gen=998 t=38784s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1064 t=38951s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=976 t=38996s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=7 gen=1053 t=38915s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=980 t=39040s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=3
+  [is=2 gen=917 t=39092s] best=142.89 avg=166.87 feas/pop=15/20 all_seen=6
+  [is=5 gen=1075 t=39191s] best=142.89 avg=170.97 feas/pop=20/20 all_seen=5
+  [is=0 gen=1009 t=39090s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1032 t=39212s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1074 t=39261s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=987 t=39312s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=7 gen=1062 t=39217s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=990 t=39342s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=3
+  [is=2 gen=927 t=39399s] best=142.89 avg=165.46 feas/pop=16/20 all_seen=7
+  [is=5 gen=1090 t=39510s] best=142.89 avg=170.60 feas/pop=20/20 all_seen=5
+  [is=0 gen=1021 t=39422s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1042 t=39571s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=996 t=39648s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=7 gen=1069] injected diversity (5)
+  [is=7 gen=1069 t=39612s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1002 t=39698s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=3
+  [is=4 gen=1084] injected diversity (5)
+  [is=4 gen=1084 t=39742s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=933 t=39716s] best=142.89 avg=165.46 feas/pop=16/20 all_seen=7
+  [is=0 gen=1029 t=39735s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1105] injected diversity (5)
+  [is=5 gen=1105 t=39933s] best=142.89 avg=169.31 feas/pop=15/20 all_seen=5
+  [is=6 gen=1050] injected diversity (5)
+  [is=6 gen=1050 t=39984s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1078 t=39923s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1093 t=40068s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1006] injected diversity (5)
+  [is=1 gen=1006 t=40064s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=3 gen=1002] injected diversity (5)
+  [is=3 gen=1002 t=40122s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1124 t=40242s] best=142.89 avg=169.71 feas/pop=19/20 all_seen=5
+  [is=0 gen=1035] injected diversity (5)
+  [is=0 gen=1035 t=40153s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=942] injected diversity (5)
+  [is=2 gen=942 t=40214s] best=142.89 avg=164.81 feas/pop=15/20 all_seen=7
+  [is=6 gen=1058 t=40305s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1087 t=40233s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1104 t=40375s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1012 t=40442s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=1 gen=1015 t=40419s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=3
+  [is=5 gen=1139 t=40587s] best=142.89 avg=169.71 feas/pop=19/20 all_seen=5
+  [is=0 gen=1046 t=40481s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1067 t=40620s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=952 t=40542s] best=142.89 avg=164.94 feas/pop=16/20 all_seen=7
+  [is=7 gen=1096 t=40562s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1112 t=40687s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1024 t=40760s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=1 gen=1025 t=40768s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=1153 t=40932s] best=142.89 avg=169.78 feas/pop=20/20 all_seen=5
+  [is=6 gen=1076 t=40925s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1056 t=40815s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=962 t=40864s] best=142.89 avg=164.94 feas/pop=16/20 all_seen=7
+  [is=3 gen=1031 t=41071s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=7 gen=1103] injected diversity (5)
+  [is=7 gen=1103 t=40992s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1120] injected diversity (5)
+  [is=4 gen=1120 t=41094s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1033 t=41094s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=0 gen=1066 t=41115s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1163] injected diversity (5)
+  [is=5 gen=1163 t=41285s] best=142.89 avg=169.31 feas/pop=15/20 all_seen=5
+  [is=2 gen=969 t=41193s] best=142.89 avg=164.94 feas/pop=16/20 all_seen=7
+  [is=6 gen=1083] injected diversity (5)
+  [is=6 gen=1083 t=41358s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1113 t=41292s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1129 t=41410s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1038] injected diversity (5)
+  [is=3 gen=1038 t=41481s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=1037] injected diversity (5)
+  [is=1 gen=1037 t=41472s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1075] injected diversity (5)
+  [is=0 gen=1075 t=41499s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1179 t=41630s] best=142.89 avg=169.71 feas/pop=19/20 all_seen=5
+  [is=6 gen=1091 t=41679s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=976] injected diversity (5)
+  [is=2 gen=976 t=41613s] best=142.89 avg=164.45 feas/pop=15/20 all_seen=7
+  [is=7 gen=1125 t=41609s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1139 t=41718s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1047 t=41789s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=1044 t=41775s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1083 t=41805s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1194 t=41942s] best=142.89 avg=169.78 feas/pop=20/20 all_seen=5
+  [is=6 gen=1100 t=41982s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1133 t=41914s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=984 t=41962s] best=142.89 avg=164.45 feas/pop=15/20 all_seen=7
+  [is=4 gen=1149 t=42041s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1054 t=42102s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=1 gen=1051 t=42094s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=0 gen=1092 t=42111s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1206 t=42252s] best=142.89 avg=169.78 feas/pop=20/20 all_seen=5
+  [is=6 gen=1107 t=42308s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=995 t=42268s] best=142.89 avg=165.30 feas/pop=18/20 all_seen=7
+  [is=3 gen=1063 t=42414s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=7 gen=1142] injected diversity (5)
+  [is=7 gen=1142 t=42334s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1057 t=42402s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=4 gen=1159] injected diversity (5)
+  [is=4 gen=1159 t=42446s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1101 t=42416s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1222] injected diversity (5)
+  [is=5 gen=1222 t=42648s] best=142.89 avg=169.31 feas/pop=15/20 all_seen=5
+  [is=2 gen=1001 t=42596s] best=142.89 avg=165.30 feas/pop=18/20 all_seen=7
+  [is=6 gen=1114] injected diversity (5)
+  [is=6 gen=1114 t=42733s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1152 t=42645s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1168 t=42759s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1065] injected diversity (5)
+  [is=1 gen=1065 t=42817s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=3 gen=1069] injected diversity (5)
+  [is=3 gen=1069 t=42912s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1237 t=42975s] best=142.89 avg=169.53 feas/pop=17/20 all_seen=5
+  [is=0 gen=1110] injected diversity (5)
+  [is=0 gen=1110 t=42904s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1123 t=43045s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1161 t=42949s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1007] injected diversity (5)
+  [is=2 gen=1007 t=43019s] best=142.89 avg=164.45 feas/pop=15/20 all_seen=7
+  [is=4 gen=1180 t=43107s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1075 t=43121s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=3 gen=1076 t=43217s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=5 gen=1248 t=43280s] best=142.89 avg=169.71 feas/pop=19/20 all_seen=5
+  [is=0 gen=1119 t=43215s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1133 t=43349s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1014 t=43322s] best=142.89 avg=164.75 feas/pop=16/20 all_seen=8
+  [is=7 gen=1172 t=43287s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1189 t=43413s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1080 t=43424s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1264 t=43597s] best=142.89 avg=169.78 feas/pop=20/20 all_seen=5
+  [is=3 gen=1085 t=43570s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=0 gen=1128 t=43535s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1143 t=43658s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1020 t=43646s] best=142.89 avg=164.75 feas/pop=16/20 all_seen=8
+  [is=1 gen=1089 t=43748s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1179] injected diversity (5)
+  [is=7 gen=1179 t=43724s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1195] injected diversity (5)
+  [is=4 gen=1195 t=43816s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1096 t=43896s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=0 gen=1136 t=43849s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1274] injected diversity (5)
+  [is=5 gen=1274 t=44031s] best=142.89 avg=169.31 feas/pop=15/20 all_seen=5
+  [is=2 gen=1026 t=43972s] best=142.89 avg=164.75 feas/pop=16/20 all_seen=8
+  [is=6 gen=1150] injected diversity (5)
+  [is=6 gen=1150 t=44166s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1189 t=44072s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1206 t=44175s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1097] injected diversity (5)
+  [is=1 gen=1097 t=44161s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1291 t=44359s] best=142.89 avg=169.63 feas/pop=18/20 all_seen=5
+  [is=3 gen=1101] injected diversity (5)
+  [is=3 gen=1101 t=44349s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1143] injected diversity (5)
+  [is=0 gen=1143 t=44267s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1160 t=44469s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1032] injected diversity (5)
+  [is=2 gen=1032 t=44388s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=4 gen=1217 t=44493s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1201 t=44433s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1106 t=44514s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=5 gen=1306 t=44679s] best=142.89 avg=169.63 feas/pop=18/20 all_seen=5
+  [is=3 gen=1107 t=44659s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1152 t=44577s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1039 t=44709s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=6 gen=1171 t=44830s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1226 t=44799s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1211 t=44752s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1113 t=44842s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=1322 t=44989s] best=142.89 avg=169.71 feas/pop=19/20 all_seen=5
+  [is=3 gen=1113 t=44969s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=0 gen=1162 t=44896s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1046 t=45033s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=6 gen=1183 t=45134s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1218] injected diversity (5)
+  [is=7 gen=1218 t=45087s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1233] injected diversity (5)
+  [is=4 gen=1233 t=45179s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1120 t=45183s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=0 gen=1173 t=45196s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1120 t=45282s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=1341] injected diversity (5)
+  [is=5 gen=1341 t=45395s] best=142.89 avg=169.31 feas/pop=15/20 all_seen=5
+  [is=2 gen=1054 t=45384s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=7 gen=1227 t=45399s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1241 t=45488s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1189] injected diversity (5)
+  [is=6 gen=1189 t=45575s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1125] injected diversity (5)
+  [is=1 gen=1125 t=45541s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1358 t=45747s] best=142.89 avg=169.63 feas/pop=18/20 all_seen=5
+  [is=3 gen=1127] injected diversity (5)
+  [is=3 gen=1127 t=45710s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1180] injected diversity (5)
+  [is=0 gen=1180 t=45649s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1059] injected diversity (5)
+  [is=2 gen=1059 t=45719s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=4 gen=1250 t=45802s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1237 t=45754s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1198 t=45889s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1135 t=45851s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=0 gen=1188 t=45956s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1368 t=46085s] best=142.89 avg=169.71 feas/pop=19/20 all_seen=5
+  [is=3 gen=1137 t=46069s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=2 gen=1066 t=46026s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=4 gen=1258 t=46137s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1209 t=46195s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1246 t=46072s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1141 t=46156s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=5 gen=1381 t=46400s] best=142.89 avg=169.76 feas/pop=20/20 all_seen=6
+  [is=0 gen=1196 t=46283s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1074 t=46360s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=3 gen=1145 t=46419s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1219 t=46503s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1150 t=46500s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=7 gen=1254] injected diversity (5)
+  [is=7 gen=1254 t=46469s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1265] injected diversity (5)
+  [is=4 gen=1265 t=46584s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1205 t=46596s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1396] injected diversity (5)
+  [is=5 gen=1396 t=46748s] best=142.89 avg=169.23 feas/pop=15/20 all_seen=6
+  [is=3 gen=1152 t=46726s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1083 t=46672s] best=142.89 avg=164.75 feas/pop=16/20 all_seen=8
+  [is=7 gen=1264 t=46796s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1275 t=46905s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1156] injected diversity (5)
+  [is=1 gen=1156 t=46901s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=1226] injected diversity (5)
+  [is=6 gen=1226 t=46972s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1407 t=47066s] best=142.89 avg=169.36 feas/pop=16/20 all_seen=6
+  [is=3 gen=1161] injected diversity (5)
+  [is=3 gen=1161 t=47080s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1213] injected diversity (5)
+  [is=0 gen=1213 t=47056s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1088] injected diversity (5)
+  [is=2 gen=1088 t=47094s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=7 gen=1275 t=47109s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1285 t=47225s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1237 t=47283s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1163 t=47227s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1424 t=47369s] best=142.89 avg=169.54 feas/pop=18/20 all_seen=6
+  [is=3 gen=1168 t=47422s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=0 gen=1222 t=47367s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1096 t=47432s] best=142.89 avg=164.43 feas/pop=15/20 all_seen=8
+  [is=7 gen=1284 t=47426s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1294 t=47554s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1171 t=47538s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1248 t=47620s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1438 t=47670s] best=142.89 avg=169.68 feas/pop=20/20 all_seen=6
+  [is=3 gen=1177 t=47734s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=0 gen=1230 t=47683s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1104 t=47770s] best=142.89 avg=164.75 feas/pop=16/20 all_seen=8
+  [is=6 gen=1257 t=47924s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1181 t=47866s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=7 gen=1291] injected diversity (5)
+  [is=7 gen=1291 t=47853s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1299] injected diversity (5)
+  [is=4 gen=1299 t=47979s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1185 t=48058s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=0 gen=1242 t=47985s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=5 gen=1451] injected diversity (5)
+  [is=5 gen=1451 t=48116s] best=142.89 avg=169.10 feas/pop=15/20 all_seen=6
+  [is=2 gen=1112 t=48110s] best=142.89 avg=165.03 feas/pop=17/20 all_seen=8
+  [is=7 gen=1302 t=48179s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1307 t=48282s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1265] injected diversity (5)
+  [is=6 gen=1265 t=48344s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1190] injected diversity (5)
+  [is=1 gen=1190 t=48314s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1462 t=48429s] best=142.89 avg=169.21 feas/pop=16/20 all_seen=6
+  [is=3 gen=1192] injected diversity (5)
+  [is=3 gen=1192 t=48505s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1117] injected diversity (5)
+  [is=2 gen=1117 t=48459s] best=142.89 avg=162.74 feas/pop=15/20 all_seen=8
+  [is=0 gen=1252] injected diversity (5)
+  [is=0 gen=1252 t=48451s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=7 gen=1311 t=48491s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1317 t=48589s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1276 t=48653s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1197 t=48643s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=5 gen=1478 t=48744s] best=142.89 avg=169.42 feas/pop=19/20 all_seen=6
+  [is=3 gen=1204 t=48819s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=2 gen=1123 t=48774s] best=142.89 avg=162.74 feas/pop=15/20 all_seen=8
+  [is=0 gen=1261 t=48763s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=7 gen=1321 t=48808s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1326 t=48891s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1286 t=48980s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1208 t=48943s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=5 gen=1490 t=49081s] best=142.89 avg=169.46 feas/pop=20/20 all_seen=6
+  [is=3 gen=1212 t=49128s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=0 gen=1270 t=49081s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=2 gen=1131 t=49119s] best=142.89 avg=163.17 feas/pop=16/20 all_seen=8
+  [is=6 gen=1294 t=49287s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1216 t=49251s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=7 gen=1329] injected diversity (5)
+  [is=7 gen=1329 t=49245s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1506] injected diversity (5)
+  [is=5 gen=1506 t=49456s] best=142.89 avg=168.94 feas/pop=15/20 all_seen=6
+  [is=4 gen=1335] injected diversity (5)
+  [is=4 gen=1335 t=49402s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1218 t=49430s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=2 gen=1139 t=49467s] best=142.89 avg=161.97 feas/pop=17/20 all_seen=8
+  [is=0 gen=1282 t=49437s] best=142.89 avg=170.83 feas/pop=5/20 all_seen=4
+  [is=7 gen=1339 t=49546s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1301] injected diversity (5)
+  [is=6 gen=1301 t=49717s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1228] injected diversity (5)
+  [is=1 gen=1228 t=49677s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1520 t=49759s] best=142.89 avg=169.16 feas/pop=17/20 all_seen=6
+  [is=4 gen=1344 t=49731s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1143] injected diversity (5)
+  [is=2 gen=1143 t=49820s] best=142.89 avg=160.96 feas/pop=15/20 all_seen=8
+  [is=0 gen=1290] injected diversity (5)
+  [is=0 gen=1290 t=49813s] best=142.89 avg=170.83 feas/pop=5/20 all_seen=4
+  [is=3 gen=1226] injected diversity (5)
+  [is=3 gen=1226 t=49926s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=7 gen=1349 t=49874s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1310 t=50037s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1532 t=50066s] best=142.89 avg=169.25 feas/pop=18/20 all_seen=6
+  [is=1 gen=1241 t=50010s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=4 gen=1354 t=50063s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1150 t=50138s] best=142.89 avg=161.50 feas/pop=16/20 all_seen=8
+  [is=0 gen=1301 t=50118s] best=142.89 avg=170.83 feas/pop=5/20 all_seen=4
+  [is=3 gen=1235 t=50266s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1357 t=50178s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1318 t=50343s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1545 t=50380s] best=142.89 avg=169.25 feas/pop=18/20 all_seen=7
+  [is=1 gen=1250 t=50336s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=4 gen=1366 t=50375s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1309 t=50465s] best=142.89 avg=170.83 feas/pop=5/20 all_seen=4
+  [is=2 gen=1160 t=50498s] best=142.89 avg=161.50 feas/pop=16/20 all_seen=8
+  [is=3 gen=1243 t=50618s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1326 t=50672s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1260 t=50656s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=7 gen=1365] injected diversity (5)
+  [is=7 gen=1365 t=50619s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1560] injected diversity (5)
+  [is=5 gen=1560 t=50780s] best=142.89 avg=168.94 feas/pop=15/20 all_seen=7
+  [is=4 gen=1373] injected diversity (5)
+  [is=4 gen=1373 t=50771s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1319 t=50776s] best=142.89 avg=174.09 feas/pop=6/20 all_seen=4
+  [is=2 gen=1168 t=50832s] best=142.89 avg=161.50 feas/pop=16/20 all_seen=8
+  [is=3 gen=1251 t=50952s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=6 gen=1332] injected diversity (5)
+  [is=6 gen=1332 t=51075s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1579 t=51092s] best=142.89 avg=169.25 feas/pop=18/20 all_seen=7
+  [is=7 gen=1375 t=50965s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1266] injected diversity (5)
+  [is=1 gen=1266 t=51050s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1383 t=51091s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1174] injected diversity (5)
+  [is=2 gen=1174 t=51200s] best=142.89 avg=160.96 feas/pop=15/20 all_seen=8
+  [is=0 gen=1326] injected diversity (5)
+  [is=0 gen=1326 t=51195s] best=142.89 avg=174.09 feas/pop=6/20 all_seen=4
+  [is=3 gen=1255] injected diversity (5)
+  [is=3 gen=1255 t=51315s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=1342 t=51386s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1596 t=51402s] best=142.89 avg=169.40 feas/pop=20/20 all_seen=7
+  [is=7 gen=1386 t=51286s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1276 t=51353s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=4 gen=1391 t=51424s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1182 t=51519s] best=142.89 avg=159.92 feas/pop=16/20 all_seen=8
+  [is=0 gen=1337 t=51504s] best=142.89 avg=175.58 feas/pop=10/20 all_seen=4
+  [is=3 gen=1266 t=51658s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1350 t=51700s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1610 t=51724s] best=142.89 avg=169.40 feas/pop=20/20 all_seen=7
+  [is=7 gen=1396 t=51595s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1286 t=51663s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=4 gen=1400 t=51756s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1190 t=51830s] best=142.89 avg=159.92 feas/pop=16/20 all_seen=8
+  [is=0 gen=1346 t=51858s] best=142.89 avg=175.58 feas/pop=10/20 all_seen=4
+  [is=6 gen=1362 t=52009s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1274 t=52003s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=1 gen=1293 t=51991s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=7 gen=1403] injected diversity (5)
+  [is=7 gen=1403 t=51944s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1407] injected diversity (5)
+  [is=4 gen=1407 t=52110s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1625] injected diversity (5)
+  [is=5 gen=1625 t=52175s] best=142.89 avg=168.94 feas/pop=15/20 all_seen=7
+  [is=2 gen=1198 t=52131s] best=142.89 avg=159.92 feas/pop=16/20 all_seen=8
+  [is=0 gen=1353 t=52166s] best=142.89 avg=175.29 feas/pop=11/20 all_seen=4
+  [is=3 gen=1282 t=52312s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=7 gen=1413 t=52257s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1300] injected diversity (5)
+  [is=1 gen=1300 t=52373s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=1372] injected diversity (5)
+  [is=6 gen=1372 t=52481s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1417 t=52436s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1645 t=52501s] best=142.89 avg=169.41 feas/pop=20/20 all_seen=8
+  [is=2 gen=1205] injected diversity (5)
+  [is=2 gen=1205 t=52568s] best=142.89 avg=159.27 feas/pop=15/20 all_seen=8
+  [is=0 gen=1359] injected diversity (5)
+  [is=0 gen=1359 t=52576s] best=142.89 avg=175.35 feas/pop=12/20 all_seen=4
+  [is=7 gen=1422 t=52585s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1287] injected diversity (5)
+  [is=3 gen=1287 t=52698s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=1308 t=52703s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1378 t=52783s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1429 t=52746s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1666 t=52808s] best=142.89 avg=169.40 feas/pop=20/20 all_seen=8
+  [is=2 gen=1211 t=52907s] best=142.89 avg=159.27 feas/pop=15/20 all_seen=8
+  [is=7 gen=1434 t=52895s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1367 t=52928s] best=142.89 avg=174.92 feas/pop=14/20 all_seen=4
+  [is=1 gen=1318 t=53012s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=3 gen=1296 t=53056s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1388 t=53109s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1436 t=53073s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1685 t=53135s] best=142.89 avg=169.35 feas/pop=20/20 all_seen=9
+  [is=2 gen=1220 t=53217s] best=142.89 avg=157.51 feas/pop=17/20 all_seen=8
+  [is=0 gen=1374 t=53243s] best=142.89 avg=174.50 feas/pop=15/20 all_seen=4
+  [is=1 gen=1329 t=53318s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=3 gen=1304 t=53380s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1398 t=53443s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1442] injected diversity (5)
+  [is=7 gen=1442 t=53317s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1445] injected diversity (5)
+  [is=4 gen=1445 t=53420s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1698] injected diversity (5)
+  [is=5 gen=1698 t=53514s] best=142.89 avg=168.78 feas/pop=15/20 all_seen=9
+  [is=2 gen=1228 t=53536s] best=142.89 avg=155.94 feas/pop=17/20 all_seen=8
+  [is=0 gen=1380 t=53588s] best=142.89 avg=174.50 feas/pop=15/20 all_seen=4
+  [is=3 gen=1313 t=53690s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=7 gen=1452 t=53630s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1455 t=53731s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1337] injected diversity (5)
+  [is=1 gen=1337 t=53740s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1707 t=53833s] best=142.89 avg=168.90 feas/pop=16/20 all_seen=9
+  [is=6 gen=1404] injected diversity (5)
+  [is=6 gen=1404 t=53839s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1235] injected diversity (5)
+  [is=2 gen=1235 t=53953s] best=142.89 avg=150.65 feas/pop=15/20 all_seen=8
+  [is=0 gen=1385] injected diversity (5)
+  [is=0 gen=1385 t=53941s] best=142.89 avg=173.30 feas/pop=15/20 all_seen=4
+  [is=7 gen=1462 t=53939s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=4 gen=1467 t=54063s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1321] injected diversity (5)
+  [is=3 gen=1321 t=54091s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1720 t=54135s] best=142.89 avg=169.04 feas/pop=18/20 all_seen=9
+  [is=1 gen=1347 t=54066s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1413 t=54185s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1393 t=54259s] best=142.89 avg=173.24 feas/pop=16/20 all_seen=4
+  [is=7 gen=1469 t=54248s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=2 gen=1245 t=54291s] best=142.89 avg=148.41 feas/pop=17/20 all_seen=8
+  [is=4 gen=1477 t=54377s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1327 t=54400s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=1 gen=1354 t=54374s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=1742 t=54481s] best=142.89 avg=169.09 feas/pop=20/20 all_seen=9
+  [is=6 gen=1423 t=54514s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1255 t=54598s] best=142.89 avg=146.59 feas/pop=19/20 all_seen=8
+  [is=0 gen=1402 t=54574s] best=142.89 avg=172.11 feas/pop=16/20 all_seen=4
+  [is=3 gen=1337 t=54717s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=1 gen=1362 t=54732s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1477] injected diversity (5)
+  [is=7 gen=1477 t=54673s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=6 gen=1431 t=54838s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1485] injected diversity (5)
+  [is=4 gen=1485 t=54794s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1749] injected diversity (5)
+  [is=5 gen=1749 t=54942s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=2 gen=1264 t=54922s] best=142.89 avg=145.18 feas/pop=19/20 all_seen=8
+  [is=0 gen=1410 t=54931s] best=142.89 avg=170.98 feas/pop=16/20 all_seen=4
+  [is=3 gen=1344 t=55018s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=7 gen=1485 t=54982s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=1 gen=1366] injected diversity (5)
+  [is=1 gen=1366 t=55088s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1495 t=55118s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1438] injected diversity (5)
+  [is=6 gen=1438 t=55190s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1773 t=55252s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=2 gen=1269] injected diversity (5)
+  [is=2 gen=1269 t=55311s] best=142.89 avg=143.73 feas/pop=15/20 all_seen=8
+  [is=7 gen=1494 t=55323s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=1 gen=1375 t=55401s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1447 t=55496s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1504 t=55451s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1415] injected diversity (5)
+  [is=0 gen=1415 t=55395s] best=142.89 avg=170.64 feas/pop=15/20 all_seen=4
+  [is=3 gen=1353] injected diversity (5)
+  [is=3 gen=1353 t=55480s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1798 t=55564s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=2 gen=1284 t=55633s] best=142.89 avg=143.20 feas/pop=18/20 all_seen=8
+  [is=7 gen=1502 t=55641s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=1 gen=1383 t=55734s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=4 gen=1514 t=55773s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1427 t=55713s] best=142.89 avg=171.00 feas/pop=19/20 all_seen=4
+  [is=6 gen=1457 t=55833s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1362 t=55808s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1813 t=55868s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=2 gen=1289 t=55936s] best=142.89 avg=143.20 feas/pop=18/20 all_seen=8
+  [is=1 gen=1391 t=56041s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=0 gen=1434 t=56015s] best=142.89 avg=171.00 feas/pop=19/20 all_seen=4
+  [is=7 gen=1508] injected diversity (5)
+  [is=7 gen=1508 t=56014s] best=142.89 avg=162.53 feas/pop=3/20 all_seen=2
+  [is=3 gen=1370 t=56116s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1466 t=56172s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1522] injected diversity (5)
+  [is=4 gen=1522 t=56161s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1833] injected diversity (5)
+  [is=5 gen=1833 t=56266s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=2 gen=1298 t=56249s] best=142.89 avg=143.05 feas/pop=18/20 all_seen=8
+  [is=0 gen=1443 t=56330s] best=142.89 avg=170.88 feas/pop=20/20 all_seen=4
+  [is=7 gen=1520 t=56327s] best=142.89 avg=164.99 feas/pop=4/20 all_seen=2
+  [is=3 gen=1380 t=56437s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=4 gen=1532 t=56467s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1398] injected diversity (5)
+  [is=1 gen=1398 t=56481s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=1844 t=56594s] best=142.89 avg=168.73 feas/pop=16/20 all_seen=9
+  [is=6 gen=1470] injected diversity (5)
+  [is=6 gen=1470 t=56599s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1527 t=56633s] best=142.89 avg=164.99 feas/pop=4/20 all_seen=2
+  [is=3 gen=1385] injected diversity (5)
+  [is=3 gen=1385 t=56815s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1304] injected diversity (5)
+  [is=2 gen=1304 t=56764s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1405 t=56807s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=4 gen=1544 t=56828s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1858 t=56918s] best=142.89 avg=168.83 feas/pop=17/20 all_seen=9
+  [is=6 gen=1479 t=56951s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1454] injected diversity (5)
+  [is=0 gen=1454 t=56843s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=7 gen=1539 t=56944s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=2 gen=1310 t=57091s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=3 gen=1396 t=57166s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1553 t=57159s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1879 t=57224s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=1 gen=1414 t=57158s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1490 t=57267s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1462 t=57171s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=4
+  [is=7 gen=1547] injected diversity (5)
+  [is=7 gen=1547 t=57376s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1402 t=57476s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=2 gen=1319 t=57444s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=6 gen=1499 t=57569s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1424 t=57518s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=5 gen=1888] injected diversity (5)
+  [is=5 gen=1888 t=57622s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=0 gen=1470 t=57510s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=4
+  [is=4 gen=1561] injected diversity (5)
+  [is=4 gen=1561 t=57590s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1557 t=57691s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1409 t=57809s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1328 t=57771s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=5 gen=1905 t=57952s] best=142.89 avg=168.83 feas/pop=17/20 all_seen=9
+  [is=0 gen=1480 t=57830s] best=142.89 avg=170.80 feas/pop=19/20 all_seen=4
+  [is=6 gen=1507] injected diversity (5)
+  [is=6 gen=1507 t=57949s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1428] injected diversity (5)
+  [is=1 gen=1428 t=57886s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1572 t=57908s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1564 t=58005s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1415] injected diversity (5)
+  [is=3 gen=1415 t=58155s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1584 t=58215s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1519 t=58270s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1923 t=58282s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=9
+  [is=2 gen=1332] injected diversity (5)
+  [is=2 gen=1332 t=58190s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1437 t=58234s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=0 gen=1486] injected diversity (5)
+  [is=0 gen=1486 t=58211s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=7 gen=1572 t=58315s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1422 t=58455s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1591 t=58521s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1936 t=58584s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=9
+  [is=2 gen=1342 t=58499s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=6 gen=1528 t=58594s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1446 t=58588s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=0 gen=1493 t=58553s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=3 gen=1431 t=58816s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1578] injected diversity (5)
+  [is=7 gen=1578 t=58756s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=2 gen=1349 t=58799s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=6 gen=1536 t=58910s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1498 t=58862s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=1 gen=1454 t=58938s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=4 gen=1598] injected diversity (5)
+  [is=4 gen=1598 t=58968s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1948] injected diversity (5)
+  [is=5 gen=1948 t=59052s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=3 gen=1441 t=59130s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1355 t=59099s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=7 gen=1588 t=59116s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=0 gen=1504 t=59169s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=1 gen=1460] injected diversity (5)
+  [is=1 gen=1461 t=59249s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1609 t=59280s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1546] injected diversity (5)
+  [is=6 gen=1546 t=59333s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1965 t=59387s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=7 gen=1598 t=59429s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1448] injected diversity (5)
+  [is=3 gen=1448 t=59530s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1366] injected diversity (5)
+  [is=2 gen=1366 t=59534s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1470 t=59560s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=4 gen=1617 t=59588s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1554 t=59664s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=1985 t=59747s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=0 gen=1513] injected diversity (5)
+  [is=0 gen=1513 t=59623s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=7 gen=1607 t=59755s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1457 t=59882s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=4 gen=1627 t=59908s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1373 t=59876s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=6 gen=1562 t=59969s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1480 t=59916s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=1995 t=60059s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=0 gen=1521 t=59942s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=7 gen=1614] injected diversity (5)
+  [is=7 gen=1614 t=60119s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=3 gen=1469 t=60216s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=6 gen=1570 t=60287s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1383 t=60207s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1487 t=60257s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=4 gen=1635] injected diversity (5)
+  [is=4 gen=1635 t=60350s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2006] injected diversity (5)
+  [is=5 gen=2006 t=60410s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=0 gen=1528 t=60292s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=3 gen=1474 t=60522s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=7 gen=1622 t=60467s] best=142.89 avg=165.91 feas/pop=5/20 all_seen=3
+  [is=2 gen=1391 t=60525s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=8
+  [is=1 gen=1490] injected diversity (5)
+  [is=1 gen=1490 t=60615s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1646 t=60657s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2023 t=60725s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=0 gen=1537 t=60627s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=4
+  [is=6 gen=1579] injected diversity (5)
+  [is=6 gen=1579 t=60762s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1632 t=60790s] best=142.89 avg=166.98 feas/pop=6/20 all_seen=3
+  [is=3 gen=1478] injected diversity (5)
+  [is=3 gen=1478 t=60890s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1403] injected diversity (5)
+  [is=2 gen=1403 t=60898s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1498 t=60922s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=4 gen=1655 t=60966s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2037 t=61036s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=0 gen=1543] injected diversity (5)
+  [is=0 gen=1543 t=60967s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=4
+  [is=6 gen=1588 t=61115s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1486 t=61204s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1642 t=61110s] best=142.89 avg=166.98 feas/pop=6/20 all_seen=3
+  [is=1 gen=1503 t=61225s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1414 t=61245s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=4 gen=1664 t=61283s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2050 t=61356s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=0 gen=1552 t=61284s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=4
+  [is=6 gen=1600 t=61458s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1492 t=61509s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=1 gen=1512 t=61560s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1423 t=61578s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=7 gen=1649] injected diversity (5)
+  [is=7 gen=1649 t=61590s] best=142.89 avg=167.75 feas/pop=7/20 all_seen=3
+  [is=0 gen=1560 t=61610s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=5
+  [is=5 gen=2064] injected diversity (5)
+  [is=5 gen=2064 t=61776s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=4 gen=1673] injected diversity (5)
+  [is=4 gen=1673 t=61721s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1609 t=61774s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1505 t=61816s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=2 gen=1432 t=61905s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=0 gen=1570 t=61925s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=5
+  [is=5 gen=2078 t=62077s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=9
+  [is=1 gen=1517] injected diversity (5)
+  [is=1 gen=1517 t=62003s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=7 gen=1660 t=61947s] best=142.89 avg=168.85 feas/pop=10/20 all_seen=3
+  [is=6 gen=1615] injected diversity (5)
+  [is=6 gen=1615 t=62122s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1682 t=62075s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1511] injected diversity (5)
+  [is=3 gen=1511 t=62250s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=1524 t=62307s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=5 gen=2091 t=62386s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=2 gen=1438] injected diversity (5)
+  [is=2 gen=1438 t=62297s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=7 gen=1667 t=62271s] best=142.89 avg=168.85 feas/pop=10/20 all_seen=3
+  [is=6 gen=1625 t=62424s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1692 t=62408s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1579] injected diversity (5)
+  [is=0 gen=1579 t=62427s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=3 gen=1523 t=62553s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=5 gen=2106 t=62689s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=2 gen=1447 t=62621s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=8
+  [is=1 gen=1533 t=62650s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1678 t=62600s] best=142.89 avg=169.21 feas/pop=12/20 all_seen=3
+  [is=6 gen=1635 t=62732s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1701 t=62765s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1587 t=62776s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=3 gen=1531 t=62863s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=2 gen=1459 t=62942s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=1 gen=1541 t=62970s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1645 t=63038s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2123] injected diversity (5)
+  [is=5 gen=2123 t=63126s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=7 gen=1685] injected diversity (5)
+  [is=7 gen=1685 t=63010s] best=142.89 avg=169.46 feas/pop=14/20 all_seen=3
+  [is=4 gen=1706] injected diversity (5)
+  [is=4 gen=1706 t=63128s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1596 t=63090s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=5
+  [is=3 gen=1540 t=63213s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=2 gen=1467 t=63292s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=5 gen=2135 t=63428s] best=142.89 avg=168.73 feas/pop=16/20 all_seen=9
+  [is=7 gen=1692 t=63319s] best=142.89 avg=169.48 feas/pop=16/20 all_seen=3
+  [is=1 gen=1545] injected diversity (5)
+  [is=1 gen=1545 t=63388s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=1656] injected diversity (5)
+  [is=6 gen=1656 t=63478s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1715 t=63440s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1603 t=63441s] best=142.89 avg=170.80 feas/pop=19/20 all_seen=5
+  [is=3 gen=1546] injected diversity (5)
+  [is=3 gen=1546 t=63683s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=2150 t=63730s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=9
+  [is=6 gen=1666 t=63780s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1474] injected diversity (5)
+  [is=2 gen=1474 t=63713s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=7 gen=1701 t=63674s] best=142.89 avg=169.48 feas/pop=17/20 all_seen=3
+  [is=1 gen=1555 t=63740s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=4 gen=1724 t=63759s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1607] injected diversity (5)
+  [is=0 gen=1607 t=63768s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=3 gen=1554 t=64011s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=2164 t=64055s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=9
+  [is=7 gen=1708 t=63976s] best=142.89 avg=169.49 feas/pop=18/20 all_seen=3
+  [is=6 gen=1676 t=64115s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1564 t=64070s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1482 t=64060s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=4 gen=1735 t=64097s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1617 t=64074s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=5
+  [is=3 gen=1565 t=64318s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=6 gen=1687 t=64423s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1489 t=64367s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=1 gen=1571 t=64428s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=2180] injected diversity (5)
+  [is=5 gen=2180 t=64517s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=0 gen=1625 t=64411s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=5
+  [is=7 gen=1714] injected diversity (5)
+  [is=7 gen=1714 t=64405s] best=142.89 avg=168.92 feas/pop=15/20 all_seen=3
+  [is=4 gen=1745] injected diversity (5)
+  [is=4 gen=1745 t=64512s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1574 t=64662s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1495 t=64674s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=5 gen=2200 t=64832s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=1 gen=1577] injected diversity (5)
+  [is=1 gen=1577 t=64760s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=7 gen=1721 t=64729s] best=142.89 avg=168.96 feas/pop=16/20 all_seen=3
+  [is=6 gen=1697] injected diversity (5)
+  [is=6 gen=1697 t=64873s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1633 t=64771s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=5
+  [is=4 gen=1756 t=64847s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1582] injected diversity (5)
+  [is=3 gen=1582 t=65083s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1501] injected diversity (5)
+  [is=2 gen=1501 t=65039s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1585 t=65074s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=2217 t=65166s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=7 gen=1730 t=65034s] best=142.89 avg=168.68 feas/pop=17/20 all_seen=3
+  [is=6 gen=1708 t=65193s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1765 t=65154s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1641] injected diversity (5)
+  [is=0 gen=1641 t=65146s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=3 gen=1592 t=65388s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=1 gen=1591 t=65380s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1511 t=65372s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=5 gen=2234 t=65501s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=7 gen=1738 t=65380s] best=142.89 avg=168.73 feas/pop=18/20 all_seen=3
+  [is=6 gen=1717 t=65511s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1774 t=65470s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1650 t=65452s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=3 gen=1601 t=65701s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1522 t=65685s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=1 gen=1599 t=65727s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=2243] injected diversity (5)
+  [is=5 gen=2243 t=65837s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=6 gen=1726 t=65827s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1780] injected diversity (5)
+  [is=4 gen=1780 t=65856s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1660 t=65805s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=5
+  [is=7 gen=1746] injected diversity (5)
+  [is=7 gen=1746 t=65804s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=3 gen=1609 t=66026s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=2 gen=1533 t=66016s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=5 gen=2253 t=66193s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=9
+  [is=1 gen=1604] injected diversity (5)
+  [is=1 gen=1604 t=66143s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1790 t=66170s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1732] injected diversity (5)
+  [is=6 gen=1732 t=66235s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1667 t=66135s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=5
+  [is=7 gen=1753 t=66161s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=5 gen=2269 t=66497s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=9
+  [is=2 gen=1537] injected diversity (5)
+  [is=2 gen=1537 t=66424s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=3 gen=1617] injected diversity (5)
+  [is=3 gen=1617 t=66493s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1799 t=66474s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1614 t=66476s] best=142.89 avg=143.15 feas/pop=19/20 all_seen=5
+  [is=6 gen=1743 t=66543s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1759 t=66465s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=0 gen=1671] injected diversity (5)
+  [is=0 gen=1671 t=66524s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=5 gen=2280 t=66824s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=9
+  [is=2 gen=1548 t=66741s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=4 gen=1809 t=66777s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1627 t=66813s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=1 gen=1619 t=66779s] best=142.89 avg=143.15 feas/pop=19/20 all_seen=5
+  [is=6 gen=1755 t=66847s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1767 t=66796s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=0 gen=1678 t=66824s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=5
+  [is=2 gen=1560 t=67052s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=8
+  [is=6 gen=1765 t=67160s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1633 t=67144s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=1 gen=1628 t=67121s] best=142.89 avg=143.15 feas/pop=19/20 all_seen=5
+  [is=5 gen=2299] injected diversity (5)
+  [is=5 gen=2299 t=67198s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=10
+  [is=7 gen=1772] injected diversity (5)
+  [is=7 gen=1772 t=67138s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=4 gen=1815] injected diversity (5)
+  [is=4 gen=1815 t=67220s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1687 t=67161s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=5
+  [is=2 gen=1569 t=67364s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=8
+  [is=3 gen=1641 t=67460s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=2321 t=67507s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=7 gen=1780 t=67443s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=4 gen=1825 t=67541s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1772] injected diversity (5)
+  [is=6 gen=1772 t=67627s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1636] injected diversity (5)
+  [is=1 gen=1636 t=67566s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=0 gen=1700 t=67519s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=5
+  [is=5 gen=2339 t=67817s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=2 gen=1575] injected diversity (5)
+  [is=2 gen=1575 t=67766s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=3 gen=1650] injected diversity (5)
+  [is=3 gen=1650 t=67860s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=7 gen=1789 t=67791s] best=142.89 avg=168.12 feas/pop=18/20 all_seen=3
+  [is=6 gen=1781 t=67931s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1835 t=67898s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1644 t=67896s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=0 gen=1708] injected diversity (5)
+  [is=0 gen=1708 t=67927s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=5 gen=2359 t=68119s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=2 gen=1586 t=68119s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=3 gen=1656 t=68178s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=7 gen=1794 t=68095s] best=142.89 avg=168.12 feas/pop=18/20 all_seen=3
+  [is=6 gen=1791 t=68235s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=1845 t=68216s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1653 t=68220s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=0 gen=1715 t=68235s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=5
+  [is=2 gen=1596 t=68435s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=3 gen=1662 t=68509s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=1802 t=68559s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2370] injected diversity (5)
+  [is=5 gen=2370 t=68598s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=10
+  [is=1 gen=1661 t=68530s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=5
+  [is=4 gen=1854] injected diversity (5)
+  [is=4 gen=1854 t=68573s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1724 t=68573s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=5
+  [is=7 gen=1799] injected diversity (5)
+  [is=7 gen=1799 t=68604s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=2 gen=1605 t=68746s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=3 gen=1669 t=68849s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=2389 t=68900s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=10
+  [is=4 gen=1862 t=68877s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1667] injected diversity (5)
+  [is=1 gen=1667 t=68909s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=6 gen=1811] injected diversity (5)
+  [is=6 gen=1811 t=68994s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1734 t=68887s] best=142.89 avg=170.80 feas/pop=19/20 all_seen=5
+  [is=7 gen=1808 t=68912s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=5 gen=2403 t=69236s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=4 gen=1870 t=69182s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1610] injected diversity (5)
+  [is=2 gen=1610 t=69166s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=3 gen=1675] injected diversity (5)
+  [is=3 gen=1675 t=69267s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=1821 t=69307s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1675 t=69253s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=7 gen=1816 t=69232s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=0 gen=1740] injected diversity (5)
+  [is=0 gen=1740 t=69300s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=5 gen=2414 t=69541s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=4 gen=1881 t=69500s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1619 t=69517s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=1 gen=1684 t=69555s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=3 gen=1683 t=69614s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=1832 t=69652s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1823 t=69539s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=0 gen=1748 t=69621s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=5
+  [is=2 gen=1625 t=69823s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=5 gen=2428] injected diversity (5)
+  [is=5 gen=2428 t=69970s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=10
+  [is=6 gen=1842 t=69964s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1693 t=69900s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=3 gen=1693 t=69953s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=4 gen=1891] injected diversity (5)
+  [is=4 gen=1891 t=69940s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1759 t=69951s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=5
+  [is=7 gen=1829] injected diversity (5)
+  [is=7 gen=1829 t=69948s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=2 gen=1634 t=70160s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=5 gen=2444 t=70270s] best=142.89 avg=168.83 feas/pop=17/20 all_seen=10
+  [is=3 gen=1703 t=70276s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=4
+  [is=4 gen=1902 t=70273s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1699] injected diversity (5)
+  [is=1 gen=1699 t=70294s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=7 gen=1839 t=70259s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=6 gen=1849] injected diversity (5)
+  [is=6 gen=1849 t=70385s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1768 t=70312s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=5
+  [is=5 gen=2459 t=70577s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=10
+  [is=4 gen=1911 t=70580s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1710] injected diversity (5)
+  [is=3 gen=1710 t=70607s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1639] injected diversity (5)
+  [is=2 gen=1639 t=70595s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1710 t=70638s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=5
+  [is=6 gen=1860 t=70708s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1846 t=70601s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=0 gen=1773] injected diversity (5)
+  [is=0 gen=1773 t=70631s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=5
+  [is=5 gen=2475 t=70896s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=4 gen=1922 t=70891s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1718 t=70951s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1649 t=70912s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=1 gen=1725 t=70988s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=5
+  [is=7 gen=1855 t=70935s] best=142.89 avg=168.12 feas/pop=18/20 all_seen=3
+  [is=6 gen=1872 t=71063s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1783 t=70987s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=5
+  [is=3 gen=1730 t=71251s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=2 gen=1658 t=71225s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=4 gen=1928] injected diversity (5)
+  [is=4 gen=1928 t=71302s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1734 t=71321s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=5
+  [is=5 gen=2490] injected diversity (5)
+  [is=5 gen=2490 t=71398s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=10
+  [is=6 gen=1881 t=71390s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1793 t=71307s] best=142.89 avg=170.88 feas/pop=20/20 all_seen=6
+  [is=7 gen=1863] injected diversity (5)
+  [is=7 gen=1863 t=71391s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=3 gen=1737 t=71554s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=2 gen=1666 t=71551s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=4 gen=1937 t=71619s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2511 t=71717s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=10
+  [is=1 gen=1740] injected diversity (5)
+  [is=1 gen=1740 t=71655s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=0 gen=1802 t=71613s] best=142.89 avg=170.88 feas/pop=20/20 all_seen=6
+  [is=6 gen=1887] injected diversity (5)
+  [is=6 gen=1887 t=71775s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1870 t=71730s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=4 gen=1946 t=71922s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1743] injected diversity (5)
+  [is=3 gen=1743 t=71964s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=2529 t=72027s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=1 gen=1752 t=71965s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=2 gen=1675] injected diversity (5)
+  [is=2 gen=1675 t=71957s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=6 gen=1897 t=72090s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1808] injected diversity (5)
+  [is=0 gen=1808 t=71999s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=1878 t=72042s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=4 gen=1954 t=72237s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1752 t=72316s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=5 gen=2542 t=72360s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=2 gen=1685 t=72275s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=1 gen=1764 t=72299s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=5
+  [is=6 gen=1907 t=72408s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1813 t=72310s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=1887 t=72386s] best=142.89 avg=168.12 feas/pop=18/20 all_seen=3
+  [is=3 gen=1761 t=72642s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1698 t=72592s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=8
+  [is=1 gen=1774 t=72634s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=5
+  [is=4 gen=1963] injected diversity (5)
+  [is=4 gen=1963 t=72674s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1825 t=72621s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=6 gen=1920 t=72743s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2550] injected diversity (5)
+  [is=5 gen=2550 t=72765s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=10
+  [is=7 gen=1893] injected diversity (5)
+  [is=7 gen=1893 t=72759s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=2 gen=1710 t=72900s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=8
+  [is=3 gen=1772 t=72969s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=4 gen=1973 t=72993s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1781] injected diversity (5)
+  [is=1 gen=1781 t=72998s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=6 gen=1927] injected diversity (5)
+  [is=6 gen=1927 t=73091s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2576 t=73101s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=0 gen=1836 t=72978s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=7 gen=1903 t=73111s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=3 gen=1779] injected diversity (5)
+  [is=3 gen=1779 t=73318s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=1982 t=73313s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1790 t=73308s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=6 gen=1939 t=73393s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2594 t=73406s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=2 gen=1718] injected diversity (5)
+  [is=2 gen=1718 t=73350s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=0 gen=1842] injected diversity (5)
+  [is=0 gen=1842 t=73381s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=1909 t=73452s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=3 gen=1787 t=73632s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=1 gen=1797 t=73620s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=4 gen=1994 t=73646s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1952 t=73719s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2611 t=73758s] best=142.89 avg=169.07 feas/pop=20/20 all_seen=10
+  [is=2 gen=1724 t=73691s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=0 gen=1852 t=73722s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=7 gen=1914 t=73755s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=3 gen=1793 t=73941s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=1 gen=1809 t=73937s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=6 gen=1962 t=74020s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1730 t=73996s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=4 gen=2002] injected diversity (5)
+  [is=4 gen=2002 t=74071s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1859 t=74056s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=5 gen=2621] injected diversity (5)
+  [is=5 gen=2621 t=74191s] best=142.89 avg=168.61 feas/pop=15/20 all_seen=10
+  [is=3 gen=1802 t=74257s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=7 gen=1921] injected diversity (5)
+  [is=7 gen=1921 t=74205s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=2 gen=1740 t=74313s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=4 gen=2012 t=74406s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=1971] injected diversity (5)
+  [is=6 gen=1971 t=74465s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1816] injected diversity (5)
+  [is=1 gen=1816 t=74410s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=0 gen=1865 t=74387s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=5 gen=2640 t=74527s] best=142.89 avg=168.92 feas/pop=18/20 all_seen=10
+  [is=7 gen=1928 t=74516s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=3 gen=1809] injected diversity (5)
+  [is=3 gen=1809 t=74703s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=2021 t=74711s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1747] injected diversity (5)
+  [is=2 gen=1747 t=74702s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=6 gen=1981 t=74822s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1825 t=74768s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=5 gen=2653 t=74845s] best=142.89 avg=169.00 feas/pop=19/20 all_seen=10
+  [is=0 gen=1871] injected diversity (5)
+  [is=0 gen=1871 t=74745s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=1937 t=74832s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=3 gen=1819 t=75048s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=2030 t=75052s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1756 t=75041s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1832 t=75073s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=5 gen=2678 t=75151s] best=142.89 avg=167.69 feas/pop=20/20 all_seen=11
+  [is=6 gen=1992 t=75156s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1880 t=75072s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=7 gen=1947 t=75143s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=3 gen=1827 t=75382s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1765 t=75354s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=8
+  [is=6 gen=2003 t=75457s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2038] injected diversity (5)
+  [is=4 gen=2038 t=75419s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1842 t=75409s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=5
+  [is=0 gen=1890 t=75393s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=5 gen=2688] injected diversity (5)
+  [is=5 gen=2688 t=75582s] best=142.89 avg=166.78 feas/pop=15/20 all_seen=11
+  [is=3 gen=1835 t=75701s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=7 gen=1956] injected diversity (5)
+  [is=7 gen=1956 t=75634s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=2 gen=1778 t=75697s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=0 gen=1897 t=75709s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=4 gen=2047 t=75776s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2010] injected diversity (5)
+  [is=6 gen=2010 t=75828s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1848] injected diversity (5)
+  [is=1 gen=1848 t=75791s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=5 gen=2699 t=75895s] best=142.89 avg=166.78 feas/pop=15/20 all_seen=11
+  [is=3 gen=1840] injected diversity (5)
+  [is=3 gen=1840 t=76032s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=7 gen=1966 t=75980s] best=142.89 avg=167.93 feas/pop=16/20 all_seen=3
+  [is=4 gen=2056 t=76076s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1782] injected diversity (5)
+  [is=2 gen=1782 t=76047s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=6 gen=2019 t=76133s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1857 t=76118s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=5 gen=2713 t=76200s] best=142.89 avg=165.86 feas/pop=18/20 all_seen=11
+  [is=0 gen=1904] injected diversity (5)
+  [is=0 gen=1904 t=76171s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=3 gen=1847 t=76339s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=2065 t=76379s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2031 t=76449s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=1977 t=76327s] best=142.89 avg=168.12 feas/pop=18/20 all_seen=3
+  [is=2 gen=1788 t=76386s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=5 gen=2725 t=76507s] best=142.89 avg=166.10 feas/pop=19/20 all_seen=11
+  [is=1 gen=1864 t=76464s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=0 gen=1910 t=76478s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=3 gen=1855 t=76673s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=2040 t=76755s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1797 t=76709s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=7 gen=1985 t=76672s] best=142.89 avg=168.19 feas/pop=19/20 all_seen=3
+  [is=4 gen=2074] injected diversity (5)
+  [is=4 gen=2074 t=76801s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1871 t=76792s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=0 gen=1919 t=76822s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=5 gen=2735] injected diversity (5)
+  [is=5 gen=2735 t=76957s] best=142.89 avg=164.94 feas/pop=15/20 all_seen=11
+  [is=3 gen=1861 t=76983s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1804 t=77026s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=7 gen=1988] injected diversity (5)
+  [is=7 gen=1988 t=76988s] best=142.89 avg=167.82 feas/pop=15/20 all_seen=3
+  [is=6 gen=2049] injected diversity (5)
+  [is=6 gen=2049 t=77149s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2084 t=77104s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2747 t=77280s] best=142.89 avg=165.59 feas/pop=17/20 all_seen=11
+  [is=1 gen=1881] injected diversity (5)
+  [is=1 gen=1881 t=77213s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=0 gen=1927 t=77175s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=7 gen=2000 t=77298s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=3 gen=1868] injected diversity (5)
+  [is=3 gen=1868 t=77429s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=6 gen=2058 t=77465s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2093 t=77437s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1811] injected diversity (5)
+  [is=2 gen=1811 t=77418s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=1 gen=1888 t=77521s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=5 gen=2756 t=77597s] best=142.89 avg=165.59 feas/pop=17/20 all_seen=11
+  [is=0 gen=1932] injected diversity (5)
+  [is=0 gen=1932 t=77541s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=2007 t=77601s] best=142.89 avg=168.03 feas/pop=17/20 all_seen=3
+  [is=3 gen=1875 t=77736s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=4 gen=2104 t=77745s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2071 t=77801s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1817 t=77724s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=8
+  [is=1 gen=1894 t=77826s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=5 gen=2766 t=77915s] best=142.89 avg=166.10 feas/pop=19/20 all_seen=11
+  [is=0 gen=1943 t=77860s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=7 gen=2017 t=77938s] best=142.89 avg=166.86 feas/pop=19/20 all_seen=4
+  [is=3 gen=1882 t=78038s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=6 gen=2081 t=78111s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1828 t=78057s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=1 gen=1901 t=78134s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=4 gen=2112] injected diversity (5)
+  [is=4 gen=2112 t=78174s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1950 t=78196s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=5 gen=2776] injected diversity (5)
+  [is=5 gen=2776 t=78337s] best=142.89 avg=164.94 feas/pop=15/20 all_seen=11
+  [is=3 gen=1890 t=78384s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=2 gen=1837 t=78406s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=7 gen=2023] injected diversity (5)
+  [is=7 gen=2023 t=78396s] best=142.89 avg=166.13 feas/pop=15/20 all_seen=4
+  [is=4 gen=2123 t=78505s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2088] injected diversity (5)
+  [is=6 gen=2088 t=78558s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1909] injected diversity (5)
+  [is=1 gen=1909 t=78570s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=5 gen=2787 t=78654s] best=142.89 avg=164.94 feas/pop=15/20 all_seen=11
+  [is=0 gen=1958 t=78534s] best=142.89 avg=170.80 feas/pop=19/20 all_seen=6
+  [is=7 gen=2031 t=78703s] best=142.89 avg=166.35 feas/pop=16/20 all_seen=4
+  [is=3 gen=1895] injected diversity (5)
+  [is=3 gen=1895 t=78820s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=4 gen=2132 t=78819s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2097 t=78870s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1845] injected diversity (5)
+  [is=2 gen=1845 t=78790s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=5 gen=2796 t=78961s] best=142.89 avg=165.28 feas/pop=16/20 all_seen=11
+  [is=1 gen=1915 t=78909s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=0 gen=1965] injected diversity (5)
+  [is=0 gen=1965 t=78915s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=2040 t=79020s] best=142.89 avg=165.05 feas/pop=17/20 all_seen=4
+  [is=4 gen=2142 t=79128s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1904 t=79155s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=6 gen=2107 t=79204s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1858 t=79149s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=5 gen=2805 t=79264s] best=142.89 avg=165.59 feas/pop=17/20 all_seen=11
+  [is=1 gen=1924 t=79267s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=0 gen=1972 t=79249s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=7 gen=2046 t=79332s] best=142.89 avg=165.05 feas/pop=17/20 all_seen=4
+  [is=3 gen=1915 t=79478s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=6 gen=2118 t=79539s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1870 t=79457s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=4 gen=2149] injected diversity (5)
+  [is=4 gen=2149 t=79511s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1934 t=79594s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=5
+  [is=0 gen=1978 t=79583s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=5 gen=2823] injected diversity (5)
+  [is=5 gen=2823 t=79727s] best=142.89 avg=159.43 feas/pop=15/20 all_seen=11
+  [is=3 gen=1922 t=79810s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=7 gen=2051] injected diversity (5)
+  [is=7 gen=2051 t=79735s] best=142.89 avg=164.45 feas/pop=15/20 all_seen=4
+  [is=4 gen=2157 t=79831s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1877 t=79800s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=6 gen=2127] injected diversity (5)
+  [is=6 gen=2127 t=79907s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=1985 t=79914s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=1 gen=1941] injected diversity (5)
+  [is=1 gen=1941 t=79991s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=5 gen=2833 t=80081s] best=142.89 avg=158.39 feas/pop=16/20 all_seen=11
+  [is=7 gen=2059 t=80067s] best=142.89 avg=163.56 feas/pop=17/20 all_seen=4
+  [is=4 gen=2167 t=80143s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2137 t=80237s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1885] injected diversity (5)
+  [is=2 gen=1885 t=80166s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=3 gen=1926] injected diversity (5)
+  [is=3 gen=1926 t=80223s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=1948 t=80313s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=5 gen=2842 t=80435s] best=142.89 avg=157.48 feas/pop=17/20 all_seen=11
+  [is=0 gen=1990] injected diversity (5)
+  [is=0 gen=1990 t=80319s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=4 gen=2178 t=80464s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=7 gen=2067 t=80417s] best=142.89 avg=163.90 feas/pop=18/20 all_seen=4
+  [is=2 gen=1894 t=80473s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=6 gen=2145 t=80569s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1932 t=80551s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=1 gen=1957 t=80622s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=5 gen=2852 t=80763s] best=142.89 avg=152.62 feas/pop=17/20 all_seen=11
+  [is=0 gen=1998 t=80656s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=2073 t=80718s] best=142.89 avg=163.90 feas/pop=18/20 all_seen=4
+  [is=2 gen=1903 t=80796s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=6 gen=2154 t=80884s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1946 t=80871s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=4
+  [is=4 gen=2189] injected diversity (5)
+  [is=4 gen=2189 t=80892s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=1966 t=80969s] best=142.89 avg=143.17 feas/pop=17/20 all_seen=6
+  [is=0 gen=2004 t=80960s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=5 gen=2855] injected diversity (5)
+  [is=5 gen=2855 t=81094s] best=142.89 avg=150.24 feas/pop=15/20 all_seen=11
+  [is=2 gen=1912 t=81099s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=8
+  [is=3 gen=1958 t=81225s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=4
+  [is=7 gen=2081] injected diversity (5)
+  [is=7 gen=2081 t=81135s] best=142.89 avg=161.07 feas/pop=15/20 all_seen=4
+  [is=4 gen=2198 t=81231s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2161] injected diversity (5)
+  [is=6 gen=2161 t=81308s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2864 t=81395s] best=142.89 avg=148.06 feas/pop=16/20 all_seen=11
+  [is=0 gen=2012 t=81285s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=1 gen=1972] injected diversity (5)
+  [is=1 gen=1972 t=81480s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=7 gen=2089 t=81457s] best=142.89 avg=159.38 feas/pop=15/20 all_seen=4
+  [is=6 gen=2169 t=81609s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2207 t=81582s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1962] injected diversity (5)
+  [is=3 gen=1962 t=81607s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1922] injected diversity (5)
+  [is=2 gen=1922 t=81610s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=5 gen=2873 t=81729s] best=142.89 avg=145.95 feas/pop=18/20 all_seen=11
+  [is=0 gen=2019] injected diversity (5)
+  [is=0 gen=2019 t=81685s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=1 gen=1986 t=81799s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=6
+  [is=7 gen=2100 t=81770s] best=142.89 avg=156.86 feas/pop=16/20 all_seen=4
+  [is=4 gen=2216 t=81893s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2178 t=81969s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1971 t=81958s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1932 t=81932s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=8
+  [is=5 gen=2890 t=82068s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=11
+  [is=0 gen=2026 t=82013s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=1 gen=1996 t=82142s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=6
+  [is=7 gen=2106 t=82108s] best=142.89 avg=156.86 feas/pop=16/20 all_seen=4
+  [is=6 gen=2187 t=82288s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=1979 t=82270s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1940 t=82242s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=4 gen=2222] injected diversity (5)
+  [is=4 gen=2222 t=82332s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=2035 t=82327s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=5 gen=2896] injected diversity (5)
+  [is=5 gen=2896 t=82464s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=11
+  [is=1 gen=2004 t=82485s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=6
+  [is=7 gen=2111] injected diversity (5)
+  [is=7 gen=2111 t=82513s] best=142.89 avg=156.01 feas/pop=15/20 all_seen=4
+  [is=3 gen=1987 t=82621s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=4
+  [is=2 gen=1950 t=82576s] best=142.89 avg=142.89 feas/pop=20/20 all_seen=8
+  [is=6 gen=2195] injected diversity (5)
+  [is=6 gen=2195 t=82695s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2231 t=82655s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=0 gen=2044 t=82638s] best=142.89 avg=170.88 feas/pop=20/20 all_seen=6
+  [is=5 gen=2904 t=82807s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=11
+  [is=7 gen=2119 t=82819s] best=142.89 avg=156.86 feas/pop=16/20 all_seen=4
+  [is=1 gen=2015] injected diversity (5)
+  [is=1 gen=2015 t=82890s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=4 gen=2243 t=82975s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2206 t=83029s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1955] injected diversity (5)
+  [is=2 gen=1955 t=83010s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=3 gen=1992] injected diversity (5)
+  [is=3 gen=1992 t=83086s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=5 gen=2914 t=83151s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=11
+  [is=0 gen=2052] injected diversity (5)
+  [is=0 gen=2052 t=83041s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=2126 t=83124s] best=142.89 avg=156.86 feas/pop=16/20 all_seen=4
+  [is=1 gen=2022 t=83239s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=4 gen=2251 t=83277s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2217 t=83342s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1965 t=83335s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=5 gen=2923 t=83458s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=11
+  [is=3 gen=2001 t=83439s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=0 gen=2060 t=83403s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=7 gen=2132 t=83449s] best=142.89 avg=156.86 feas/pop=16/20 all_seen=4
+  [is=1 gen=2031 t=83571s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=6
+  [is=6 gen=2230 t=83662s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1974 t=83662s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=8
+  [is=4 gen=2258] injected diversity (5)
+  [is=4 gen=2258 t=83699s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=2010 t=83795s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=0 gen=2069 t=83721s] best=142.89 avg=170.62 feas/pop=17/20 all_seen=6
+  [is=5 gen=2931] injected diversity (5)
+  [is=5 gen=2931 t=83852s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=11
+  [is=1 gen=2037 t=83877s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=6
+  [is=7 gen=2140] injected diversity (5)
+  [is=7 gen=2140 t=83855s] best=142.89 avg=152.64 feas/pop=15/20 all_seen=4
+  [is=4 gen=2265 t=84009s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=1981 t=83982s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=8
+  [is=6 gen=2237] injected diversity (5)
+  [is=6 gen=2237 t=84108s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=2016 t=84098s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=0 gen=2075 t=84034s] best=142.89 avg=170.71 feas/pop=18/20 all_seen=6
+  [is=5 gen=2943 t=84177s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=11
+  [is=7 gen=2146 t=84194s] best=142.89 avg=152.64 feas/pop=15/20 all_seen=4
+  [is=1 gen=2043] injected diversity (5)
+  [is=1 gen=2043 t=84268s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=4 gen=2273 t=84333s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2247 t=84442s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=2022] injected diversity (5)
+  [is=3 gen=2022 t=84462s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=4
+  [is=2 gen=1986] injected diversity (5)
+  [is=2 gen=1986 t=84417s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=5 gen=2950 t=84515s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=11
+  [is=0 gen=2082] injected diversity (5)
+  [is=0 gen=2082 t=84467s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=2151 t=84497s] best=142.89 avg=152.64 feas/pop=15/20 all_seen=4
+  [is=1 gen=2051 t=84593s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=4 gen=2283 t=84648s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=6 gen=2254 t=84752s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=2029 t=84770s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=4
+  [is=2 gen=1995 t=84729s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=8
+  [is=5 gen=2960 t=84869s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=11
+  [is=0 gen=2091 t=84807s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=7 gen=2162 t=84830s] best=142.89 avg=151.57 feas/pop=17/20 all_seen=4
+  [is=1 gen=2063 t=84903s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=6
+  [is=6 gen=2264 t=85073s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=2042 t=85083s] best=142.89 avg=143.16 feas/pop=20/20 all_seen=5
+  [is=4 gen=2291] injected diversity (5)
+  [is=4 gen=2291 t=85084s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=2008 t=85081s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=5 gen=2964] injected diversity (5)
+  [is=5 gen=2964 t=85217s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=11
+  [is=0 gen=2098 t=85117s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=1 gen=2070 t=85245s] best=142.89 avg=142.89 feas/pop=18/20 all_seen=6
+  [is=7 gen=2167] injected diversity (5)
+  [is=7 gen=2167 t=85250s] best=142.89 avg=147.48 feas/pop=15/20 all_seen=4
+  [is=3 gen=2049 t=85400s] best=142.89 avg=143.16 feas/pop=20/20 all_seen=5
+  [is=6 gen=2271] injected diversity (5)
+  [is=6 gen=2271 t=85441s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2301 t=85392s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=2 gen=2016 t=85412s] best=142.89 avg=142.89 feas/pop=19/20 all_seen=8
+  [is=5 gen=2970 t=85519s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=11
+  [is=0 gen=2105 t=85474s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=7 gen=2174 t=85592s] best=142.89 avg=145.80 feas/pop=15/20 all_seen=4
+  [is=1 gen=2076] injected diversity (5)
+  [is=1 gen=2076 t=85689s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=6 gen=2282 t=85758s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=4 gen=2309 t=85716s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=5 gen=2978 t=85831s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=11
+  [is=3 gen=2055] injected diversity (5)
+  [is=3 gen=2055 t=85819s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=5
+  [is=2 gen=2023] injected diversity (5)
+  [is=2 gen=2023 t=85855s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=0 gen=2110] injected diversity (5)
+  [is=0 gen=2110 t=85903s] best=142.89 avg=170.39 feas/pop=15/20 all_seen=6
+  [is=7 gen=2189 t=85918s] best=142.89 avg=143.78 feas/pop=19/20 all_seen=5
+  [is=6 gen=2290 t=86064s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=1 gen=2082 t=86013s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=6
+  [is=4 gen=2319 t=86070s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  [is=3 gen=2062 t=86141s] best=142.89 avg=142.89 feas/pop=16/20 all_seen=5
+  [is=5 gen=2989 t=86186s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=11
+  [is=2 gen=2029 t=86182s] best=142.89 avg=142.89 feas/pop=15/20 all_seen=8
+  [is=0 gen=2118 t=86241s] best=142.89 avg=170.51 feas/pop=16/20 all_seen=6
+  [is=7 gen=2196 t=86259s] best=142.89 avg=143.78 feas/pop=19/20 all_seen=5
+  island 5 DONE: best=142.8913 n_seen=11
+  [is=6 gen=2302 t=86396s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  island 6 DONE: best=142.8913 n_seen=2
+  [is=1 gen=2093 t=86366s] best=142.89 avg=142.89 feas/pop=17/20 all_seen=6
+  [is=4 gen=2325] injected diversity (5)
+  [is=4 gen=2325 t=86396s] best=142.89 avg=157.62 feas/pop=2/20 all_seen=2
+  island 3 DONE: best=142.8913 n_seen=5
+  island 1 DONE: best=142.8913 n_seen=6
+  island 4 DONE: best=142.8913 n_seen=2
+  island 2 DONE: best=142.8913 n_seen=8
+  island 0 DONE: best=142.8913 n_seen=6
+  island 7 DONE: best=142.8913 n_seen=5
+
+E-516 done in 24.2h
+Best mk: 142.8913d  (bank was 142.89)

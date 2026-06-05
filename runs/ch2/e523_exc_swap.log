@@ -1,0 +1,14 @@
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e523_exc_swap.py:10: SyntaxWarning: invalid escape sequence '\ '
+  1. New exc_set = bank_exc \ {drop} ∪ {promote}.
+E-523 exc-swap search. bank_mk=142.2897d  bank_exc=[2, 7, 21, 24, 45]
+Total swap candidates: 215 = 5 drops × 43 promotions
+  sw_id=0/215 elapsed=2s feas=0 under_bank=0
+  sw_id=50/215 elapsed=24s feas=7 under_bank=0
+  sw_id=100/215 elapsed=33s feas=57 under_bank=0
+  sw_id=150/215 elapsed=43s feas=108 under_bank=0
+  sw_id=200/215 elapsed=53s feas=158 under_bank=0
+
+=== E-523 done in 0.9min ===
+  feasible swaps: 172/215
+  under bank (142.2897): 0
+  best mk: 142.2897d

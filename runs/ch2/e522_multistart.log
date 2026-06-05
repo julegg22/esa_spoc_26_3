@@ -1,0 +1,8 @@
+E-522 multi-start greedy + SLSQP polish. bank_mk=142.2897d  n_starts=49 workers=6
+Total constructive runs: 147 = 49 starts × 3 param sets
+
+=== E-522 done in 33.3min ===
+  constructed full tours: 0/147
+  SLSQP-polished feasible: 0
+  under bank (142.2897): 0
+  best polished mk: 142.2897d

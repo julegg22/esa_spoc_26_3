@@ -1,0 +1,32 @@
+E-519 Dijkstra. bank perm len=49 start=34 end=32 BANK_MK=142.8913
+Loading fine table...
+  T=400 buckets × q=0.5d (horizon=200.0d)
+  cheap finite cells: 45380
+  exc   finite cells: 335640
+
+Precomputing per-leg arrival buckets...
+  done in 0.06s. cheap_arr finite per leg: avg=298.2, min=0, max=385
+  exc_arr  finite per leg: avg=383.9
+
+Forward DP...
+  done in 2.4s
+
+DP optimum on bank perm: mk_dij = 152.000 d (exc_used=5, sink t_bucket=304)
+vs BANK_MK = 142.8913 d → delta = -9.109 d
+
+Reconstructed schedule:
+  #exc legs in reconstruction: 5
+  first 5 legs (dep_d, tof_d, isexc): [(0.0, 0.5, 0), (0.5, 1.5, 0), (2.0, 0.5, 1), (2.5, 1.5, 0), (4.0, 1.5, 0)]
+  last 5 legs: [(146.5, 1.5, 0), (148.0, 1.0, 0), (149.5, 1.0, 1), (150.5, 0.5, 0), (151.0, 1.0, 0)]
+
+Validating reconstructed (times, tofs) via UDP fitness...
+  UDP fitness: [152.0, 0, -6, 0, 19] (feasible=False)
+  UDP makespan: 152.0000 d
+
+For reference — walk_perm_chrono on bank perm:
+  S1 wait_dt=1.0: mk=142.891d  exc_used=5
+  S2 wait_dt=0.2: mk=152.900d  exc_used=5
+
+=== E-519 VERDICT ===
+inconclusive (F2)
+DP found mk_dij=152.000d but UDP rejects reconstructed (times,tofs) — fine-table cell is finite but real Lambert is sub-threshold.
