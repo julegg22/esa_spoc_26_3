@@ -1,0 +1,25 @@
+Loading instance + ultrafine table...
+  n=49 q=0.05d T=4000
+Building ATSP cost matrix from ultrafine...
+  built in 0.0s, cheap-only finite count: 2352
+
+Direct elkai on raw ATSP (treated as STSP)...
+  LKH wall: 0.3s, tour_len=50
+  Recovered perm len=49 unique=49
+  perm[:5]=[23, 18, 34, 10, 12] perm[-5:]=[14, 42, 32, 27, 16]
+
+DP-evaluating LKH perm...
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+  DP wall: 2.1s
+  LKH-perm DP-mk = 125.0783d (vs bank 116.37d, rank-3 ext 110.88d, rank-1 ext 101.65d)
+
+Now ATSP via JV transform + dummy...
+  LKH wall: 2.5s, tour_len=99
+  Recovered perm len=49 unique=49
+  perm[:5]=[27, 32, 16, 42, 14] perm[-5:]=[12, 10, 18, 23, 34]
+  ATSP-perm DP-mk = 133.4788d
+
+Result saved.

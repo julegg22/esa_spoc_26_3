@@ -1,0 +1,11 @@
+E-534 fine-tof refinement. Bank entry: 116.375472d
+  Legs: 48 (43 cheap, 5 exc)
+  pass 0 leg 47: tof 0.1755→0.1738 (Δ=0.0017d) shaved 0.0017d, mk=116.373771d
+  -- pass 0: 1 improvements, shaved 0.0017d, mk=116.373771d, wall 54s
+  -- pass 1: 0 improvements, shaved 0.0000d, mk=116.373771d, wall 55s
+  no more improvements; stopping.
+
+Final: mk=116.373771d feasible=True viols=[0, 0, 0, 0]
+Total shaved from bank: 0.001701d
+
+>>> BANKED: 116.373771d (0.001701d under prev)

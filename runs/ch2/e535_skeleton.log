@@ -1,0 +1,26 @@
+Loading large structure from E-533...
+Components: 4, sizes=[601, 150, 150, 150]
+Large UDP: n=1051, n_exc=5, max_time=3000.0d
+
+Phase 1: per-comp Hamilton path skeleton (greedy fallback)
+  comp0 (size 601): path found = False
+  comp1 (size 150): path found = True
+  comp2 (size 150): path found = True
+  comp3 (size 150): path found = True
+
+Phase 2: bridge candidates between adjacent comps (top-5 each)
+  comp0→comp1: top-5 = [(11, 33), (11, 69), (11, 87)]...
+  comp0→comp2: top-5 = [(11, 44), (11, 121), (11, 140)]...
+  comp0→comp3: top-5 = [(11, 15), (11, 36), (11, 41)]...
+  comp1→comp2: top-5 = [(21, 44), (21, 121), (21, 140)]...
+  comp1→comp3: top-5 = [(21, 15), (21, 36), (21, 41)]...
+  comp2→comp3: top-5 = [(28, 15), (28, 36), (28, 41)]...
+
+Phase 3: full pipeline NOT IMPLEMENTED in skeleton.
+  Steps:
+    a) Install LKH-3 binary or `pip install elkai`
+    b) Replace solve_open_hamilton_path() greedy with LKH-3 call
+    c) Enumerate comp orderings (4! = 24 if all distinct)
+    d) Per ordering × per (start, end) per comp: assemble + walk_perm_chrono check
+    e) SLSQP polish each Lambert-feasible candidate
+    f) Bank if any beats current rank-3 large (1238.52 d)
