@@ -64,6 +64,16 @@ Medium (June 5 burst!):
   exception bridging would give exactly this kind of jump. The
   pre-jump 1143 d ≈ "ignoring cluster structure" baseline; the
   post-jump 424 d ≈ "exploiting cluster structure".
+- **NEW (E-533 structural confirmation, 2026-06-07)**: Each of the
+  three small components is **internally near-complete** (in/out
+  degree ≈ 149 on n=150 nodes). The optimal Hamilton path within
+  each 150-node small comp is solvable exactly in minutes with
+  LKH-3 or Concorde — exact TSPs on dense graphs are trivial.
+  comp0 (601 nodes) is sparser (max in/out degree ≈ 163, i.e.
+  ~27% reachable) — harder but still within LKH-3's range. This is
+  exactly the structure where **cluster-decomposition + exact
+  per-cluster TSP = 2.7× speedup over uniform metaheuristic**. The
+  inference is essentially confirmed by the topology data.
 - **Medium follow-up**: ran the same algorithm on medium right after
   → got 199.74 d. Smaller relative gain (medium is less component-
   structured at n=181).
@@ -179,6 +189,10 @@ challenge the 100 d floor that current methods plateau against.
 3. **Large target**: 424.62 d (TGMA). Their cluster decomposition
    gives them a 2.7× moat. To compete on large, we'd need to either
    implement cluster decomposition or skip large.
+   - **The structural recipe is now clear** (E-533): 3× small comp
+     150-node TSPs (solvable exactly via LKH-3), 1× 601-node TSP
+     (harder but in range), 3 inter-comp exception bridges. A
+     plausible 1-week implementation effort if we decide to attack.
 
 4. **Cadence**: 4 active teams, ~3 weeks left in competition. Expect
    continued improvements from TGMA, AC_TUWien, fcmaes especially.
