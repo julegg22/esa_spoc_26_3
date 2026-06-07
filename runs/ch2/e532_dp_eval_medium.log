@@ -1,0 +1,20 @@
+E-532 medium DP. n=181 bank_mk=274.5171d start=3 end=44
+Loading medium tcoupled table...
+  loaded in 0.5s shape=(181, 181, 1000) q=0.5d T=1000 horizon=500.0d
+  cheap density: 9.07%
+  exc density: 30.51%
+
+Running DP on bank perm (n_legs=180)...
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+DP wall: 0.8s
+
+DP optimum on bank perm: 380.9352d (was walk: 274.5171d)
+  delta: -106.4181d
+  exc used: 5
+
+Leaderboard context (2026-06-06 snapshot):
+  R3 medium: 216.95d (gap from new bank: +163.99d)
+  R1 medium: 199.74d (gap from new bank: +181.20d)

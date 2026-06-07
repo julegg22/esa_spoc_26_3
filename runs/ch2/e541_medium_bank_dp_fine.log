@@ -1,0 +1,20 @@
+E-541 medium bank DP-fine. bank_mk=274.5171d
+Loading per-leg fine table...
+  shape cheap=(180, 5000) q=0.1d T=5000
+  cheap cells: 847846/900000 (94.2%)
+  exc   cells: 872591/900000 (97.0%)
+
+Precomputing per-leg arr buckets...
+  done in 3.2s
+Forward DP (numba-jit warmup may take 5-10s)...
+  DP done in 17.8s
+
+DP optimum (bucket-q): 229.0000d (exc=5)
+UDP-validated mk: 228.9748d feasible=True viols=[0, 0, 0, 0]
+  vs walk_perm_chrono bank: 274.5171d (delta = +45.5422d)
+
+>>> BANKED: 228.9748d (45.5422d under prev)
+
+Leaderboard context (2026-06-06):
+  R3 medium: 216.95d  (gap from new bank: +12.02d)
+  R1 medium: 199.74d  (gap from new bank: +29.23d)

@@ -1,0 +1,27 @@
+E-540 medium bank-perm fine precompute. n=181, max_time=500.0d
+Bank perm: start=3 end=44 n_legs=180
+Total work: 180 legs × 5000 t × 160 tof = 144,000,000 Lambert calls
+Est wall on 4 cores: ~5.5h
+  10/180  rate=0.53/s elapsed=0.3min eta=5.4min
+  20/180  rate=0.58/s elapsed=0.6min eta=4.6min
+  30/180  rate=0.52/s elapsed=1.0min eta=4.8min
+  40/180  rate=0.39/s elapsed=1.7min eta=6.0min
+  50/180  rate=0.32/s elapsed=2.6min eta=6.7min
+  60/180  rate=0.28/s elapsed=3.6min eta=7.2min
+  70/180  rate=0.28/s elapsed=4.2min eta=6.6min
+  80/180  rate=0.30/s elapsed=4.5min eta=5.6min
+  90/180  rate=0.31/s elapsed=4.8min eta=4.8min
+  100/180  rate=0.32/s elapsed=5.2min eta=4.2min
+  110/180  rate=0.29/s elapsed=6.4min eta=4.0min
+  120/180  rate=0.27/s elapsed=7.3min eta=3.6min
+  130/180  rate=0.27/s elapsed=8.0min eta=3.1min
+  140/180  rate=0.27/s elapsed=8.5min eta=2.4min
+  150/180  rate=0.29/s elapsed=8.7min eta=1.7min
+  160/180  rate=0.30/s elapsed=9.0min eta=1.1min
+  170/180  rate=0.30/s elapsed=9.4min eta=0.6min
+  180/180  rate=0.24/s elapsed=12.6min eta=0.0min
+
+Done in 758s (0.2h)
+Saved /tmp/ch2_medium_bank_pairs_fine.npz
+Cheap cells: 847846/900000 = 94.21%
+Exc cells:   872591/900000 = 96.95%
