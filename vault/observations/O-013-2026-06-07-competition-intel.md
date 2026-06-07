@@ -1,15 +1,29 @@
 ---
 date: 2026-06-07
-tags: [observation, leaderboard, competition-intel, hri, tgma, methodology]
-status: confirmed via api.optimize.esa.int GraphQL
+tags: [observation, leaderboard, competition-intel, hri, tgma, methodology, solo-run]
+status: confirmed via api.optimize.esa.int GraphQL; corrected 2026-06-07 (Team HRI ≠ us)
 ---
-# O-013 — Competition intel: team identities + own-submission recovery problem
+# O-013 — Competition intel: team identities + solo-run context
+
+## Context — this is a solo run, separate from Team HRI on the leaderboard
+
+**This project is an independent solo exploration: how far can one
+person + Claude Code get on the SpOC4 KTTSP?** No submissions have
+been made from this project. The "Team HRI" entry on the
+leaderboard is a separate group at the Honda Research Institute who
+are competing in parallel; the user is deliberately NOT consulting
+them for methods, to keep this attempt clean as a measurement of the
+solo-with-AI-assistance ceiling.
+
+This means: all leaderboard entries (including Team HRI's 101.65 d
+rank 1 small) are **genuine external targets** to beat with our own
+methodology.
 
 ## Team identities (all 8 leaderboard users decoded)
 
 | User ID | Team | Affiliation | Notable rank |
 |---|---|---|---|
-| db54c27... | **Team HRI** | Honda Research Institute Europe | rank 1 small (101.65, 2026-04-25) — **THIS IS US** |
+| db54c27... | **Team HRI** | Honda Research Institute Europe — colleagues, NOT us | rank 1 small (101.65, 2026-04-25) |
 | 5af55cab... | **TGMA** (Marvin & Talha) | Germany | rank 1 medium (199.74) + rank 1 large (424.62) — both 2026-06-05 |
 | dd46ba62... | ScholORs_HFUU+Sunway | Hefei + Sunway U | rank 2 small (108.77) |
 | 867404f7... | **fcmaes** (dietmarwo) | Germany | rank 3 small (110.88); author of fast-cma-es library we use |
@@ -18,39 +32,22 @@ status: confirmed via api.optimize.esa.int GraphQL
 | 05b3d535... | (no team info) | — | — |
 | cd77dc25... | (no team info) | — | — |
 
-## The big finding — our 101.65 d is ours
+## The 101.65 d target is held by HRI colleagues
 
-Team HRI (us) holds rank 1 on small at **101.65 d (submitted 2026-04-25,
-unchanged for 6+ weeks).** It is OUR OWN submission.
+Team HRI (separate group) holds rank 1 on small at **101.65 d (submitted
+2026-04-25, unchanged for 6+ weeks).** This is the rank-1 floor to beat.
+Per the project constraint (solo + Claude Code only), their methods are
+off-limits.
 
 Our local bank trajectory this project (esa_spoc_26_3) started at 142.92 d
-(2026-05-30 bak) and has improved to 116.38 d. **That's still 14.73 d
-worse than our April submission.** We have been re-deriving a solution
-from a more recent (but worse) starting point.
+(2026-05-30 bak) and has improved to **116.38 d** via the foundation-
+then-search methodology (E-519b leg refine → E-527 DP on ultrafine table
+→ E-529 DP-ALNS). To beat the leaderboard rank 1 we need a further
+14.73 d of improvement.
 
-### Why this happened
-
-The 101.65 d small submission was made before the current project
-version existed. Checking older project directories:
-- `esa_spoc_26_2` git log has no April 25 commits; latest is May 11.
-- Looking for `small.json` history in 26_2: never committed there.
-- The submission likely came from a session that was lost in project
-  restructuring or made via a script that uploaded directly without
-  committing the decision vector locally.
-
-### What this means going forward
-
-1. **Path A — try to recover the 101.65 perm.** The platform stores
-   submitted decision vectors. If we authenticate as Team HRI we may be
-   able to download our own past submissions via the API or web UI.
-2. **Path B — beat 101.65 d from scratch.** Our DP-on-ultrafine
-   methodology is likely STRONGER than what produced 101.65 d (which
-   pre-dated walk_perm_chrono C6 bug recognition). With sufficient
-   compute we should be able to surpass our own previous record.
-3. **The "R1 target" in the audit was wrong:** treating 101.65 as an
-   external competitor target masked that we already had this solution.
-   The real goal for small is sub-100 d (no other team has approached
-   this yet).
+The legitimate path forward: continue scaling the methodology that's
+already working (foundation diagnostic → DP-based search), and submit
+our own result once we're competitive.
 
 ## TGMA breakthrough is real but unreplicable
 
@@ -68,15 +65,16 @@ version existed. Checking older project directories:
 
 | Priority | Target | Path |
 |---|---|---|
-| 1 | Small sub-100 d (new rank 1 floor) | Continue current DP-ALNS methodology; bring more compute |
-| 2 | Medium → match or beat TGMA's 199.74 d | E-531 precompute → E-532 DP eval → DP-ALNS |
-| 3 | Recover our own 101.65 d perm | Check platform's "download submission" feature for Team HRI |
-| 4 | Large → out of reach without TGMA-class algorithm | Defer; not productive without ~10× more cores |
+| 1 | Small → beat 101.65 d (current external rank 1) | Continue DP-ALNS methodology; potential follow-up rounds with bigger neighborhoods |
+| 2 | Medium → beat 199.74 d (TGMA's rank 1) | E-531 precompute → E-532 DP eval → DP-ALNS |
+| 3 | Submit our results to the leaderboard (once we beat 110.88 = current rank 3) | Manual upload to optimise.esa.int as own user |
+| 4 | Large → out of reach without smart algorithm | Defer; n=1051 makes precompute intractable on 4 cores |
 
 ## What to put in memory
 
-- HRI rank 1 small @ 101.65 d is OUR submission, not external target
-- Real R1 floor to beat: 101.65 d (our own)
-- TGMA is the rank-1 medium+large holder but algorithm not public
+- The 101.65 d small rank 1 is HRI colleagues (independent team) — to be beaten, NOT consulted
+- We have not submitted anything yet; the leaderboard does not include us
+- TGMA holds rank 1 medium+large; algorithm not public
 - fcmaes (dietmarwo) is fellow library author at rank 3 small
 - Large is fundamentally hard without smart algorithm
+- Solo-run constraint: no consultation with HRI colleagues for methods
