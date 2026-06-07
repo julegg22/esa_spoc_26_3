@@ -1,0 +1,4 @@
+E-533 large structure. n=1051, n_exc=5, max_time=3000.0, probes=8
+  row 50/1051  elapsed=1.7min pairs/s=522 eta=33.6min calls=0.4M
+  row 100/1051  elapsed=3.3min pairs/s=528 eta=31.5min calls=0.8M
+  row 150/1051  elapsed=5.0min pairs/s=524 eta=30.1min calls=1.1M
