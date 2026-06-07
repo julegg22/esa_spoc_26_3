@@ -1,0 +1,30 @@
+E-538b dual-seed DP-ALNS (fixed SA cooling). wall_h=2.0
+  Bank seed: start=34 end=32
+  LKH-3 seed: start=23 end=16
+  SA_T0=8.0, SA_DECAY=0.99995 (per iter)
+[c0/bank] loading ultrafine table...
+[c1/lkh3] loading ultrafine table...
+[c0/bank] table loaded in 0.3s
+[c0/bank] DP-evaluating init seed...
+[c1/lkh3] table loaded in 0.3s
+[c1/lkh3] DP-evaluating init seed...
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1/lkh3]   DP wall: 2.6s mk=125.0783d
+[c0/bank]   DP wall: 3.2s mk=116.3755d
+[c0/bank] iter=2000 elapsed=14.0min DP_ok=29 accepted=17 state=154.3264 best=116.3755 T=7.239
+[c0/bank] iter=10400 elapsed=68.9min DP_ok=139 accepted=107 state=149.5772 best=116.3755 T=4.756
+[c1/lkh3] iter=16000 elapsed=79.6min DP_ok=157 accepted=118 state=133.4285 best=125.0783 T=3.595
+[c0/bank] iter=13600 elapsed=86.9min DP_ok=183 accepted=143 state=133.1789 best=116.3755 T=4.053
+[c0/bank] chain done. iters=18742 best=116.3755d (seeded from bank)
+[c1/lkh3] chain done. iters=23761 best=125.0783d (seeded from lkh3)
+
+All chains done.
+  chain 0 (bank): best=116.3755d
+  chain 1 (lkh3): best=125.0783d
