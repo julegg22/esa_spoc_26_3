@@ -1,0 +1,26 @@
+E-537 large cluster-LKH pipeline. n=1051 n_exc=5 max_time=3000.0d
+Components: [601, 150, 150, 150]
+
+Phase 1: per-comp open Hamilton path via LKH-3 (probe t=50.0d)
+  comp0 (size 601): building cost...
+    cost built 286.1s. Finite edges: 128901
+    LKH path found 381.7s. start=828 end=493
+  comp1 (size 150): building cost...
+    cost built 27.0s. Finite edges: 22350
+    LKH path found 2.0s. start=33 end=199
+  comp2 (size 150): building cost...
+    cost built 30.0s. Finite edges: 22350
+    LKH path found 1.2s. start=519 end=168
+  comp3 (size 150): building cost...
+    cost built 32.1s. Finite edges: 22350
+    LKH path found 2.1s. start=147 end=781
+
+Phase 2: assemble + walk_perm_chrono check (first ordering only)
+  Full perm: start=828 end=781 len=1051
+  Components join at positions: [601, 751, 901]
+
+Phase 3: walk_perm_chrono (this may take minutes on n=1051)
+  Wall: 0s
+  walk_perm_chrono REJECTED at leg 76 (exc_used=5/5)
+  → Cluster decomposition produced an INFEASIBLE perm.
+  Next steps: try other comp orderings / bridge choices.

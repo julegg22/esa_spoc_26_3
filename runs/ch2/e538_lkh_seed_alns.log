@@ -1,0 +1,21 @@
+E-538 dual-seed DP-ALNS. wall_h=6.0, 2 chains.
+  Bank seed:   start=34 end=32
+  LKH-3 seed:  start=23 end=16 (LKH-mk-noDP=125.08)
+[c0/bank] loading ultrafine table...
+[c1/lkh3] loading ultrafine table...
+[c0/bank] table loaded in 0.2s
+[c0/bank] DP-evaluating init seed...
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1/lkh3] table loaded in 0.3s
+[c1/lkh3] DP-evaluating init seed...
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1/lkh3]   DP wall: 3.1s
+[c1/lkh3]   seed mk = 125.0783d
+[c0/bank]   DP wall: 3.5s
+[c0/bank]   seed mk = 116.3755d
