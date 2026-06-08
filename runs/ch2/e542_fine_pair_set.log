@@ -1,0 +1,5 @@
+E-542 medium curated fine precompute. n=181
+Bank perm: start=3 end=44 legs=180
+Pair set: |bank+cheap|=3186, +1500 exc-extra = 4686 unique pairs
+Total cells: 2,343,000,000
+Est wall on 4 cores: ~1.3h (based on E-540 rate ~120k cells/s/core)
