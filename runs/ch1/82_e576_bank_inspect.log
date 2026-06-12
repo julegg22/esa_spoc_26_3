@@ -1,0 +1,37 @@
+[E-576] Bank element recovery (departure & arrival full elements)
+==============================================================================
+E0 idE=0 idL=0 mass=819.4kg
+   DEP recovered: a=6545.0km e=2.143e-07 i=0.000deg raan=0.000deg argp=0.000deg ea=-45.00deg
+   DEP catalog  : a=6545.0km e=2.143e-07 i=0.000deg  (target i for arrival iL=0.000)
+   arr raan=180.00 argp=180.00 i=0.00
+   dv0=3156.8 dv1=0.0 dv2=906.5 m/s | T1=11.000d T2=0.000d split=1.000 tof=11.000d
+   => DEP DoF: RAAN/ARGP ~0 (pinned)
+------------------------------------------------------------------------------
+E69 idE=69 idL=63 mass=349.1kg
+   DEP recovered: a=6626.6km e=4.735e-03 i=10.510deg raan=0.000deg argp=0.000deg ea=0.00deg
+   DEP catalog  : a=6626.6km e=4.735e-03 i=10.510deg  (target i for arrival iL=9.747)
+   arr raan=176.86 argp=32.84 i=52.67
+   dv0=3108.7 dv1=1443.1 dv2=855.8 m/s | T1=14.502d T2=3.000d split=0.829 tof=17.502d
+   => DEP DoF: RAAN/ARGP ~0 (pinned)
+------------------------------------------------------------------------------
+E54 idE=54 idL=330 mass=459.9kg
+   DEP recovered: a=7271.6km e=9.905e-02 i=24.033deg raan=0.000deg argp=0.000deg ea=0.00deg
+   DEP catalog  : a=7271.6km e=9.905e-02 i=24.033deg  (target i for arrival iL=24.422)
+   arr raan=179.51 argp=35.21 i=83.32
+   dv0=2760.9 dv1=1456.5 dv2=816.1 m/s | T1=14.531d T2=3.000d split=0.829 tof=17.531d
+   => DEP DoF: RAAN/ARGP ~0 (pinned)
+------------------------------------------------------------------------------
+E252 idE=252 idL=354 mass=387.1kg
+   DEP recovered: a=7093.0km e=6.239e-02 i=55.742deg raan=270.000deg argp=0.000deg ea=-0.00deg
+   DEP catalog  : a=7093.0km e=6.239e-02 i=55.742deg  (target i for arrival iL=44.237)
+   arr raan=0.07 argp=180.21 i=44.24
+   dv0=2875.4 dv1=1566.5 dv2=832.0 m/s | T1=6.921d T2=0.500d split=0.933 tof=7.421d
+   => DEP DoF: NONZERO raan=90.00 argp=0.00 <<<
+------------------------------------------------------------------------------
+E100 idE=100 idL=90 mass=619.3kg
+   DEP recovered: a=7615.0km e=4.004e-02 i=89.386deg raan=90.000deg argp=0.000deg ea=-0.00deg
+   DEP catalog  : a=7615.0km e=4.004e-02 i=89.386deg  (target i for arrival iL=89.948)
+   arr raan=228.03 argp=249.02 i=89.95
+   dv0=2814.4 dv1=682.4 dv2=1068.2 m/s | T1=20.000d T2=0.500d split=0.976 tof=20.500d
+   => DEP DoF: NONZERO raan=90.00 argp=0.00 <<<
+------------------------------------------------------------------------------

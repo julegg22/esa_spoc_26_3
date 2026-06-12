@@ -1,0 +1,35 @@
+[E-577] PHASE A1 — faithful apogee solver, FULL raan/argp sweep, GATE on 5 known-feasible bank pairs
+  E0 E0->L0: 58kg raan_e=0 (180 tries,184s) OK
+  E69 E69->L63: 27kg raan_e=0 (180 tries,182s) OK
+  E54 E54->L330: 187kg raan_e=0 (164 tries,76s) OK
+  E252 E252->L354: 38kg raan_e=0 (180 tries,281s) OK
+  E100 E100->L90: 10kg raan_e=0 (85 tries,89s) OK
+[GATE A1] 5/5 reproduced with FULL raan/argp sweep [466s]
+
+[E-577] PHASE A2 — SAME solver but raan=argp=0 ONLY (isolate RAAN as load-bearing DoF)
+  E0 E0->L0 (raan=0): 58kg (180 tries,234s)
+  E69 E69->L63 (raan=0): 27kg (180 tries,230s)
+  E54 E54->L330 (raan=0): 187kg (164 tries,104s)
+  E252 E252->L354 (raan=0): 38kg (180 tries,404s)
+  E100 E100->L90 (raan=0): 10kg (85 tries,122s)
+[A2] raan=0 reproduces: ['E0', 'E69', 'E54', 'E252', 'E100'] ; raan=0 FAILS: [] [639s]
+
+[E-577] PHASE B — 6 stranded high-incl unfilled pairs (raan=0 baseline vs raan-swept apogee solver)
+==============================================================================
+E59(i=69.6) L4(i=70.0): baseline=FAIL sweep=FAIL [240+415 tries,1126s]  (infeasible even with free raan/argp)
+E189(i=55.4) L99(i=55.0): baseline=1kg sweep=n/a [165+0 tries,486s]  (baseline-FEASIBLE -> ASSIGNMENT lever, not infeasibility)
+E238(i=89.3) L141(i=89.7): baseline=1kg sweep=n/a [85+0 tries,111s]  (baseline-FEASIBLE -> ASSIGNMENT lever, not infeasibility)
+E321(i=83.1) L97(i=83.0): baseline=1kg sweep=n/a [159+0 tries,227s]  (baseline-FEASIBLE -> ASSIGNMENT lever, not infeasibility)
+E352(i=78.5) L149(i=77.6): baseline=1kg sweep=n/a [165+0 tries,238s]  (baseline-FEASIBLE -> ASSIGNMENT lever, not infeasibility)
+E367(i=74.2) L5(i=73.4): baseline=FAIL sweep=FAIL [240+737 tries,842s]  (infeasible even with free raan/argp)
+==============================================================================
+
+##############################################################################
+# FINAL VERDICT
+##############################################################################
+# (1) Phase A1 gate: 5/5 reproduced with full sweep -> PASS
+# (2) Phase A2: with raan=argp=0, FAILS on [] (these are the high-incl pairs); the bank PROVABLY used nonzero raan (E-576: E252 raan=270, E100 raan=90).
+# (3) VERDICT: MIXED. 4 stranded pairs are baseline-feasible (ASSIGNMENT lever); 0 unlocked by raan; the rest infeasible even with free DoF.
+# Script: scripts/ch1_e577_raan_verdict.py
+# Log:    runs/ch1/83_e577_raan_verdict.log
+[phase B wall 1905s]
