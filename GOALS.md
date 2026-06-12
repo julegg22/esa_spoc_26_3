@@ -11,18 +11,21 @@ fork this file. `META.md` should remain unchanged.
 
 ## 1. Root goal
 
-**Reach rank-3 (top-3) standing on every *regular* SpOC4 instance by
-2026-06-30 AoE.**
+**Maximize the overall (global) SpOC4 score by 2026-06-30 AoE.**
 
-User directive 2026-05-18: the target is competitive (rank-3-or-better)
-standing on **each** of the six regular instances — Ch1 `matching-i`,
-`matching-ii`, `trajectory-matching` and Ch2 `small`, `medium`,
-`large`. Ch3 (`tie-breaker`) is **deferred** — addressed only after
-the regular instances are secured, and primarily because the global
-tie-break uses it. This supersedes the prior "top-3 *aggregate*"
-framing (kept in git history); a per-instance rank-3 portfolio
-dominates the aggregate anyway since each scoring instance contributes.
-Late submissions (after 2026-06-30 AoE) don't count.
+User directive 2026-06-11: the target is the best achievable **global
+score** = sum of points over all six regular instances, where each
+instance awards (11 − rank) × weight for ranks 1–10 (weights in §2:
+easy ×1, medium ×4/3, hard ×(4/3)² ≈ 1.78). This supersedes the
+2026-05-18 "rank-3 on each instance" framing (kept in git history).
+Consequences: (a) every rank step inside the top-10 has value — a
+hard-instance rank 7→4 (+5.33 pts) outweighs an easy-instance 5→4
+(+1 pt); (b) all time resources (analytics, development, compute) are
+priced by expected **points** per invested hour; (c) unsubmitted banks
+score zero, so submission timing is part of the optimization —
+submissions remain user-only (§4). Ch3 (`tie-breaker`) stays deferred:
+it only breaks global ties. Late submissions (after 2026-06-30 AoE)
+don't count.
 
 The current rank-3 cutoff per instance (live leaderboard, read-only
 GraphQL `https://api.optimize.esa.int/graphql/`; snapshot
