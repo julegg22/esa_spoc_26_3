@@ -74,6 +74,25 @@ and directly optimizes the true objective — the one principled, untried
 attack. Tractability requires neighbor-list-restricted moves + windowed
 re-walk (full O(n) suffix re-walk per move is too costly at n=1051).
 
+## Family 4 — monotone single-node Or-opt (E-577) → bank is a LOCAL OPTIMUM
+
+Built the isolated lever: monotone Or-opt on the REALIZED makespan
+(neighbor-restricted single-node relocation, long-leg targets per E-041,
+screen by local tof-delta then VERIFY by full chrono re-walk, accept only
+strict feasible improvements — cannot diverge). One pass screened **26,347**
+improving relocations; **every one FAILED re-walk verification** → the 1048
+bank is an **Or-opt local optimum under realized makespan**. A locally
+cheaper relocation is wiped out (or made infeasible) by the downstream
+epoch cascade — the epoch-shift trap at the single-move level. Single moves
+cannot escape the 1048 basin.
+
+**Consequence:** escaping requires a **multi-node window re-optimization**
+(destroy-and-repair LNS over a contiguous window, entry epoch fixed, window
+re-walked, spliced only if the realized makespan drops). This is the one
+remaining tractable, monotone, untried attack (E-578). 2-opt segment
+reversal is excluded — reversing travel direction perturbs epochs even
+more violently than relocation and will also find the bank locally optimal.
+
 ## Binary-threshold caveat (pricing)
 
 large is r2 at 1048.98 with r1=424.62, r3=1238.5 (O-016). **Only a feasible
