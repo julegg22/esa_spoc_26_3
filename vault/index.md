@@ -2,7 +2,7 @@
 id: ROOT
 type: root
 created: 2026-04-24T00:00:00+02:00
-goal: "Achieve top-3 aggregate standing on SpOC4 by 2026-06-30 AoE"
+goal: "Maximize total SpOC4 points (Σ (11−rank)×weight over the 6 mandatory instances) by 2026-06-30 AoE"
 deadline: 2026-06-30
 
 # Live campaign dashboard. Refresh leaderboard cutoffs via script from challenge Homepage.
@@ -10,12 +10,18 @@ deadline: 2026-06-30
 
 # SpOC4 campaign — root
 
-**Goal.** Achieve top-3 aggregate standing on SpOC4 by 2026-06-30 AoE.
+**Goal (revised 2026-06-11).** **Maximize total SpOC4 points** by
+2026-06-30 AoE — *not* a top-3-on-every-instance gate. Points =
+Σ over the 6 mandatory instances of **(11 − rank) × weight**, every
+top-10 rank counts. See [[sessions/S-2026-06-12-points-strategy-and-loop-operating-model|S-2026-06-12]]
+for the full reframe and the loop operating model.
 
 **Scoring recap.** Challenges 1 and 2 are mandatory; each has
 easy/medium/hard sub-instances with escalating point weights
-(×1, ×4/3, ×(4/3)²). Top 10 per instance score points. Challenge 3 is
-the tie-breaker. See `observations/` for the grounding notes.
+(×1, ×4/3, ×(4/3)²≈1.778). Top 10 per instance score points. Challenge 3
+is the tie-breaker. **Unsubmitted banks score ZERO — submission (still
+user-gated) is now a first-class, time-sensitive decision.** See
+`observations/` for the grounding notes.
 
 **Submission discipline.** The agent never writes to the internet.
 Solutions are produced as JSON artefacts under `solutions/upload/` and
@@ -27,30 +33,29 @@ the user uploads them manually via the Optimise web UI.
 - Challenge 2 — Keplerian Tomato TSP (mandatory) #ch2
 - Challenge 3 — Luna Tomato Advertising (tie-breaker) #ch3
 
-## Status — 2026-05-24
+## Status — 2026-06-12
 
-Ch1 trajectory breakthrough today: solve_arrival_dv eccentric-orbit
-bug found and fixed (see [[lessons/L-012-solver-assumption-audit-before-research-grade-verdict|L-012]],
-[[sessions/S-2026-05-24-eccentric-orbit-breakthrough|S-2026-05-24]],
-top-level `LESSONS-LEARNED.md`). Per-pair masses jumped 50-100× —
-(0,0) coplanar: 14.82 → 819 kg; GEO+eL=0.65: FAIL → 2037 kg.
-Production sweep with eccentric-aware solver pending (current
-implementation too slow at 15× original solver time; needs trimming).
+Banks (all valid in `solutions/upload/`, **all currently UNSUBMITTED =
+0 pts**; ranks vs live board). Detail + the strategy reframe in
+[[sessions/S-2026-06-12-points-strategy-and-loop-operating-model|S-2026-06-12]].
 
-**Realized (banked, valid artifacts in `solutions/upload/`):**
-Ch1 `matching-i` ≈ rank-6 (~5 pts), `matching-ii` ≈ rank-5 (~6 pts)
-→ **≈ 11 pts**. Ch1-matching line closed at the HiGHS ceiling
-([[takeaways/T-004-ch1-matching-ceiling-pivot|T-004]]). Ch1
-trajectory bank still at 14.82 kg pending sweep result. **Ch2 small
-banked at 142.92 d (vs R3 cutoff 111.76, ratio 1.279); Ch2 medium
-banked at 274.52 d — projects R1 on the 2026-05-18 leaderboard
-(R1=298.56, 8% lead)**. Ch2 large attempted via hierarchical
-decomposition (C-019); Ch3 banked at 50 spacecraft (MSE=0.04982).
+| Instance | Bank | Rank | Pts |
+|---|---|---|---|
+| Ch2 large (H) | 1048.98 d | 2 | 16.00 |
+| Ch2 medium (M) | 228.97 d | 4 | 9.33 |
+| Ch1 trajectory (H) | 236,420 kg | 6 | 8.89 |
+| Ch1 matching-ii (M?) | 72,200 | 7 | 5.33 |
+| Ch2 small (E) | 116.37 d | 6 | 5.00 |
+| Ch1 matching-i (E) | 33,338 | 9 | 2.00 |
+| **TOTAL if submitted** | | | **≈46.55** |
 
-**Ch1 trajectory path forward**: optimize eccentric-arrival solver
-speed (trim seeds 8→2, max_nfev 50→20), run production sweep on top
-2000 Hohmann-theoretical pairs, Hungarian-assign 400, bank. Expected
-mass: 200,000-500,000 kg (rank 3-5 territory).
+**Dominant action:** submit the 6 banks (user-gated) — ~46.55 pts that
+read as 0 until uploaded. **Cheap-improver queue is empty** across all
+instances; remaining levers are multi-hour new-code builds (now
+authorized under full compute discretion). **In flight:** E-563 medium
+epoch-aware cluster-decomposition build (transfers the large
+2225→1049d method to medium), candidate-to-/tmp, guard-bank if feasibly
+< 228.97d.
 
 ## Concepts banked this campaign
 
