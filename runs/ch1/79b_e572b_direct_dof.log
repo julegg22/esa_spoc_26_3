@@ -1,0 +1,16 @@
+[E-572b] 2 control + 8 moderate-incl pairs
+control: [(0, 0), (283, 41)] moderate: [(305, 99), (332, 4), (132, 4), (228, 70), (144, 48), (359, 5), (107, 24), (370, 149)]
+
+[POST-RUN NOTE — multiprocessing Pool crashed; ran controls in-process instead]
+eval_pair(0,0) [E0->L0, banked-feasible 819kg]: base=FAIL err=10,964 km, sweep=FAIL err=27,580 km
+  => solve_transfer_direct cannot reproduce the banked transfer with modest grids.
+Cross-engine positive control on E0->L0 (the bank IS feasible at 819 kg here):
+  try_transfer 6D-DC nfev=100, 7x8x8 grid : FAIL
+  solve_transfer_direct (raan=argp=0)     : FAIL (best closest-approach err 4 m, just outside gate)
+  solve_transfer_dc heavy (12 ea x 4 t0)  : FAIL err=3144 km
+  solve_transfer_back (12 seed x 4 tof)   : FAIL err=0 m (reaches Earth radius, fails final match/DV gate)
+Banked E0 row: T1=2.53, T2=0.0 (split=1.0, single-burn-to-LOI), tof=11.0d, fitness=-819.4
+CONCLUSION: every quick solver entry point fails its own positive control, so the
+E-572/E-572b feasibility test is CONFOUNDED and cannot certify or refute the
+RAAN/argp/split DoF lead. The bank was built by heavy multi-start runs not
+cheaply reproducible here.

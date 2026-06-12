@@ -1,0 +1,22 @@
+[E-572] 8 moderate-incl pairs to test (MAX_NFEV=40):
+   E305(i=60.1) L99(i=55.0)
+   E332(i=66.1) L4(i=70.0)
+   E132(i=69.1) L4(i=70.0)
+   E228(i=71.1) L70(i=71.6)
+   E144(i=73.1) L48(i=73.0)
+   E359(i=74.3) L5(i=73.4)
+   E107(i=75.7) L24(i=75.6)
+   E370(i=77.9) L149(i=77.6)
+
+========================================================================
+E305(i=60.1,e=0.018) L99(i=55.0,e=0.001): base=FAIL sweep=FAIL [374s,27+90 calls]
+E332(i=66.1,e=0.022) L4(i=70.0,e=0.015): base=FAIL sweep=FAIL [370s,27+90 calls]
+E132(i=69.1,e=0.051) L4(i=70.0,e=0.015): base=FAIL sweep=FAIL [377s,27+90 calls]
+E228(i=71.1,e=0.001) L70(i=71.6,e=0.021): base=FAIL sweep=FAIL [261s,27+90 calls]
+E144(i=73.1,e=0.001) L48(i=73.0,e=0.003): base=FAIL sweep=FAIL [363s,27+90 calls]
+E359(i=74.3,e=0.025) L5(i=73.4,e=0.022): base=FAIL sweep=FAIL [350s,27+90 calls]
+E107(i=75.7,e=0.098) L24(i=75.6,e=0.006): base=FAIL sweep=FAIL [378s,27+90 calls]
+E370(i=77.9,e=0.009) L149(i=77.6,e=0.000): base=FAIL sweep=FAIL [258s,27+90 calls]
+========================================================================
+[VERDICT] REFUTED: 0/8 unlocked. Free DoF do not rescue these pairs at this grid resolution.
+[total wall 1377s]
