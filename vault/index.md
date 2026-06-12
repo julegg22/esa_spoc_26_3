@@ -44,12 +44,12 @@ Banks (all valid in `solutions/upload/`, **all currently UNSUBMITTED =
 | Ch2 large (H) | 1048.98 d | 2 | 16.00 |
 | Ch2 medium (M) | **192.90 d** | **1** | **13.33** |
 | Ch1 trajectory (H) | 236,420 kg | 6 | 8.89 |
-| Ch1 matching-ii (M?) | 72,204 | 7 | 5.33 |
+| Ch1 matching-ii (E ×1) | 72,204 | 7 | 4.00 |
 | Ch2 small (E) | 116.37 d | 6 | 5.00 |
 | Ch1 matching-i (E) | 33,338 | 9 | 2.00 |
-| **TOTAL if submitted** | | | **≈50.5** |
+| **TOTAL if submitted** | | | **≈49.2** |
 
-_(ranks vs live board O-016 2026-06-12; medium banked to rank 1 via E-040 ultrafine re-time.)_
+_(ranks vs live board O-016 2026-06-12; medium banked to rank 1 via E-040 ultrafine re-time. matching-ii confirmed A_1 easy ×1 per O-001.)_
 
 **Dominant action:** submit the 6 banks (user-gated) — ~46.55 pts that
 read as 0 until uploaded. **Cheap-improver queue is empty** across all

@@ -2,7 +2,7 @@
 
 Updated: 2026-06-12 12:35 (update this timestamp every write)
 
-**★ CAMPAIGN OBJECTIVE (user, 2026-06-11 17:50): MAXIMIZE OVERALL SpOC SCORE — replaces the "rank ≤3 on all" target.** Official scoring (reference/SpOC4/README.md §Scoring): global score = Ch1 local + Ch2 local; each challenge has 3 problems; top-10 ranks earn points (11−rank)×weight with **easy ×1, medium ×4/3≈1.333, hard ×(4/3)²≈1.778**. Mapping: Ch1 matching-i=easy / matching-ii=medium / trajectory=HARD; Ch2 small=easy / medium=medium / large=HARD. Ch3 (Luna Tomato Advertising) = TIE-BREAKER ONLY. Max/problem: easy 10, med 13.33, hard 17.78; max/challenge 41.11. **ROI now = expected POINTS per invested hour (analytics+dev+compute); every rank step in top-10 counts (rank 7→4 on a hard = +5.33 pts), not just podium. Unsubmitted banks score ZERO → submission (timing) is now a first-class decision; still escalate actual submissions to user.**
+**★ CAMPAIGN OBJECTIVE (user, 2026-06-11 17:50): MAXIMIZE OVERALL SpOC SCORE — replaces the "rank ≤3 on all" target.** Official scoring (reference/SpOC4/README.md §Scoring): global score = Ch1 local + Ch2 local; each challenge has 3 problems; top-10 ranks earn points (11−rank)×weight with **easy ×1, medium ×4/3≈1.333, hard ×(4/3)²≈1.778**. Mapping (P4 RESOLVED 2026-06-12 via O-001 API category field): Ch1 matching-i=**easy ×1 (A_1)** / matching-ii=**easy ×1 (A_1, NOT medium!)** / trajectory=HARD (A_3); Ch2 small=easy (A_1) / medium=medium (A_2 ×4/3) / large=HARD (A_3). Ch1 has only Beginner(×2)+Advanced tiers — no medium. Ch3 (Luna Tomato Advertising) = TIE-BREAKER ONLY. Max/problem: easy 10, med 13.33, hard 17.78; max/challenge 41.11. **ROI now = expected POINTS per invested hour (analytics+dev+compute); every rank step in top-10 counts (rank 7→4 on a hard = +5.33 pts), not just podium. Unsubmitted banks score ZERO → submission (timing) is now a first-class decision; still escalate actual submissions to user.**
 
 **STANDING DIRECTIVE (user, 2026-06-12 ~09:10): FULL COMPUTE-RESOURCE DISCRETION — kill/reallocate/relaunch any process freely to best advance the rankings; NO per-kill escalation. The 2026-06-11 17:00 "no kills, let processes finish" rule was CONTEXTUAL, now SUPERSEDED.** (Guarded banking + submission gate UNCHANGED: still escalate only actual submissions and non-compute destructive actions.) See memory [[feedback-compute-resource-discretion]]. Manage the 4 cores autonomously: reap deadlocked/low-ROI runs, launch higher-EV work.
 
@@ -193,10 +193,10 @@ Deadline: 2026-06-30 AoE (20 days). Nothing submitted to leaderboard yet.
 | Ch2 large (H) | 1048.9786 d | **rank 2** | 16.00 | r1=424.62 (≈halve mk — LKH rebuild, P3) |
 | Ch2 medium (M) | **192.9002 d** | **rank 1** | **13.33** | **TOP — E-040 ultrafine re-time −2.87d, BEATS r1 by 2.78d. No higher rank.** |
 | Ch1 trajectory (H) | 236,420.5 kg | rank 6 | 8.89 | r5=372,729 (+136k; WSB-unreachable) |
-| Ch1 matching-ii (M?) | 72,204.293 | rank 7 | 5.33 | r6=72,327.43 (+123; LNS DONE +3.565, plateaued → needs tighter ILP/Gurobi per E-039) |
+| Ch1 matching-ii (E ×1) | 72,204.293 | rank 7 | 4.00 | r6=72,327.43 (+123; LNS DONE +3.565, plateaued → needs tighter ILP/Gurobi per E-039) |
 | Ch2 small (E) | 116.3738 d | rank 6 | 5.00 | r5=111.7875 (−4.586d; idle-squeeze P2; perm optimal per E-038) |
 | Ch1 matching-i (E) | 33,338.184 | rank 9 | 2.00 | r8=33,364.5 (+26.3); r5 +89; packed ladder → exact-ILP push (E-039) |
-| **TOTAL if all submitted** | | | **≈50.5** | (currently 0; medium now r1 +1.33 from E-040; m-ii weight P4 unresolved — ×1 variant total ~49.2) |
+| **TOTAL if all submitted** | | | **≈49.2** | (currently 0; medium now r1 +1.33 from E-040; **P4 RESOLVED: matching-ii is A_1 easy ×1 per O-001, NOT ×4/3 → r7=4.0 not 5.33**) |
 
 All 6 bank files officially feasible (Ch2 viols 0.0; Ch1 trajectory valid, 301 active). Backups in /tmp/bank_bak/ + *.bak.* alongside each.
 
