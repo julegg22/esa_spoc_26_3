@@ -3,7 +3,7 @@ id: E-038
 type: experiment
 tags: [experiment, ch2, small, kttsp, epoch-aware, cluster-decomposition, refuted]
 date: 2026-06-12
-status: PARTIAL — basic epoch-aware interior reorder is NULL (big=0, 116.3738d holds); randomized comp0 relocate-perturbation (phase-2) IN FLIGHT (agent a6d7dbed)
+status: REFUTED — basic reorder NULL (big=0); phase-2 perturbation HUNG (DP/evaluator on degenerate perm) + is dominated by solve_open_path; bank 116.3738d holds
 bank_before: 116.3738
 bank_after: 116.3738
 instance: small.kttsp (easy, n~49)
@@ -39,15 +39,23 @@ trap), so epoch-aware re-timing had large slack to recover. Small has no
 such slack — its evaluator was already epoch-faithful. **No proxy gap →
 no epoch-aware lever.**
 
-## Phase-2 (in flight)
+## Phase-2 (REFUTED — hung + dominated)
 
-The script's phase-2 (`E564_PHASE2_S` budget) is a **different** lever:
-budget-bounded randomized **relocate-perturbation** of comp0-interior
-nodes, each followed by epoch-aware reorder + DP-time, keeping any
-feasible improvement. This reaches space the deterministic basic reorder
-(big=0) cannot. Agent a6d7dbed launched a 90s probe; a full-budget run is
-the real test. Candidate-to-/tmp only; the loop guard-banks if it beats
-116.3738d feasibly. Verdict pending.
+The script's phase-2 (`E564_PHASE2_S`) is randomized **relocate-perturbation**
+of comp0-interior nodes + DP re-time, keeping improvements. A full-budget
+run (`PHASE2_S=9000`, pid 97493) **HUNG**: log froze at "iter 1" for 36 min
+at 99% CPU with zero `[P2]` output (phase-2 tries are fast and print every
+2000 → silence = stuck on a single `dp_time_perm`/`kt.fitness` call for a
+degenerate perturbed perm). Same class as the E-554 c2 DP spin. Reaped.
+
+Beyond the hang, phase-2 is **dominated by design**: each phase-2 try just
+relocates a node and re-times, but the deterministic epoch-aware step
+already runs `solve_open_path` (a CP/OR-tools open-path optimizer) on every
+comp interior — a *stronger* optimizer than random relocate. So random
+perturbation can at best rediscover the interior order `solve_open_path`
+already found (`big=0` on small). To be viable it would need (a) a per-try
+wall-clock watchdog or finite-cost pre-filter to survive degenerate perms,
+AND (b) a reason to beat solve_open_path, which it doesn't have. Shelved.
 
 ## Lesson (so far)
 
@@ -55,8 +63,13 @@ The **basic** epoch-aware interior-reorder lever only pays where the
 incumbent was built on a fixed-reference-time proxy. Small's DP-on-fine
 bank is already epoch-faithful, so the deterministic reorder is null —
 unlike medium/large, there is no proxy slack to recover. Moving small
-r6→r5 (gap ~4.6d to r5≈111.79) therefore needs a **stronger global
-search** (phase-2 perturbation, in flight) or a **topology change**
+r6→r5 (gap ~4.6d to r5≈111.79) therefore needs a **topology change**
 (comp0 is force-split into 24+16 runs by exception bridges; a different
-split or exception allocation is untried), not deterministic interior
-reordering.
+split or exception allocation is untried) — NOT interior reordering or
+relocate-perturbation, both of which are already covered by
+`solve_open_path`. A topology search is a larger build with uncertain EV
+for a ×1-weight near-floor instance, so it is **low priority** vs.
+higher-weight levers. Same caveat applies to medium (its interiors are
+also solve_open_path-optimal), so a medium relocate-perturbation phase-2
+would be **dominated too** — the real untried medium lever is likewise
+topology, not interior search.
