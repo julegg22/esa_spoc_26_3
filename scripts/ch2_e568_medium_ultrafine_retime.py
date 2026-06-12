@@ -23,10 +23,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, f"{ROOT}/src")
 from esa_spoc_26.ch2_kttsp import KTTSP  # noqa: E402
 
+PROB = os.environ.get("E568_PROB", "medium")  # medium | small | large
+_KFILE = {"medium": "medium", "small": "easy", "large": "hard"}[PROB]
+_BFILE = {"medium": "medium", "small": "small", "large": "large"}[PROB]
 INST = (f"{ROOT}/reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
-        f"Salesperson Problem/problems/medium.kttsp")
-BANK = f"{ROOT}/solutions/upload/medium.json"
-OUT = "/tmp/ch2_medium_ultrafine_candidate.json"
+        f"Salesperson Problem/problems/{_KFILE}.kttsp")
+BANK = f"{ROOT}/solutions/upload/{_BFILE}.json"
+OUT = f"/tmp/ch2_{PROB}_ultrafine_candidate.json"
 
 TQ = float(os.environ.get("E568_TQ", "0.05"))
 N_TOF = int(os.environ.get("E568_NTOF", "320"))
@@ -186,7 +189,7 @@ def main():
           f"delta={mk-bank_mk:+.4f}", flush=True)
 
     json.dump([{"decisionVector": x,
-                "problem": "medium",
+                "problem": PROB,
                 "challenge": "spoc-4-keplerian-tomato-traveling-salesperson"}],
               open(OUT, "w"))
     print(f"[OUT] candidate written to {OUT} "
