@@ -197,7 +197,7 @@ def main():
             else:
                 print(f"[it {it}] accept W={W}@{i} mk={mk2:.4f} acc={acc} "
                       f"({time.time()-t0:.0f}s)", flush=True)
-        if it % 100 == 0:
+        if it % 25 == 0:
             print(f"[it {it}] cur mk={cur_mk:.4f} best={best_mk:.4f} acc={acc} "
                   f"({time.time()-t0:.0f}s)", flush=True)
 
