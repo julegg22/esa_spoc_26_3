@@ -1,0 +1,19 @@
+E-514 GA-Lambert: bank=142.8913, R3=111.76, R1=101.65
+Islands=8, pop_size=30, T_max=3600s
+
+Generating OR-Tools seeds...
+  Got 7 OR-Tools seeds
+  [is=0] init pop=30 feas=1 best=142.89
+  [is=1] init pop=30 feas=1 best=142.89
+  [is=2] init pop=30 feas=1 best=142.89
+  [is=5] init pop=30 feas=1 best=142.89
+  [is=6] init pop=30 feas=1 best=142.89
+  [is=3] init pop=30 feas=1 best=142.89
+  [is=7] init pop=30 feas=1 best=142.89
+  [is=4] init pop=30 feas=1 best=142.89
+  [is=2 gen=100 t=2014s] best=142.89 avg=142.89 feas/pop=26/30 all_seen=1
+  [is=5 gen=100 t=2236s] best=142.89 avg=142.89 feas/pop=21/30 all_seen=1
+  [is=0 gen=100 t=2548s] best=142.89 avg=142.89 feas/pop=14/30 all_seen=1
+  [is=6 gen=100 t=2680s] best=142.89 avg=142.89 feas/pop=13/30 all_seen=1
+  [is=7 gen=100 t=2781s] best=142.89 avg=142.89 feas/pop=4/30 all_seen=1
+  [is=1 gen=100 t=2889s] best=142.89 avg=142.89 feas/pop=1/30 all_seen=1

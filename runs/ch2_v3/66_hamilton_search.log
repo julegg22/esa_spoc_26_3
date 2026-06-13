@@ -1,0 +1,13 @@
+Loading cheap-arc graph from /tmp/large_cheap_arc_graph_knn80.pkl
+Loaded: 25493 cheap edges, avg out-degree 24.3
+Trying 30 starts with highest out-degree
+  start=37: visited=525/1051, n_exc=5, complete=False
+  start=106: visited=530/1051, n_exc=5, complete=False
+
+Hamilton search done in 181s
+BEST: start=106, visited=530/1051, n_exc=5
+{
+  "status": "incomplete",
+  "best_n": 530,
+  "best_start": 106
+}

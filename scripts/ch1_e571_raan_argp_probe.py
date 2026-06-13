@@ -79,25 +79,24 @@ def main():
     unusedE = [k for k in range(len(earth)) if k not in usedE]
     unusedL = [k for k in range(len(moon)) if k not in usedL]
     # highest-inclination unused Earth orbits = the hard, stranded ones
-    hiE = sorted(unusedE, key=lambda k: -earth[k, 2])[:4]
+    hiE = sorted(unusedE, key=lambda k: -earth[k, 2])[:3]
     # pair each with the unused Moon orbits of nearest inclination (a few)
     print(f"[probe] {len(unusedE)} unused Earth, {len(unusedL)} unused Moon. "
           f"testing hi-incl Earth {hiE}", flush=True)
 
     BASE_ORIENT = [(0.0, 0.0)]
+    # Relative RAAN is the dominant plane DoF -> sweep earth RAAN, moon fixed.
     SWEEP_E = list(itertools.product(
-        np.linspace(0, 2 * np.pi, 6, endpoint=False),
-        np.linspace(0, 2 * np.pi, 2, endpoint=False)))   # 12 earth orientations
-    SWEEP_L = list(itertools.product(
-        np.linspace(0, 2 * np.pi, 3, endpoint=False), [0.0]))  # 3 moon orientations
-    TOFS = (8.0, 12.0, 18.0)
-    N_EA = 3
+        np.linspace(0, 2 * np.pi, 6, endpoint=False), [0.0]))  # 6 orientations
+    SWEEP_L = [(0.0, 0.0)]
+    TOFS = (10.0, 16.0)
+    N_EA = 2
 
     any_unlocked = False
     for idE in hiE:
         iE_deg = np.degrees(earth[idE, 2])
         # 3 unused moons closest in inclination
-        cand = sorted(unusedL, key=lambda k: abs(moon[k, 2] - earth[idE, 2]))[:3]
+        cand = sorted(unusedL, key=lambda k: abs(moon[k, 2] - earth[idE, 2]))[:2]
         for idL in cand:
             iL_deg = np.degrees(moon[idL, 2])
             t0 = time.time()

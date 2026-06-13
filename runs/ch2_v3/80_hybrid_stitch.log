@@ -1,0 +1,7 @@
+Path comp: 2 (601 nodes)
+Cycle comps: [0, 1, 3] sizes [150, 150, 150]
+
+Search wall: 40s
+{
+  "status": "no_feasible"
+}

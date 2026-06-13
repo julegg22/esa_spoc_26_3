@@ -1,0 +1,15 @@
+[BASE] bank mk=192.9002 | grid TQ=0.025 N_TOF=639 T=20000 workers=2
+  [SCAN] 20/180 legs (751s)
+  [SCAN] 40/180 legs (2823s)
+  [SCAN] 60/180 legs (6373s)
+  [SCAN] 80/180 legs (8264s)
+  [SCAN] 100/180 legs (9975s)
+  [SCAN] 120/180 legs (13624s)
+  [SCAN] 140/180 legs (15326s)
+  [SCAN] 160/180 legs (16207s)
+  [SCAN] 180/180 legs (20539s)
+[SCAN] done in 20539s
+[DP] forward DP...
+[DP] sink bucket=7565 (189.12d) exc=5 (0s)
+[VERDICT] ultrafine mk=189.1000 feas=True viols=[0, 0, 0, 0] | bank=192.9002 delta=-3.8001
+[OUT] candidate written to /tmp/ch2_medium_ultrafine_candidate.json (BEATS BANK)

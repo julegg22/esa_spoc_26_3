@@ -1,0 +1,96 @@
+[BASE] mk=2182.0087 feas=True exc=5 viols=[0, 0, 0, 0]
+
+========== EPOCH-AWARE ITERATION 0 ==========
+[oa] n=150 start=492 end=51
+    cost row 100/150 (16s)
+  cost 150x150: forbidden(BIG)=479 (2.1%) penalty_edges=2 wall=24s
+  [oa] solved 240s obj=18103 path_cost~18.1d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segA] n=267 start=2 end=557
+    cost row 100/267 (14s)
+    cost row 200/267 (25s)
+  cost 267x267: forbidden(BIG)=41889 (58.8%) penalty_edges=10 wall=30s
+  [segA] solved 240s obj=191817 path_cost~191.8d big_jumps=0 penalty_edges_used=0 len=267 start=0 end=266
+[ob] n=150 start=462 end=673
+    cost row 100/150 (15s)
+  cost 150x150: forbidden(BIG)=400 (1.8%) penalty_edges=2 wall=23s
+  [ob] solved 240s obj=15490 path_cost~15.5d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segB] n=241 start=543 end=450
+    cost row 100/241 (6s)
+    cost row 200/241 (10s)
+  cost 241x241: forbidden(BIG)=45189 (77.8%) penalty_edges=3 wall=13s
+  [segB] solved 240s obj=257352 path_cost~257.4d big_jumps=0 penalty_edges_used=0 len=241 start=0 end=240
+[oc] n=150 start=69 end=267
+    cost row 100/150 (18s)
+  cost 150x150: forbidden(BIG)=551 (2.4%) penalty_edges=3 wall=28s
+  [oc] solved 240s obj=16294 path_cost~16.3d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden(BIG)=2777 (32.1%) penalty_edges=0 wall=5s
+  [segC] solved 240s obj=82509 path_cost~82.5d big_jumps=0 penalty_edges_used=0 len=93 start=0 end=92
+[iter 0] mk=1957.0060 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 0] tof: sum=1957.0 max=18.49 >3d=185 >5d=36 sum>3d=925.4
+[iter 0] NEW BEST mk=1957.0060
+
+========== EPOCH-AWARE ITERATION 1 ==========
+[oa] n=150 start=492 end=51
+    cost row 100/150 (17s)
+  cost 150x150: forbidden(BIG)=479 (2.1%) penalty_edges=3 wall=25s
+  [oa] solved 240s obj=18103 path_cost~18.1d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segA] n=267 start=2 end=557
+    cost row 100/267 (14s)
+    cost row 200/267 (25s)
+  cost 267x267: forbidden(BIG)=41889 (58.8%) penalty_edges=8 wall=30s
+  [segA] solved 240s obj=222729 path_cost~222.7d big_jumps=0 penalty_edges_used=0 len=267 start=0 end=266
+[ob] n=150 start=462 end=673
+    cost row 100/150 (15s)
+  cost 150x150: forbidden(BIG)=400 (1.8%) penalty_edges=2 wall=23s
+  [ob] solved 240s obj=16093 path_cost~16.1d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segB] n=241 start=543 end=450
+    cost row 100/241 (6s)
+    cost row 200/241 (10s)
+  cost 241x241: forbidden(BIG)=45189 (77.8%) penalty_edges=5 wall=14s
+  [segB] solved 240s obj=253938 path_cost~253.9d big_jumps=0 penalty_edges_used=0 len=241 start=0 end=240
+[oc] n=150 start=69 end=267
+    cost row 100/150 (16s)
+  cost 150x150: forbidden(BIG)=551 (2.4%) penalty_edges=3 wall=24s
+  [oc] solved 240s obj=17098 path_cost~17.1d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden(BIG)=2777 (32.1%) penalty_edges=0 wall=5s
+  [segC] solved 240s obj=96359 path_cost~96.4d big_jumps=0 penalty_edges_used=0 len=93 start=0 end=92
+[iter 1] mk=1732.2706 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 1] tof: sum=1732.3 max=28.11 >3d=133 >5d=23 sum>3d=663.8
+[iter 1] NEW BEST mk=1732.2706
+
+========== EPOCH-AWARE ITERATION 2 ==========
+[oa] n=150 start=492 end=51
+    cost row 100/150 (19s)
+  cost 150x150: forbidden(BIG)=479 (2.1%) penalty_edges=2 wall=28s
+  [oa] solved 240s obj=16495 path_cost~16.5d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segA] n=267 start=2 end=557
+    cost row 100/267 (14s)
+    cost row 200/267 (25s)
+  cost 267x267: forbidden(BIG)=41889 (58.8%) penalty_edges=6 wall=30s
+  [segA] solved 240s obj=187400 path_cost~187.4d big_jumps=0 penalty_edges_used=0 len=267 start=0 end=266
+[ob] n=150 start=462 end=673
+    cost row 100/150 (14s)
+  cost 150x150: forbidden(BIG)=400 (1.8%) penalty_edges=0 wall=22s
+  [ob] solved 240s obj=16294 path_cost~16.3d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segB] n=241 start=543 end=450
+    cost row 100/241 (6s)
+    cost row 200/241 (9s)
+  cost 241x241: forbidden(BIG)=45189 (77.8%) penalty_edges=4 wall=13s
+  [segB] solved 240s obj=266989 path_cost~267.0d big_jumps=0 penalty_edges_used=0 len=241 start=0 end=240
+[oc] n=150 start=69 end=267
+    cost row 100/150 (16s)
+  cost 150x150: forbidden(BIG)=551 (2.4%) penalty_edges=1 wall=24s
+  [oc] solved 240s obj=17098 path_cost~17.1d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden(BIG)=2777 (32.1%) penalty_edges=0 wall=5s
+  [segC] solved 240s obj=95756 path_cost~95.8d big_jumps=0 penalty_edges_used=0 len=93 start=0 end=92
+[iter 2] mk=1536.3953 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 2] tof: sum=1536.4 max=24.23 >3d=102 >5d=23 sum>3d=495.2
+[iter 2] NEW BEST mk=1536.3953
+
+[FINAL] best_mk=1536.3953 (current bank 2182.0087)
+[REVAL] mk=1536.3953 feas=True viols=[0, 0, 0, 0] covered=True
+[BANK] backed up -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json.bak.e562
+>>> BANKED large mk=1536.3953d -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json

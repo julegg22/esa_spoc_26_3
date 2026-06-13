@@ -1,0 +1,12 @@
+Loaded: n=1051, 59539 cheap edges
+Components: [601, 150, 150, 150]
+  comp 2 (601): OR-tools path uses 1 INF arcs (no Hamilton)
+  comp 0 (150): Hamilton FOUND in 300s, total intra dv=5821
+  comp 1 (150): Hamilton FOUND in 300s, total intra dv=5455
+  comp 3 (150): Hamilton FOUND in 300s, total intra dv=5006
+{
+  "status": "or_tools_incomplete",
+  "failed_components": [
+    2
+  ]
+}

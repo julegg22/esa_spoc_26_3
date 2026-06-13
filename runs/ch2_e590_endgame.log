@@ -1,0 +1,7 @@
+[E-590] bank mk=932.5304 feas=True viols=[0, 0, 0, 0]
+[E-590] endgame: 93 nodes, entry epoch 818.7824, bank terminus 932.5304 (span 113.7480d)
+[E-590] bank endgame order: greedy term=943.0492  retime term=936.3584  (true bank 932.5304)
+[E-590] r1 oropt L1 1->36 term=942.0834
+[E-590] r1 oropt L1 2->51 term=942.0667
+[E-590] *** new best RETIME order term=936.3573 (bank 932.5304)
+[E-590] r1 oropt L1 35->46 term=940.1683

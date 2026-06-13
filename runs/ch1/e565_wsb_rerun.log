@@ -1,0 +1,49 @@
+pair (118,171): aE=7.837e+06 eE=0.023 iE=0.440 | aL=5.076e+06 eL=0.621 iL=0.552
+baseline (bank): 949.0 kg, dv=3777.0 m/s
+(phase A loaded from cache: 91 candidates)
+
+=== Phase B3: proxy-grid + exact-objective NM, 12 seeds ===
+ [0] no grid point survives
+ [1] ea=5.50 t0=3.40 rapo=1.50: grid best |dv1|=78 m/s peri=29821km v_rel=1179 E2=530278 proxy_extra=1753 (1s)
+     NM: dv_total=3451 m/s (|dv1|=81) [20s, 220 evals]
+     arrival: in_window=244 rejects={'window': 956, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=1114.2 kg dv=3448 (dv0=2894 dv1=81 dv2=473) dt=97.8d r_arr=1937km v_rel=2493 E2=575455 ***
+ [2] ea=5.50 t0=3.40 rapo=1.35: grid best |dv1|=169 m/s peri=19948km v_rel=992 E2=246559 proxy_extra=1257 (1s)
+     NM: dv_total=3986 m/s (|dv1|=163) [16s, 220 evals]
+     arrival: in_window=204 rejects={'window': 996, 'arr_none': 30, 'fit': 0}
+     *** VALID mass=853.4 kg dv=3986 (dv0=2891 dv1=163 dv2=931) dt=104.0d r_arr=6311km v_rel=1414 E2=222305 ***
+ [3] ea=5.89 t0=6.23 rapo=1.50: grid best |dv1|=180 m/s peri=18666km v_rel=903 E2=144705 proxy_extra=1135 (1s)
+     NM: dv_total=3695 m/s (|dv1|=187) [17s, 220 evals]
+     arrival: in_window=173 rejects={'window': 1027, 'arr_none': 14, 'fit': 0}
+     *** VALID mass=995.2 kg dv=3682 (dv0=2884 dv1=187 dv2=611) dt=104.8d r_arr=5775km v_rel=1369 E2=87541 ***
+ [4] ea=5.11 t0=3.40 rapo=1.50: grid best |dv1|=161 m/s peri=12648km v_rel=2322 E2=2308404 proxy_extra=2253 (1s)
+     NM: dv_total=5377 m/s (|dv1|=163) [16s, 220 evals]
+     arrival: in_window=146 rejects={'window': 1054, 'arr_none': 22, 'fit': 0}
+     *** VALID mass=362.1 kg dv=5361 (dv0=2910 dv1=163 dv2=2288) dt=130.0d r_arr=6925km v_rel=2459 E2=2315190 ***
+ [5] ea=1.18 t0=4.53 rapo=1.50: grid best |dv1|=79 m/s peri=21714km v_rel=2251 E2=2306812 proxy_extra=2174 (1s)
+     NM: dv_total=4629 m/s (|dv1|=80) [17s, 220 evals]
+     arrival: in_window=151 rejects={'window': 1049, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=618.6 kg dv=4567 (dv0=2910 dv1=80 dv2=1577) dt=95.8d r_arr=4870km v_rel=2568 E2=2289470 ***
+ [6] ea=5.89 t0=2.83 rapo=1.50: grid best |dv1|=78 m/s peri=30205km v_rel=1743 E2=1356483 proxy_extra=1799 (1s)
+     NM: dv_total=3720 m/s (|dv1|=77) [17s, 191 evals]
+     arrival: in_window=195 rejects={'window': 1005, 'arr_none': 0, 'fit': 49}
+ [7] ea=5.11 t0=0.00 rapo=1.50: grid best |dv1|=193 m/s peri=28812km v_rel=1801 E2=1452355 proxy_extra=2203 (1s)
+     NM: dv_total=4272 m/s (|dv1|=194) [25s, 220 evals]
+     arrival: in_window=186 rejects={'window': 1014, 'arr_none': 5, 'fit': 0}
+     *** VALID mass=765.8 kg dv=4190 (dv0=2910 dv1=194 dv2=1086) dt=90.5d r_arr=3526km v_rel=2425 E2=1548801 ***
+ [8] no grid point survives
+ [9] ea=0.79 t0=1.13 rapo=1.20: grid best |dv1|=169 m/s peri=13869km v_rel=2306 E2=2304843 proxy_extra=2214 (1s)
+     NM: dv_total=5322 m/s (|dv1|=168) [14s, 209 evals]
+     arrival: in_window=160 rejects={'window': 1040, 'arr_none': 15, 'fit': 0}
+     *** VALID mass=373.1 kg dv=5323 (dv0=2888 dv1=168 dv2=2267) dt=89.7d r_arr=6849km v_rel=2443 E2=2267284 ***
+ [10] ea=1.96 t0=0.00 rapo=1.20: grid best |dv1|=189 m/s peri=25072km v_rel=1656 E2=1175842 proxy_extra=1803 (1s)
+     NM: dv_total=3824 m/s (|dv1|=191) [26s, 220 evals]
+     arrival: in_window=5 rejects={'window': 1195, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=552.9 kg dv=4751 (dv0=2940 dv1=191 dv2=1621) dt=78.5d r_arr=8002km v_rel=1875 E2=1145800 ***
+ [11] ea=1.96 t0=3.40 rapo=1.20: grid best |dv1|=125 m/s peri=30187km v_rel=1745 E2=1359350 proxy_extra=1963 (1s)
+     NM: dv_total=3840 m/s (|dv1|=136) [18s, 220 evals]
+     arrival: in_window=194 rejects={'window': 1006, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=919.6 kg dv=3840 (dv0=2940 dv1=136 dv2=764) dt=77.2d r_arr=1921km v_rel=2798 E2=1363281 ***
+
+=== E-565 RESULT: WSB mass 1114.2 kg vs baseline 949.0 kg (+165.2) ===
+row: [118, 171, 108, np.float64(3.395596937864), 0.001795815952, -0.013041805046, -0.006133940447, 4.996947370186, 4.51843464102, 2.13171070204, 2.000196673027, 1.80951558232, 0.851067837662, 0.065797837255, 0.044169038434, 0.000470293936, 0.217978900566, 0.367682100474, 0.176143131499, np.float64(12.016706879321), np.float64(10.464989711648)]

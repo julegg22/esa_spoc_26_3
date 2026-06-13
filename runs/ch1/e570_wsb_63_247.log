@@ -1,0 +1,67 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+E-570 WSB pair (63,247) idD=61 baseline=484.4 kg
+  aE=6.748e+06 eE=0.012 iE=0.529 | aL=4.930e+06 eL=0.609 iL=0.721
+
+=== Phase A: ballistic scan pair (63,247) 16x12x3x1 ===
+scan done in 3s: 93 bound returns, 482 escapes, 1 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 0.00  2.26  1.50  3132  48.2 133.2      20886   2352   2530565    383463
+ 2.75  6.23  1.20  3178  43.0  83.0      22918   1589   1047966     10102
+ 0.00  5.66  1.50  3132  48.2 132.0      62782   2182   2302191    391058
+ 0.00  2.26  1.35  3129  44.2 101.5      74979   1985   1905327    161828
+ 2.75  6.23  1.50  3184  52.0 105.0      78231   2235   2434605     99828
+ 1.96  3.40  1.35  3167  45.8 114.5      78416   2012   1961362    396933
+ 4.71  3.96  1.50  3159  43.5  98.0      81387   2256   2485132    185471
+ 0.39  1.70  1.20  3128  40.5  89.2      88564   2387   2792963    214456
+ 1.57  3.96  1.35  3156  45.8  97.0      94969   2121   2198395    234408
+ 0.00  5.66  1.35  3129  44.2 101.0      95483   1913   1779348    147735
+ 4.71  0.57  1.50  3159  43.5  97.2      96290   2198   2364000    168756
+ 2.75  2.83  1.50  3184  52.2 105.2      99576   2278   2545154     80975
+ 1.57  0.57  1.35  3156  45.8  97.5     101670   2003   1956934    249101
+ 1.96  0.00  1.35  3167  46.0 115.5     104276   2072   2100405    411580
+ 0.39  5.09  1.20  3128  40.5  88.7     115978   2483   3041515    206418
+ 1.18  1.13  1.35  3146  46.5  95.8     132435   2439   2938406    115513
+ 5.11  3.40  1.35  3146  40.0  85.0     140305   2440   2942614    138349
+ 3.53  5.09  1.20  3178  42.0  99.0     141415   2583   3301790    261658
+ 5.50  6.23  1.35  3137  41.8 105.5     141801   2345   2715197    333897
+ 4.32  3.96  1.20  3163  37.8  95.8     146234   2407   2863598    218429
+
+=== Phase B3: proxy-grid + exact-objective NM, 12 seeds ===
+ [0] no grid point survives
+ [1] ea=5.50 t0=3.40 rapo=1.35: grid best |dv1|=169 m/s peri=25493km v_rel=1711 E2=1271750 proxy_extra=1845 (1s)
+     NM: dv_total=4034 m/s (|dv1|=164) [14s, 165 evals]
+     arrival: in_window=192 rejects={'window': 1008, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=570.3 kg dv=4665 (dv0=3137 dv1=164 dv2=1364) dt=94.5d r_arr=5875km v_rel=2038 E2=1242381 ***
+ [2] no grid point survives
+ [3] ea=2.75 t0=6.23 rapo=1.20: grid best |dv1|=112 m/s peri=7625km v_rel=1352 E2=270733 proxy_extra=968 (1s)
+     NM: dv_total=3922 m/s (|dv1|=105) [20s, 214 evals]
+     arrival: in_window=185 rejects={'window': 1015, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=610.8 kg dv=4506 (dv0=3178 dv1=105 dv2=1223) dt=87.0d r_arr=7886km v_rel=1376 E2=324623 ***
+ [4] ea=3.14 t0=5.66 rapo=1.50: grid best |dv1|=117 m/s peri=21011km v_rel=2321 E2=2459921 proxy_extra=2237 (1s)
+     NM: dv_total=8047 m/s (|dv1|=105) [1s, 220 evals]
+ [5] ea=0.00 t0=5.66 rapo=1.35: grid best |dv1|=77 m/s peri=16737km v_rel=2373 E2=2522168 proxy_extra=2329 (1s)
+     NM: dv_total=7000 m/s (|dv1|=74) [7s, 175 evals]
+ [6] ea=3.14 t0=2.26 rapo=1.50: grid best |dv1|=112 m/s peri=27240km v_rel=2249 E2=2348295 proxy_extra=2278 (1s)
+     NM: dv_total=4919 m/s (|dv1|=104) [18s, 220 evals]
+     arrival: in_window=145 rejects={'window': 1055, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=450.1 kg dv=5062 (dv0=3186 dv1=104 dv2=1772) dt=116.7d r_arr=6061km v_rel=2513 E2=2348910 ***
+ [7] ea=0.00 t0=2.26 rapo=1.35: grid best |dv1|=190 m/s peri=31095km v_rel=1773 E2=1413463 proxy_extra=2100 (1s)
+     NM: dv_total=4129 m/s (|dv1|=189) [13s, 220 evals]
+     arrival: in_window=7 rejects={'window': 1193, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=560.6 kg dv=4346 (dv0=3129 dv1=189 dv2=1027) dt=96.3d r_arr=2763km v_rel=2548 E2=1471446 ***
+ [8] ea=1.57 t0=0.57 rapo=1.35: grid best |dv1|=78 m/s peri=21855km v_rel=2196 E2=2185882 proxy_extra=2149 (1s)
+     NM: dv_total=5734 m/s (|dv1|=80) [20s, 220 evals]
+     arrival: in_window=92 rejects={'window': 1108, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=259.7 kg dv=5747 (dv0=3156 dv1=80 dv2=2510) dt=111.7d r_arr=7462km v_rel=2368 E2=2145781 ***
+ [9] no grid point survives
+ [10] no grid point survives
+ [11] ea=1.57 t0=3.96 rapo=1.35: grid best |dv1|=192 m/s peri=16626km v_rel=2208 E2=2142236 proxy_extra=2143 (1s)
+     NM: dv_total=4493 m/s (|dv1|=197) [17s, 220 evals]
+     arrival: in_window=161 rejects={'window': 1039, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=455.4 kg dv=5044 (dv0=3156 dv1=197 dv2=1691) dt=115.7d r_arr=5124km v_rel=2476 E2=2107626 ***
+
+=== E-570 RESULT: WSB mass 610.8 kg vs baseline 484.4 kg (+126.4) ===
+  full-precision row -> runs/ch1/e570_row_63_247.json
+row(repr): ['63.0', '247.0', '61.0', '6.225261052750124', '-0.028580882262114367', '0.005798678038932899', '0.003391388982659198', '-2.836905212501304', '-5.907234845122949', '-3.4644883830447624', '-1.1885922376340068', '-2.4768047177658774', '-1.4485729636362594', '-0.06377833311384518', '-0.07680264945687784', '-0.02348606450998611', '1.0919695410678028', '0.4723459393198571', '0.11528312605619434', '9.889347288244954', '10.111512624999483']

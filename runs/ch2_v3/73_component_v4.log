@@ -1,0 +1,14 @@
+Graph: 59539 cheap edges, avg out-degree 56.6
+Components: [601, 150, 150, 150]
+Component IDs ordered by size: [np.int32(2), np.int32(0), np.int32(1), np.int32(3)]
+  comp 2 attempt 0: best partial = 346/601
+  comp 2 (601): NO full Hamilton (best partial = 558/601, wall=33s)
+  comp 0 attempt 0: best partial = 126/150
+  comp 0 (150): NO full Hamilton (best partial = 129/150, wall=5s)
+  comp 1 attempt 0: best partial = 125/150
+  comp 1 (150): NO full Hamilton (best partial = 136/150, wall=5s)
+  comp 3 attempt 0: best partial = 134/150
+  comp 3 (150): NO full Hamilton (best partial = 143/150, wall=6s)
+{
+  "status": "intra_hamilton_failed"
+}

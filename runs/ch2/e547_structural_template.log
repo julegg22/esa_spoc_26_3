@@ -1,0 +1,36 @@
+E-547 medium structural template. n=181
+Bank: start=3 end=44 mk=228.9748d (DP)
+
+=== Components ===
+  4 comps, sizes: [121, 20, 20, 20]
+  comp 0 (big, 121): first 5 = [1, 2, 5, 7, 8]...
+  comp 1 (20): [4, 6, 12, 15, 16, 30, 37, 52, 54, 57, 73, 82, 104, 108, 115, 124, 137, 148, 163, 177]
+  comp 2 (20): [3, 18, 23, 48, 59, 68, 81, 90, 101, 102, 105, 106, 125, 131, 134, 144, 147, 174, 178, 180]
+  comp 3 (20): [0, 21, 33, 40, 42, 60, 92, 93, 95, 97, 99, 112, 119, 126, 136, 141, 146, 160, 161, 179]
+
+=== Bank perm structure ===
+  comp visit sequence (compressed): [2, 0, 3, 0, 1, 0]
+  # comp-switches: 5 (= K-1 for contiguous = 3)
+  cheap legs: 175, exc legs: 5
+    cheap: 0 inter-comp, 175 intra-comp
+  Exception legs (5):
+    leg  19:  18(c2) →  36(c0)  dv=589.1  INTER
+    leg  82:  67(c0) →  92(c3)  dv=549.6  INTER
+    leg 102:  33(c3) →   7(c0)  dv=588.6  INTER
+    leg 158:  71(c0) → 177(c1)  dv=590.2  INTER
+    leg 178: 124(c1) →  47(c0)  dv=559.1  INTER
+  Exception leg positions: [19, 82, 102, 158, 178]
+
+=== Mutation classes — walk-feasibility test ===
+  CONTROL (random swap)                 0/100 feasible   (193s)
+  M1 intra-comp swap                    9/100 feasible mk_range=[272.8, 345.8] median=302.2 n_below_bank=0  (117s)
+  M2 intra-comp seg-reverse            11/100 feasible mk_range=[271.8, 324.1] median=298.5 n_below_bank=0  (123s)
+  M3 intra-comp or-opt                  2/100 feasible mk_range=[281.4, 305.8] median=293.6 n_below_bank=0  (122s)
+  M4 exc-preserving 2-opt               1/100 feasible mk_range=[314.4, 314.4] median=314.4 n_below_bank=0  (120s)
+  M5 bridge-node swap                  58/100 feasible mk_range=[260.4, 307.0] median=278.5 n_below_bank=0  (95s)
+
+=== Summary ===
+  Highest feasibility rate: M5_bridge_swap (58/100)
+  Total perms found BELOW bank's walk-eval (229.0d): 0
+
+Results saved to /tmp/ch2_e547_template.json

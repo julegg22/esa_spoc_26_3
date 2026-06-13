@@ -1,0 +1,4 @@
+[E-588] n=1051 banked exc legs [149, 416, 566, 807, 957] (bank 942.0744268445161)
+[E-588] waited on 36 legs, total idle 17.2d
+[E-588] mk=934.4452 feas=True viols=[0, 0, 0, 0] (bank 942.0744268445161)
+[REVAL] mk=934.4452 feas=True viols=[0, 0, 0, 0] -> WROTE /tmp/ch2_large_cand.json

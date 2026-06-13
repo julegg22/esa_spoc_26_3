@@ -1,0 +1,17 @@
+[E-586] n=1051 seed=/tmp/ch2_large_window_cand_s2.json fine-walk mk=974.7638 feas=True exc=5 viols=[0, 0, 0, 0] (r1 424.62)
+[it 4] ACCEPT W=21@17 mk=971.0669 exc=5 acc=1 (85s)
+[it 50] cur mk=971.0669 acc=1 (937s)
+[it 75] cur mk=971.0669 acc=1 (1351s)
+[it 92] ACCEPT W=37@980 mk=970.0677 exc=5 acc=2 (1635s)
+[it 93] ACCEPT W=42@15 mk=965.7380 exc=5 acc=3 (1650s)
+[it 95] ACCEPT W=22@1008 mk=962.8737 exc=5 acc=4 (1679s)
+[it 99] ACCEPT W=29@908 mk=960.9587 exc=5 acc=5 (1738s)
+[it 100] cur mk=960.9587 acc=5 (1753s)
+[it 125] cur mk=960.9587 acc=5 (2144s)
+[it 150] cur mk=960.9587 acc=5 (2535s)
+[it 175] cur mk=960.9587 acc=5 (2974s)
+[it 200] cur mk=960.9587 acc=5 (3401s)
+[it 225] cur mk=960.9587 acc=5 (3827s)
+
+[FINAL] best feasible mk=960.9587 acc=5 (r1 424.62)
+[OUT] /tmp/ch2_large_cand_e586_s0.json

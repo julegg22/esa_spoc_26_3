@@ -1,0 +1,14 @@
+[BASE] mk=1048.9786 feas=True exc=5 start=492
+
+===== GLOBAL EPOCH-AWARE ITER 0 =====
+    cost 200/1051 (12s)
+    cost 400/1051 (22s)
+    cost 600/1051 (32s)
+    cost 800/1051 (42s)
+    cost 1000/1051 (53s)
+  global cost 1051x1051: forbidden=963722 (87.2%) pen=211 wall=56s
+  [global] 1200s obj=30389200 path~389.2d big_jumps=3 pen_used=0 len=1051 start=492 end=47
+[iter 0] walk REJECTED (infeasible order) — keep previous, stop.
+
+[FINAL] best_mk=1048.9786 (bank 1048.9786)
+[OUT] /tmp/ch2_large_global_candidate.json mk=1048.9786 feas=True covered=True viols=[0, 0, 0, 0] -> BEATS BANK

@@ -1,0 +1,4 @@
+[E-573] validating E-572 baseline arm on 6 KNOWN-FEASIBLE bank pairs (banked mass shown):
+  E0(i=0.0) L0(i=0.0) bank=819kg -> harness baseline=FAIL (27 DC calls) <<< HARNESS MISSED A KNOWN-FEASIBLE PAIR
+  E232(i=7.1) L291(i=31.8) bank=817kg -> harness baseline=FAIL (27 DC calls) <<< HARNESS MISSED A KNOWN-FEASIBLE PAIR
+  E288(i=16.7) L212(i=43.5) bank=1527kg -> harness baseline=FAIL (27 DC calls) <<< HARNESS MISSED A KNOWN-FEASIBLE PAIR

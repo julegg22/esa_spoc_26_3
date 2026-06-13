@@ -1,0 +1,26 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-586] n=1051 seed=/tmp/ch2_large_window_cand_s2.json fine-walk mk=974.7638 feas=True exc=5 viols=[0, 0, 0, 0] (r1 424.62)
+[it 10] ACCEPT W=22@29 mk=971.0669 exc=5 acc=1 (168s)
+[it 24] ACCEPT W=23@1007 mk=970.0677 exc=5 acc=2 (430s)
+[it 25] cur mk=970.0677 acc=2 (445s)
+[it 42] ACCEPT W=40@861 mk=965.7380 exc=5 acc=3 (734s)
+[it 43] ACCEPT W=25@608 mk=963.8396 exc=5 acc=4 (749s)
+[it 50] cur mk=963.8396 acc=4 (855s)
+[it 59] ACCEPT W=41@884 mk=962.8737 exc=5 acc=5 (998s)
+[it 70] ACCEPT W=45@968 mk=957.1618 exc=5 acc=6 (1197s)
+[it 73] ACCEPT W=28@914 mk=955.2468 exc=5 acc=7 (1241s)
+[it 75] cur mk=955.2468 acc=7 (1271s)
+[it 79] ACCEPT W=44@831 mk=951.6331 exc=5 acc=8 (1349s)
+[it 100] cur mk=951.6331 acc=8 (1698s)
+[it 103] ACCEPT W=42@874 mk=947.8030 exc=5 acc=9 (1750s)
+[it 125] cur mk=947.8030 acc=9 (2126s)
+[it 146] ACCEPT W=27@803 mk=942.0744 exc=5 acc=10 (2477s)
+[it 150] cur mk=942.0744 acc=10 (2547s)
+[it 175] cur mk=942.0744 acc=10 (3032s)
+[it 200] cur mk=942.0744 acc=10 (3460s)
+[it 225] cur mk=942.0744 acc=10 (3886s)
+
+[FINAL] best feasible mk=942.0744 acc=10 (r1 424.62)
+[OUT] /tmp/ch2_large_cand_e586_s1.json

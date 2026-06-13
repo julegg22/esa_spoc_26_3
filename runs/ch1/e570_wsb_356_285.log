@@ -1,0 +1,77 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+E-570 WSB pair (356,285) idD=270 baseline=450.9 kg
+  aE=7.066e+06 eE=0.035 iE=0.238 | aL=4.574e+06 eL=0.591 iL=0.742
+
+=== Phase A: ballistic scan pair (356,285) 16x12x3x1 ===
+scan done in 3s: 76 bound returns, 499 escapes, 1 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 3.14  5.66  1.50  3163  48.5 120.2      11515   2469   2622821    355494
+ 3.14  2.26  1.50  3163  48.5 119.2      23427   2312   2464493    347673
+ 0.00  5.66  1.35  3007  43.8  91.8      26695   2208   2253724    165271
+ 5.50  3.40  1.35  3029  49.0  99.5      31419    978    322457    213072
+ 5.50  0.00  1.50  3032  55.2 113.8      68651   1054    484033    147490
+ 5.50  0.00  1.35  3029  49.8 102.0      69647    647    139127    313552
+ 3.53  1.70  1.35  3155  47.5 128.2      73242   2167   2280919    253233
+ 2.36  3.40  1.50  3141  54.0 107.0      83865   1895   1737417     19453
+ 3.93  4.53  1.35  3138  40.0 102.2      85916   2413   2853766    224362
+ 0.39  5.09  1.35  3012  45.0 131.0      99599   2465   2988904    230979
+ 0.00  2.26  1.50  3009  47.5 130.2     101276   2069   2092967    370465
+ 3.93  1.13  1.35  3138  39.8 101.2     105464   2489   3051959    228841
+ 2.36  0.00  1.50  3141  53.5 106.2     107007   2005   1963350     26828
+ 1.18  1.13  1.50  3057  50.2 117.2     110361   2358   2735133    351154
+ 1.18  4.53  1.50  3057  50.2 116.2     115659   2447   2950768    326488
+ 1.57  0.57  1.35  3083  45.5 109.5     120468   2001   1960874    270311
+ 5.50  2.83  1.35  3029  41.8 109.2     120823   2277   2551794    253862
+ 5.50  6.23  1.35  3029  41.5 108.3     122912   2376   2782526    266016
+ 5.11  0.00  1.50  3057  43.0 106.0     125604   2383   2800053    323520
+ 3.53  5.09  1.35  3155  48.0 129.8     127014   1963   1888678    220440
+
+=== Phase B3: proxy-grid + exact-objective NM, 12 seeds ===
+ [0] ea=5.50 t0=0.00 rapo=1.35: grid best |dv1|=50 m/s peri=20789km v_rel=1263 E2=561359 proxy_extra=1758 (1s)
+     NM: dv_total=3561 m/s (|dv1|=44) [16s, 220 evals]
+     arrival: in_window=209 rejects={'window': 991, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=1055.4 kg dv=3561 (dv0=3029 dv1=44 dv2=488) dt=97.5d r_arr=1869km v_rel=2531 E2=579629 ***
+ [1] ea=5.50 t0=3.40 rapo=1.35: grid best |dv1|=100 m/s peri=28493km v_rel=1610 E2=1124597 proxy_extra=1698 (1s)
+     NM: dv_total=3826 m/s (|dv1|=104) [14s, 193 evals]
+     arrival: in_window=178 rejects={'window': 1022, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=926.3 kg dv=3826 (dv0=3029 dv1=104 dv2=692) dt=94.7d r_arr=1869km v_rel=2735 E2=1117789 ***
+ [2] no grid point survives
+ [3] no grid point survives
+ [4] ea=2.36 t0=3.40 rapo=1.50: grid best |dv1|=150 m/s peri=29066km v_rel=2373 E2=2647211 proxy_extra=2428 (1s)
+     NM: dv_total=5827 m/s (|dv1|=151) [18s, 211 evals]
+     arrival: in_window=119 rejects={'window': 1081, 'arr_none': 11, 'fit': 0}
+     *** VALID mass=252.8 kg dv=5775 (dv0=3141 dv1=151 dv2=2483) dt=115.6d r_arr=6800km v_rel=2505 E2=2416145 ***
+ [5] ea=1.57 t0=3.96 rapo=1.35: grid best |dv1|=93 m/s peri=26634km v_rel=2338 E2=2548974 proxy_extra=2311 (1s)
+     NM: dv_total=4328 m/s (|dv1|=91) [24s, 220 evals]
+     arrival: in_window=138 rejects={'window': 1062, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=712.1 kg dv=4322 (dv0=3083 dv1=91 dv2=1147) dt=95.0d r_arr=1934km v_rel=3147 E2=2415417 ***
+ [6] ea=0.00 t0=5.66 rapo=1.50: grid best |dv1|=189 m/s peri=9769km v_rel=2059 E2=1618335 proxy_extra=1857 (1s)
+     NM: dv_total=4055 m/s (|dv1|=188) [19s, 220 evals]
+     arrival: in_window=161 rejects={'window': 1039, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=817.4 kg dv=4068 (dv0=3009 dv1=188 dv2=871) dt=95.5d r_arr=1904km v_rel=2884 E2=1583211 ***
+ [7] ea=3.53 t0=5.09 rapo=1.35: grid best |dv1|=60 m/s peri=25333km v_rel=2276 E2=2396983 proxy_extra=2428 (1s)
+     NM: dv_total=5138 m/s (|dv1|=57) [17s, 220 evals]
+     arrival: in_window=84 rejects={'window': 1116, 'arr_none': 9, 'fit': 0}
+     *** VALID mass=428.1 kg dv=5136 (dv0=3155 dv1=57 dv2=1925) dt=120.2d r_arr=6409km v_rel=2580 E2=2564066 ***
+ [8] ea=1.57 t0=0.57 rapo=1.35: grid best |dv1|=192 m/s peri=27507km v_rel=2086 E2=1998279 proxy_extra=2187 (1s)
+     NM: dv_total=4252 m/s (|dv1|=200) [17s, 220 evals]
+     arrival: in_window=150 rejects={'window': 1050, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=736.9 kg dv=4260 (dv0=3083 dv1=200 dv2=977) dt=107.0d r_arr=1893km v_rel=2998 E2=1904911 ***
+ [9] ea=2.36 t0=0.00 rapo=1.50: grid best |dv1|=50 m/s peri=24454km v_rel=1941 E2=1683038 proxy_extra=2168 (1s)
+     NM: dv_total=4090 m/s (|dv1|=42) [13s, 220 evals]
+     arrival: in_window=156 rejects={'window': 1044, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=807.1 kg dv=4092 (dv0=3141 dv1=42 dv2=910) dt=105.7d r_arr=1873km v_rel=2949 E2=1731026 ***
+ [10] ea=1.96 t0=3.40 rapo=1.35: grid best |dv1|=78 m/s peri=26963km v_rel=2290 E2=2440952 proxy_extra=2316 (1s)
+     NM: dv_total=4327 m/s (|dv1|=65) [15s, 220 evals]
+     arrival: in_window=138 rejects={'window': 1062, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=709.8 kg dv=4328 (dv0=3113 dv1=65 dv2=1150) dt=113.0d r_arr=1878km v_rel=3182 E2=2452950 ***
+ [11] ea=1.96 t0=0.00 rapo=1.35: grid best |dv1|=60 m/s peri=25226km v_rel=2358 E2=2585986 proxy_extra=2280 (1s)
+     NM: dv_total=4531 m/s (|dv1|=71) [22s, 220 evals]
+     arrival: in_window=136 rejects={'window': 1064, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=634.0 kg dv=4525 (dv0=3113 dv1=71 dv2=1342) dt=113.7d r_arr=2598km v_rel=2957 E2=2484217 ***
+
+=== E-570 RESULT: WSB mass 1055.4 kg vs baseline 450.9 kg (+604.5) ===
+  full-precision row -> runs/ch1/e570_row_356_285.json
+row(repr): ['356.0', '285.0', '270.0', '0.0', '0.00020077739638625636', '-0.012624587433107713', '-0.003060177375670299', '5.310033232049012', '5.1573011679918075', '1.2531145113091469', '2.093874138626269', '2.0336835665399757', '0.4929612529972503', '-0.01752899132572476', '0.03896559979420528', '0.005855731359057241', '0.3042432221472415', '0.32016406657354846', '-0.1805584780530381', '11.441744827678756', '10.981717690159874']

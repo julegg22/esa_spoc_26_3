@@ -1,0 +1,8 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-585] large windowed-LNS FINE grid: walk n_steps=4000 wait_dt=0.25 W=[20,50] seed=1 vs bank 1013.2886 -> /tmp/ch2_large_window_finegrid_cand_s1.json
+[E-578] n=1051 start mk=1026.675 feas=True exc=5 (bank 1013.2886, r1 424.62)
+[it 4] ACCEPT W=45@953 mk=1023.847 exc=5 acc=1 (122s)
+[it 7] ACCEPT W=28@846 mk=1007.624 exc=5 acc=2 (225s)
+Interrupted system call ; error code 4

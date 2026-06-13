@@ -1,0 +1,141 @@
+E-543 medium DP-ALNS. n_chains=4 wall_h=24.0
+[c0] loading medium fine pair-set table...
+[c1] loading medium fine pair-set table...
+[c2] loading medium fine pair-set table...
+[c3] loading medium fine pair-set table...
+[c2] table loaded in 2.6s (n=181, T=5000, q=0.1d)
+[c2] init bank mk=228.9748d
+[c1] table loaded in 2.6s (n=181, T=5000, q=0.1d)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c0] table loaded in 2.8s (n=181, T=5000, q=0.1d)
+[c0] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c3] table loaded in 3.1s (n=181, T=5000, q=0.1d)
+[c3] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] iter=700 elapsed=8.0min DP_ok=21 DP_fail=679 accepted=9 state=249.9376 best=228.9748 T=7.725
+[c2] iter=900 elapsed=10.6min DP_ok=28 DP_fail=872 accepted=16 state=249.9376 best=228.9748 T=7.648
+[c3] iter=1600 elapsed=22.0min DP_ok=60 DP_fail=1540 accepted=24 state=251.8376 best=228.9748 T=7.385
+[c1] iter=1800 elapsed=22.5min DP_ok=68 DP_fail=1732 accepted=54 state=283.2586 best=228.9748 T=7.311
+[c2] iter=2400 elapsed=27.9min DP_ok=80 DP_fail=2320 accepted=52 state=281.3586 best=228.9748 T=7.095
+[c2] iter=4100 elapsed=54.9min DP_ok=167 DP_fail=3933 accepted=122 state=304.0167 best=228.9748 T=6.517
+[c3] iter=3900 elapsed=58.0min DP_ok=172 DP_fail=3728 accepted=106 state=294.5167 best=228.9748 T=6.583
+[c1] iter=5100 elapsed=64.3min DP_ok=200 DP_fail=4900 accepted=157 state=313.5167 best=228.9748 T=6.199
+[c2] iter=4800 elapsed=64.7min DP_ok=197 DP_fail=4603 accepted=141 state=304.0167 best=228.9748 T=6.293
+[c3] iter=5300 elapsed=77.0min DP_ok=232 DP_fail=5068 accepted=150 state=305.9167 best=228.9748 T=6.138
+[c2] iter=8100 elapsed=102.0min DP_ok=320 DP_fail=7780 accepted=237 state=317.3167 best=228.9748 T=5.336
+[c3] iter=7200 elapsed=103.3min DP_ok=318 DP_fail=6882 accepted=214 state=296.4167 best=228.9748 T=5.581
+[c3] iter=7400 elapsed=105.4min DP_ok=324 DP_fail=7076 accepted=218 state=294.5167 best=228.9748 T=5.526
+[c0] iter=8500 elapsed=116.1min DP_ok=359 DP_fail=8141 accepted=276 state=298.3167 best=228.9748 T=5.230
+[c3] iter=9100 elapsed=121.9min DP_ok=375 DP_fail=8725 accepted=249 state=294.5167 best=228.9748 T=5.076
+[c3] iter=11100 elapsed=149.0min DP_ok=465 DP_fail=10635 accepted=308 state=300.2167 best=228.9748 T=4.593
+[c1] iter=12400 elapsed=153.4min DP_ok=493 DP_fail=11907 accepted=384 state=316.4167 best=228.9748 T=4.303
+[c1] iter=12700 elapsed=156.8min DP_ok=504 DP_fail=12196 accepted=391 state=318.3167 best=228.9748 T=4.239
+[c3] iter=12600 elapsed=167.2min DP_ok=518 DP_fail=12082 accepted=343 state=302.1167 best=228.9748 T=4.261
+[c0] iter=12600 elapsed=170.6min DP_ok=535 DP_fail=12065 accepted=395 state=325.9167 best=228.9748 T=4.261
+[c1] iter=14800 elapsed=184.1min DP_ok=597 DP_fail=14203 accepted=460 state=331.6167 best=228.9748 T=3.817
+[c1] iter=15100 elapsed=188.7min DP_ok=614 DP_fail=14486 accepted=472 state=328.7167 best=228.9748 T=3.760
+[c0] iter=15700 elapsed=210.6min DP_ok=672 DP_fail=15028 accepted=494 state=337.3167 best=228.9748 T=3.649
+[c2] iter=17700 elapsed=215.9min DP_ok=716 DP_fail=16984 accepted=546 state=376.1957 best=228.9748 T=3.302
+[c1] iter=17500 elapsed=221.3min DP_ok=724 DP_fail=16776 accepted=555 state=325.9167 best=228.9748 T=3.335
+[c2] iter=18000 elapsed=221.5min DP_ok=738 DP_fail=17262 accepted=564 state=362.8957 best=228.9748 T=3.252
+[c1] iter=19000 elapsed=240.5min DP_ok=788 DP_fail=18212 accepted=597 state=329.7167 best=228.9748 T=3.094
+[c1] iter=19600 elapsed=247.5min DP_ok=810 DP_fail=18790 accepted=615 state=329.7167 best=228.9748 T=3.002
+[c2] iter=22200 elapsed=270.1min DP_ok=919 DP_fail=21281 accepted=675 state=355.2957 best=228.9748 T=2.636
+[c1] iter=22100 elapsed=275.1min DP_ok=904 DP_fail=21196 accepted=672 state=337.3167 best=228.9748 T=2.650
+[c3] iter=22300 elapsed=284.0min DP_ok=906 DP_fail=21394 accepted=603 state=298.3167 best=228.9748 T=2.623
+[c3] iter=24600 elapsed=318.9min DP_ok=1020 DP_fail=23580 accepted=669 state=287.9376 best=228.9748 T=2.338
+[c3] iter=25500 elapsed=329.5min DP_ok=1054 DP_fail=24446 accepted=688 state=294.5167 best=228.9748 T=2.235
+[c0] iter=25300 elapsed=333.5min DP_ok=1079 DP_fail=24221 accepted=773 state=309.7167 best=228.9748 T=2.258
+[c3] iter=27600 elapsed=356.1min DP_ok=1139 DP_fail=26461 accepted=738 state=294.5167 best=228.9748 T=2.013
+[c2] iter=29900 elapsed=356.3min DP_ok=1223 DP_fail=28677 accepted=869 state=343.9167 best=228.9748 T=1.794
+[c3] reseeded from global mk=228.9748
+[c2] reseeded from global mk=228.9748
+[c0] reseeded from global mk=228.9748
+[c1] reseeded from global mk=228.9748
+[c0] iter=27500 elapsed=360.6min DP_ok=1164 DP_fail=26336 accepted=827 state=251.8376 best=228.9748 T=7.996
+[c3] iter=28300 elapsed=362.2min DP_ok=1156 DP_fail=27144 accepted=746 state=249.9376 best=228.9748 T=7.917
+[c2] iter=30700 elapsed=368.3min DP_ok=1258 DP_fail=29442 accepted=880 state=228.9748 best=228.9748 T=7.802
+[c3] iter=28800 elapsed=370.2min DP_ok=1178 DP_fail=27622 accepted=764 state=263.2376 best=228.9748 T=7.722
+[c3] iter=28900 elapsed=371.1min DP_ok=1181 DP_fail=27719 accepted=766 state=261.3376 best=228.9748 T=7.683
+[c2] iter=33000 elapsed=397.3min DP_ok=1336 DP_fail=31664 accepted=923 state=265.1376 best=228.9748 T=6.954
+[c3] iter=32200 elapsed=414.2min DP_ok=1305 DP_fail=30895 accepted=864 state=298.3167 best=228.9748 T=6.515
+[c2] iter=34500 elapsed=416.0min DP_ok=1390 DP_fail=33110 accepted=970 state=300.2167 best=228.9748 T=6.452
+[c3] iter=32800 elapsed=422.8min DP_ok=1334 DP_fail=31466 accepted=885 state=313.5311 best=228.9748 T=6.322
+[c0] iter=32000 elapsed=423.2min DP_ok=1355 DP_fail=30645 accepted=980 state=305.9167 best=228.9748 T=6.385
+[c0] iter=32100 elapsed=425.1min DP_ok=1361 DP_fail=30739 accepted=984 state=321.1167 best=228.9748 T=6.353
+[c2] iter=35600 elapsed=430.5min DP_ok=1439 DP_fail=34161 accepted=1012 state=315.4167 best=228.9748 T=6.106
+[c0] iter=32500 elapsed=431.1min DP_ok=1380 DP_fail=31120 accepted=1000 state=313.5167 best=228.9748 T=6.228
+[c2] iter=36800 elapsed=442.2min DP_ok=1474 DP_fail=35326 accepted=1035 state=316.4167 best=228.9748 T=5.751
+[c3] iter=34300 elapsed=443.2min DP_ok=1395 DP_fail=32905 accepted=928 state=309.7167 best=228.9748 T=5.865
+[c0] iter=33600 elapsed=444.4min DP_ok=1422 DP_fail=32178 accepted=1036 state=316.4167 best=228.9748 T=5.894
+[c1] iter=36200 elapsed=452.4min DP_ok=1497 DP_fail=34703 accepted=1099 state=349.6167 best=228.9748 T=5.505
+[c0] iter=35100 elapsed=465.1min DP_ok=1491 DP_fail=33609 accepted=1092 state=345.8167 best=228.9748 T=5.468
+[c1] iter=37200 elapsed=465.7min DP_ok=1542 DP_fail=35658 accepted=1135 state=354.4167 best=228.9748 T=5.236
+[c1] iter=37500 elapsed=468.9min DP_ok=1553 DP_fail=35947 accepted=1143 state=360.9957 best=228.9748 T=5.158
+[c0] iter=35500 elapsed=471.9min DP_ok=1516 DP_fail=33984 accepted=1112 state=340.1167 best=228.9748 T=5.360
+[c1] iter=38100 elapsed=474.8min DP_ok=1575 DP_fail=36525 accepted=1164 state=360.9957 best=228.9748 T=5.006
+[c2] iter=40100 elapsed=479.0min DP_ok=1606 DP_fail=38494 accepted=1142 state=348.7167 best=228.9748 T=4.876
+[c0] iter=36400 elapsed=482.8min DP_ok=1555 DP_fail=34845 accepted=1143 state=335.4167 best=228.9748 T=5.124
+[c0] iter=36700 elapsed=485.6min DP_ok=1566 DP_fail=35134 accepted=1151 state=329.7167 best=228.9748 T=5.048
+[c1] iter=40100 elapsed=499.7min DP_ok=1669 DP_fail=38431 accepted=1242 state=372.3957 best=228.9748 T=4.530
+[c0] iter=38100 elapsed=506.8min DP_ok=1639 DP_fail=36461 accepted=1212 state=340.1167 best=228.9748 T=4.707
+[c0] iter=38300 elapsed=509.1min DP_ok=1645 DP_fail=36655 accepted=1218 state=327.8167 best=228.9748 T=4.660
+[c0] iter=38500 elapsed=511.2min DP_ok=1650 DP_fail=36850 accepted=1221 state=328.7167 best=228.9748 T=4.613
+[c0] iter=38800 elapsed=515.3min DP_ok=1663 DP_fail=37137 accepted=1232 state=325.9167 best=228.9748 T=4.545
+[c1] iter=41500 elapsed=517.2min DP_ok=1733 DP_fail=39767 accepted=1298 state=367.7167 best=228.9748 T=4.223
+[c1] iter=41600 elapsed=518.6min DP_ok=1738 DP_fail=39862 accepted=1302 state=371.5167 best=228.9748 T=4.202
+[c3] iter=40300 elapsed=519.1min DP_ok=1634 DP_fail=38666 accepted=1083 state=324.0167 best=228.9748 T=4.345
+[c3] iter=40600 elapsed=523.1min DP_ok=1647 DP_fail=38953 accepted=1091 state=323.0167 best=228.9748 T=4.280
+[c3] iter=41500 elapsed=534.8min DP_ok=1687 DP_fail=39813 accepted=1124 state=309.7167 best=228.9748 T=4.092
+[c2] iter=44900 elapsed=534.9min DP_ok=1811 DP_fail=43089 accepted=1307 state=371.5167 best=228.9748 T=3.836
+[c2] iter=45600 elapsed=543.2min DP_ok=1843 DP_fail=43757 accepted=1331 state=374.2957 best=228.9748 T=3.704
+[c2] iter=46000 elapsed=548.4min DP_ok=1863 DP_fail=44137 accepted=1346 state=371.5167 best=228.9748 T=3.630
+[c2] iter=46100 elapsed=549.4min DP_ok=1867 DP_fail=44233 accepted=1350 state=369.6167 best=228.9748 T=3.612
+[c1] iter=44400 elapsed=551.4min DP_ok=1855 DP_fail=42545 accepted=1400 state=357.1957 best=228.9748 T=3.653
+[c3] iter=43300 elapsed=557.4min DP_ok=1757 DP_fail=41543 accepted=1175 state=313.5167 best=228.9748 T=3.740
+[c3] iter=43400 elapsed=559.2min DP_ok=1761 DP_fail=41639 accepted=1176 state=313.5167 best=228.9748 T=3.721
+[c2] iter=47800 elapsed=567.4min DP_ok=1935 DP_fail=45865 accepted=1398 state=368.5957 best=228.9748 T=3.318
+[c0] iter=43300 elapsed=568.7min DP_ok=1850 DP_fail=41450 accepted=1356 state=348.7167 best=228.9748 T=3.629
+[c3] iter=46700 elapsed=600.1min DP_ok=1896 DP_fail=44804 accepted=1261 state=343.0167 best=228.9748 T=3.155
+[c0] iter=46400 elapsed=606.1min DP_ok=1976 DP_fail=44424 accepted=1441 state=343.9167 best=228.9748 T=3.108
+[c1] iter=49500 elapsed=607.1min DP_ok=2061 DP_fail=47439 accepted=1565 state=360.9957 best=228.9748 T=2.831
+[c2] iter=51200 elapsed=609.7min DP_ok=2093 DP_fail=49107 accepted=1520 state=347.7167 best=228.9748 T=2.799
+[c1] iter=49800 elapsed=610.4min DP_ok=2074 DP_fail=47726 accepted=1578 state=359.0957 best=228.9748 T=2.789
+[c1] iter=50300 elapsed=615.8min DP_ok=2095 DP_fail=48205 accepted=1596 state=364.7957 best=228.9748 T=2.720
+[c1] iter=50500 elapsed=618.3min DP_ok=2104 DP_fail=48396 accepted=1603 state=372.3957 best=228.9748 T=2.693
+[c3] iter=48600 elapsed=623.4min DP_ok=1977 DP_fail=46623 accepted=1316 state=348.7167 best=228.9748 T=2.869
+[c0] iter=48900 elapsed=635.2min DP_ok=2074 DP_fail=46826 accepted=1507 state=335.4167 best=228.9748 T=2.743
+[c3] iter=50100 elapsed=638.0min DP_ok=2027 DP_fail=48073 accepted=1358 state=340.1167 best=228.9748 T=2.662
+[c0] iter=49500 elapsed=640.8min DP_ok=2092 DP_fail=47408 accepted=1517 state=337.3167 best=228.9748 T=2.662
+[c2] iter=53700 elapsed=646.2min DP_ok=2222 DP_fail=51478 accepted=1602 state=343.9167 best=228.9748 T=2.470
+[c1] iter=53700 elapsed=650.9min DP_ok=2227 DP_fail=51473 accepted=1693 state=371.5167 best=228.9748 T=2.295
+[c0] iter=51300 elapsed=665.6min DP_ok=2177 DP_fail=49123 accepted=1579 state=343.0167 best=228.9748 T=2.433
+[c1] iter=55500 elapsed=671.4min DP_ok=2305 DP_fail=53195 accepted=1745 state=351.5167 best=228.9748 T=2.097
+[c0] iter=51800 elapsed=673.2min DP_ok=2206 DP_fail=49594 accepted=1598 state=355.2957 best=228.9748 T=2.373
+[c1] iter=57400 elapsed=691.2min DP_ok=2376 DP_fail=55024 accepted=1789 state=344.9167 best=228.9748 T=1.907
+[c0] iter=53600 elapsed=695.0min DP_ok=2280 DP_fail=51320 accepted=1654 state=337.3167 best=228.9748 T=2.168
+[c0] iter=54300 elapsed=703.9min DP_ok=2309 DP_fail=51991 accepted=1671 state=337.3167 best=228.9748 T=2.094
+[c0] iter=54500 elapsed=705.7min DP_ok=2316 DP_fail=52184 accepted=1676 state=340.1167 best=228.9748 T=2.073
+[c3] iter=55800 elapsed=707.8min DP_ok=2263 DP_fail=53537 accepted=1526 state=309.7167 best=228.9748 T=2.002
+[c1] iter=59000 elapsed=708.7min DP_ok=2441 DP_fail=56559 accepted=1833 state=340.1167 best=228.9748 T=1.761
+[c3] reseeded from global mk=228.9748
+[c2] reseeded from global mk=228.9748
+[c0] reseeded from global mk=228.9748
+[c1] reseeded from global mk=228.9748
+[c3] iter=57200 elapsed=721.8min DP_ok=2307 DP_fail=54893 accepted=1554 state=228.9748 best=228.9748 T=7.939
+[c2] iter=59800 elapsed=721.9min DP_ok=2491 DP_fail=57309 accepted=1767 state=255.6376 best=228.9748 T=7.943

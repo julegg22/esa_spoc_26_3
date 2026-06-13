@@ -1,0 +1,5 @@
+bank exc legs: [2, 17, 26, 29, 45] bank_mk 116.3738
+wall 18.7s fell_back=0
+retime2 mk=123.3397 (bank 116.3738 delta -6.9659) flight=112.545 idle=10.795
+UDP [np.float64(123.33972043488843), 0, 0, 0, 0]
+FEASIBLE mk=123.339720

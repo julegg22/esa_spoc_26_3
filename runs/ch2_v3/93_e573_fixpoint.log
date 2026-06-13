@@ -1,0 +1,22 @@
+[BASE] strict mk=1048.9786 feas=True exc=5
+
+===== FIXPOINT ITER 0 =====
+  cost 1051x1051: forbidden=87.2% wall=53s
+  [solve] 300s obj=40408541 big_jumps=4 len=1051
+[iter 0] soft: real_mk=1522.5d exc_over=3 (budget 5)
+[iter 0] strict walk REJECTED (not <=5-exc walkable)
+
+===== FIXPOINT ITER 1 =====
+  cost 1051x1051: forbidden=87.2% wall=52s
+  [solve] 300s obj=40424210 big_jumps=4 len=1051
+[iter 1] soft: real_mk=1433.0d exc_over=4 (budget 5)
+[iter 1] strict walk REJECTED (not <=5-exc walkable)
+
+===== FIXPOINT ITER 2 =====
+  cost 1051x1051: forbidden=87.2% wall=51s
+  [solve] 300s obj=40411954 big_jumps=4 len=1051
+[iter 2] soft: real_mk=1356.8d exc_over=3 (budget 5)
+[iter 2] strict walk REJECTED (not <=5-exc walkable)
+
+===== FIXPOINT ITER 3 =====
+Interrupted system call ; error code 4

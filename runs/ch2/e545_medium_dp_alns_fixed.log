@@ -1,0 +1,84 @@
+E-545 medium DP-ALNS (fixed). n_chains=4 wall_h=24.0
+[c0] loading fine pair-set table...
+[c1] loading fine pair-set table...
+[c2] loading fine pair-set table...
+[c3] loading fine pair-set table...
+[c3] table loaded 2.5s (n=181, T=5000)
+[c3] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c0] table loaded 2.7s (n=181, T=5000)
+[c2] table loaded 2.7s (n=181, T=5000)
+[c0] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] init bank mk=228.9748d
+[c1] table loaded 2.7s (n=181, T=5000)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] iter=600 elapsed=25.1min DP_ok=76 accepted=0 state=228.9748 best=228.9748 T=4.970
+[c1] iter=1000 elapsed=31.4min DP_ok=96 accepted=36 state=286.9167 best=228.9748 T=4.950
+[c1] iter=1200 elapsed=37.4min DP_ok=117 accepted=42 state=278.4376 best=228.9748 T=4.940
+[c0] iter=1400 elapsed=48.6min DP_ok=141 accepted=47 state=298.3167 best=228.9748 T=4.930
+[c1] iter=2200 elapsed=73.8min DP_ok=234 accepted=120 state=340.1167 best=228.9748 T=4.891
+[c2] iter=2400 elapsed=88.9min DP_ok=272 accepted=99 state=300.2167 best=228.9748 T=4.881
+[c1] iter=2600 elapsed=90.5min DP_ok=295 accepted=164 state=345.8167 best=228.9748 T=4.872
+[c0] iter=2800 elapsed=98.2min DP_ok=300 accepted=144 state=329.7167 best=228.9748 T=4.862
+[c3] iter=3600 elapsed=117.6min DP_ok=383 accepted=224 state=343.0167 best=228.9748 T=4.823
+[c2] iter=3800 elapsed=133.3min DP_ok=426 accepted=210 state=331.6167 best=228.9748 T=4.814
+[c1] iter=4600 elapsed=153.7min DP_ok=531 accepted=337 state=369.6167 best=228.9748 T=4.775
+[c2] iter=4600 elapsed=158.9min DP_ok=519 accepted=278 state=344.9167 best=228.9748 T=4.775
+[c0] iter=5400 elapsed=179.7min DP_ok=580 accepted=362 state=368.5957 best=228.9748 T=4.737
+[c3] iter=6200 elapsed=192.0min DP_ok=651 accepted=399 state=366.6957 best=228.9748 T=4.699
+[c3] iter=6600 elapsed=205.7min DP_ok=698 accepted=431 state=375.3167 best=228.9748 T=4.681
+[c0] iter=6200 elapsed=205.8min DP_ok=675 accepted=422 state=369.6167 best=228.9748 T=4.699
+[c1] iter=6400 elapsed=209.1min DP_ok=741 accepted=490 state=393.2957 best=228.9748 T=4.690
+[c3] iter=6800 elapsed=210.9min DP_ok=716 accepted=443 state=351.5167 best=228.9748 T=4.671
+[c3] iter=7000 elapsed=216.5min DP_ok=734 accepted=456 state=357.1957 best=228.9748 T=4.662
+[c2] iter=7200 elapsed=237.3min DP_ok=797 accepted=479 state=362.8957 best=228.9748 T=4.653
+[c3] iter=8600 elapsed=269.7min DP_ok=911 accepted=579 state=369.6167 best=228.9748 T=4.588
+[c0] iter=8800 elapsed=291.0min DP_ok=978 accepted=645 state=382.7957 best=228.9748 T=4.579
+[c1] iter=9200 elapsed=300.2min DP_ok=1066 accepted=703 state=355.2957 best=228.9748 T=4.561
+[c0] iter=9600 elapsed=308.9min DP_ok=1041 accepted=690 state=390.3957 best=228.9748 T=4.542
+[c1] iter=9600 elapsed=313.3min DP_ok=1111 accepted=723 state=354.4167 best=228.9748 T=4.542
+[c3] iter=10400 elapsed=327.2min DP_ok=1124 accepted=734 state=380.8957 best=228.9748 T=4.506
+[c2] iter=10600 elapsed=338.1min DP_ok=1168 accepted=752 state=385.6957 best=228.9748 T=4.497
+[c0] iter=10800 elapsed=347.4min DP_ok=1180 accepted=792 state=406.5957 best=228.9748 T=4.488
+[c2] iter=11000 elapsed=350.5min DP_ok=1214 accepted=784 state=366.6957 best=228.9748 T=4.479
+[c1] iter=11800 elapsed=381.0min DP_ok=1362 accepted=892 state=372.3957 best=228.9748 T=4.443
+[c3] iter=13400 elapsed=415.7min DP_ok=1436 accepted=939 state=394.1957 best=228.9748 T=4.373
+[c2] iter=15000 elapsed=458.4min DP_ok=1608 accepted=1059 state=385.6957 best=228.9748 T=4.304
+[c2] iter=15600 elapsed=474.8min DP_ok=1668 accepted=1101 state=374.2957 best=228.9748 T=4.278
+[c2] iter=16800 elapsed=510.0min DP_ok=1797 accepted=1186 state=389.4957 best=228.9748 T=4.227
+[c1] iter=16200 elapsed=536.6min DP_ok=1919 accepted=1253 state=374.2957 best=228.9748 T=4.252
+[c2] iter=18200 elapsed=553.8min DP_ok=1960 accepted=1290 state=375.3167 best=228.9748 T=4.168
+[c1] iter=18000 elapsed=595.9min DP_ok=2127 accepted=1390 state=357.1957 best=228.9748 T=4.176
+[c2] iter=20400 elapsed=617.3min DP_ok=2192 accepted=1462 state=400.8957 best=228.9748 T=4.077
+[c2] iter=20600 elapsed=622.5min DP_ok=2209 accepted=1478 state=405.5957 best=228.9748 T=4.069
+[c0] iter=21800 elapsed=667.6min DP_ok=2374 accepted=1654 state=380.8957 best=228.9748 T=4.021
+[c2] iter=22400 elapsed=670.7min DP_ok=2384 accepted=1595 state=399.8957 best=228.9748 T=3.997
+[c2] iter=22800 elapsed=683.1min DP_ok=2433 accepted=1635 state=402.7957 best=228.9748 T=3.981
+[c3] iter=22800 elapsed=686.8min DP_ok=2465 accepted=1691 state=390.3957 best=228.9748 T=3.981
+[c3] iter=23000 elapsed=692.7min DP_ok=2489 accepted=1707 state=386.5957 best=228.9748 T=3.973
+[c1] iter=21200 elapsed=704.9min DP_ok=2511 accepted=1611 state=345.8167 best=228.9748 T=4.045
+[c3] iter=23800 elapsed=715.1min DP_ok=2571 accepted=1765 state=371.5167 best=228.9748 T=3.941
+[c0] iter=24200 elapsed=731.7min DP_ok=2621 accepted=1829 state=354.4167 best=228.9748 T=3.925
+[c3] iter=24600 elapsed=738.8min DP_ok=2656 accepted=1831 state=385.6957 best=228.9748 T=3.910
+[c1] iter=22400 elapsed=748.3min DP_ok=2667 accepted=1703 state=351.5167 best=228.9748 T=3.997
+[c1] iter=22600 elapsed=754.2min DP_ok=2687 accepted=1714 state=340.1167 best=228.9748 T=3.989
+[c0] iter=25800 elapsed=779.6min DP_ok=2798 accepted=1960 state=388.5957 best=228.9748 T=3.863
+[c2] iter=26200 elapsed=781.1min DP_ok=2789 accepted=1875 state=377.2167 best=228.9748 T=3.848
+[c0] iter=26200 elapsed=791.9min DP_ok=2844 accepted=1993 state=355.2957 best=228.9748 T=3.848
+[c2] iter=27400 elapsed=816.7min DP_ok=2923 accepted=1972 state=391.3957 best=228.9748 T=3.802
+[c0] iter=27200 elapsed=823.8min DP_ok=2967 accepted=2073 state=371.5167 best=228.9748 T=3.809

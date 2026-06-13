@@ -1,0 +1,2 @@
+n=25000 bank=33338.1840 bank_units=33338184 require >= 33338185
+status=CpSolverStatus.UNKNOWN el=2400s

@@ -1,0 +1,14 @@
+E-544 medium LKH-3 perm. n=181, q=0.1d T=5000
+  cheap-only finite pairs: 3182
+  Calling LKH-3 (runs=5)...
+  LKH wall: 7.5s
+  tour len: 182
+  perm len: 181 unique: 181
+  start: 160, end: 47
+  DP-evaluating LKH perm...
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+  DP wall: 0.0s
+  LKH-perm DP-INFEASIBLE

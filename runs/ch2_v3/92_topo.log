@@ -1,0 +1,15 @@
+pos node | leg dv (E=exc)
+exc leg positions in perm: [2, 17, 26, 29, 45]
+perm: [34, 23, 18, 12, 10, 46, 41, 2, 25, 22, 13, 20, 40, 44, 5, 47, 36, 31, 30, 29, 45, 15, 28, 1, 48, 9, 37, 4, 11, 17, 19, 43, 0, 39, 8, 38, 24, 6, 35, 26, 21, 7, 3, 33, 42, 14, 16, 27, 32]
+Building cheap-edge graph (coarse)...
+components (sizes): [16, 9, 8, 7, 3, 3, 3]
+  small comp: [4, 11, 17]
+  small comp: [16, 27, 32]
+  small comp: [18, 23, 34]
+K=7 components => 6 structural bridges required; bank uses 5 exc
+exception legs as (from_comp -> to_comp):
+  pos 2: node 18(c6) -> 12(c2)
+  pos17: node 31(c3) -> 30(c0)
+  pos26: node 37(c0) -> 4(c4)
+  pos29: node 17(c4) -> 19(c0)
+  pos45: node 14(c1) -> 16(c5)

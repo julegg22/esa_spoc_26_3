@@ -1,0 +1,26 @@
+E-552 expanded fine precompute. n=181
+Existing table: 4686 pairs
+New pairs: 3102 intra-comp (of 10979 candidate, coarse-feasible prefiltered) + 154 inter-comp (from E-551) = 3256
+Total cells: 651,200,000  est wall on 4 cores: ~0.4h
+  200/3256 pairs  rate=0.3/s elapsed=0.21h eta=3.19h
+  400/3256 pairs  rate=0.3/s elapsed=0.41h eta=2.93h
+  600/3256 pairs  rate=0.3/s elapsed=0.62h eta=2.73h
+  800/3256 pairs  rate=0.3/s elapsed=0.82h eta=2.50h
+  1000/3256 pairs  rate=0.3/s elapsed=1.02h eta=2.30h
+  1200/3256 pairs  rate=0.3/s elapsed=1.22h eta=2.10h
+  1400/3256 pairs  rate=0.3/s elapsed=1.43h eta=1.90h
+  checkpoint @ 1500
+  1600/3256 pairs  rate=0.3/s elapsed=1.63h eta=1.69h
+  1800/3256 pairs  rate=0.3/s elapsed=1.84h eta=1.49h
+  2000/3256 pairs  rate=0.3/s elapsed=2.04h eta=1.28h
+  2200/3256 pairs  rate=0.3/s elapsed=2.25h eta=1.08h
+  2400/3256 pairs  rate=0.3/s elapsed=2.46h eta=0.88h
+  2600/3256 pairs  rate=0.3/s elapsed=2.65h eta=0.67h
+  2800/3256 pairs  rate=0.3/s elapsed=2.86h eta=0.47h
+  3000/3256 pairs  rate=0.3/s elapsed=3.06h eta=0.26h
+  checkpoint @ 3000
+  3200/3256 pairs  rate=0.3/s elapsed=3.26h eta=0.06h
+
+Scan done in 11992s (3.33h)
+Saved /tmp/ch2_medium_fine_pair_set_v2.npz (7942 pairs total)
+New pairs with >=1 finite cell: 3169/3256 = 97.3%

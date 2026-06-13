@@ -1,0 +1,6 @@
+[BASE] mk=942.0744 feas=True exc=5 viols=[0, 0, 0, 0] (bank 942.0744268445161, r1 424.62)
+[STRUCT] 6 pieces lens=[150, 267, 150, 241, 150, 93] comps=[3, 2, 1, 2, 0, 2]
+
+===== LKH EPOCH-AWARE ITER 0 (0s) =====
+  [p0] n=150 forbid=0 -> mk=951.6331 feas=True exc=5 (64s)
+Interrupted system call ; error code 4

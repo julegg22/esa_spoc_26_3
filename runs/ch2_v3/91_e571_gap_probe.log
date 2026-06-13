@@ -1,0 +1,34 @@
+[A] bank mk=1048.98d feas=True n_legs=1050
+[A] tof: sum=1049.0 idle=0.0 mean=0.999 max=24.23
+[A] tof pctiles p10/25/50/75/90/99 = 0.184, 0.317, 0.718, 1.253, 1.787, 6.332
+[A]   legs>0.5d: 654 excess_over_0.5=616.9d
+[A]   legs>1.0d: 334 excess_over_1.0=355.3d
+[A]   legs>2.0d: 87 excess_over_2.0=177.7d
+[A]   legs>3.0d: 38 excess_over_3.0=105.0d
+[A] r1=424.62d -> avg/leg 0.404d (ours 0.999d)
+
+[B] probing 150 nodes x 11 epochs x <= 40 cheap-nbrs (window=12.0d, steps=120, workers=4)
+  [B] 25/150 nodes (4s)
+  [B] 50/150 nodes (9s)
+  [B] 75/150 nodes (12s)
+  [B] 100/150 nodes (16s)
+  [B] 125/150 nodes (21s)
+  [B] 150/150 nodes (25s)
+[B] done 25s
+
+[B]    epoch     p10     med     p90  mean_cnt frac_feas
+[B]        0   0.050   0.150   0.452      36.8      1.00
+[B]      110   0.050   0.150   0.552      36.8      1.00
+[B]      220   0.050   0.150   0.964      36.8      1.00
+[B]      330   0.050   0.150   0.562      36.7      1.00
+[B]      440   0.050   0.150   0.853      36.8      1.00
+[B]      550   0.050   0.150   0.753      36.8      1.00
+[B]      660   0.050   0.150   0.653      36.8      1.00
+[B]      770   0.050   0.150   0.653      36.8      1.00
+[B]      880   0.050   0.150   0.663      36.8      1.00
+[B]      990   0.050   0.150   0.753      36.8      1.00
+[B]     1100   0.050   0.150   0.552      36.8      1.00
+
+[VERDICT] overall median min-cheap-tof=0.150d vs realized avg leg=0.999d
+[VERDICT] => SHORT transfers ARE abundant at good epochs; the 624d gap is largely ORDERING/PHASING-recoverable. A time-dependent rebuild (freed topology, epoch-aware LKH) is justified.
+[OUT] /tmp/ch2_e571_gap_probe.json

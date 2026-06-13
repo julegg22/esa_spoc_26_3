@@ -66,12 +66,21 @@ N_ITERS = int(os.environ.get("E564_ITERS", "8"))
 
 
 class Table:
-    def __init__(self, path):
+    def __init__(self, path, t_cap=None):
         d = np.load(path)
         self.cheap = d["cheap"]
         self.exc = d["exc"]
         self.t_starts = d["t_starts"]
         self.q = float(self.t_starts[1] - self.t_starts[0])
+        if t_cap is not None:
+            # truncate departure buckets above t_cap (days). The makespan is
+            # ~116d; no leg of a sub-bank tour departs above ~120d, so the
+            # higher buckets are pure overhead for the DP. tof depth keeps the
+            # full 8d range (only the t-axis is capped).
+            keep = int(t_cap / self.q)
+            self.cheap = self.cheap[:, :, :keep]
+            self.exc = self.exc[:, :, :keep]
+            self.t_starts = self.t_starts[:keep]
         self.T = len(self.t_starts)
         self.n = self.cheap.shape[0]
         self.cheap_any = np.isfinite(self.cheap).any(axis=2)
@@ -294,7 +303,7 @@ def assemble(segs):
 def main():
     kt = KTTSP(INST)
     n = kt.n
-    tab = Table(TABLE)
+    tab = Table(TABLE, t_cap=float(os.environ.get("E564_TCAP", "130")))
     lbl = np.load(STRUCT)["lbl"]
 
     bank = json.load(open(BANK))[0]["decisionVector"]

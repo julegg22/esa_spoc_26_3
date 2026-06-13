@@ -1,0 +1,35 @@
+E-548 small structural template. n=49
+Bank: start=34 end=32 mk=116.3738d (DP)
+
+=== Components ===
+  4 comps, sizes: [40, 3, 3, 3]
+  comp 0 (big, 40): [0, 1, 2, 3, 5, 6, 7, 8, 9, 10]...
+  comp 1 (3): [18, 23, 34]
+  comp 2 (3): [16, 27, 32]
+  comp 3 (3): [4, 11, 17]
+
+=== Bank perm structure ===
+  comp visit sequence (compressed): [1, 0, 3, 0, 2]
+  # comp-switches: 4 (K-1 = 3)
+  cheap legs: 43, exc legs: 5
+    cheap: 0 inter, 43 intra
+  Exception legs:
+    leg  2: 18(c1) → 12(c0)  dv=565.4  INTER
+    leg 17: 31(c0) → 30(c0)  dv=573.7  intra
+    leg 26: 37(c0) →  4(c3)  dv=597.2  INTER
+    leg 29: 17(c3) → 19(c0)  dv=561.3  INTER
+    leg 45: 14(c0) → 16(c2)  dv=581.4  INTER
+
+=== Mutation classes — walk-feasibility test ===
+  CONTROL (random swap)                 0/100 feasible   (143s)
+  M1 intra-comp swap                    8/100 feasible mk_range=[158.3, 181.8] median=174.2 n_below_bank=0  (117s)
+  M2 intra-comp seg-reverse             0/100 feasible   (117s)
+  M3 intra-comp or-opt                  0/100 feasible   (120s)
+  M4 exc-preserving 2-opt               0/100 feasible   (124s)
+  M5 bridge-node swap                   0/100 feasible   (149s)
+
+=== Summary ===
+  Total perms found BELOW bank's DP-mk (116.4d): 0
+  (Note: walk_perm_chrono mk is GREATER than DP mk;  any walk-feasible perm rescored by DP will be smaller)
+
+Results saved to /tmp/ch2_e548_template.json

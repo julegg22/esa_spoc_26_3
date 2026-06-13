@@ -1,0 +1,6 @@
+Unused: 104 idE, 104 idL
+Pairs to evaluate via pygmo SADE: 2080
+Est wall: ~303 min
+  [  50/2080] valid=0 top5=[]kg wall=1290s ETA=52355s
+  [ 100/2080] valid=0 top5=[]kg wall=2415s ETA=47812s
+  [ 150/2080] valid=0 top5=[]kg wall=3528s ETA=45390s

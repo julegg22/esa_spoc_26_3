@@ -1,0 +1,75 @@
+E-570 WSB pair (397,217) idD=296 baseline=547.9 kg
+  aE=7.281e+06 eE=0.005 iE=0.221 | aL=5.174e+06 eL=0.643 iL=0.723
+
+=== Phase A: ballistic scan pair (397,217) 16x12x3x1 ===
+scan done in 3s: 76 bound returns, 497 escapes, 3 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 2.36  3.40  1.20  3041  46.2  96.8       9784   1260    292658    253196
+ 3.14  5.66  1.50  3051  48.5 120.2      15057   2426   2616660    354723
+ 4.71  3.96  1.50  3039  41.0  85.2      24373   2129   2065428    155443
+ 3.14  2.26  1.50  3051  48.5 119.0      28658   2291   2454350    346623
+ 4.71  0.57  1.50  3039  41.0  85.2      33750   2164   2195405    123865
+ 3.93  4.53  1.20  3041  36.0  79.5      41427   2152   2197246    166852
+ 0.00  2.26  1.50  3028  46.2 111.5      43326   2421   2818601    337065
+ 3.93  1.13  1.20  3041  36.0  79.2      49562   2216   2357411    169988
+ 2.36  3.40  1.50  3048  54.8 108.3      57072   1694   1348199     41580
+ 1.96  3.40  1.35  3041  45.0 115.0      59921   2399   2796183    321376
+ 0.00  5.66  1.50  3028  46.2 110.5      66878   2473   2983584    318076
+ 3.53  1.70  1.35  3047  47.5 128.8      78403   2109   2161810    228090
+ 0.39  1.70  1.35  3026  43.8 112.0      79552   2443   2923329    303569
+ 0.39  5.09  1.35  3026  43.8 110.8      86607   2481   3020040    305499
+ 1.96  0.00  1.35  3041  45.2 116.2      88204   2434   2907021    316653
+ 0.79  1.13  1.20  3025  41.2 104.0      91019   2094   2137797    219966
+ 2.36  0.00  1.50  3048  54.2 107.5      94923   1852   1663928     32405
+ 1.57  0.57  1.35  3037  45.0  95.8     107926   2438   2927061    192223
+ 1.18  1.13  1.50  3035  50.0 111.5     116243   2552   3214354    196434
+ 0.79  4.53  1.20  3025  41.0 103.2     117783   1988   1933565    221395
+
+=== Phase B3: proxy-grid + exact-objective NM, 12 seeds ===
+ [0] ea=2.36 t0=3.40 rapo=1.20: grid best |dv1|=0 m/s peri=9784km v_rel=1260 E2=292658 proxy_extra=988 (1s)
+     NM: dv_total=4407 m/s (|dv1|=4) [19s, 220 evals]
+     arrival: in_window=114 rejects={'window': 1086, 'arr_none': 10, 'fit': 0}
+     *** VALID mass=679.2 kg dv=4406 (dv0=3041 dv1=4 dv2=1361) dt=96.7d r_arr=8354km v_rel=1318 E2=281527 ***
+ [1] ea=2.36 t0=3.40 rapo=1.50: grid best |dv1|=112 m/s peri=4718km v_rel=1546 E2=155977 proxy_extra=704 (1s)
+     NM: dv_total=3441 m/s (|dv1|=112) [23s, 220 evals]
+     arrival: in_window=161 rejects={'window': 1039, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=653.4 kg dv=4192 (dv0=3048 dv1=112 dv2=1033) dt=115.2d r_arr=8453km v_rel=1213 E2=156128 ***
+ [2] ea=2.36 t0=0.00 rapo=1.50: grid best |dv1|=50 m/s peri=19091km v_rel=1907 E2=1562458 proxy_extra=1978 (1s)
+     NM: dv_total=3902 m/s (|dv1|=41) [19s, 220 evals]
+     arrival: in_window=193 rejects={'window': 1007, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=718.5 kg dv=4304 (dv0=3048 dv1=41 dv2=1215) dt=106.7d r_arr=3799km v_rel=2387 E2=1558663 ***
+ [3] ea=3.53 t0=5.09 rapo=1.35: grid best |dv1|=60 m/s peri=20766km v_rel=2342 E2=2507166 proxy_extra=2260 (1s)
+     NM: dv_total=4243 m/s (|dv1|=62) [20s, 220 evals]
+     arrival: in_window=162 rejects={'window': 1038, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=618.3 kg dv=4544 (dv0=3047 dv1=62 dv2=1435) dt=119.7d r_arr=2883km v_rel=2911 E2=2536671 ***
+ [4] no grid point survives
+ [5] ea=4.71 t0=3.96 rapo=1.50: grid best |dv1|=0 m/s peri=24373km v_rel=2129 E2=2065428 proxy_extra=2018 (1s)
+     NM: dv_total=4347 m/s (|dv1|=10) [20s, 220 evals]
+     arrival: in_window=176 rejects={'window': 1024, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=770.9 kg dv=4178 (dv0=3039 dv1=10 dv2=1128) dt=85.5d r_arr=2191km v_rel=2923 E2=2033456 ***
+ [6] ea=0.79 t0=1.13 rapo=1.20: grid best |dv1|=100 m/s peri=26828km v_rel=2148 E2=2123548 proxy_extra=2376 (1s)
+     NM: dv_total=4586 m/s (|dv1|=104) [26s, 220 evals]
+     arrival: in_window=166 rejects={'window': 1034, 'arr_none': 13, 'fit': 0}
+     *** VALID mass=608.3 kg dv=4595 (dv0=3025 dv1=104 dv2=1465) dt=104.5d r_arr=4042km v_rel=2642 E2=2276751 ***
+ [7] ea=3.53 t0=1.70 rapo=1.35: grid best |dv1|=92 m/s peri=19588km v_rel=2286 E2=2361591 proxy_extra=2223 (1s)
+     NM: dv_total=4234 m/s (|dv1|=87) [22s, 220 evals]
+     arrival: in_window=165 rejects={'window': 1035, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=747.3 kg dv=4229 (dv0=3047 dv1=87 dv2=1094) dt=103.0d r_arr=1868km v_rel=3166 E2=2387153 ***
+ [8] ea=4.32 t0=3.96 rapo=1.35: grid best |dv1|=162 m/s peri=27812km v_rel=2001 E2=1824908 proxy_extra=2105 (1s)
+     NM: dv_total=4542 m/s (|dv1|=162) [14s, 157 evals]
+     arrival: in_window=6 rejects={'window': 1155, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=405.9 kg dv=5210 (dv0=3041 dv1=162 dv2=2007) dt=90.2d r_arr=3518km v_rel=2518 E2=1775833 ***
+ [9] ea=4.71 t0=0.57 rapo=1.50: grid best |dv1|=0 m/s peri=33750km v_rel=2164 E2=2195405 proxy_extra=2159 (1s)
+     NM: dv_total=4025 m/s (|dv1|=9) [17s, 214 evals]
+     arrival: in_window=176 rejects={'window': 1024, 'arr_none': 2, 'fit': 0}
+     *** VALID mass=836.4 kg dv=4024 (dv0=3039 dv1=9 dv2=975) dt=85.5d r_arr=1846km v_rel=3063 E2=2035401 ***
+ [10] ea=3.93 t0=4.53 rapo=1.20: grid best |dv1|=92 m/s peri=17492km v_rel=2150 E2=2031572 proxy_extra=2015 (1s)
+     NM: dv_total=7000 m/s (|dv1|=88) [10s, 112 evals]
+ [11] ea=3.93 t0=1.13 rapo=1.20: grid best |dv1|=94 m/s peri=11385km v_rel=2174 E2=1933545 proxy_extra=2111 (1s)
+     NM: dv_total=4605 m/s (|dv1|=105) [18s, 220 evals]
+     arrival: in_window=169 rejects={'window': 1031, 'arr_none': 8, 'fit': 0}
+     *** VALID mass=617.0 kg dv=4571 (dv0=3041 dv1=105 dv2=1425) dt=89.0d r_arr=4702km v_rel=2460 E2=1982055 ***
+
+=== E-570 RESULT: WSB mass 836.4 kg vs baseline 547.9 kg (+288.5) ===
+  full-precision row -> runs/ch1/e570_row_397_217.json
+row(repr): ['397.0', '217.0', '296.0', '0.565932822977284', '-0.012251288037892239', '-0.018481450308803528', '-0.004148238737961285', '7.212416643550485', '0.00010070364318123283', '-2.9089935101286745e-16', '2.9704067050715657', '-5.323221445895217e-16', '-1.1949959348526858e-16', '-0.0007570900328475181', '-0.0062424231238229055', '-0.006587515950049456', '0.2208375434262266', '0.852089293240369', '0.3660223886484555', '9.429377646931236', '10.23426702302508']

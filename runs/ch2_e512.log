@@ -1,0 +1,30 @@
+E-512: bank=142.8913d
+
+Phase 1: OR-Tools seed generation with multiple strategies
+  bank: ok (49 nodes)
+  PATH_CHEAPEST_ARC: ok but fast_walk infeasible
+  PATH_MOST_CONSTRAINED_ARC: ok fmk=179.43d
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1780170255.679401 1336779 routing.cc:6631] Invalid RoutingSearchParameters for this model: Undefined first solution strategy: EVALUATOR_STRATEGY (int value: 5)
+E0000 00:00:1780170255.679459 1336779 routing.cc:6631] Invalid RoutingSearchParameters for this model: Undefined first solution strategy: EVALUATOR_STRATEGY (int value: 5)
+  EVALUATOR_STRATEGY: failed (no path)
+  SAVINGS: ok but fast_walk infeasible
+E0000 00:00:1780170275.682780 1336779 routing.cc:6631] Invalid RoutingSearchParameters for this model: Undefined sweep arranger for ROUTING_SWEEP strategy.
+E0000 00:00:1780170275.682819 1336779 routing.cc:6631] Invalid RoutingSearchParameters for this model: Undefined sweep arranger for ROUTING_SWEEP strategy.
+  SWEEP: failed (no path)
+  CHRISTOFIDES: failed (no path)
+  PARALLEL_CHEAPEST_INSERTION: ok fmk=179.91d
+  SEQUENTIAL_CHEAPEST_INSERTION: ok fmk=179.91d
+  LOCAL_CHEAPEST_INSERTION: ok fmk=179.43d
+  GLOBAL_CHEAPEST_ARC: failed (no path)
+  LOCAL_CHEAPEST_ARC: failed (no path)
+  FIRST_UNBOUND_MIN_VALUE: ok fmk=178.81d
+  bank fmk = 151.75d
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e512_ortools_seeds_lns.py", line 271, in <module>
+    main(T_max_per_worker=tw)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e512_ortools_seeds_lns.py", line 195, in main
+    for strat, (p, fmk) in seed_perms.items():
+               ^^^^^^^^
+ValueError: too many values to unpack (expected 2)

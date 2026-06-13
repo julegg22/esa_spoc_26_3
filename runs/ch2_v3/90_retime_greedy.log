@@ -1,0 +1,7 @@
+bank perm head/tail: [34, 23, 18] ... [16, 27, 32]
+bank makespan 116.37377097878698
+retime wall 2.1s  exc_used=9
+greedy retime makespan = 117.0304 (bank 116.3738, delta -0.6566)
+sum tofs=107.870 sum idle=9.161
+UDP fitness [np.float64(117.03039311414429), 0, 0, 0, 4]
+INFEASIBLE mk=117.030393

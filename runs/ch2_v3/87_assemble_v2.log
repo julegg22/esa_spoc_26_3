@@ -1,0 +1,7 @@
+Cycles: A=1(150) B=3(150) C=0(150)
+Comp2 path[0]=582, path[-1]=205
+Small_a=1 at start: 54 options
+Small_c=0 at end: 138 options
+Valid cuts admitting small_b=3: 179/600
+
+Assembling and walking...

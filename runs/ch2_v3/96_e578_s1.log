@@ -1,0 +1,16 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-578] n=1051 start mk=1048.979 feas=True exc=5 (bank 1048.9786, r1 424.62)
+[it 4] ACCEPT W=41@957 mk=1045.104 exc=5 acc=1 (28s)
+[it 36] ACCEPT W=40@926 mk=1039.225 exc=5 acc=2 (263s)
+[it 42] ACCEPT W=40@861 mk=1037.755 exc=5 acc=3 (306s)
+[it 43] ACCEPT W=25@608 mk=1030.674 exc=5 acc=4 (312s)
+[it 50] cur mk=1030.674 acc=4 (360s)
+[it 59] ACCEPT W=41@884 mk=1019.049 exc=5 acc=5 (427s)
+[it 100] cur mk=1019.049 acc=5 (723s)
+[it 150] cur mk=1019.049 acc=5 (1089s)
+[it 200] cur mk=1019.049 acc=5 (1458s)
+[it 300] cur mk=1019.049 acc=5 (2183s)
+[it 350] cur mk=1019.049 acc=5 (2543s)
+[it 450] cur mk=1019.049 acc=5 (3275s)

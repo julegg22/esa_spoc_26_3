@@ -1,0 +1,7 @@
+Graph: 25493 cheap edges, avg out-degree 24.3
+Trying 50 starts (top-out-degree)
+  start=37: visited=309/1051, n_exc=5, complete=False
+  start=351: visited=318/1051, n_exc=5, complete=False
+  start=412: visited=335/1051, n_exc=5, complete=False
+  start=479: visited=461/1051, n_exc=5, complete=False
+  start=772: visited=489/1051, n_exc=5, complete=False

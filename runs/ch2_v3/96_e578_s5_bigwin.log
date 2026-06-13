@@ -1,0 +1,8 @@
+[E-578] n=1051 start mk=1048.979 feas=True exc=5 (bank 1048.9786, r1 424.62)
+[it 2] ACCEPT W=40@816 mk=1037.755 exc=5 acc=1 (25s)
+[it 15] ACCEPT W=47@900 mk=1035.484 exc=5 acc=2 (172s)
+[it 16] ACCEPT W=72@825 mk=1019.049 exc=5 acc=3 (182s)
+[it 50] cur mk=1019.049 acc=3 (563s)
+[it 100] cur mk=1019.049 acc=3 (1194s)
+[it 150] cur mk=1019.049 acc=3 (1766s)
+Interrupted system call ; error code 4

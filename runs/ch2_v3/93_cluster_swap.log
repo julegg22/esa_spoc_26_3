@@ -1,0 +1,5 @@
+bank_mk 116.3738
+budget-aware retime of bank perm: 125.0551 wall 15.5s
+internal-order candidates: 15
+tried 15 cands, best_mk=116.3738 wall 248.6s
+no improvement over bank

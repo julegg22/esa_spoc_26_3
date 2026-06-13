@@ -1,0 +1,33 @@
+[BASE] bank mk=116.3738 (official) n=49 n_exc=5
+[STRUCT] segments(comp,len): [(3, 3), (0, 24), (1, 3), (0, 16), (2, 3)] bridges@[2, 26, 29, 45]
+[REPRO] DP-timing warmup (numba jit)...
+[REPRO] ultrafine-DP of bank perm: mk=116.3755 feas=True viols=[0, 0, 0, 0] (2s)
+[REPRO] DP exc used on bank perm: 5/5
+
+===== EPOCH-AWARE ITER 0 =====
+  seg1 comp0 n=24 reorder big=0 30s
+  seg3 comp0 n=16 reorder big=0 30s
+  [iter 0] DP mk=116.3755 feas=True viols=[0, 0, 0, 0] tof_sum=110.0 max=6.50
+
+===== EPOCH-AWARE ITER 1 =====
+  seg1 comp0 n=24 reorder big=0 30s
+  seg3 comp0 n=16 reorder big=0 30s
+  [iter 1] DP mk=116.3755 feas=True viols=[0, 0, 0, 0] tof_sum=110.0 max=6.50
+
+===== EPOCH-AWARE ITER 2 =====
+  seg1 comp0 n=24 reorder big=0 30s
+  seg3 comp0 n=16 reorder big=0 30s
+  [iter 2] DP mk=116.3755 feas=True viols=[0, 0, 0, 0] tof_sum=110.0 max=6.50
+
+===== EPOCH-AWARE ITER 3 =====
+  seg1 comp0 n=24 reorder big=0 30s
+  seg3 comp0 n=16 reorder big=0 30s
+  [iter 3] DP mk=116.3755 feas=True viols=[0, 0, 0, 0] tof_sum=110.0 max=6.50
+
+===== EPOCH-AWARE ITER 4 =====
+  seg1 comp0 n=24 reorder big=0 30s
+  seg3 comp0 n=16 reorder big=0 30s
+  [iter 4] DP mk=116.3755 feas=True viols=[0, 0, 0, 0] tof_sum=110.0 max=6.50
+
+[FINAL] best DP mk=116.3755 (official bank 116.37377097878698)
+[OUT] reordering gave NO improvement over the bank (116.3755 vs 116.3738) — writing NOTHING.

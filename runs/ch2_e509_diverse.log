@@ -1,0 +1,95 @@
+E-509: bank=142.8913d  R3=111.76  R1=101.65
+Seeds: ['bank', 'rand_0', 'rand_1', 'rand_2', 'rand_3', 'shuf_34', 'shuf_0', 'shuf_10', 'shuf_18']
+  [bank it=74004 t=90s] cur=170.44 best=151.75 walks=72968 feas=2126 top=871 (811/s)
+  [bank it=147011 t=180s] cur=167.96 best=151.75 walks=144984 feas=4222 top=1747 (805/s)
+  [bank it=220810 t=270s] cur=158.07 best=151.75 walks=217781 feas=6366 top=2987 (806/s)
+  [bank it=294269 t=360s] cur=163.51 best=151.75 walks=290218 feas=8531 top=3771 (806/s)
+  [bank it=367414 t=450s] cur=172.30 best=151.75 walks=362390 feas=10744 top=5052 (805/s)
+  [bank it=441763 t=540s] cur=157.75 best=151.75 walks=435764 feas=12742 top=6839 (807/s)
+  [bank it=516201 t=630s] cur=163.57 best=151.75 walks=509251 feas=14906 top=8796 (808/s)
+  [bank it=585956 t=720s] cur=152.99 best=151.75 walks=578071 feas=17140 top=10845 (803/s)
+  [bank it=655226 t=810s] cur=153.57 best=151.75 walks=646354 feas=19357 top=12916 (798/s)
+  [bank it=724298 t=900s] cur=153.23 best=151.75 walks=714475 feas=21650 top=15028 (793/s)
+  [bank it=793350 t=990s] cur=152.99 best=151.75 walks=782540 feas=23954 top=17153 (790/s)
+  [bank it=862577 t=1081s] cur=153.23 best=151.75 walks=850806 feas=26262 top=19298 (787/s)
+  [bank it=932136 t=1171s] cur=152.99 best=151.75 walks=919415 feas=28555 top=21422 (785/s)
+  [bank it=1002026 t=1261s] cur=153.23 best=151.75 walks=988327 feas=30848 top=23550 (784/s)
+  [bank it=1072564 t=1351s] cur=152.99 best=151.75 walks=1057909 feas=33144 top=25692 (783/s)
+  [bank it=1142401 t=1441s] cur=153.23 best=151.75 walks=1126786 feas=35386 top=27771 (782/s)
+  [bank it=1212307 t=1531s] cur=152.99 best=151.75 walks=1195719 feas=37592 top=29826 (781/s)
+  [bank it=1282210 t=1621s] cur=175.57 best=151.75 walks=1264660 feas=39806 top=31253 (780/s)
+  [bank it=1354728 t=1711s] cur=171.48 best=151.75 walks=1336266 feas=41969 top=32095 (781/s)
+  [bank it=1426444 t=1801s] cur=172.43 best=151.75 walks=1407046 feas=43994 top=33365 (781/s)
+  [bank it=1498224 t=1891s] cur=176.07 best=151.75 walks=1477903 feas=46074 top=34444 (782/s)
+  [bank it=1570255 t=1981s] cur=158.57 best=151.75 walks=1548967 feas=48306 top=35346 (782/s)
+  [bank it=1643941 t=2071s] cur=156.73 best=151.75 walks=1621635 feas=50489 top=37097 (783/s)
+  [bank it=1717192 t=2161s] cur=157.07 best=151.75 walks=1693870 feas=52583 top=39002 (784/s)
+  [bank it=1789844 t=2251s] cur=157.17 best=151.75 walks=1765484 feas=54675 top=40945 (784/s)
+  [bank it=1862985 t=2341s] cur=154.99 best=151.75 walks=1837606 feas=56734 top=42802 (785/s)
+  [bank DONE it=1910199 t=2400s] best=151.75 top_collected=43833
+  [rand_0 DONE it=49802122 t=2400s] best=220.00 top_collected=0
+  --- worker rand_0: best fmk=220.00 (0 candidates) ---
+  [rand_1 DONE it=17354506 t=2400s] best=220.00 top_collected=0
+  --- worker rand_1: best fmk=220.00 (0 candidates) ---
+  [rand_2 DONE it=46192264 t=2400s] best=220.00 top_collected=0
+  [rand_3 DONE it=13702494 t=2400s] best=220.00 top_collected=0
+  --- worker rand_2: best fmk=220.00 (0 candidates) ---
+  --- worker rand_3: best fmk=220.00 (0 candidates) ---
+  [shuf_34 DONE it=50261741 t=2400s] best=220.00 top_collected=0
+  --- worker shuf_34: best fmk=220.00 (0 candidates) ---
+  [shuf_0 DONE it=24130899 t=2400s] best=220.00 top_collected=0
+  --- worker shuf_0: best fmk=220.00 (0 candidates) ---
+  [shuf_10 DONE it=49763299 t=2400s] best=220.00 top_collected=0
+  --- worker shuf_10: best fmk=220.00 (0 candidates) ---
+  --- worker bank: best fmk=151.75 (43833 candidates) ---
+
+E-509 LNS done in 2400s. all_top: 43833
+Unique perms: 30764. fmk range: 151.75 - 171.73
+
+--- Validating top 1500 perms with Lambert ---
+  [   0] fmk=151.75 → lambert=143.2925d  
+  [   1] fmk=151.75 → lambert=142.8913d  
+  ... [37/1500] elapsed=61s best=142.8913
+  ... [74/1500] elapsed=122s best=142.8913
+  ... [106/1500] elapsed=182s best=142.8913
+  ... [142/1500] elapsed=244s best=142.8913
+  ... [179/1500] elapsed=305s best=142.8913
+  ... [213/1500] elapsed=365s best=142.8913
+  ... [246/1500] elapsed=427s best=142.8913
+  ... [284/1500] elapsed=487s best=142.8913
+  ... [324/1500] elapsed=549s best=142.8913
+  ... [362/1500] elapsed=609s best=142.8913
+  ... [401/1500] elapsed=670s best=142.8913
+  ... [438/1500] elapsed=732s best=142.8913
+  ... [473/1500] elapsed=792s best=142.8913
+  ... [510/1500] elapsed=853s best=142.8913
+  ... [549/1500] elapsed=914s best=142.8913
+  ... [589/1500] elapsed=975s best=142.8913
+  ... [625/1500] elapsed=1035s best=142.8913
+  ... [662/1500] elapsed=1097s best=142.8913
+  ... [703/1500] elapsed=1158s best=142.8913
+  ... [734/1500] elapsed=1218s best=142.8913
+  ... [766/1500] elapsed=1279s best=142.8913
+  ... [807/1500] elapsed=1340s best=142.8913
+  ... [840/1500] elapsed=1401s best=142.8913
+  ... [878/1500] elapsed=1461s best=142.8913
+  ... [917/1500] elapsed=1522s best=142.8913
+  ... [950/1500] elapsed=1584s best=142.8913
+  ... [989/1500] elapsed=1644s best=142.8913
+  ... [1021/1500] elapsed=1704s best=142.8913
+  ... [1062/1500] elapsed=1765s best=142.8913
+  ... [1101/1500] elapsed=1826s best=142.8913
+  ... [1135/1500] elapsed=1886s best=142.8913
+  ... [1171/1500] elapsed=1947s best=142.8913
+  ... [1208/1500] elapsed=2008s best=142.8913
+  ... [1240/1500] elapsed=2068s best=142.8913
+  ... [1279/1500] elapsed=2130s best=142.8913
+  ... [1319/1500] elapsed=2191s best=142.8913
+  ... [1352/1500] elapsed=2252s best=142.8913
+  ... [1397/1500] elapsed=2312s best=142.8913
+  ... [1425/1500] elapsed=2373s best=142.8913
+  ... [1461/1500] elapsed=2434s best=142.8913
+  ... [1493/1500] elapsed=2496s best=142.8913
+
+Validation wall: 2503s
+Perms beating bank: 0/1500

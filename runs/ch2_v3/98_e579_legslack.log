@@ -1,0 +1,27 @@
+[E-579] bank mk=1048.98d feas=True legs=1050 tof_sum=1049.0
+[E-579] probing 1050 legs, cand~60+ctrl20, workers=4
+  [E-579] 100/1050 legs (150s)
+  [E-579] 200/1050 legs (244s)
+  [E-579] 300/1050 legs (292s)
+  [E-579] 400/1050 legs (334s)
+  [E-579] 500/1050 legs (440s)
+  [E-579] 600/1050 legs (544s)
+  [E-579] 700/1050 legs (597s)
+  [E-579] 800/1050 legs (622s)
+  [E-579] 900/1050 legs (637s)
+  [E-579] 1000/1050 legs (652s)
+
+==== E-579 RESULTS ====
+legs with a probe result: 1046/1050
+total realized tof_sum = 1049.0d
+sum(best_unvis over probed) = 524.4d
+RECOVERABLE SLACK (sum max(0,slack)) = 499.2d over 665 legs
+  long legs >0.5d: 650, of which had a cheaper unvisited option: 518 (recoverable 463.0d)
+  long legs >1.0d: 330, of which had a cheaper unvisited option: 270 (recoverable 328.4d)
+  long legs >2.0d: 83, of which had a cheaper unvisited option: 63 (recoverable 146.5d)
+
+bridge legs (cross-ring): 43 tof_sum=123.9d
+intra-ring legs: 1007 tof_sum=925.1d
+intra-ring legs >0.5d (PHASE-MISS candidates): 617 excess_over_0.5=513.5d
+
+wrote /tmp/ch2_e579_legslack.json

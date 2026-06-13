@@ -1,0 +1,8 @@
+[E-586] n=1051 seed=/tmp/large_seed_base.json fine-walk mk=942.0744 feas=True exc=5 viols=[0, 0, 0, 0] (r1 424.62)
+[it 50] cur mk=942.0744 acc=0 (1078s)
+[it 100] cur mk=942.0744 acc=0 (2099s)
+[it 125] cur mk=942.0744 acc=0 (2663s)
+[it 150] cur mk=942.0744 acc=0 (3181s)
+
+[FINAL] best feasible mk=942.0744 acc=0 (r1 424.62)
+[OUT] /tmp/ch2_large_cand_e586_s2.json

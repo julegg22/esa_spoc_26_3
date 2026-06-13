@@ -1,0 +1,8 @@
+[E-578] n=1051 start mk=1048.979 feas=True exc=5 (bank 1048.9786, r1 424.62)
+[it 5] ACCEPT W=24@834 mk=1038.290 exc=5 acc=1 (36s)
+[it 6] ACCEPT W=36@925 mk=1035.484 exc=5 acc=2 (43s)
+[it 13] ACCEPT W=30@874 mk=1019.049 exc=5 acc=3 (94s)
+
+[FINAL] best feasible mk=1019.049 acc=3 (bank 1048.9786, r1 424.62)
+[FINAL] beats bank by 29.929d (still r2 unless <424)
+[OUT] /tmp/ch2_large_window_candidate.json

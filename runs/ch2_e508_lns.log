@@ -1,0 +1,271 @@
+E-508: bank_mk=142.9183, target=R1=101.65
+Bank perm fast walk: mk=162.2333333492279 ok=True
+  [s=2 it=46313 t=60s T=2.71] cur=157.81 best=153.23 walks=45601 feas=1518 acc=951 (760/s)
+  [s=3 it=47194 t=60s T=2.36] cur=157.57 best=156.31 walks=46465 feas=1500 acc=971 (774/s)
+  [s=0 it=46812 t=60s T=2.29] cur=162.17 best=152.99 walks=46052 feas=1559 acc=945 (767/s)
+  [s=1 it=47564 t=60s T=2.41] cur=160.19 best=154.99 walks=46832 feas=1462 acc=890 (780/s)
+  [s=4 it=46306 t=60s T=3.54] cur=163.73 best=152.99 walks=45619 feas=1485 acc=997 (760/s)
+  [s=6 it=45215 t=60s T=2.42] cur=161.85 best=152.99 walks=44534 feas=1448 acc=919 (742/s)
+  [s=5 it=46880 t=60s T=3.65] cur=176.67 best=156.14 walks=46124 feas=1333 acc=885 (768/s)
+  [s=7 it=44853 t=60s T=2.37] cur=166.19 best=155.48 walks=44180 feas=1490 acc=935 (735/s)
+  [s=2 it=94042 t=120s T=1.24] cur=154.39 best=152.99 walks=92597 feas=3089 acc=1663 (772/s)
+  [s=1 it=96303 t=120s T=1.16] cur=157.07 best=151.75 walks=94833 feas=2923 acc=1631 (790/s)
+  [s=0 it=93191 t=120s T=1.01] cur=153.73 best=152.99 walks=91724 feas=3204 acc=1621 (764/s)
+  [s=4 it=91906 t=120s T=1.64] cur=159.28 best=152.99 walks=90485 feas=3026 acc=1813 (754/s)
+  [s=5 it=95006 t=120s T=4.43] cur=169.30 best=152.99 walks=93482 feas=2884 acc=1762 (779/s)
+  [s=3 it=93643 t=120s T=1.05] cur=155.48 best=152.99 walks=92217 feas=3125 acc=1647 (768/s)
+  [s=6 it=90620 t=120s T=1.06] cur=163.57 best=152.99 walks=89284 feas=3097 acc=1676 (743/s)
+  [s=7 it=93663 t=120s T=1.18] cur=157.17 best=151.75 walks=92214 feas=2891 acc=1659 (768/s)
+  [s=2 it=140327 t=180s T=0.57] cur=153.23 best=152.99 walks=138175 feas=4648 acc=2169 (768/s)
+  [s=1 it=145739 t=180s T=3.05] cur=157.17 best=151.75 walks=143480 feas=4383 acc=2453 (797/s)
+  [s=4 it=137152 t=180s T=0.77] cur=153.73 best=152.99 walks=135043 feas=4539 acc=2367 (750/s)
+  [s=0 it=139040 t=180s T=0.50] cur=153.23 best=152.99 walks=136873 feas=4825 acc=2093 (760/s)
+  [s=5 it=142168 t=180s T=1.95] cur=154.15 best=152.99 walks=139944 feas=4526 acc=2664 (777/s)
+  [s=6 it=136557 t=180s T=0.50] cur=153.48 best=152.99 walks=134508 feas=4654 acc=2147 (747/s)
+  [s=3 it=139826 t=180s T=0.50] cur=153.48 best=152.99 walks=137656 feas=4706 acc=2108 (764/s)
+  [s=7 it=142284 t=180s T=0.58] cur=157.49 best=151.75 walks=140109 feas=4299 acc=2194 (777/s)
+  [s=2 it=186510 t=240s T=0.50] cur=153.73 best=152.99 walks=183677 feas=6294 acc=2606 (765/s)
+  [s=1 it=195103 t=240s T=1.44] cur=152.99 best=151.75 walks=192066 feas=5884 acc=3232 (800/s)
+  [s=0 it=185370 t=240s T=0.50] cur=152.99 best=152.99 walks=182514 feas=6382 acc=2498 (760/s)
+  [s=4 it=182462 t=240s T=0.50] cur=153.57 best=152.99 walks=179662 feas=6144 acc=2798 (748/s)
+  [s=5 it=190134 t=240s T=0.85] cur=156.49 best=152.99 walks=187221 feas=6188 acc=3335 (780/s)
+  [s=6 it=182897 t=240s T=0.50] cur=153.23 best=152.99 walks=180103 feas=6309 acc=2562 (750/s)
+  [s=3 it=186210 t=240s T=0.50] cur=153.23 best=152.99 walks=183310 feas=6296 acc=2579 (763/s)
+  [s=7 it=189770 t=240s T=3.07] cur=158.57 best=151.75 walks=186879 feas=5797 acc=2960 (778/s)
+  [s=2 it=232659 t=300s T=0.50] cur=153.73 best=152.99 walks=229136 feas=7882 acc=3005 (764/s)
+  [s=1 it=242430 t=300s T=0.66] cur=156.73 best=151.75 walks=238712 feas=7458 acc=3807 (795/s)
+  [s=4 it=227774 t=300s T=0.50] cur=153.57 best=152.99 walks=224290 feas=7695 acc=3234 (747/s)
+  [s=6 it=229261 t=300s T=0.50] cur=154.15 best=152.99 walks=225702 feas=7887 acc=2917 (752/s)
+  [s=5 it=240383 t=300s T=0.50] cur=151.75 best=151.75 walks=236670 feas=7769 acc=3803 (788/s)
+  [s=0 it=231691 t=300s T=0.50] cur=153.73 best=152.99 walks=228105 feas=8006 acc=2909 (760/s)
+  [s=3 it=233064 t=300s T=0.50] cur=154.39 best=152.99 walks=229414 feas=7889 acc=2963 (764/s)
+  [s=7 it=235485 t=300s T=1.36] cur=154.65 best=151.75 walks=231883 feas=7420 acc=3719 (772/s)
+  [s=2 it=278868 t=360s T=0.50] cur=154.39 best=152.99 walks=274670 feas=9499 acc=3425 (763/s)
+  [s=1 it=291500 t=360s T=0.50] cur=157.57 best=151.75 walks=287057 feas=9121 acc=4387 (797/s)
+  [s=0 it=277839 t=360s T=0.50] cur=154.65 best=152.99 walks=273491 feas=9616 acc=3350 (759/s)
+  [s=4 it=274245 t=360s T=3.55] cur=158.07 best=152.99 walks=270038 feas=9093 acc=3918 (750/s)
+  [s=3 it=279865 t=360s T=0.50] cur=153.73 best=152.99 walks=275472 feas=9540 acc=3458 (765/s)
+  [s=6 it=275690 t=360s T=0.50] cur=152.99 best=152.99 walks=271411 feas=9501 acc=3311 (753/s)
+  [s=5 it=289504 t=360s T=0.50] cur=151.75 best=151.75 walks=285032 feas=9416 acc=4163 (791/s)
+  [s=7 it=281251 t=360s T=0.63] cur=153.65 best=151.75 walks=276949 feas=8948 acc=4246 (769/s)
+  [s=2 it=325460 t=420s T=0.50] cur=153.23 best=152.99 walks=320584 feas=11122 acc=3897 (763/s)
+  [s=1 it=340666 t=420s T=0.50] cur=156.73 best=151.75 walks=335414 feas=10601 acc=4884 (798/s)
+  [s=0 it=324301 t=420s T=0.50] cur=153.57 best=152.99 walks=319234 feas=11218 acc=3790 (760/s)
+  [s=4 it=322631 t=420s T=1.83] cur=157.17 best=152.99 walks=317650 feas=10420 acc=4689 (756/s)
+  [s=5 it=339039 t=420s T=0.50] cur=151.75 best=151.75 walks=333781 feas=10973 acc=4530 (794/s)
+  [s=3 it=325689 t=420s T=0.50] cur=153.48 best=152.99 walks=320609 feas=11181 acc=3823 (763/s)
+  [s=6 it=321795 t=420s T=0.50] cur=153.23 best=152.99 walks=316830 feas=11077 acc=3792 (754/s)
+  [s=7 it=326862 t=420s T=0.50] cur=153.23 best=151.75 walks=321842 feas=10474 acc=4677 (766/s)
+  [s=1 it=389290 t=480s T=0.50] cur=157.07 best=151.75 walks=383337 feas=11918 acc=5212 (798/s)
+  [s=4 it=370572 t=480s T=0.87] cur=156.73 best=152.99 walks=364826 feas=11903 acc=5389 (760/s)
+  [s=0 it=370377 t=480s T=0.50] cur=152.99 best=152.99 walks=364584 feas=12795 acc=4216 (759/s)
+  [s=2 it=371619 t=480s T=0.50] cur=152.99 best=152.99 walks=366013 feas=12741 acc=4312 (762/s)
+  [s=3 it=372748 t=480s T=2.69] cur=164.57 best=152.99 walks=366934 feas=12803 acc=4713 (764/s)
+  [s=6 it=368135 t=480s T=4.34] cur=174.51 best=152.99 walks=362467 feas=12726 acc=4338 (755/s)
+  [s=5 it=388694 t=480s T=0.50] cur=152.57 best=151.75 walks=382658 feas=12656 acc=4915 (797/s)
+  [s=7 it=372300 t=480s T=0.50] cur=153.23 best=151.75 walks=366627 feas=12113 acc=5052 (763/s)
+  [s=1 it=435797 t=540s T=3.52] cur=159.49 best=151.75 walks=429161 feas=13509 acc=6181 (794/s)
+  [s=4 it=418732 t=540s T=0.50] cur=157.17 best=152.99 walks=412221 feas=13523 acc=5976 (763/s)
+  [s=0 it=416754 t=540s T=0.50] cur=152.99 best=152.99 walks=410249 feas=14477 acc=4549 (759/s)
+  [s=2 it=417182 t=540s T=0.50] cur=154.15 best=152.99 walks=410920 feas=14333 acc=4771 (761/s)
+  [s=3 it=419429 t=540s T=1.17] cur=157.75 best=152.99 walks=412914 feas=14471 acc=5417 (764/s)
+  [s=5 it=438075 t=540s T=0.50] cur=152.17 best=151.75 walks=431246 feas=14267 acc=5328 (798/s)
+  [s=6 it=416260 t=540s T=2.03] cur=159.57 best=152.99 walks=409826 feas=14243 acc=5264 (758/s)
+  [s=7 it=417867 t=540s T=0.50] cur=153.57 best=151.75 walks=411569 feas=13614 acc=5467 (762/s)
+  [s=1 it=482692 t=600s T=1.57] cur=159.57 best=151.75 walks=475342 feas=15127 acc=7009 (792/s)
+  [s=0 it=462886 t=600s T=0.50] cur=153.57 best=152.99 walks=455669 feas=16073 acc=5017 (759/s)
+  [s=4 it=467672 t=600s T=0.50] cur=157.17 best=152.99 walks=460386 feas=15052 acc=6447 (767/s)
+  [s=2 it=464918 t=600s T=4.89] cur=163.57 best=152.99 walks=457874 feas=15952 acc=5270 (763/s)
+  [s=3 it=468459 t=600s T=0.55] cur=157.49 best=152.99 walks=461211 feas=15980 acc=5996 (768/s)
+  [s=5 it=487675 t=600s T=0.50] cur=151.75 best=151.75 walks=480090 feas=15869 acc=5715 (800/s)
+  [s=6 it=465423 t=600s T=0.92] cur=157.17 best=152.99 walks=458246 feas=15827 acc=6036 (763/s)
+  [s=7 it=463828 t=600s T=0.50] cur=152.99 best=151.75 walks=456810 feas=15208 acc=5829 (761/s)
+  [s=4 it=515649 t=660s T=0.50] cur=154.99 best=152.99 walks=507654 feas=16618 acc=6911 (769/s)
+  [s=1 it=531425 t=660s T=0.73] cur=154.39 best=151.75 walks=523322 feas=16651 acc=7634 (792/s)
+  [s=0 it=509143 t=660s T=0.50] cur=153.23 best=152.99 walks=501219 feas=17711 acc=5427 (759/s)
+  [s=3 it=517738 t=660s T=0.50] cur=156.99 best=152.99 walks=509705 feas=17394 acc=6374 (772/s)
+  [s=2 it=510738 t=660s T=2.19] cur=165.43 best=152.99 walks=503003 feas=17557 acc=6239 (762/s)
+  [s=5 it=536825 t=660s T=0.50] cur=152.31 best=151.75 walks=528507 feas=17442 acc=6098 (800/s)
+  [s=6 it=513835 t=660s T=0.50] cur=156.73 best=152.99 walks=505914 feas=17310 acc=6590 (766/s)
+  [s=7 it=509623 t=661s T=0.50] cur=153.65 best=151.75 walks=501912 feas=16741 acc=6215 (760/s)
+  [s=4 it=560929 t=720s T=0.50] cur=152.99 best=152.99 walks=552226 feas=18186 acc=7344 (767/s)
+  [s=0 it=555281 t=720s T=0.50] cur=153.65 best=152.99 walks=546665 feas=19314 acc=5801 (759/s)
+  [s=1 it=577597 t=720s T=0.50] cur=152.99 best=151.75 walks=568781 feas=18262 acc=8063 (790/s)
+  [s=3 it=566664 t=720s T=0.50] cur=158.07 best=152.99 walks=557819 feas=18948 acc=6843 (774/s)
+  [s=2 it=560035 t=720s T=0.99] cur=157.49 best=152.99 walks=551524 feas=19151 acc=6968 (766/s)
+  [s=5 it=585444 t=720s T=3.43] cur=168.43 best=151.75 walks=576365 feas=18937 acc=6759 (800/s)
+  [s=6 it=562933 t=720s T=0.50] cur=152.31 best=151.75 walks=554247 feas=18734 acc=7017 (769/s)
+  [s=7 it=555945 t=721s T=0.50] cur=153.65 best=151.75 walks=547510 feas=18404 acc=6703 (760/s)
+  [s=0 it=602877 t=780s T=2.43] cur=174.57 best=152.99 walks=593506 feas=20914 acc=6751 (761/s)
+  [s=1 it=623870 t=780s T=0.50] cur=152.99 best=151.75 walks=614296 feas=19938 acc=8452 (787/s)
+  [s=4 it=606451 t=780s T=0.50] cur=153.23 best=152.99 walks=597102 feas=19763 acc=7719 (765/s)
+  [s=3 it=615612 t=780s T=0.50] cur=156.49 best=152.99 walks=605987 feas=20228 acc=7317 (776/s)
+  [s=5 it=633390 t=780s T=1.61] cur=154.15 best=151.75 walks=623562 feas=20456 acc=7565 (799/s)
+  [s=6 it=611841 t=781s T=2.49] cur=164.57 best=151.75 walks=602386 feas=20284 acc=7953 (772/s)
+  [s=2 it=609342 t=781s T=3.44] cur=157.75 best=151.75 walks=600074 feas=20571 acc=7744 (769/s)
+  [s=7 it=601843 t=781s T=0.50] cur=152.99 best=151.75 walks=592674 feas=20002 acc=7113 (759/s)
+  [s=1 it=670301 t=840s T=0.50] cur=152.99 best=151.75 walks=659978 feas=21572 acc=8898 (785/s)
+  [s=4 it=651783 t=840s T=0.50] cur=153.23 best=152.99 walks=641737 feas=21318 acc=8089 (764/s)
+  [s=0 it=649041 t=840s T=1.10] cur=152.99 best=152.99 walks=638992 feas=22503 acc=7443 (760/s)
+  [s=3 it=665753 t=840s T=0.50] cur=156.49 best=152.99 walks=655374 feas=21749 acc=7776 (780/s)
+  [s=5 it=679752 t=841s T=0.71] cur=154.39 best=151.75 walks=669185 feas=22078 acc=8128 (796/s)
+  [s=6 it=661559 t=841s T=1.10] cur=158.07 best=151.75 walks=651358 feas=21914 acc=8742 (775/s)
+  [s=2 it=657289 t=841s T=1.50] cur=157.17 best=151.75 walks=647292 feas=22226 acc=8546 (770/s)
+  [s=7 it=647098 t=841s T=0.50] cur=152.99 best=151.75 walks=637264 feas=21597 acc=7536 (758/s)
+  [s=1 it=716975 t=900s T=0.50] cur=155.83 best=151.75 walks=705898 feas=23144 acc=9335 (784/s)
+  [s=4 it=696974 t=900s T=0.50] cur=152.99 best=152.99 walks=686270 feas=22887 acc=8446 (762/s)
+  [s=3 it=714895 t=900s T=0.50] cur=157.17 best=152.99 walks=703753 feas=23270 acc=8326 (782/s)
+  [s=0 it=696166 t=901s T=4.37] cur=156.73 best=152.99 walks=685397 feas=24085 acc=8221 (761/s)
+  [s=5 it=726347 t=901s T=0.50] cur=152.99 best=151.75 walks=715075 feas=23643 acc=8567 (794/s)
+  [s=7 it=692556 t=901s T=0.50] cur=153.23 best=151.75 walks=682019 feas=23181 acc=7897 (757/s)
+  [s=6 it=710182 t=901s T=0.54] cur=157.07 best=151.75 walks=699254 feas=23330 acc=9334 (776/s)
+  [s=2 it=707686 t=901s T=0.67] cur=156.73 best=151.75 walks=696887 feas=23828 acc=9098 (774/s)
+  [s=1 it=763753 t=960s T=0.50] cur=153.48 best=151.75 walks=751948 feas=24653 acc=9764 (783/s)
+  [s=4 it=742369 t=960s T=0.50] cur=153.57 best=152.99 walks=730945 feas=24441 acc=8866 (761/s)
+  [s=3 it=763079 t=961s T=0.50] cur=158.07 best=152.99 walks=751203 feas=24767 acc=8797 (782/s)
+  [s=0 it=745024 t=961s T=2.05] cur=158.57 best=152.99 walks=733450 feas=25594 acc=9151 (764/s)
+  [s=5 it=772508 t=961s T=0.50] cur=152.99 best=151.75 walks=760546 feas=25204 acc=8969 (792/s)
+  [s=2 it=758391 t=961s T=0.50] cur=157.81 best=151.75 walks=746815 feas=25223 acc=9583 (777/s)
+  [s=7 it=738045 t=961s T=0.50] cur=153.23 best=151.75 walks=726820 feas=24772 acc=8275 (757/s)
+  [s=6 it=759183 t=961s T=0.50] cur=156.49 best=151.75 walks=747495 feas=24922 acc=9861 (778/s)
+  [s=1 it=810211 t=1021s T=0.50] cur=153.65 best=151.75 walks=797700 feas=26198 acc=10164 (782/s)
+  [s=4 it=787523 t=1021s T=0.50] cur=152.99 best=152.99 walks=775441 feas=26005 acc=9278 (760/s)
+  [s=3 it=811873 t=1021s T=0.50] cur=156.73 best=152.99 walks=799264 feas=26282 acc=9311 (783/s)
+  [s=0 it=793126 t=1021s T=3.20] cur=160.39 best=152.99 walks=780793 feas=27186 acc=10062 (765/s)
+  [s=2 it=808877 t=1021s T=0.50] cur=156.99 best=151.75 walks=796440 feas=26677 acc=10029 (780/s)
+  [s=7 it=783471 t=1021s T=0.50] cur=153.23 best=151.75 walks=771552 feas=26333 acc=8686 (756/s)
+  [s=6 it=807973 t=1021s T=0.50] cur=152.17 best=151.75 walks=795524 feas=26462 acc=10350 (779/s)
+  [s=5 it=818630 t=1021s T=0.50] cur=152.99 best=151.75 walks=805992 feas=26711 acc=9349 (790/s)
+  [s=1 it=856331 t=1081s T=0.50] cur=152.99 best=151.75 walks=843058 feas=27802 acc=10583 (780/s)
+  [s=4 it=832698 t=1081s T=0.50] cur=153.23 best=152.99 walks=819931 feas=27573 acc=9629 (759/s)
+  [s=3 it=859966 t=1081s T=0.50] cur=155.64 best=152.99 walks=846577 feas=27637 acc=9640 (783/s)
+  [s=0 it=842551 t=1081s T=4.80] cur=177.27 best=152.99 walks=829486 feas=28760 acc=10907 (768/s)
+  [s=2 it=858515 t=1081s T=0.50] cur=157.75 best=151.75 walks=845284 feas=28232 acc=10556 (782/s)
+  [s=7 it=829691 t=1081s T=4.56] cur=165.69 best=151.75 walks=817078 feas=27997 acc=9162 (756/s)
+  [s=6 it=857427 t=1081s T=3.79] cur=160.19 best=151.75 walks=844166 feas=28046 acc=11126 (781/s)
+  [s=5 it=865400 t=1081s T=4.86] cur=171.75 best=151.75 walks=852017 feas=28321 acc=9691 (788/s)
+  [s=1 it=902806 t=1141s T=0.50] cur=155.65 best=151.75 walks=888761 feas=29414 acc=11037 (779/s)
+  [s=3 it=910470 t=1141s T=0.50] cur=156.73 best=152.99 walks=896258 feas=29139 acc=10118 (786/s)
+  [s=4 it=877753 t=1141s T=0.50] cur=153.23 best=152.99 walks=864253 feas=29045 acc=10023 (758/s)
+  [s=0 it=889619 t=1141s T=2.13] cur=154.39 best=152.99 walks=875825 feas=30386 acc=11898 (768/s)
+  [s=2 it=907613 t=1141s T=0.50] cur=152.31 best=151.75 walks=893618 feas=29828 acc=10974 (783/s)
+  [s=7 it=877839 t=1141s T=2.04] cur=154.65 best=151.75 walks=864502 feas=29608 acc=10158 (758/s)
+  [s=6 it=906045 t=1141s T=1.77] cur=157.57 best=151.75 walks=892007 feas=29561 acc=11954 (782/s)
+  [s=5 it=915399 t=1141s T=2.40] cur=164.57 best=151.75 walks=901307 feas=29734 acc=10611 (790/s)
+  [s=1 it=949381 t=1201s T=0.50] cur=153.23 best=151.75 walks=934667 feas=30982 acc=11469 (778/s)
+  [s=4 it=922790 t=1201s T=0.50] cur=153.57 best=152.99 walks=908605 feas=30594 acc=10480 (757/s)
+  [s=0 it=937757 t=1201s T=0.97] cur=156.73 best=152.99 walks=923208 feas=31963 acc=12631 (769/s)
+  [s=3 it=960790 t=1201s T=0.50] cur=152.17 best=151.75 walks=945806 feas=30834 acc=10560 (788/s)
+  [s=2 it=957140 t=1201s T=0.50] cur=151.75 best=151.75 walks=942436 feas=31416 acc=11373 (785/s)
+  [s=7 it=924638 t=1201s T=3.21] cur=179.57 best=151.75 walks=910618 feas=31121 acc=11053 (758/s)
+  [s=6 it=954451 t=1201s T=4.12] cur=166.65 best=151.75 walks=939652 feas=31138 acc=13000 (783/s)
+  [s=5 it=962641 t=1201s T=1.10] cur=153.23 best=151.75 walks=947820 feas=31294 acc=11328 (789/s)
+  [s=1 it=996308 t=1261s T=0.50] cur=153.65 best=151.75 walks=980815 feas=32595 acc=11959 (778/s)
+  [s=0 it=986602 t=1261s T=0.50] cur=158.25 best=152.99 walks=971309 feas=33429 acc=13160 (770/s)
+  [s=4 it=968594 t=1261s T=0.50] cur=153.57 best=152.99 walks=953676 feas=32183 acc=10904 (756/s)
+  [s=3 it=1011338 t=1261s T=0.50] cur=151.75 best=151.75 walks=995553 feas=32506 acc=10929 (790/s)
+  [s=2 it=1006638 t=1261s T=0.50] cur=152.17 best=151.75 walks=991166 feas=33020 acc=11733 (786/s)
+  [s=7 it=971440 t=1261s T=1.49] cur=161.31 best=151.75 walks=956658 feas=32657 acc=11825 (759/s)
+  [s=5 it=1008750 t=1261s T=0.50] cur=153.23 best=151.75 walks=993191 feas=32874 acc=11802 (788/s)
+  [s=6 it=1001121 t=1261s T=1.92] cur=156.49 best=151.75 walks=985543 feas=32663 acc=13864 (782/s)
+  [s=1 it=1042821 t=1321s T=4.80] cur=165.07 best=151.75 walks=1026602 feas=34240 acc=12760 (777/s)
+  [s=0 it=1035277 t=1321s T=0.50] cur=158.07 best=152.99 walks=1019198 feas=34950 acc=13654 (772/s)
+  [s=4 it=1013679 t=1321s T=0.50] cur=153.23 best=152.99 walks=998042 feas=33727 acc=11295 (756/s)
+  [s=3 it=1061681 t=1321s T=0.50] cur=152.17 best=151.75 walks=1045141 feas=34142 acc=11331 (791/s)
+  [s=2 it=1055915 t=1321s T=0.50] cur=152.17 best=151.75 walks=1039712 feas=34586 acc=12134 (787/s)
+  [s=7 it=1018940 t=1321s T=0.66] cur=156.57 best=151.75 walks=1003434 feas=34286 acc=12459 (760/s)
+  [s=5 it=1055262 t=1321s T=0.50] cur=153.23 best=151.75 walks=1038944 feas=34466 acc=12219 (787/s)
+  [s=6 it=1047966 t=1321s T=0.85] cur=153.23 best=151.75 walks=1031672 feas=34284 acc=14447 (781/s)
+  [s=1 it=1089583 t=1381s T=2.28] cur=153.23 best=151.75 walks=1072607 feas=35729 acc=13729 (777/s)
+  [s=4 it=1059557 t=1381s T=2.86] cur=158.77 best=152.99 walks=1043254 feas=35198 acc=12248 (756/s)
+  [s=0 it=1084853 t=1381s T=0.50] cur=152.17 best=151.75 walks=1068049 feas=36476 acc=14149 (774/s)
+  [s=3 it=1112113 t=1381s T=0.50] cur=152.31 best=151.75 walks=1094784 feas=35696 acc=11704 (793/s)
+  [s=2 it=1105667 t=1381s T=0.50] cur=153.31 best=151.75 walks=1088652 feas=36110 acc=12528 (788/s)
+  [s=7 it=1067430 t=1381s T=0.50] cur=157.81 best=151.75 walks=1051150 feas=35773 acc=12957 (761/s)
+  [s=5 it=1101646 t=1381s T=0.50] cur=154.99 best=151.75 walks=1084614 feas=36031 acc=12651 (785/s)
+  [s=6 it=1093449 t=1381s T=0.50] cur=152.99 best=151.75 walks=1076469 feas=35889 acc=14907 (780/s)
+  [s=0 it=1134437 t=1441s T=0.50] cur=151.75 best=151.75 walks=1116889 feas=37910 acc=14531 (775/s)
+  [s=4 it=1107723 t=1441s T=1.32] cur=152.17 best=151.75 walks=1090672 feas=36746 acc=13016 (757/s)
+  [s=3 it=1162794 t=1441s T=0.50] cur=152.17 best=151.75 walks=1144691 feas=37305 acc=12035 (795/s)
+  [s=1 it=1138187 t=1441s T=1.07] cur=156.73 best=151.75 walks=1120465 feas=37245 acc=14474 (778/s)
+  [s=2 it=1155423 t=1441s T=0.50] cur=152.17 best=151.75 walks=1137627 feas=37708 acc=12907 (790/s)
+  [s=7 it=1115295 t=1441s T=0.50] cur=156.49 best=151.75 walks=1098280 feas=37307 acc=13427 (762/s)
+  [s=5 it=1148976 t=1441s T=3.13] cur=171.25 best=151.75 walks=1131222 feas=37625 acc=13414 (785/s)
+  [s=6 it=1141855 t=1441s T=2.36] cur=166.94 best=151.75 walks=1124128 feas=37484 acc=15873 (780/s)
+  [s=1 DONE it=1185970 t=1500s] best=151.75 walks=1167482 feas=38646 acc=15007 top_perms=50
+  [s=0 DONE it=1183722 t=1500s] best=151.75 walks=1165467 feas=39353 acc=14965 top_perms=50
+  [s=2 DONE it=1204148 t=1500s] best=151.75 walks=1185623 feas=39295 acc=13261 top_perms=50
+  [s=3 DONE it=1212889 t=1500s] best=151.75 walks=1193954 feas=38930 acc=12373 top_perms=50
+  [s=4 DONE it=1155743 t=1500s] best=151.75 walks=1137943 feas=38258 acc=13462 top_perms=50
+  [s=5 DONE it=1196668 t=1500s] best=151.75 walks=1178181 feas=39136 acc=14393 top_perms=50
+  [s=6 DONE it=1189560 t=1500s] best=151.75 walks=1171072 feas=38867 acc=16609 top_perms=50
+  [s=7 DONE it=1163303 t=1500s] best=151.75 walks=1145558 feas=38648 acc=13946 top_perms=50
+  seed=1: NEW fast-walker BEST 151.7500d
+
+E-508 done in 1500s. fast-walker best: 151.7500d
+Top 100 unique perms (fast-walker mk): min=151.75 max=152.99
+
+--- Full-Lambert validation of top 100 perms ---
+  [  0] fmk=151.75d → lambert=155.4500d
+  [  1] fmk=151.75d → lambert=152.3176d
+  [  9] fmk=151.75d → lambert=151.6156d
+  [ 13] fmk=151.75d → lambert=148.8078d
+  [ 27] fmk=151.75d → lambert=147.8050d
+  [ 28] fmk=151.75d → lambert=143.2925d
+  [ 30] fmk=151.75d → lambert=142.8913d UNDER BANK
+Backed up bank to /home/julian/Projects/esa_spoc_26_3/solutions/upload/small.json.bak.20260530
+>>> BANKED: mk=142.8913d (0.0270d under prev bank)
+[
+  151.75,
+  [
+    34,
+    23,
+    18,
+    46,
+    12,
+    10,
+    2,
+    41,
+    25,
+    22,
+    13,
+    20,
+    40,
+    44,
+    5,
+    47,
+    36,
+    31,
+    37,
+    9,
+    48,
+    45,
+    15,
+    28,
+    1,
+    11,
+    17,
+    4,
+    29,
+    30,
+    19,
+    43,
+    0,
+    39,
+    8,
+    38,
+    24,
+    6,
+    35,
+    26,
+    21,
+    7,
+    3,
+    33,
+    42,
+    14,
+    16,
+    27,
+    32
+  ]
+]

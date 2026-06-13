@@ -1,0 +1,53 @@
+[E-591-all] 3 nodes x 16 epochs x ALL 1050 targets
+  [1/48] node 739 ep=200: cheap_targets=15 best={'tgt': 571, 'dv': 71.50805613432274}
+  [2/48] node 739 ep=0: cheap_targets=17 best={'tgt': 984, 'dv': 67.15064899827834}
+  [3/48] node 739 ep=399: cheap_targets=17 best={'tgt': 893, 'dv': 60.62745033404224}
+  [4/48] node 739 ep=599: cheap_targets=17 best={'tgt': 571, 'dv': 73.93013156592383}
+  [5/48] node 739 ep=799: cheap_targets=14 best={'tgt': 198, 'dv': 79.05562163228713}
+  [6/48] node 739 ep=998: cheap_targets=15 best={'tgt': 198, 'dv': 80.82238960343798}
+  [7/48] node 739 ep=1198: cheap_targets=16 best={'tgt': 893, 'dv': 59.21623023821497}
+  [8/48] node 739 ep=1398: cheap_targets=20 best={'tgt': 198, 'dv': 61.28516547420004}
+  [9/48] node 739 ep=1597: cheap_targets=16 best={'tgt': 346, 'dv': 74.49736814352066}
+  [10/48] node 739 ep=1797: cheap_targets=25 best={'tgt': 893, 'dv': 69.66048385354287}
+  [11/48] node 739 ep=1997: cheap_targets=29 best={'tgt': 346, 'dv': 68.86558703341758}
+  [12/48] node 739 ep=2196: cheap_targets=24 best={'tgt': 893, 'dv': 64.21127883644017}
+  [13/48] node 739 ep=2396: cheap_targets=26 best={'tgt': 471, 'dv': 67.25394792603771}
+  [14/48] node 739 ep=2596: cheap_targets=22 best={'tgt': 527, 'dv': 74.66122537848234}
+  [15/48] node 739 ep=2995: cheap_targets=14 best={'tgt': 527, 'dv': 94.59803333917901}
+  [16/48] node 739 ep=2795: cheap_targets=18 best={'tgt': 571, 'dv': 65.70356335126945}
+  [17/48] node 343 ep=0: cheap_targets=15 best={'tgt': 947, 'dv': 67.91463216130657}
+  [18/48] node 343 ep=200: cheap_targets=14 best={'tgt': 819, 'dv': 73.47016797241264}
+  [19/48] node 343 ep=399: cheap_targets=16 best={'tgt': 327, 'dv': 63.41366464392659}
+  [20/48] node 343 ep=599: cheap_targets=14 best={'tgt': 420, 'dv': 66.76935711434881}
+  [21/48] node 343 ep=799: cheap_targets=15 best={'tgt': 131, 'dv': 65.6189978949937}
+  [22/48] node 343 ep=998: cheap_targets=16 best={'tgt': 947, 'dv': 69.44617574442383}
+  [23/48] node 343 ep=1198: cheap_targets=15 best={'tgt': 945, 'dv': 69.28460500723578}
+  [24/48] node 343 ep=1398: cheap_targets=15 best={'tgt': 531, 'dv': 82.34816504288011}
+  [25/48] node 343 ep=1597: cheap_targets=16 best={'tgt': 131, 'dv': 56.97338073984742}
+  [26/48] node 343 ep=1797: cheap_targets=16 best={'tgt': 945, 'dv': 61.29580097821129}
+  [27/48] node 343 ep=1997: cheap_targets=15 best={'tgt': 945, 'dv': 77.2993201691248}
+  [28/48] node 343 ep=2196: cheap_targets=16 best={'tgt': 947, 'dv': 66.22341794344415}
+  [29/48] node 343 ep=2396: cheap_targets=15 best={'tgt': 131, 'dv': 65.6328486267357}
+  [30/48] node 343 ep=2596: cheap_targets=15 best={'tgt': 420, 'dv': 64.34845946217175}
+  [31/48] node 343 ep=2995: cheap_targets=10 best={'tgt': 327, 'dv': 90.75983200183819}
+  [32/48] node 343 ep=2795: cheap_targets=16 best={'tgt': 327, 'dv': 71.41574031280388}
+  [33/48] node 753 ep=0: cheap_targets=14 best={'tgt': 819, 'dv': 51.902029025415956}
+  [34/48] node 753 ep=200: cheap_targets=14 best={'tgt': 819, 'dv': 70.45952665464296}
+  [35/48] node 753 ep=399: cheap_targets=15 best={'tgt': 327, 'dv': 72.96132224667147}
+  [36/48] node 753 ep=599: cheap_targets=15 best={'tgt': 819, 'dv': 76.16271534582089}
+  [37/48] node 753 ep=799: cheap_targets=16 best={'tgt': 327, 'dv': 76.87602539684194}
+  [38/48] node 753 ep=998: cheap_targets=14 best={'tgt': 327, 'dv': 42.942466837620685}
+  [39/48] node 753 ep=1198: cheap_targets=15 best={'tgt': 327, 'dv': 71.38265246625176}
+  [40/48] node 753 ep=1398: cheap_targets=15 best={'tgt': 945, 'dv': 67.79957213427272}
+  [41/48] node 753 ep=1597: cheap_targets=15 best={'tgt': 314, 'dv': 71.5536971075138}
+  [42/48] node 753 ep=1797: cheap_targets=16 best={'tgt': 327, 'dv': 67.72307530871919}
+  [43/48] node 753 ep=1997: cheap_targets=14 best={'tgt': 420, 'dv': 62.985478184804094}
+  [44/48] node 753 ep=2196: cheap_targets=14 best={'tgt': 388, 'dv': 70.45300677856385}
+  [45/48] node 753 ep=2396: cheap_targets=16 best={'tgt': 819, 'dv': 75.36112806468898}
+  [46/48] node 753 ep=2596: cheap_targets=15 best={'tgt': 388, 'dv': 79.17675255831803}
+  [47/48] node 753 ep=2995: cheap_targets=7 best={'tgt': 819, 'dv': 83.63939112099791}
+  [48/48] node 753 ep=2795: cheap_targets=16 best={'tgt': 347, 'dv': 67.15058910144926}
+[E-591-all] node 739: epoch-locked (cheap exists somewhere) (total cheap hits 305)
+[E-591-all] node 343: epoch-locked (cheap exists somewhere) (total cheap hits 239)
+[E-591-all] node 753: epoch-locked (cheap exists somewhere) (total cheap hits 231)
+[E-591-all] wrote /tmp/ch2_large_epoch_conn_alltargets.json (1198.8s)

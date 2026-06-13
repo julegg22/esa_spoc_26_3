@@ -1,0 +1,6 @@
+[E-577] n=1051 start mk=1048.979 feas=True exc=5 (bank 1048.9786, r1 424.62)
+[pass 1] 26347 screened, none verified — converged. (237s)
+
+[FINAL] best feasible mk=1048.979 (bank 1048.9786, r1 424.62)
+[FINAL] no improvement over bank.
+[OUT] /tmp/ch2_large_monotone_candidate.json

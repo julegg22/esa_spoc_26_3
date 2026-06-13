@@ -1,0 +1,273 @@
+=== E-565 step 0: data analysis ===
+c_ld: mean=8.44 median=5.90 max=75.0
+  c_ld>= 5:  55.5% of entries; idLs with max>=thr: 400/400
+  c_ld>= 8:  32.7% of entries; idLs with max>=thr: 400/400
+  c_ld>=10:  27.1% of entries; idLs with max>=thr: 400/400
+  c_ld>=12:  26.6% of entries; idLs with max>=thr: 400/400
+  c_ld>=15:  21.0% of entries; idLs with max>=thr: 400/400
+  c_ld>=20:   9.6% of entries; idLs with max>=thr: 300/400
+  c_ld>=30:   3.8% of entries; idLs with max>=thr: 300/400
+  greedy disjoint (idL,idD) with c_ld>=8: 326/400
+  greedy disjoint (idL,idD) with c_ld>=10: 326/400
+  greedy disjoint (idL,idD) with c_ld>=12: 326/400
+  greedy disjoint (idL,idD) with c_ld>=15: 326/400
+
+bank: 302 transfers, total m_d = 227654 kg
+
+WSB candidate pairs in bank (LEO + eL>0.4, aL>3e6):
+ idE  idL  idD  aE/1e6    iE  aL/1e6    eL    iL     dv  dt_d    m_l    m_d maxcld cld_used
+  21  200   22    7.46  0.02    4.55  0.57  0.59   3484  11.0   1095   1095   61.0    16.2
+ 225  277  177    7.85  0.01    4.95  0.62  0.53   3549  11.0   1062   1062   72.4     6.6
+ 164  206  136    7.86  0.10    5.18  0.63  0.74   3729  20.6    972    972   69.5     8.4
+   8  175    8    7.89  0.31    5.10  0.62  0.60   3774  20.7    951    951   71.8     6.4
+ 118  171  108    7.84  0.44    5.08  0.62  0.55   3777  20.7    949    949   72.0    30.9
+ 248  190  191    7.89  0.11    4.48  0.57  0.77   3786  20.6    945    945   64.9    19.5
+  22  227   21    7.79  0.46    5.18  0.64  0.53   3804  20.7    937    937   73.2     6.2
+ 206  163  167    7.94  0.51    5.02  0.63  0.58   3815  20.7    931    931   55.6    25.4
+  17  263   17    7.69  0.41    4.77  0.59  0.55   3820  20.7    929    929   71.4     6.2
+  18  280   18    7.81  0.52    4.97  0.62  0.60   3832  20.7    923    923   66.5     7.1
+  75  179   71    7.86  0.18    4.38  0.58  0.73   3833  20.7    923    923   69.1    14.1
+ 218  293  173    7.99  0.15    4.42  0.57  0.66   3839  20.6    920    920   66.6     5.4
+ 136  268  118    7.91  0.58    5.05  0.63  0.56   3843  20.7    918    918   71.5     8.0
+  86  240   82    7.94  0.54    5.12  0.63  0.57   3846  20.7    917    917   72.2    14.4
+ 113  221  101    7.59  0.27    4.50  0.59  0.67   3846  20.7    917    917   66.5    20.3
+... 114 total LEO+high-eL pairs in bank
+idE 118 aE=7.8370e+06 eE=0.0230 iE=0.4396
+idE 21 aE=7.4559e+06 eE=0.0678 iE=0.0220
+idL 171 aL=5.0758e+06 eL=0.6215 iL=0.5522  r_window=[1.921e+06, 8.230e+06] m
+idL 200 aL=4.5466e+06 eL=0.5742 iL=0.5929  r_window=[1.936e+06, 7.157e+06] m
+dv0 = 2880.1 m/s (Hohmann-to-Moon would be ~2805.9)
+130d propagation+sampling: 0.0 s; r_apo_max=1.006e+10 m, perigee_min=2.629e+08 m, r_moon_min=4.564e+08 m
+pair (118,171): aE=7.837e+06 eE=0.023 iE=0.440 | aL=5.076e+06 eL=0.621 iL=0.552
+baseline (bank): 949.0 kg, dv=3777.0 m/s
+
+=== Phase A: ballistic scan pair (118,171) 16x12x3x1 ===
+scan done in 3s: 91 bound returns, 484 escapes, 1 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 5.89  6.23  1.50  2884  47.5  94.8      43081   1837   1573637     42453
+ 3.14  5.66  1.50  2976  46.5 101.5      46823   2356   2671441    271660
+ 3.53  5.09  1.20  2965  38.0  79.8      47663   2152   2213399    118700
+ 3.53  5.09  1.35  2969  45.0 118.0      49438   2254   2441335    292053
+ 5.89  2.83  1.50  2884  47.2  94.5      50313   1897   1702224     30324
+ 3.53  1.70  1.20  2965  38.0  79.5      67274   2210   2368867    108395
+ 1.96  0.00  1.20  2940  37.2  74.5      71645   2029   1990873     64104
+ 0.00  5.66  1.50  2880  45.2 105.8      75861   2437   2905244    236157
+ 3.53  1.70  1.35  2969  44.8 117.2      80456   2112   2169096    296456
+ 1.96  3.40  1.20  2940  37.2  74.2      81878   2070   2081949     57377
+ 3.14  2.26  1.50  2976  46.5 101.0      82945   2456   2955950    249344
+ 0.00  2.26  1.50  2880  45.2 106.5      84794   2482   3023037    252274
+ 0.39  5.09  1.35  2881  42.8 107.8      85511   2468   2987986    285724
+ 2.36  2.83  1.35  2959  44.0 116.2      94820   2425   2887418    285587
+ 5.50  2.83  1.35  2891  39.2  86.2      94850   2157   2274685    206494
+ 5.11  0.00  1.50  2910  41.0  87.0      97543   1885   1726814    177348
+ 0.39  1.70  1.35  2881  43.0 108.8     104825   2520   3127229    285095
+ 5.50  6.23  1.35  2891  39.0  85.8     109544   2244   2473491    205015
+ 0.79  4.53  1.20  2888  40.2  91.8     124164   2069   2101395    220733
+ 5.50  3.40  1.50  2894  52.2 111.0     127135   1086    551303    301710
+
+=== Phase B: midcourse DC + ballistic capture, top 10 ===
+ [0] ea=5.89 t0=6.23 rapo=1.50: dv1=6.1 m/s -> perilune 3499 km at t=95.0d (1s)
+     arrival: in_window=188 rejects={'window': 1012, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=841.1 kg  dv=4014 (dv0=2884 dv1=6 dv2=1124)  dt=95.0d r_arr=3998km v_rel=2311 E2=1443389 ***
+ [1] ea=3.14 t0=5.66 rapo=1.50: dv1=64.3 m/s -> perilune 10689 km at t=123.0d (1s)
+     arrival: in_window=0 rejects={'window': 1200, 'arr_none': 0, 'fit': 0}
+ [2] ea=3.53 t0=5.09 rapo=1.20: dv1=21.1 m/s -> perilune 3499 km at t=79.8d (1s)
+     arrival: in_window=164 rejects={'window': 1036, 'arr_none': 27, 'fit': 0}
+     *** VALID mass=530.2 kg  dv=4818 (dv0=2965 dv1=21 dv2=1831)  dt=79.8d r_arr=5522km v_rel=2432 E2=2068471 ***
+ [3] ea=3.53 t0=5.09 rapo=1.35: dv1=3.2 m/s -> perilune 43446 km at t=118.0d (1s)
+ [4] DC failed (ea=5.89 t0=2.83 rapo=1.50)
+ [5] ea=3.53 t0=1.70 rapo=1.20: dv1=21.9 m/s -> perilune 3474 km at t=80.0d (1s)
+     arrival: in_window=165 rejects={'window': 1035, 'arr_none': 27, 'fit': 0}
+     *** VALID mass=491.1 kg  dv=4936 (dv0=2965 dv1=22 dv2=1948)  dt=80.0d r_arr=5996km v_rel=2389 E2=2035315 ***
+ [6] ea=1.96 t0=0.00 rapo=1.20: dv1=35.1 m/s -> perilune 3499 km at t=74.5d (1s)
+     arrival: in_window=172 rejects={'window': 1028, 'arr_none': 27, 'fit': 0}
+     *** VALID mass=531.8 kg  dv=4813 (dv0=2940 dv1=35 dv2=1839)  dt=74.5d r_arr=5897km v_rel=2302 E2=1817809 ***
+ [7] ea=0.00 t0=5.66 rapo=1.50: dv1=65.1 m/s -> perilune 3499 km at t=91.5d (1s)
+
+=== Phase C: capacity-discount analysis (WSB model, bank-wide) ===
+WSB dv model: dv0 = prograde raise from aE perigee to r_apo=1.4e9 m;
+  + 40 m/s midcourse; + capture at target r_peri with v_inf=150 m/s.
+  dT = 110 d.  (To be calibrated against the E-565 end-to-end result.)
+
+bank transfers: 302
+WSB wins with CURRENT idD assignment : 180/302 (total potential +72137 kg); capacity-killed: 121
+WSB wins with BEST-per-idL c_ld      : 301/302 (total potential +177630 kg); capacity-killed: 0
+
+Sensitivity of fleet gain to WSB transfer time (current idD):
+  dT= 80d: wins 232/302, fleet gain +98211 kg
+  dT= 95d: wins 211/302, fleet gain +84420 kg
+  dT=110d: wins 180/302, fleet gain +72137 kg
+  dT=130d: wins 148/302, fleet gain +56875 kg
+  dT=150d: wins 112/302, fleet gain +36562 kg
+  dT=170d: wins  54/302, fleet gain +13351 kg
+  ('LEO', 'hi-eL'): 68 wins, +26472 kg
+  ('LEO', 'lo-eL'): 98 wins, +34469 kg
+  ('MEO/GEO', 'hi-eL'): 12 wins, +9636 kg
+  ('MEO/GEO', 'lo-eL'): 2 wins, +1560 kg
+     arrival: in_window=160 rejects={'window': 1040, 'arr_none': 26, 'fit': 0}
+     *** VALID mass=522.2 kg  dv=4842 (dv0=2880 dv1=65 dv2=1896)  dt=91.5d r_arr=5761km v_rel=2480 E2=2223760 ***
+ [8] ea=3.53 t0=1.70 rapo=1.35: dv1=16.3 m/s -> perilune 58637 km at t=120.2d (1s)
+ [9] ea=1.96 t0=3.40 rapo=1.20: dv1=36.7 m/s -> perilune 3499 km at t=74.5d (1s)
+     arrival: in_window=174 rejects={'window': 1026, 'arr_none': 27, 'fit': 0}
+     *** VALID mass=576.8 kg  dv=4683 (dv0=2940 dv1=37 dv2=1707)  dt=74.5d r_arr=5213km v_rel=2353 E2=1826842 ***
+
+=== E-565 RESULT: WSB mass 841.1 kg vs baseline 949.0 kg (-107.9) ===
+row: [118, 171, 108, np.float64(6.22526105275), 0.006215261271, -0.00705817403, -0.003319664648, 2.718164289254, 5.933693765787, 2.799426848076, 1.078736738757, 2.356029814319, 1.108109385259, -0.004344051442, -0.004072579011, 0.000668268058, 0.282765747199, 1.052376272471, -0.136495103475, np.float64(10.924278981201), np.float64(10.928332463665)]
+pair (118,171): aE=7.837e+06 eE=0.023 iE=0.440 | aL=5.076e+06 eL=0.621 iL=0.552
+baseline (bank): 949.0 kg, dv=3777.0 m/s
+
+=== Phase A: ballistic scan pair (118,171) 16x12x3x1 ===
+scan done in 3s: 91 bound returns, 484 escapes, 1 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 5.89  6.23  1.50  2884  47.5  94.8      43081   1837   1573637     42453
+ 3.14  5.66  1.50  2976  46.5 101.5      46823   2356   2671441    271660
+ 3.53  5.09  1.20  2965  38.0  79.8      47663   2152   2213399    118700
+ 3.53  5.09  1.35  2969  45.0 118.0      49438   2254   2441335    292053
+ 5.89  2.83  1.50  2884  47.2  94.5      50313   1897   1702224     30324
+ 3.53  1.70  1.20  2965  38.0  79.5      67274   2210   2368867    108395
+ 1.96  0.00  1.20  2940  37.2  74.5      71645   2029   1990873     64104
+ 0.00  5.66  1.50  2880  45.2 105.8      75861   2437   2905244    236157
+ 3.53  1.70  1.35  2969  44.8 117.2      80456   2112   2169096    296456
+ 1.96  3.40  1.20  2940  37.2  74.2      81878   2070   2081949     57377
+ 3.14  2.26  1.50  2976  46.5 101.0      82945   2456   2955950    249344
+ 0.00  2.26  1.50  2880  45.2 106.5      84794   2482   3023037    252274
+ 0.39  5.09  1.35  2881  42.8 107.8      85511   2468   2987986    285724
+ 2.36  2.83  1.35  2959  44.0 116.2      94820   2425   2887418    285587
+ 5.50  2.83  1.35  2891  39.2  86.2      94850   2157   2274685    206494
+ 5.11  0.00  1.50  2910  41.0  87.0      97543   1885   1726814    177348
+ 0.39  1.70  1.35  2881  43.0 108.8     104825   2520   3127229    285095
+ 5.50  6.23  1.35  2891  39.0  85.8     109544   2244   2473491    205015
+ 0.79  4.53  1.20  2888  40.2  91.8     124164   2069   2101395    220733
+ 5.50  3.40  1.50  2894  52.2 111.0     127135   1086    551303    301710
+
+=== Phase B (energy): midcourse DC + capture, top 12 ===
+ [0] ea=5.50 t0=0.00 rapo=1.35: dv1=63.2 m/s -> perilune 75012 km at t=107.8d v_rel=629 E2=132744 (2s)
+ [1] ea=5.50 t0=3.40 rapo=1.50: dv1=95.1 m/s -> perilune 4869 km at t=101.8d v_rel=1522 E2=151803 (2s)
+     arrival: in_window=160 rejects={'window': 1040, 'arr_none': 26, 'fit': 0}
+     *** VALID mass=792.3 kg  dv=4127 (dv0=2894 dv1=95 dv2=1137)  dt=101.8d r_arr=7754km v_rel=1253 E2=152905 ***
+ [2] ea=5.50 t0=3.40 rapo=1.35: dv1=76.5 m/s -> perilune 8389 km at t=100.8d v_rel=1267 E2=217998 (2s)
+     arrival: in_window=50 rejects={'window': 1150, 'arr_none': 13, 'fit': 0}
+ [3] DC failed (ea=5.89 t0=6.23 rapo=1.50)
+ [4] ea=5.11 t0=3.40 rapo=1.50: dv1=34.1 m/s -> perilune 2426 km at t=86.0d v_rel=2873 E2=2104609 (1s)
+=== theoretical floor, pair (118,171), WSB architecture ===
+  r_apo=1.20 v_inf=   0: dv0=2874 dv2=225 tot=3139 -> m_l=1287 kg
+  r_apo=1.20 v_inf= 300: dv0=2874 dv2=245 tot=3159 -> m_l=1275 kg
+  r_apo=1.20 v_inf= 600: dv0=2874 dv2=303 tot=3217 -> m_l=1241 kg
+  r_apo=1.20 v_inf=1000: dv0=2874 dv2=436 tot=3350 -> m_l=1167 kg
+  r_apo=1.35 v_inf=   0: dv0=2877 dv2=225 tot=3142 -> m_l=1284 kg
+  r_apo=1.35 v_inf= 300: dv0=2877 dv2=245 tot=3162 -> m_l=1273 kg
+  r_apo=1.35 v_inf= 600: dv0=2877 dv2=303 tot=3221 -> m_l=1239 kg
+  r_apo=1.35 v_inf=1000: dv0=2877 dv2=436 tot=3354 -> m_l=1165 kg
+  r_apo=1.50 v_inf=   0: dv0=2880 dv2=225 tot=3145 -> m_l=1283 kg
+  r_apo=1.50 v_inf= 300: dv0=2880 dv2=245 tot=3165 -> m_l=1271 kg
+  r_apo=1.50 v_inf= 600: dv0=2880 dv2=303 tot=3223 -> m_l=1238 kg
+  r_apo=1.50 v_inf=1000: dv0=2880 dv2=436 tot=3357 -> m_l=1163 kg
+baseline: 949 kg (dv 3777); beat requires total dv < 3777 m/s
+capacity cap for idD=108 (c_ld=30.9): dT=110d -> 2781 kg; dT=160d -> 1236 kg
+     arrival: in_window=167 rejects={'window': 1033, 'arr_none': 0, 'fit': 3}
+     *** VALID mass=384.4 kg  dv=5283 (dv0=2910 dv1=34 dv2=2340)  dt=86.0d r_arr=6821km v_rel=2378 E2=2108222 ***
+ [5] ea=1.18 t0=4.53 rapo=1.50: dv1=23.6 m/s -> perilune 2362 km at t=97.8d v_rel=2862 E2=2019478 (1s)
+     arrival: in_window=170 rejects={'window': 1030, 'arr_none': 0, 'fit': 4}
+     *** VALID mass=399.9 kg  dv=5230 (dv0=2910 dv1=24 dv2=2297)  dt=97.7d r_arr=6829km v_rel=2341 E2=2023253 ***
+ [6] ea=5.89 t0=2.83 rapo=1.50: dv1=65.9 m/s -> perilune 2181 km at t=96.8d v_rel=2572 E2=1060598 (1s)
+     arrival: in_window=200 rejects={'window': 1000, 'arr_none': 1, 'fit': 3}
+     *** VALID mass=540.6 kg  dv=4787 (dv0=2884 dv1=66 dv2=1837)  dt=96.8d r_arr=7203km v_rel=1868 E2=1064967 ***
+ [7] ea=5.11 t0=0.00 rapo=1.50: dv1=32.7 m/s -> perilune 2455 km at t=86.0d v_rel=2866 E2=2109952 (2s)
+     arrival: in_window=167 rejects={'window': 1033, 'arr_none': 0, 'fit': 4}
+     *** VALID mass=384.5 kg  dv=5283 (dv0=2910 dv1=33 dv2=2341)  dt=86.0d r_arr=6830km v_rel=2380 E2=2113521 ***
+ [8] ea=1.18 t0=1.13 rapo=1.50: dv1=49.3 m/s -> perilune 30004 km at t=109.2d v_rel=2168 E2=2185920 (2s)
+ [9] ea=0.79 t0=1.13 rapo=1.20: dv1=96.9 m/s -> perilune 6567 km at t=92.0d v_rel=2387 E2=2102256 (2s)
+     arrival: in_window=115 rejects={'window': 1085, 'arr_none': 29, 'fit': 0}
+ [10] ea=1.96 t0=0.00 rapo=1.20: dv1=38.0 m/s -> perilune 2297 km at t=74.5d v_rel=2807 E2=1805122 (1s)
+     arrival: in_window=177 rejects={'window': 1023, 'arr_none': 0, 'fit': 5}
+     *** VALID mass=415.6 kg  dv=5177 (dv0=2940 dv1=38 dv2=2200)  dt=74.5d r_arr=6875km v_rel=2246 E2=1809035 ***
+ [11] ea=1.96 t0=3.40 rapo=1.20: dv1=39.6 m/s -> perilune 2299 km at t=74.5d v_rel=2808 E2=1809545 (1s)
+     arrival: in_window=177 rejects={'window': 1023, 'arr_none': 0, 'fit': 5}
+     *** VALID mass=414.5 kg  dv=5181 (dv0=2940 dv1=40 dv2=2202)  dt=74.5d r_arr=6873km v_rel=2248 E2=1813452 ***
+
+=== E-565 RESULT: WSB mass 792.3 kg vs baseline 949.0 kg (-156.7) ===
+row: [118, 171, 108, np.float64(3.395596937864), 0.001795815952, -0.013041805046, -0.006133940447, 4.996947370186, 4.51843464102, 2.13171070204, 2.000196673027, 1.80951558232, 0.851067837662, 0.081503739998, -0.00530709484, 0.044315983467, 0.051428272529, -0.972104314374, -0.536719976889, np.float64(12.016706879321), np.float64(11.397415253497)]
+pair (118,171): aE=7.837e+06 eE=0.023 iE=0.440 | aL=5.076e+06 eL=0.621 iL=0.552
+baseline (bank): 949.0 kg, dv=3777.0 m/s
+(phase A loaded from cache: 91 candidates)
+
+=== Phase B3: proxy-grid + exact-objective NM, 10 seeds ===
+ [0] no grid point survives
+ [1] ea=5.50 t0=3.40 rapo=1.50: grid best |dv1|=78 m/s peri=29821km v_rel=1179 E2=530278 proxy_extra=1753 (1s)
+     NM: dv_total=3451 m/s (|dv1|=81) [25s, 220 evals]
+     arrival: in_window=244 rejects={'window': 956, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=1114.2 kg dv=3448 (dv0=2894 dv1=81 dv2=473) dt=97.8d r_arr=1937km v_rel=2493 E2=575455 ***
+ [2] ea=5.50 t0=3.40 rapo=1.35: grid best |dv1|=169 m/s peri=19948km v_rel=992 E2=246559 proxy_extra=1257 (1s)
+     NM: dv_total=3986 m/s (|dv1|=163) [19s, 220 evals]
+     arrival: in_window=204 rejects={'window': 996, 'arr_none': 30, 'fit': 0}
+     *** VALID mass=853.4 kg dv=3986 (dv0=2891 dv1=163 dv2=931) dt=104.0d r_arr=6311km v_rel=1414 E2=222305 ***
+ [3] ea=5.89 t0=6.23 rapo=1.50: grid best |dv1|=180 m/s peri=18666km v_rel=903 E2=144705 proxy_extra=1135 (1s)
+
+=== Phase C v2: recalibrated with E-565 measured anchor ===
+anchor check pair(118,171): model(v_inf=1073) total = 3427 m/s vs measured 3448
+  v_inf=1073 dT=100d (current idD): wins 197/302, fleet +62045 kg, capacity-killed 98
+  v_inf=1073 dT=120d (current idD): wins 164/302, fleet +49868 kg, capacity-killed 131
+  v_inf= 600 dT=110d (current idD): wins 177/302, fleet +64370 kg, capacity-killed 119
+  v_inf=1073 dT=100d (best idD/idL):  wins 295/302, fleet +127990 kg
+  v_inf= 600 dT=110d (best idD/idL):  wins 296/302, fleet +155785 kg
+  unused idE: 99, unused idL: 99 -> rough extra if WSB cracks them at ~900 kg avg: +89k kg
+     NM: dv_total=3695 m/s (|dv1|=187) [20s, 220 evals]
+     arrival: in_window=173 rejects={'window': 1027, 'arr_none': 14, 'fit': 0}
+     *** VALID mass=995.2 kg dv=3682 (dv0=2884 dv1=187 dv2=611) dt=104.8d r_arr=5775km v_rel=1369 E2=87541 ***
+ [4] ea=5.11 t0=3.40 rapo=1.50: grid best |dv1|=161 m/s peri=12648km v_rel=2322 E2=2308404 proxy_extra=2253 (1s)
+     NM: dv_total=5377 m/s (|dv1|=163) [20s, 220 evals]
+     arrival: in_window=146 rejects={'window': 1054, 'arr_none': 22, 'fit': 0}
+     *** VALID mass=362.1 kg dv=5361 (dv0=2910 dv1=163 dv2=2288) dt=130.0d r_arr=6925km v_rel=2459 E2=2315190 ***
+ [5] ea=1.18 t0=4.53 rapo=1.50: grid best |dv1|=79 m/s peri=21714km v_rel=2251 E2=2306812 proxy_extra=2174 (1s)
+     NM: dv_total=4629 m/s (|dv1|=80) [21s, 220 evals]
+     arrival: in_window=151 rejects={'window': 1049, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=618.6 kg dv=4567 (dv0=2910 dv1=80 dv2=1577) dt=95.8d r_arr=4870km v_rel=2568 E2=2289470 ***
+ [6] ea=5.89 t0=2.83 rapo=1.50: grid best |dv1|=78 m/s peri=30205km v_rel=1743 E2=1356483 proxy_extra=1799 (1s)
+     NM: dv_total=3720 m/s (|dv1|=77) [21s, 191 evals]
+     arrival: in_window=195 rejects={'window': 1005, 'arr_none': 0, 'fit': 49}
+ [7] ea=5.11 t0=0.00 rapo=1.50: grid best |dv1|=193 m/s peri=28812km v_rel=1801 E2=1452355 proxy_extra=2203 (1s)
+     NM: dv_total=4272 m/s (|dv1|=194) [30s, 220 evals]
+     arrival: in_window=186 rejects={'window': 1014, 'arr_none': 5, 'fit': 0}
+     *** VALID mass=765.8 kg dv=4190 (dv0=2910 dv1=194 dv2=1086) dt=90.5d r_arr=3526km v_rel=2425 E2=1548801 ***
+ [8] no grid point survives
+ [9] ea=0.79 t0=1.13 rapo=1.20: grid best |dv1|=169 m/s peri=13869km v_rel=2306 E2=2304843 proxy_extra=2214 (1s)
+     NM: dv_total=5322 m/s (|dv1|=168) [18s, 209 evals]
+     arrival: in_window=160 rejects={'window': 1040, 'arr_none': 15, 'fit': 0}
+     *** VALID mass=373.1 kg dv=5323 (dv0=2888 dv1=168 dv2=2267) dt=89.7d r_arr=6849km v_rel=2443 E2=2267284 ***
+
+=== E-565 RESULT: WSB mass 1114.2 kg vs baseline 949.0 kg (+165.2) ===
+row: [118, 171, 108, np.float64(3.395596937864), 0.001795815952, -0.013041805046, -0.006133940447, 4.996947370186, 4.51843464102, 2.13171070204, 2.000196673027, 1.80951558232, 0.851067837662, 0.065797837255, 0.044169038434, 0.000470293936, 0.217978900566, 0.367682100474, 0.176143131499, np.float64(12.016706879321), np.float64(10.464989711648)]
+
+=========================================================================
+E-565 VERDICT (2026-06-11): GO — WSB lever demonstrated end-to-end
+=========================================================================
+Pair (118,171), official fitness validated:
+  WSB:      1114.2 kg  dv=3448 (dv0=2894 + dv1=81 midcourse + dv2=473
+            capture at r=1937 km = target-orbit perilune), dT=97.8 d
+  baseline:  949.0 kg  dv=3777, dT=20.7 d   ==> +165.2 kg (+17.4%)
+  theoretical floor for this pair/architecture: 1283 kg (v_inf=0);
+  achieved v_inf ~ 1073 m/s — further headroom via finer Phase-A grid,
+  raan_e sweep, t1/dv0 co-optimization, lower-energy (longer) returns.
+Architecture: 3 impulses within spec — prograde raise to 1.2-1.5e9 m
+  apogee (only +70-90 m/s over Hohmann), solar tide raises perigee to
+  ~Moon distance + free plane change, small midcourse at apogee targets
+  tangential arrival at target-orbit perilune, capture via
+  solve_arrival_eccentric. Key methodological fix vs earlier failures
+  (Tier-0, radius-only DC): optimize dv1 against alignment-aware capture
+  proxy then EXACT dv2 (solve_arrival_eccentric inside NM objective);
+  radius-only targeting gives steep 2.3 km/s encounters and loses.
+Capacity discount: does NOT kill the lever for dT<=120d.
+  Measured-anchor fleet model (v_inf=1073, dT=100d):
+    current idD assignment: 197/302 transfers win, fleet +62k kg
+    with idD re-matching:   295/302 win, fleet +128k kg
+    (sensitivity: +98k @80d, +57k @130d, +13k @170d — keep TOF <= ~120d)
+  99 unused idE/idL pairs additional upside (unquantified, ~tens of k).
+Remaining risks for full L4 build:
+  1. lo-eL (LMO) targets unproven (narrow window; Tier-0 failure mode);
+     fleet numbers for that class are model-only.
+  2. v_inf reduction below ~600 m/s not yet demonstrated; floor assumes
+     alignment that may cost extra plane-change dv on some geometries.
+  3. per-pair compute ~2-4 min (1 grid + NM); 300 pairs ~ 10-20 core-h —
+     fine, but success rate measured on n=1 pair only.
+  4. realizing +128k requires the B4/B5 idD Hungarian re-matching.
+Script: scripts/ch1_e565_wsb_prototype.py (phases A/B/B3 + C inline).

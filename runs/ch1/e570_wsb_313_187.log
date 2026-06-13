@@ -1,0 +1,67 @@
+E-570 WSB pair (313,187) idD=245 baseline=325.0 kg
+  aE=7.015e+06 eE=0.044 iE=0.125 | aL=4.295e+06 eL=0.572 iL=0.758
+
+=== Phase A: ballistic scan pair (313,187) 16x12x3x1 ===
+scan done in 3s: 75 bound returns, 501 escapes, 0 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 1.57  0.57  1.35  3095  45.8 111.5      12135   2408   2494390    300457
+ 0.00  2.26  1.50  3000  48.0 132.5      15965   2372   2505327    372744
+ 3.14  2.26  1.50  3196  48.5 119.0      19101   2326   2448592    345111
+ 3.14  5.66  1.50  3196  48.5 120.0      22559   2380   2614541    353097
+ 0.79  1.70  1.35  3026  50.8 101.2      35670   1680   1273150     42136
+ 3.93  4.53  1.20  3161  28.0  59.5      36401   1760   1413297     39858
+ 3.53  1.70  1.35  3185  47.5 127.2      38509   2311   2541920    293360
+ 1.57  3.96  1.35  3095  45.8 110.5      40587   2200   2298204    289116
+ 3.93  1.13  1.20  3161  27.8  59.2      41389   1728   1373717     26998
+ 0.00  5.66  1.35  2998  44.0  92.2      55339   2007   1926422    133474
+ 3.53  5.09  1.35  3185  48.0 128.8      56313   2130   2180615    238245
+ 1.18  4.53  1.50  3060  50.5 118.2      59631   2303   2570399    357185
+ 2.36  6.23  1.20  3161  41.2  97.0      63544   2230   2410045    221800
+ 0.00  5.66  1.50  3000  48.0 131.2      68450   2152   2243794    379815
+ 5.11  0.00  1.50  3060  43.2 107.2      71846   2318   2618977    321813
+ 5.11  3.40  1.50  3060  43.2 108.0      73507   2222   2401580    313808
+ 2.36  3.40  1.50  3167  53.5 106.2      76796   1975   1886504     20751
+ 3.93  4.53  1.50  3167  35.0  78.0      78263   2311   2606891    168089
+ 2.36  2.83  1.20  3161  40.8  96.5      78843   2328   2648585    228655
+ 5.50  6.23  1.35  3026  42.0 111.0      82844   2070   2083031    220741
+
+=== Phase B3: proxy-grid + exact-objective NM, 12 seeds ===
+ [0] ea=5.50 t0=0.00 rapo=1.35: grid best |dv1|=60 m/s peri=19720km v_rel=1127 E2=385920 proxy_extra=1165 (1s)
+     NM: dv_total=4585 m/s (|dv1|=60) [18s, 220 evals]
+     arrival: in_window=210 rejects={'window': 990, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=613.6 kg dv=4581 (dv0=3026 dv1=60 dv2=1495) dt=111.5d r_arr=6194km v_rel=1498 E2=330255 ***
+ [1] no grid point survives
+ [2] no grid point survives
+ [3] ea=0.79 t0=1.70 rapo=1.35: grid best |dv1|=100 m/s peri=11200km v_rel=1237 E2=327791 proxy_extra=1052 (1s)
+     NM: dv_total=3507 m/s (|dv1|=103) [18s, 220 evals]
+     arrival: in_window=216 rejects={'window': 984, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=1083.4 kg dv=3507 (dv0=3026 dv1=103 dv2=378) dt=106.5d r_arr=1839km v_rel=2425 E2=274561 ***
+ [4] ea=3.93 t0=1.13 rapo=1.20: grid best |dv1|=162 m/s peri=18973km v_rel=1545 E2=935167 proxy_extra=1925 (1s)
+     NM: dv_total=3983 m/s (|dv1|=157) [14s, 220 evals]
+     arrival: in_window=167 rejects={'window': 1033, 'arr_none': 0, 'fit': 0}
+     *** VALID mass=854.4 kg dv=3983 (dv0=3161 dv1=157 dv2=666) dt=56.5d r_arr=1841km v_rel=2711 E2=1012135 ***
+ [5] ea=3.93 t0=4.53 rapo=1.20: grid best |dv1|=162 m/s peri=9381km v_rel=1703 E2=927512 proxy_extra=1452 (1s)
+     NM: dv_total=4045 m/s (|dv1|=160) [28s, 220 evals]
+     arrival: in_window=168 rejects={'window': 1032, 'arr_none': 2, 'fit': 0}
+     *** VALID mass=833.9 kg dv=4030 (dv0=3161 dv1=160 dv2=710) dt=56.5d r_arr=1984km v_rel=2640 E2=1014168 ***
+ [6] ea=0.00 t0=2.26 rapo=1.35: grid best |dv1|=78 m/s peri=22515km v_rel=2321 E2=2476881 proxy_extra=2253 (1s)
+     NM: dv_total=4198 m/s (|dv1|=72) [20s, 220 evals]
+     arrival: in_window=129 rejects={'window': 1071, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=762.1 kg dv=4199 (dv0=2998 dv1=72 dv2=1129) dt=90.2d r_arr=1846km v_rel=3164 E2=2349730 ***
+ [7] ea=5.50 t0=2.83 rapo=1.35: grid best |dv1|=221 m/s peri=20488km v_rel=2114 E2=1994289 proxy_extra=2198 (1s)
+     NM: dv_total=8084 m/s (|dv1|=253) [1s, 196 evals]
+ [8] ea=2.36 t0=3.40 rapo=1.50: grid best |dv1|=150 m/s peri=21891km v_rel=2392 E2=2637108 proxy_extra=2362 (1s)
+     NM: dv_total=5232 m/s (|dv1|=143) [15s, 220 evals]
+     arrival: in_window=74 rejects={'window': 1126, 'arr_none': 9, 'fit': 0}
+     *** VALID mass=401.3 kg dv=5226 (dv0=3167 dv1=143 dv2=1916) dt=116.8d r_arr=6009km v_rel=2600 E2=2564452 ***
+ [9] ea=0.00 t0=5.66 rapo=1.35: grid best |dv1|=92 m/s peri=15984km v_rel=2414 E2=2606491 proxy_extra=2211 (1s)
+     NM: dv_total=7000 m/s (|dv1|=89) [8s, 139 evals]
+ [10] no grid point survives
+ [11] ea=5.50 t0=6.23 rapo=1.35: grid best |dv1|=92 m/s peri=20931km v_rel=2283 E2=2370893 proxy_extra=2175 (1s)
+     NM: dv_total=4222 m/s (|dv1|=91) [18s, 220 evals]
+     arrival: in_window=130 rejects={'window': 1070, 'arr_none': 1, 'fit': 0}
+     *** VALID mass=752.6 kg dv=4222 (dv0=3026 dv1=91 dv2=1105) dt=98.2d r_arr=1850km v_rel=3135 E2=2264005 ***
+
+=== E-570 RESULT: WSB mass 1083.4 kg vs baseline 325.0 kg (+758.4) ===
+  full-precision row -> runs/ch1/e570_row_313_187.json
+row(repr): ['313.0', '187.0', '245.0', '1.697798468931852', '-5.866852135772739e-05', '0.012789957462885906', '0.0016092853415162092', '-5.365581173049323', '5.3189226895396775', '0.6707703043419055', '-2.0921584760972496', '2.0737370334372813', '0.2609261695946967', '0.09815299472617726', '0.021539360190360936', '-0.0025521112679889966', '0.2492058033148977', '0.19563192204853272', '0.19016038183902137', '11.671729648335615', '12.821596255414748']

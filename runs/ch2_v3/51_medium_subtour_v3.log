@@ -1,0 +1,4 @@
+Partial: 156/181, missing: 25
+Clusters: [20, 2, 2, 1]
+Big cluster (20): [0, 126, 119, 112, 99, 97, 95, 93, 92, 60, 179, 42, 40, 161, 33, 160, 21, 146, 141, 136]
+Found 20 feasible sub-tours (best total_tof=4.76d, wall=5.7s)

@@ -3,3 +3,31 @@ Bank perm: start=3 end=44 legs=180
 Pair set: |bank+cheap|=3186, +1500 exc-extra = 4686 unique pairs
 Total cells: 2,343,000,000
 Est wall on 4 cores: ~1.3h (based on E-540 rate ~120k cells/s/core)
+  200/4686 pairs  rate=0.1/s elapsed=0.56h eta=12.50h
+  400/4686 pairs  rate=0.1/s elapsed=1.11h eta=11.91h
+  600/4686 pairs  rate=0.1/s elapsed=1.56h eta=10.63h
+  800/4686 pairs  rate=0.1/s elapsed=2.01h eta=9.79h
+  1000/4686 pairs  rate=0.1/s elapsed=2.68h eta=9.89h
+  1200/4686 pairs  rate=0.1/s elapsed=3.21h eta=9.34h
+  1400/4686 pairs  rate=0.1/s elapsed=3.55h eta=8.32h
+  1600/4686 pairs  rate=0.1/s elapsed=3.97h eta=7.66h
+  1800/4686 pairs  rate=0.1/s elapsed=4.33h eta=6.94h
+  2000/4686 pairs  rate=0.1/s elapsed=4.67h eta=6.27h
+  2200/4686 pairs  rate=0.1/s elapsed=5.26h eta=5.95h
+  2400/4686 pairs  rate=0.1/s elapsed=6.02h eta=5.73h
+  2600/4686 pairs  rate=0.1/s elapsed=6.48h eta=5.20h
+  2800/4686 pairs  rate=0.1/s elapsed=6.82h eta=4.60h
+  3000/4686 pairs  rate=0.1/s elapsed=7.19h eta=4.04h
+  3200/4686 pairs  rate=0.1/s elapsed=7.56h eta=3.51h
+  3400/4686 pairs  rate=0.1/s elapsed=7.91h eta=2.99h
+  3600/4686 pairs  rate=0.1/s elapsed=8.29h eta=2.50h
+  3800/4686 pairs  rate=0.1/s elapsed=8.78h eta=2.05h
+  4000/4686 pairs  rate=0.1/s elapsed=9.32h eta=1.60h
+  4200/4686 pairs  rate=0.1/s elapsed=9.89h eta=1.14h
+  4400/4686 pairs  rate=0.1/s elapsed=10.38h eta=0.67h
+  4600/4686 pairs  rate=0.1/s elapsed=10.80h eta=0.20h
+
+Done in 39427s (10.95h)
+Saved /tmp/ch2_medium_fine_pair_set.npz
+Cheap cells (per stored pairs): 14833814 / 23430000 = 63.3%
+Exc cells   (per stored pairs): 22844660 / 23430000 = 97.5%

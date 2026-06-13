@@ -1,0 +1,8 @@
+[E-574] GATE: validating BASELINE arm on 5 known-feasible bank pairs (tof12 x split5 x ea3, nfev=100)
+  E0(i=0.0) L0(i=0.0) bank=819kg -> baseline=235kg (5 DC,66s) OK
+  E69(i=10.5) L63(i=9.7) bank=349kg -> baseline=263kg (15 DC,63s) OK
+  E54(i=24.0) L330(i=24.4) bank=460kg -> baseline=162kg (30 DC,110s) OK
+  E252(i=55.7) L354(i=44.2) bank=387kg -> baseline=FAIL (60 DC,458s) <<< MISS
+  E100(i=89.4) L90(i=89.9) bank=619kg -> baseline=FAIL (60 DC,11s) <<< MISS
+[GATE] 3/5 known-feasible recovered [525s]
+[ABORT] harness STILL too weak (<4/5) -> widen grid before trusting any stranded-pair result. NOT testing stranded pairs.

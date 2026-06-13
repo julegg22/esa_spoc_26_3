@@ -1,0 +1,6 @@
+[E-585] large windowed-LNS FINE grid: walk n_steps=4000 wait_dt=0.25 W=[20,50] seed=0 vs bank 1013.2886 -> /tmp/ch2_large_window_finegrid_cand_s0.json
+[E-578] n=1051 start mk=1026.675 feas=True exc=5 (bank 1013.2886, r1 424.62)
+[it 6] ACCEPT W=40@921 mk=1020.940 exc=5 acc=1 (170s)
+[it 9] ACCEPT W=39@550 mk=1018.063 exc=5 acc=2 (270s)
+[it 13] ACCEPT W=32@872 mk=1014.257 exc=5 acc=3 (381s)
+Interrupted system call ; error code 4

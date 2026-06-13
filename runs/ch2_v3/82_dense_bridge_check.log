@@ -1,0 +1,8 @@
+Dense bridge search: 5 src in comp 0 × 150 dst in comp 1 × 30×30 (td,tof)
+Total evals: 675000 = 7e+05
+  src=902: feasible-dst-count=0 after 91s
+  src=114: feasible-dst-count=0 after 183s
+  src=367: feasible-dst-count=0 after 274s
+  src=221: feasible-dst-count=0 after 366s
+  src=69: feasible-dst-count=0 after 457s
+NO 0→1 bridges found even with dense grid

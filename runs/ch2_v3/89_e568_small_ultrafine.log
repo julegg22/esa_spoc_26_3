@@ -1,0 +1,8 @@
+[BASE] bank mk=116.3738 | grid TQ=0.05 N_TOF=320 T=10000 workers=2
+  [SCAN] 20/48 legs (557s)
+  [SCAN] 40/48 legs (1153s)
+[SCAN] done in 1457s
+[DP] forward DP...
+[DP] sink bucket=2403 (120.15d) exc=5 (1s)
+[VERDICT] ultrafine mk=120.1376 feas=True viols=[0, 0, 0, 0] | bank=116.3738 delta=+3.7638
+[OUT] candidate written to /tmp/ch2_small_ultrafine_candidate.json (no gain)

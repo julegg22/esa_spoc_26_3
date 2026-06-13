@@ -1,0 +1,18 @@
+E-551 reject instrumentation. n=181 T=5000 q=0.1
+  pairs in fine table: 4686/32580
+  bank mk=228.9748d
+  bridge positions: [19, 82, 102, 158, 178]
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+  M5      {'missing_pair': 199, 'ok': 1}  missing_legs mean=3.3 ok_min=248.03762617111207
+  M2      {'missing_pair': 156, 'ok': 27, 'dp_unreachable': 17}  missing_legs mean=2.3 ok_min=246.05202016830447
+  M1      {'missing_pair': 172, 'ok': 28}  missing_legs mean=5.0 ok_min=246.05202016830447
+  random  {'missing_pair': 200}  missing_legs mean=12.0 ok_min=None
+
+Unique missing pairs across all rejects: 3605 (2011 intra-comp, 1594 inter-comp)
+Top 20 most-hit missing pairs: [((180, 36), 11), ((81, 36), 10), ((90, 36), 10), ((73, 47), 10), ((160, 7), 8), ((178, 36), 8), ((131, 36), 8), ((141, 7), 8), ((161, 7), 8), ((97, 7), 8), ((115, 47), 7), ((21, 7), 6), ((0, 7), 6), ((37, 47), 6), ((60, 7), 6), ((102, 36), 6), ((174, 36), 6), ((59, 36), 6), ((71, 104), 6), ((105, 36), 5)]
+All-intra-comp directed pairs: 15660, already in table: 4681, to add: 10979
+
+Saved /tmp/ch2_e551_reject_instrument.json

@@ -1,0 +1,22 @@
+E-556 large: n=1051, n_exc=5, max_time=3000.0d, dv_thr=100.0, dv_exc=600.0
+Components (sorted desc): [601, 150, 150, 150]
+comp0 size= 601 covered= 577 full=False t_start=0.0 total_tof=305.1 (4142s)
+comp1 size= 150 covered= 150 full=True t_start=0.0 total_tof=22.0 (13s)
+comp2 size= 150 covered= 150 full=True t_start=0.0 total_tof=20.7 (12s)
+comp3 size= 150 covered= 150 full=True t_start=0.0 total_tof=21.9 (13s)
+All sub-tours built in 4181s. total covered=1027/1051
+WARNING: not all nodes covered by sub-tours: {0: '577/601', 1: '150/150', 2: '150/150', 3: '150/150'}. Assembled perm will be incomplete -> will NOT bank.
+Component order: [0, 1, 2, 3], estimated exc bridges=0
+Assembled perm: len=1027 unique=1027 dups=0
+
+Walking assembled perm (len=1027) — Lambert per leg, this takes minutes on n=1051...
+walk_perm_chrono: 0s, ok=False, exc_used=1/5, last_leg=577
+INFEASIBLE/PARTIAL: ok=False, perm=1027/1051, missing=24 — banking NOTHING.
+Partial saved to /tmp/large_component_partial.json
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1027,
+  "exc_used": 1,
+  "n_missing": 24
+}

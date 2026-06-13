@@ -1,0 +1,26 @@
+E-557 bridge-aware: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+
+[1] comp0 pure-cheap sub-tour (1 start(s))...
+  comp0 covered 329/601 (3520s)
+  comp0 stragglers (272): [7, 13, 19, 24, 29, 31, 34, 37, 39, 43, 47, 50, 56, 61, 62, 65, 67, 68, 70, 72, 73, 79, 90, 91, 95, 97, 98, 99, 110, 116]
+[2] small comps pure-cheap sub-tours...
+  comp1 covered 150/150 (14s)
+  comp2 covered 150/150 (13s)
+  comp3 covered 150/150 (14s)
+  cached sub-tours -> /tmp/ch2_e557_subtours.json
+[3] walking comp0 sub-tour for per-position times...
+  S0 walk ok=True reached 329/329 exc=0 (0s)
+[4] selecting detour anchors + bridges...
+  comp1: NO anchor found in 0 tried positions near frac 0.25
+  comp2: anchor pos=163 launch=143 entry=1 exit=1013 ret=827 terminal=False
+  comp3: NO anchor found in 0 tried positions near frac 0.78
+
+Some detour could not be anchored — reporting partial. Banking NOTHING.
+{
+  "status": "no_anchor",
+  "detours": {
+    "1": false,
+    "2": true,
+    "3": false
+  }
+}

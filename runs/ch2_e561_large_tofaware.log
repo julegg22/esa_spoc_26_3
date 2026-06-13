@@ -1,0 +1,32 @@
+[oa] n=150 start=None end=51
+    cost row 100/150 (91s)
+  cost 150x150: forbidden(BIG)=479 (2.1%) penalty_edges=0 wall=134s
+  [oa] solved 240s obj=7450 path_cost~7.5d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segA] n=267 start=2 end=557
+    cost row 100/267 (78s)
+    cost row 200/267 (131s)
+  cost 267x267: forbidden(BIG)=41889 (58.8%) penalty_edges=73 wall=157s
+  [segA] solved 240s obj=129744 path_cost~69.7d big_jumps=0 penalty_edges_used=1 len=267 start=0 end=266
+[ob] n=150 start=462 end=673
+    cost row 100/150 (82s)
+  cost 150x150: forbidden(BIG)=400 (1.8%) penalty_edges=0 wall=125s
+  [ob] solved 240s obj=7450 path_cost~7.5d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segB] n=241 start=543 end=450
+    cost row 100/241 (33s)
+    cost row 200/241 (51s)
+  cost 241x241: forbidden(BIG)=45189 (77.8%) penalty_edges=59 wall=68s
+  [segB] solved 240s obj=104414 path_cost~104.4d big_jumps=0 penalty_edges_used=0 len=241 start=0 end=240
+[oc] n=150 start=69 end=267
+    cost row 100/150 (86s)
+  cost 150x150: forbidden(BIG)=551 (2.4%) penalty_edges=0 wall=131s
+  [oc] solved 240s obj=7450 path_cost~7.5d big_jumps=0 penalty_edges_used=0 len=150 start=0 end=149
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden(BIG)=2777 (32.1%) penalty_edges=4 wall=31s
+  [segC] solved 240s obj=94380 path_cost~34.4d big_jumps=0 penalty_edges_used=1 len=93 start=0 end=92
+[ASM] wrote new plan -> /tmp/ch2_e561_assembly_plan.json s1=267 s2=508
+[BANK] walking assembled perm...
+[BANK] walk 2s ok=True exc=5/5 last_leg=1050
+[BANK] mk=2182.0087d feas=True viols=[0, 0, 0, 0] exc=5
+[BANK] tof: sum=2182.0 median=1.386 max=18.22 >3d=223 >5d=42 sum>3d=1118.5
+[BANK] backed up -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json.bak.e561
+>>> BANKED large mk=2182.0087d exc=5 -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json

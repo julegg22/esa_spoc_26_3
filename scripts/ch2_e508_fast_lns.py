@@ -74,15 +74,27 @@ def lns_worker(args):
     exc = _GLOB['exc']
     quantum = _GLOB['quantum']
     n_exc = _GLOB['n_exc']
+
+    # Bank under fast walker is 162.23d (quantization loss). Use init from
+    # cheap_unless_infeasible walk; track best in fast-walker units.
+    walk_kwargs = {'n_exc_budget': n_exc, 'window_q': 300,
+                   'exc_policy': 'cheap_unless_infeasible'}
+    init_fmk, _, _, _, ok0 = fast_walk(init_perm, cheap, exc, quantum,
+                                       **walk_kwargs)
+    if not ok0:
+        init_fmk = 200.0
     cur_perm = list(init_perm)
-    cur_mk = init_mk
-    best_mk = init_mk
+    cur_mk = init_fmk
+    best_mk = init_fmk
     best_perm = list(init_perm)
+    top_perms = []  # heap of (mk, perm) — keep top 50
     t0 = time.time()
     last_log = t0
-    n_walks = 0
-    n_acc = 0
-    n_feas = 0
+    n_walks = n_acc = n_feas = 0
+    # Simulated annealing temp
+    T = 5.0
+    T_min = 0.5
+    T_decay = 0.9995
     for it in range(n_iters):
         if time.time() - t0 > T_max:
             break
@@ -90,40 +102,45 @@ def lns_worker(args):
         if cand == cur_perm:
             continue
         mk, _td, _tof, exc_used, ok = fast_walk(
-            cand, cheap, exc, quantum, n_exc_budget=n_exc)
+            cand, cheap, exc, quantum, **walk_kwargs)
         n_walks += 1
         if not ok:
             continue
         n_feas += 1
-        # Acceptance: greedy by mk (no SA — could add)
-        if mk < cur_mk:
+        delta = mk - cur_mk
+        if delta < 0 or rng.random() < (2.718 ** (-delta / max(T, 0.1))):
             cur_mk = mk
             cur_perm = cand
             n_acc += 1
             if mk < best_mk:
                 best_mk = mk
-                best_perm = cand
-        # Restart occasionally to escape local opt
-        if it > 0 and it % 5000 == 0:
-            # Random restart from best with extra kick
-            for _ in range(5):
-                cur_perm = make_random_move(best_perm, rng)
-            mk, _, _, _, ok = fast_walk(
-                cur_perm, cheap, exc, quantum, n_exc_budget=n_exc)
-            cur_mk = mk if ok else best_mk
-            if not ok:
-                cur_perm = list(best_perm)
-                cur_mk = best_mk
+                best_perm = list(cand)
+            # Track diverse top perms
+            if len(top_perms) < 50:
+                top_perms.append((mk, list(cand)))
+            else:
+                worst = max(top_perms, key=lambda p: p[0])
+                if mk < worst[0]:
+                    top_perms.remove(worst)
+                    top_perms.append((mk, list(cand)))
+        T = max(T_min, T * T_decay)
+        # Periodic restart from best
+        if it > 0 and it % 8000 == 0:
+            cur_perm = list(best_perm)
+            cur_mk = best_mk
+            T = 5.0
         if time.time() - last_log > 60:
             elapsed = time.time() - t0
-            print(f"  [s={seed} it={it} t={elapsed:.0f}s] cur={cur_mk:.3f} "
-                  f"best={best_mk:.3f} walks={n_walks} feas={n_feas} acc={n_acc} "
+            print(f"  [s={seed} it={it} t={elapsed:.0f}s T={T:.2f}] "
+                  f"cur={cur_mk:.2f} best={best_mk:.2f} "
+                  f"walks={n_walks} feas={n_feas} acc={n_acc} "
                   f"({n_walks/elapsed:.0f}/s)", flush=True)
             last_log = time.time()
-    print(f"  [s={seed} DONE it={it} t={time.time()-t0:.0f}s] "
-          f"best={best_mk:.3f} walks={n_walks} feas={n_feas} acc={n_acc}",
-           flush=True)
-    return seed, best_mk, best_perm, n_walks, n_acc
+    elapsed = time.time() - t0
+    print(f"  [s={seed} DONE it={it} t={elapsed:.0f}s] "
+          f"best={best_mk:.2f} walks={n_walks} feas={n_feas} acc={n_acc} "
+          f"top_perms={len(top_perms)}", flush=True)
+    return seed, best_mk, best_perm, top_perms, n_walks, n_acc
 
 
 def main(n_workers=8, T_max=1800, n_iters=2000000):
@@ -155,44 +172,69 @@ def main(n_workers=8, T_max=1800, n_iters=2000000):
     args = [(s, n_iters, T_max, init_mk, init_perm) for s in range(n_workers)]
     t0 = time.time()
     best_overall = (init_mk, init_perm)
+    all_top = []  # collect top perms across workers
     with mp.Pool(n_workers, initializer=_init) as p:
-        for seed, mk, perm, n_w, n_a in p.imap_unordered(lns_worker, args):
+        for seed, mk, perm, top_perms, n_w, n_a in p.imap_unordered(lns_worker, args):
             if mk < best_overall[0]:
                 best_overall = (mk, perm)
-                print(f"  seed={seed}: NEW BEST {mk:.4f}d", flush=True)
+                print(f"  seed={seed}: NEW fast-walker BEST {mk:.4f}d",
+                       flush=True)
+            all_top.extend(top_perms)
     wall = time.time() - t0
-    print(f"\nE-508 done in {wall:.0f}s", flush=True)
-    print(f"Best fast-walker mk: {best_overall[0]:.4f}d", flush=True)
+    print(f"\nE-508 done in {wall:.0f}s. fast-walker best: {best_overall[0]:.4f}d",
+           flush=True)
 
-    # Validate best with full Lambert
-    if best_overall[0] < init_mk:
-        print(f"\n--- Full-Lambert validation of best perm ---", flush=True)
-        best_lambert = None
-        for ns, ws, wd in [(180, 12, 1.0), (360, 100, 0.1), (480, 200, 0.05)]:
+    # Deduplicate top perms and sort
+    seen = set()
+    uniq = []
+    for mk, p in sorted(all_top, key=lambda x: x[0]):
+        key = tuple(p)
+        if key in seen: continue
+        seen.add(key)
+        uniq.append((mk, p))
+    uniq = uniq[:100]  # top 100 unique perms across workers
+    print(f"Top {len(uniq)} unique perms (fast-walker mk): "
+          f"min={uniq[0][0]:.2f} max={uniq[-1][0]:.2f}", flush=True)
+
+    # Validate top-K with full Lambert
+    print(f"\n--- Full-Lambert validation of top {len(uniq)} perms ---",
+           flush=True)
+    best_lambert = None
+    bank_mk = 142.9183
+    for ix, (fmk, perm) in enumerate(uniq):
+        # Try default Lambert walk
+        best_for_perm = None
+        for ns, ws, wd in [(180, 12, 1.0), (360, 60, 0.2)]:
             times, tofs, _dvs, ok, exc_w, _k = walk_perm_chrono(
-                kt, best_overall[1], tof_window=18.0, n_steps=ns,
+                kt, perm, tof_window=18.0, n_steps=ns,
                 wait_steps=ws, wait_dt=wd)
             if not ok: continue
             mk_l = times[-1] + tofs[-1]
-            x = times + tofs + [float(p) for p in best_overall[1]]
+            x = times + tofs + [float(p) for p in perm]
             fit = kt.fitness(x)
             feas = kt.is_feasible(fit)
-            print(f"  ns={ns} wd={wd}: mk={mk_l:.4f}d feas={feas}", flush=True)
-            if feas and (best_lambert is None or mk_l < best_lambert[0]):
-                best_lambert = (mk_l, x)
-
-        if best_lambert and best_lambert[0] < 142.9183:
-            bak = OUT + ".bak.20260530"
-            if Path(OUT).exists() and not Path(bak).exists():
-                Path(bak).write_bytes(Path(OUT).read_bytes())
-                print(f"Backed up bank to {bak}", flush=True)
-            Path(OUT).write_text(json.dumps([{
-                "decisionVector": list(best_lambert[1]),
-                "problem": "small",
-                "challenge": CHALLENGE}]))
-            print(f">>> BANKED: mk={best_lambert[0]:.4f}d "
-                  f"({142.9183 - best_lambert[0]:.4f}d under bank)",
+            if feas and (best_for_perm is None or mk_l < best_for_perm[0]):
+                best_for_perm = (mk_l, x)
+        if best_for_perm is None:
+            continue
+        if best_lambert is None or best_for_perm[0] < best_lambert[0]:
+            best_lambert = best_for_perm
+            mark = " UNDER BANK" if best_for_perm[0] < bank_mk else ""
+            print(f"  [{ix:3d}] fmk={fmk:.2f}d → lambert={best_for_perm[0]:.4f}d{mark}",
                    flush=True)
+
+    if best_lambert and best_lambert[0] < bank_mk:
+        bak = OUT + ".bak.20260530"
+        if Path(OUT).exists() and not Path(bak).exists():
+            Path(bak).write_bytes(Path(OUT).read_bytes())
+            print(f"Backed up bank to {bak}", flush=True)
+        Path(OUT).write_text(json.dumps([{
+            "decisionVector": list(best_lambert[1]),
+            "problem": "small",
+            "challenge": CHALLENGE}]))
+        print(f">>> BANKED: mk={best_lambert[0]:.4f}d "
+              f"({bank_mk - best_lambert[0]:.4f}d under prev bank)",
+              flush=True)
     return best_overall
 
 

@@ -1,0 +1,188 @@
+[BASE] mk=1536.3953 feas=True exc=5 viols=[0, 0, 0, 0]
+[BASE] tof sum=1536.4 max=24.23 >3d=102 sum>3d=495.2
+
+========== SEQUENTIAL EPOCH-AWARE ITER 0 ==========
+[oa] n=150 start=None end=51
+  cost 150x150: forbidden=479 (2.1%) pen_edges=2 wall=28s
+  [oa] solved 240s obj=16294 path~16.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oa] after re-solve mk=1536.3953 feas=True
+[segA] n=267 start=2 end=557
+  cost 267x267: forbidden=41889 (58.8%) pen_edges=6 wall=28s
+  [segA] solved 240s obj=200450 path~200.4d big_jumps=0 pen_used=0 len=267 start=0 end=266
+  [segA] after re-solve mk=1536.3953 feas=True
+[ob] n=150 start=462 end=673
+  cost 150x150: forbidden=400 (1.8%) pen_edges=2 wall=21s
+  [ob] solved 240s obj=16897 path~16.9d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [ob] after re-solve mk=1544.1448 feas=True
+[segB] n=241 start=543 end=450
+  cost 241x241: forbidden=45189 (77.8%) pen_edges=3 wall=15s
+  [segB] solved 240s obj=265194 path~265.2d big_jumps=0 pen_used=0 len=241 start=0 end=240
+  [segB] after re-solve mk=1474.6666 feas=True
+[oc] n=150 start=69 end=267
+  cost 150x150: forbidden=551 (2.4%) pen_edges=4 wall=23s
+  [oc] solved 240s obj=16495 path~16.5d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oc] after re-solve mk=1477.6060 feas=True
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden=2777 (32.1%) pen_edges=0 wall=5s
+  [segC] solved 240s obj=92144 path~92.1d big_jumps=0 pen_used=0 len=93 start=0 end=92
+  [segC] after re-solve mk=1394.6329 feas=True
+[iter 0] mk=1394.6329 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 0] tof sum=1394.6 max=24.23 >3d=76 >5d=21 sum>3d=413.9
+[iter 0] NEW BEST mk=1394.6329
+[iter 0] improvement vs prev iter = 141.76d
+
+========== SEQUENTIAL EPOCH-AWARE ITER 1 ==========
+[oa] n=150 start=None end=51
+  cost 150x150: forbidden=479 (2.1%) pen_edges=2 wall=23s
+  [oa] solved 240s obj=16495 path~16.5d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oa] after re-solve mk=1394.6329 feas=True
+[segA] n=267 start=2 end=557
+  cost 267x267: forbidden=41889 (58.8%) pen_edges=6 wall=27s
+  [segA] solved 240s obj=207473 path~207.5d big_jumps=0 pen_used=0 len=267 start=0 end=266
+  [segA] after re-solve mk=1373.5222 feas=True
+[ob] n=150 start=462 end=673
+  cost 150x150: forbidden=400 (1.8%) pen_edges=0 wall=21s
+  [ob] solved 240s obj=15490 path~15.5d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [ob] after re-solve mk=1373.5222 feas=True
+[segB] n=241 start=543 end=450
+  cost 241x241: forbidden=45189 (77.8%) pen_edges=4 wall=12s
+  [segB] solved 240s obj=261976 path~262.0d big_jumps=0 pen_used=0 len=241 start=0 end=240
+  [segB] after re-solve mk=1349.8729 feas=True
+[oc] n=150 start=69 end=267
+  cost 150x150: forbidden=551 (2.4%) pen_edges=3 wall=23s
+  [oc] solved 240s obj=17098 path~17.1d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oc] after re-solve mk=1334.7747 feas=True
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden=2777 (32.1%) pen_edges=0 wall=5s
+  [segC] solved 240s obj=106398 path~106.4d big_jumps=0 pen_used=0 len=93 start=0 end=92
+  [segC] after re-solve mk=1246.3236 feas=True
+[iter 1] mk=1246.3236 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 1] tof sum=1246.3 max=15.42 >3d=51 >5d=12 sum>3d=261.8
+[iter 1] NEW BEST mk=1246.3236
+[iter 1] improvement vs prev iter = 148.31d
+
+========== SEQUENTIAL EPOCH-AWARE ITER 2 ==========
+[oa] n=150 start=None end=51
+  cost 150x150: forbidden=479 (2.1%) pen_edges=1 wall=23s
+  [oa] solved 240s obj=17299 path~17.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oa] after re-solve mk=1246.3236 feas=True
+[segA] n=267 start=2 end=557
+  cost 267x267: forbidden=41889 (58.8%) pen_edges=6 wall=27s
+  [segA] solved 240s obj=180574 path~180.6d big_jumps=0 pen_used=0 len=267 start=0 end=266
+  [segA] after re-solve mk=1236.3027 feas=True
+[ob] n=150 start=462 end=673
+  cost 150x150: forbidden=400 (1.8%) pen_edges=1 wall=22s
+  [ob] solved 240s obj=18304 path~18.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [ob] after re-solve mk=1236.3027 feas=True
+[segB] n=241 start=543 end=450
+  cost 241x241: forbidden=45189 (77.8%) pen_edges=6 wall=13s
+  [segB] solved 240s obj=256148 path~256.1d big_jumps=0 pen_used=0 len=241 start=0 end=240
+  [segB] after re-solve mk=1221.0709 feas=True
+[oc] n=150 start=69 end=267
+  cost 150x150: forbidden=551 (2.4%) pen_edges=1 wall=22s
+  [oc] solved 240s obj=17298 path~17.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oc] after re-solve mk=1211.9853 feas=True
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden=2777 (32.1%) pen_edges=0 wall=5s
+  [segC] solved 240s obj=81706 path~81.7d big_jumps=0 pen_used=0 len=93 start=0 end=92
+  [segC] after re-solve mk=1158.5405 feas=True
+[iter 2] mk=1158.5405 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 2] tof sum=1158.5 max=11.94 >3d=46 >5d=9 sum>3d=218.6
+[iter 2] NEW BEST mk=1158.5405
+[iter 2] improvement vs prev iter = 87.78d
+
+========== SEQUENTIAL EPOCH-AWARE ITER 3 ==========
+[oa] n=150 start=None end=51
+  cost 150x150: forbidden=479 (2.1%) pen_edges=5 wall=23s
+  [oa] solved 240s obj=18103 path~18.1d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oa] after re-solve mk=1158.5405 feas=True
+[segA] n=267 start=2 end=557
+  cost 267x267: forbidden=41889 (58.8%) pen_edges=9 wall=27s
+  [segA] solved 240s obj=176155 path~176.2d big_jumps=0 pen_used=0 len=267 start=0 end=266
+  [segA] after re-solve mk=1153.9977 feas=True
+[ob] n=150 start=462 end=673
+  cost 150x150: forbidden=400 (1.8%) pen_edges=1 wall=21s
+  [ob] solved 240s obj=16093 path~16.1d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [ob] after re-solve mk=1153.9977 feas=True
+[segB] n=241 start=543 end=450
+  cost 241x241: forbidden=45189 (77.8%) pen_edges=4 wall=12s
+  [segB] solved 240s obj=247315 path~247.3d big_jumps=0 pen_used=0 len=241 start=0 end=240
+  [segB] after re-solve mk=1142.9079 feas=True
+[oc] n=150 start=69 end=267
+  cost 150x150: forbidden=551 (2.4%) pen_edges=0 wall=23s
+  [oc] solved 240s obj=16495 path~16.5d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oc] after re-solve mk=1153.0624 feas=True
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden=2777 (32.1%) pen_edges=0 wall=5s
+  [segC] solved 240s obj=79294 path~79.3d big_jumps=0 pen_used=0 len=93 start=0 end=92
+  [segC] after re-solve mk=1109.2376 feas=True
+[iter 3] mk=1109.2376 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 3] tof sum=1109.2 max=29.04 >3d=38 >5d=7 sum>3d=213.9
+[iter 3] NEW BEST mk=1109.2376
+[iter 3] improvement vs prev iter = 49.30d
+
+========== SEQUENTIAL EPOCH-AWARE ITER 4 ==========
+[oa] n=150 start=None end=51
+  cost 150x150: forbidden=479 (2.1%) pen_edges=7 wall=23s
+  [oa] solved 240s obj=16495 path~16.5d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oa] after re-solve mk=1109.2376 feas=True
+[segA] n=267 start=2 end=557
+  cost 267x267: forbidden=41889 (58.8%) pen_edges=3 wall=27s
+  [segA] solved 240s obj=195024 path~195.0d big_jumps=0 pen_used=0 len=267 start=0 end=266
+  [segA] after re-solve mk=1109.2376 feas=True
+[ob] n=150 start=462 end=673
+  cost 150x150: forbidden=400 (1.8%) pen_edges=2 wall=21s
+  [ob] solved 240s obj=17902 path~17.9d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [ob] after re-solve mk=1109.2376 feas=True
+[segB] n=241 start=543 end=450
+  cost 241x241: forbidden=45189 (77.8%) pen_edges=5 wall=14s
+  [segB] solved 240s obj=255352 path~255.4d big_jumps=0 pen_used=0 len=241 start=0 end=240
+  [segB] after re-solve mk=1081.9808 feas=True
+[oc] n=150 start=69 end=267
+  cost 150x150: forbidden=551 (2.4%) pen_edges=2 wall=22s
+  [oc] solved 240s obj=17299 path~17.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oc] after re-solve mk=1079.9766 feas=True
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden=2777 (32.1%) pen_edges=0 wall=5s
+  [segC] solved 240s obj=74476 path~74.5d big_jumps=0 pen_used=0 len=93 start=0 end=92
+  [segC] after re-solve mk=1054.7239 feas=True
+[iter 4] mk=1054.7239 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 4] tof sum=1054.7 max=11.94 >3d=39 >5d=12 sum>3d=204.8
+[iter 4] NEW BEST mk=1054.7239
+[iter 4] improvement vs prev iter = 54.51d
+
+========== SEQUENTIAL EPOCH-AWARE ITER 5 ==========
+[oa] n=150 start=None end=51
+  cost 150x150: forbidden=479 (2.1%) pen_edges=2 wall=23s
+  [oa] solved 240s obj=18304 path~18.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oa] after re-solve mk=1062.8742 feas=True
+[segA] n=267 start=2 end=557
+  cost 267x267: forbidden=41889 (58.8%) pen_edges=4 wall=26s
+  [segA] solved 240s obj=185187 path~185.2d big_jumps=0 pen_used=0 len=267 start=0 end=266
+  [segA] after re-solve mk=1054.7239 feas=True
+[ob] n=150 start=462 end=673
+  cost 150x150: forbidden=400 (1.8%) pen_edges=1 wall=21s
+  [ob] solved 240s obj=15289 path~15.3d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [ob] after re-solve mk=1061.9390 feas=True
+[segB] n=241 start=543 end=450
+  cost 241x241: forbidden=45189 (77.8%) pen_edges=8 wall=13s
+  [segB] solved 240s obj=242701 path~242.7d big_jumps=0 pen_used=0 len=241 start=0 end=240
+  [segB] after re-solve mk=1061.9390 feas=True
+[oc] n=150 start=69 end=267
+  cost 150x150: forbidden=551 (2.4%) pen_edges=3 wall=23s
+  [oc] solved 240s obj=17500 path~17.5d big_jumps=0 pen_used=0 len=150 start=0 end=149
+  [oc] after re-solve mk=1048.4441 feas=True
+[segC] n=93 start=445 end=931
+  cost 93x93: forbidden=2777 (32.1%) pen_edges=0 wall=5s
+  [segC] solved 240s obj=76284 path~76.3d big_jumps=0 pen_used=0 len=93 start=0 end=92
+  [segC] after re-solve mk=1048.9786 feas=True
+[iter 5] mk=1048.9786 feas=True exc=5 viols=[0, 0, 0, 0]
+[iter 5] tof sum=1049.0 max=24.23 >3d=38 >5d=13 sum>3d=219.0
+[iter 5] NEW BEST mk=1048.9786
+[iter 5] improvement vs prev iter = 5.75d
+[iter 5] improvement < 10.0d — stop iterating (diminishing returns).
+
+[FINAL] best_mk=1048.9786 (current bank 1536.3953)
+[REVAL] mk=1048.9786 feas=True viols=[0, 0, 0, 0] covered=True
+[BANK] backed up -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json.bak.e562b
+>>> BANKED large mk=1048.9786d -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json

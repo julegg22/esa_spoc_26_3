@@ -1,0 +1,227 @@
+n=25000 bank=33338.1840
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 3600 log_search_progress: true cp_model_presolve: true linearization_level: 2 num_search_workers: 2
+
+Initial optimization model '': (model_fingerprint: 0x24485a1eb46ea027)
+#Variables: 25'000 (#bools: 24'998 in objective) (25'000 primary variables)
+  - 25'000 Booleans in [0,1]
+#kAtMostOne: 15'000 (#literals: 75'000)
+
+Starting presolve at 0.01s
+The solution hint is complete and is feasible. Its objective value is 33338184.
+  2.26e-02s  0.00e+00d  [DetectDominanceRelations] 
+  6.02e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=3 #num_dual_strengthening=2 
+  4.06e-04s  0.00e+00d  [ExtractEncodingFromLinear] #potential_supersets=15'000 
+  5.71e-03s  0.00e+00d  [DetectDuplicateColumns] 
+  8.41e-03s  0.00e+00d  [DetectDuplicateConstraints] 
+[Symmetry] Graph for symmetry has 40'000 nodes and 74'994 arcs.
+[Symmetry] Symmetry computation done. time: 0.00854252 dtime: 0.00618191
+  9.17e-03s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  1.39e-01s  3.27e-02d  [Probe] #probed=49'996 
+  2.66e-02s  8.74e-03d  [MaxClique] 
+  2.22e-02s  0.00e+00d  [DetectDominanceRelations] 
+  4.08e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  5.17e-03s  0.00e+00d  [ProcessAtMostOneAndLinear] 
+  8.44e-03s  0.00e+00d  [DetectDuplicateConstraints] 
+  8.08e-03s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  1.79e-04s  0.00e+00d  [DetectDominatedLinearConstraints] 
+  1.41e-04s  0.00e+00d  [DetectDifferentVariables] 
+  8.26e-03s  2.40e-04d  [ProcessSetPPC] #relevant_constraints=15'000 
+  6.70e-03s  0.00e+00d  [TransformClausesToExactlyOne] #num_amos=15'000 
+  3.24e-04s  0.00e+00d  [DetectEncodedComplexDomains] 
+  2.46e-04s  0.00e+00d  [FindAlmostIdenticalLinearConstraints] 
+  7.54e-03s  4.12e-03d  [FindBigAtMostOneAndLinearOverlap] 
+  1.16e-03s  5.00e-04d  [FindBigVerticalLinearOverlap] 
+  4.14e-04s  0.00e+00d  [FindBigHorizontalLinearOverlap] 
+  7.67e-04s  0.00e+00d  [MergeClauses] 
+  2.22e-02s  0.00e+00d  [DetectDominanceRelations] 
+  3.99e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  2.22e-02s  0.00e+00d  [DetectDominanceRelations] 
+  4.00e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  3.89e-03s  0.00e+00d  [DetectDuplicateColumns] 
+  7.86e-03s  0.00e+00d  [DetectDuplicateConstraints] 
+[Symmetry] Graph for symmetry has 40'000 nodes and 74'994 arcs.
+[Symmetry] Symmetry computation done. time: 0.00660462 dtime: 0.00618191
+  8.30e-03s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  1.34e-01s  3.27e-02d  [Probe] #probed=49'996 
+  2.60e-02s  8.74e-03d  [MaxClique] 
+  2.30e-02s  0.00e+00d  [DetectDominanceRelations] 
+  4.23e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  5.55e-03s  0.00e+00d  [ProcessAtMostOneAndLinear] 
+  8.55e-03s  0.00e+00d  [DetectDuplicateConstraints] 
+  8.28e-03s  0.00e+00d  [DetectDuplicateConstraintsWithDifferentEnforcements] 
+  3.30e-04s  0.00e+00d  [DetectDominatedLinearConstraints] 
+  3.25e-04s  0.00e+00d  [DetectDifferentVariables] 
+  8.48e-03s  2.40e-04d  [ProcessSetPPC] #relevant_constraints=15'000 
+  7.20e-03s  0.00e+00d  [TransformClausesToExactlyOne] #num_amos=15'000 
+  5.09e-04s  0.00e+00d  [DetectEncodedComplexDomains] 
+  4.01e-04s  0.00e+00d  [FindAlmostIdenticalLinearConstraints] 
+  7.51e-03s  4.12e-03d  [FindBigAtMostOneAndLinearOverlap] 
+  1.16e-03s  5.00e-04d  [FindBigVerticalLinearOverlap] 
+  5.98e-04s  0.00e+00d  [FindBigHorizontalLinearOverlap] 
+  1.00e-03s  0.00e+00d  [MergeClauses] 
+  2.29e-02s  0.00e+00d  [DetectDominanceRelations] 
+  4.13e-02s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  2.80e-04s  0.00e+00d  [MergeNoOverlap] 
+  2.36e-04s  0.00e+00d  [MergeNoOverlap2D] 
+  6.95e-03s  0.00e+00d  [ExpandObjective] 
+
+Presolve summary:
+  - 0 affine relations were detected.
+  - rule 'TODO dual: only one unspecified blocking constraint?' was applied 174'986 times.
+  - rule 'at_most_one: removed literals' was applied 6 times.
+  - rule 'dual: fix variable' was applied 2 times.
+  - rule 'presolve: 2 unused variables removed.' was applied 1 time.
+  - rule 'presolve: iteration' was applied 2 times.
+
+Presolved optimization model '': (model_fingerprint: 0xd62355617e7caa10)
+#Variables: 24'998 (#bools: 24'998 in objective) (24'998 primary variables)
+  - 24'998 Booleans in [0,1]
+#kAtMostOne: 15'000 (#literals: 74'994)
+[Symmetry] Graph for symmetry has 39'998 nodes and 74'994 arcs.
+[Symmetry] Symmetry computation done. time: 0.00737667 dtime: 0.00618179
+
+Preloading model.
+#Bound   0.87s best:-inf  next:[-0,125526620] initial_domain
+#1       0.87s best:33338184 next:[33338185,125526620] complete_hint
+#Model   0.88s var:24998/24998 constraints:15000/15000
+
+Starting search at 0.88s with 2 workers.
+1 full problem subsolver: [default_lp]
+1 first solution subsolver: [fj]
+9 interleaved subsolvers: [feasibility_pump, graph_arc_lns, graph_cst_lns, graph_dec_lns, graph_var_lns, ls, rins/rens, rnd_cst_lns, rnd_var_lns]
+3 helper subsolvers: [neighborhood_helper, synchronization_agent, update_gap_integral]
+
+#Bound   1.33s best:33338184 next:[33338185,98425096] default_lp
+#Bound   1.35s best:33338184 next:[33338185,97569433] default_lp
+#Bound   1.37s best:33338184 next:[33338185,96794698] default_lp
+#Bound   1.38s best:33338184 next:[33338185,96052492] default_lp
+#Bound   1.41s best:33338184 next:[33338185,95254896] default_lp
+#Bound   1.42s best:33338184 next:[33338185,94301206] default_lp
+#Bound   1.44s best:33338184 next:[33338185,93337274] default_lp
+#Bound   1.45s best:33338184 next:[33338185,92391298] default_lp
+#Bound   1.47s best:33338184 next:[33338185,91480131] default_lp
+#Bound   1.48s best:33338184 next:[33338185,90541346] default_lp
+#Bound   1.50s best:33338184 next:[33338185,89590768] default_lp
+#Bound   1.51s best:33338184 next:[33338185,88710720] default_lp
+#Bound   1.54s best:33338184 next:[33338185,87839468] default_lp
+#Bound   1.55s best:33338184 next:[33338185,87014520] default_lp
+#Bound   1.57s best:33338184 next:[33338185,86150791] default_lp
+#Bound   1.58s best:33338184 next:[33338185,85350880] default_lp
+#Bound   1.60s best:33338184 next:[33338185,84509574] default_lp
+#Bound   1.61s best:33338184 next:[33338185,83703744] default_lp
+#Bound   1.63s best:33338184 next:[33338185,82941927] default_lp
+#Bound   1.64s best:33338184 next:[33338185,82174248] default_lp
+#Bound   1.67s best:33338184 next:[33338185,81448399] default_lp
+#Bound   2.02s best:33338184 next:[33338185,69394322] default_lp [skipped_logs=17]
+#Bound   3.01s best:33338184 next:[33338185,51632283] default_lp [skipped_logs=41]
+#Bound   4.01s best:33338184 next:[33338185,43600499] default_lp [skipped_logs=33]
+#Bound   5.01s best:33338184 next:[33338185,39602993] default_lp [skipped_logs=27]
+#Bound   6.01s best:33338184 next:[33338185,38282904] default_lp [skipped_logs=12]
+#Bound   6.92s best:33338184 next:[33338185,38085623] default_lp [skipped_logs=1]
+#Bound   7.97s best:33338184 next:[33338185,37705941] default_lp [skipped_logs=3]
+#Bound   8.49s best:33338184 next:[33338185,37623579] default_lp [skipped_logs=0]
+#Bound  10.20s best:33338184 next:[33338185,37517085] default_lp
+#Bound  10.96s best:33338184 next:[33338185,37299623] default_lp [skipped_logs=1]
+#Bound  12.13s best:33338184 next:[33338185,37218346] default_lp
+#Bound  13.00s best:33338184 next:[33338185,37133002] default_lp [skipped_logs=2]
+#Bound  20.53s best:33338184 next:[33338185,37031445] default_lp
+#Bound  20.76s best:33338184 next:[33338185,36919057] default_lp
+#Bound  20.97s best:33338184 next:[33338185,36911364] default_lp
+#Bound  21.21s best:33338184 next:[33338185,36906541] default_lp
+#Bound  22.48s best:33338184 next:[33338185,36808883] default_lp
+#Bound  35.68s best:33338184 next:[33338185,36726961] default_lp
+#Bound  36.31s best:33338184 next:[33338185,36674980] default_lp
+#Bound  36.58s best:33338184 next:[33338185,36665609] default_lp
+#Bound  36.86s best:33338184 next:[33338185,36659948] default_lp
+#Bound  37.17s best:33338184 next:[33338185,36658216] default_lp
+#Bound  39.06s best:33338184 next:[33338185,36572068] default_lp
+#Bound  58.87s best:33338184 next:[33338185,36502329] default_lp
+#Bound  59.27s best:33338184 next:[33338185,36501824] default_lp
+#Bound  59.88s best:33338184 next:[33338185,36468534] default_lp
+#Bound  60.17s best:33338184 next:[33338185,36458556] default_lp
+#Bound  60.59s best:33338184 next:[33338185,36452950] default_lp
+#Bound  62.01s best:33338184 next:[33338185,36445592] default_lp
+#Bound  87.88s best:33338184 next:[33338185,36380862] default_lp
+#Bound  88.34s best:33338184 next:[33338185,36379248] default_lp
+#Bound  88.74s best:33338184 next:[33338185,36378754] default_lp
+#Bound  89.49s best:33338184 next:[33338185,36331672] default_lp
+#Bound  89.85s best:33338184 next:[33338185,36322451] default_lp
+#Bound  92.06s best:33338184 next:[33338185,36307419] default_lp
+#Bound  92.79s best:33338184 next:[33338185,36261789] default_lp
+#Bound  93.27s best:33338184 next:[33338185,36251785] default_lp
+#Bound  93.63s best:33338184 next:[33338185,36246235] default_lp
+#Bound  94.07s best:33338184 next:[33338185,36241419] default_lp
+#Bound  95.77s best:33338184 next:[33338185,36234171] default_lp
+#Bound 120.10s best:33338184 next:[33338185,36183418] default_lp
+#Bound 120.45s best:33338184 next:[33338185,36181207] default_lp
+#Bound 120.86s best:33338184 next:[33338185,36179898] default_lp
+#Bound 121.25s best:33338184 next:[33338185,36178955] default_lp
+#Bound 123.20s best:33338184 next:[33338185,36120264] default_lp
+#Bound 123.58s best:33338184 next:[33338185,36118836] default_lp
+#Bound 123.98s best:33338184 next:[33338185,36117540] default_lp
+#Bound 124.37s best:33338184 next:[33338185,36116836] default_lp
+#Bound 126.28s best:33338184 next:[33338185,36069071] default_lp
+#Bound 126.69s best:33338184 next:[33338185,36067265] default_lp
+#Bound 127.09s best:33338184 next:[33338185,36066099] default_lp
+#Bound 127.52s best:33338184 next:[33338185,36065197] default_lp
+#Bound 129.65s best:33338184 next:[33338185,36003627] default_lp
+#Bound 130.02s best:33338184 next:[33338185,36000976] default_lp
+#Bound 130.44s best:33338184 next:[33338185,35999513] default_lp
+#Bound 130.87s best:33338184 next:[33338185,35997534] default_lp
+#Bound 131.77s best:33338184 next:[33338185,35995746] default_lp
+#Bound 169.42s best:33338184 next:[33338185,35941985] default_lp
+#Bound 169.89s best:33338184 next:[33338185,35938549] default_lp
+#Bound 170.57s best:33338184 next:[33338185,35936505] default_lp
+#Bound 171.10s best:33338184 next:[33338185,35935364] default_lp
+#Bound 171.67s best:33338184 next:[33338185,35934362] default_lp
+#Bound 173.04s best:33338184 next:[33338185,35932678] default_lp
+#Bound 213.07s best:33338184 next:[33338185,35887989] default_lp
+#Bound 213.60s best:33338184 next:[33338185,35885082] default_lp
+#Bound 214.22s best:33338184 next:[33338185,35882802] default_lp
+#Bound 214.70s best:33338184 next:[33338185,35881116] default_lp
+#Bound 215.26s best:33338184 next:[33338185,35879975] default_lp
+#Bound 216.40s best:33338184 next:[33338185,35878825] default_lp
+#Bound 262.50s best:33338184 next:[33338185,35835450] default_lp
+#Bound 262.89s best:33338184 next:[33338185,35832036] default_lp
+#Bound 263.36s best:33338184 next:[33338185,35828801] default_lp
+#Bound 263.78s best:33338184 next:[33338185,35826370] default_lp
+#Bound 264.20s best:33338184 next:[33338185,35824349] default_lp
+#Bound 265.57s best:33338184 next:[33338185,35820862] default_lp
+#Bound 305.61s best:33338184 next:[33338185,35777017] default_lp
+#Bound 306.30s best:33338184 next:[33338185,35773483] default_lp
+#Bound 306.98s best:33338184 next:[33338185,35770654] default_lp
+#Bound 307.49s best:33338184 next:[33338185,35767339] default_lp
+#Bound 307.98s best:33338184 next:[33338185,35764887] default_lp
+#Bound 310.45s best:33338184 next:[33338185,35760322] default_lp
+#Bound 362.02s best:33338184 next:[33338185,35714069] default_lp
+#Bound 362.47s best:33338184 next:[33338185,35710949] default_lp
+#Bound 362.95s best:33338184 next:[33338185,35709070] default_lp
+#Bound 363.42s best:33338184 next:[33338185,35707571] default_lp
+#Bound 363.94s best:33338184 next:[33338185,35706154] default_lp
+#Bound 366.79s best:33338184 next:[33338185,35701527] default_lp
+#Bound 367.85s best:33338184 next:[33338185,35680208] default_lp
+#Bound 368.47s best:33338184 next:[33338185,35668703] default_lp
+#Bound 368.83s best:33338184 next:[33338185,35661317] default_lp
+#Bound 369.34s best:33338184 next:[33338185,35656407] default_lp
+#Bound 371.98s best:33338184 next:[33338185,35638029] default_lp
+#Bound 372.62s best:33338184 next:[33338185,35636625] default_lp
+#Bound 373.21s best:33338184 next:[33338185,35635312] default_lp
+#Bound 373.75s best:33338184 next:[33338185,35634533] default_lp
+#Bound 375.16s best:33338184 next:[33338185,35633236] default_lp
+#Bound 424.86s best:33338184 next:[33338185,35600988] default_lp
+#Bound 425.45s best:33338184 next:[33338185,35597067] default_lp
+#Bound 426.04s best:33338184 next:[33338185,35594780] default_lp
+#Bound 426.68s best:33338184 next:[33338185,35592519] default_lp
+#Bound 427.36s best:33338184 next:[33338185,35591264] default_lp
+#Bound 430.65s best:33338184 next:[33338185,35586783] default_lp
+#Bound 431.79s best:33338184 next:[33338185,35570545] default_lp
+#Bound 432.31s best:33338184 next:[33338185,35564166] default_lp
+#Bound 432.81s best:33338184 next:[33338185,35559184] default_lp
+#Bound 433.66s best:33338184 next:[33338185,35555738] default_lp
+#Bound 436.47s best:33338184 next:[33338185,35543990] default_lp
+#Bound 437.12s best:33338184 next:[33338185,35542994] default_lp
+#Bound 437.70s best:33338184 next:[33338185,35542145] default_lp
+#Bound 438.28s best:33338184 next:[33338185,35541669] default_lp
+#Bound 439.70s best:33338184 next:[33338185,35540711] default_lp

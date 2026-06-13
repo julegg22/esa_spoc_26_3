@@ -1,0 +1,47 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+E-570 WSB pair (131,169) idD=114 baseline=623.4 kg
+  aE=7.346e+06 eE=0.090 iE=0.764 | aL=4.718e+06 eL=0.606 iL=0.725
+
+=== Phase A: ballistic scan pair (131,169) 16x12x3x1 ===
+scan done in 3s: 111 bound returns, 465 escapes, 0 impacts/failures
+   ea    t0 rapo9   dv0  tapo  tmin  rm_min_km  v_rel        E2  perig_km
+ 0.00  2.26  1.50  2835  48.2 132.8      47619   2238   2401565    395196
+ 3.14  5.66  1.50  3220  46.8 101.8      50827   2335   2629014    270585
+ 3.53  2.26  1.50  3205  60.2 127.0      66377    717    183198    322858
+ 3.14  2.26  1.50  3220  46.8 101.2      80006   2431   2892528    252593
+ 0.00  2.26  1.35  2832  44.2 101.5      83479   1978   1898096    161025
+ 0.39  1.70  1.20  2844  41.0 102.8      85881   2108   2163857    243530
+ 0.00  5.66  1.50  2835  48.2 131.8      96741   2113   2181737    398965
+ 3.53  5.66  1.50  3205  59.5 120.5      97227    715    204962    269112
+ 1.18  4.53  1.35  2950  44.2  94.5      97359   2024   1997712    250009
+ 0.00  5.66  1.35  2832  44.5 101.0     100870   1910   1776202    146627
+ 5.11  3.40  1.50  2952  44.0  89.5     101956   2034   2020802     70789
+ 3.53  1.70  1.35  3202  45.0 121.8     105192   2457   2971618    293900
+ 0.39  5.09  1.20  2844  40.8 102.2     114764   2014   1985967    242211
+ 5.11  0.00  1.50  2952  44.2  89.5     115979   2081   2123088     57606
+ 1.18  1.13  1.35  2950  44.2  95.0     116601   1900   1762865    268058
+ 3.93  4.53  1.20  3156  35.8  78.5     118703   2240   2468338    167453
+ 5.89  2.26  1.20  2844  39.0  87.5     124019   2152   2276313    228187
+ 2.36  6.23  1.20  3156  36.2  74.5     130451   2301   2610037     89071
+ 5.89  5.66  1.20  2844  38.8  87.0     130731   2234   2457386    228458
+ 1.96  0.00  1.20  3093  37.5  74.5     135497   2033   2029952     53092
+
+=== Phase B3: proxy-grid + exact-objective NM, 12 seeds ===
+ [0] no grid point survives
+ [1] no grid point survives
+ [2] no grid point survives
+ [3] no grid point survives
+ [4] no grid point survives
+ [5] no grid point survives
+ [6] no grid point survives
+ [7] no grid point survives
+ [8] no grid point survives
+ [9] no grid point survives
+ [10] ea=0.00 t0=5.66 rapo=1.35: grid best |dv1|=79 m/s peri=19318km v_rel=2379 E2=2575434 proxy_extra=2277 (1s)
+     NM: dv_total=7000 m/s (|dv1|=74) [8s, 220 evals]
+ [11] ea=0.00 t0=2.26 rapo=1.35: grid best |dv1|=128 m/s peri=21955km v_rel=2338 E2=2509289 proxy_extra=2296 (1s)
+     NM: dv_total=8042 m/s (|dv1|=85) [1s, 220 evals]
+
+=== E-570 RESULT: no valid WSB capture found ===

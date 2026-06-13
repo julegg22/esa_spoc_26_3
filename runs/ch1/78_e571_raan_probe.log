@@ -1,0 +1,3 @@
+[probe] 99 unused Earth, 99 unused Moon. testing hi-incl Earth [238, 399, 302]
+E238(i=89) L141(i=90): base=FAIL(nf=0) sweep=FAIL(nf=0) [317s]
+Interrupted system call ; error code 4

@@ -1,0 +1,10 @@
+E-557 stitch probe: n=1051, n_exc=5, max_time=3000.0d, dv_thr=100.0, dv_exc=600.0, min_tof=0.0006944444444444445
+Components: [601, 150, 150, 150]
+Reusing comp0 sub-tour from partial: 590 nodes (covered/601)
+
+Walking comp0 sub-tour to get real exit time...
+  comp0 walk: ok=True, reached 590/590 nodes, exc_used=2, t_exit=328.20d (0s)
+
+Probing boundaries. exit_cands=12 (last 12 of comp0 walk), entry_cands=20 per target comp.
+  comp0 -> comp1: probed 240 pairs in 285s -> cheap=0, exc=0
+  comp0 -> comp2: probed 240 pairs in 284s -> cheap=0, exc=0

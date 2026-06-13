@@ -1,0 +1,7 @@
+kt.min_tof = 0.0006944444444444445
+Extended tof: up to 300d
+Searching 3 src × 150 dst × 30×30 (td×tof≤300d)...
+  src=902: cum-best dv=None after 89s
+  src=114: cum-best dv=None after 175s
+  src=367: cum-best dv=None after 261s
+STILL NO 0→1 bridges even with tof up to 300d

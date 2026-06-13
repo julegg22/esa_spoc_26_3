@@ -1,0 +1,109 @@
+n=1051 n_exc=5 dv_thr=100.0 dv_exc=600.0 max_time=3000.0
+makespan=2225.1654 fit=[2225.165384615384, 0, 0, 0, 0] feasible=True
+
+sum_tofs=2225.1654  total_idle=0.0000  sum=2225.1654
+makespan check = times[-1]+tofs[-1] = 2225.1654
+
+n_exc_legs=5  exc leg indices=[149, 416, 566, 807, 957]
+Exception bridge legs (idx, from->to, tof, idle, dv):
+  leg 149: 51->2 tof=2.455 idle=0.000 dv=598.7
+  leg 416: 557->462 tof=2.455 idle=0.000 dv=535.8
+  leg 566: 673->543 tof=0.451 idle=0.000 dv=534.3
+  leg 807: 450->69 tof=5.261 idle=0.000 dv=537.5
+  leg 957: 267->445 tof=3.658 idle=0.000 dv=588.5
+  sum exc tofs=14.279  sum exc idle=0.000
+
+Top 20 legs by TOF:
+  leg 187: tof=22.363 idle=0.000 dv=99.4 exc=False
+  leg 196: tof=17.687 idle=0.000 dv=99.7 exc=False
+  leg 307: tof=12.610 idle=0.000 dv=100.0 exc=False
+  leg 1046: tof=11.541 idle=0.000 dv=97.8 exc=False
+  leg 325: tof=10.605 idle=0.000 dv=96.4 exc=False
+  leg 319: tof=10.205 idle=0.000 dv=94.8 exc=False
+  leg 242: tof=10.205 idle=0.000 dv=95.9 exc=False
+  leg 276: tof=9.804 idle=0.000 dv=98.4 exc=False
+  leg 688: tof=9.536 idle=0.000 dv=95.7 exc=False
+  leg 1038: tof=9.136 idle=0.000 dv=89.9 exc=False
+  leg 215: tof=9.002 idle=0.000 dv=87.2 exc=False
+  leg 316: tof=8.868 idle=0.000 dv=96.6 exc=False
+  leg 338: tof=8.468 idle=0.000 dv=95.5 exc=False
+  leg 645: tof=8.334 idle=0.000 dv=96.3 exc=False
+  leg 311: tof=8.067 idle=0.000 dv=99.3 exc=False
+  leg 709: tof=7.399 idle=0.000 dv=97.2 exc=False
+  leg 711: tof=7.265 idle=0.000 dv=94.3 exc=False
+  leg 673: tof=6.998 idle=0.000 dv=98.9 exc=False
+  leg 707: tof=6.864 idle=0.000 dv=76.7 exc=False
+  leg 715: tof=6.864 idle=0.000 dv=99.7 exc=False
+
+Top 20 legs by IDLE:
+  leg 1049: idle=0.000 tof=1.787 dv=98.7 exc=False
+  leg 1048: idle=0.000 tof=1.386 dv=78.8 exc=False
+  leg 1047: idle=0.000 tof=2.455 dv=87.2 exc=False
+  leg 1046: idle=0.000 tof=11.541 dv=97.8 exc=False
+  leg 1045: idle=0.000 tof=0.451 dv=97.9 exc=False
+  leg 1044: idle=0.000 tof=1.787 dv=87.0 exc=False
+  leg 1043: idle=0.000 tof=4.058 dv=90.4 exc=False
+  leg 1042: idle=0.000 tof=6.463 dv=91.0 exc=False
+  leg 1041: idle=0.000 tof=3.123 dv=93.3 exc=False
+  leg 1040: idle=0.000 tof=1.119 dv=90.4 exc=False
+  leg 1039: idle=0.000 tof=4.326 dv=94.4 exc=False
+  leg 1038: idle=0.000 tof=9.136 dv=89.9 exc=False
+  leg 1037: idle=0.000 tof=4.593 dv=99.9 exc=False
+  leg 1036: idle=0.000 tof=6.330 dv=93.7 exc=False
+  leg 1035: idle=0.000 tof=3.658 dv=98.3 exc=False
+  leg 1034: idle=0.000 tof=0.718 dv=94.3 exc=False
+  leg 1033: idle=0.000 tof=1.787 dv=98.4 exc=False
+  leg 1032: idle=0.000 tof=1.253 dv=92.3 exc=False
+  leg 1031: idle=0.000 tof=0.317 dv=91.0 exc=False
+  leg 1030: idle=0.000 tof=4.726 dv=90.8 exc=False
+
+tof stats: min=0.050 med=1.386 max=22.363
+idle stats: min=0.000 med=0.000 max=0.000
+n legs with idle>1.0: 0  idle>0.5: 0
+sum idle from non-exc legs: 0.000
+sum tof from non-exc legs: 2210.886
+original makespan=2225.1654 exc_legs=[149, 416, 566, 807, 957]
+  leg 0/1050 t_ready=0.15 exc_used=1 elapsed=0s
+  leg 150/1050 t_ready=61.99 exc_used=46 elapsed=1s
+  leg 300/1050 t_ready=460.98 exc_used=86 elapsed=3s
+  leg 450/1050 t_ready=767.69 exc_used=110 elapsed=4s
+  leg 600/1050 t_ready=898.41 exc_used=142 elapsed=6s
+  leg 750/1050 t_ready=1245.58 exc_used=167 elapsed=7s
+  leg 900/1050 t_ready=1406.13 exc_used=187 elapsed=9s
+
+RE-TIMED makespan=1616.8908 fit=[1616.890818453086, 0, -113, 0, 528] feasible=False exc_used=212
+cut = 608.2746 d  wall=10s
+saved /tmp/retimed_large.json
+original makespan=2225.1654 exc_legs=[149, 416, 566, 807, 957]
+  leg 0/1050 t_ready=0.15 exc_used=0 elapsed=0s
+  leg 150/1050 t_ready=62.83 exc_used=12 elapsed=3s
+  leg 300/1050 t_ready=453.46 exc_used=45 elapsed=8s
+original makespan=2225.1654 exc_legs=[149, 416, 566, 807, 957]
+  leg 0/1050 t=0.15 exc_used=0 elapsed=0s
+  leg 150/1050 t=67.64 exc_used=28 elapsed=4s
+  leg 300/1050 t=513.26 exc_used=93 elapsed=8s
+  leg 450/1050 t=865.97 exc_used=179 elapsed=12s
+  leg 600/1050 t=1020.74 exc_used=256 elapsed=17s
+original makespan=2225.1654 exc_legs=[149, 416, 566, 807, 957]
+  leg 0/1050 t=0.15 exc_used=0 resets=0 elapsed=0s
+  leg 150/1050 t=115.53 exc_used=1 resets=15 elapsed=6s
+  leg 300/1050 t=606.58 exc_used=1 resets=36 elapsed=12s
+  leg 450/1050 t=998.36 exc_used=2 resets=52 elapsed=18s
+  leg 600/1050 t=1190.43 exc_used=3 resets=62 elapsed=25s
+  leg 750/1050 t=1661.19 exc_used=3 resets=93 elapsed=31s
+  leg 900/1050 t=1902.90 exc_used=4 resets=106 elapsed=38s
+
+RE-TIMED makespan=2225.1581 fit=[2225.158132187318, 0, 0, 0, 0] feasible=True exc_used=5 resets=127
+cut = 0.0073 d  wall=46s
+saved /tmp/retimed_large.json
+start makespan=2225.1654
+Traceback (most recent call last):
+  File "/tmp/oropt_heavy.py", line 39, in <module>
+    assert ok, "banked perm not walkable"
+           ^^
+AssertionError: banked perm not walkable
+retimed makespan=2225.158132 feasible=True covered=True nodes=1051
+old=2225.165385 improvement=0.007252
+BANKED solutions/upload/large.json
+banked makespan=2225.158132 feasible=True viols=[0, 0, 0, 0] nodes=1051/1051
+backup makespan=2225.165385 (known-good)

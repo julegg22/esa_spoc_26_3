@@ -1,0 +1,40 @@
+==============================================================================
+E-566 GO/NO-GO: impulsive-geometry bound realizability (official BCP)
+==============================================================================
+
+### (a) LEO i25 -> hi-e Moon  [E-036]  idE=118 idL=171
+  Earth: a=7837km e=0.023 i=25.2deg  | Moon: a=5076km e=0.621 i=31.6deg
+  patched-conic CORRECTED bound: dv=3174 m/s (dv0=2806 dv2=368 v_inf=817) -> 1266 kg   [banked=949]
+  SCAN: no valid candidate (65 tries, 126s)
+
+### (b) GEO low-i -> hi-e Moon [top bank]  idE=277 idL=189
+  Earth: a=42732km e=0.001 i=1.8deg  | Moon: a=5244km e=0.637 i=31.3deg
+  patched-conic CORRECTED bound: dv=1328 m/s (dv0=1043 dv2=285 v_inf=563) -> 2735 kg   [banked=2628]
+  SCAN: no valid candidate (9 tries, 74s)
+
+### (c) LEO i0  -> hi-e Moon  [unbanked]  idE=0 idL=150
+  Earth: a=6545km e=0.000 i=0.0deg  | Moon: a=5304km e=0.639 i=32.1deg
+  patched-conic CORRECTED bound: dv=3502 m/s (dv0=3140 dv2=362 v_inf=832) -> 1086 kg   [banked=0]
+  SCAN: no valid candidate (78 tries, 73s)
+
+### (d) LEO i89 -> LLO i48     [hi-i corner]  idE=5 idL=1
+  Earth: a=7291km e=0.090 i=89.0deg  | Moon: a=1864km e=0.003 i=48.6deg
+  patched-conic CORRECTED bound: dv=3592 m/s (dv0=2777 dv2=816 v_inf=831) -> 1040 kg   [banked=0]
+  SCAN: no valid candidate (331 tries, 75s)
+
+### (e) GEO i3  -> hi-e Moon  [banked]  idE=261 idL=205
+  Earth: a=42521km e=0.004 i=2.9deg  | Moon: a=5225km e=0.643 i=34.0deg
+  patched-conic CORRECTED bound: dv=1327 m/s (dv0=1043 dv2=283 v_inf=565) -> 2736 kg   [banked=2567]
+  SCAN: no valid candidate (9 tries, 74s)
+
+==============================================================================
+SUMMARY
+==============================================================================
+      pair  bound_kg  achieved  ratio   banked  vs_bank
+ 118, 171      1266       0.0   0.00      949     -949
+ 277, 189      2735       0.0   0.00     2628    -2628
+   0, 150      1086       0.0   0.00        0       +0
+   5,   1      1040       0.0   0.00        0       +0
+ 261, 205      2736       0.0   0.00     2567    -2567
+
+VERDICT: NO-GO (no valid candidates constructed)

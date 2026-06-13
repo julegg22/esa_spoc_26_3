@@ -1,0 +1,48 @@
+[E-591] n=1051 bank makespan=932.5304 max_time=3000.0
+[E-591] heavy legs (tof>3.0d): 36, tof-sum=159.02d (17.1% of makespan)
+[E-591] heavy source nodes=36; scanning 37 nodes (incl flagged [739, 343, 753])
+[E-591] scanning 37 nodes x 75 epochs x 25 targets, N_STEPS=60
+  [1/37] node 57: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [2/37] node 31: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [3/37] node 142: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [4/37] node 163: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [5/37] node 181: epochs_with_cheap=75/75 max_cnt=2 first_cheap_ep=0.0
+  [6/37] node 261: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [7/37] node 277: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [8/37] node 282: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [9/37] node 293: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [10/37] node 300: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [11/37] node 320: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [12/37] node 343 <FLAG>: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [13/37] node 347: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [14/37] node 458: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [15/37] node 477: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [16/37] node 487: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [17/37] node 527: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [18/37] node 529: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [19/37] node 531: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [20/37] node 533: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [21/37] node 626: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [22/37] node 628: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [23/37] node 665: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [24/37] node 684: epochs_with_cheap=28/75 max_cnt=1 first_cheap_ep=120.0
+  [25/37] node 725: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [26/37] node 730: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [27/37] node 731: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [28/37] node 739 <FLAG>: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [29/37] node 753 <FLAG>: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [30/37] node 783: epochs_with_cheap=75/75 max_cnt=2 first_cheap_ep=0.0
+  [31/37] node 910: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [32/37] node 866: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [33/37] node 971: epochs_with_cheap=75/75 max_cnt=1 first_cheap_ep=0.0
+  [34/37] node 916: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [35/37] node 1025: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+  [36/37] node 1040: epochs_with_cheap=75/75 max_cnt=2 first_cheap_ep=0.0
+  [37/37] node 1048: epochs_with_cheap=0/75 max_cnt=0 first_cheap_ep=None
+
+[E-591] VERDICT: heavy sources epoch-locked=14 intrinsic=22
+  node 739: epoch_locked=False n_epochs_with_cheap=0 first_cheap_ep=None
+  node 343: epoch_locked=False n_epochs_with_cheap=0 first_cheap_ep=None
+  node 753: epoch_locked=False n_epochs_with_cheap=0 first_cheap_ep=None
+[E-591] rough floor if heavy relocated ~882.6d (residual intrinsic tof 95.1d)
+[E-591] wrote /tmp/ch2_large_epoch_conn.json (1120.1s)

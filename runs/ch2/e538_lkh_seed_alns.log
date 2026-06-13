@@ -19,3 +19,24 @@ E-538 dual-seed DP-ALNS. wall_h=6.0, 2 chains.
 [c1/lkh3]   seed mk = 125.0783d
 [c0/bank]   DP wall: 3.5s
 [c0/bank]   seed mk = 116.3755d
+[c0/bank] iter=2000 elapsed=13.5min DP_ok=29 accepted=16 state=139.9783 best=116.3755 T=4.857
+[c1/lkh3] iter=5850 elapsed=36.6min DP_ok=65 accepted=39 state=137.4783 best=125.0783 T=4.685
+[c0/bank] iter=6450 elapsed=41.7min DP_ok=95 accepted=64 state=128.7797 best=116.3755 T=4.547
+[c0/bank] iter=9100 elapsed=57.3min DP_ok=132 accepted=86 state=129.7297 best=116.3755 T=4.381
+[c1/lkh3] iter=10000 elapsed=59.6min DP_ok=110 accepted=71 state=134.3785 best=125.0783 T=4.479
+[c0/bank] iter=11350 elapsed=71.2min DP_ok=171 accepted=108 state=136.8791 best=116.3755 T=4.214
+[c1/lkh3] iter=15200 elapsed=88.0min DP_ok=169 accepted=113 state=139.0269 best=125.0783 T=4.222
+[c1/lkh3] iter=17100 elapsed=99.1min DP_ok=196 accepted=132 state=133.9283 best=125.0783 T=4.110
+[c0/bank] iter=16950 elapsed=106.2min DP_ok=227 accepted=145 state=133.7789 best=116.3755 T=3.984
+[c1/lkh3] iter=21050 elapsed=121.6min DP_ok=235 accepted=159 state=126.9791 best=125.0783 T=3.952
+[c1/lkh3] iter=21550 elapsed=124.8min DP_ok=244 accepted=164 state=128.2789 best=125.0783 T=3.917
+[c1/lkh3] iter=23500 elapsed=135.6min DP_ok=266 accepted=178 state=138.9269 best=125.0783 T=3.832
+[c0/bank] iter=23250 elapsed=149.3min DP_ok=285 accepted=187 state=137.5781 best=116.3755 T=3.760
+[c1/lkh3] iter=25750 elapsed=150.6min DP_ok=288 accepted=191 state=138.6783 best=125.0783 T=3.748
+[c1/lkh3] iter=26450 elapsed=155.4min DP_ok=290 accepted=192 state=137.7283 best=125.0783 T=3.741
+[c1/lkh3] iter=27750 elapsed=163.2min DP_ok=306 accepted=201 state=132.0797 best=125.0783 T=3.681
+[c0/bank] iter=25750 elapsed=164.6min DP_ok=312 accepted=206 state=125.6783 best=116.3755 T=3.659
+[c1/lkh3] iter=30700 elapsed=181.3min DP_ok=344 accepted=221 state=132.2283 best=125.0783 T=3.544
+[c0/bank] iter=30600 elapsed=190.0min DP_ok=369 accepted=240 state=133.5289 best=116.3755 T=3.456
+[c1/lkh3] iter=33700 elapsed=201.0min DP_ok=377 accepted=244 state=137.4278 best=125.0783 T=3.429
+[c1/lkh3] iter=33800 elapsed=201.5min DP_ok=378 accepted=245 state=138.9269 best=125.0783 T=3.426

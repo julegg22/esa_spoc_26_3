@@ -1,0 +1,15 @@
+[E-584] global epoch-aware FINE-grid probe: cost n_steps=1200 walk n_steps=4000 iters=4 TL=900s vs bank 1013.2886
+[BASE] mk=1026.6746 feas=True exc=5 start=492
+
+===== GLOBAL EPOCH-AWARE ITER 0 =====
+    cost 200/1051 (85s)
+    cost 400/1051 (155s)
+    cost 600/1051 (225s)
+    cost 800/1051 (301s)
+    cost 1000/1051 (375s)
+  global cost 1051x1051: forbidden=963722 (87.2%) pen=178 wall=396s
+  [global] 900s obj=40340451 path~340.5d big_jumps=4 pen_used=0 len=1051 start=492 end=47
+[iter 0] walk REJECTED (infeasible order) — keep previous, stop.
+
+[FINAL] best_mk=1026.6746 (bank 1013.2886)
+[OUT] /tmp/ch2_large_global_finegrid_cand.json mk=1026.6746 feas=True covered=True viols=[0, 0, 0, 0] -> no gain

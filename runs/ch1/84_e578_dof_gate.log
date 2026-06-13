@@ -1,0 +1,33 @@
+[E-578] 12-pair DoF re-opt GATE on FILLED bank pairs
+  bank total mass = 236420.5 kg (301 filled)
+  pick E0->L0 iE=0.0 banked=819.4kg
+  pick E230->L170 iE=2.6 banked=1144.7kg
+  pick E140->L222 iE=6.2 banked=817.9kg
+  pick E205->L143 iE=11.0 banked=775.0kg
+  pick E122->L333 iE=15.3 banked=500.6kg
+  pick E111->L331 iE=19.9 banked=744.6kg
+  pick E62->L278 iE=26.9 banked=772.2kg
+  pick E396->L314 iE=34.1 banked=223.3kg
+  pick E336->L66 iE=51.6 banked=286.9kg
+  pick E233->L40 iE=69.0 banked=455.4kg
+  pick E14->L165 iE=81.2 banked=808.1kg
+  pick E100->L90 iE=89.4 banked=619.3kg
+  re-solving (faithful apogee, ~1536 sweep/pair)...
+======================================================================
+E0->L0: banked=819.4 reopt=327.9 delta=-491.4kg [685 tries,484s]  (re-opt below bank -> bank better, keep bank)
+E230->L170: banked=1144.7 reopt=1.0 delta=-1143.8kg [558 tries,480s]  (re-opt below bank -> bank better, keep bank)
+E140->L222: banked=817.9 reopt=936.8 delta=+118.9kg [1063 tries,481s]  <<< GAIN +118.9
+E205->L143: banked=775.0 reopt=541.6 delta=-233.4kg [737 tries,480s]  (re-opt below bank -> bank better, keep bank)
+E122->L333: banked=500.6 reopt=363.3 delta=-137.2kg [1156 tries,481s]  (re-opt below bank -> bank better, keep bank)
+E111->L331: banked=744.6 reopt=364.1 delta=-380.5kg [1161 tries,480s]  (re-opt below bank -> bank better, keep bank)
+E62->L278: banked=772.2 reopt=653.1 delta=-119.1kg [1089 tries,481s]  (re-opt below bank -> bank better, keep bank)
+E396->L314: banked=223.3 reopt=121.3 delta=-102.0kg [1262 tries,481s]  (re-opt below bank -> bank better, keep bank)
+E336->L66: banked=286.9 reopt=FAIL delta=+nankg [361 tries,480s]  re-opt FAILED (no valid)
+E233->L40: banked=455.4 reopt=144.4 delta=-311.0kg [477 tries,483s]  (re-opt below bank -> bank better, keep bank)
+E14->L165: banked=808.1 reopt=185.9 delta=-622.2kg [867 tries,482s]  (re-opt below bank -> bank better, keep bank)
+E100->L90: banked=619.3 reopt=26.4 delta=-592.9kg [611 tries,481s]  (re-opt below bank -> bank better, keep bank)
+======================================================================
+SAMPLE: bank=7967.4kg  keep-best=8086.3kg  gain=+118.9kg (1.493%)
+EXTRAPOLATED to 301 filled: +2983 kg (bank 236420 -> 239403)
+VERDICT: STOP — bank is per-pair DoF-optimal, mass lever exhausted on filled pairs
+[total 2890s]

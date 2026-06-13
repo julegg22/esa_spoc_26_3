@@ -1,0 +1,283 @@
+OR-Tools: 120.02856659889221 s order_len 601 static big_jumps 2
+cached order
+E-559: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+[1] REUSED cached OR-Tools order (len=601)
+[2] time-validating comp0 order (forward walk, <=1 internal exc)...
+[2] comp0 walk: covered 195/601 internal_exc=0 remaining=406 t_end=582.7d (4s)
+[2] comp0 NOT fully covered. stragglers=406: [2, 7, 11, 13, 17, 18, 19, 22, 24, 25, 29, 31, 32, 34, 37, 39, 43, 45, 47, 49, 50, 52, 54, 56, 57, 61, 62, 63, 64, 65, 67, 68, 70, 72, 73, 79, 86, 89, 90, 91]
+[2] Reporting partial; banking NOTHING (comp0 incomplete).
+E-559: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+[1] REUSED cached OR-Tools order (len=601)
+[2] time-validating comp0 order (forward walk, <=1 internal exc)...
+[2] comp0 walk: covered 441/601 internal_exc=0 remaining=160 t_end=1402.0d (5s)
+[2] comp0 NOT fully covered. stragglers=160: [13, 19, 29, 43, 56, 61, 62, 65, 67, 68, 70, 72, 73, 79, 91, 95, 97, 98, 99, 110, 116, 117, 124, 136, 139, 148, 150, 153, 158, 159, 166, 169, 181, 186, 196, 198, 200, 205, 210, 213]
+[2] Reporting partial; banking NOTHING (comp0 incomplete).
+E-559: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+[1] REUSED cached OR-Tools order (len=601)
+[2] time-validating comp0 order (forward walk, <=1 internal exc)...
+[2] comp0 walk: covered 441/601 internal_exc=0 remaining=160 t_end=1390.9d (4s)
+[2] comp0 NOT fully covered. stragglers=160: [13, 19, 29, 43, 56, 61, 62, 65, 67, 68, 70, 72, 73, 79, 91, 95, 97, 98, 99, 110, 116, 117, 124, 136, 139, 148, 150, 153, 158, 159, 166, 169, 181, 186, 196, 198, 200, 205, 210, 213]
+[2] Reporting partial; banking NOTHING (comp0 incomplete).
+E-559: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+[1] REUSED cached OR-Tools order (len=601)
+[2] time-validating comp0 order (forward walk, <=1 internal exc)...
+[2] comp0 walk: covered 601/601 internal_exc=0 remaining=0 t_end=1905.6d (1s)
+[2] comp0 fully covered with 0 internal exc. Free bridges budget = 5.
+[3] leaf-leaf assembly: start=small1 mid=small2 end=small3
+[3] split frac=0.5 (segA=300 segB=301): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.45 (segA=270 segB=331): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.55 (segA=330 segB=271): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.4 (segA=240 segB=361): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.6 (segA=360 segB=241): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.35 (segA=210 segB=391): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.65 (segA=390 segB=211): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.3 (segA=180 segB=421): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+[3] split frac=0.7 (segA=420 segB=181): trying full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 1s ok=False exc_used=0/5 last_leg=150
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=150 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 0,
+  "last_leg": 150,
+  "n_missing": 0
+}
+
+[3] No split produced a feasible bank. See partial.
+Total wall 12s
+E-559: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+[1] REUSED GATEWAY-endpoint order (len=601 start_small=1 end_small=3)
+[2] time-validating comp0 order (forward walk, <=1 internal exc)...
+[2] comp0 walk: covered 159/601 internal_exc=0 remaining=442 t_end=462.8d (4s)
+[2] comp0 NOT fully covered. stragglers=442: [2, 3, 6, 7, 9, 10, 11, 12, 16, 17, 18, 20, 22, 24, 25, 31, 32, 34, 37, 39, 40, 45, 46, 47, 49, 50, 52, 53, 54, 57, 59, 63, 64, 66, 77, 85, 86, 89, 90, 92]
+[2] Reporting partial; banking NOTHING (comp0 incomplete).
+E-559: n=1051 comps=[601, 150, 150, 150] n_exc=5 max_time=3000d dv_thr=100.0 dv_exc=600.0
+[1] REUSED GATEWAY-endpoint order (len=601 start_small=1 end_small=3)
+[2] static big-jumps in order at positions [158] (0=>any split point works for mid small; 1=>force split there)
+[3] gateway leaf-leaf: start=small1 mid=small2 end=small3
+[3] split s=300 (segA=300 segB=301) bridges: start->13, 297->mid, mid->279, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 4s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=299 (segA=299 segB=302) bridges: start->13, 299->mid, mid->297, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 4s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=301 (segA=301 segB=300) bridges: start->13, 279->mid, mid->276, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 4s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=298 (segA=298 segB=303) bridges: start->13, 302->mid, mid->299, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 4s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=302 (segA=302 segB=299) bridges: start->13, 276->mid, mid->271, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 4s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=297 (segA=297 segB=304) bridges: start->13, 303->mid, mid->302, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 3s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=303 (segA=303 segB=298) bridges: start->13, 271->mid, mid->268, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 4s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+[3] split s=296 (segA=296 segB=305) bridges: start->13, 305->mid, mid->303, 254->end — full walk...
+
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk_perm_chrono: 3s ok=False exc_used=1/5 last_leg=309
+[BANK] INFEASIBLE/PARTIAL ok=False perm=1051/1051 missing=0 last_leg=309 — banking NOTHING.
+{
+  "status": "infeasible_partial",
+  "walk_ok": false,
+  "covered": 1051,
+  "exc_used": 1,
+  "last_leg": 309,
+  "n_missing": 0
+}
+
+[3] No gateway split produced a feasible bank (tried 8). See partial.
+Total wall 29s
+Traceback (most recent call last):
+  File "/tmp/assemble_e559.py", line 84, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/assemble_e559.py", line 68, in main
+    kt = KTTSP(INST)
+  File "/home/julian/Projects/esa_spoc_26_3/src/esa_spoc_26/ch2_kttsp.py", line 27, in __init__
+    with open(path, encoding="utf-8") as fh:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'reference/spoc4_udp/data/spoc4/kttsp/candidates_hard.kttsp'
+[ASM] full perm built: 1051 unique=1051 a=3 b=2 c=1 s1=267 s2=508 internal_big=[0, 0, 0]
+[BANK] Walking assembled perm (len=1051)...
+[BANK] walk: 2s ok=True exc=5/5 last_leg=1050
+[BANK] UDP mk=2225.1654d feas=True viols=[0, 0, 0, 0]
+>>> BANKED large mk=2225.1654d exc=5 -> /home/julian/Projects/esa_spoc_26_3/solutions/upload/large.json
+{
+  "status": "banked",
+  "mk": 2225.165384615384,
+  "exc": 5
+}

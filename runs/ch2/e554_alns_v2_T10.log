@@ -1,0 +1,76 @@
+E-554 medium DP-ALNS on v2 table. n_chains=4 wall_h=24.0
+Loading structure (components + bridges)...
+  components: [121, 20, 20, 20]
+  bridge positions (bank's exc-inter legs): [19, 82, 102, 158, 178]
+[c0] loading v2 fine pair-set table...
+[c1] loading v2 fine pair-set table...
+[c2] loading v2 fine pair-set table...
+[c3] loading v2 fine pair-set table...
+[c0] table loaded (n=181, T=5000, pairs=7942)
+[c0] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c3] table loaded (n=181, T=5000, pairs=7942)
+[c3] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] table loaded (n=181, T=5000, pairs=7942)
+[c2] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1] table loaded (n=181, T=5000, pairs=7942)
+[c1] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] iter=800 elapsed=90.6min DP_ok=130 (16.2%) accepted=110 state=278.4376 best=228.9748 T=9.231
+[c1] iter=1400 elapsed=158.2min DP_ok=223 (15.9%) accepted=183 state=274.6376 best=228.9748 T=8.694
+[c3] iter=2400 elapsed=274.9min DP_ok=385 (16.0%) accepted=327 state=304.0167 best=228.9748 T=7.866
+[c1] iter=3200 elapsed=346.9min DP_ok=359 (11.2%) accepted=306 state=278.4376 best=228.9748 T=7.261
+[c3] iter=3600 elapsed=404.8min DP_ok=600 (16.7%) accepted=506 state=351.5167 best=228.9748 T=6.977
+[c3] iter=4400 elapsed=480.3min DP_ok=732 (16.6%) accepted=617 state=345.8167 best=228.9748 T=6.440
+[c3] iter=4600 elapsed=502.8min DP_ok=773 (16.8%) accepted=652 state=351.5167 best=228.9748 T=6.313
+[c3] iter=4800 elapsed=519.8min DP_ok=795 (16.6%) accepted=669 state=360.9957 best=228.9748 T=6.188
+[c1] iter=5000 elapsed=541.7min DP_ok=498 (10.0%) accepted=440 state=278.4376 best=228.9748 T=6.065
+[c3] iter=6800 elapsed=713.1min DP_ok=1140 (16.8%) accepted=949 state=369.6167 best=228.9748 T=5.066
+[c0] iter=7200 elapsed=767.2min DP_ok=975 (13.5%) accepted=704 state=313.5311 best=228.9748 T=4.867
+[c0] iter=8000 elapsed=846.9min DP_ok=1091 (13.6%) accepted=772 state=319.2167 best=228.9748 T=4.493
+[c3] iter=8200 elapsed=847.5min DP_ok=1380 (16.8%) accepted=1111 state=354.4167 best=228.9748 T=4.404
+[c3] iter=8800 elapsed=906.7min DP_ok=1480 (16.8%) accepted=1182 state=354.4167 best=228.9748 T=4.148
+[c0] iter=8600 elapsed=910.5min DP_ok=1200 (14.0%) accepted=829 state=343.0167 best=228.9748 T=4.231
+[c0] iter=9400 elapsed=991.1min DP_ok=1331 (14.2%) accepted=896 state=335.4167 best=228.9748 T=3.906
+[c3] iter=9800 elapsed=1002.7min DP_ok=1637 (16.7%) accepted=1288 state=358.2167 best=228.9748 T=3.753
+[c0] iter=9800 elapsed=1034.9min DP_ok=1412 (14.4%) accepted=953 state=345.8167 best=228.9748 T=3.753
+[c3] iter=10600 elapsed=1084.8min DP_ok=1770 (16.7%) accepted=1372 state=351.5167 best=228.9748 T=3.464
+[c0] iter=10400 elapsed=1093.4min DP_ok=1515 (14.6%) accepted=1020 state=337.3167 best=228.9748 T=3.534
+[c1] iter=10000 elapsed=1105.5min DP_ok=1215 (12.2%) accepted=936 state=315.4167 best=228.9748 T=3.679
+[c0] iter=10600 elapsed=1113.9min DP_ok=1555 (14.7%) accepted=1047 state=340.1167 best=228.9748 T=3.464
+[c3] iter=12600 elapsed=1268.9min DP_ok=2090 (16.6%) accepted=1579 state=362.8957 best=228.9748 T=2.836
+[c0] iter=12800 elapsed=1346.9min DP_ok=1931 (15.1%) accepted=1298 state=325.9167 best=228.9748 T=2.780
+[c1] iter=12400 elapsed=1366.8min DP_ok=1589 (12.8%) accepted=1170 state=313.5311 best=228.9748 T=2.894
+[c3] iter=13400 elapsed=1376.5min DP_ok=2236 (16.7%) accepted=1688 state=354.4167 best=228.9748 T=2.618
+[c0] chain done. iters=13433 best=228.9748d
+[c0]   op acceptance rates:
+[c0]     M5_bridge: 1055/8012 (13.2%)
+[c0]     M2_seg_rev: 113/2736 (4.1%)
+[c0]     M1_intra_swap: 166/2012 (8.3%)
+[c0]     random: 1/673 (0.1%)
+[c3] chain done. iters=13785 best=228.9748d
+[c3]   op acceptance rates:
+[c3]     M5_bridge: 1315/8226 (16.0%)
+[c3]     M1_intra_swap: 225/2073 (10.9%)
+[c3]     M2_seg_rev: 154/2798 (5.5%)
+[c3]     random: 3/688 (0.4%)
+[c1] chain done. iters=12845 best=228.9748d
+[c1]   op acceptance rates:
+[c1]     M5_bridge: 957/7623 (12.6%)
+[c1]     M1_intra_swap: 167/1956 (8.5%)
+[c1]     M2_seg_rev: 86/2650 (3.2%)
+[c1]     random: 0/616 (0.0%)

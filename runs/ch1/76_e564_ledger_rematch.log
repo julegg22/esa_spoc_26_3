@@ -1,0 +1,35 @@
+[17:12:11] ======================================================================
+[17:12:11] E-564 ledger reconciliation + re-matching start
+[17:12:15] data: earth=400 moon=400 ltl_dict=160000 (n_l=400, n_d=400)
+[17:12:15] bank: 302 active transfers; evaluating officially ...
+[17:12:52] BANK OFFICIAL = 227653.57 kg  (302 transfers, eval 37s)
+[17:12:52] union: bank contributes 302 pairs
+[17:12:52]   bcp_apogee_expand_results.json: 30 entries, +28 new pairs, 0 improved best -> 330 pairs total
+[17:12:52]   bcp_apogee_expand_v3_results.json: 120 entries, +117 new pairs, 0 improved best -> 447 pairs total
+[17:12:52]   bcp_apogee_expand_v6_results.json: 1071 entries, +1041 new pairs, 0 improved best -> 1488 pairs total
+[17:12:52]   bcp_apogee_expand_v7_results.json: 645 entries, +560 new pairs, 0 improved best -> 2048 pairs total
+[17:12:52]   bcp_apogee_expand_v8_results.json: 71 entries, +61 new pairs, 0 improved best -> 2109 pairs total
+[17:12:52]   extended_results.json: 100 entries, +100 new pairs, 0 improved best -> 2209 pairs total
+[17:12:52]   hungarian_seeded_results.json: 506 entries, +419 new pairs, 0 improved best -> 2628 pairs total
+[17:12:52]   phase2_b6fix_results.json: 775 entries, +696 new pairs, 32 improved best -> 3324 pairs total
+[17:12:52]   phase_a_v2_results.json: 715 entries, +454 new pairs, 21 improved best -> 3778 pairs total
+[17:12:52]   raan_results.json: 210 entries, +208 new pairs, 0 improved best -> 3986 pairs total
+[17:12:52]   smart_coverage_results.json: 61 entries, +20 new pairs, 0 improved best -> 4006 pairs total
+[17:12:52]   tier1a_v2_results.json: 462 entries, +413 new pairs, 23 improved best -> 4419 pairs total
+[17:12:52]   tier1_light_results.json: 1756 entries, +1730 new pairs, 0 improved best -> 6149 pairs total
+[17:12:52]   tier2_heavy_results.json: 200 entries, +0 new pairs, 0 improved best -> 6149 pairs total
+[17:12:52]   unused_pool_results.json: 6 entries, +5 new pairs, 0 improved best -> 6154 pairs total
+[17:12:52] stale bank pairs (union m_l better by >1kg): 0, sum m_l gain 0 kg (pre-cap, pre-matching)
+[17:12:52] [iter 1] stage1: 301 pairs, optimistic 228108 kg
+[17:12:53] [iter 1] stage2: 301 transfers, table-predicted 228108 kg
+[17:12:54] [iter 1] validation: 301 ok, 0 invalid
+[17:12:54] final selection per-source (count, table kg):
+[17:12:54]   bank                                      291      215916
+[17:12:54]   tier1_light_results.json                    8        9045
+[17:12:54]   hungarian_seeded_results.json               2        3147
+[17:12:54] assembled 301 transfers; table-predicted 228108 kg; official eval ...
+[17:13:39] RE-MATCHED OFFICIAL = 228107.78 kg (eval 45s); table predicted 228108 kg (delta +0.0)
+[17:14:34] BANKED: 227653.57 -> 228107.78 kg (+454.22); re-validated from disk: 228107.78 kg; backup at /home/julian/Projects/esa_spoc_26_3/solutions/upload/trajectory.json.bak.e564
+[17:14:34] unused after rematch: idE 99, idL 99
+[17:14:34] E-564 done
+final bank: 301 transfers; capacity-capped 0 (losing 0 kg of m_l), dv-bound 301

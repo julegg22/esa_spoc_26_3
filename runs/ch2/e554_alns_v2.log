@@ -1,0 +1,34 @@
+E-554 medium DP-ALNS on v2 table. n_chains=4 wall_h=24.0
+Loading structure (components + bridges)...
+  components: [121, 20, 20, 20]
+  bridge positions (bank's exc-inter legs): [19, 82, 102, 158, 178]
+[c0] loading v2 fine pair-set table...
+[c1] loading v2 fine pair-set table...
+[c2] loading v2 fine pair-set table...
+[c3] loading v2 fine pair-set table...
+[c1] table loaded (n=181, T=5000, pairs=7942)
+[c3] table loaded (n=181, T=5000, pairs=7942)
+[c1] init bank mk=228.9748d
+[c3] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] table loaded (n=181, T=5000, pairs=7942)
+[c2] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c0] table loaded (n=181, T=5000, pairs=7942)
+[c0] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c0] iter=200 elapsed=23.1min DP_ok=55 (27.5%) accepted=0 state=228.9748 best=228.9748 T=2.941
+[c3] iter=400 elapsed=52.3min DP_ok=129 (32.2%) accepted=0 state=228.9748 best=228.9748 T=2.882

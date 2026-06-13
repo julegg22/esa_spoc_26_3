@@ -1,0 +1,34 @@
+E-546 medium landscape probe. n=181, n_exc=5, max_time=500.0d
+Bank perm: start=3 end=44 recorded mk=228.9748d
+
+Validating bank via walk_perm_chrono...
+  walk: mk=274.7374d feas=True exc=5
+
+=== Phase 1: LKH-3 perm from coarse table ===
+  LKH solved in 10.2s. start=81 end=15 unique=181
+  LKH perm walk_perm_chrono REJECTED
+
+=== Phase 2: pair-sharing analysis ===
+  bank pairs: 180
+  lkh pairs:  180
+  shared:     28 (15.6%)
+  bank-only:  152
+  lkh-only:   152
+
+  bank pairs in fine table: 180/180 (100.0%)
+  lkh pairs in fine table:  176/180 (97.8%)
+
+=== Phase 3: random-shuffle landscape ===
+  100 random shuffles + 100 bank-mutations in 482s (2409ms/perm)
+
+  RANDOM SHUFFLES (start/end preserved):
+    walk-feasible: 0/100 = 0%
+
+  BANK-MUTATIONS (5-20 random swaps):
+    walk-feasible: 0/100 = 0%
+
+=== Phase 4: cheap-edge component structure ===
+  Components: 4
+  Top sizes: [121, 20, 20, 20]
+
+Result saved to /tmp/ch2_e546_landscape.json

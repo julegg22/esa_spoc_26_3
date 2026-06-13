@@ -1,0 +1,6 @@
+E-558 multipass: n=1051 comps=[601, 150, 150, 150] n_exc=5 dv_thr=100.0 dv_exc=600.0
+
+[1] multi-pass pure-cheap comp0...
+  pass 0 (seeded): covered=329 remaining=272
+  pass 1: start=496 covered=70 remaining=202 ok=False (1048s)
+Interrupted system call ; error code 4

@@ -1,0 +1,56 @@
+E-549 medium structure-aware DP-ALNS. n_chains=4 wall_h=24.0
+Loading structure (components + bridges)...
+  components: [121, 20, 20, 20]
+  bridge positions (bank's exc-inter legs): [19, 82, 102, 158, 178]
+[c0] loading fine pair-set table...
+[c1] loading fine pair-set table...
+[c2] loading fine pair-set table...
+[c3] loading fine pair-set table...
+[c3] table loaded (n=181, T=5000)
+[c3] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1] table loaded (n=181, T=5000)
+[c1] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c0] table loaded (n=181, T=5000)
+[c2] table loaded (n=181, T=5000)
+[c0] init bank mk=228.9748d
+[c2] init bank mk=228.9748d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c3] iter=6800 elapsed=111.0min DP_ok=273 (4.0%) accepted=0 state=228.9748 best=228.9748 T=1.520
+[c1] iter=6600 elapsed=113.1min DP_ok=289 (4.4%) accepted=0 state=228.9748 best=228.9748 T=1.551
+[c0] iter=7400 elapsed=120.2min DP_ok=316 (4.3%) accepted=0 state=228.9748 best=228.9748 T=1.431
+[c3] iter=9000 elapsed=146.7min DP_ok=361 (4.0%) accepted=0 state=228.9748 best=228.9748 T=1.220
+[c3] iter=9400 elapsed=152.8min DP_ok=377 (4.0%) accepted=0 state=228.9748 best=228.9748 T=1.172
+[c3] iter=11200 elapsed=179.3min DP_ok=442 (3.9%) accepted=0 state=228.9748 best=228.9748 T=0.979
+[c0] iter=11400 elapsed=185.8min DP_ok=489 (4.3%) accepted=0 state=228.9748 best=228.9748 T=0.959
+[c2] iter=11800 elapsed=193.3min DP_ok=487 (4.1%) accepted=0 state=228.9748 best=228.9748 T=0.922
+[c1] iter=11800 elapsed=200.5min DP_ok=515 (4.4%) accepted=0 state=228.9748 best=228.9748 T=0.922
+[c0] iter=12600 elapsed=205.9min DP_ok=534 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.851
+[c0] iter=13600 elapsed=219.9min DP_ok=570 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.770
+[c2] iter=13600 elapsed=224.0min DP_ok=562 (4.1%) accepted=0 state=228.9748 best=228.9748 T=0.770
+[c1] iter=17600 elapsed=289.4min DP_ok=743 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.516
+[c1] iter=18800 elapsed=308.6min DP_ok=795 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.458
+[c1] iter=19400 elapsed=314.2min DP_ok=809 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.431
+[c1] iter=20800 elapsed=336.2min DP_ok=864 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.375
+[c1] iter=24800 elapsed=401.9min DP_ok=1027 (4.1%) accepted=0 state=228.9748 best=228.9748 T=0.251
+[c2] iter=25200 elapsed=409.3min DP_ok=1025 (4.1%) accepted=0 state=228.9748 best=228.9748 T=0.241
+[c0] iter=26200 elapsed=412.4min DP_ok=1055 (4.0%) accepted=0 state=228.9748 best=228.9748 T=0.218
+[c0] iter=26400 elapsed=417.3min DP_ok=1067 (4.0%) accepted=0 state=228.9748 best=228.9748 T=0.214
+[c3] iter=26400 elapsed=424.9min DP_ok=1088 (4.1%) accepted=0 state=228.9748 best=228.9748 T=0.214
+[c3] iter=28400 elapsed=457.4min DP_ok=1166 (4.1%) accepted=0 state=228.9748 best=228.9748 T=0.175
+[c0] iter=31400 elapsed=496.6min DP_ok=1253 (4.0%) accepted=0 state=228.9748 best=228.9748 T=0.130
+[c1] iter=34600 elapsed=557.2min DP_ok=1437 (4.2%) accepted=0 state=228.9748 best=228.9748 T=0.094

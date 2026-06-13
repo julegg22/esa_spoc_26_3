@@ -1,0 +1,12 @@
+Loaded: n=1051, 59539 cheap edges
+Components: [601, 150, 150, 150]
+Loaded 4 cached intra-paths from /tmp/large_ortools_intra_paths.pkl
+  comp 2: cached
+  comp 0: cached
+  comp 1: cached
+  comp 3: cached
+
+Stitching 4 components with exc bridges (trying orderings and reversals)
+{
+  "status": "no_stitch"
+}
