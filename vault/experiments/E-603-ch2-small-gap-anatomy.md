@@ -83,16 +83,23 @@ the problem. The leaders' 101.65 lives in a different exception-allocation basin
   perm. A different perm pays a different (possibly smaller) tax.
 
 ## Phase 4 — 3 assumption-falsifying experiments (ranked by INFO gain, cheap first)
-1. **Exception-allocation / topology-basin DP sweep (violates the fixed-topology
-   assumption; CHEAPEST, most decisive).** Enumerate alternative assignments of
-   the 5 exceptions: the inter-component bridge edges are few (only edges with
-   Δv∈(100,600] between the 4 components — a small candidate set from
-   edges_small.npz), and the intra-comp0 shortcut (leg 17) is optional. For a
-   sample of allocations, build the implied super-graph and run the EXISTING
-   ultrafine DP (no Lambert recompute) to get each basin's DP-optimal makespan.
-   If any basin beats 116.37 → the flaw is confirmed and we have a direct lever;
-   if none does across a broad sweep → strong evidence the basin really is best.
-   Hours, pure DP on the cached table. **Run first.**
+1. **Component-skeleton enumeration + DP on interiors (violates the fixed-topology
+   assumption; CHEAPEST, most decisive). ★ SHARPENED 2026-06-13 after reading the
+   DP machinery (scripts/ch2_dp_numba.py):** the forward DP's `e`-budget dimension
+   ALREADY allocates the ≤5 exceptions optimally *for a given permutation* (it
+   chooses per leg cheap-vs-exc) — so "enumerate exception allocations" is partly
+   subsumed by the DP; the genuinely untried degree of freedom is one level up =
+   the **component skeleton**: (a) the cyclic ORDER in which the 4 cheap-graph
+   components {40,3,3,3} are visited, and (b) which boundary nodes are used to
+   bridge between them (the bridge edge is a function of the exit/entry node
+   choice, from the (100,600] candidate set in edges_small.npz). For each skeleton
+   (few component-orders × small set of boundary-node pairs), construct candidate
+   perms (interior of each component ordered by a cheap heuristic or short DP) and
+   run the EXISTING ultrafine DP (no Lambert recompute) for the makespan. If any
+   skeleton beats 116.37 → flaw confirmed, direct lever; if none across a broad
+   sweep → strong evidence the incumbent skeleton is best. Hours, pure DP on the
+   cached table. **Run first.** This is the structured perm-space move that the
+   local-move ALNS (segment_reverse/swap) provably cannot reach atomically.
 2. **Feasibility-repair large-radius ALNS (violates local-move confinement).**
    E-032's cluster/double_bridge ops failed because random repair → 98.8%
    DP-infeasible. Replace random insertion with a cheap-graph-aware repair
