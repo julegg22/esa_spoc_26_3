@@ -1,7 +1,7 @@
 ---
 id: ABBREVIATIONS
 type: index
-updated: 2026-05-01T23:50:00+02:00
+updated: 2026-06-13T21:25:00+02:00
 tags: [glossary, abbreviations, reference]
 ---
 
@@ -101,6 +101,11 @@ introduced. See `META.md §3` for the discipline.
 | TSP | Traveling Salesperson Problem | [[hypotheses/H-031-ch2-easy-mip]] |
 | ATSP | Asymmetric TSP (direction-dependent costs) | [[hypotheses/H-031-ch2-easy-mip]] |
 | MTZ | Miller-Tucker-Zemlin (subtour elimination via time variables) | [[hypotheses/H-031-ch2-easy-mip]] |
+| LK | Lin-Kernighan (variable-depth k-opt TSP local search) | [[concepts/C-030-lkh3-tsp-solver]] |
+| LKH / LKH-3 | Lin-Kernighan-Helsgaun (state-of-the-art LK implementation; LKH-3 adds ATSP/variants) | [[concepts/C-030-lkh3-tsp-solver]] |
+| Concorde | Exact TSP solver (branch-and-cut); pairs with LKH as the high-end routing toolkit | [[concepts/C-030-lkh3-tsp-solver]] |
+| elkai | Python wrapper around the LKH C solver | [[concepts/C-030-lkh3-tsp-solver]] |
+| JV transform | Jonker-Volgenant ATSP→STSP node-doubling reduction (lets LKH's symmetric solver handle asymmetric costs) | [[concepts/C-030-lkh3-tsp-solver]] |
 | DFJ | Dantzig-Fulkerson-Johnson (subtour elimination via lazy cuts) | [[hypotheses/H-031-ch2-easy-mip]] |
 | LNS | Large Neighborhood Search (ruin + recreate metaheuristic) | [[concepts/C-011-metaheuristic-local-search-routing]] |
 | SA | Simulated Annealing (Metropolis acceptance) | [[hypotheses/H-035-ch2-easy-sa-lns-with-precomp]] |
