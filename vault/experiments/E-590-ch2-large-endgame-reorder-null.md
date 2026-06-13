@@ -44,6 +44,15 @@ improved order retimed to ~936.357, essentially identical to the bank order's
 retime (936.358). No reorder produced a retimed endgame below 936.36, i.e. **no
 order beat the 932.53 bank**. Nothing written to /tmp/ch2_large_endgame_cand.json.
 
+**Run note:** the full-endgame search process was SIGTERM'd (exit 143) mid round-1
+by session/resource reclamation (the box was shared with 4+ concurrent large-work
+agents), so it never logged a final DONE. This does NOT weaken the null: the retime
+tracker had already pinned the best retimed order at 936.36 (>bank) from the start,
+every reorder it tested confirmed the wash-out, and a focused converging 2-opt/or-opt
+over JUST the 18-node heavy-tail window found NO improving move before it too was
+stopped to free cores. Structural finding (2) below is decisive independent of
+search budget.
+
 ## Two distinct findings
 
 **(1) Isolated-endgame retime cannot reach the bank's tail.** Freezing upstream at
