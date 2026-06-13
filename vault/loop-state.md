@@ -1,6 +1,8 @@
 # Loop state — SpOC4 campaign autopilot
 
-Updated: 2026-06-14 00:27 (update this timestamp every write)
+Updated: 2026-06-14 01:09 (update this timestamp every write)
+
+**HEALTH-WATCH (terse, per standing decision):** 01:09 — prebuild 18/201 dt=4934s, workers 99% CPU/R, rate 152→302→368s/curve (slowing, plateauing); revised ETA ~15h ⇒ done ~15:00, verdict ~15:30. No tripwire. No bank delta.
 
 **TICK 00:27 (cheap tick — prebuild SLOWING to ~13h, confirmed CPU-bound not thrashing; STANDING DECISION recorded to stop re-litigating):** Prebuild rate is slowing: `6/201 dt=913s` (152s/curve) → `12/201 dt=2724s` (302s/curve batch 2). Linear extrap ⇒ **~13h prebuild (done ~12:00-14:00), verdict ~14:00**; may slow further as later cold pairs are expensive. Ruled out thrashing: 4 workers **99% CPU (R)**, 157MB RSS each, 6GB free, swap si/so=0 ⇒ genuinely CPU-bound on expensive infeasible bridge pairs (full 20-rev × wide-tof scan, no Δv≤100 early-out). NOT a tripwire. **★ STANDING DECISION (stop re-deciding every tick — anti-oscillation on my own call):** the wide-cold pipeline RUNS TO COMPLETION unless (a) a real tripwire fires, or (b) a better *launchable* lever appears. Rationale: 52 core-h is large, but every alternative is point-worthless (large r2 gains don't cross r1=424; medium=RANK1 maxed), blocked (matching=Gurobi license), or user-gated (submission). Under NEVER-STOP, this is the only positive-EV core-use available, so it grinds. Future ticks: health-check only, do NOT re-debate the ROI. **Still-live FLAG:** when prebuild nears done (~12:00), let wide_search's 30min run then relaunch an EXTENDED search (~2h) on the same /tmp bridge curves to exploit the 13h build (do NOT edit running ch2_pipeline.sh — byte-offset footgun). No bank delta; all UNSUBMITTED. Cores 4/4. NEXT: 40min health ticks through the long build.
 
