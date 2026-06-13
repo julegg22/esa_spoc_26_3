@@ -170,7 +170,7 @@ introduced. See `META.md §3` for the discipline.
 | SpOC4 | The 4th edition of SpOC (this campaign's target) | `vault/index.md` |
 | Optimise | The ESA submission portal for SpOC4 | [[observations/O-005-ch1-instance-sizes-corrected]] |
 | GTOC | Global Trajectory Optimisation Competition (sibling competition; comparison reference) | [[concepts/C-009-differential-evolution]] |
-| KTTSP | Keplerian Tomato TSP — the Ch2 problem-instance file format | [[observations/O-002-ch2-keplerian-tomato-tsp]] |
+| KTTSP | Keplerian Tomato Traveling Salesperson Problem — the Ch2 time-dependent orbital ATSP (and its `.kttsp` instance format) | [[concepts/C-032-kttsp-problem]] |
 | AoE | Anywhere on Earth (deadline timezone convention) | `vault/index.md` |
 | ROI | Return on Investment (used in frontier-selection scoring) | `META.md §5` |
 | ADR | Architecture Decision Record | [[lessons/L-003-tier1-code-hygiene]] |
