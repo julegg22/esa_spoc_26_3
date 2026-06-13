@@ -99,6 +99,23 @@ closer, and it reopens a lever E-610 had declared dead. The full E-612 order
 search (4x1500 s, running) tests whether any order beyond the bank's, when
 continuously re-timed, crosses 111.79 d into rank #5.
 
+## Full order search result (E-612, 4x1500 s) — a BETTER order, validated
+Continuous-refining 14 distinct SA-collected orders found a route that beats the
+bank order: **112.996 d feasible, +3.378 d over bank** (independently validated
+through a fresh KTTSP + manual per-leg audit: exc 5/5, max cheap dv 99.998, 0
+viol, flight 105.616 + wait 7.380). Supersedes the 114.154 bank-order retiming.
+Still rank #6 (r5=111.79) but the gap to rank #5 is now **1.21 d** (was 4.59 d).
+
+**Metric-mismatch diagnosis (the methodology trigger "evaluator metric must
+match SA baseline metric"):** the winner (cand 13) had a WORSE coarse-DP score
+(122.738) than the bank order (122.378) yet refined BEST (112.996). The SA
+accepts/rejects by coarse-DP makespan, but the true objective is the
+continuous-refined makespan -- so good orders are filtered out before refinement.
+Coarse mk is a biased proxy. **Fix = E-613** (/tmp/ch2_e613_deepsearch.py):
+decouple cheap coarse EXPLORATION from expensive SELECTION -- keep a wide band
+(top-24/chain), seed from both bank and the 112.996 winner, and PARALLEL-refine
+all distinct candidates. Targets crossing 111.79 d into rank #5.
+
 ## Status / follow-ups
 - 114.154 d candidate at /tmp/ch2_e612_bankrefined.json -- VALIDATED, NOT banked
   (bank overwrite is user-gated; escalated). Strict improvement, not yet rank-up.
