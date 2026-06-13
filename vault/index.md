@@ -73,6 +73,11 @@ epoch-aware cluster-decomposition build (transfers the large
 - [[methodology/M-006-idle-pivot-on-unmet-targets|M-006]]: no
   idle in autonomous-loop while rank-3 targets are unmet (hard
   rule, refinement of M-003).
+- [[methodology/M-general-deep-single-prompt-audit|M-general-deep-single-prompt-audit]]:
+  one structured prompt to break a false "exhausted/ceiling" verdict —
+  name the shared assumption, reconcile the gap to an exact number,
+  find the skipped paradigm, propose 3 assumption-violating probes
+  (Ch1-traj E-602, Ch2-small E-603, Ch2-large E-591).
 
 ## Campaign tree
 
