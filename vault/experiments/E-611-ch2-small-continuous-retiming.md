@@ -116,6 +116,28 @@ decouple cheap coarse EXPLORATION from expensive SELECTION -- keep a wide band
 (top-24/chain), seed from both bank and the 112.996 winner, and PARALLEL-refine
 all distinct candidates. Targets crossing 111.79 d into rank #5.
 
+## E-614 — beam/DP retiming == greedy (timing is NOT the bottleneck)
+I had called the greedy forward earliest-arrival sweep "provably makespan-optimal"
+— too strong, since a leg's min-tof is non-monotonic in departure epoch. E-614
+replaced it with a beam/DP over arrival-states (keep B best partial schedules per
+leg). Result on the 112.996 winner order: **B=1, B=6 (and B=12) all = 112.99600** —
+the beam finds nothing below greedy. The greedy WAS optimal for this route; the
+1.21 d gap is not recoverable in the timing.
+
+## Conclusion — Ch2-small is model-floored at validated 112.996 d
+Three independent searches converge: E-609 (422k orders, coarse metric), E-613
+(56 orders, continuous metric, winner-seeded, parallel refine), E-614 (timing
+beam). All floor at 112.996 d. The cheap-graph 4-component separation is robust
+(E-606: inter-component dv floor 511.84 m/s = 5x the 100 threshold). Ch2's
+compute_transfer is the SHARED exact cost, so HRI's 101.65 is search-reachable in
+principle — but our cheap-graph + 5-exception decomposition floors at 112.996
+across three independent searches. Cracking the remaining 1.2-11.3 d to the
+leaderboard cluster (r3-r5 = 110.88-111.79 d, dense) requires a fundamentally
+different route structure (cold massive-parallel global search or finer edge
+resolution), both low-confidence and partially tested. Per anti-oscillation,
+NOT funding a fourth variant. **Net deliverable: a VALIDATED −3.378 d improvement
+(116.374 -> 112.996, rank 6), unbanked pending the user's guarded-bank call.**
+
 ## Status / follow-ups
 - 114.154 d candidate at /tmp/ch2_e612_bankrefined.json -- VALIDATED, NOT banked
   (bank overwrite is user-gated; escalated). Strict improvement, not yet rank-up.
