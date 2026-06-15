@@ -41,7 +41,7 @@ from esa_spoc_26.ch2_kttsp import KTTSP, CHALLENGE
 from ch2_e529_dp_alns import (
     evaluate_perm_dp, destroy_random_k, destroy_segment_reverse,
     destroy_double_bridge, destroy_swap,
-    INST, OUT, FINE, SA_T0, SA_DECAY,
+    INST, OUT, FINE,
 )
 
 sys.stdout.reconfigure(line_buffering=True)
@@ -51,6 +51,13 @@ CKPT_TMPL = '/tmp/ch2_e617_ckpt_chain{}.json'
 CKPT_INTERVAL_S = 600
 RESEED_INTERVAL_S = 4 * 3600
 EXC_PENALTY = 50.0   # added to exc-edge min-tof when ranking inserts (prefer cheap)
+
+# ── ILS (basin-hopping) schedule ──
+RRT_DEV = 0.01        # accept sideways within 1% of best (~1.1d band) for diversity
+KICK_MIN = 3          # base perturbation size (nodes destroyed)
+KICK_MAX = 12         # max perturbation when stagnating
+ESCALATE_EVERY = 60   # stale iters before kick grows by 1
+STALE_LIMIT = 250     # stale iters before hard-restart from best
 
 
 # ── min-over-epoch tof tables for cheapest-insertion ranking ────────────
@@ -145,33 +152,29 @@ def alns_chain(args):
                 log(f"resumed ckpt mk={state['mk']:.4f}d")
         except Exception: pass
 
-    sa_temp = SA_T0
+    # ── ILS (basin-hopping) state: always perturb the incumbent, accept within
+    # an RRT band of best; escalate kick on stagnation; hard-restart from best.
+    kick = KICK_MIN; stale = 0
     iter_count = 0; n_dp_ok = 0; n_dp_fail = 0; n_accepted = 0
     t0 = time.time(); last_ckpt = time.time(); last_reseed = time.time()
     hist_fh = open(f'/tmp/ch2_e617_chain{chain_id}_hist.jsonl', 'a')
 
     while time.time() - t0 < max_wall_s:
         iter_count += 1
-        op = rng.choices(
-            ['cheap3', 'cheap5', 'regret4', 'segment_reverse',
-             'double_bridge', 'swap'],
-            weights=[3, 2, 3, 2, 2, 1])[0]
-        if op == 'cheap3':
-            kept, removed = destroy_random_k(state['perm'], 3, rng)
-            new_perm = cheapest_insertion_repair(kept, removed, rank, rng)
-        elif op == 'cheap5':
-            kept, removed = destroy_random_k(state['perm'], 5, rng)
-            new_perm = cheapest_insertion_repair(kept, removed, rank, rng)
-        elif op == 'regret4':
-            kept, removed = destroy_random_k(state['perm'], 4, rng)
+        # ── Perturb the INCUMBENT with strength `kick` (ILS) ──
+        base = state['perm']
+        r = rng.random()
+        if r < 0.6:
+            kept, removed = destroy_random_k(base, kick, rng)
             new_perm = cheapest_insertion_repair(kept, removed, rank, rng,
-                                                 regret=True)
-        elif op == 'segment_reverse':
-            new_perm, _ = destroy_segment_reverse(state['perm'], rng)
-        elif op == 'double_bridge':
-            new_perm, _ = destroy_double_bridge(state['perm'], rng)
+                                                 regret=(rng.random() < 0.4))
+        elif r < 0.8:
+            new_perm, _ = destroy_double_bridge(base, rng)
+        elif r < 0.9:
+            new_perm, _ = destroy_segment_reverse(base, rng)
         else:
-            new_perm, _ = destroy_swap(state['perm'], rng)
+            new_perm, _ = destroy_swap(base, rng)
+        op = f'k{kick}'
         if len(set(new_perm)) != n: continue
 
         t_eval = time.time()
@@ -182,48 +185,55 @@ def alns_chain(args):
             continue
         n_dp_ok += 1
         new_mk = result['mk']
+        cand = {'perm': new_perm, 'mk': new_mk,
+                'times': result['times'], 'tofs': result['tofs']}
 
-        delta = new_mk - state['mk']
-        accept = delta < 0 or rng.random() < math.exp(-delta / sa_temp)
-        if accept:
+        # ── ILS accept: improve-incumbent OR sideways within RRT band of best ──
+        if new_mk < state['mk'] - 1e-9 or \
+           new_mk <= best_local['mk'] * (1.0 + RRT_DEV):
+            state = cand
             n_accepted += 1
-            state = {'perm': new_perm, 'mk': new_mk,
-                     'times': result['times'], 'tofs': result['tofs']}
-            if new_mk < best_local['mk']:
-                best_local = dict(state)
-                hist_fh.write(json.dumps({
-                    'chain': chain_id, 'iter': iter_count, 'mk': new_mk,
-                    'op': op, 'eval_wall_s': eval_wall,
-                    'elapsed_s': time.time() - t0,
-                }) + '\n')
-                hist_fh.flush()
-                try:
-                    cur = json.load(open(bank_path))
-                    cur_mk = float(kt.fitness(cur[0]['decisionVector'])[0])
-                    if new_mk < cur_mk - 1e-4:
-                        x_full = list(result['times']) + list(result['tofs']) + \
-                                  [float(p) for p in new_perm]
-                        if not Path(BAK).exists():
-                            Path(BAK).write_bytes(Path(bank_path).read_bytes())
-                        tmp = bank_path + '.tmp'
-                        Path(tmp).write_text(json.dumps([{
-                            'decisionVector': x_full, 'problem': 'small',
-                            'challenge': CHALLENGE,
-                        }]))
-                        # round-trip verify before commit
-                        chk = json.loads(Path(tmp).read_text())
-                        chk_mk = float(kt.fitness(chk[0]['decisionVector'])[0])
-                        if chk_mk < cur_mk - 1e-4:
-                            os.replace(tmp, bank_path)
-                            log(f"BANKED {chk_mk:.4f}d (was {cur_mk:.4f}) "
-                                f"op={op} iter={iter_count}")
-                        else:
-                            os.remove(tmp)
-                            log(f"reject bank: round-trip {chk_mk:.4f} !< {cur_mk:.4f}")
-                except Exception as e:
-                    log(f"bank err: {str(e)[:60]}")
 
-        sa_temp *= SA_DECAY
+        if new_mk < best_local['mk'] - 1e-9:
+            best_local = dict(cand)
+            stale = 0; kick = KICK_MIN
+            hist_fh.write(json.dumps({
+                'chain': chain_id, 'iter': iter_count, 'mk': new_mk,
+                'op': op, 'eval_wall_s': eval_wall,
+                'elapsed_s': time.time() - t0,
+            }) + '\n')
+            hist_fh.flush()
+            try:
+                cur = json.load(open(bank_path))
+                cur_mk = float(kt.fitness(cur[0]['decisionVector'])[0])
+                if new_mk < cur_mk - 1e-4:
+                    x_full = list(result['times']) + list(result['tofs']) + \
+                              [float(p) for p in new_perm]
+                    if not Path(BAK).exists():
+                        Path(BAK).write_bytes(Path(bank_path).read_bytes())
+                    tmp = bank_path + '.tmp'
+                    Path(tmp).write_text(json.dumps([{
+                        'decisionVector': x_full, 'problem': 'small',
+                        'challenge': CHALLENGE,
+                    }]))
+                    chk = json.loads(Path(tmp).read_text())
+                    chk_mk = float(kt.fitness(chk[0]['decisionVector'])[0])
+                    if chk_mk < cur_mk - 1e-4:
+                        os.replace(tmp, bank_path)
+                        log(f"BANKED {chk_mk:.4f}d (was {cur_mk:.4f}) "
+                            f"op={op} iter={iter_count}")
+                    else:
+                        os.remove(tmp)
+                        log(f"reject bank: round-trip {chk_mk:.4f} !< {cur_mk:.4f}")
+            except Exception as e:
+                log(f"bank err: {str(e)[:60]}")
+        else:
+            stale += 1
+            if stale % ESCALATE_EVERY == 0:
+                kick = min(kick + 1, KICK_MAX)
+            if stale >= STALE_LIMIT:
+                state = dict(best_local)   # hard restart from best
+                stale = 0; kick = KICK_MIN
 
         if iter_count % 5 == 0:
             elapsed = time.time() - t0
@@ -231,7 +241,7 @@ def alns_chain(args):
             log(f"iter={iter_count} elapsed={elapsed/60:.1f}min "
                 f"DP_ok={n_dp_ok} DP_fail={n_dp_fail} accepted={n_accepted} "
                 f"rate={rate*60:.1f}/min state={state['mk']:.4f} "
-                f"best={best_local['mk']:.4f} T={sa_temp:.3f}")
+                f"best={best_local['mk']:.4f} kick={kick} stale={stale}")
 
         if time.time() - last_ckpt > CKPT_INTERVAL_S:
             try:
@@ -246,16 +256,17 @@ def alns_chain(args):
             try:
                 cur = json.load(open(bank_path))
                 cur_mk = float(kt.fitness(cur[0]['decisionVector'])[0])
-                if cur_mk < state['mk'] - 0.1:
+                if cur_mk < best_local['mk'] - 1e-4:
                     dv2 = cur[0]['decisionVector']
-                    state = {
+                    best_local = {
                         'perm': [int(x) for x in dv2[2*(n-1):]],
                         'times': list(dv2[:n-1]),
                         'tofs': list(dv2[n-1:2*(n-1)]),
                         'mk': cur_mk,
                     }
-                    sa_temp = SA_T0
-                    log(f"reseeded from global mk={cur_mk:.4f}")
+                    state = dict(best_local)
+                    stale = 0; kick = KICK_MIN
+                    log(f"adopted better global bank mk={cur_mk:.4f}")
             except Exception: pass
             last_reseed = time.time()
 
