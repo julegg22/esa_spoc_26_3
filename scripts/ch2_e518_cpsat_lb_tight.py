@@ -36,8 +36,8 @@ INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/"
 FINE = '/tmp/ch2_small_tcoupled_fine.npz'
 RESULT = '/tmp/ch2_e518_result.json'
 
-BANK_MK_D = 142.8913
-R3_D = 111.76
+BANK_MK_D = 112.996   # current small bank (2026-06-15)
+R3_D = 101.65         # competitor leaderboard r1 (HRI) — the real target
 
 
 def build_cost_tables(fine_path, q_quantum_d, q_max):
