@@ -1,0 +1,42 @@
+E-618 GRASP multi-start. workers=4 wall_h=24.0 rcl=3
+[w2] table ready q=0.05 T=4000 n_exc=5
+[w2] bank mk=112.9960
+[w1] table ready q=0.05 T=4000 n_exc=5
+[w0] table ready q=0.05 T=4000 n_exc=5
+[w3] table ready q=0.05 T=4000 n_exc=5
+[w1] bank mk=112.9960
+[w0] bank mk=112.9960
+[w3] bank mk=112.9960
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[w1] built=64 dead=35936 dpok=64 dpfail=0 best_seen=125.778 (2.0min, 298 attempts/s)
+[w2] built=425 dead=235575 dpok=425 dpfail=0 best_seen=126.979 (12.9min, 304 attempts/s)
+[w1] built=855 dead=445145 dpok=855 dpfail=0 best_seen=125.778 (25.7min, 290 attempts/s)
+[w1] built=1420 dead=742580 dpok=1420 dpfail=0 best_seen=124.728 (42.6min, 291 attempts/s)
+[w3] built=1569 dead=840431 dpok=1569 dpfail=0 best_seen=124.278 (47.2min, 297 attempts/s)
+[w2] built=1701 dead=930299 dpok=1701 dpfail=0 best_seen=124.825 (51.5min, 301 attempts/s)
+[w3] built=1990 dead=1056010 dpok=1990 dpfail=0 best_seen=124.278 (59.8min, 295 attempts/s)
+[w0] built=2211 dead=1225789 dpok=2211 dpfail=0 best_seen=124.825 (67.1min, 305 attempts/s)
+[w1] built=3318 dead=1756682 dpok=3318 dpfail=0 best_seen=123.277 (99.8min, 294 attempts/s)
+[w3] built=4325 dead=2311675 dpok=4325 dpfail=0 best_seen=123.577 (129.9min, 297 attempts/s)
+[w0] built=4530 dead=2499470 dpok=4530 dpfail=0 best_seen=123.725 (137.1min, 304 attempts/s)
+[w3] built=4737 dead=2539263 dpok=4737 dpfail=0 best_seen=123.577 (142.3min, 298 attempts/s)
+[w1] built=4796 dead=2553204 dpok=4796 dpfail=0 best_seen=123.175 (144.4min, 295 attempts/s)
+[w2] built=6234 dead=3351766 dpok=6234 dpfail=0 best_seen=124.825 (187.7min, 298 attempts/s)
+[w1] built=6404 dead=3423596 dpok=6404 dpfail=0 best_seen=123.175 (192.9min, 296 attempts/s)
+[w3] built=6962 dead=3723038 dpok=6962 dpfail=0 best_seen=123.577 (209.5min, 297 attempts/s)
+Interrupted system call ; error code 4

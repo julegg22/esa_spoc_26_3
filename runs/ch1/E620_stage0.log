@@ -1,0 +1,15 @@
+unused E 99 / L 99; 99 empties matched, median |iE-iL|=38.3deg
+E-620 Stage0: 0 controls + 8 empties, 4 workers, PairUDP+multi_seed+sade(300)->cmaes(300). (controls SKIPPED - already validated 4/4)
+[w1] EMPTY (105,121) di=36.5deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.38e-02 de=8.65e+01 di=35.33deg [676s]
+[w2] EMPTY (185,308) di=38.6deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.07e-02 de=8.73e+01 di=29.92deg [764s]
+[w0] EMPTY (238,141) di=0.4deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.35e-02 de=8.68e+01 di=77.24deg [865s]
+[w3] EMPTY (216,341) di=37.2deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.06e-02 de=8.82e+01 di=27.90deg [983s]
+[w1] EMPTY (117,146) di=47.7deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.21e-02 de=9.60e+01 di=9.38deg [793s]
+[w2] EMPTY (74,29) di=36.0deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.23e-02 de=9.60e+01 di=9.83deg [1125s]
+[w0] EMPTY (157,138) di=45.5deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.33e-02 de=9.07e+01 di=16.71deg [1239s]
+[w3] EMPTY (309,27) di=0.3deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.10e-02 de=1.06e+02 di=1.61deg [1133s]
+
+=== CONTROLS skipped (prior run validated 4/4: (0,0)819 (2,168)721 (1,235)783 (3,358)418 kg via dv) => oracle TRUSTWORTHY ===
+=== EMPTIES 0/8 feasible ===
+
+  >>> FILL CLOSED (see reject reasons) -> rank-5 unreachable via fill <<<

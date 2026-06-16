@@ -1,0 +1,7 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-594] comp=3 size=601 B=16 topK=6 WIN=8.0 STEPS=80 budget=2200s deg(min/med/max)=6/152/163
+  [start=134] partial 563/601 mk=269.32d (0.479 d/leg) (906s)
+[PARTIAL] deepest=563/601 mk=269.32d leftover=38 -> /tmp/ch2_e594_comp3_partial.json
+[FINAL] beam did NOT complete the component => need backtracking / LKH-intra or larger beam.

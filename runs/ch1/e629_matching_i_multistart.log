@@ -1,0 +1,5 @@
+E-629 matching-i: bank=33352.9860 leader=33555.6150 budget=1500.0s nw=4 noise=0.05
+
+=== E-629 matching-i RESULT: best=30415.3120 over 296 starts vs bank 33352.9860 (-2937.6740) vs leader 33555.6150 (-3140.3030) ===
+  per-worker best: [30332.3, 30343.3, 30353.2, 30415.3]
+  -> no non-warm start beats bank basin -> bank basin dominant for our methods (confirms basin-lock; leaders' basin needs a stronger solver/structure).

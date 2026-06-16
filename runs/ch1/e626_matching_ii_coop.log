@@ -1,0 +1,36 @@
+E-626 matching-ii: bank=72206.5160 leader=73714.0330 budget=1800.0s nw=4
+[coop seed=0 f=0.30] r=25 best=72206.5 t=1s
+[coop seed=3 f=0.30] r=25 best=72206.5 t=1s
+[coop seed=1 f=0.45] r=25 best=72206.5 t=6s
+[coop seed=2 f=0.65] r=25 best=72206.5 t=47s
+[coop seed=3 f=0.65] r=50 best=72206.5 t=273s
+[coop seed=0 f=0.65] r=50 best=72206.5 t=273s
+[coop seed=1 f=0.65] r=50 best=72206.5 t=474s
+[coop seed=2 f=0.65] r=50 best=72206.5 t=674s
+[coop seed=0 f=0.65] r=75 best=72206.5 t=901s
+[coop seed=3 f=0.65] r=75 best=72206.5 t=901s
+[coop seed=1 f=0.65] r=75 best=72206.5 t=1101s
+[coop seed=2 f=0.65] r=75 best=72206.5 t=1302s
+[coop seed=3 f=0.65] r=100 best=72206.5 t=1528s
+[coop seed=0 f=0.65] r=100 best=72206.5 t=1528s
+[coop seed=1 f=0.65] r=100 best=72206.5 t=1729s
+{
+  "problem": "matching-ii",
+  "method": "parallel_coop_mip_lns",
+  "n_workers": 4,
+  "best_mass": 72206.516,
+  "best_seed": 0,
+  "n_selected": 9111,
+  "feasible": true,
+  "wall_s": 1804.5,
+  "per_worker_mass": [
+    72206.5,
+    72206.5,
+    72206.5,
+    72206.5
+  ],
+  "artifact": "/tmp/match_out/matching-ii.json"
+}
+
+=== E-626 matching-ii RESULT: best=72206.5160 vs bank 72206.5160 (+0.0000) vs leader 73714.0330 (-1507.5170) ===
+  -> no improvement over bank.

@@ -1,0 +1,10 @@
+unused E 99 / L 99; 99 empties matched, median |iE-iL|=38.3deg
+E-620 T1-diversity test: 2 controls (NO bank seed) + 2 empties, Hohmann seeds spanning T1 6-30d. Controls were 4/4 w/ bank seed, 0/2 cold. If they recover here -> seeding-resolution artifact (fixable).
+[w1] CTRL (1,235) di=35.7deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=9.40e-04 de=1.07e+02 di=41.09deg [1790s]
+[w3] EMPTY (105,121) di=36.5deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=8.95e-03 de=9.31e+01 di=34.50deg [1990s]
+[w2] EMPTY (238,141) di=0.4deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=8.48e-03 de=9.49e+01 di=76.39deg [2266s]
+[w0] CTRL (0,0) di=0.0deg INFEASIBLE :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=8.64e-03 de=1.06e+02 di=0.00deg [3055s]
+
+=== CONTROLS (T1-diverse, NO bank seed) 0/2 recovered ===
+=== EMPTIES 0/2 feasible ===
+  >>> T1 diversity NOT enough -> need a real Lambert/feasible-manifold seeder (deeper than a missing axis) <<<

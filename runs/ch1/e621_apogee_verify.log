@@ -1,0 +1,4 @@
+unused E 99 / L 99; 99 empties matched, median |iE-iL|=38.3deg
+E-621 apogee-solver verify: 2 controls + 6 empties, 4 workers. E-047 predicts empties feasible @ ~1 kg (median di=38.3deg).
+[w1] CTRL (1,235) di=35.7deg FEASIBLE mass=1.0kg dvtot=6780m/s [483s]
+Interrupted system call ; error code 4

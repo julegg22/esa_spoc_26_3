@@ -15,6 +15,7 @@ These are the primary raw material for the campaign's
 |---|---|---|---|---|
 | [[M-001-proactive-concept-capture\|M-001]] | process-pattern | concept-capture | cross-campaign | confirmed |
 | [[M-002-stuck-triggers-ultrathink-reframe\|M-002]] | process-pattern | stuck-handling | cross-campaign | confirmed |
+| [[M-general-architecture-change-on-large-gaps]] | decision-rule | when-to-change-architecture | cross-campaign | active (user-stated 2026-06-15) |
 
 ## Proto-paper themes
 

@@ -1,0 +1,15 @@
+[E-592] n=1051 cheap-graph components=4 sizes(desc)=[601, 150, 150, 150]
+[E-592] dv_thr=100.0 dv_exc=600.0 n_exc=5 max_time=3000.0
+[E-592] bank tour crosses components 5 times (=> 5 inter-component legs)
+  [comp 3 size=601] start=134 STRANDED visited=163/601 intra_mk=37.20d (30s) stuck_at=25
+  [comp 3 size=601] start=2 STRANDED visited=250/601 intra_mk=95.65d (46s) stuck_at=152
+  [comp 3 size=601] start=11 STRANDED visited=188/601 intra_mk=75.50d (30s) stuck_at=34
+  [comp 0 size=150] start=978 COMPLETE visited=150/150 intra_mk=14.20d (23s)
+  [comp 0 size=150] start=69 COMPLETE visited=150/150 intra_mk=13.60d (24s)
+  [comp 0 size=150] start=21 COMPLETE visited=150/150 intra_mk=13.30d (23s)
+  [comp 1 size=150] start=681 COMPLETE visited=150/150 intra_mk=14.15d (21s)
+  [comp 1 size=150] start=462 COMPLETE visited=150/150 intra_mk=13.55d (22s)
+  [comp 1 size=150] start=28 COMPLETE visited=150/150 intra_mk=14.40d (21s)
+  [comp 2 size=150] start=1038 COMPLETE visited=150/150 intra_mk=14.80d (23s)
+  [comp 2 size=150] start=492 COMPLETE visited=150/150 intra_mk=13.85d (23s)
+  [comp 2 size=150] start=51 COMPLETE visited=150/150 intra_mk=13.95d (23s)

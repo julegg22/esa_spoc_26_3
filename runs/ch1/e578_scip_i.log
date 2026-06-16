@@ -1,0 +1,44 @@
+matching-i: n=25000, bank mass 33338.184 (4465 sel); SCIP tlim=10800s threads=1
+model built: 25000 vars, 15000 packing constraints, dt=0.4s
+warm-start bank sol accepted=True
+1/1 feasible solution given by solution candidate storage, new primal bound 3.333818e+04
+
+presolving:
+(round 1, exhaustive) 2 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 0 chg coeffs, 15000 upgd conss, 0 impls, 15000 clqs, 0 implints
+   (0.4s) probing: 51/24998 (0.2%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (0.4s) probing aborted: 50/50 successive totally useless probings
+   (0.4s) symmetry computation started: requiring (bin +, int +, cont +), (fixed: bin -, int -, cont -)
+   (0.5s) no symmetry present (symcode time: 0.01)
+presolving (2 rounds: 2 fast, 2 medium, 2 exhaustive):
+ 2 deleted vars, 0 deleted constraints, 0 added constraints, 0 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 15000 cliques, 0 implied integral variables (0 bin, 0 int, 0 cont)
+presolved problem has 24998 variables (24998 bin, 0 int, 0 cont) and 15000 constraints
+  15000 constraints of type <setppc>
+transformed objective value is always integral (scale: 0.001)
+Presolving Time: 0.42
+transformed 2/2 original solutions to the transformed problem space
+
+ time | node  | left  |LP iter|LP it/n|mem/heur|mdpt |vars |cons |rows |cuts |sepa|confs|strbr|  dualbound   | primalbound  |  gap   | compl. 
+  413s|     1 |     0 |105041 |     - |   192M |   0 |  24k|  15k|  15k|   0 |  0 |   0 |   0 | 3.412053e+04 | 3.333818e+04*|   2.35%| unknown
+  515s|     1 |     0 |115972 |     - |   235M |   0 |  24k|  15k|  15k|   5 |  1 |   0 |   0 | 3.411920e+04 | 3.333818e+04*|   2.34%| unknown
+  576s|     1 |     0 |118425 |     - |   245M |   0 |  24k|  15k|  15k|   7 |  2 |   0 |   0 | 3.411912e+04 | 3.333818e+04*|   2.34%| unknown
+  619s|     1 |     0 |120934 |     - |   247M |   0 |  24k|  15k|  15k|   8 |  3 |   0 |   0 | 3.411904e+04 | 3.333818e+04*|   2.34%| unknown
+  674s|     1 |     0 |126228 |     - |   251M |   0 |  24k|  15k|  15k|  10 |  4 |   0 |   0 | 3.411882e+04 | 3.333818e+04*|   2.34%| unknown
+  730s|     1 |     0 |131542 |     - |   255M |   0 |  24k|  15k|  15k|  13 |  5 |   0 |   0 | 3.411863e+04 | 3.333818e+04*|   2.34%| unknown
+  784s|     1 |     0 |136258 |     - |   258M |   0 |  24k|  15k|  15k|  14 |  6 |   0 |   0 | 3.411850e+04 | 3.333818e+04*|   2.34%| unknown
+  837s|     1 |     0 |141212 |     - |   263M |   0 |  24k|  15k|  15k|  17 |  7 |   0 |   0 | 3.411830e+04 | 3.333818e+04*|   2.34%| unknown
+  180m|     1 |     2 |162573 |     - |  2581M |   0 |  24k|  15k|  15k|  17 |  8 |   0 |   0 | 3.411830e+04 | 3.333818e+04*|   2.34%| unknown
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 10800.16
+Solving Nodes      : 1
+Primal Bound       : +3.33381840000000e+04 (213 solutions)
+Dual Bound         : +3.41182990501780e+04
+Gap                : 2.34 %
+
+=== SCIP matching-i status=timelimit ===
+  incumbent (primal) = 33338.184
+  dual bound (ceil)  = 34118.299  (gap to optimum <= 780.115 = 2.340%)
+  bank was 33338.184; SCIP delta = +0.000
+  wall = 10801s
+=== NO IMPROVEMENT over bank 33338.184; bank untouched. Dual bound 34118.299 => headroom <= 780.1 remains ===

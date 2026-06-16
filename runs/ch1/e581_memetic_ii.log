@@ -1,0 +1,883 @@
+matching-ii: bank mass 72206.516 (9111 sel); 4 workers x 3600s memetic, pool_K=6, time_per_sub=10.0s
+[mip_lns seed=200 drop=0.25] round=25 best=68347.2 elapsed=8s
+[mip_lns seed=0 drop=0.25] round=25 best=68703.9 elapsed=8s
+[mip_lns seed=300 drop=0.25] round=25 best=68309.7 elapsed=8s
+[mip_lns seed=100 drop=0.25] round=25 best=68474.4 elapsed=8s
+[mip_lns seed=200 drop=0.25] round=50 best=68963.8 elapsed=14s
+[mip_lns seed=300 drop=0.25] round=50 best=69018.5 elapsed=14s
+[mip_lns seed=100 drop=0.25] round=50 best=69229.0 elapsed=14s
+[mip_lns seed=0 drop=0.25] round=50 best=69343.2 elapsed=15s
+[mip_lns seed=300 drop=0.25] round=75 best=69393.6 elapsed=19s
+[mip_lns seed=200 drop=0.25] round=75 best=69385.6 elapsed=20s
+[mip_lns seed=0 drop=0.25] round=75 best=69762.6 elapsed=20s
+[mip_lns seed=100 drop=0.25] round=75 best=69545.2 elapsed=21s
+[mip_lns seed=200 drop=0.25] round=100 best=69638.3 elapsed=26s
+[mip_lns seed=300 drop=0.25] round=100 best=69626.7 elapsed=25s
+[mip_lns seed=0 drop=0.25] round=100 best=69965.5 elapsed=26s
+[mip_lns seed=100 drop=0.25] round=100 best=69816.6 elapsed=27s
+[mip_lns seed=300 drop=0.25] round=125 best=69778.4 elapsed=31s
+[mip_lns seed=200 drop=0.25] round=125 best=69826.9 elapsed=31s
+[mip_lns seed=0 drop=0.25] round=125 best=70121.1 elapsed=31s
+[mip_lns seed=100 drop=0.25] round=125 best=69985.2 elapsed=33s
+[mip_lns seed=300 drop=0.25] round=150 best=69910.9 elapsed=36s
+[mip_lns seed=0 drop=0.25] round=150 best=70240.1 elapsed=37s
+[mip_lns seed=200 drop=0.25] round=150 best=69964.6 elapsed=37s
+[mip_lns seed=100 drop=0.25] round=150 best=70149.3 elapsed=39s
+[mip_lns seed=300 drop=0.25] round=175 best=70017.2 elapsed=41s
+[mip_lns seed=0 drop=0.25] round=175 best=70296.0 elapsed=43s
+[mip_lns seed=200 drop=0.25] round=175 best=70115.5 elapsed=43s
+[mip_lns seed=100 drop=0.25] round=175 best=70270.2 elapsed=44s
+[mip_lns seed=300 drop=0.25] round=200 best=70134.2 elapsed=47s
+[mip_lns seed=0 drop=0.25] round=200 best=70340.5 elapsed=48s
+[mip_lns seed=200 drop=0.25] round=200 best=70217.7 elapsed=49s
+[mip_lns seed=100 drop=0.25] round=200 best=70379.1 elapsed=50s
+[mip_lns seed=300 drop=0.25] round=225 best=70192.6 elapsed=53s
+[mip_lns seed=0 drop=0.25] round=225 best=70404.0 elapsed=53s
+[mip_lns seed=200 drop=0.25] round=225 best=70286.1 elapsed=54s
+[mip_lns seed=100 drop=0.25] round=225 best=70436.3 elapsed=55s
+[mip_lns seed=300 drop=0.25] round=250 best=70275.5 elapsed=58s
+[mip_lns seed=0 drop=0.25] round=250 best=70505.9 elapsed=59s
+[mip_lns seed=200 drop=0.25] round=250 best=70354.6 elapsed=60s
+[mip_lns seed=100 drop=0.25] round=250 best=70486.2 elapsed=60s
+[mip_lns seed=0 drop=0.25] round=275 best=70572.0 elapsed=64s
+[mip_lns seed=300 drop=0.25] round=275 best=70349.3 elapsed=63s
+[mip_lns seed=200 drop=0.25] round=275 best=70439.0 elapsed=65s
+[mip_lns seed=100 drop=0.25] round=275 best=70524.7 elapsed=65s
+[mip_lns seed=300 drop=0.25] round=300 best=70426.6 elapsed=68s
+[mip_lns seed=0 drop=0.25] round=300 best=70622.9 elapsed=69s
+[mip_lns seed=200 drop=0.25] round=300 best=70501.5 elapsed=70s
+[mip_lns seed=100 drop=0.25] round=300 best=70572.3 elapsed=71s
+[mip_lns seed=300 drop=0.25] round=325 best=70465.2 elapsed=73s
+[mip_lns seed=0 drop=0.25] round=325 best=70696.5 elapsed=74s
+[mip_lns seed=200 drop=0.25] round=325 best=70552.1 elapsed=75s
+[mip_lns seed=100 drop=0.25] round=325 best=70615.1 elapsed=76s
+[mip_lns seed=300 drop=0.25] round=350 best=70485.4 elapsed=78s
+[mip_lns seed=0 drop=0.25] round=350 best=70745.9 elapsed=79s
+[mip_lns seed=200 drop=0.25] round=350 best=70599.5 elapsed=80s
+[mip_lns seed=100 drop=0.25] round=350 best=70668.4 elapsed=81s
+[mip_lns seed=300 drop=0.25] round=375 best=70511.0 elapsed=83s
+[mip_lns seed=0 drop=0.25] round=375 best=70764.1 elapsed=84s
+[mip_lns seed=200 drop=0.25] round=375 best=70657.1 elapsed=85s
+[mip_lns seed=100 drop=0.25] round=375 best=70704.5 elapsed=86s
+[mip_lns seed=300 drop=0.25] round=400 best=70542.0 elapsed=89s
+[mip_lns seed=0 drop=0.25] round=400 best=70796.9 elapsed=89s
+[mip_lns seed=200 drop=0.25] round=400 best=70686.7 elapsed=91s
+[mip_lns seed=100 drop=0.25] round=400 best=70733.1 elapsed=91s
+[mip_lns seed=300 drop=0.25] round=425 best=70579.1 elapsed=94s
+[mip_lns seed=0 drop=0.25] round=425 best=70838.0 elapsed=94s
+[mip_lns seed=200 drop=0.25] round=425 best=70740.8 elapsed=96s
+[mip_lns seed=100 drop=0.25] round=425 best=70753.9 elapsed=96s
+[mip_lns seed=300 drop=0.25] round=450 best=70597.0 elapsed=99s
+[mip_lns seed=0 drop=0.25] round=450 best=70855.7 elapsed=99s
+[mip_lns seed=200 drop=0.25] round=450 best=70771.9 elapsed=101s
+[mip_lns seed=100 drop=0.25] round=450 best=70767.5 elapsed=101s
+[mip_lns seed=0 drop=0.25] round=475 best=70894.7 elapsed=104s
+[mip_lns seed=300 drop=0.25] round=475 best=70627.3 elapsed=104s
+[mip_lns seed=100 drop=0.25] round=475 best=70775.3 elapsed=106s
+[mip_lns seed=200 drop=0.25] round=475 best=70787.6 elapsed=106s
+[mip_lns seed=300 drop=0.25] round=500 best=70659.2 elapsed=109s
+[mip_lns seed=0 drop=0.25] round=500 best=70904.8 elapsed=109s
+[mip_lns seed=200 drop=0.25] round=500 best=70807.0 elapsed=111s
+[mip_lns seed=100 drop=0.25] round=500 best=70780.4 elapsed=111s
+[mip_lns seed=300 drop=0.25] round=525 best=70687.3 elapsed=114s
+[mip_lns seed=0 drop=0.25] round=525 best=70931.1 elapsed=114s
+[mip_lns seed=100 drop=0.25] round=525 best=70801.3 elapsed=116s
+[mip_lns seed=200 drop=0.25] round=525 best=70849.6 elapsed=116s
+[mip_lns seed=300 drop=0.25] round=550 best=70714.4 elapsed=119s
+[mip_lns seed=0 drop=0.25] round=550 best=70955.9 elapsed=119s
+[mip_lns seed=100 drop=0.25] round=550 best=70816.9 elapsed=121s
+[mip_lns seed=200 drop=0.25] round=550 best=70868.2 elapsed=121s
+[mip_lns seed=300 drop=0.25] round=575 best=70730.6 elapsed=124s
+[mip_lns seed=0 drop=0.25] round=575 best=70976.6 elapsed=124s
+[mip_lns seed=100 drop=0.25] round=575 best=70843.3 elapsed=126s
+[mip_lns seed=200 drop=0.25] round=575 best=70871.9 elapsed=126s
+[mip_lns seed=0 drop=0.25] round=600 best=70997.3 elapsed=129s
+[mip_lns seed=300 drop=0.25] round=600 best=70760.9 elapsed=129s
+[mip_lns seed=100 drop=0.25] round=600 best=70877.3 elapsed=131s
+[mip_lns seed=200 drop=0.25] round=600 best=70880.4 elapsed=131s
+[mip_lns seed=0 drop=0.25] round=625 best=71001.1 elapsed=134s
+[mip_lns seed=300 drop=0.25] round=625 best=70786.9 elapsed=134s
+[mip_lns seed=100 drop=0.25] round=625 best=70891.1 elapsed=136s
+[mip_lns seed=200 drop=0.25] round=625 best=70908.0 elapsed=136s
+[mip_lns seed=0 drop=0.25] round=650 best=71014.3 elapsed=139s
+[mip_lns seed=300 drop=0.25] round=650 best=70807.7 elapsed=139s
+[mip_lns seed=100 drop=0.25] round=650 best=70906.3 elapsed=141s
+[mip_lns seed=200 drop=0.25] round=650 best=70926.0 elapsed=141s
+[mip_lns seed=0 drop=0.25] round=675 best=71046.9 elapsed=144s
+[mip_lns seed=300 drop=0.25] round=675 best=70820.7 elapsed=144s
+[mip_lns seed=1 drop=0.25] round=25 best=68669.9 elapsed=7s
+[mip_lns seed=101 drop=0.25] round=25 best=68709.8 elapsed=7s
+[mip_lns seed=301 drop=0.25] round=25 best=68740.5 elapsed=7s
+[mip_lns seed=201 drop=0.25] round=25 best=68506.1 elapsed=7s
+[mip_lns seed=1 drop=0.25] round=50 best=69380.3 elapsed=13s
+[mip_lns seed=101 drop=0.25] round=50 best=69321.3 elapsed=13s
+[mip_lns seed=301 drop=0.25] round=50 best=69333.9 elapsed=13s
+[mip_lns seed=201 drop=0.25] round=50 best=69225.1 elapsed=13s
+[mip_lns seed=1 drop=0.25] round=75 best=69743.3 elapsed=18s
+[mip_lns seed=101 drop=0.25] round=75 best=69633.7 elapsed=18s
+[mip_lns seed=301 drop=0.25] round=75 best=69651.0 elapsed=19s
+[mip_lns seed=201 drop=0.25] round=75 best=69597.2 elapsed=19s
+[mip_lns seed=1 drop=0.25] round=100 best=69988.4 elapsed=24s
+[mip_lns seed=101 drop=0.25] round=100 best=69893.2 elapsed=24s
+[mip_lns seed=301 drop=0.25] round=100 best=69883.4 elapsed=24s
+[mip_lns seed=201 drop=0.25] round=100 best=69807.9 elapsed=24s
+[mip_lns seed=1 drop=0.25] round=125 best=70132.1 elapsed=29s
+[mip_lns seed=101 drop=0.25] round=125 best=70015.6 elapsed=30s
+[mip_lns seed=301 drop=0.25] round=125 best=70073.5 elapsed=29s
+[mip_lns seed=201 drop=0.25] round=125 best=69990.2 elapsed=29s
+[mip_lns seed=1 drop=0.25] round=150 best=70231.2 elapsed=35s
+[mip_lns seed=201 drop=0.25] round=150 best=70102.9 elapsed=34s
+[mip_lns seed=101 drop=0.25] round=150 best=70126.0 elapsed=35s
+[mip_lns seed=301 drop=0.25] round=150 best=70204.0 elapsed=35s
+[mip_lns seed=1 drop=0.25] round=175 best=70278.2 elapsed=40s
+[mip_lns seed=201 drop=0.25] round=175 best=70216.8 elapsed=39s
+[mip_lns seed=101 drop=0.25] round=175 best=70215.2 elapsed=40s
+[mip_lns seed=301 drop=0.25] round=175 best=70304.3 elapsed=40s
+[mip_lns seed=1 drop=0.25] round=200 best=70322.7 elapsed=45s
+[mip_lns seed=201 drop=0.25] round=200 best=70312.7 elapsed=45s
+[mip_lns seed=101 drop=0.25] round=200 best=70304.4 elapsed=45s
+[mip_lns seed=301 drop=0.25] round=200 best=70371.9 elapsed=45s
+[mip_lns seed=1 drop=0.25] round=225 best=70384.4 elapsed=50s
+[mip_lns seed=201 drop=0.25] round=225 best=70386.9 elapsed=50s
+[mip_lns seed=101 drop=0.25] round=225 best=70369.3 elapsed=50s
+[mip_lns seed=301 drop=0.25] round=225 best=70436.4 elapsed=51s
+[mip_lns seed=1 drop=0.25] round=250 best=70447.1 elapsed=55s
+[mip_lns seed=101 drop=0.25] round=250 best=70438.0 elapsed=55s
+[mip_lns seed=201 drop=0.25] round=250 best=70435.0 elapsed=55s
+[mip_lns seed=301 drop=0.25] round=250 best=70507.3 elapsed=56s
+[mip_lns seed=1 drop=0.25] round=275 best=70496.6 elapsed=60s
+[mip_lns seed=101 drop=0.25] round=275 best=70501.3 elapsed=60s
+[mip_lns seed=201 drop=0.25] round=275 best=70470.7 elapsed=60s
+[mip_lns seed=301 drop=0.25] round=275 best=70547.2 elapsed=61s
+[mip_lns seed=1 drop=0.25] round=300 best=70542.3 elapsed=65s
+[mip_lns seed=101 drop=0.25] round=300 best=70565.0 elapsed=65s
+[mip_lns seed=201 drop=0.25] round=300 best=70512.2 elapsed=65s
+[mip_lns seed=301 drop=0.25] round=300 best=70602.1 elapsed=66s
+[mip_lns seed=101 drop=0.25] round=325 best=70594.8 elapsed=70s
+[mip_lns seed=201 drop=0.25] round=325 best=70531.9 elapsed=69s
+[mip_lns seed=1 drop=0.25] round=325 best=70564.8 elapsed=70s
+[mip_lns seed=301 drop=0.25] round=325 best=70626.9 elapsed=72s
+[mip_lns seed=101 drop=0.25] round=350 best=70624.7 elapsed=75s
+[mip_lns seed=201 drop=0.25] round=350 best=70567.4 elapsed=74s
+[mip_lns seed=1 drop=0.25] round=350 best=70609.5 elapsed=75s
+[mip_lns seed=301 drop=0.25] round=350 best=70651.9 elapsed=77s
+[mip_lns seed=101 drop=0.25] round=375 best=70664.0 elapsed=80s
+[mip_lns seed=201 drop=0.25] round=375 best=70579.2 elapsed=79s
+[mip_lns seed=1 drop=0.25] round=375 best=70647.5 elapsed=81s
+[mip_lns seed=301 drop=0.25] round=375 best=70679.0 elapsed=82s
+[mip_lns seed=101 drop=0.25] round=400 best=70689.2 elapsed=85s
+[mip_lns seed=201 drop=0.25] round=400 best=70600.3 elapsed=84s
+[mip_lns seed=1 drop=0.25] round=400 best=70661.8 elapsed=85s
+[mip_lns seed=301 drop=0.25] round=400 best=70712.0 elapsed=87s
+[mip_lns seed=101 drop=0.25] round=425 best=70709.2 elapsed=90s
+[mip_lns seed=201 drop=0.25] round=425 best=70636.1 elapsed=89s
+[mip_lns seed=1 drop=0.25] round=425 best=70676.1 elapsed=90s
+[mip_lns seed=301 drop=0.25] round=425 best=70743.5 elapsed=92s
+[mip_lns seed=201 drop=0.25] round=450 best=70650.5 elapsed=94s
+[mip_lns seed=101 drop=0.25] round=450 best=70726.2 elapsed=95s
+[mip_lns seed=1 drop=0.25] round=450 best=70695.7 elapsed=95s
+[mip_lns seed=301 drop=0.25] round=450 best=70769.1 elapsed=97s
+[mip_lns seed=201 drop=0.25] round=475 best=70682.9 elapsed=99s
+[mip_lns seed=101 drop=0.25] round=475 best=70750.4 elapsed=100s
+[mip_lns seed=1 drop=0.25] round=475 best=70726.3 elapsed=101s
+[mip_lns seed=301 drop=0.25] round=475 best=70791.2 elapsed=102s
+[mip_lns seed=201 drop=0.25] round=500 best=70718.6 elapsed=104s
+[mip_lns seed=101 drop=0.25] round=500 best=70770.6 elapsed=105s
+[mip_lns seed=1 drop=0.25] round=500 best=70747.6 elapsed=106s
+[mip_lns seed=301 drop=0.25] round=500 best=70816.0 elapsed=107s
+[mip_lns seed=201 drop=0.25] round=525 best=70752.8 elapsed=108s
+[mip_lns seed=101 drop=0.25] round=525 best=70807.6 elapsed=109s
+[mip_lns seed=1 drop=0.25] round=525 best=70765.1 elapsed=111s
+[mip_lns seed=301 drop=0.25] round=525 best=70838.8 elapsed=112s
+[mip_lns seed=201 drop=0.25] round=550 best=70780.9 elapsed=113s
+[mip_lns seed=101 drop=0.25] round=550 best=70829.0 elapsed=114s
+[mip_lns seed=1 drop=0.25] round=550 best=70778.5 elapsed=116s
+[mip_lns seed=301 drop=0.25] round=550 best=70859.8 elapsed=117s
+[mip_lns seed=201 drop=0.25] round=575 best=70812.5 elapsed=118s
+[mip_lns seed=101 drop=0.25] round=575 best=70851.9 elapsed=119s
+[mip_lns seed=1 drop=0.25] round=575 best=70805.5 elapsed=121s
+[mip_lns seed=301 drop=0.25] round=575 best=70879.8 elapsed=122s
+[mip_lns seed=201 drop=0.25] round=600 best=70828.1 elapsed=123s
+[mip_lns seed=101 drop=0.25] round=600 best=70865.1 elapsed=124s
+[mip_lns seed=1 drop=0.25] round=600 best=70840.5 elapsed=126s
+[mip_lns seed=301 drop=0.25] round=600 best=70898.6 elapsed=127s
+[mip_lns seed=201 drop=0.25] round=625 best=70855.4 elapsed=128s
+[mip_lns seed=101 drop=0.25] round=625 best=70892.1 elapsed=129s
+[mip_lns seed=1 drop=0.25] round=625 best=70871.2 elapsed=131s
+[mip_lns seed=301 drop=0.25] round=625 best=70921.5 elapsed=132s
+[mip_lns seed=201 drop=0.25] round=650 best=70883.8 elapsed=133s
+[mip_lns seed=101 drop=0.25] round=650 best=70918.4 elapsed=133s
+[mip_lns seed=1 drop=0.25] round=650 best=70882.8 elapsed=136s
+[mip_lns seed=301 drop=0.25] round=650 best=70945.0 elapsed=136s
+[mip_lns seed=101 drop=0.25] round=675 best=70939.4 elapsed=138s
+[mip_lns seed=201 drop=0.25] round=675 best=70902.0 elapsed=138s
+[mip_lns seed=1 drop=0.25] round=675 best=70900.0 elapsed=141s
+[mip_lns seed=301 drop=0.25] round=675 best=70955.9 elapsed=141s
+[mip_lns seed=101 drop=0.25] round=700 best=70951.8 elapsed=143s
+[mip_lns seed=201 drop=0.25] round=700 best=70917.8 elapsed=142s
+[mip_lns seed=2 drop=0.25] round=25 best=68523.8 elapsed=7s
+[mip_lns seed=302 drop=0.25] round=25 best=68552.2 elapsed=8s
+[mip_lns seed=102 drop=0.25] round=25 best=68305.4 elapsed=7s
+[mip_lns seed=202 drop=0.25] round=25 best=68676.3 elapsed=7s
+[mip_lns seed=2 drop=0.25] round=50 best=69143.2 elapsed=13s
+[mip_lns seed=102 drop=0.25] round=50 best=68956.5 elapsed=13s
+[mip_lns seed=302 drop=0.25] round=50 best=69278.0 elapsed=14s
+[mip_lns seed=202 drop=0.25] round=50 best=69282.4 elapsed=13s
+[mip_lns seed=2 drop=0.25] round=75 best=69567.3 elapsed=19s
+[mip_lns seed=102 drop=0.25] round=75 best=69245.2 elapsed=18s
+[mip_lns seed=302 drop=0.25] round=75 best=69647.9 elapsed=19s
+[mip_lns seed=202 drop=0.25] round=75 best=69608.4 elapsed=19s
+[mip_lns seed=2 drop=0.25] round=100 best=69791.4 elapsed=24s
+[mip_lns seed=102 drop=0.25] round=100 best=69483.2 elapsed=24s
+[mip_lns seed=302 drop=0.25] round=100 best=69896.5 elapsed=25s
+[mip_lns seed=202 drop=0.25] round=100 best=69936.2 elapsed=25s
+[mip_lns seed=2 drop=0.25] round=125 best=69994.9 elapsed=30s
+[mip_lns seed=102 drop=0.25] round=125 best=69658.8 elapsed=29s
+[mip_lns seed=302 drop=0.25] round=125 best=70041.7 elapsed=30s
+[mip_lns seed=202 drop=0.25] round=125 best=70112.4 elapsed=30s
+[mip_lns seed=102 drop=0.25] round=150 best=69774.0 elapsed=34s
+[mip_lns seed=2 drop=0.25] round=150 best=70111.5 elapsed=35s
+[mip_lns seed=302 drop=0.25] round=150 best=70178.6 elapsed=35s
+[mip_lns seed=202 drop=0.25] round=150 best=70215.0 elapsed=36s
+[mip_lns seed=102 drop=0.25] round=175 best=69865.0 elapsed=39s
+[mip_lns seed=302 drop=0.25] round=175 best=70273.8 elapsed=40s
+[mip_lns seed=2 drop=0.25] round=175 best=70219.1 elapsed=41s
+[mip_lns seed=202 drop=0.25] round=175 best=70313.8 elapsed=41s
+[mip_lns seed=102 drop=0.25] round=200 best=70005.3 elapsed=44s
+[mip_lns seed=302 drop=0.25] round=200 best=70355.7 elapsed=45s
+[mip_lns seed=2 drop=0.25] round=200 best=70316.0 elapsed=46s
+[mip_lns seed=202 drop=0.25] round=200 best=70396.9 elapsed=46s
+[mip_lns seed=102 drop=0.25] round=225 best=70085.4 elapsed=49s
+[mip_lns seed=302 drop=0.25] round=225 best=70418.7 elapsed=50s
+[mip_lns seed=2 drop=0.25] round=225 best=70392.8 elapsed=51s
+[mip_lns seed=202 drop=0.25] round=225 best=70472.5 elapsed=51s
+[mip_lns seed=302 drop=0.25] round=250 best=70471.1 elapsed=55s
+[mip_lns seed=102 drop=0.25] round=250 best=70161.8 elapsed=54s
+[mip_lns seed=2 drop=0.25] round=250 best=70476.5 elapsed=56s
+[mip_lns seed=202 drop=0.25] round=250 best=70524.3 elapsed=57s
+[mip_lns seed=102 drop=0.25] round=275 best=70220.0 elapsed=59s
+[mip_lns seed=302 drop=0.25] round=275 best=70538.3 elapsed=60s
+[mip_lns seed=2 drop=0.25] round=275 best=70540.6 elapsed=61s
+[mip_lns seed=202 drop=0.25] round=275 best=70593.9 elapsed=62s
+[mip_lns seed=302 drop=0.25] round=300 best=70556.8 elapsed=65s
+[mip_lns seed=102 drop=0.25] round=300 best=70248.4 elapsed=64s
+[mip_lns seed=2 drop=0.25] round=300 best=70589.0 elapsed=67s
+[mip_lns seed=202 drop=0.25] round=300 best=70610.4 elapsed=67s
+[mip_lns seed=302 drop=0.25] round=325 best=70596.2 elapsed=70s
+[mip_lns seed=102 drop=0.25] round=325 best=70280.7 elapsed=69s
+[mip_lns seed=2 drop=0.25] round=325 best=70627.3 elapsed=72s
+[mip_lns seed=202 drop=0.25] round=325 best=70636.2 elapsed=72s
+[mip_lns seed=302 drop=0.25] round=350 best=70610.7 elapsed=75s
+[mip_lns seed=102 drop=0.25] round=350 best=70327.1 elapsed=74s
+[mip_lns seed=2 drop=0.25] round=350 best=70667.7 elapsed=77s
+[mip_lns seed=202 drop=0.25] round=350 best=70661.1 elapsed=77s
+[mip_lns seed=302 drop=0.25] round=375 best=70626.0 elapsed=80s
+[mip_lns seed=102 drop=0.25] round=375 best=70375.0 elapsed=79s
+[mip_lns seed=2 drop=0.25] round=375 best=70704.4 elapsed=82s
+[mip_lns seed=202 drop=0.25] round=375 best=70672.1 elapsed=82s
+[mip_lns seed=302 drop=0.25] round=400 best=70653.6 elapsed=85s
+[mip_lns seed=102 drop=0.25] round=400 best=70420.6 elapsed=85s
+[mip_lns seed=2 drop=0.25] round=400 best=70726.1 elapsed=87s
+[mip_lns seed=202 drop=0.25] round=400 best=70677.4 elapsed=87s
+[mip_lns seed=302 drop=0.25] round=425 best=70699.1 elapsed=90s
+[mip_lns seed=102 drop=0.25] round=425 best=70442.0 elapsed=90s
+[mip_lns seed=2 drop=0.25] round=425 best=70758.3 elapsed=92s
+[mip_lns seed=202 drop=0.25] round=425 best=70692.4 elapsed=92s
+[mip_lns seed=102 drop=0.25] round=450 best=70453.0 elapsed=94s
+[mip_lns seed=302 drop=0.25] round=450 best=70726.4 elapsed=95s
+[mip_lns seed=2 drop=0.25] round=450 best=70792.5 elapsed=97s
+[mip_lns seed=202 drop=0.25] round=450 best=70711.1 elapsed=97s
+[mip_lns seed=102 drop=0.25] round=475 best=70484.0 elapsed=99s
+[mip_lns seed=302 drop=0.25] round=475 best=70740.6 elapsed=100s
+[mip_lns seed=2 drop=0.25] round=475 best=70838.9 elapsed=102s
+[mip_lns seed=202 drop=0.25] round=475 best=70737.1 elapsed=102s
+[mip_lns seed=102 drop=0.25] round=500 best=70523.2 elapsed=104s
+[mip_lns seed=302 drop=0.25] round=500 best=70765.4 elapsed=105s
+[mip_lns seed=2 drop=0.25] round=500 best=70868.5 elapsed=107s
+[mip_lns seed=202 drop=0.25] round=500 best=70748.8 elapsed=107s
+[mip_lns seed=102 drop=0.25] round=525 best=70563.2 elapsed=109s
+[mip_lns seed=302 drop=0.25] round=525 best=70773.2 elapsed=110s
+[mip_lns seed=2 drop=0.25] round=525 best=70893.4 elapsed=112s
+[mip_lns seed=202 drop=0.25] round=525 best=70768.4 elapsed=112s
+[mip_lns seed=102 drop=0.25] round=550 best=70572.6 elapsed=114s
+[mip_lns seed=302 drop=0.25] round=550 best=70789.2 elapsed=115s
+[mip_lns seed=2 drop=0.25] round=550 best=70905.6 elapsed=117s
+[mip_lns seed=202 drop=0.25] round=550 best=70773.8 elapsed=117s
+[mip_lns seed=102 drop=0.25] round=575 best=70593.3 elapsed=119s
+[mip_lns seed=302 drop=0.25] round=575 best=70808.1 elapsed=120s
+[mip_lns seed=2 drop=0.25] round=575 best=70928.4 elapsed=122s
+[mip_lns seed=202 drop=0.25] round=575 best=70793.9 elapsed=122s
+[mip_lns seed=102 drop=0.25] round=600 best=70614.3 elapsed=124s
+[mip_lns seed=302 drop=0.25] round=600 best=70810.4 elapsed=125s
+[mip_lns seed=2 drop=0.25] round=600 best=70948.4 elapsed=127s
+[mip_lns seed=202 drop=0.25] round=600 best=70814.6 elapsed=127s
+[mip_lns seed=102 drop=0.25] round=625 best=70627.5 elapsed=129s
+[mip_lns seed=302 drop=0.25] round=625 best=70824.9 elapsed=130s
+[mip_lns seed=2 drop=0.25] round=625 best=70974.1 elapsed=132s
+[mip_lns seed=202 drop=0.25] round=625 best=70826.9 elapsed=132s
+[mip_lns seed=102 drop=0.25] round=650 best=70660.3 elapsed=133s
+[mip_lns seed=302 drop=0.25] round=650 best=70839.9 elapsed=135s
+[mip_lns seed=2 drop=0.25] round=650 best=70989.4 elapsed=137s
+[mip_lns seed=202 drop=0.25] round=650 best=70843.6 elapsed=137s
+[mip_lns seed=102 drop=0.25] round=675 best=70670.7 elapsed=138s
+[mip_lns seed=302 drop=0.25] round=675 best=70854.4 elapsed=140s
+[mip_lns seed=2 drop=0.25] round=675 best=71003.4 elapsed=142s
+[mip_lns seed=202 drop=0.25] round=675 best=70876.6 elapsed=142s
+[mip_lns seed=102 drop=0.25] round=700 best=70697.7 elapsed=143s
+[mip_lns seed=303 drop=0.25] round=25 best=68474.4 elapsed=7s
+[mip_lns seed=203 drop=0.25] round=25 best=68587.8 elapsed=7s
+[mip_lns seed=3 drop=0.25] round=25 best=68246.9 elapsed=7s
+[mip_lns seed=103 drop=0.25] round=25 best=68690.0 elapsed=7s
+[mip_lns seed=303 drop=0.25] round=50 best=69212.8 elapsed=13s
+[mip_lns seed=203 drop=0.25] round=50 best=69264.9 elapsed=13s
+[mip_lns seed=103 drop=0.25] round=50 best=69340.7 elapsed=13s
+[mip_lns seed=3 drop=0.25] round=50 best=69026.5 elapsed=14s
+[mip_lns seed=303 drop=0.25] round=75 best=69561.2 elapsed=18s
+[mip_lns seed=203 drop=0.25] round=75 best=69630.9 elapsed=19s
+[mip_lns seed=103 drop=0.25] round=75 best=69692.6 elapsed=19s
+[mip_lns seed=3 drop=0.25] round=75 best=69394.1 elapsed=20s
+[mip_lns seed=303 drop=0.25] round=100 best=69709.4 elapsed=24s
+[mip_lns seed=203 drop=0.25] round=100 best=69832.2 elapsed=24s
+[mip_lns seed=103 drop=0.25] round=100 best=69899.0 elapsed=25s
+[mip_lns seed=3 drop=0.25] round=100 best=69646.8 elapsed=25s
+[mip_lns seed=303 drop=0.25] round=125 best=69888.2 elapsed=29s
+[mip_lns seed=203 drop=0.25] round=125 best=69962.9 elapsed=29s
+[mip_lns seed=103 drop=0.25] round=125 best=70022.9 elapsed=30s
+[mip_lns seed=3 drop=0.25] round=125 best=69811.2 elapsed=31s
+[mip_lns seed=303 drop=0.25] round=150 best=70040.8 elapsed=34s
+[mip_lns seed=203 drop=0.25] round=150 best=70060.7 elapsed=34s
+[mip_lns seed=103 drop=0.25] round=150 best=70123.6 elapsed=36s
+[mip_lns seed=3 drop=0.25] round=150 best=69943.5 elapsed=36s
+[mip_lns seed=303 drop=0.25] round=175 best=70160.2 elapsed=40s
+[mip_lns seed=203 drop=0.25] round=175 best=70170.7 elapsed=40s
+[mip_lns seed=103 drop=0.25] round=175 best=70202.8 elapsed=41s
+[mip_lns seed=3 drop=0.25] round=175 best=70060.3 elapsed=42s
+[mip_lns seed=303 drop=0.25] round=200 best=70241.5 elapsed=45s
+[mip_lns seed=203 drop=0.25] round=200 best=70238.0 elapsed=45s
+[mip_lns seed=103 drop=0.25] round=200 best=70288.9 elapsed=47s
+[mip_lns seed=3 drop=0.25] round=200 best=70162.8 elapsed=47s
+[mip_lns seed=303 drop=0.25] round=225 best=70304.7 elapsed=50s
+[mip_lns seed=203 drop=0.25] round=225 best=70324.9 elapsed=50s
+[mip_lns seed=103 drop=0.25] round=225 best=70347.5 elapsed=52s
+[mip_lns seed=3 drop=0.25] round=225 best=70220.8 elapsed=52s
+[mip_lns seed=303 drop=0.25] round=250 best=70333.9 elapsed=55s
+[mip_lns seed=203 drop=0.25] round=250 best=70413.8 elapsed=55s
+[mip_lns seed=103 drop=0.25] round=250 best=70381.3 elapsed=57s
+[mip_lns seed=3 drop=0.25] round=250 best=70280.5 elapsed=58s
+[mip_lns seed=303 drop=0.25] round=275 best=70363.7 elapsed=60s
+[mip_lns seed=203 drop=0.25] round=275 best=70450.5 elapsed=60s
+[mip_lns seed=3 drop=0.25] round=275 best=70337.5 elapsed=63s
+[mip_lns seed=103 drop=0.25] round=275 best=70412.1 elapsed=63s
+[mip_lns seed=303 drop=0.25] round=300 best=70420.5 elapsed=65s
+[mip_lns seed=203 drop=0.25] round=300 best=70484.6 elapsed=65s
+[mip_lns seed=3 drop=0.25] round=300 best=70366.4 elapsed=68s
+[mip_lns seed=103 drop=0.25] round=300 best=70466.7 elapsed=68s
+[mip_lns seed=303 drop=0.25] round=325 best=70473.9 elapsed=70s
+[mip_lns seed=203 drop=0.25] round=325 best=70512.5 elapsed=70s
+[mip_lns seed=3 drop=0.25] round=325 best=70423.8 elapsed=74s
+[mip_lns seed=103 drop=0.25] round=325 best=70494.8 elapsed=74s
+[mip_lns seed=303 drop=0.25] round=350 best=70498.7 elapsed=75s
+[mip_lns seed=203 drop=0.25] round=350 best=70552.5 elapsed=75s
+[mip_lns seed=3 drop=0.25] round=350 best=70463.9 elapsed=79s
+[mip_lns seed=103 drop=0.25] round=350 best=70535.1 elapsed=79s
+[mip_lns seed=303 drop=0.25] round=375 best=70540.4 elapsed=80s
+[mip_lns seed=203 drop=0.25] round=375 best=70593.0 elapsed=80s
+[mip_lns seed=3 drop=0.25] round=375 best=70497.5 elapsed=84s
+[mip_lns seed=103 drop=0.25] round=375 best=70575.2 elapsed=84s
+[mip_lns seed=303 drop=0.25] round=400 best=70564.1 elapsed=85s
+[mip_lns seed=203 drop=0.25] round=400 best=70620.0 elapsed=85s
+[mip_lns seed=3 drop=0.25] round=400 best=70534.3 elapsed=89s
+[mip_lns seed=103 drop=0.25] round=400 best=70625.3 elapsed=89s
+[mip_lns seed=303 drop=0.25] round=425 best=70598.2 elapsed=90s
+[mip_lns seed=203 drop=0.25] round=425 best=70638.0 elapsed=90s
+[mip_lns seed=3 drop=0.25] round=425 best=70564.5 elapsed=95s
+[mip_lns seed=103 drop=0.25] round=425 best=70656.1 elapsed=94s
+[mip_lns seed=203 drop=0.25] round=450 best=70652.9 elapsed=95s
+[mip_lns seed=303 drop=0.25] round=450 best=70616.5 elapsed=95s
+[mip_lns seed=3 drop=0.25] round=450 best=70587.0 elapsed=100s
+[mip_lns seed=103 drop=0.25] round=450 best=70668.4 elapsed=99s
+[mip_lns seed=203 drop=0.25] round=475 best=70671.9 elapsed=100s
+[mip_lns seed=303 drop=0.25] round=475 best=70633.9 elapsed=101s
+[mip_lns seed=3 drop=0.25] round=475 best=70605.7 elapsed=105s
+[mip_lns seed=103 drop=0.25] round=475 best=70707.5 elapsed=104s
+[mip_lns seed=303 drop=0.25] round=500 best=70660.2 elapsed=105s
+[mip_lns seed=203 drop=0.25] round=500 best=70684.2 elapsed=105s
+[mip_lns seed=3 drop=0.25] round=500 best=70628.3 elapsed=110s
+[mip_lns seed=103 drop=0.25] round=500 best=70712.6 elapsed=110s
+[mip_lns seed=303 drop=0.25] round=525 best=70689.8 elapsed=111s
+[mip_lns seed=203 drop=0.25] round=525 best=70710.9 elapsed=110s
+[mip_lns seed=3 drop=0.25] round=525 best=70651.4 elapsed=115s
+[mip_lns seed=103 drop=0.25] round=525 best=70731.6 elapsed=115s
+[mip_lns seed=303 drop=0.25] round=550 best=70691.4 elapsed=115s
+[mip_lns seed=203 drop=0.25] round=550 best=70721.1 elapsed=115s
+[mip_lns seed=103 drop=0.25] round=550 best=70742.1 elapsed=120s
+[mip_lns seed=303 drop=0.25] round=575 best=70701.9 elapsed=120s
+[mip_lns seed=203 drop=0.25] round=575 best=70732.2 elapsed=120s
+[mip_lns seed=3 drop=0.25] round=550 best=70659.0 elapsed=120s
+[mip_lns seed=103 drop=0.25] round=575 best=70750.5 elapsed=124s
+[mip_lns seed=303 drop=0.25] round=600 best=70718.7 elapsed=125s
+[mip_lns seed=203 drop=0.25] round=600 best=70780.7 elapsed=125s
+[mip_lns seed=3 drop=0.25] round=575 best=70685.1 elapsed=125s
+[mip_lns seed=103 drop=0.25] round=600 best=70760.5 elapsed=129s
+[mip_lns seed=303 drop=0.25] round=625 best=70734.2 elapsed=130s
+[mip_lns seed=203 drop=0.25] round=625 best=70814.0 elapsed=130s
+[mip_lns seed=3 drop=0.25] round=600 best=70710.4 elapsed=130s
+[mip_lns seed=103 drop=0.25] round=625 best=70768.9 elapsed=134s
+[mip_lns seed=203 drop=0.25] round=650 best=70837.3 elapsed=135s
+[mip_lns seed=303 drop=0.25] round=650 best=70747.9 elapsed=135s
+[mip_lns seed=3 drop=0.25] round=625 best=70729.7 elapsed=136s
+[mip_lns seed=303 drop=0.25] round=675 best=70757.7 elapsed=140s
+[mip_lns seed=103 drop=0.25] round=650 best=70779.0 elapsed=140s
+[mip_lns seed=203 drop=0.25] round=675 best=70853.2 elapsed=140s
+[mip_lns seed=3 drop=0.25] round=650 best=70749.6 elapsed=141s
+[mip_lns seed=4 drop=0.25] round=25 best=68586.8 elapsed=7s
+[mip_lns seed=304 drop=0.25] round=25 best=68179.0 elapsed=7s
+[mip_lns seed=204 drop=0.25] round=25 best=68364.1 elapsed=7s
+[mip_lns seed=104 drop=0.25] round=25 best=68498.9 elapsed=8s
+[mip_lns seed=4 drop=0.25] round=50 best=69205.9 elapsed=13s
+[mip_lns seed=304 drop=0.25] round=50 best=68989.6 elapsed=13s
+[mip_lns seed=204 drop=0.25] round=50 best=69011.0 elapsed=13s
+[mip_lns seed=104 drop=0.25] round=50 best=69134.3 elapsed=14s
+[mip_lns seed=4 drop=0.25] round=75 best=69621.0 elapsed=19s
+[mip_lns seed=204 drop=0.25] round=75 best=69410.6 elapsed=19s
+[mip_lns seed=304 drop=0.25] round=75 best=69334.6 elapsed=19s
+[mip_lns seed=104 drop=0.25] round=75 best=69517.9 elapsed=19s
+[mip_lns seed=4 drop=0.25] round=100 best=69884.9 elapsed=24s
+[mip_lns seed=204 drop=0.25] round=100 best=69597.2 elapsed=24s
+[mip_lns seed=304 drop=0.25] round=100 best=69585.9 elapsed=24s
+[mip_lns seed=104 drop=0.25] round=100 best=69728.8 elapsed=25s
+[mip_lns seed=4 drop=0.25] round=125 best=70054.6 elapsed=30s
+[mip_lns seed=204 drop=0.25] round=125 best=69762.2 elapsed=30s
+[mip_lns seed=304 drop=0.25] round=125 best=69766.8 elapsed=29s
+[mip_lns seed=104 drop=0.25] round=125 best=69871.6 elapsed=30s
+[mip_lns seed=204 drop=0.25] round=150 best=69896.1 elapsed=35s
+[mip_lns seed=4 drop=0.25] round=150 best=70179.9 elapsed=35s
+[mip_lns seed=304 drop=0.25] round=150 best=69891.0 elapsed=35s
+[mip_lns seed=104 drop=0.25] round=150 best=69980.0 elapsed=35s
+[mip_lns seed=204 drop=0.25] round=175 best=69994.2 elapsed=40s
+[mip_lns seed=304 drop=0.25] round=175 best=69993.6 elapsed=40s
+[mip_lns seed=4 drop=0.25] round=175 best=70262.9 elapsed=41s
+[mip_lns seed=104 drop=0.25] round=175 best=70067.4 elapsed=41s
+[mip_lns seed=204 drop=0.25] round=200 best=70104.6 elapsed=45s
+[mip_lns seed=304 drop=0.25] round=200 best=70112.7 elapsed=45s
+[mip_lns seed=4 drop=0.25] round=200 best=70331.2 elapsed=46s
+[mip_lns seed=104 drop=0.25] round=200 best=70142.4 elapsed=46s
+[mip_lns seed=204 drop=0.25] round=225 best=70159.5 elapsed=50s
+[mip_lns seed=304 drop=0.25] round=225 best=70165.6 elapsed=50s
+[mip_lns seed=4 drop=0.25] round=225 best=70430.4 elapsed=52s
+[mip_lns seed=104 drop=0.25] round=225 best=70206.1 elapsed=51s
+[mip_lns seed=204 drop=0.25] round=250 best=70253.0 elapsed=55s
+[mip_lns seed=304 drop=0.25] round=250 best=70223.5 elapsed=55s
+[mip_lns seed=4 drop=0.25] round=250 best=70494.7 elapsed=57s
+[mip_lns seed=104 drop=0.25] round=250 best=70283.8 elapsed=56s
+[mip_lns seed=204 drop=0.25] round=275 best=70319.8 elapsed=61s
+[mip_lns seed=304 drop=0.25] round=275 best=70276.9 elapsed=61s
+[mip_lns seed=104 drop=0.25] round=275 best=70330.0 elapsed=61s
+[mip_lns seed=4 drop=0.25] round=275 best=70536.5 elapsed=62s
+[mip_lns seed=204 drop=0.25] round=300 best=70418.9 elapsed=66s
+[mip_lns seed=304 drop=0.25] round=300 best=70326.5 elapsed=66s
+[mip_lns seed=104 drop=0.25] round=300 best=70379.1 elapsed=66s
+[mip_lns seed=4 drop=0.25] round=300 best=70571.8 elapsed=67s
+[mip_lns seed=304 drop=0.25] round=325 best=70363.5 elapsed=71s
+[mip_lns seed=204 drop=0.25] round=325 best=70483.1 elapsed=71s
+[mip_lns seed=104 drop=0.25] round=325 best=70412.5 elapsed=71s
+[mip_lns seed=4 drop=0.25] round=325 best=70616.7 elapsed=72s
+[mip_lns seed=304 drop=0.25] round=350 best=70392.7 elapsed=76s
+[mip_lns seed=204 drop=0.25] round=350 best=70542.1 elapsed=76s
+[mip_lns seed=104 drop=0.25] round=350 best=70444.1 elapsed=77s
+[mip_lns seed=4 drop=0.25] round=350 best=70638.3 elapsed=78s
+[mip_lns seed=304 drop=0.25] round=375 best=70424.5 elapsed=81s
+[mip_lns seed=204 drop=0.25] round=375 best=70563.0 elapsed=82s
+[mip_lns seed=104 drop=0.25] round=375 best=70472.2 elapsed=82s
+[mip_lns seed=4 drop=0.25] round=375 best=70671.1 elapsed=83s
+[mip_lns seed=304 drop=0.25] round=400 best=70449.9 elapsed=86s
+[mip_lns seed=204 drop=0.25] round=400 best=70592.1 elapsed=86s
+[mip_lns seed=104 drop=0.25] round=400 best=70513.7 elapsed=87s
+[mip_lns seed=4 drop=0.25] round=400 best=70712.5 elapsed=88s
+[mip_lns seed=304 drop=0.25] round=425 best=70456.2 elapsed=91s
+[mip_lns seed=204 drop=0.25] round=425 best=70610.3 elapsed=92s
+[mip_lns seed=104 drop=0.25] round=425 best=70573.8 elapsed=92s
+[mip_lns seed=4 drop=0.25] round=425 best=70763.3 elapsed=93s
+[mip_lns seed=304 drop=0.25] round=450 best=70479.6 elapsed=96s
+[mip_lns seed=204 drop=0.25] round=450 best=70622.9 elapsed=97s
+[mip_lns seed=104 drop=0.25] round=450 best=70604.3 elapsed=97s
+[mip_lns seed=4 drop=0.25] round=450 best=70806.6 elapsed=98s
+[mip_lns seed=304 drop=0.25] round=475 best=70516.2 elapsed=101s
+[mip_lns seed=204 drop=0.25] round=475 best=70647.1 elapsed=102s
+[mip_lns seed=104 drop=0.25] round=475 best=70636.6 elapsed=102s
+[mip_lns seed=4 drop=0.25] round=475 best=70823.7 elapsed=103s
+[mip_lns seed=304 drop=0.25] round=500 best=70538.8 elapsed=106s
+[mip_lns seed=204 drop=0.25] round=500 best=70660.4 elapsed=107s
+[mip_lns seed=104 drop=0.25] round=500 best=70646.1 elapsed=107s
+[mip_lns seed=4 drop=0.25] round=500 best=70829.3 elapsed=108s
+[mip_lns seed=304 drop=0.25] round=525 best=70554.5 elapsed=111s
+[mip_lns seed=204 drop=0.25] round=525 best=70670.8 elapsed=112s
+[mip_lns seed=104 drop=0.25] round=525 best=70666.4 elapsed=112s
+[mip_lns seed=4 drop=0.25] round=525 best=70858.6 elapsed=113s
+[mip_lns seed=304 drop=0.25] round=550 best=70570.7 elapsed=116s
+[mip_lns seed=204 drop=0.25] round=550 best=70697.7 elapsed=116s
+[mip_lns seed=104 drop=0.25] round=550 best=70677.5 elapsed=116s
+[mip_lns seed=4 drop=0.25] round=550 best=70878.9 elapsed=119s
+[mip_lns seed=304 drop=0.25] round=575 best=70586.6 elapsed=121s
+[mip_lns seed=204 drop=0.25] round=575 best=70704.4 elapsed=121s
+[mip_lns seed=104 drop=0.25] round=575 best=70693.0 elapsed=121s
+[mip_lns seed=4 drop=0.25] round=575 best=70908.4 elapsed=124s
+[mip_lns seed=204 drop=0.25] round=600 best=70704.6 elapsed=126s[mip_lns seed=304 drop=0.25] round=600 best=70596.5 elapsed=126s
+
+[mip_lns seed=104 drop=0.25] round=600 best=70708.9 elapsed=126s
+[mip_lns seed=4 drop=0.25] round=600 best=70939.6 elapsed=129s
+[mip_lns seed=204 drop=0.25] round=625 best=70708.6 elapsed=131s
+[mip_lns seed=304 drop=0.25] round=625 best=70612.0 elapsed=131s
+[mip_lns seed=104 drop=0.25] round=625 best=70727.5 elapsed=131s
+[mip_lns seed=4 drop=0.25] round=625 best=70973.4 elapsed=134s
+[mip_lns seed=204 drop=0.25] round=650 best=70713.5 elapsed=136s
+[mip_lns seed=304 drop=0.25] round=650 best=70628.5 elapsed=136s
+[mip_lns seed=104 drop=0.25] round=650 best=70736.5 elapsed=136s
+[mip_lns seed=4 drop=0.25] round=650 best=70996.3 elapsed=139s
+[mip_lns seed=204 drop=0.25] round=675 best=70717.4 elapsed=141s
+[mip_lns seed=304 drop=0.25] round=675 best=70628.7 elapsed=141s
+[mip_lns seed=104 drop=0.25] round=675 best=70748.4 elapsed=141s
+[w0] seeded pool K=6 masses=[72206.52, 71048.68, 71022.97, 71012.12, 70912.85, 70762.16] t=728s
+[w2] seeded pool K=6 masses=[72206.52, 70929.02, 70918.38, 70884.87, 70867.14, 70721.37] t=729s
+[w3] seeded pool K=6 masses=[72206.52, 70959.0, 70864.71, 70820.91, 70765.65, 70634.77] t=729s
+[w1] seeded pool K=6 masses=[72206.52, 70953.48, 70912.98, 70784.87, 70759.0, 70703.03] t=729s
+[w0] it=1 children=1 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=740s
+[w2] it=1 children=1 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=740s
+[w1] it=1 children=1 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=740s
+[w3] it=1 children=1 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=741s
+[w0] it=4 children=4 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=774s
+[w3] it=4 children=4 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=775s
+[w1] it=4 children=4 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=775s
+[w2] it=4 children=4 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=775s
+[w0] it=7 children=7 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=808s
+[w3] it=8 children=7 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=809s
+[w2] it=8 children=7 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=809s
+[w1] it=7 children=7 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=809s
+[w2] it=12 children=10 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=842s
+[w0] it=10 children=10 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=842s
+[w3] it=11 children=10 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=843s
+[w1] it=10 children=10 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=844s
+[w3] it=16 children=13 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=877s
+[w2] it=16 children=13 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=877s
+[w0] it=13 children=13 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=878s
+[w1] it=13 children=13 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=878s
+[w3] it=20 children=16 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=911s
+[w2] it=19 children=16 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=912s
+[w0] it=16 children=16 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=912s
+[w1] it=18 children=16 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=913s
+[w2] it=22 children=19 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=946s
+[w3] it=26 children=19 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=946s
+[w0] it=19 children=19 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=946s
+[w1] it=21 children=19 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=947s
+[w2] it=28 children=22 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=980s
+[w3] it=30 children=22 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=980s
+[w0] it=25 children=22 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=981s
+[w1] it=24 children=22 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=982s
+[w3] it=34 children=25 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1014s
+[w0] it=28 children=25 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1014s
+[w2] it=34 children=25 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1014s
+[w1] it=27 children=25 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1017s
+[w3] it=37 children=28 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1048s
+[w0] it=31 children=28 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1048s
+[w2] it=37 children=28 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1049s
+[w1] it=30 children=28 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1051s
+[w0] it=37 children=31 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1083s
+[w3] it=40 children=31 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1083s
+[w2] it=41 children=31 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1083s
+[w1] it=34 children=31 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1086s
+[w3] it=43 children=34 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1117s
+[w0] it=41 children=34 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1117s
+[w2] it=44 children=34 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1118s
+[w1] it=37 children=34 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1121s
+[w3] it=46 children=37 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1150s
+[w0] it=45 children=37 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1152s
+[w2] it=47 children=37 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1153s
+[w1] it=40 children=37 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1155s
+[w3] it=49 children=40 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1185s
+[w0] it=48 children=40 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1187s
+[w2] it=51 children=40 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1187s
+[w1] it=43 children=40 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1189s
+[w3] it=53 children=43 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1220s
+[w2] it=54 children=43 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1221s
+[w0] it=54 children=43 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1222s
+[w1] it=47 children=43 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1224s
+[w3] it=56 children=46 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1255s
+[w0] it=57 children=46 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1256s
+[w2] it=57 children=46 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1256s
+[w1] it=50 children=46 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1259s
+[w3] it=60 children=49 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1290s
+[w0] it=60 children=49 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1290s
+[w2] it=60 children=49 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1291s
+[w1] it=54 children=49 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1293s
+[w3] it=65 children=52 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1324s
+[w0] it=63 children=52 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1325s
+[w2] it=63 children=52 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1325s
+[w1] it=60 children=52 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1327s
+[w3] it=68 children=55 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1359s
+[w0] it=66 children=55 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1359s
+[w2] it=66 children=55 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1360s
+[w1] it=63 children=55 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1363s
+[w0] it=69 children=58 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1393s
+[w3] it=72 children=58 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1394s
+[w2] it=70 children=58 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1395s
+[w1] it=66 children=58 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1397s
+[w0] it=74 children=61 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1428s
+[w3] it=75 children=61 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1429s
+[w2] it=73 children=61 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1430s
+[w1] it=72 children=61 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1432s
+[w3] it=78 children=64 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1463s
+[w0] it=78 children=64 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1463s
+[w2] it=77 children=64 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1465s
+[w1] it=76 children=64 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1467s
+[w3] it=81 children=67 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1497s
+[w0] it=81 children=67 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1498s
+[w2] it=80 children=67 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1499s
+[w1] it=80 children=67 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1502s
+[w3] it=84 children=70 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1532s
+[w0] it=85 children=70 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1532s
+[w2] it=83 children=70 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1534s
+[w1] it=83 children=70 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1536s
+[w3] it=88 children=73 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1566s
+[w0] it=88 children=73 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1566s
+[w2] it=86 children=73 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1569s
+[w1] it=88 children=73 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1571s
+[w0] it=91 children=76 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1601s
+[w3] it=91 children=76 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1601s
+[w2] it=91 children=76 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1604s
+[w1] it=91 children=76 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1606s
+[w3] it=94 children=79 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1635s
+[w0] it=94 children=79 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1636s
+[w2] it=94 children=79 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1639s
+[w1] it=94 children=79 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1640s
+[w3] it=98 children=82 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1670s
+[w0] it=97 children=82 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1671s
+[w2] it=97 children=82 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1675s
+[w1] it=97 children=82 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1675s
+[w3] it=102 children=85 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1705s
+[w0] it=101 children=85 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1705s
+[w2] it=100 children=85 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1709s
+[w1] it=102 children=85 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1710s
+[w0] it=104 children=88 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1739s
+[w3] it=107 children=88 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1739s
+[w2] it=103 children=88 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1744s
+[w1] it=105 children=88 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1745s
+[w3] it=110 children=91 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1774s
+[w0] it=107 children=91 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1775s
+[w2] it=107 children=91 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1778s
+[w1] it=108 children=91 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1779s
+[w3] it=115 children=94 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1808s
+[w0] it=110 children=94 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1809s
+[w2] it=110 children=94 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1813s
+[w1] it=112 children=94 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1813s
+[w3] it=120 children=97 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1843s
+[w0] it=114 children=97 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1843s
+[w2] it=114 children=97 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1847s
+[w1] it=115 children=97 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1848s
+[w0] it=117 children=100 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1878s
+[w3] it=123 children=100 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1878s
+[w2] it=118 children=100 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1881s
+[w1] it=119 children=100 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1884s
+[w3] it=126 children=103 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1912s
+[w0] it=120 children=103 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1912s
+[w2] it=122 children=103 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1916s
+[w1] it=122 children=103 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1918s
+[w0] it=124 children=106 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1947s
+[w3] it=129 children=106 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1947s
+[w2] it=128 children=106 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1951s
+[w1] it=125 children=106 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1953s
+[w0] it=127 children=109 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=1981s
+[w3] it=132 children=109 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=1983s
+[w2] it=132 children=109 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=1986s
+[w1] it=128 children=109 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=1988s
+[w0] it=130 children=112 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2016s
+[w3] it=135 children=112 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2018s
+[w2] it=135 children=112 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2020s
+[w1] it=132 children=112 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2022s
+[w0] it=133 children=115 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2050s
+[w3] it=140 children=115 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2053s
+[w2] it=139 children=115 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2055s
+[w1] it=136 children=115 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2058s
+[w0] it=136 children=118 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2085s
+[w3] it=143 children=118 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2087s
+[w2] it=142 children=118 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2089s
+[w1] it=139 children=118 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2093s
+[w0] it=139 children=121 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2119s
+[w3] it=148 children=121 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2123s
+[w2] it=145 children=121 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2123s
+[w1] it=142 children=121 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2128s
+[w0] it=144 children=124 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2154s
+[w3] it=151 children=124 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2157s
+[w2] it=148 children=124 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2158s
+[w1] it=145 children=124 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2163s
+[w0] it=147 children=127 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2189s
+[w3] it=155 children=127 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2191s
+[w2] it=151 children=127 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2192s
+[w1] it=148 children=127 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2197s
+[w0] it=151 children=130 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2223s
+[w3] it=158 children=130 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2226s
+[w2] it=154 children=130 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2228s
+[w1] it=151 children=130 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2231s
+[w0] it=154 children=133 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2257s
+[w3] it=161 children=133 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2260s
+[w2] it=157 children=133 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2262s
+[w1] it=154 children=133 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2266s
+[w0] it=159 children=136 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2292s
+[w3] it=164 children=136 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2295s
+[w2] it=160 children=136 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2297s
+[w1] it=159 children=136 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2300s
+[w0] it=163 children=139 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2326s
+[w3] it=167 children=139 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2330s
+[w2] it=163 children=139 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2332s
+[w1] it=162 children=139 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2334s
+[w0] it=167 children=142 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2361s
+[w3] it=172 children=142 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2365s
+[w2] it=168 children=142 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2367s
+[w1] it=165 children=142 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2369s
+[w0] it=171 children=145 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2396s
+[w3] it=177 children=145 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2400s
+[w2] it=173 children=145 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2402s
+[w1] it=168 children=145 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2404s
+[w0] it=174 children=148 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2431s
+[w3] it=180 children=148 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2435s
+[w2] it=176 children=148 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2436s
+[w1] it=171 children=148 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2438s
+[w0] it=178 children=151 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2465s
+[w3] it=183 children=151 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2470s
+[w2] it=179 children=151 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2471s
+[w1] it=174 children=151 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2472s
+[w0] it=182 children=154 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2499s
+[w3] it=187 children=154 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2505s
+[w2] it=183 children=154 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2505s
+[w1] it=178 children=154 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2508s
+[w0] it=186 children=157 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2534s
+[w2] it=186 children=157 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2539s
+[w3] it=190 children=157 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2540s
+[w1] it=182 children=157 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2543s
+[w0] it=190 children=160 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2569s
+[w2] it=189 children=160 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2574s
+[w3] it=194 children=160 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2574s
+[w1] it=185 children=160 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2577s
+[w0] it=193 children=163 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2603s
+[w2] it=192 children=163 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2608s
+[w3] it=197 children=163 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2609s
+[w1] it=188 children=163 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2612s
+[w0] it=198 children=166 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2637s
+[w3] it=200 children=166 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2643s
+[w2] it=197 children=166 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2643s
+[w1] it=192 children=166 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2647s
+[w0] it=201 children=169 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2672s
+[w2] it=200 children=169 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2677s
+[w3] it=203 children=169 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2678s
+[w1] it=195 children=169 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2682s
+[w0] it=205 children=172 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2707s
+[w2] it=203 children=172 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2712s
+[w3] it=206 children=172 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2712s
+[w1] it=198 children=172 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2716s
+[w0] it=208 children=175 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2741s
+[w2] it=206 children=175 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2746s
+[w3] it=211 children=175 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2746s
+[w1] it=202 children=175 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2751s
+[w0] it=211 children=178 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2776s
+[w3] it=214 children=178 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2781s
+[w2] it=210 children=178 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2781s
+[w1] it=205 children=178 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2786s
+[w0] it=216 children=181 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2811s
+[w3] it=218 children=181 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2815s
+[w2] it=216 children=181 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2815s
+[w1] it=208 children=181 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2821s
+[w0] it=220 children=184 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2845s
+[w3] it=222 children=184 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2849s
+[w2] it=219 children=184 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2850s
+[w1] it=211 children=184 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2856s
+[w0] it=224 children=187 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2880s
+[w3] it=226 children=187 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2884s
+[w2] it=223 children=187 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2885s
+[w1] it=214 children=187 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2890s
+[w0] it=227 children=190 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2915s
+[w3] it=229 children=190 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2918s
+[w2] it=228 children=190 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2919s
+[w1] it=217 children=190 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2925s
+[w0] it=230 children=193 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2949s
+[w2] it=231 children=193 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2953s
+[w3] it=232 children=193 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2953s
+[w1] it=220 children=193 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2960s
+[w0] it=233 children=196 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=2984s
+[w2] it=234 children=196 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=2988s
+[w3] it=235 children=196 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=2988s
+[w1] it=224 children=196 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=2995s
+[w0] it=236 children=199 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3018s
+[w2] it=237 children=199 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3022s
+[w3] it=238 children=199 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3022s
+[w1] it=227 children=199 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3029s
+[w0] it=239 children=202 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3052s
+[w2] it=241 children=202 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3057s
+[w3] it=241 children=202 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3057s
+[w1] it=230 children=202 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3063s
+[w0] it=242 children=205 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3086s
+[w2] it=244 children=205 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3091s
+[w3] it=244 children=205 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3092s
+[w1] it=234 children=205 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3098s
+[w0] it=245 children=208 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3120s
+[w2] it=248 children=208 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3126s
+[w3] it=248 children=208 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3126s
+[w1] it=237 children=208 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3132s
+[w0] it=249 children=211 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3155s
+[w2] it=255 children=211 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3161s
+[w3] it=251 children=211 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3161s
+[w1] it=240 children=211 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3166s
+[w0] it=253 children=214 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3189s
+[w2] it=258 children=214 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3195s
+[w3] it=257 children=214 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3196s
+[w1] it=243 children=214 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3201s
+[w0] it=256 children=217 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3223s
+[w2] it=261 children=217 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3230s
+[w3] it=260 children=217 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3230s
+[w1] it=246 children=217 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3235s
+[w0] it=259 children=220 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3258s
+[w2] it=264 children=220 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3264s
+[w3] it=264 children=220 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3265s
+[w1] it=249 children=220 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3270s
+[w0] it=263 children=223 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3292s
+[w2] it=267 children=223 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3299s
+[w3] it=267 children=223 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3300s
+[w1] it=253 children=223 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3304s
+[w0] it=268 children=226 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3327s
+[w2] it=272 children=226 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3333s
+[w3] it=270 children=226 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3335s
+[w1] it=256 children=226 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3339s
+[w0] it=271 children=229 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3361s
+[w2] it=275 children=229 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3368s
+[w3] it=275 children=229 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3370s
+[w1] it=259 children=229 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3373s
+[w0] it=274 children=232 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3396s
+[w2] it=280 children=232 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3403s
+[w3] it=278 children=232 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3405s
+[w1] it=263 children=232 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3407s
+[w0] it=277 children=235 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3431s
+[w2] it=284 children=235 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3438s
+[w3] it=281 children=235 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3439s
+[w1] it=267 children=235 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3442s
+[w0] it=280 children=238 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3466s
+[w2] it=287 children=238 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3473s
+[w3] it=284 children=238 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3474s
+[w1] it=271 children=238 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3476s
+[w0] it=284 children=241 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3501s
+[w2] it=290 children=241 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3508s
+[w3] it=287 children=241 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3509s
+[w1] it=274 children=241 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3511s
+[w0] it=288 children=244 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3535s
+[w2] it=293 children=244 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3543s
+[w3] it=291 children=244 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3543s
+[w1] it=277 children=244 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3545s
+[w0] it=291 children=247 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3569s
+[w2] it=296 children=247 best=72206.516 poolbest=72206.516 poolworst=70721.369 t=3577s
+[w3] it=294 children=247 best=72206.516 poolbest=72206.516 poolworst=70634.766 t=3578s
+[w1] it=280 children=247 best=72206.516 poolbest=72206.516 poolworst=70703.033 t=3580s
+[w2] DONE it=298 children=249 best=72206.516 t=3600s
+[w3] DONE it=297 children=249 best=72206.516 t=3601s
+[w1] DONE it=282 children=249 best=72206.516 t=3601s
+[w0] it=294 children=250 best=72206.516 poolbest=72206.516 poolworst=70762.157 t=3601s
+[w0] DONE it=294 children=250 best=72206.516 t=3601s
+best across workers: 72206.516 (seed 0)
+per-worker best: [72206.516, 72206.516, 72206.516, 72206.516]
+=== NO IMPROVEMENT (best 72206.516 <= bank 72206.516); bank untouched ===

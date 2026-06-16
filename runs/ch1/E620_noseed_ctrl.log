@@ -1,0 +1,9 @@
+unused E 99 / L 99; 99 empties matched, median |iE-iL|=38.3deg
+E-620 confound-breaker: 4 known-feasible controls, bank_row WITHHELD, 2 workers. (bank-seeded these were 4/4 feasible: (0,0)819 (2,168)721 (1,235)783 (3,358)418 kg)
+[c1] CTRL-NOSEED (1,235) di=35.7deg LOST(no-seed) :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=3.85e-03 de=1.04e+02 di=41.17deg [886s]
+[c0] CTRL-NOSEED (0,0) di=0.0deg LOST(no-seed) :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=1.16e-02 de=1.03e+02 di=0.00deg [1159s]
+[c1] CTRL-NOSEED (3,358) di=8.7deg LOST(no-seed) :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=9.24e-03 de=9.69e+01 di=34.70deg [676s]
+[c0] CTRL-NOSEED (2,168) di=38.9deg LOST(no-seed) :: ARRIVAL-UNREACHABLE(solve=None) moon_resid da/L=4.90e-03 de=9.02e+01 di=22.75deg [1057s]
+
+=== CONTROLS-NOSEED 0/4 recovered without bank seed ===
+  >>> ORACLE CANNOT RECOVER WITHOUT ANSWER-SEED -> empties' null is a SEEDING ARTIFACT (false null) -> fill lever STAYS OPEN, need real Lambert/feasible seeds <<<

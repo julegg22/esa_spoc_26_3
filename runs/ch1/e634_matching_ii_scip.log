@@ -1,0 +1,22 @@
+E-633 matching-ii: n=92103 bank=72206.5160 leader=73714.0330 tl=14400.0s thr=4
+  warm-start accepted=True
+WARNING: ignore partial solution (0) because unknown rate is too large (0.901078 > 0.85)
+feasible solution found by trivial heuristic after 0.3 seconds, objective value 0.000000e+00
+presolving:
+(round 1, exhaustive) 6 del vars, 8 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 0 chg coeffs, 29992 upgd conss, 0 impls, 29992 clqs, 0 implints
+   (1.4s) probing: 51/92097 (0.1%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (1.4s) probing aborted: 50/50 successive totally useless probings
+   (1.5s) symmetry computation started: requiring (bin +, int +, cont +), (fixed: bin -, int -, cont -)
+   (1.6s) no symmetry present (symcode time: 0.03)
+presolving (2 rounds: 2 fast, 2 medium, 2 exhaustive):
+ 6 deleted vars, 8 deleted constraints, 0 added constraints, 0 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 29992 cliques, 0 implied integral variables (0 bin, 0 int, 0 cont)
+presolved problem has 92097 variables (92097 bin, 0 int, 0 cont) and 29992 constraints
+  29992 constraints of type <setppc>
+transformed objective value is always integral (scale: 0.001)
+Presolving Time: 1.48
+transformed 1/1 original solutions to the transformed problem space
+
+ time | node  | left  |LP iter|LP it/n|mem/heur|mdpt |vars |cons |rows |cuts |sepa|confs|strbr|  dualbound   | primalbound  |  gap   | compl. 
+p12.4s|     1 |     0 |     0 |     - |  clique|   0 |  92k|  29k|  29k|   0 |  0 |   0 |   0 | 4.601912e+05 | 5.887804e+04 | 681.60%| unknown
+Interrupted system call ; error code 4

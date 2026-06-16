@@ -1,0 +1,3 @@
+[E-594] comp=0 size=150 B=6 topK=4 WIN=8.0 STEPS=80 budget=400s deg(min/med/max)=129/146/149
+  [start=978] COMPLETE 150/150 mk=16.81d (0.113 d/leg) (89s) *** BEST
+[FINAL] beam COMPLETED comp0: 150 nodes mk=16.81d (0.113 d/leg) -> /tmp/ch2_e594_comp0.json. GO assemble.

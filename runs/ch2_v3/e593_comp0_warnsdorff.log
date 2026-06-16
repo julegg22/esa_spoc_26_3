@@ -1,0 +1,10 @@
+[E-593] comp0 size=601 internal-deg min=6 med=152 max=163
+  [start=2] STRANDED 28/601 mk=47.05d (1s) stuck_at=910
+  [start=134] STRANDED 22/601 mk=36.25d (0s) stuck_at=602
+  [start=163] STRANDED 172/601 mk=173.20d (28s) stuck_at=868
+  [start=971] STRANDED 192/601 mk=190.05d (28s) stuck_at=701
+  [start=89] STRANDED 31/601 mk=53.85d (0s) stuck_at=12
+  [start=346] STRANDED 10/601 mk=19.20d (0s) stuck_at=487
+  [start=947] STRANDED 190/601 mk=186.35d (28s) stuck_at=464
+  [start=931] STRANDED 17/601 mk=29.40d (0s) stuck_at=31
+[FINAL] Warnsdorff STILL strands comp0 on all starts => need beam/backtrack.

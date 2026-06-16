@@ -1,0 +1,4 @@
+[E-594] comp=0 size=150 B=6 topK=4 WIN=8.0 STEPS=80 budget=120s deg(min/med/max)=129/146/149
+  [start=978] partial 26/150 mk=1.75d (0.070 d/leg) (30s)
+  [start=523] partial 26/150 mk=1.85d (0.074 d/leg) (30s)
+Interrupted system call ; error code 4

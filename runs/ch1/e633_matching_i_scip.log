@@ -1,0 +1,35 @@
+E-633 matching-i: n=25000 bank=33352.9860 leader=33555.6150 tl=1500.0s thr=4
+  warm-start accepted=True
+feasible solution found by completesol heuristic after 0.4 seconds, objective value 3.335299e+04
+presolving:
+(round 1, exhaustive) 2 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 0 chg coeffs, 15000 upgd conss, 0 impls, 15000 clqs, 0 implints
+   (0.6s) probing: 51/24998 (0.2%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (0.6s) probing aborted: 50/50 successive totally useless probings
+   (0.7s) symmetry computation started: requiring (bin +, int +, cont +), (fixed: bin -, int -, cont -)
+   (0.7s) no symmetry present (symcode time: 0.00)
+presolving (2 rounds: 2 fast, 2 medium, 2 exhaustive):
+ 2 deleted vars, 0 deleted constraints, 0 added constraints, 0 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 15000 cliques, 0 implied integral variables (0 bin, 0 int, 0 cont)
+presolved problem has 24998 variables (24998 bin, 0 int, 0 cont) and 15000 constraints
+  15000 constraints of type <setppc>
+transformed objective value is always integral (scale: 0.001)
+Presolving Time: 0.63
+transformed 2/2 original solutions to the transformed problem space
+
+ time | node  | left  |LP iter|LP it/n|mem/heur|mdpt |vars |cons |rows |cuts |sepa|confs|strbr|  dualbound   | primalbound  |  gap   | compl. 
+  296s|     1 |     0 |100608 |     - |   194M |   0 |  24k|  15k|  15k|   0 |  0 |   0 |   0 | 3.412053e+04 | 3.335299e+04*|   2.30%| unknown
+  374s|     1 |     0 |111815 |     - |   245M |   0 |  24k|  15k|  15k|   6 |  1 |   0 |   0 | 3.411891e+04 | 3.335299e+04*|   2.30%| unknown
+  419s|     1 |     0 |114602 |     - |   249M |   0 |  24k|  15k|  15k|   8 |  2 |   0 |   0 | 3.411879e+04 | 3.335299e+04*|   2.30%| unknown
+  461s|     1 |     0 |120467 |     - |   254M |   0 |  24k|  15k|  15k|  13 |  3 |   0 |   0 | 3.411855e+04 | 3.335299e+04*|   2.30%| unknown
+ 1500s|     1 |     2 |130467 |     - |   269M |   0 |  24k|  15k|  15k|  13 |  4 |   0 |   0 | 3.411855e+04 | 3.335299e+04*|   2.30%| unknown
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 1500.10
+Solving Nodes      : 1
+Primal Bound       : +3.33529860000000e+04 (13 solutions)
+Dual Bound         : +3.41185491970147e+04
+Gap                : 2.30 %
+
+=== E-633 matching-i [1500s] ===
+  status=timelimit obj=33352.9860 dual_bound=34118.5492 gap=0.02295 feasible=True
+  vs bank 33352.9860 (+0.0000) vs leader 33555.6150 (-202.6290)

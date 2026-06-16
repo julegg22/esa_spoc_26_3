@@ -1,0 +1,5 @@
+[E-616] n=49 TOF_MAX=40.0d  current cheap directed pairs=138/2352 (5.9%)
+  current out-deg min/med/max=2/2/5; low-deg(<=2) nodes=33 -> [0, 4, 5, 6, 8, 9, 11, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 43, 44, 47]
+  scanning 2214 currently-UNREACHABLE pairs at tof in (8.0,40.0]d, epoch step 1.0d, 3 workers...
+    500/2214 scanned, 0 new edges, 3181s
+Interrupted system call ; error code 4

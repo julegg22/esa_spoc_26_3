@@ -1,0 +1,4 @@
+[E-594] comp=3 size=601 B=16 topK=6 WIN=8.0 STEPS=80 budget=2800s deg(min/med/max)=6/152/163
+  [start=134] partial 566/601 mk=475.97d (0.842 d/leg) (878s)
+  [start=163] partial 366/601 mk=291.37d (0.798 d/leg) (601s)
+[FINAL] beam did NOT complete the component => need backtracking / LKH-intra or larger beam.

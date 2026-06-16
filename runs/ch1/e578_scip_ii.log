@@ -1,0 +1,37 @@
+matching-ii: n=92103, bank mass 72204.293 (9110 sel); SCIP tlim=10800s threads=1
+model built: 92103 vars, 29992 packing constraints, dt=1.3s
+warm-start bank sol accepted=True
+1/1 feasible solution given by solution candidate storage, new primal bound 7.220429e+04
+
+presolving:
+(round 1, exhaustive) 6 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 0 chg coeffs, 29992 upgd conss, 0 impls, 29992 clqs, 0 implints
+   (1.6s) probing: 51/92097 (0.1%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (1.6s) probing aborted: 50/50 successive totally useless probings
+   (1.7s) symmetry computation started: requiring (bin +, int +, cont +), (fixed: bin -, int -, cont -)
+   (1.9s) no symmetry present (symcode time: 0.06)
+presolving (2 rounds: 2 fast, 2 medium, 2 exhaustive):
+ 6 deleted vars, 0 deleted constraints, 0 added constraints, 0 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 29992 cliques, 0 implied integral variables (0 bin, 0 int, 0 cont)
+presolved problem has 92097 variables (92097 bin, 0 int, 0 cont) and 29992 constraints
+  29992 constraints of type <setppc>
+transformed objective value is always integral (scale: 0.001)
+Presolving Time: 1.83
+transformed 2/2 original solutions to the transformed problem space
+
+ time | node  | left  |LP iter|LP it/n|mem/heur|mdpt |vars |cons |rows |cuts |sepa|confs|strbr|  dualbound   | primalbound  |  gap   | compl. 
+  180m|     1 |     0 |375885 |     - |   645M |   0 |  92k|  29k|  29k|   0 |  0 |   0 |   0 | 4.601912e+05 | 7.220429e+04 | 537.35%| unknown
+(node 1) LP solver hit time limit in LP 2 -- using pseudo solution instead
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 10800.01
+Solving Nodes      : 1
+Primal Bound       : +7.22042930000000e+04 (3 solutions)
+Dual Bound         : +4.60191176000000e+05
+Gap                : 537.35 %
+
+=== SCIP matching-ii status=timelimit ===
+  incumbent (primal) = 72204.293
+  dual bound (ceil)  = 460191.176  (gap to optimum <= 387986.883 = 537.346%)
+  bank was 72204.293; SCIP delta = +0.000
+  wall = 10801s
+=== NO IMPROVEMENT over bank 72204.293; bank untouched. Dual bound 460191.176 => headroom <= 387986.9 remains ===

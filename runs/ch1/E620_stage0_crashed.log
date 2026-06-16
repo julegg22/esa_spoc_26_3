@@ -1,0 +1,36 @@
+unused E 99 / L 99; 99 empties matched, median |iE-iL|=38.3deg
+E-620 Stage0: 4 controls + 8 empties, 4 workers, PairUDP+multi_seed+sade(300)->cmaes(300).
+[w1] CTRL (1,235) di=35.7deg mass=1 kg dv=4149 [743s]
+[w3] CTRL (3,358) di=8.7deg mass=305 kg dv=5170 [938s]
+[w0] CTRL (0,0) di=0.0deg mass=819 kg dv=4063 [977s]
+[w2] CTRL (2,168) di=38.9deg mass=721 kg dv=4300 [979s]
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/tmp/ch1_e620_stage0_fill.py", line 129, in worker
+    reason = diagnose(udp, pop.champion_x, e, l)
+  File "/tmp/ch1_e620_stage0_fill.py", line 93, in diagnose
+    oa, oe, oi = state2moon(pv_arr)
+    ^^^^^^^^^^
+ValueError: too many values to unpack (expected 3)
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/ch1_e620_stage0_fill.py", line 171, in <module>
+    main(ne, nw)
+    ~~~~^^^^^^^^
+  File "/tmp/ch1_e620_stage0_fill.py", line 146, in main
+    res = pool.map(worker, jobs)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/pool.py", line 774, in get
+    raise self._value
+ValueError: too many values to unpack (expected 3)

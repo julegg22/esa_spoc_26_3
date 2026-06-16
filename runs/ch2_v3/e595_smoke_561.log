@@ -1,0 +1,5 @@
+[E-595] partial=ch2_e594_comp3_partial.json comp=3 path=561/601 leftover=40 start_mk=283.31d walk_ok=True WIN=8.0 STEPS=80 leftover_deg(min/med/max)=8/12/157
+  inserted=5/40 last_u=118 (deg 10, 6 slots) at p=439 mk=570.36d path=566 t=6s
+  inserted=10/40 last_u=684 (deg 14, 9 slots) at p=340 mk=626.66d path=571 t=21s
+[RESULT] inserted=11/40 path=572/601 PARTIAL mk=777.16d (1.361 d/leg) failed=29 (197s)
+[FINAL] 29 nodes still un-insertable -> /tmp/ch2_e595_comp3_partial.json. Next: backtracking-beam or relax WIN for the failed set.

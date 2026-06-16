@@ -1,0 +1,59 @@
+E-626 matching-ii: bank=72206.5160 leader=73714.0330 budget=1800.0s nw=4
+[coop seed=3 f=0.30] r=25 best=72206.5 t=1s
+[coop seed=0 f=0.30] r=25 best=72206.5 t=1s
+[coop seed=1 f=0.45] r=25 best=72206.5 t=7s
+[coop seed=2 f=0.65] r=25 best=72206.5 t=32s
+[coop seed=3 f=0.65] r=50 best=72206.5 t=114s
+[coop seed=0 f=0.65] r=50 best=72206.5 t=116s
+[coop seed=1 f=0.65] r=50 best=72206.5 t=185s
+[coop seed=2 f=0.65] r=50 best=72206.5 t=255s
+[coop seed=3 f=0.65] r=75 best=72206.5 t=326s
+[coop seed=0 f=0.65] r=75 best=72206.5 t=328s
+[coop seed=1 f=0.65] r=75 best=72206.5 t=396s
+[coop seed=2 f=0.65] r=75 best=72206.5 t=466s
+[coop seed=3 f=0.65] r=100 best=72206.5 t=536s
+[coop seed=0 f=0.65] r=100 best=72206.5 t=543s
+[coop seed=1 f=0.65] r=100 best=72206.5 t=607s
+[coop seed=2 f=0.65] r=100 best=72206.5 t=678s
+[coop seed=3 f=0.65] r=125 best=72206.5 t=746s
+[coop seed=0 f=0.65] r=125 best=72206.5 t=751s
+[coop seed=1 f=0.65] r=125 best=72206.5 t=815s
+[coop seed=2 f=0.65] r=125 best=72206.5 t=890s
+[coop seed=3 f=0.65] r=150 best=72206.5 t=957s
+[coop seed=0 f=0.65] r=150 best=72206.5 t=962s
+[coop seed=1 f=0.65] r=150 best=72206.5 t=1025s
+[coop seed=2 f=0.65] r=150 best=72206.5 t=1096s
+[coop seed=3 f=0.65] r=175 best=72206.5 t=1168s
+[coop seed=0 f=0.65] r=175 best=72206.5 t=1170s
+[coop seed=1 f=0.65] r=175 best=72206.5 t=1233s
+[coop seed=2 f=0.65] r=175 best=72206.5 t=1306s
+[coop seed=3 f=0.65] r=200 best=72206.5 t=1383s
+[coop seed=0 f=0.65] r=200 best=72206.5 t=1385s
+[coop seed=1 f=0.65] r=200 best=72206.5 t=1448s
+[coop seed=2 f=0.65] r=200 best=72206.5 t=1519s
+[coop seed=3 f=0.65] r=225 best=72206.5 t=1592s
+[coop seed=0 f=0.65] r=225 best=72206.5 t=1596s
+[coop seed=1 f=0.65] r=225 best=72206.5 t=1656s
+[coop seed=2 f=0.65] r=225 best=72206.5 t=1726s
+[coop seed=3 f=0.65] r=250 best=72206.5 t=1800s
+[coop seed=0 f=0.65] r=250 best=72206.5 t=1805s
+{
+  "problem": "matching-ii",
+  "method": "parallel_coop_mip_lns",
+  "n_workers": 4,
+  "best_mass": 72206.516,
+  "best_seed": 0,
+  "n_selected": 9111,
+  "feasible": true,
+  "wall_s": 1805.0,
+  "per_worker_mass": [
+    72206.5,
+    72206.5,
+    72206.5,
+    72206.5
+  ],
+  "artifact": "/tmp/match_out/matching-ii.json"
+}
+
+=== E-626 matching-ii RESULT: best=72206.5160 vs bank 72206.5160 (+0.0000) vs leader 73714.0330 (-1507.5170) ===
+  -> no improvement over bank.

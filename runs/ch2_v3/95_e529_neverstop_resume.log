@@ -1,0 +1,67 @@
+E-529 DP-based parallel ALNS. n_chains=3 wall_h=48.0
+[c0] loading ultrafine table...
+[c2] loading ultrafine table...
+[c1] loading ultrafine table...
+[c0] table loaded in 0.1s q=0.05d T=4000
+[c1] table loaded in 0.1s q=0.05d T=4000
+[c0] init bank mk=112.9960d
+[c0] resumed ckpt mk=138.5281d
+[c1] init bank mk=112.9960d
+[c1] resumed ckpt mk=129.9756d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] table loaded in 0.2s q=0.05d T=4000
+[c2] init bank mk=112.9960d
+[c2] resumed ckpt mk=132.3256d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c0] iter=5 elapsed=0.0min DP_ok=1 DP_fail=4 accepted=1 rate=121.1/min state=138.5281 best=112.9960 T=4.995
+[c2] iter=45 elapsed=0.1min DP_ok=1 DP_fail=44 accepted=1 rate=431.7/min state=135.2258 best=112.9960 T=4.995
+[c1] iter=50 elapsed=0.3min DP_ok=1 DP_fail=49 accepted=1 rate=193.9/min state=129.9756 best=112.9960 T=4.995
+[c1] iter=380 elapsed=1.7min DP_ok=7 DP_fail=373 accepted=5 rate=227.1/min state=132.5756 best=112.9960 T=4.965
+[c1] iter=505 elapsed=2.1min DP_ok=9 DP_fail=496 accepted=6 rate=244.8/min state=130.6756 best=112.9960 T=4.955
+[c1] iter=595 elapsed=2.4min DP_ok=11 DP_fail=584 accepted=6 rate=244.6/min state=130.6756 best=112.9960 T=4.945
+[c1] iter=645 elapsed=2.7min DP_ok=12 DP_fail=633 accepted=6 rate=240.7/min state=130.6756 best=112.9960 T=4.940
+[c2] iter=950 elapsed=3.4min DP_ok=9 DP_fail=941 accepted=7 rate=276.7/min state=132.3256 best=112.9960 T=4.955
+[c1] iter=1205 elapsed=5.3min DP_ok=17 DP_fail=1188 accepted=6 rate=227.3/min state=130.6756 best=112.9960 T=4.916
+[c1] iter=1330 elapsed=5.8min DP_ok=19 DP_fail=1311 accepted=7 rate=228.8/min state=137.3264 best=112.9960 T=4.906
+[c2] iter=2150 elapsed=7.9min DP_ok=21 DP_fail=2129 accepted=15 rate=273.1/min state=137.4264 best=112.9960 T=4.896
+[c2] iter=2705 elapsed=9.7min DP_ok=25 DP_fail=2680 accepted=19 rate=278.0/min state=136.1758 best=112.9960 T=4.876
+[c1] iter=2440 elapsed=11.0min DP_ok=27 DP_fail=2413 accepted=10 rate=222.5/min state=134.2758 best=112.9960 T=4.867
+[c2] iter=3000 elapsed=11.0min DP_ok=27 DP_fail=2973 accepted=21 rate=272.7/min state=136.1758 best=112.9960 T=4.867
+[c0] iter=3835 elapsed=11.8min DP_ok=30 DP_fail=3805 accepted=27 rate=324.5/min state=133.5289 best=112.9960 T=4.852
+[c0] iter=3870 elapsed=11.9min DP_ok=31 DP_fail=3839 accepted=28 rate=324.6/min state=143.5274 best=112.9960 T=4.847
+[c1] iter=2800 elapsed=12.6min DP_ok=28 DP_fail=2772 accepted=11 rate=221.4/min state=134.2758 best=112.9960 T=4.862
+[c2] iter=3755 elapsed=13.9min DP_ok=33 DP_fail=3722 accepted=26 rate=270.4/min state=135.2258 best=112.9960 T=4.838
+[c1] iter=3420 elapsed=15.1min DP_ok=34 DP_fail=3386 accepted=14 rate=226.0/min state=132.5756 best=112.9960 T=4.833
+[c1] iter=3460 elapsed=15.3min DP_ok=35 DP_fail=3425 accepted=14 rate=225.5/min state=132.5756 best=112.9960 T=4.828
+[c0] iter=4910 elapsed=15.5min DP_ok=35 DP_fail=4875 accepted=32 rate=317.7/min state=138.7781 best=112.9960 T=4.828
+[c2] iter=4590 elapsed=16.8min DP_ok=42 DP_fail=4548 accepted=33 rate=273.2/min state=138.4764 best=112.9960 T=4.794
+[c0] iter=5365 elapsed=17.0min DP_ok=37 DP_fail=5328 accepted=34 rate=315.5/min state=133.5289 best=112.9960 T=4.818
+[c1] iter=4060 elapsed=18.0min DP_ok=41 DP_fail=4019 accepted=18 rate=225.0/min state=127.0255 best=112.9960 T=4.799
+[c1] iter=4080 elapsed=18.2min DP_ok=42 DP_fail=4038 accepted=18 rate=224.7/min state=127.0255 best=112.9960 T=4.794
+[c0] iter=5915 elapsed=18.9min DP_ok=46 DP_fail=5869 accepted=41 rate=313.6/min state=138.5281 best=112.9960 T=4.775
+[c1] iter=4280 elapsed=19.1min DP_ok=46 DP_fail=4234 accepted=21 rate=224.4/min state=130.6756 best=112.9960 T=4.775
+[c1] iter=4695 elapsed=20.8min DP_ok=50 DP_fail=4645 accepted=23 rate=225.7/min state=139.9264 best=112.9960 T=4.756
+[c2] iter=5985 elapsed=21.2min DP_ok=60 DP_fail=5925 accepted=46 rate=282.9/min state=143.9772 best=112.9960 T=4.709
+[c2] iter=6275 elapsed=22.2min DP_ok=63 DP_fail=6212 accepted=49 rate=282.3/min state=139.9264 best=112.9960 T=4.695
+[c0] iter=6970 elapsed=22.6min DP_ok=54 DP_fail=6916 accepted=48 rate=308.0/min state=134.0283 best=112.9960 T=4.737
+[c0] iter=7185 elapsed=23.3min DP_ok=56 DP_fail=7129 accepted=50 rate=307.8/min state=134.0283 best=112.9960 T=4.728
+[c0] iter=7205 elapsed=23.4min DP_ok=57 DP_fail=7148 accepted=51 rate=307.5/min state=132.5789 best=112.9960 T=4.723
+[c1] iter=5240 elapsed=23.5min DP_ok=57 DP_fail=5183 accepted=28 rate=222.7/min state=138.7764 best=112.9960 T=4.723
+[c2] iter=6650 elapsed=23.6min DP_ok=68 DP_fail=6582 accepted=53 rate=281.3/min state=143.4272 best=112.9960 T=4.671
+[c0] iter=7275 elapsed=23.7min DP_ok=59 DP_fail=7216 accepted=53 rate=307.6/min state=132.5789 best=112.9960 T=4.713
+[c1] iter=5425 elapsed=24.4min DP_ok=58 DP_fail=5367 accepted=29 rate=222.4/min state=136.1758 best=112.9960 T=4.718
+[c0] iter=7660 elapsed=25.1min DP_ok=63 DP_fail=7597 accepted=57 rate=305.0/min state=135.6789 best=112.9960 T=4.695
+[c2] iter=7405 elapsed=26.2min DP_ok=73 DP_fail=7332 accepted=56 rate=282.7/min state=139.7764 best=112.9960 T=4.648
+[c1] iter=5870 elapsed=26.4min DP_ok=61 DP_fail=5809 accepted=31 rate=222.3/min state=131.6256 best=112.9960 T=4.704
+[c0] iter=8335 elapsed=27.5min DP_ok=67 DP_fail=8268 accepted=60 rate=303.3/min state=136.1783 best=112.9960 T=4.676
+Interrupted system call ; error code 4
