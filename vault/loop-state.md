@@ -1,6 +1,8 @@
 # Loop state — SpOC4 campaign autopilot
 
-Updated: 2026-06-16 15:40 (update this timestamp every write)
+Updated: 2026-06-16 16:45 (update this timestamp every write)
+
+**★ TICK ~16:45 (cheap health-check: E-643 chain HEALTHY, banking monotonically; trajectory → 248,514).** Chain round1 CMA +885 (→247,992), rematch +245 (→248,237), now mid-round2 CMA on-disk **248,514.4 feasible**. **Session: 236,420.5 → 248,514.4 (+12,094kg).** Gains diminishing (round1 CMA +885 vs earlier +1899) — nearing plateau but still positive. Chain ACTIVE (round 2/3, ~1.5h left), monotonic↑, feasible — healthy. NOT committing mid-chain (avoid git/script write race; on-disk gain is guard-banked + safe regardless). NEXT: let chain finish, then validate final + commit cumulative + declare plateau if last full round <~500kg. Realized ~+12.1k of E-605's +15-25k potential. Rank still 6.
 
 **★★ TICK ~15:40 (trajectory +10687kg session → 247,107; CMA diminishing; CHAINED 3 more rounds unattended).** E-642 CMA p4 +1149 (14 pairs, →247,107) — now diminishing (was +1899/22 pairs). **Session: 236,420.5 → 247,107.4 (+10,687kg), validated+committed.** Within E-605's +15-25k range. Pattern proven safe (all official-gated) ⇒ **launched E-643 chain** (`/tmp/traj_refine_chain.sh`, pid 2969824, log `runs/ch1/e643_refine_chain.log`): 3 rounds of CMA-refine→rematch unattended (~2.4h), each guard-gated (banks only if strictly better, re-validated). Reduces per-tick cadence overhead now the loop is trustworthy. HEALTH-CHECK each tick: chain alive + on-disk score monotonic↑ + feasible. After chain: validate final on-disk official + commit + assess plateau (expect ~+2-4k more → ~250k then flat as mean ΔV→3850 floor). Rank still 6. Backups: per-round handled by scripts' own .bak.e564 + my dated ones. NEXT: monitor E-643, commit cumulative gain, declare plateau when a full round yields <~500kg. Task #19 productive.
 
