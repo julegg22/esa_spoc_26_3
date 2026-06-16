@@ -1,6 +1,17 @@
 # Loop state — SpOC4 campaign autopilot
 
-Updated: 2026-06-16 08:05 (update this timestamp every write)
+Updated: 2026-06-16 08:55 (update this timestamp every write)
+
+**★★★★ TICK ~08:55 (DEEP REVIEW — matching EXHAUSTED w/ free tools; full leaderboard refetch; frontier reached; dominant lever = SUBMISSION).** E-634 SCIP matching-ii root-stuck 2h (node 1, no primal gain, 99.9% CPU) → KILLED. **Matching fully exhausted: LNS + HiGHS + SCIP, both instances, all plateau/root-stuck ⇒ SOLVER-BOUND, free tools cannot reach leaders.** Refetched all 6 boards (2026-06-16 ~08:50). **Consolidated standings (banks verified, all UNSUBMITTED):**
+| Instance | wt | bank | r1 | our rank |
+|---|---|---|---|---|
+| Ch2-medium | ×4/3 | 189.10d | 195.68 | **1** |
+| Ch2-large | ×16/9 | 932.53d | 424.62 | **2** |
+| Ch2-small | ×1 | 112.996d | 101.65 | 6 (1.2d→r5) |
+| Ch1-matching-i | ×1 | 33,353 | 33,556 | 4 |
+| Ch1-matching-ii | ×4/3 | 72,206 | 73,714 | ~4-5 |
+| Ch1-trajectory | ×1.778 | 236,420 | 473,333 | ~8-10 |
+**VERDICT: campaign at its FREE-TOOL FRONTIER.** Dominant UNREALIZED value = medium(r1)+large(r2) banked but unsubmitted ≈ 29 pts earning 0. **#1 lever = SUBMISSION (user-gated).** No high-prob free-tool lever for NEW gains: matching solver-bound (exhausted), small basin-locked+partly out-of-model, large r1=moonshot, trajectory 2×/multi-week. **Only credible NEW top-rank lever = academic commercial solver (Gurobi/CPLEX, free for Honda RI research) on matching i/ii (user-gated TOOL)** — [[objective-optimal-not-points]] high-prob gate: this is THE high-prob lever, but needs a tool the user supplies. Surfacing consolidated status + both user-gated levers (submit; academic solver). Cores idle (per [[objective-optimal-not-points]], NOT grinding low-prob plateaued instances — that gate overrides never-idle's bank-grinding for low-EV cases; continuing in-depth analysis + documentation instead). Tasks: matching tasks closed; writing E-635 matching-solver-bound writeup.
 
 **★ TICK ~08:05 (cheap; E-634 SCIP matching-ii HEALTHY at root, warm-start held).** Worker (pid 2889033, NOT wrapper 2889030) = 100% CPU, R, 63min — grinding the root node of the 92k-var problem (SCIP logs sparsely; only 2 display lines in 1h). **Warm-start accepted=True ⇒ incumbent ≥72,206** (the displayed primalbound 58,878 was a pre-warmstart clique-heuristic value at 12.4s, NOT the real incumbent — caveat noted). No primal improvement yet (root-bound, like matching-i; this bigger instance may also stay root-stuck). Let it continue (3h budget left). No bank delta. If by ~2-3h it's still root-stuck with no primal gain, conclude SCIP can't crack matching-ii either in free-tool time and STOP (matching fully exhausted: LNS + HiGHS + SCIP on both instances). Reminder applied: checked WORKER pid CPU, not micromamba wrapper.
 
