@@ -47,11 +47,11 @@ Same shape as Ch1-trajectory (optimised the 5% term, left the 95% term unbuilt).
 
 ## Plan (assumption-falsifying, ranked by info gain) — QUEUED behind Ch1 E-649
 
-1. **S1** `/tmp/ch2_s1_freeepoch_retime.py` — CMA-ES over the 96 schedule vars
+1. **S1** `scripts/ch2_s1_freeepoch_retime.py` — CMA-ES over the 96 schedule vars
    (epochs+ToFs) of the FIXED bank order, official `kt.fitness`, wait+ToF encoding
    (monotone by construction). If makespan < 112.996 for the SAME order ⇒ the gap
    is SCHEDULE optimisation, not order search (falsifies A2/A5/A6). Cheap.
-2. **S2** `/tmp/ch2_s2_shorttof_probe.py` — scan ToF ∈ [0.001, 0.025) for all (i,j);
+2. **S2** `scripts/ch2_s2_shorttof_probe.py` — scan ToF ∈ [0.001, 0.025) for all (i,j);
    count cheap/fast edges the table misses (falsifies A1). Cheap.
 3. **S3** (build) joint (order, epoch) global metaheuristic on the official
    evaluator, not table-restricted (falsifies A3/A4) — the competitor architecture;
