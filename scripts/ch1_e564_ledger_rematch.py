@@ -57,6 +57,7 @@ CACHES = [
     "tier2_heavy_results.json",
     "unused_pool_results.json",
     "e647_fill_results.json",
+    "e649_dense_results.json",
 ]
 
 _logf = open(LOG, "a", buffering=1)
