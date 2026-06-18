@@ -55,12 +55,25 @@ def refine(order, enc0, budget):
     return best_mk, best_enc
 
 
+_ADJ = np.load('/tmp/ch2_small_cheap_adj.npy')       # static cheap-edge adjacency (sparse, ~2.8/node)
+_NEIGH = [list(np.where(_ADJ[i])[0]) for i in range(n)]
+
+
 def perturb(order, rng):
+    """Feasibility-AWARE moves: the cheap graph is sparse (~2.8 nbrs/node), so random
+    relocations break legs. Bias toward placing a node next to one of its cheap neighbors."""
     o = order[:]
-    if rng.random() < 0.5:                       # 2-swap
-        a, b = rng.sample(range(n), 2); o[a], o[b] = o[b], o[a]
-    else:                                        # or-opt: move a short segment
-        L = rng.randint(1, 3); i = rng.randint(0, n - L); seg = o[i:i + L]; del o[i:i + L]
+    r = rng.random()
+    if r < 0.55 and _NEIGH:                       # cheap-edge-guided relocate
+        x = rng.randrange(n); nb = _NEIGH[x]
+        if nb:
+            o.remove(x); tgt = nb[rng.randrange(len(nb))]; j = o.index(tgt)
+            o.insert(j + (1 if rng.random() < 0.5 else 0), x)
+            return o
+    if r < 0.8:                                    # segment reversal (2-opt)
+        a, b = sorted(rng.sample(range(n), 2)); o[a:b + 1] = o[a:b + 1][::-1]
+    else:                                          # short or-opt
+        L = rng.randint(1, 2); i = rng.randint(0, n - L); seg = o[i:i + L]; del o[i:i + L]
         j = rng.randint(0, len(o)); o[j:j] = seg
     return o
 
