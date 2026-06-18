@@ -53,10 +53,11 @@ RESEED_INTERVAL_S = 4 * 3600
 EXC_PENALTY = 50.0   # added to exc-edge min-tof when ranking inserts (prefer cheap)
 
 # ── ILS (basin-hopping) schedule ──
-RRT_DEV = 0.01        # accept sideways within 1% of best (~1.1d band) for diversity
+import os
+RRT_DEV = float(os.environ.get('E617_RRT', '0.06'))   # accept within X% of best (walk uphill to escape deep basin; was 0.01=frozen)
 KICK_MIN = 3          # base perturbation size (nodes destroyed)
-KICK_MAX = 12         # max perturbation when stagnating
-ESCALATE_EVERY = 60   # stale iters before kick grows by 1
+KICK_MAX = int(os.environ.get('E617_KICKMAX', '8'))   # cap perturbation lower so it lands near the wider band
+ESCALATE_EVERY = 100  # stale iters before kick grows by 1 (slower escalation)
 STALE_LIMIT = 250     # stale iters before hard-restart from best
 
 
