@@ -110,7 +110,19 @@ def main(seed=0, budget=6000, wall_h=48.0):
 
 
 if __name__ == "__main__":
-    sd = int(sys.argv[1]) if len(sys.argv) > 1 else 0
-    bg = int(sys.argv[2]) if len(sys.argv) > 2 else 6000
-    wh = float(sys.argv[3]) if len(sys.argv) > 3 else 48.0
-    main(sd, bg, wh)
+    if len(sys.argv) > 1 and sys.argv[1] == "all":
+        # ONE process spawns 4 chains internally (avoids sandbox direct-python death
+        # AND the micromamba env-lock serialization of 4 separate `micromamba run`s).
+        import multiprocessing as mp
+        bg = int(sys.argv[2]) if len(sys.argv) > 2 else 6000
+        wh = float(sys.argv[3]) if len(sys.argv) > 3 else 48.0
+        procs = [mp.Process(target=main, args=(s, bg, wh)) for s in range(4)]
+        for p in procs:
+            p.start()
+        for p in procs:
+            p.join()
+    else:
+        sd = int(sys.argv[1]) if len(sys.argv) > 1 else 0
+        bg = int(sys.argv[2]) if len(sys.argv) > 2 else 6000
+        wh = float(sys.argv[3]) if len(sys.argv) > 3 else 48.0
+        main(sd, bg, wh)
