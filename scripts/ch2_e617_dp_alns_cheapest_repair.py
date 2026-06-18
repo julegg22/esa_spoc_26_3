@@ -137,11 +137,16 @@ def alns_chain(args):
     bank = json.load(open(bank_path))
     dv = bank[0]['decisionVector']
     perm = [int(x) for x in dv[2*(n-1):]]
-    bank_mk = float(kt.fitness(dv)[0])
-    state = {'perm': perm, 'mk': bank_mk,
-             'times': list(dv[:n-1]), 'tofs': list(dv[n-1:2*(n-1)])}
+    # BASELINE in DP-SPACE: the table DP makespan is ~+5.5d vs official (grid discretization);
+    # comparing DP candidates against the OFFICIAL bank made the search look basin-locked. Use DP(bank).
+    _dpb = evaluate_perm_dp(kt, perm, cheap_tab, exc_tab, q, T)
+    bank_mk = _dpb['mk'] if _dpb else float(kt.fitness(dv)[0])
+    _t0 = (_dpb['times'] if _dpb else list(dv[:n-1]))
+    _f0 = (_dpb['tofs'] if _dpb else list(dv[n-1:2*(n-1)]))
+    state = {'perm': perm, 'mk': bank_mk, 'times': _t0, 'tofs': _f0}
     best_local = dict(state)
-    log(f"init bank mk={bank_mk:.4f}d")
+    CAND_FH = open('/tmp/ch2_e617_dpspace_cand.jsonl', 'a')   # orders < DP(bank) for CMA-refine
+    log(f"init DP-space baseline mk={bank_mk:.4f}d (official bank=112.996; offset for refine)")
 
     ckpt = CKPT_TMPL.format(chain_id)
     if Path(ckpt).exists():
@@ -198,6 +203,12 @@ def alns_chain(args):
         if new_mk < best_local['mk'] - 1e-9:
             best_local = dict(cand)
             stale = 0; kick = KICK_MIN
+            # dump the better-than-DP(bank) ORDER for the CMA-refine stage (official validate there)
+            CAND_FH.write(json.dumps({
+                'chain': chain_id, 'dp_mk': new_mk, 'perm': [int(p) for p in new_perm],
+                'times': list(result['times']), 'tofs': list(result['tofs']),
+            }) + '\n')
+            CAND_FH.flush()
             hist_fh.write(json.dumps({
                 'chain': chain_id, 'iter': iter_count, 'mk': new_mk,
                 'op': op, 'eval_wall_s': eval_wall,
@@ -253,23 +264,9 @@ def alns_chain(args):
             except Exception: pass
             last_ckpt = time.time()
 
-        if time.time() - last_reseed > RESEED_INTERVAL_S:
-            try:
-                cur = json.load(open(bank_path))
-                cur_mk = float(kt.fitness(cur[0]['decisionVector'])[0])
-                if cur_mk < best_local['mk'] - 1e-4:
-                    dv2 = cur[0]['decisionVector']
-                    best_local = {
-                        'perm': [int(x) for x in dv2[2*(n-1):]],
-                        'times': list(dv2[:n-1]),
-                        'tofs': list(dv2[n-1:2*(n-1)]),
-                        'mk': cur_mk,
-                    }
-                    state = dict(best_local)
-                    stale = 0; kick = KICK_MIN
-                    log(f"adopted better global bank mk={cur_mk:.4f}")
-            except Exception: pass
-            last_reseed = time.time()
+        # NOTE: reseed-from-bank DISABLED — the bank's official mk (112.996) is in a different
+        # metric space than this search's DP-space baseline (~118.5); adopting it re-freezes the
+        # search. Candidate orders are exported to CAND_FH for the separate CMA-refine+bank stage.
 
     hist_fh.close()
     log(f"chain done. iters={iter_count} best={best_local['mk']:.4f}d")

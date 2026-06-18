@@ -36,6 +36,49 @@ self-chains: swap corrected table into the load path → e617 4-chain 48h on the
 large (the high-EV one — short-epoch legs could approach the ~340 d static LB < live r1 424 ⇒ rank-1
 candidate, overturning the architecture-conditional EV≈0 in [[ch2-large-first-bank-topology]]).
 
+## Follow-up (2026-06-18 11:22): corrected table necessary but NOT sufficient for small
+
+Built the corrected small table (524 cheap cells shortened, ToF≥0.001) and ran the order search
+(e617) on it. e617 was first FROZEN (accept-band 1% < kick size ⇒ accepted=0); widened RRT_DEV
+0.01→0.06 ⇒ it then explored hard (**~6,400 accepted moves over 54 min, 4 chains**) but **best never
+left 112.9960 — zero descent.** Combined with S1 (bank-order optimum = 112.996 on the LIVE evaluator,
+i.e. already including short edges) ⇒ **Ch2-small is BASIN-ISOLATED at 112.996.** Local search
+(destroy-k + cheapest-insertion), even with corrected edges + wide uphill acceptance, cannot reach
+the competitor's 101.65 — it lives in a structurally distant basin needing a different CONSTRUCTION
+(LKH time-expanded), confirming [[basin-overarching-search]] / [[competitor-algorithm-inference]].
+
+**LARGE architecture-gate (assessed, FAILED):** rank-1 needs makespan HALVING (932→<424) via
+near-optimal joint order+epoch on n=1051 — the SAME construction-basin difficulty just shown
+unsolved on tiny n=49 small, the corrected table for n=1051 is intractably large, and there is no
+intermediate rank (anything short of full halving = 0 pts). Probability of rank 1 = LOW, not HIGH ⇒
+do NOT commit cores to a full large corrected-table build (gate per [[architecture-change-on-large-gaps]]).
+
+**Pivot (lever UNBLOCKED):** `elkai` (LKH wrapper) IS installed in env spoc26. Build = LKH constructs
+structurally-different orders on the corrected-table static cost → DP-retime each via the
+metric-correct `evaluate_perm_dp` (scores bank=112.9960) → guard-bank if <112.996. Positive control
+(LKH/DP must reproduce 112.996 on the bank perm) guards against the e609/e538 metric mismatch
+(those reference a coarse 116.37 ≠ official 112.996). NOTE: no standalone LKH binary on PATH; use elkai.
+
+## ★★ CORRECTION (2026-06-18 11:40): "basin-isolated" was an EVALUATOR-MISMATCH ARTIFACT — RETRACTED
+
+A mandatory positive control in the new LKH pipeline caught it: **DP-on-ultrafine-table(bank perm)
+= 118.5255, but official bank = 112.9960 — a +5.529d grid-discretization offset.** e617 seeded
+`best=112.996` (official) but evaluated candidates with the DP (~117-119) ⇒ no candidate could ever
+"beat" 112.996 ⇒ it LOOKED basin-locked. It was a **metric mismatch INSIDE the search** (the exact
+"evaluator metric must match SA baseline metric" / "audit the evaluator before blaming search"
+trigger — see [[foundation-then-search-methodology]]). e617's chains were sitting at DP-mk 117.1,
+i.e. **orders strictly BETTER than the bank's DP-mk 118.53 that it discarded.** "Small basin-isolated"
+is RETRACTED.
+
+**Fix (committed):** e617 now baselines in DP-space (`best=DP(bank)=118.53`), dumps every order
+< DP(bank) to `/tmp/ch2_e617_dpspace_cand.jsonl`, and the reseed-from-official-bank (which re-froze
+it) is disabled. Validated: best descends 118.53→116.38 within 1 min, candidates dumping. The DP
+schedule is +5.5d unrefined, so it cannot bank directly — **stage 2 = CMA-refine each dumped order
+on the official evaluator (S1 machinery), guard-bank if official mk <112.996.** A 116.38 DP-order
+→ ~110.9 official is plausible (< 112.996 ⇒ would beat the floor). This is the joint sequence(LKH/
+ILS in DP-space)+epoch(CMA official) search — the never-built lever, now correctly decomposed.
+elkai LKH hit an internal precision assertion (deferred); the ILS DP-space search needs no elkai.
+
 ## Methodology
 
 Fits the gap decomposition (not a free-floating "new lever"): the short/wide-epoch edges are exactly
