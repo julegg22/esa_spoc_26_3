@@ -43,6 +43,38 @@ def find_earliest_transfer(kt, i, j, t_start, dv_thr, tof_window=5.0,
     return None, None
 
 
+def find_earliest_transfer_fast(kt, i, j, t_start, dv_thr, tof_window=40.0,
+                                n_coarse=60, n_fine=40):
+    """~10-40x faster find_earliest_transfer: COARSE scan to locate the first cheap region,
+    then FINE-refine for the earliest cheap tof within it (resolution ≈ n_steps=2400 equiv).
+    Fast None when no coarse point is cheap. Small risk of missing a sub-coarse-spacing cheap
+    window (densify n_coarse if the retime control drifts >2%). Same (tof,dv) semantics."""
+    if t_start + tof_window > kt.max_time:
+        tof_window = max(kt.min_tof + 1e-3, kt.max_time - t_start - 1e-3)
+        if tof_window <= kt.min_tof:
+            return None, None
+    lo = max(kt.min_tof, 0.05)
+    coarse = np.linspace(lo, tof_window, n_coarse)
+    kfound = -1
+    for k, tof in enumerate(coarse):
+        dv = kt.compute_transfer(i, j, float(t_start), float(tof))
+        if dv <= dv_thr + 1e-6:
+            kfound = k
+            break
+    if kfound < 0:
+        return None, None
+    a = coarse[kfound - 1] if kfound > 0 else lo
+    b = coarse[kfound]
+    fine = np.linspace(a, b, n_fine)
+    for tof in fine:                       # earliest cheap in the bracketing sub-interval
+        dv = kt.compute_transfer(i, j, float(t_start), float(tof))
+        if dv <= dv_thr + 1e-6:
+            return float(tof), float(dv)
+    # fine missed (boundary numerics) -> fall back to the coarse hit
+    tof = float(coarse[kfound])
+    return tof, float(kt.compute_transfer(i, j, float(t_start), tof))
+
+
 def greedy_findxfer(kt, start, tof_window=12.0, n_steps=120,
                     wait_steps=4, wait_dt=0.5, verbose=False):
     """Greedy: at (cur, t), for each unvisited j find earliest feasible

@@ -160,3 +160,24 @@ it keeps each retime eval well under the limit AND speeds the search. Build that
 becomes both stable and productive. The deep audit (E-654→662) is COMPLETE: gap=epoch-phasing in the
 giant; root=no fast faithful evaluator; retime is the near-faithful one (validated); the remaining work
 is the Lambert accelerator + (re)running the SA. Banks strong+held (medium r1, large r2, small ~r5).
+
+## E-662c: accelerator (coarse-then-fine) FAILS — cheap windows are narrower than any coarse grid
+
+Tried find_earliest_transfer_fast (coarse 60 over [0.05,40] → refine). Control BROKE: retime(bank)=1892
+(+103%) — large's cheap ToF windows are NARROW (<~0.5d; L2 found cheap at tof≈0.006), so a coarse scan
+can't even DETECT them; legs fall to longer/exc transfers and makespan doubles. ⇒ fine Lambert resolution
+(N_STEPS=2400) is FUNDAMENTALLY required to find the narrow cheap windows; coarse-then-fine can't help.
+Reverted to the faithful evaluator.
+
+## FINAL (E-654→662): complete audit; validated evaluator; blocked by a compute+infra DOUBLE-BIND
+
+Definitive: Ch2 gap = epoch-phasing in a giant cheap-component; root = no fast faithful evaluator. The
+RETIME is the validated near-faithful one (940≈932.53, +0.8%). The full-order retime-SA is BUILT + control-
+VALIDATED. It is blocked by a double-bind: (a) faithful eval needs FINE Lambert scans (narrow cheap windows)
+→ each full-order eval is slow; (b) this SANDBOX kills long single CPU-bound processes (~300s; control
+survives, control+first-eval dies). Neither is algorithmic. ACTIONABLE PATHS: (1) run the validated
+`scripts/ch2_large_retimesa.py 72000 4` on the USER's unrestricted machine overnight (no sandbox CPU limit) —
+it would explore large orders with the faithful retime toward <932→424; (2) vectorize compute_transfer (batch
+the 2400 Lambert ToFs) to make fine scans fast within any environment. Banks strong+HELD: medium r1, large r2,
+small ~r5. The "we're not at a frontier" challenge produced a complete root-cause + a validated tool + two
+concrete unlock paths — the deepest actionable state.
