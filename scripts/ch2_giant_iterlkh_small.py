@@ -35,15 +35,21 @@ def lkh_path(nodes, D):
     return order[w + 1:] + order[:w + 1]
 
 
-def table_walk(order, cheap, q, T, t0=0.0):
-    """FAST realized-epoch walk on the table (no Lambert): returns makespan + realized tof per leg."""
+def table_walk(order, cheap, q, T, t0=0.0, max_wait=600):
+    """FAST realized-epoch walk WITH WAITING (no Lambert): if a leg isn't cheap at the current
+    epoch, wait (advance buckets) until it is, up to max_wait buckets. Returns makespan + realized tofs."""
     ep = t0; tofs = []
     for i in range(len(order) - 1):
-        b = int(round(ep / q)); b = b if b < T else T - 1
-        tof = cheap[order[i], order[i + 1], b]
-        if not np.isfinite(tof):
-            return None, None            # infeasible leg at this epoch
-        tofs.append(tof); ep += tof
+        a, c = order[i], order[i + 1]; got = False
+        for w in range(max_wait + 1):
+            b = int(round((ep + w * q) / q)); b = b if b < T else T - 1
+            tof = cheap[a, c, b]
+            if np.isfinite(tof):
+                ep = ep + w * q + tof; tofs.append(tof); got = True; break
+            if b >= T - 1:
+                break
+        if not got:
+            return None, None            # truly unreachable even with waiting
     return ep - t0, tofs
 
 
@@ -79,6 +85,10 @@ def main(iters=10):
             newcost[gorder[i], gorder[i + 1]] = tofs[i]
         cost = newcost
     print(f"[giant] best epoch-aware giant table-walk makespan={best_gmk:.3f}d", flush=True)
+    if best_gorder is None:
+        print("[ABORT] no walkable giant order even with waiting — giant cheap graph not "
+              "Hamiltonian-traversable; needs exc within giant or different decomposition.", flush=True)
+        return
 
     # ASSEMBLE: giant path -> satellites via explicit cheapest-exc bridges; faithful walk
     Dexc = np.min(d['exc'], axis=2); rng = random.Random(1)
