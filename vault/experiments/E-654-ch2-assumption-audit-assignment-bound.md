@@ -101,3 +101,21 @@ to the realized-epoch tofs, repeat to fixpoint), OR a time-expanded LKH. elkai w
 this is buildable. This is the hard core TGMA solved; it's the multi-day investment, now precisely defined
 with the key technical unlock (elkai@40-giant) confirmed. Recover small 11.35d→rank4-1, scale to large
 601-giant→toward 424.
+
+## E-658: the CRUX — static-LKH giant orders are INFEASIBLE WHEN WALKED (epoch-edge coupling)
+
+Iterated epoch-aware LKH (LKH on min-tof → table-walk → update cost → repeat): **ALL 10 iterations
+produced orders that STRAND on the chronological table-walk** (a leg cheap at its best epoch is NOT
+cheap at the realized arrival epoch). This is THE fundamental difficulty of the time-dependent TSP and
+explains the entire falsification ladder: static LKH/OR-Tools give infeasible-when-walked orders (e576's
+1400d divergence); greedy/beam commit epochs but STRAND at the endgame; local search is stuck in the
+bank basin; naive merge is infeasible. **The epoch-edge coupling cannot be dodged.**
+
+**DEFINITIVE remaining lever:** a TIME-EXPANDED TD-TSP solver on the giant — nodes = (city, epoch-bucket),
+directed edges (i,t)→(j,t+tof) ONLY where cheap[i,j,t] is finite (cheap at THAT epoch). Find a min-final-time
+path visiting each city once across time-layers. This respects the coupling. It is NP-hard (Held-Karp
+state = visited-set × city × time = 2^40 infeasible exact) ⇒ needs a HEURISTIC time-expanded solver
+(time-expanded LKH / large-neighborhood on the time-expanded graph) — the competitor (TGMA) pipeline.
+This is a substantial research-grade build; the whole audit chain (E-654→658) has now rigorously proven
+it is THE lever and that all simpler methods fail for the same understood reason (epoch-edge coupling).
+elkai works at giant scale (E-657) so a time-expanded variant is buildable but is the multi-day investment.
