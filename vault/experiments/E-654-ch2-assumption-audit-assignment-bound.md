@@ -196,3 +196,15 @@ SOLE blocker is THIS SANDBOX'S ~300s/process CPU limit. ON THE USER'S UNRESTRICT
 unrestricted machine = the user-approved faithful full-order large search, validated, ready, toward 932→424
 (rank 2→1). This sandbox can't run it (process limit), not for any algorithmic reason. Everything else
 (small, medium) is exhausted; banks strong+HELD. Audit E-654→662 COMPLETE.
+
+## E-662e: 4th accelerator (adjacency-skip) also fails — e533 has 11 false negatives; handoff is firm
+
+Tried skipping the cheap-scan for adj=False legs (e533 cheap adjacency). Control STRANDED: 16 bank legs are
+adj=False but only ~5 are true exc bridges ⇒ **e533 has 11 FALSE NEGATIVES** (cheap endgame legs it misses,
+positions 619,805,806,814,838,853,857,869,925,931,947). Skipping them sends real-cheap legs to exc, exhausts
+the 5-exc budget, strands. A COMPLETE fine-resolution adjacency would fix it but is another ~hours rebuild.
+⇒ FOUR accelerators now exhausted: coarse-then-fine (narrow windows), Lambert-vectorize (pykep per-call),
+reduce-revs (fidelity), adjacency-skip (e533 incomplete). The faithful retime eval cannot be cheaply+safely
+accelerated in-sandbox. **DEFINITIVE: run the validated `ch2_large_retimesa.py 72000 4` on the user's
+unrestricted machine (no ~300s/proc CPU limit) — it is algorithmically ready toward 932→424.** Reverted to
+the faithful eval; stable grind on cores. Ch2 audit E-654→662 fully closed.

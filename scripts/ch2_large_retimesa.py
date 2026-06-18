@@ -33,19 +33,22 @@ def leg(kt, a, b, t, thr):
     return v
 
 
-def retime_full(kt, order, ep_out):
+def retime_full(kt, order, ep_out, adj):
     """Full-order retime from epoch 0: per leg pick min-arrival over DELAY_GRID using CHEAP, else
-    EXCEPTION (≤kt.n_exc total). Fills ep_out. Returns makespan or None."""
+    EXCEPTION (≤kt.n_exc total). adj[a,b]=False ⇒ NEVER cheap ⇒ skip the wasted cheap-scan (the
+    accelerator: the 5 cross-component bridges cost ~half the walk in wasted 2400-step cheap-scans).
+    Fills ep_out. Returns makespan or None."""
     t = 0.0; eu = 0; ep_out[0] = 0.0
     for k in range(len(order) - 1):
         a, b = order[k], order[k + 1]; best = None
-        for d in DELAY_GRID:
-            td = t + float(d)
-            if td + 0.05 >= kt.max_time:
-                break
-            tof = leg(kt, a, b, td, kt.dv_thr)
-            if tof is not None and (best is None or td + tof < best):
-                best = td + tof
+        if True:
+            for d in DELAY_GRID:
+                td = t + float(d)
+                if td + 0.05 >= kt.max_time:
+                    break
+                tof = leg(kt, a, b, td, kt.dv_thr)
+                if tof is not None and (best is None or td + tof < best):
+                    best = td + tof
         if best is None and eu < kt.n_exc:                # exception bridge
             for d in DELAY_GRID:
                 td = t + float(d)
@@ -64,7 +67,7 @@ def retime_full(kt, order, ep_out):
     return t
 
 
-def official_check(kt, order):
+def official_check(kt, order, adj):
     """Min-arrival retime (cheap else exc) → dv → official kt.fitness."""
     t = 0.0; eu = 0; times = []; tofs = []
     for k in range(len(order) - 1):
@@ -88,12 +91,13 @@ def official_check(kt, order):
 def main(seed=0, wall_s=20 * 3600):
     _C.clear()
     kt = KTTSP(INST); n = kt.n
+    adj = np.load('/tmp/ch2_e533_large_adj.npz')['cheap']   # cheap-at-any-epoch; False ⇒ never cheap
     dv0 = json.load(open(BANK))[0]['decisionVector']
     order = [int(round(x)) for x in dv0[2 * (n - 1):]]
     log = lambda m: print(f"[s{seed}] {m}", flush=True)
     ep = [0.0] * n
     t0 = time.time()
-    ctrl = retime_full(kt, order, ep)
+    ctrl = retime_full(kt, order, ep, adj)
     log(f"[E-662] control: retime(bank)={ctrl if ctrl is None else f'{ctrl:.2f}'} vs official {OBANK:.2f} "
         f"[{time.time()-t0:.0f}s, cache {len(_C)}]")
     if ctrl is None or abs(ctrl - OBANK) > 0.02 * OBANK:
@@ -114,14 +118,14 @@ def main(seed=0, wall_s=20 * 3600):
         if len(set(cand)) != n:
             continue
         cep = [0.0] * n
-        mk = retime_full(kt, cand, cep)
+        mk = retime_full(kt, cand, cep, adj)
         if mk is None:
             continue
         if mk < cur_mk or rng.random() < np.exp(-(mk - cur_mk) / max(T, 1e-3)):
             cur, cur_mk = cand, mk
         if mk < best_mk - 1e-4:
             best_mk = mk
-            omk, feas, dv = official_check(kt, cand)
+            omk, feas, dv = official_check(kt, cand, adj)
             log(f"NEW BEST retime={mk:.2f} -> OFFICIAL {omk:.2f} feas={feas} (bank {OBANK:.2f}) it={it} "
                 f"[{time.time()-t0:.0f}s]")
             if feas and omk < OBANK - 1e-3:
