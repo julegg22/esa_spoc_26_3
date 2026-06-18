@@ -37,9 +37,13 @@ def evalx(enc, order):
 
 
 def refine(order, enc0, budget):
+    # cheap pre-screen: refining a perturbed order costs ~budget*30ms (slow Lambert on
+    # infeasible legs). Only pay it when the warm-start is already near-feasible/near-bank.
+    obj0, mk0, feas0 = evalx(enc0, order)
+    if (not feas0) or mk0 > 125.0:
+        return (mk0 if feas0 else 1e9), enc0.copy()
     es = cma.CMAEvolutionStrategy(enc0, 0.05, {
         'maxfevals': budget, 'popsize': 16, 'bounds': [0.0, None], 'verbose': -9, 'seed': 1})
-    obj0, mk0, feas0 = evalx(enc0, order)
     best_mk = mk0 if feas0 else 1e9; best_enc = enc0.copy()
     while not es.stop():
         sols = es.ask(); vals = []
