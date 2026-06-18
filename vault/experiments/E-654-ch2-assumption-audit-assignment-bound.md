@@ -50,3 +50,19 @@ next builds, cheapest-first:
 
 Recover targets: small 11.35d (→ rank 4→1 region), large the 508d excess (→ toward 424). Medium near-opt.
 See [[basin-overarching-search]], [[deep-single-prompt-audit]], [[ch2-find-transfer-pattern]].
+
+## ★★ UNIFYING STRUCTURE (2026-06-18, E-655 follow-up) — all Ch2 = GIANT + satellites
+
+Lever #1 (naive fragment-merge) FALSIFIED in the informative way: it merged the 22 assignment fragments
+freely and produced infeasible tours (slow Lambert on hopeless legs). Root cause found via cheap-component
+analysis: **small cheap graph = 4 components, sizes [40, 3, 3, 3]** — the SAME dominant-giant+satellites
+shape as medium (4 comps) and large (601+3×150). 4 comps need only 3 bridges ≤ 5-exc budget ⇒ feasible.
+Free merge ignored this and blew the exc budget.
+
+**⇒ All three Ch2 instances share ONE structure: a dominant GIANT cheap-component + tiny satellites,
+bridged by ≤5 exceptions. The lever is identical: optimize the GIANT's internal order with EPOCH-AWARE
+(time-expanded) phasing** — the part local search can't crack (S1/faithful = 172 neighbors stuck; the 11×
+epoch inflation lives inside the giant). **Small's 40-city giant is the tractable TESTBED** (40-city
+time-dependent TSP; vs large's 601). Build = time-expanded beam/DP or LKH on the giant + cheap satellite
+insertion + 3 exc-bridges. This is lever #2, now correctly scoped. NEXT: build it on small's 40-giant;
+if it beats 112.996 → scale to large's 601-giant (the rank-2→1 path).
