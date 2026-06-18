@@ -119,3 +119,19 @@ state = visited-set × city × time = 2^40 infeasible exact) ⇒ needs a HEURIST
 This is a substantial research-grade build; the whole audit chain (E-654→658) has now rigorously proven
 it is THE lever and that all simpler methods fail for the same understood reason (epoch-edge coupling).
 elkai works at giant scale (E-657) so a time-expanded variant is buildable but is the multi-day investment.
+
+## E-659: fast table-walk evaluator FALSIFIED for small (+27d) → pivot the TD-TSP build to LARGE
+
+Built the TD-TSP heuristic (SA over orders + fast wait-allowing table-walk evaluator). **Positive control
+FAILED: table-walk(bank)=139.88 vs official 112.996 (+27d).** SA minimizes table-walk to ~135 but those
+orders are 135 OFFICIAL too — worse than bank. ⇒ **small has NO fast faithful evaluator**: the bank exploits
+fine CONTINUOUS scheduling no discrete table can represent (table-DP = +5.5d, greedy table-walk = +27d), and
+the offset VARIES per order (E-617) so proxy ranking is unreliable. This is why small specifically resists —
+faithful eval (kt.fitness/CMA) is slow, capping search; fast eval is unfaithful.
+
+**BUT for LARGE the table evaluator IS faithful (L1: retime-DP=official=932.53, offset≈0)** — large is loosely
+scheduled, no continuous-headroom pathology. ⇒ the fast-table-walk TD-TSP search is the RIGHT build, aimed at
+LARGE (also the bigger prize: rank 2→1, 16/9 multiplier, r1=424 vs our 932). PREREQUISITE: a large
+epoch-resolved cheap table (cheap[i,j,epoch] for the ~140k cheap pairs × epochs) — e533 is static-bool only;
+must build/sample it. NEXT: build the large epoch-resolved table (sparse: only the ~12.6%-dense cheap pairs),
+then SA over large orders w/ fast faithful table-walk → optimize phasing → beat 932 toward 424.
