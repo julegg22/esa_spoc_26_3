@@ -83,3 +83,21 @@ full-instance permutation search — much smaller than the generic LKH framing. 
 search are BOTH now falsified; this cluster-first giant-TSP is the build. elkai precision may work at
 40 cities (small matrix). NEXT: extract small 40-giant, try elkai-LKH (or exact) on its epoch-min-tof
 matrix → tour → faithful walk w/ satellites+bridges → vs 112.996.
+
+## E-657: cluster-first VIABLE — elkai-LKH solves the 40-giant (precision OK at small scale)
+
+Extracted small's 4 components [40,3,3,3]; **elkai-LKH SOLVED the 40-city giant** (static cheap-cost
+69.06d) — the precision assertion that blocked the FULL matrix does NOT occur at 40-city scale. ⇒
+cluster-first decomposition is VIABLE: we CAN optimally solve a giant's internal TSP. Assembly (giant
+path -exc-> 3 satellites, faithful walk) is slow (same Lambert-slow-on-nonbank-orders issue, throttled).
+The remaining question = does the STATIC-optimal giant order survive time-dependent walking, or does
+epoch-phasing inflate it (the time-dependent reordering trap, per e576's OR-Tools→1400d divergence)?
+
+**RIGOROUSLY-SCOPED REMAINING LEVER (whole audit chain E-654→657):** the loss is epoch-phasing inside
+the giant; construction (greedy+beam) strands, local search is stuck, naive-merge is infeasible, and
+STATIC giant-TSP likely inflates when walked. The precise build = an **EPOCH-AWARE (time-dependent)
+TSP on the giant** — iterate LKH with epoch-updated costs (re-solve LKH, walk, update the cost matrix
+to the realized-epoch tofs, repeat to fixpoint), OR a time-expanded LKH. elkai works at giant scale, so
+this is buildable. This is the hard core TGMA solved; it's the multi-day investment, now precisely defined
+with the key technical unlock (elkai@40-giant) confirmed. Recover small 11.35d→rank4-1, scale to large
+601-giant→toward 424.
