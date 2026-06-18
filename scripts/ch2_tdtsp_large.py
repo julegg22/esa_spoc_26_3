@@ -13,50 +13,36 @@ import sys, json, time, random, shutil
 import numpy as np
 sys.path.insert(0, "/home/julian/Projects/esa_spoc_26_3/src")
 from esa_spoc_26.ch2_kttsp import KTTSP
+from esa_spoc_26.ch2_insert_lns import walk_perm_chrono
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
 INST = (f"{ROOT}/reference/SpOC4/Challenge 2 Keplerian Tomato Traveling "
         "Salesperson Problem/problems/hard.kttsp")
 BANK = f"{ROOT}/solutions/upload/large.json"
-TAB = "/tmp/ch2_large_epoch_table.npz"
-TOFS = np.linspace(0.001, 8.0, 60)
+# 120-epoch table proved too coarse (8d buckets miss <8d cheap windows). Use the FAITHFUL live walk
+# (walk_perm_chrono) — ~0.2-1s per large order; control reproduces 932.53. Slower than a table but correct.
+STRICT = dict(tof_window=40.0, n_steps=300, wait_steps=8, wait_dt=1.0)
 _G = {}
 
 
 def _load():
     kt = KTTSP(INST); n = kt.n
-    d = np.load(TAB, allow_pickle=True)
-    keys = d['keys']; vals = d['vals']; epochs = d['epochs']
-    table = {(int(a), int(b)): vals[k] for k, (a, b) in enumerate(keys)}
     adj = np.load('/tmp/ch2_e533_large_adj.npz')['cheap']
     neigh = [list(np.where(adj[i])[0]) for i in range(n)]
-    _G.update(kt=kt, n=n, table=table, epochs=epochs, neigh=neigh, ne=len(epochs))
+    _G.update(kt=kt, n=n, neigh=neigh)
 
 
-def walk(order, max_wait_buckets=80):
-    """Phasing-aware table-walk: cheap legs via table (earliest cheap epoch ≥ current); ≤5 exc legs
-    via live compute_transfer. Returns makespan or None."""
-    kt = _G['kt']; table = _G['table']; epochs = _G['epochs']; ne = _G['ne']
-    ep = 0.0; eu = 0
-    for i in range(len(order) - 1):
-        a, c = order[i], order[i + 1]; arr = None
-        row = table.get((a, c))
-        if row is not None:
-            ei0 = int(np.searchsorted(epochs, ep))
-            for ei in range(ei0, min(ei0 + max_wait_buckets, ne)):
-                tof = row[ei]
-                if np.isfinite(tof):
-                    arr = epochs[ei] + tof; break
-        if arr is None and eu < kt.n_exc:           # exc via live Lambert (rare, ≤5)
-            for tof in TOFS:
-                try:
-                    if kt.compute_transfer(a, c, float(ep), float(tof)) <= kt.dv_exc + 1e-6:
-                        arr = ep + tof; eu += 1; break
-                except Exception:
-                    continue
-        if arr is None:
-            return None
-        ep = arr
-    return ep
+def walk(order):
+    """Faithful live walk: returns (makespan or None). Feasibility via official kt.fitness."""
+    kt = _G['kt']
+    times, tofs, dvs, ok, exc, leg = walk_perm_chrono(kt, order, **STRICT)
+    if not ok:
+        return None
+    x = list(times) + list(tofs) + [float(p) for p in order]
+    f = kt.fitness(x)
+    if not kt.is_feasible(f):
+        return None
+    _G['_lastx'] = x
+    return float(f[0])
 
 
 def perturb(order, rng):
@@ -119,10 +105,9 @@ def main(seed=0, wall_s=36 * 3600):
         if mk < cur_mk or rng.random() < np.exp(-(mk - cur_mk) / max(T, 1e-3)):
             cur, cur_mk = cand, mk
         if mk < best_mk - 1e-6:
-            best_mk = mk
-            omk, feas, dv = official_mk(cand)
-            log(f"table-walk best={best_mk:.2f} -> OFFICIAL {omk:.2f} feas={feas} (bank {obank:.2f}) it={it}")
-            if feas and omk < obank - 1e-3:
+            best_mk = mk; dv = _G['_lastx']           # walk() already gave the OFFICIAL mk + dv
+            log(f"NEW BEST official mk={best_mk:.2f} (bank {obank:.2f}, {best_mk-obank:+.2f}) it={it}")
+            if best_mk < obank - 1e-3:
                 shutil.copy(BANK, BANK + ".bak.tdtsp")
                 json.dump([{"decisionVector": dv, "problem": "large"}], open(BANK, 'w'))
                 rc = float(kt.fitness(json.load(open(BANK))[0]['decisionVector'])[0])
