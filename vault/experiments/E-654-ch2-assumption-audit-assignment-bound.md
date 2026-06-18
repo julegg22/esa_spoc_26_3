@@ -135,3 +135,16 @@ LARGE (also the bigger prize: rank 2→1, 16/9 multiplier, r1=424 vs our 932). P
 epoch-resolved cheap table (cheap[i,j,epoch] for the ~140k cheap pairs × epochs) — e533 is static-bool only;
 must build/sample it. NEXT: build the large epoch-resolved table (sparse: only the ~12.6%-dense cheap pairs),
 then SA over large orders w/ fast faithful table-walk → optimize phasing → beat 932 toward 424.
+
+## E-662: full-order RETIME-SA built (user chose "build the fast scheduler")
+
+Built the approved lever: full-order SA over large orders ranked by the cached RETIME (per-leg delay-grid
+min-arrival, cheap-else-exc ≤5). The retime is the near-faithful evaluator (bank → 936 vs official 932.53,
++0.4%; vs greedy walk +28%, table strands). e590 applied retime only to the endgame; this is FULL-order.
+Cached find_earliest_transfer; exc legs handled (the bank's 5 bridges). Control = retime(bank)≈936 within 2%.
+Compute-bound: the COLD control walk is ~15-20min (exc legs scan the full 2400-step window before exc fallback);
+the Lambert cost is the bottleneck (confirms E-661b — faithful eval is Lambert-bound). Running
+(runs/ch2_v3/retimesa_large3.log). NEXT: read control; if PASS, SA explores (slowly, ~Lambert-bound) toward
+<932 → official-check → guard-bank (<424=rank1 escalate). If too slow, the genuine accelerator is a faster
+Lambert (vectorized compute_transfer / coarse-then-fine find_earliest_transfer) — the real bottleneck.
+Launch note: retime-SA must use `micromamba run` (direct-python bg dies in sandbox).
