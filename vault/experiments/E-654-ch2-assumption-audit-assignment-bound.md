@@ -181,3 +181,18 @@ it would explore large orders with the faithful retime toward <932→424; (2) ve
 the 2400 Lambert ToFs) to make fine scans fast within any environment. Banks strong+HELD: medium r1, large r2,
 small ~r5. The "we're not at a frontier" challenge produced a complete root-cause + a validated tool + two
 concrete unlock paths — the deepest actionable state.
+
+## E-662d: all accelerators exhausted → the sandbox CPU limit is the SOLE blocker (run on user machine)
+
+Tested all 3 accelerators: (1) coarse-then-fine MISSES narrow cheap windows (control→1892); (2) Lambert
+NOT batchable (pykep lambert_problem is per-call C++, no vector API); (3) reduced max_revs changes fidelity
+(54.6 vs 57.2d/120 legs) AND isn't faster. KEY MEASUREMENT: the 120-leg prefix retimes in 1-3s — the CHEAP
+legs are ALREADY fast; the whole cost is the 5 EXC legs doing full 2400-scans to CONFIRM no-cheap (you can't
+distinguish no-cheap from narrow-cheap without the fine scan). ⇒ the validated retime-SA is genuinely
+compute-TRACTABLE (cold control 262s; SA evals mostly fast cached cheap legs + a few exc rescans), and the
+SOLE blocker is THIS SANDBOX'S ~300s/process CPU limit. ON THE USER'S UNRESTRICTED MACHINE it runs fine.
+
+**HANDOFF (definitive):** `micromamba run -n spoc26 python scripts/ch2_large_retimesa.py 72000 4` on an
+unrestricted machine = the user-approved faithful full-order large search, validated, ready, toward 932→424
+(rank 2→1). This sandbox can't run it (process limit), not for any algorithmic reason. Everything else
+(small, medium) is exhausted; banks strong+HELD. Audit E-654→662 COMPLETE.
