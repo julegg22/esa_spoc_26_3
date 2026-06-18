@@ -142,8 +142,9 @@ def main(seed=0, budget=6000, wall_h=48.0):
     log(f"control: bank order official mk={mk0:.4f} feas={feas0} (expect {bank_mk:.4f})")
     if not feas0 or abs(mk0 - bank_mk) > 0.5:
         log("ABORT control"); return
-    # basin-overarching: chains 1-3 start from a DIVERSE constructed seed (chain 0 = bank control)
-    if seed > 0:
+    # basin-overarching (OFF by default — random construction can't find feasible diverse small
+    # orders in 600 tries; small's feasible-order space is too constrained). Set FAITHFUL_DIVERSE=1.
+    if seed > 0 and os.environ.get("FAITHFUL_DIVERSE"):
         s = construct_seed(rng)
         if s is not None:
             d_order, d_enc, d_mk = s
