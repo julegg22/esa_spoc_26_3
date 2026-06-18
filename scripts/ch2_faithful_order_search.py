@@ -78,6 +78,40 @@ def perturb(order, rng):
     return o
 
 
+from esa_spoc_26.ch2_insert_lns import walk_perm_chrono   # validate constructed seeds
+
+
+def construct_seed(rng, max_tries=600):
+    """Basin-overarching: build a STRUCTURALLY-DIFFERENT feasible order via randomized
+    cheap-greedy on the sparse cheap graph (random start, hop to a random unvisited cheap
+    neighbor, exc-hop when stuck, <=5 exc), then validate the chronological walk. Returns
+    (order, enc) for a feasible seed, or None."""
+    for _ in range(max_tries):
+        start = rng.randrange(n); order = [start]; visited = {start}; exc = 0; cur = start; ok = True
+        while len(order) < n:
+            nb = [j for j in _NEIGH[cur] if j not in visited]
+            if nb:
+                nxt = rng.choice(nb)
+            else:
+                rest = [j for j in range(n) if j not in visited]
+                if exc >= 5 or not rest:
+                    ok = False; break
+                nxt = rng.choice(rest); exc += 1
+            order.append(nxt); visited.add(nxt); cur = nxt
+        if not ok or len(order) != n:
+            continue
+        times, tofs, dvs, wok, wexc, leg = walk_perm_chrono(
+            kt, order, tof_window=40.0, n_steps=300, wait_steps=8, wait_dt=1.0)
+        if not wok:
+            continue
+        enc = np.concatenate([[times[0]], list(tofs),
+                              [max(times[i + 1] - (times[i] + tofs[i]), 0.0) for i in range(n - 2)]])
+        _, mk, feas = evalx(enc, order)
+        if feas:
+            return order, enc, mk
+    return None
+
+
 def guard_bank(order, enc, bank_mk, log):
     times, tofs = decode(enc)
     dv = [float(x) for x in (list(times) + list(tofs) + [float(p) for p in order])]
@@ -108,6 +142,15 @@ def main(seed=0, budget=6000, wall_h=48.0):
     log(f"control: bank order official mk={mk0:.4f} feas={feas0} (expect {bank_mk:.4f})")
     if not feas0 or abs(mk0 - bank_mk) > 0.5:
         log("ABORT control"); return
+    # basin-overarching: chains 1-3 start from a DIVERSE constructed seed (chain 0 = bank control)
+    if seed > 0:
+        s = construct_seed(rng)
+        if s is not None:
+            d_order, d_enc, d_mk = s
+            log(f"diverse seed mk={d_mk:.4f} (vs bank {bank_mk:.4f}) — exploring a different basin")
+            order, enc, mk0 = d_order, d_enc, d_mk
+        else:
+            log("diverse seed construction failed — falling back to bank basin")
     cur_mk = mk0; cur_order = order; cur_enc = enc.copy()
     best_mk = mk0; t0 = time.time(); it = 0; nacc = 0; Temp = 0.5
     while time.time() - t0 < wall_h * 3600:
