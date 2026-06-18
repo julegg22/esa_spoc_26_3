@@ -66,3 +66,20 @@ epoch inflation lives inside the giant). **Small's 40-city giant is the tractabl
 time-dependent TSP; vs large's 601). Build = time-expanded beam/DP or LKH on the giant + cheap satellite
 insertion + 3 exc-bridges. This is lever #2, now correctly scoped. NEXT: build it on small's 40-giant;
 if it beats 112.996 → scale to large's 601-giant (the rank-2→1 path).
+
+## E-656: time-expanded BEAM also strands ⇒ construction is dead; need CLUSTER-FIRST giant-TSP
+
+Lever #2 first form = time-expanded beam (K=800, top-K partial paths by arrival epoch, table-fast
+expansion). **DIED at step 28/49 — all 800 paths stranded** (after using exc to reach satellites, the
+remaining cities are unreachable). ⇒ **left-to-right construction (greedy AND beam) fundamentally cannot
+complete these component-structured instances.** The bank/competitors build CLUSTER-FIRST: solve each
+cheap-component's internal tour, then stitch with exactly-placed ≤5-exc bridges.
+
+**Precisely-scoped remaining build (the real lever, all 3 instances):** a CLUSTER-FIRST solver —
+(1) solve the GIANT component's internal time-dependent TSP (small 40-city / large 601-city) with
+LKH/exact + epoch handling, (2) solve the trivial satellites (3-city), (3) stitch the components with
+≤5 exc bridges (choose bridge endpoints + component order). This is a 40-city (then 601) sub-TSP, NOT a
+full-instance permutation search — much smaller than the generic LKH framing. Construction and local
+search are BOTH now falsified; this cluster-first giant-TSP is the build. elkai precision may work at
+40 cities (small matrix). NEXT: extract small 40-giant, try elkai-LKH (or exact) on its epoch-min-tof
+matrix → tour → faithful walk w/ satellites+bridges → vs 112.996.
