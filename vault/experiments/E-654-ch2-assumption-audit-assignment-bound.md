@@ -148,3 +148,15 @@ the Lambert cost is the bottleneck (confirms E-661b — faithful eval is Lambert
 <932 → official-check → guard-bank (<424=rank1 escalate). If too slow, the genuine accelerator is a faster
 Lambert (vectorized compute_transfer / coarse-then-fine find_earliest_transfer) — the real bottleneck.
 Launch note: retime-SA must use `micromamba run` (direct-python bg dies in sandbox).
+
+## E-662b: retime evaluator VALIDATED (940≈932, faithful); SA blocked by a ~300s/proc CPU-time limit
+
+All 4 mp chains pass the control (retime(bank)=940.16 vs official 932.53, +0.8% — the first faithful
+full-order LARGE evaluator the campaign has had) then DIE during the first SA eval, no traceback/OOM.
+Pattern: control (~166s CPU) survives; control+first-eval (~330s) is killed ⇒ a **~300s/process CPU-time
+limit** in this sandbox. The faithful grind survives because its per-iter evals are fast (pre-screen).
+⇒ The faster-Lambert accelerator (coarse-then-fine find_earliest_transfer, ~10-50x) is now MANDATORY:
+it keeps each retime eval well under the limit AND speeds the search. Build that, then the retime-SA
+becomes both stable and productive. The deep audit (E-654→662) is COMPLETE: gap=epoch-phasing in the
+giant; root=no fast faithful evaluator; retime is the near-faithful one (validated); the remaining work
+is the Lambert accelerator + (re)running the SA. Banks strong+held (medium r1, large r2, small ~r5).

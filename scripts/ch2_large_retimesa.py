@@ -85,11 +85,12 @@ def official_check(kt, order):
     f = kt.fitness(dv); return float(f[0]), kt.is_feasible(f), dv
 
 
-def main(wall_s=20 * 3600):
+def main(seed=0, wall_s=20 * 3600):
+    _C.clear()
     kt = KTTSP(INST); n = kt.n
     dv0 = json.load(open(BANK))[0]['decisionVector']
     order = [int(round(x)) for x in dv0[2 * (n - 1):]]
-    log = lambda m: print(m, flush=True)
+    log = lambda m: print(f"[s{seed}] {m}", flush=True)
     ep = [0.0] * n
     t0 = time.time()
     ctrl = retime_full(kt, order, ep)
@@ -99,7 +100,7 @@ def main(wall_s=20 * 3600):
         log("[ABORT] retime control off >2% — evaluator not faithful enough."); return
     log(f"[E-662] control PASS — retime faithful (+{ctrl-OBANK:.1f}d). Full-order SA begins.")
     cur = order[:]; cur_mk = ctrl; best_mk = ctrl
-    rng = random.Random(1); T = 6.0; it = 0
+    rng = random.Random(seed * 13 + 1); T = 6.0; it = 0
     while time.time() - t0 < wall_s:
         it += 1
         p = rng.randint(1, n - 2)
@@ -135,4 +136,11 @@ def main(wall_s=20 * 3600):
 
 
 if __name__ == "__main__":
-    main(float(sys.argv[1]) if len(sys.argv) > 1 else 20 * 3600)
+    import multiprocessing as mp
+    wall = float(sys.argv[1]) if len(sys.argv) > 1 else 20 * 3600
+    nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+    ps = [mp.Process(target=main, args=(s, wall)) for s in range(nseed)]
+    for p in ps:
+        p.start()
+    for p in ps:
+        p.join()
