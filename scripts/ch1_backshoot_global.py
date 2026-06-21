@@ -76,6 +76,31 @@ def official_row(udp, idE, idL, x):
     return row, (np.linalg.norm(dv0) + np.linalg.norm(dv2)) * V, -f
 
 
+def precise_dc_back(udp, idE, idL, x):
+    """DC: adjust x so the back-shot DEPARTURE state matches the Earth orbit (aE,eE,iE) to tolerance.
+    Arrival is exact by construction; this closes the Earth-side connection from the CMA's ~1km."""
+    prob = UDPBack(udp, idE, idL)
+    aE, eE, iE = prob.aE, prob.eE, prob.iE
+
+    def resid(z):
+        try:
+            S, dv2, t_arr, tof, D = prob._back(z)
+        except Exception:
+            return [1.0, 1.0, 1.0]
+        if D is None:
+            return [1.0, 1.0, 1.0]
+        try:
+            el = state2earth([[D[0], D[1], D[2]], [D[3], D[4], D[5]]])
+        except Exception:
+            return [1.0, 1.0, 1.0]
+        return [(el[0] - aE) / L, el[1] - eE, el[2] - iE]
+    x0 = np.asarray(x)
+    sol = least_squares(resid, x0, method="trf", xtol=1e-14, max_nfev=200,
+                        bounds=(x0 - [1, 1, 1, 0.8, 0.8, 0.8, 2, 3],
+                                x0 + [1, 1, 1, 0.8, 0.8, 0.8, 2, 3]))
+    return sol.x
+
+
 def solve_pair(udp, idE, idL, restarts=8, gen=200, seed0=0, verbose=False):
     prob = pg.problem(UDPBack(udp, idE, idL))
     lb, ub = prob.get_bounds(); lb = np.array(lb); ub = np.array(ub)
@@ -88,11 +113,12 @@ def solve_pair(udp, idE, idL, restarts=8, gen=200, seed0=0, verbose=False):
             pop.push_back(lb + rng.random(8) * (ub - lb))
         pop = cma.evolve(pop)
         xb = pop.champion_x; fb = float(pop.champion_f[0])
-        if fb < 1.25e4:
+        if fb < 1.4e4:                                   # close to the Earth orbit -> refine + DC
             res = minimize(lambda z: prob.fitness(z)[0], xb, method="Nelder-Mead",
-                           options={"maxiter": 400, "fatol": 1e-3})
+                           options={"maxiter": 300, "fatol": 1e-3})
             if prob.fitness(res.x)[0] < fb:
                 xb = res.x
+            xb = precise_dc_back(udp, idE, idL, xb)       # close the Earth-side to 384m
             ov = official_row(udp, idE, idL, xb)
             if ov is not None and (best is None or ov[1] < best[1]):
                 best = ov
