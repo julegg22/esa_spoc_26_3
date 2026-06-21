@@ -12,7 +12,7 @@ from esa_spoc_26.ch1_matching import _solve_sub
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
 F = f"{ROOT}/reference/SpOC4/Challenge 1 Luna Tomato Logistics/matching-i.txt"
 LPCACHE = f"{ROOT}/cache/ch1_m1_lp_solution.npz"
-BANK = 33470.92; LEADER = 33555.62
+BANK = 33472.36; LEADER = 33555.62
 START = "lp"
 DMODE = "random"
 KICK_AFTER = 400
