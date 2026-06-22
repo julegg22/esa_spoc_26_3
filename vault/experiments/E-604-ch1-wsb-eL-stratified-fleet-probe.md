@@ -1,13 +1,23 @@
 ---
 id: E-604
 type: experiment
-tags: [experiment, ch1, trajectory, wsb, ballistic-capture, eL-stratified, fleet-lever, assumption-falsification, refutation]
+corrected_by: [E-700, E-697]
+tags: [experiment, ch1, trajectory, wsb, ballistic-capture, eL-stratified, fleet-lever, assumption-falsification, refutation, narrowed]
 date: 2026-06-13
 status: REFUTES the E-602 low-eL WSB lever (no bank change). WSB ballistic capture does NOT close the low-eL/circular-Moon-orbit gap: 14/16 LOW-eL pairs FAIL_no_valid_capture (the eccentric capture window [a(1−e),a(1+e)] of a near-circular orbit is too narrow for bound returns to thread), and the 2 successes are a wash (median LOW Δmass −46 kg). WSB only wins on HIGH-eL pairs (9/9 capture) and there only on the subset whose impulsive baseline was already poor (5/9, median +154 kg). Realistic fleet upside ≈ +15–25 k kg, confined to already-cheap high-eL targets — NOT the +62–128 k kg that motivated the probe. The Ch1 R3 "WSB fleet-scale" lever (E-602's reopened question) is therefore largely CLOSED; the residual is a small, low-priority guarded-bank opportunity, not a multi-day build.
 instance: Ch1 trajectory (hard ×16/9), official BCP LtlTrajectory.fitness
 scripts: scripts/ch1_e603_wsb_eL_probe.py (probe; results /tmp/ch1_e603_results.json — 25 pairs, /tmp only, nothing banked)
 related: [[E-602-ch1-trajectory-gap-anatomy]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-coherent-model-r3]], [[ch1-b1b2b3-deferred]], [[deep-single-prompt-audit]], [[M-general-deep-single-prompt-audit]]
 ---
+
+> ⚠️ **NARROWED 2026-06-22 by E-700 / E-697.** This correctly refutes **one specific pipeline**
+> (apogee-midcourse *eccentric-window ballistic capture* forced onto near-circular targets — that
+> window is genuinely too narrow). But the conclusion *"the circular-capture fleet lever is largely
+> CLOSED"* over-generalized from that one pipeline to the whole lever. The circular-capture lever is
+> **real and ≈+117k** — a global smooth-penalty search (E-697) finds feasible sub-bank circular
+> captures; the realization is a *solver-capability* matter (basin-overarching global search), not the
+> ballistic-capture pipeline this probe tested. The per-pipeline falsification stands; the
+> lever-is-closed extrapolation is retracted. → see E-700, E-697.
 
 # E-604 — Ch1 trajectory: WSB capture cost, eL-stratified (falsifies E-602's lever)
 

@@ -177,6 +177,60 @@ one without the other is inert.
 - Don't seed an acceptance-history at the bank value (freeze); don't use
   large random ruin against a sharp incumbent (irreconstructible).
 
+## ★★ CONFIRMED AS THE OVERARCHING CAMPAIGN PATTERN (2026-06-22, user-flagged)
+
+No longer a matching quirk or a hypothesis — this is **the single
+recurring shape of every breakthrough** on this campaign. The 2026-06-14
+predictions in "Per-challenge application" below (Ch1-traj and Ch2-large
+basin-locked) BOTH verified. Whenever "every method converges to the same
+incumbent" was read as a ceiling, it was a basin-lock, and the lever was
+always a basin-overarching move:
+
+| Instance | What we kept getting | The basin-overarching move that broke it | Result |
+|---|---|---|---|
+| **Ch1 matching-ii** | exact-repair LNS *from the bank* = clean null (E-048/615/677) | **different START basin**: seed from the LP-rounded solution (different, better basin), then exact-repair LNS climbs past the bank | +1,047 banked (72,206→73,253) |
+| **Ch1 matching-i** | shallow LNS plateaus *below* bank | **deeper destroy** (0.60 vs 0.46) = larger neighbourhood escaping the shallow basin | +15.57; gap-to-rank-3 → 4.4 m |
+| **Ch1 trajectory** | 13 solvers all return the bank value *exactly* / fail; "per-pair floored" | **global smooth-penalty CMA-ES, diverse non-bank init** found sub-bank circular captures — the "floor" was a basin artifact | feasibility wall BROKEN; +117k lever proven real |
+| **Ch2 small** | construction + local-2opt on a fixed graph stalls at 112.996 | missing lever = joint sequence+epoch **global** search (LKH-time-expanded / GA), a different architecture | architecture gap, not ceiling |
+| **Ch2 large** | greedy corner-paints, SA basin-locks at 913 | 913→424 is **global re-interleaving** over the time-ordered structure, not local moves | characterized; rank-1 = global constructor |
+
+**Takeaway:** when several independent methods agree on a value, the
+*default* hypothesis must be **basin-lock, not ceiling** — first response
+is a basin-overarching move (different start / acceptance metaheuristic /
+deeper or structural destroy / global metaheuristic), NOT more
+local-search sophistication. Reaching for it earlier saves weeks.
+
+## ★ The continuous-domain extension (Ch1 trajectory, E-697)
+
+The principle is identical for **continuous** decision vectors. Per-pair
+trajectory optimization seeded from the bank returned the bank exactly
+under *every* local method (DC, multiple-shooting, bank-seeded CMA-ES).
+Fix = same shape: a **global metaheuristic (CMA-ES restarts / SA) with
+diverse, non-bank random init**, searching for *alternative basins* in
+continuous space.
+
+**Hidden-basin-lock-via-penalty (the bug that masked it for ~13
+methods):** when the problem is *constrained* and you implement the
+constraint as a **flat/constant penalty for infeasible points**, the
+optimizer has **zero gradient off the feasible manifold** — so the only
+feasible point it can sit on is the one you *seeded* (the bank). This
+looks exactly like a "feasibility wall" / "ceiling" but is a
+**penalty-landscape basin-lock**. Four specific penalty bugs each
+re-created it (`ch1_global_smooth.py` history): (1) constant infeasible
+penalty → no gradient; (2) impact penalized *worse* than a far-miss →
+search pushed *away* from target; (3) capped penalty → flat for distant
+points; (4) endpoint ≠ closest-approach → wrong quantity guided. **Fix:**
+a *smooth, uncapped* feasibility gradient (distance of the trajectory's
+closest approach to the target manifold, incl. plane/inclination) so a
+global optimizer can navigate ONTO the thin feasible manifold *from
+anywhere* and find OTHER feasible basins. Once smooth + diverse init,
+sub-bank solutions appeared immediately.
+
+**Generalized rule:** *if a constrained global search "can't find
+anything but the seed," suspect the PENALTY landscape, not the problem.
+Make the infeasible region smoothly informative (gradient toward
+feasibility) before concluding the basin is unreachable.*
+
 ## Companion docs
 
 - `M-general-anti-oscillation-discipline.md` — recognizing a false

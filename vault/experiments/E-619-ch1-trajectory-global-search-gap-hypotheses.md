@@ -1,7 +1,9 @@
 ---
 id: E-619
 type: experiment
-status: complete
+corrected_by: [E-700, E-697]
+status: "[RETRACTED 2026-06-22 — see E-700: the 'per-pair floored' verdict was a basin-lock artifact;
+  sub-bank captures exist] complete"
 tags: [ch1, trajectory, global-search, refuted-floor, departure-energy, wsb, low-energy-transfer, basin-overarching-search, decisive-null]
 
 hypothesis: "The ~2x trajectory gap (our 236,420 kg vs r1 473,332) is a DEPARTURE-ENERGY gap, not capture: 98% of bank pairs are departure-dominated (mean dv0=2851 m/s, which alone exceeds HRI's whole implied budget ~2734). Our per-pair engine (PairUDP) caps coast at ~43d and seeds only Hohmann-family direct transfers, structurally excluding the long-coast Sun-assisted/low-energy (WSB / 3-body-manifold) regime that produces sub-Hohmann INJECTION. This is an architecture/seeding mismatch (refuted-floor shape), testable cheaply with a one-pair positive control."
@@ -9,6 +11,15 @@ hypothesis: "The ~2x trajectory gap (our 236,420 kg vs r1 473,332) is a DEPARTUR
 created: 2026-06-15
 ran_start: 2026-06-15
 ---
+
+> ⚠️ **RETRACTED 2026-06-22 by E-700 / E-697.** The verdict *"per-pair ΔV is floored at ~3851 m/s;
+> departure is at the physical LEO floor; the 0/3-pairs null is the true floor"* is **WRONG** — it was
+> a **basin-lock / weak-solver artifact**, not a problem floor. A global smooth-penalty CMA-ES search
+> with diverse (non-bank) init (E-697) found feasible **sub-bank** circular captures (~6199–6310 vs
+> bank 6617), and the "floor"-confirming solvers had bugs (B1: circular pairs never actually evaluated;
+> B2–B5: flat/penalty-landscape basin-lock — see E-700). The DEPARTURE-DOMINANCE measurement here
+> (ΔV0 ≈ 66%) is correct and useful; only the "floored / nothing-left" *conclusion* is retracted. Body
+> preserved below as the historical record — do not act on its floor verdict. → see E-700, E-697.
 
 ## Trigger
 

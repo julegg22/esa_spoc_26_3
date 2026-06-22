@@ -1,13 +1,22 @@
 ---
 id: E-602
 type: experiment
-tags: [experiment, ch1, trajectory, assumption-audit, gap-anatomy, wsb, lunar-capture, evaluator-metric]
+corrected_by: [E-700, E-697]
+tags: [experiment, ch1, trajectory, assumption-audit, gap-anatomy, wsb, lunar-capture, evaluator-metric, reframed]
 date: 2026-06-13
 status: DIAGNOSTIC (no bank change) — the Ch1-trajectory "no further gains expected" verdict is exhaustion WITHIN the impulsive patched-conic architecture, not exhaustion of the problem. Measured the gap to the leaders and isolated the lever: lunar CAPTURE Δv into low-eccentricity Moon orbits (corr(dv,eL)=−0.71), addressed by WSB/Sun-assisted ballistic capture — NOT plane change (cheap) and NOT the matching (near-optimal).
 instance: ch1 trajectory (ltl, BCP-propagated official fitness)
 scripts: scripts/ch1_e600_idd_lever_probe.py, scripts/ch1_e601_gap_anatomy.py, scripts/ch1_e602_rematch_probe.py
 related: [[ch1-coherent-model-r3]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-iL-matching-breakthrough]], [[ch1-lambert-dc-solver]], [[E-036-ch1-wsb-ballistic-capture-prototype]], [[ch1-raan-feasibility-refuted]]
 ---
+
+> ⚠️ **REFRAMED 2026-06-22 by E-700 / E-697** (interpretation wrong, measurements right). Two claims
+> here are corrected: (1) *"lunar CAPTURE Δv … corr(dv,eL)=−0.71 ⇒ WSB is the lever"* — the
+> correlation is real but a **symptom, not the cause**; the true driver is **departure energy** (ΔV0,
+> Earth-orbit apogee; E-619/E-700) and ultimately **per-pair solver capability**, not capture physics.
+> (2) *"the matching is near-optimal (A2 closed)"* — judged on the **inclination proxy**, which is
+> uncorrelated with true circular-capture ΔV, so it does **not** bind. The gap-anatomy *numbers* are
+> sound; the WSB-lever and matching-closed *interpretations* are retracted. → see E-700, E-697.
 
 # E-602 — Ch1 trajectory: assumption audit + gap anatomy (user-requested deep exploration)
 
