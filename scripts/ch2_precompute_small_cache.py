@@ -25,6 +25,32 @@ def _init():
     _KT[0] = KTTSP(INST)
 
 
+# coarse pre-scan grid (classify which pairs have ANY edge dv<=600 before the expensive fine scan;
+# 94% of pairs are non-edges and waste the full 640k-call scan). Margin 700 to avoid dropping edges.
+T_COARSE = T_STARTS[::40]          # ~2d grid (100 epochs)
+TOF_COARSE = np.linspace(0.025, 8.0, 40)
+PRESCAN_KEEP = 700.0
+
+
+def _prescan(args):
+    i, j = args; kt = _KT[0]; mind = np.inf
+    for ts in T_COARSE:
+        if ts + 8.0 > kt.max_time:
+            break
+        for tof in TOF_COARSE:
+            try:
+                dv = kt.compute_transfer(i, j, float(ts), float(tof))
+            except Exception:
+                continue
+            if dv < mind:
+                mind = dv
+            if mind <= DV_CAP:
+                break
+        if mind <= DV_CAP:
+            break
+    return i, j, float(mind)
+
+
 def _scan(args):
     i, j = args; kt = _KT[0]
     cheap = np.full(len(T_STARTS), np.inf, np.float32); exc = np.full(len(T_STARTS), np.inf, np.float32)
@@ -53,15 +79,28 @@ def main(workers=4):
         d = np.load(PARTIAL)
         cheap_t, exc_t, done = d["cheap"], d["exc"], d["done"]
         print(f"[RESUME] {int(done.sum())} pairs already scanned", flush=True)
-    pairs = [(i, j) for (i, j) in all_pairs if not done[i, j]]
-    print(f"[PRECOMPUTE] n={n}, {len(pairs)}/{len(all_pairs)} pairs to scan, T={len(T_STARTS)} q={T_QUANTUM}d, "
-          f"workers={workers}", flush=True)
-    # positive control: a known cheap pair should yield some finite cheap cells
-    pc = _scan_with_init((0, 1))
-    print(f"[PC] pair (0,1): {int(np.isfinite(pc[2]).sum())} cheap epochs (sanity: a graph edge exists somewhere)", flush=True)
-
-    t0 = time.time(); cnt = 0
     os.makedirs(f"{ROOT}/cache", exist_ok=True)
+    t0 = time.time()
+    # --- coarse pre-scan: classify edge pairs (skips full scan on the ~94% non-edges) ---
+    edge_pairs = None
+    EP = f"{ROOT}/cache/ch2_small_edgepairs.npy"
+    if os.path.exists(EP) and int(done.sum()) > 0:
+        edge_pairs = [tuple(p) for p in np.load(EP)]
+    if edge_pairs is None:
+        print(f"[PRESCAN] coarse-classifying {len(all_pairs)} pairs (grid {len(T_COARSE)}x{len(TOF_COARSE)}) ...", flush=True)
+        edge_pairs = []
+        with mp.Pool(workers, initializer=_init) as p:
+            for k, (i, j, mind) in enumerate(p.imap_unordered(_prescan, all_pairs, chunksize=8)):
+                if mind <= PRESCAN_KEEP:
+                    edge_pairs.append((i, j))
+                if (k + 1) % 500 == 0:
+                    print(f"  prescan {k+1}/{len(all_pairs)} | edges so far {len(edge_pairs)} [{time.time()-t0:.0f}s]", flush=True)
+        np.save(EP, np.array(edge_pairs, int))
+        print(f"[PRESCAN] {len(edge_pairs)}/{len(all_pairs)} edge pairs (dv<= {PRESCAN_KEEP}) in {time.time()-t0:.0f}s", flush=True)
+
+    pairs = [(i, j) for (i, j) in edge_pairs if not done[i, j]]
+    print(f"[PRECOMPUTE] fine-scan {len(pairs)} edge pairs, T={len(T_STARTS)} q={T_QUANTUM}d, workers={workers}", flush=True)
+    cnt = 0
     with mp.Pool(workers, initializer=_init) as p:
         for i, j, c, e in p.imap_unordered(_scan, pairs, chunksize=4):
             cheap_t[i, j] = c; exc_t[i, j] = e; done[i, j] = True; cnt += 1
