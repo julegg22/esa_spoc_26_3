@@ -64,9 +64,28 @@ each independently re-creating the lock (`ch1_global_smooth.py` history):
 - *Symptom:* search finds feasible ΔV below the bank, but official validation rejects.
 - *Root cause:* searching at heyoka tol 1e-12 vs the official 1e-16 → the trajectories diverge over a
   multi-day 3-body arc enough to miss the official 384 m / 1e-6 window.
-- *Fix:* search fast (1e-12), then a final official-precision (1e-16) refinement; **open item:** the
-  finite-difference DC closes to ~1 km but not 384 m on sensitive arcs — needs an STM-based
-  (analytic-Jacobian) corrector (in progress, E-701).
+- *Fix:* search fast (1e-12), then a final official-precision (1e-16) refinement; ~~open item: needs
+  an STM corrector~~ → **CLOSED by B9 (E-701): the residual blocker was not precision at all.** The STM
+  was built + validated (heyoka variational, machine-precision) and shelved — once B9 was fixed the
+  eccentric majority validates from a km-scale window, no corrector needed.
+
+**B9 — Circular-only Earth-side departure solver (the highest-impact bug; E-701).**
+- *Symptom:* every *backward-shooting* official validation rejected, even when the search found
+  sub-bank ΔV and the arrival was exact by construction. Misread as a *precision* gap (→ the STM
+  detour).
+- *Root cause:* `solve_departure_dv` builds a **circular** departure orbit — its least-squares
+  residual targets `el[1]→0`, `el[0]→r` — and then checks `|el[1]−e_e|<1e-6`. Since **399/400 Earth
+  orbits are eccentric** (e up to 0.74; idE 241 has e=3.3e-3), the check can *never* pass. This is the
+  **exact analog of the 2026-05-24 `solve_arrival_dv` eccentric-window fix** (which unlocked +150/400
+  Moon orbits) — applied to the Moon end but **never mirrored to the Earth end**. An asymmetry bug: a
+  known fix lives on one symmetric half of the problem and silently not the other.
+- *Why it dominated:* it sits *downstream* of every backward-shoot solver, so it defeated ~8 distinct
+  per-pair methods (E-619/681/687..691) regardless of their quality — the canonical "the wall is in the
+  evaluator, not the search" trap.
+- *Fix:* `scripts/ch1_departure_ecc.py::solve_departure_dv_ecc`, the eccentric mirror (Earth μ, window
+  `[a_e(1−e_e), a_e(1+e_e)]`, velocity solved to the full (a,e,i)). Backward-shoot CMA then finds
+  **official-valid** sub-bank captures immediately: (241,50) 6617→4315–4797 (+592–715 kg), (139,31)
+  6532→4254 (+652), (334,312) 5906→4928 (+248). Fleet sweep realizing it across 289 expensive pairs.
 
 ## Wrong conclusions corrected (see each node's retraction banner)
 - **E-619** "per-pair ΔV floored at ~3851 m/s; departure at the LEO floor" → RETRACTED: floor was a
