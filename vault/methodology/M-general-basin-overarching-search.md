@@ -244,4 +244,4 @@ feasibility) before concluding the basin is unreachable.*
 
 ## Memory pointer
 
-Auto-loaded via [[basin-overarching-search]] in MEMORY.md.
+Auto-loaded via [[M-general-basin-overarching-search]] in MEMORY.md.

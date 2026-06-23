@@ -6,7 +6,7 @@ date: 2026-06-13
 status: DIAGNOSTIC (no bank change) — the Ch2-small "no further gains / DP-optimal" verdict is exhaustion WITHIN one topology basin (fixed exception-allocation + comp0 cut), NOT exhaustion of the problem. flight-only=109.99d is already BELOW R3=110.88; the entire R3 gap is phasing idle the DP cannot remove FOR THIS PERM. The local-move ALNS (E-032) never crossed topology basins because the topology-changing operators (double_bridge/random_k) produced 0 bankings (DP-infeasible). The leaders' 101.65 lives in a different exception-allocation basin reachable only through DP-infeasible intermediates.
 instance: small.kttsp (easy, n=49), official KTTSP fitness
 scripts: /tmp/ch2s_decomp.py, /tmp/ch2s_topo.py (pure arithmetic on bank + edges_small.npz; no search, no write)
-related: [[E-602-ch1-trajectory-gap-anatomy]], [[E-032-ch2-dp-alns]], [[E-029-ch2-cpsat-lb-tightening]], [[E-038-ch2-small-epoch-aware-cluster-decomp]], [[ch2-small-floor-14292]], [[ch2-small-audit-2026-05-30]], [[foundation-then-search-methodology]], [[anti-oscillation-discipline]]
+related: [[E-602-ch1-trajectory-gap-anatomy]], [[E-032-ch2-dp-alns]], [[E-029-ch2-cpsat-lb-tightening]], [[E-038-ch2-small-epoch-aware-cluster-decomp]], [[ch2-small-floor-14292]], [[ch2-small-audit-2026-05-30]], [[M-general-foundation-then-search]], [[M-general-anti-oscillation-discipline]]
 ---
 
 # E-603 — Ch2 small: assumption audit + gap anatomy (user-requested deep exploration)

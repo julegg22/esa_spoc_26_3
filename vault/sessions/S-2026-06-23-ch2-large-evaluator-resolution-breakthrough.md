@@ -43,7 +43,7 @@ Rather than accept the moonshot, the user directed building the competitor's
 time-aware paradigm, in parallel with the trajectory cores.
 
 ### E-710 foundation audit — the discovery
-Per [[foundation-then-search-methodology]], validated the evaluator before
+Per [[M-general-foundation-then-search]], validated the evaluator before
 the search. Three positive-controlled probes:
 - **M0b (table precision):** the cached 1d table is **100 % faithful**
   (200/200 cells verify), but a full faithful scan at **0.01 d** tof steps

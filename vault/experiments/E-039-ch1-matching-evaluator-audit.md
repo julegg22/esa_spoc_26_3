@@ -6,7 +6,7 @@ date: 2026-06-12
 status: AUDIT COMPLETE — evaluator-divergence hypothesis REFUTED; our model is faithful to the official UDP; gap is exact-solver power, not the model
 instance: matching-i / matching-ii
 script: none (read-only audit, bg agent af600ebd)
-related: [[E-001-ch1-matching-first-attempts]], [[E-004-ch1-matching-i-exact-polish]], [[foundation-then-search-methodology]], [[O-002-leaderboard-2026-05-18]]
+related: [[E-001-ch1-matching-first-attempts]], [[E-004-ch1-matching-i-exact-polish]], [[M-general-foundation-then-search]], [[O-002-leaderboard-2026-05-18]]
 ---
 
 # E-039 — Ch1 matching: official-evaluator/model audit (hypothesis REFUTED)

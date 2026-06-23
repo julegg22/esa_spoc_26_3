@@ -48,4 +48,4 @@ primal recovery + local-search polish (many iterations).
 
 Banks intact (no change). Tools added: `ch1_auction.py` (validated exact sparse auction),
 `ch1_lagrangian_auction.py`, `ch1_auction_repair_lns.py`, `ch1_lagrangian_probe.py`. See
-[[ch1-matching-solver-bound-refuted]].
+[[E-673-ch1-matching-solver-bound-REFUTED]].

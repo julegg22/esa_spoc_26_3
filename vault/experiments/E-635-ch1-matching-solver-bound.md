@@ -49,4 +49,4 @@ the campaign. Until such a tool is available, matching is at its free-tool
 frontier; no further free-solver compute is warranted.
 
 See [[objective-optimal-not-points]] (high-probability architecture gate) and
-[[basin-overarching-search]].
+[[M-general-basin-overarching-search]].

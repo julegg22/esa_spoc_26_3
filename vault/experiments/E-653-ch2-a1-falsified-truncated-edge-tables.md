@@ -45,13 +45,13 @@ left 112.9960 — zero descent.** Combined with S1 (bank-order optimum = 112.996
 i.e. already including short edges) ⇒ **Ch2-small is BASIN-ISOLATED at 112.996.** Local search
 (destroy-k + cheapest-insertion), even with corrected edges + wide uphill acceptance, cannot reach
 the competitor's 101.65 — it lives in a structurally distant basin needing a different CONSTRUCTION
-(LKH time-expanded), confirming [[basin-overarching-search]] / [[competitor-algorithm-inference]].
+(LKH time-expanded), confirming [[M-general-basin-overarching-search]] / [[O-014-2026-06-07-competitor-algorithm-inference]].
 
 **LARGE architecture-gate (assessed, FAILED):** rank-1 needs makespan HALVING (932→<424) via
 near-optimal joint order+epoch on n=1051 — the SAME construction-basin difficulty just shown
 unsolved on tiny n=49 small, the corrected table for n=1051 is intractably large, and there is no
 intermediate rank (anything short of full halving = 0 pts). Probability of rank 1 = LOW, not HIGH ⇒
-do NOT commit cores to a full large corrected-table build (gate per [[architecture-change-on-large-gaps]]).
+do NOT commit cores to a full large corrected-table build (gate per [[M-general-architecture-change-on-large-gaps]]).
 
 **Pivot (lever UNBLOCKED):** `elkai` (LKH wrapper) IS installed in env spoc26. Build = LKH constructs
 structurally-different orders on the corrected-table static cost → DP-retime each via the
@@ -66,7 +66,7 @@ A mandatory positive control in the new LKH pipeline caught it: **DP-on-ultrafin
 `best=112.996` (official) but evaluated candidates with the DP (~117-119) ⇒ no candidate could ever
 "beat" 112.996 ⇒ it LOOKED basin-locked. It was a **metric mismatch INSIDE the search** (the exact
 "evaluator metric must match SA baseline metric" / "audit the evaluator before blaming search"
-trigger — see [[foundation-then-search-methodology]]). e617's chains were sitting at DP-mk 117.1,
+trigger — see [[M-general-foundation-then-search]]). e617's chains were sitting at DP-mk 117.1,
 i.e. **orders strictly BETTER than the bank's DP-mk 118.53 that it discarded.** "Small basin-isolated"
 is RETRACTED.
 
@@ -83,4 +83,4 @@ elkai LKH hit an internal precision assertion (deferred); the ILS DP-space searc
 
 Fits the gap decomposition (not a free-floating "new lever"): the short/wide-epoch edges are exactly
 the missing rows behind the flight-time inflation E-651/E-652 quantified. Probes were instrumented
-per [[feedback-instrument-experiments]] (startup control + per-chunk progress + verdict line).
+per [[M-general-instrument-experiments-before-launch]] (startup control + per-chunk progress + verdict line).

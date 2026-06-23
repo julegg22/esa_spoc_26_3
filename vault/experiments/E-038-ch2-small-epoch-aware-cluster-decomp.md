@@ -8,7 +8,7 @@ bank_before: 116.3738
 bank_after: 116.3738
 instance: small.kttsp (easy, n~49)
 script: scripts/ch2_e564_small_epoch_aware.py
-related: [[E-037-ch2-medium-epoch-aware-cluster-decomp]], [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-small-floor-14292]], [[foundation-then-search-methodology]]
+related: [[E-037-ch2-medium-epoch-aware-cluster-decomp]], [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-small-floor-14292]], [[M-general-foundation-then-search]]
 ---
 
 # E-038 — Ch2 small: epoch-aware cluster-decomposition (REFUTED)
@@ -32,7 +32,7 @@ both runs, every iteration → **the bank already realizes the
 chronologically-optimal interior order**.
 
 This is consistent with the small bank's provenance: it came from
-**DP-on-ultrafine-grid** (E-529, [[foundation-then-search-methodology]]),
+**DP-on-ultrafine-grid** (E-529, [[M-general-foundation-then-search]]),
 which already optimizes timing at the real arrival epoch. Medium/large
 banks came from a *fixed-reference-time tof proxy* (the proxy⊥reality
 trap), so epoch-aware re-timing had large slack to recover. Small has no

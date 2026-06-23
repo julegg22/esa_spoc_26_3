@@ -94,5 +94,5 @@ NOT another acceptance metaheuristic over our current neighborhoods.
 
 **Matching frontier CLOSED. Do not re-open without a paid exact solver or a
 genuinely new (non-swap, non-window-destroy) global operator.** See
-[[basin-overarching-search]] (reframed: matching is reachable-multi-basin, not an
+[[M-general-basin-overarching-search]] (reframed: matching is reachable-multi-basin, not an
 exact-locked ceiling, but unreachable by our free methods).

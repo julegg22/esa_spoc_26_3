@@ -54,4 +54,4 @@ large is the SAME: a **time-expanded / joint (order, schedule) global search on 
 evaluator**. Medium is the cleanest proof (rank 1 yet 2.13× the bound, reached by retiming alone).
 **Build the time-expanded engine ONCE → validate on medium (strong bank) → retrofit to small +
 large.** Highest-leverage move on the board. Ch1-trajectory's analogous fix already banked
-+23,583 kg (E-647/649). See [[architecture-change-on-large-gaps]], [[basin-overarching-search]].
++23,583 kg (E-647/649). See [[M-general-architecture-change-on-large-gaps]], [[M-general-basin-overarching-search]].

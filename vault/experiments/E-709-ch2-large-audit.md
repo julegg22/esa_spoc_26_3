@@ -44,4 +44,4 @@ is rank 2→1 ≈ **+1.78 weighted pts**, requiring a >2× makespan cut via a mu
 **Recommendation: hold large at rank-2; the time-aware-decomposition build is a low-EV moonshot vs the
 trajectory rank-5 push and submitting the strong unrealized banks.**
 
-Refines [[ch2-large-time-ordering-wall]], [[ch2-large-first-bank-topology]], [[architecture-change-on-large-gaps]].
+Refines [[ch2-large-time-ordering-wall]], [[ch2-large-first-bank-topology]], [[M-general-architecture-change-on-large-gaps]].

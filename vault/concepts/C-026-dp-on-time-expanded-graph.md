@@ -10,7 +10,7 @@ sources:
   - "Cordeau, Laporte, Mercier — A unified tabu search heuristic for vehicle routing problems with time windows (J Oper Res Soc, 2001)"
   - "Pesant et al. — An exact constraint logic programming algorithm for the TSP with TWs (Transp Sci, 1998)"
   - "Ahuja, Magnanti, Orlin — Network Flows (textbook, time-expanded graphs)"
-related: ["[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-012-earliest-feasible-tof]]", "[[E-030-ch2-dijkstra-bank-perm]]", "[[foundation-then-search-methodology]]"]
+related: ["[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-012-earliest-feasible-tof]]", "[[E-030-ch2-dijkstra-bank-perm]]", "[[M-general-foundation-then-search]]"]
 ---
 
 # C-026 — Forward DP / shortest path on time-expanded graph
@@ -54,7 +54,7 @@ they commit to the earliest-feasible tof per leg without lookahead.
 | DP on ultrafine grid (0.05 d × 0.05 d tof) | **126.43 d** |
 
 A **-15.86 d single-step improvement** with no perm change — just
-correcting the evaluator. See [[foundation-then-search-methodology]].
+correcting the evaluator. See [[M-general-foundation-then-search]].
 
 ## Mechanics
 

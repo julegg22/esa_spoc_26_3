@@ -9,7 +9,7 @@ created: 2026-06-08
 sources:
   - "Internal: E-541 medium DP-on-coarse-table 380.93 d vs walk 274.52 d"
   - "Internal: E-519 small DP-on-0.5d-quantum F1 failure mode"
-related: ["[[C-026-dp-on-time-expanded-graph]]", "[[E-029-ch2-cpsat-lb-tightening]]", "[[foundation-then-search-methodology]]"]
+related: ["[[C-026-dp-on-time-expanded-graph]]", "[[E-029-ch2-cpsat-lb-tightening]]", "[[M-general-foundation-then-search]]"]
 ---
 
 # C-031 — Grid quantization mismatch (the trap)
@@ -154,7 +154,7 @@ See [[L-013-evaluator-resolution-phantom-wall]].
 
 ## Lesson for future challenges
 
-When applying [[foundation-then-search-methodology]] to a new instance:
+When applying [[M-general-foundation-then-search]] to a new instance:
 - The first diagnostic is the DP-on-bank check. If DP > walk, abort
   and refine resolution.
 - A "good for small" grid is rarely "good for medium" — scale the

@@ -50,11 +50,11 @@ extended sweep) reach rank-3+. Tier 2/3 push toward rank-1.
 
 | H | verdict | result |
 |---|---|---|
-| [[hypotheses/H-001-ch1-matching-mip\|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short ([[takeaways/T-001-ch1-matching-needs-strong-search\|T-001]]) |
-| [[hypotheses/H-004-ch1-matching-mip-lns\|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7) ([[takeaways/T-002-mip-lns-family-validated-but-plateaus\|T-002]]) |
-| [[hypotheses/H-005-ch1-matching-coop-mip-lns\|H-005]] | **refuted (near-miss)** | coop+adaptive → 33320 = 99.56 % R3 (≈rank-6) ([[takeaways/T-003-diminishing-returns-need-exact-polish\|T-003]]) |
-| [[hypotheses/H-006-ch1-matching-exact-polish\|H-006]] | **refuted (ceiling)** | polish → 33338 = 99.6 % R3; HiGHS family exhausted, no Gurobi → pivot ([[takeaways/T-004-ch1-matching-ceiling-pivot\|T-004]]) |
-| [[hypotheses/H-002-ch1-trajectory-greedy\|H-002]] | **analyzed — paused** | pipeline proven (E-008) but no positive-mass transfer; global-trajopt problem; timeboxed per user ([[takeaways/T-005-ch1-advanced-is-a-global-trajopt-problem\|T-005]]) |
+| [[H-001-ch1-matching-mip|H-001]] | **refuted** | cheap MIP/greedy/LNS ~11–13 % short ([[T-001-ch1-matching-needs-strong-search|T-001]]) |
+| [[H-004-ch1-matching-mip-lns|H-004]] | **refuted (near-miss)** | parallel MIP-LNS → 33134 = 99.0 % R3 (≈rank-7) ([[T-002-mip-lns-family-validated-but-plateaus|T-002]]) |
+| [[H-005-ch1-matching-coop-mip-lns|H-005]] | **refuted (near-miss)** | coop+adaptive → 33320 = 99.56 % R3 (≈rank-6) ([[T-003-diminishing-returns-need-exact-polish|T-003]]) |
+| [[H-006-ch1-matching-exact-polish|H-006]] | **refuted (ceiling)** | polish → 33338 = 99.6 % R3; HiGHS family exhausted, no Gurobi → pivot ([[T-004-ch1-matching-ceiling-pivot|T-004]]) |
+| [[H-002-ch1-trajectory-greedy|H-002]] | **analyzed — paused** | pipeline proven (E-008) but no positive-mass transfer; global-trajopt problem; timeboxed per user ([[T-005-ch1-advanced-is-a-global-trajopt-problem|T-005]]) |
 
 ### Drafts (priced siblings, §16)
 

@@ -88,5 +88,5 @@ neighborhood first.** E-607's verdict line should be read as "OR-Tools could not
 construct alternatives," not "alternatives do not exist."
 
 links: [[E-607-ch2-small-global-reroute]] [[E-603-ch2-small-gap-anatomy]]
-[[E-606-ch2-small-edge-resolution]] [[methodology-triggers]]
-[[anti-oscillation-discipline]]
+[[E-606-ch2-small-edge-resolution]] [[M-applying-methodology-triggers]]
+[[M-general-anti-oscillation-discipline]]

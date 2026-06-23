@@ -7,7 +7,7 @@ status: REFUTED — free RAAN/argp does NOT unlock stranded high-incl Earth→Mo
 instance: trajectory (Ch1 hard)
 script: scripts/ch1_e577_raan_verdict.py, scripts/ch1_e576_bank_inspect.py
 log: runs/ch1/83_e577_raan_verdict.log, runs/ch1/82_e576_bank_inspect.log
-related: [[E-039-ch1-matching-evaluator-audit]], [[foundation-then-search-methodology]], [[methodology-triggers]], [[ch1-coherent-model-r3]]
+related: [[E-039-ch1-matching-evaluator-audit]], [[M-general-foundation-then-search]], [[M-applying-methodology-triggers]], [[ch1-coherent-model-r3]]
 ---
 
 # E-047 — Ch1 trajectory: free RAAN/argp feasibility lead REFUTED

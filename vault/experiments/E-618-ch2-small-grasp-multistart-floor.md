@@ -36,7 +36,7 @@ E-617 ILS all live in/around it). E-617 proved that bank an ISOLATED optimum —
 construction: does a randomized-greedy multi-start, sampling orderings the
 deterministic argmin pruned, ever land in a different (shorter-tof) basin that
 DP-polishes below 112.996? This is the basin-overarching test the campaign
-thesis ([[basin-overarching-search]]) calls for on Ch2-small.
+thesis ([[M-general-basin-overarching-search]]) calls for on Ch2-small.
 
 ## Method
 
@@ -88,4 +88,4 @@ crowded the 108–111 band is ⇒ low ROI vs submitting the existing banks.
 **Ch2-small free-method search frontier CLOSED.** Do not re-open without the
 joint sequence+epoch global-search architecture (not another
 construction/local-move method on the fixed graph). See
-[[ch2-small-floor-14292]], [[basin-overarching-search]], [[deep-single-prompt-audit]].
+[[ch2-small-floor-14292]], [[M-general-basin-overarching-search]], [[M-general-deep-single-prompt-audit]].

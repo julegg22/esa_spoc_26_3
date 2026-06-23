@@ -131,7 +131,7 @@ value) jumps.
 ## Memory pointer
 
 This methodology is auto-loaded via
-[[foundation-then-search-methodology]] in MEMORY.md.
+[[M-general-foundation-then-search]] in MEMORY.md.
 
 ## Companion docs
 

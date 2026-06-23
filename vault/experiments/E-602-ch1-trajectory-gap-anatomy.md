@@ -7,7 +7,7 @@ date: 2026-06-13
 status: DIAGNOSTIC (no bank change) — the Ch1-trajectory "no further gains expected" verdict is exhaustion WITHIN the impulsive patched-conic architecture, not exhaustion of the problem. Measured the gap to the leaders and isolated the lever: lunar CAPTURE Δv into low-eccentricity Moon orbits (corr(dv,eL)=−0.71), addressed by WSB/Sun-assisted ballistic capture — NOT plane change (cheap) and NOT the matching (near-optimal).
 instance: ch1 trajectory (ltl, BCP-propagated official fitness)
 scripts: scripts/ch1_e600_idd_lever_probe.py, scripts/ch1_e601_gap_anatomy.py, scripts/ch1_e602_rematch_probe.py
-related: [[ch1-coherent-model-r3]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-iL-matching-breakthrough]], [[ch1-lambert-dc-solver]], [[E-036-ch1-wsb-ballistic-capture-prototype]], [[ch1-raan-feasibility-refuted]]
+related: [[ch1-coherent-model-r3]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-iL-matching-breakthrough]], [[ch1-lambert-dc-solver]], [[E-036-ch1-wsb-ballistic-capture-prototype]], [[E-047-ch1-raan-argp-feasibility-refuted]]
 ---
 
 > ⚠️ **REFRAMED 2026-06-22 by E-700 / E-697** (interpretation wrong, measurements right). Two claims

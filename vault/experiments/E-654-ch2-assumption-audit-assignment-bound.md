@@ -49,7 +49,7 @@ next builds, cheapest-first:
 3. LKH/metaheuristic on time-expanded edges — only if 1–2 falsify.
 
 Recover targets: small 11.35d (→ rank 4→1 region), large the 508d excess (→ toward 424). Medium near-opt.
-See [[basin-overarching-search]], [[deep-single-prompt-audit]], [[ch2-find-transfer-pattern]].
+See [[M-general-basin-overarching-search]], [[M-general-deep-single-prompt-audit]], [[ch2-find-transfer-pattern]].
 
 ## ★★ UNIFYING STRUCTURE (2026-06-18, E-655 follow-up) — all Ch2 = GIANT + satellites
 

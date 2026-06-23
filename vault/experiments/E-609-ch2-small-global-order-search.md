@@ -135,5 +135,5 @@ a valid negative, not a solver artifact.
 
 links: [[E-608-ch2-small-e607-verification]] [[E-607-ch2-small-global-reroute]]
 [[E-603-ch2-small-gap-anatomy]] [[E-606-ch2-small-edge-resolution]]
-[[methodology-triggers]] [[anti-oscillation-discipline]]
-[[foundation-then-search-methodology]]
+[[M-applying-methodology-triggers]] [[M-general-anti-oscillation-discipline]]
+[[M-general-foundation-then-search]]

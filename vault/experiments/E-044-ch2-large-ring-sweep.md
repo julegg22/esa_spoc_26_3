@@ -6,7 +6,7 @@ date: 2026-06-12
 status: PARTIAL WIN + DECISIVE REFUTATION — v1 banked 1048.98→1041.33 (−7.64d); v2 defrag refuted; pure phase-sweep cannot reach r1; large pole needs global TD-TSP
 instance: hard.kttsp (n=1051)
 script: scripts/ch2_e580_large_ring_sweep.py, scripts/ch2_e581_large_defrag_sweep.py
-related: [[E-043-ch2-large-legslack-phasemiss]], [[E-041-ch2-large-gap-decomposition]], [[ch2-large-bank]], [[ch2-compute-parallelization-roi]], [[competitor-algorithm-inference]]
+related: [[E-043-ch2-large-legslack-phasemiss]], [[E-041-ch2-large-gap-decomposition]], [[ch2-large-bank]], [[ch2-compute-parallelization-roi]], [[O-014-2026-06-07-competitor-algorithm-inference]]
 ---
 
 # E-044 — Ch2 large: ring phase-sweep (v1 banked, v2 refuted)

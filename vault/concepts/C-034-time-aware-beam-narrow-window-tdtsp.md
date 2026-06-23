@@ -9,7 +9,7 @@ created: 2026-06-23
 sources:
   - "Internal: E-710 M2/M3 (ch2_giant_fine_beam.py) — broke the 367/601 wall, 558/601 @ 283 d"
   - "Ow & Morton — Filtered beam search in scheduling"
-related: ["[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-033-fast-faithful-oracle]]", "[[C-032-kttsp-problem]]", "[[C-013-cluster-bridge-insertion-pattern]]", "[[C-011-metaheuristic-local-search-routing]]", "[[basin-overarching-search]]"]
+related: ["[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-033-fast-faithful-oracle]]", "[[C-032-kttsp-problem]]", "[[C-013-cluster-bridge-insertion-pattern]]", "[[C-011-metaheuristic-local-search-routing]]", "[[M-general-basin-overarching-search]]"]
 ---
 
 # C-034 — Time-aware beam construction for narrow-window TD-TSP
@@ -78,7 +78,7 @@ cities (wider W, exceptions, or window-epoch clustering / tail-repair).
   using static costs reintroduces the failure.
 - **Width buys tail access, not just better cost.** Here W>1 is the
   difference between stranding (367) and (near-)completion (558+). Treat
-  W as the lever against frontier exhaustion ([[basin-overarching-search]]).
+  W as the lever against frontier exhaustion ([[M-general-basin-overarching-search]]).
 - **Diversity in the prune, or the frontier collapses.** Near the end the
   beam shrinks toward one visited-set; dedup/diversify to keep variety.
 - **Spend exceptions only where stuck.** Cheap legs dominate; exceptions

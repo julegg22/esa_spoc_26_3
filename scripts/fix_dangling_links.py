@@ -18,6 +18,26 @@ stems = {os.path.basename(f)[:-3] for f in files}
 STOP = {"ch1", "ch2", "ch3", "the", "and", "a", "of", "to", "on", "in", "for", "with", "large", "small",
         "medium", "v2", "v3", "and", "problem", "ch1trajectory", "ch2large", "ch2small"}
 
+# Curated high-confidence semantic mappings the token-matcher cannot infer (memory-slug -> vault node;
+# old concept name -> current concept; same-ID experiment reslugs). Validated against stems below.
+MANUAL_MAP = {
+    "anti-oscillation-discipline": "M-general-anti-oscillation-discipline",
+    "basin-overarching-search": "M-general-basin-overarching-search",
+    "foundation-then-search-methodology": "M-general-foundation-then-search",
+    "deep-single-prompt-audit": "M-general-deep-single-prompt-audit",
+    "architecture-change-on-large-gaps": "M-general-architecture-change-on-large-gaps",
+    "methodology-triggers": "M-applying-methodology-triggers",
+    "feedback-instrument-experiments": "M-general-instrument-experiments-before-launch",
+    "competitor-algorithm-inference": "O-014-2026-06-07-competitor-algorithm-inference",
+    "ch1-matching-solver-bound-refuted": "E-673-ch1-matching-solver-bound-REFUTED",
+    "ch1-raan-feasibility-refuted": "E-047-ch1-raan-argp-feasibility-refuted",
+    "C-001-lambert-two-point-bvp": "C-006-lambert-problem-and-orbital-tsp",
+    "C-002-highs-mip-solver": "C-004-mip-and-mip-lns",
+    "E-001-ch1-matching-mip-highs": "E-001-ch1-matching-first-attempts",
+    "E-034-ch2-large-bank": "E-034-ch2-large-epoch-aware-reorder",
+    "E-034-ch2-large-first-bank": "E-034-ch2-large-epoch-aware-reorder",
+}
+
 
 def idpref(s):
     m = re.match(r"^([A-Z]-(?:general|\d{4}-\d{2}-\d{2}|\d+))", s)
@@ -51,6 +71,12 @@ missing = []
 for t in sorted(dangling):
     if re.search(r"-?NNN", t) or t in ("C-NNN", "E-NNN"):
         missing.append((t, "template-placeholder"))
+        continue
+    if t in MANUAL_MAP:                                    # curated override
+        mapping[t] = MANUAL_MAP[t]
+        continue
+    if t.endswith("\\") and t.rstrip("\\") in stems:      # repair escaped [[...\]] link
+        mapping[t] = t.rstrip("\\")
         continue
     p = idpref(t)
     slug = t[len(p) + 1:] if p and len(t) > len(p) else ""
@@ -93,12 +119,14 @@ for o, why in missing:
     print(f"   [[{o}]] ({why})")
 
 if APPLY and mapping:
+    # path-aware: matches [[old]], [[folder/old]], [[old|alias]], [[old#anchor]] (and escaped backslash)
+    pats = [(re.compile(r"\[\[(?:[^\[\]|#\n]*?/)?" + re.escape(o) + r"(?=[\]|#])"), "[[" + n) for o, n in mapping.items()]
     changed = 0
     for f in files:
         txt = open(f, encoding="utf-8", errors="ignore").read()
         orig = txt
-        for o, n in mapping.items():
-            txt = txt.replace(f"[[{o}]]", f"[[{n}]]").replace(f"[[{o}|", f"[[{n}|").replace(f"[[{o}#", f"[[{n}#")
+        for pat, repl in pats:
+            txt = pat.sub(repl, txt)
         if txt != orig:
             open(f, "w", encoding="utf-8").write(txt)
             changed += 1

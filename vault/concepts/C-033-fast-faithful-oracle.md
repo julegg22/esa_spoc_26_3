@@ -9,7 +9,7 @@ created: 2026-06-23
 sources:
   - "Internal: E-710 M0a-c (ch2_giant_table_audit.py, ch2_giant_window_continuity.py)"
   - "Internal: E-710 M2 fine-tof beam (ch2_giant_fine_beam.py)"
-related: ["[[C-031-grid-quantization-mismatch]]", "[[C-012-earliest-feasible-tof]]", "[[C-026-dp-on-time-expanded-graph]]", "[[C-034-time-aware-beam-narrow-window-tdtsp]]", "[[foundation-then-search-methodology]]"]
+related: ["[[C-031-grid-quantization-mismatch]]", "[[C-012-earliest-feasible-tof]]", "[[C-026-dp-on-time-expanded-graph]]", "[[C-034-time-aware-beam-narrow-window-tdtsp]]", "[[M-general-foundation-then-search]]"]
 ---
 
 # C-033 — Fast-faithful oracle (table-propose + fine-verify)
@@ -96,5 +96,5 @@ The table's job is "where to look," never "what the answer is."
 - [[C-031-grid-quantization-mismatch]] — the failure mode this avoids
   (and its online-evaluator manifestation, the "phantom wall").
 - [[C-012-earliest-feasible-tof]] — the per-leg quantity being computed.
-- [[foundation-then-search-methodology]] — validate the evaluator first;
+- [[M-general-foundation-then-search]] — validate the evaluator first;
   this primitive was built only after the precision/continuity audits.

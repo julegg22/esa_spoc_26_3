@@ -9,7 +9,7 @@ status: CP-SAT DEVELOPMENT + DEEP REAUDIT (no bank change yet). Built the time-c
   viable path under test: order search on the fast table-DP + continuous-retime the winners.
 date: 2026-06-23
 tags: [ch2, small, cpsat, tdtsp, time-coupling, reaudit, evaluator-faithfulness]
-related: [[E-702-ch2-small-joint-basin-audit]], [[ch2-small-floor-14292]], [[foundation-then-search-methodology]]
+related: [[E-702-ch2-small-joint-basin-audit]], [[ch2-small-floor-14292]], [[M-general-foundation-then-search]]
 ---
 # E-703 — Ch2-small: CP-SAT TD-TSP development + deep reaudit
 

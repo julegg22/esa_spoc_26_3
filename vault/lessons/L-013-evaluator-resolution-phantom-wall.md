@@ -14,7 +14,7 @@ related:
   - "[[C-033-fast-faithful-oracle]]"
   - "[[C-034-time-aware-beam-narrow-window-tdtsp]]"
   - "[[L-012-solver-assumption-audit-before-research-grade-verdict]]"
-  - "[[foundation-then-search-methodology]]"
+  - "[[M-general-foundation-then-search]]"
   - "[[M-applying-methodology-triggers]]"
 effort_person_hours: 4.0
 ---
@@ -80,10 +80,10 @@ check in [[M-applying-methodology-triggers]]):
 ## Why it matters beyond this instance
 
 The reflex on a large competitor gap is to reach for a heavier
-*algorithm* ([[basin-overarching-search]], cluster+LKH). Here the gap was
+*algorithm* ([[M-general-basin-overarching-search]], cluster+LKH). Here the gap was
 an *evaluator* defect: ~10 lines of resolution, not a new paradigm. The
 cheapest high-information probe was the one the audit skipped — auditing
-its own measuring stick. This is the [[foundation-then-search-methodology]]
+its own measuring stick. This is the [[M-general-foundation-then-search]]
 maxim sharpened: *validate the evaluator's RESOLUTION, not just its
 correctness, before declaring the search exhausted.*
 

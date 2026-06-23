@@ -98,4 +98,4 @@ No oscillation: each lever was quantitatively bounded against the gap and closed
 
 links: [[E-609-ch2-small-global-order-search]] [[E-606-ch2-small-edge-resolution]]
 [[E-608-ch2-small-e607-verification]] [[E-603-ch2-small-gap-anatomy]]
-[[ch1-trajectory-mass-lever-exhausted]] [[methodology-triggers]]
+[[ch1-trajectory-mass-lever-exhausted]] [[M-applying-methodology-triggers]]

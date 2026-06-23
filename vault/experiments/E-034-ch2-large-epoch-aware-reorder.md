@@ -67,7 +67,7 @@ is far longer than the best-of-4-ref-times proxy (e.g. epoch-aware segB cost
 257 d vs fixed-ref proxy 104 d). E-561's GLS thus minimized the WRONG objective.
 Making the matrix epoch-aware aligned the OR-Tools objective with the realized
 chronological tof and collapsed the heavy tail. This is the
-[[foundation-then-search-methodology]] / audit-the-evaluator trigger paying off:
+[[M-general-foundation-then-search]] / audit-the-evaluator trigger paying off:
 the evaluator metric must match the walk metric.
 
 ## Leaderboard / rank

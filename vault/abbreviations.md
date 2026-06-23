@@ -47,20 +47,20 @@ introduced. See `META.md §3` for the discipline.
 |---|---|---|
 | BCP | Bicircular Problem (Earth + Moon + Sun, restricted 4-body) | [[concepts/C-001-cr3bp-and-bicircular-problem]] |
 | CR3BP | Circular Restricted 3-Body Problem (Earth + Moon, autonomous) | [[concepts/C-001-cr3bp-and-bicircular-problem]] |
-| BVP | Boundary Value Problem (Lambert is a 2-point BVP) | [[concepts/C-001-lambert-two-point-bvp]] |
-| IVP | Initial Value Problem (BCP propagation is an IVP) | [[concepts/C-006-bicircular-problem]] |
-| ODE | Ordinary Differential Equation (heyoka integrates ODEs) | [[concepts/C-006-bicircular-problem]] |
+| BVP | Boundary Value Problem (Lambert is a 2-point BVP) | [[C-006-lambert-problem-and-orbital-tsp]] |
+| IVP | Initial Value Problem (BCP propagation is an IVP) | [[C-001-cr3bp-and-bicircular-problem]] |
+| ODE | Ordinary Differential Equation (heyoka integrates ODEs) | [[C-001-cr3bp-and-bicircular-problem]] |
 | SOI | Sphere of Influence (gravitational dominance boundary) | [[concepts/C-003-sphere-of-influence-patched-conics]] |
 | LOI | Lunar Orbit Insertion (capture burn at Moon-relative periapsis) | [[concepts/C-002-delta-v-rocket-equation-loi]] |
-| TOF | Time of Flight (transfer arc duration) | [[concepts/C-001-lambert-two-point-bvp]] |
+| TOF | Time of Flight (transfer arc duration) | [[C-006-lambert-problem-and-orbital-tsp]] |
 | GTO | Geostationary Transfer Orbit (mentioned for departure-energy context) | various Ch1 H |
 | LEO | Low Earth Orbit | various Ch1 H |
-| L1, L2, L3, L4, L5 | Lagrangian / libration points (CR3BP equilibria) | [[concepts/C-006-bicircular-problem]] |
-| N-body | Many-body gravitational problem (full simulation) | [[concepts/C-006-bicircular-problem]] |
-| dV / ΔV | Delta-V (impulsive velocity change) | [[concepts/C-001-lambert-two-point-bvp]] |
+| L1, L2, L3, L4, L5 | Lagrangian / libration points (CR3BP equilibria) | [[C-001-cr3bp-and-bicircular-problem]] |
+| N-body | Many-body gravitational problem (full simulation) | [[C-001-cr3bp-and-bicircular-problem]] |
+| dV / ΔV | Delta-V (impulsive velocity change) | [[C-006-lambert-problem-and-orbital-tsp]] |
 | v_inf | Hyperbolic excess velocity (asymptotic speed at infinity from secondary) | [[concepts/C-004-hyperbolic-flyby-v-infinity]] |
 | r_peri | Periapsis radius (closest approach to gravitating body) | [[concepts/C-004-hyperbolic-flyby-v-infinity]] |
-| μ (mu) | Gravitational parameter `G·M`; per body: `μ_E`, `μ_M`, `μ_S` | [[concepts/C-006-bicircular-problem]] |
+| μ (mu) | Gravitational parameter `G·M`; per body: `μ_E`, `μ_M`, `μ_S` | [[C-001-cr3bp-and-bicircular-problem]] |
 
 ---
 
@@ -68,12 +68,12 @@ introduced. See `META.md §3` for the discipline.
 
 | abbr | meaning | primary node |
 |---|---|---|
-| a | Semi-major axis | [[concepts/C-001-lambert-two-point-bvp]] |
-| e | Eccentricity | [[concepts/C-001-lambert-two-point-bvp]] |
-| i | Inclination | [[concepts/C-001-lambert-two-point-bvp]] |
-| Ω (raan) | Right Ascension of Ascending Node | [[concepts/C-001-lambert-two-point-bvp]] |
-| ω (argp) | Argument of Periapsis | [[concepts/C-001-lambert-two-point-bvp]] |
-| ν (nu) | True anomaly | [[concepts/C-001-lambert-two-point-bvp]] |
+| a | Semi-major axis | [[C-006-lambert-problem-and-orbital-tsp]] |
+| e | Eccentricity | [[C-006-lambert-problem-and-orbital-tsp]] |
+| i | Inclination | [[C-006-lambert-problem-and-orbital-tsp]] |
+| Ω (raan) | Right Ascension of Ascending Node | [[C-006-lambert-problem-and-orbital-tsp]] |
+| ω (argp) | Argument of Periapsis | [[C-006-lambert-problem-and-orbital-tsp]] |
+| ν (nu) | True anomaly | [[C-006-lambert-problem-and-orbital-tsp]] |
 | e_idx, l_idx | Indices into Earth-orbit / Moon-orbit catalogues for Ch1 Adv | [[hypotheses/H-009-ch1-advanced-infra]] |
 
 ---
@@ -82,11 +82,11 @@ introduced. See `META.md §3` for the discipline.
 
 | abbr | meaning | primary node |
 |---|---|---|
-| L_SI | Earth-Moon distance ≈ 384 400 km (length unit) | [[concepts/C-006-bicircular-problem]] |
-| T_SI | Synodic time unit `1/ω_EM` (≈ 4.348 d) | [[concepts/C-006-bicircular-problem]] |
-| V_SI | `L_SI / T_SI` (synodic velocity unit) | [[concepts/C-006-bicircular-problem]] |
-| MU_BCP | Mass parameter `μ_M / (μ_E + μ_M)` for BCP non-dim | [[concepts/C-006-bicircular-problem]] |
-| ω_EM | Earth-Moon mean angular velocity | [[concepts/C-006-bicircular-problem]] |
+| L_SI | Earth-Moon distance ≈ 384 400 km (length unit) | [[C-001-cr3bp-and-bicircular-problem]] |
+| T_SI | Synodic time unit `1/ω_EM` (≈ 4.348 d) | [[C-001-cr3bp-and-bicircular-problem]] |
+| V_SI | `L_SI / T_SI` (synodic velocity unit) | [[C-001-cr3bp-and-bicircular-problem]] |
+| MU_BCP | Mass parameter `μ_M / (μ_E + μ_M)` for BCP non-dim | [[C-001-cr3bp-and-bicircular-problem]] |
+| ω_EM | Earth-Moon mean angular velocity | [[C-001-cr3bp-and-bicircular-problem]] |
 
 ---
 
@@ -137,7 +137,7 @@ introduced. See `META.md §3` for the discipline.
 | BLAS | Basic Linear Algebra Subprograms | [[lessons/L-007-appcontrol-blocks-entire-sci-python-stack]] |
 | ML | Machine Learning | [[methodology/M-015-cardinality-vs-constraint-satisfaction-framing]] *(strategic mention)* |
 | RL | Reinforcement Learning | [[hypotheses/H-037-ch2-easy-memetic-ga]] *(strategic mention)* |
-| DL | Deep Learning | [[concepts/C-011-cp-sat]] *(strategic mention)* |
+| DL | Deep Learning | [[C-009-constraint-programming-cp-sat]] *(strategic mention)* |
 | Pareto | Set of non-dominated trade-offs (orbital-element / dV) | [[takeaways/T-009-single-impulse-knob-pareto-is-model-bound]] |
 | Tsiolkovsky | Rocket equation `Δv = v_e · ln(m_0 / m_f)` | [[hypotheses/H-009-ch1-advanced-infra]] |
 
@@ -147,18 +147,18 @@ introduced. See `META.md §3` for the discipline.
 
 | abbr | meaning | primary node |
 |---|---|---|
-| heyoka | Adaptive Taylor-series ODE integrator (used for BCP propagation) | [[concepts/C-006-bicircular-problem]] |
+| heyoka | Adaptive Taylor-series ODE integrator (used for BCP propagation) | [[C-001-cr3bp-and-bicircular-problem]] |
 | pykep | Python Keplerian library (ESA / pagmo team; canonical Lambert + multi-rev) | [[hypotheses/H-015b-multirev-lambert]] *(we replace this in our toolchain)* |
 | pygmo | Python Generic Multi-Objective optimisation library (sister to pykep) | [[lessons/L-007-appcontrol-blocks-entire-sci-python-stack]] |
 | udp | User-Defined Problem (pygmo / pagmo idiom for an objective + constraints object) | [[hypotheses/H-021-ch3-greedy-baseline]] |
-| OR-Tools | Google's open-source operations-research toolkit (host of CP-SAT) | [[concepts/C-011-cp-sat]] |
+| OR-Tools | Google's open-source operations-research toolkit (host of CP-SAT) | [[C-009-constraint-programming-cp-sat]] |
 | numpy | Python numerical-array library | [[lessons/L-007-appcontrol-blocks-entire-sci-python-stack]] |
 | scipy | Python scientific computing library (`scipy.optimize` for NM / BFGS / DE) | [[concepts/C-009-differential-evolution]] |
-| highspy | Python bindings for HiGHS solver | [[concepts/C-002-highs-mip-solver]] |
+| highspy | Python bindings for HiGHS solver | [[C-004-mip-and-mip-lns]] |
 | miniforge | Conda variant using conda-forge by default | [[lessons/L-001-windows-requires-miniforge]] |
 | App Control | Microsoft Windows code-integrity policy (blocked our `.pyd` modules) | [[lessons/L-007-appcontrol-blocks-entire-sci-python-stack]] |
-| DE440 | JPL high-precision planetary ephemeris (mentioned for context, not used) | [[concepts/C-006-bicircular-problem]] *(comparison table)* |
-| SPICE | NASA NAIF's astrodynamics toolkit (mentioned for context, not used) | [[concepts/C-006-bicircular-problem]] *(comparison table)* |
+| DE440 | JPL high-precision planetary ephemeris (mentioned for context, not used) | [[C-001-cr3bp-and-bicircular-problem]] *(comparison table)* |
+| SPICE | NASA NAIF's astrodynamics toolkit (mentioned for context, not used) | [[C-001-cr3bp-and-bicircular-problem]] *(comparison table)* |
 
 ---
 

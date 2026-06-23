@@ -7,7 +7,7 @@ date: 2026-06-13
 status: REFUTES the E-602 low-eL WSB lever (no bank change). WSB ballistic capture does NOT close the low-eL/circular-Moon-orbit gap: 14/16 LOW-eL pairs FAIL_no_valid_capture (the eccentric capture window [a(1−e),a(1+e)] of a near-circular orbit is too narrow for bound returns to thread), and the 2 successes are a wash (median LOW Δmass −46 kg). WSB only wins on HIGH-eL pairs (9/9 capture) and there only on the subset whose impulsive baseline was already poor (5/9, median +154 kg). Realistic fleet upside ≈ +15–25 k kg, confined to already-cheap high-eL targets — NOT the +62–128 k kg that motivated the probe. The Ch1 R3 "WSB fleet-scale" lever (E-602's reopened question) is therefore largely CLOSED; the residual is a small, low-priority guarded-bank opportunity, not a multi-day build.
 instance: Ch1 trajectory (hard ×16/9), official BCP LtlTrajectory.fitness
 scripts: scripts/ch1_e603_wsb_eL_probe.py (probe; results /tmp/ch1_e603_results.json — 25 pairs, /tmp only, nothing banked)
-related: [[E-602-ch1-trajectory-gap-anatomy]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-coherent-model-r3]], [[ch1-b1b2b3-deferred]], [[deep-single-prompt-audit]], [[M-general-deep-single-prompt-audit]]
+related: [[E-602-ch1-trajectory-gap-anatomy]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-coherent-model-r3]], [[ch1-b1b2b3-deferred]], [[M-general-deep-single-prompt-audit]], [[M-general-deep-single-prompt-audit]]
 ---
 
 > ⚠️ **NARROWED 2026-06-22 by E-700 / E-697.** This correctly refutes **one specific pipeline**

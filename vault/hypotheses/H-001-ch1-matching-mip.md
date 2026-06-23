@@ -70,7 +70,7 @@ submit (GOALS.md §4); user uploads.
 
 ## Experiments
 
-- [[E-001-ch1-matching-mip-highs]] — HiGHS MIP on both instances.
+- [[E-001-ch1-matching-first-attempts]] — HiGHS MIP on both instances.
 
 ## Analysis (filled at close — §6)
 

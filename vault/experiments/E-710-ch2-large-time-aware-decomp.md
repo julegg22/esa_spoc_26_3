@@ -56,4 +56,4 @@ only) - those are exactly for hard tail transitions; (2) beam-width collapse nea
 Aims to close the 43-city gap into a complete 601-tour. If complete & makespan < 424 -> rank-1 lever for
 large: stitch the 3x150 satellites, faithful udp verify, guard-bank (NEVER submit, escalate). [pending]
 
-Refines [[ch2-large-time-ordering-wall]] (the "overfit" sub-claim partially retracted), [[foundation-then-search-methodology]] (evaluator was again the flaw), [[ch2-compute-parallelization-roi]].
+Refines [[ch2-large-time-ordering-wall]] (the "overfit" sub-claim partially retracted), [[M-general-foundation-then-search]] (evaluator was again the flaw), [[ch2-compute-parallelization-roi]].

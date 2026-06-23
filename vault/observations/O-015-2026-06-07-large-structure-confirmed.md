@@ -87,4 +87,4 @@ decomposition.
 - [[O-014-2026-06-07-competitor-algorithm-inference]] — why TGMA's
   algorithm is likely cluster-aware
 - [[ch2-find-transfer-pattern]] — our existing methodology
-- [[foundation-then-search-methodology]] — the meta-principle
+- [[M-general-foundation-then-search]] — the meta-principle

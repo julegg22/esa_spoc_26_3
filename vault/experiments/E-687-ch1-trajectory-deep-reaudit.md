@@ -6,7 +6,7 @@ date: 2026-06-21
 status: DEEP RE-AUDIT (user override: "HRI used NO sophisticated physics; the gap is large so they use a STRUCTURALLY different approach; find the flaw in our reasoning"). Corrected the gap attribution from lunar-capture to EARTH-DEPARTURE ENERGY, then refuted FOUR successive per-pair conjectures. Net: per-pair trajectory is near OUR-tooling's floor; the 488k gap is NOT explained per-pair; premise reassessment OPEN.
 instance: ch1 trajectory (ltl, BCP-propagated official fitness)
 scripts: ch1_audit_measure.py, ch1_audit_apogee.py, ch1_2impulse_test.py, ch1_dv1_continuation.py, ch1_competent_resolve.py, ch1_nlp_pair.py, ch1_multishoot.py, ch1_circular_*.py
-related: [[E-602-ch1-trajectory-gap-anatomy]], [[E-604-ch1-wsb-eL-stratified-fleet-probe]], [[E-605-ch1-trajectory-reaudit-parallel-bcp]], [[E-619-ch1-trajectory-global-search-gap-hypotheses]], [[ch1-trajectory-udp-floor-confirmed]], [[deep-single-prompt-audit]]
+related: [[E-602-ch1-trajectory-gap-anatomy]], [[E-604-ch1-wsb-eL-stratified-fleet-probe]], [[E-605-ch1-trajectory-reaudit-parallel-bcp]], [[E-619-ch1-trajectory-global-search-gap-hypotheses]], [[ch1-trajectory-udp-floor-confirmed]], [[M-general-deep-single-prompt-audit]]
 ---
 
 # E-687..691 — Ch1 trajectory: deep re-audit + four refuted per-pair conjectures

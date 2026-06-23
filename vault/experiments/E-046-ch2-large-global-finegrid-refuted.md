@@ -6,7 +6,7 @@ date: 2026-06-12
 status: REFUTED — single-pass global epoch-aware reorder is UNWALKABLE even on the fine grid; the pole (r1=424.62) needs an iterated epoch-robust construction we have not cracked
 instance: hard.kttsp (n=1051)
 script: scripts/ch2_e584_large_global_finegrid.py (drives scripts/ch2_e572_large_global_epoch_lkh.py)
-related: [[E-045-ch2-large-grid-discretization]], [[E-044-ch2-large-ring-sweep]], [[ch2-large-first-bank-topology]], [[ch2-compute-parallelization-roi]], [[competitor-algorithm-inference]]
+related: [[E-045-ch2-large-grid-discretization]], [[E-044-ch2-large-ring-sweep]], [[ch2-large-first-bank-topology]], [[ch2-compute-parallelization-roi]], [[O-014-2026-06-07-competitor-algorithm-inference]]
 ---
 
 # E-046 — Ch2 large pole: global reorder refuted on the fine grid
