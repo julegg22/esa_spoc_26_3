@@ -33,8 +33,8 @@ for i in OUT:
     OUT[i].sort(key=lambda jr: GMIN[jr[1]])
 
 
-def fine_cheap_arrival(i, j, row, t):
-    """Earliest cheap (<=dv_thr) arrival for edge (i,j) departing >= t. Table proposes the open epoch &
+def fine_cheap_arrival(i, j, row, t, dv_cap):
+    """Earliest <=dv_cap arrival for edge (i,j) departing >= t. Table proposes the open epoch &
     tof; fine local verify. Returns (departure, tof, arrival) or None. ~bounded Lamberts."""
     e0 = np.searchsorted(EPOCHS, t)
     for e in range(max(0, e0 - 1), min(len(EPOCHS), e0 + 8)):       # nearest open grid epochs (windows wide)
@@ -42,22 +42,37 @@ def fine_cheap_arrival(i, j, row, t):
             continue
         dep = max(t, float(EPOCHS[e])); h = float(VALS[row, e])
         for tof in np.arange(max(kt.min_tof, h - 0.025), h + 0.025, 0.0005):
-            if kt.compute_transfer(i, j, dep, float(tof)) <= kt.dv_thr:
+            if kt.compute_transfer(i, j, dep, float(tof)) <= dv_cap:
                 return dep, float(tof), dep + float(tof)
     return None
 
 
-def candidates(i, t, visited, K):
+def candidates(i, t, visited, K, exc_left):
+    """Cheap (<=dv_thr) candidates first; if few and exceptions remain, add EXCEPTION (<=dv_exc) candidates
+    for hard transitions. Returns (city, arrival, tof, is_exc)."""
     out = []
     for (j, row) in OUT[i]:
         if j in visited:
             continue
-        res = fine_cheap_arrival(i, j, row, t)
+        res = fine_cheap_arrival(i, j, row, t, kt.dv_thr)
         if res is not None:
-            out.append((j, res[2], res[1]))                        # (city, arrival, tof)
+            out.append((j, res[2], res[1], 0))                     # (city, arrival, tof, is_exc)
             if len(out) >= K * 3:
                 break
     out.sort(key=lambda c: c[1])
+    out = out[:K]
+    if len(out) < K and exc_left > 0:                              # hard frontier: allow an exception leg
+        have = {c[0] for c in out}; exc = []
+        for (j, row) in OUT[i]:
+            if j in visited or j in have:
+                continue
+            res = fine_cheap_arrival(i, j, row, t, kt.dv_exc)
+            if res is not None:
+                exc.append((j, res[2], res[1], 1))
+                if len(exc) >= K:
+                    break
+        exc.sort(key=lambda c: c[1])
+        out = out + exc[:max(1, K - len(out))]
     return out[:K]
 
 
@@ -65,15 +80,16 @@ def main(W=60, K=18, start=-1):
     starts = [cities[start]] if start >= 0 else cities[:8]
     print(f"[E-710 M2] fine-tof beam W={W} K={K}; giant n={NG}; {len(starts)} seed start(s)", flush=True)
     # beam states: dict(last, t, exc, visited frozenset-ish via tuple-sorted? use set + path)
-    beam = [{"t": 0.0, "last": s, "vis": {s}, "path": [s]} for s in starts]
+    beam = [{"t": 0.0, "last": s, "vis": {s}, "path": [s], "exc": 0} for s in starts]
     best = {"depth": 1, "path": list(beam[0]["path"]), "t": 0.0}
     t0 = time.time(); pc_done = False
     for depth in range(1, NG):
         succ = []
         for st in beam:
-            cs = candidates(st["last"], st["t"], st["vis"], K)
-            for (j, arr, tof) in cs:
-                succ.append({"t": arr, "last": j, "vis": st["vis"] | {j}, "path": st["path"] + [j]})
+            cs = candidates(st["last"], st["t"], st["vis"], K, kt.n_exc - st["exc"])
+            for (j, arr, tof, is_exc) in cs:
+                succ.append({"t": arr, "last": j, "vis": st["vis"] | {j},
+                             "path": st["path"] + [j], "exc": st["exc"] + is_exc})
         if not pc_done:
             print(f"[E-710 M2] positive control: depth1 expanded to {len(succ)} successors [{time.time()-t0:.0f}s]", flush=True)
             pc_done = True
