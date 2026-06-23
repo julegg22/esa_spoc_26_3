@@ -56,8 +56,25 @@ with official rank, a sub-118.53 table-DP order could retime below 112.996. Deci
 fast walk (`ch2_walk_sa.py`) → retime the winner. (If table-DP is order-dependently offset and
 uncorrelated, Ch2-small is genuinely blocked for fast methods — accept rank 6 / escalate.)
 
-## Honest status
-No bank change. CP-SAT intractable; routing coupling-violating; fast evaluator unfaithful. The pivot
-(table-DP search + continuous-retime) is the last fast lever and is being tested. Rank-3 needs only
-−2.1d, so even a small structural win matters. Trajectory (the day's big lever) banked separately at
-327,926 kg.
+## Pivot test result (`ch2_walk_sa.py`, 4 workers × 40k iters = 160k orders)
+- **The bank order is table-DP-OPTIMAL**: no order beats 118.525 on the fast walk (160k explored).
+  Echoes E-609/E-702 — basin-locked, now also on the fast evaluator.
+- **The continuous retime is unreliable from a non-optimal seed**: retiming the bank order seeded from
+  its *walk* schedule (118.53) returns 118.5255, NOT 112.996 — the CMA is a local polisher and cannot
+  bridge the 5.5d to the true optimum (which S1 reaches only because it seeds from the bank's *actual*
+  112.996 schedule). So we cannot fast-evaluate an arbitrary order's true official makespan.
+
+## VERDICT (Ch2-small fast methods EXHAUSTED, honest)
+Every fast lever fails on the same rock — **the time-coupling has no fast faithful evaluator**:
+| method | failure |
+|---|---|
+| CP-SAT time-coupled (flaws fixed) | intractable (215k vars, LB never left 0, 165d) |
+| OR-Tools routing (E-511) | earliest-arrival relaxation violates the coupling |
+| fast table-DP walk | +5.5d offset from official; bank is its optimum anyway |
+| continuous CMA retime | faithful only from the optimum's own seed; can't evaluate other orders |
+The bank **112.996 is optimal under our table + reachable search**. The competitor's 110.88 (R3) /
+101.65 (R1) must come from something we cannot currently reach. **One untested coverage hypothesis**:
+our table caps tof at **8.0d** — a better order may use a longer (>8d) cheap transfer we never scan;
+extending TOFS past 8d is the one concrete, cheap-ish follow-up. Otherwise Ch2-small stays rank 6 and
+the +2.1d to rank-3 is not reachable by the methods available. No bank change; nothing submitted.
+Trajectory (the day's big lever) banked separately at **327,926 kg (+64,807 today)**.
