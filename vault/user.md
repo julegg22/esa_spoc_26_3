@@ -13,15 +13,15 @@ promote to `CLAUDE.md` or `META.md` once codified; soft preferences
 stay here.*
 
 > [!note] Stealth-mode submission
-> Optimise leaderboard alias is **`JJ & CC`** (J = the user, C =
-> Claude Code). Public-facing repo content is anonymised: no real
-> name, email, or institutional affiliation. The GitHub
+> Optimise leaderboard alias is **`JE_MemExp`** (set 2026-06-23;
+> previously `JJ & CC`). Public-facing repo content is anonymised: no
+> real name, email, or institutional affiliation. The GitHub
 > noreply identity on commits is the only persisted pseudonymous
 > handle.
 >
 > The Optimise leaderboard entry **`Team HRI` (Honda Research
 > Institute Europe, Germany)** is a **separate team of HRI
-> colleagues**, not the user's `JJ & CC` alias. Recorded here so
+> colleagues**, not the user's `JE_MemExp` alias. Recorded here so
 > future sessions don't confuse "the user's institution appears
 > on the leaderboard" with "the user has results posted." We
 > don't share methods, intermediate results, or leaderboard
