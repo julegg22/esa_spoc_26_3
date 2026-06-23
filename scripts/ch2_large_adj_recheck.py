@@ -30,9 +30,11 @@ def is_cheap_dense(i, j):
 
 
 def main(n_sample=300, seed=0):
-    d = np.load(ADJ); cheap_adj = d["cheap_adj"]
+    d = np.load(ADJ); cheap_adj = d["cheap"]; labels = d["labels"]
     n_cheap_e533 = int(cheap_adj.sum())
-    print(f"[E-709b] e533 adjacency: {n_cheap_e533} cheap directed edges of {n*(n-1)} ({100*n_cheap_e533/(n*(n-1)):.2f}%)", flush=True)
+    sizes = np.bincount(labels)
+    print(f"[E-709b] e533 adjacency: {n_cheap_e533} cheap directed edges ({100*n_cheap_e533/(n*(n-1)):.2f}%); "
+          f"components (top sizes): {sorted(sizes[sizes>0].tolist(), reverse=True)[:8]}", flush=True)
     rng = np.random.default_rng(seed)
     # sample pairs e533 marked NON-cheap
     noncheap = np.argwhere(~cheap_adj)
