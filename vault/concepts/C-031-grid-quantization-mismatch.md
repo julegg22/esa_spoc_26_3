@@ -115,6 +115,43 @@ For medium (where full fine table is ~10 days on 4 cores) and large
 - `scripts/ch2_e540_medium_bank_pair_fine.py` — per-leg fix.
 - `scripts/ch2_e542_medium_fine_pair_set.py` — curated pair subset.
 
+## The online-evaluator manifestation — the "phantom wall" (E-710, 2026-06-23)
+
+The same root cause (tof step too coarse for the feasible band) bites a
+SECOND place — not the DP table, but the **online search/construction
+evaluator** — and there its symptom is far more dangerous: it
+manufactures a **phantom structural wall** that a whole audit can
+mistake for a property of the *problem*.
+
+**Ch2 giant case.** Every faithful construction (greedy, shorttof_walk,
+SA retimes) scanned tofs at 0.01–0.05 d. But the giant's cheap-tof bands
+are **~0.002 d wide** (E-710 M0b: a 0.01 d scan finds the cheap tof only
+**11 %** of the time; the cached 1d table, built fine, is 100 % faithful
+and sees them). So the online evaluator was **blind to ~89 % of cheap
+edges**. Consequences:
+
+- Greedy stranded at 367/601 and a four-experiment audit (E-709)
+  concluded a *genuine* time-dependent wall ("no easy flaw, moonshot").
+- The dense-precompute beam's "overfit" (orders looking 0.3 d/leg but
+  "retiming" to 1099 d) was substantially a **coarse-tof RETIMING
+  artifact**, not a real overfit — the retimer stepped over the band.
+
+Once the evaluator was made fine (sub-band verify, [[C-033-fast-faithful-oracle]]),
+a time-aware beam threaded **558/601 @ 283 d**
+([[C-034-time-aware-beam-narrow-window-tdtsp]]), overturning the "wall."
+See [[L-013-evaluator-resolution-phantom-wall]].
+
+**Detection (add to the warning signs above):**
+- Before trusting any "construction strands / saturates / hits a wall"
+  verdict, **measure the feasible-band width** in each continuous
+  variable and confirm the scan step is ≤ ¼ of it. Take a handful of
+  *known-feasible* points (a fine table, the bank) and check the online
+  evaluator re-finds them at its working resolution. If it misses most,
+  the wall is an artifact, not the problem.
+- An aggregate "cheap density looks fine" can coexist with the online
+  walk seeing almost none of it — always test at the point level
+  ([[M-applying-methodology-triggers]] saturated/plateau trigger).
+
 ## Lesson for future challenges
 
 When applying [[foundation-then-search-methodology]] to a new instance:
