@@ -95,6 +95,7 @@ def main():
             if rt is None:
                 continue
             nt, nmk, nexc = rt
+            nt = cur_times[:k + 1] + nt[k + 1:]                    # keep unchanged prefix times
             if best is None or nmk < best[0]:
                 best = (nmk, newseq, nt, nexc, k)
         if best is not None:
