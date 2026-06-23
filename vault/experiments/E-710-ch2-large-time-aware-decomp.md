@@ -42,6 +42,18 @@ lacked (faithful beam W=12 was <50/601 in 6min; this does W=60 at ~5s/depth).
 (keep W earliest-time states, dedup by last-city for diversity). Threading **0.14 d/leg** early (rank-1
 0.404). Checkpoints best path every 25 depths to `cache/ch2_giant_fine_beam_best.json` (resumable).
 **Decisive question:** does W>1 lookahead thread past the 367 greedy wall toward a complete 601 @ <500d?
-[result pending]
+
+### RESULT (W=60, K=18): the global lookahead BREAKS the 367 wall
+The beam threaded **558/601** (vs greedy 367 / static-TSP 10), makespan **283d for the 558** (0.508 d/leg;
+0.29-0.41 d/leg through depth 500 — BELOW rank-1's 0.404), then stranded with **43 cities** unvisited
+(beam collapsed 60->25 states near the end). This **overturns the E-709 "genuine wall / moonshot" verdict**:
+the 367 greedy wall was frontier-exhaustion that GLOBAL LOOKAHEAD dissolves. A complete tour on this
+trajectory extrapolates to ~300-380d -> UNDER rank-1's 424. The remaining gap is the last 43 hard-shell
+cities. Two identified levers: (1) the beam never used the 5 allowed EXCEPTION legs (dv<=600, pure-cheap
+only) - those are exactly for hard tail transitions; (2) beam-width collapse near the end starves diversity.
+
+### M3 (running): W=120, K=24 + exception legs (<=5) for the hard frontier
+Aims to close the 43-city gap into a complete 601-tour. If complete & makespan < 424 -> rank-1 lever for
+large: stitch the 3x150 satellites, faithful udp verify, guard-bank (NEVER submit, escalate). [pending]
 
 Refines [[ch2-large-time-ordering-wall]] (the "overfit" sub-claim partially retracted), [[foundation-then-search-methodology]] (evaluator was again the flaw), [[ch2-compute-parallelization-roi]].
