@@ -35,3 +35,4 @@ leaderboard/
 # Watchdog runtime state (per-session, machine-local)
 vault/active_runs.json
 .claude/scheduled_tasks.lock
+cache/

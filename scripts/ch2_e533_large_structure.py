@@ -31,7 +31,7 @@ sys.stdout.reconfigure(line_buffering=True)
 INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/"
         "Challenge 2 Keplerian Tomato Traveling Salesperson Problem/"
         "problems/hard.kttsp")
-OUT_ADJ = '/tmp/ch2_e533_large_adj.npz'
+OUT_ADJ = '/home/julian/Projects/esa_spoc_26_3/cache/ch2_e533_large_adj.npz'  # persistent (survives reboot)
 
 # Sample (t, tof) probes — spread across horizon, varied tof magnitudes
 PROBES = [
