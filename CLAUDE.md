@@ -120,6 +120,21 @@ context cleared), orient by reading the **tiered memory** defined in
 After reading, confirm the active frontier entry with `git log
 --oneline -20` and open the named H file.
 
+**Housekeeping triggers** (keep vault + git from drifting; see
+`vault/methodology/M-general-housekeeping-cadence.md`):
+- **At resume AND wind-down:** run
+  `python scripts/housekeeping_check.py` (mechanical drift: uncommitted
+  vault, untracked scripts, unpushed commits, dangling links, MEMORY.md
+  pointer rot, cache-without-generator). Fix what it flags **before
+  proceeding** — never batch it. Then do the *judgment* review
+  (`M-001`): did this session produce a reusable insight not yet in a
+  C-/L-/M- node? Is the session note written? `git status vault/` must
+  end empty.
+- **Every `/loop` tick:** the loop prompt runs the same check as a cheap
+  gate and fixes flagged mechanics that tick.
+- **Weekly:** a cloud cron runs the full audit + writes the
+  `vault/reviews/` consolidation (triages the dangling-link backlog).
+
 Re-clone the gitignored upstream starter kit:
 
 ```
