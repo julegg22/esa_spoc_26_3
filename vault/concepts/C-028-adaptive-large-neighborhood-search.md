@@ -27,7 +27,7 @@ change per iteration, vs single-move LS (2-opt, swap).
 **Adaptive LNS (ALNS)** adds:
 1. Multiple destroy operators (random-k, worst-leg, cluster-target, …)
 2. Multiple repair operators (greedy-insert, regret-k, sequential-best, …)
-3. **Acceptance criterion** — typically SA (see [[C-027]]).
+3. **Acceptance criterion** — typically SA (see [[C-027-simulated-annealing]]).
 4. **Operator weight adaptation** — operators that produce accepted
    moves get higher selection weights. Bad operators are downweighted.
 
@@ -41,7 +41,7 @@ We use ALNS as the **search engine on top of the DP evaluator**:
   double-bridge).
 - Repair: random insertion (most operators are perm-internal
   rearrangements so no explicit insertion needed).
-- Evaluate: DP on time-expanded graph (see [[C-026]]).
+- Evaluate: DP on time-expanded graph (see [[C-026-dp-on-time-expanded-graph]]).
 - Accept: SA.
 
 This is the architecture of E-529 (the breakthrough that took small
@@ -65,7 +65,7 @@ This is the architecture of E-529 (the breakthrough that took small
 - `regret-k` (proposed): insert nodes in order of "regret" — how
   much worse the 2nd-best position is than the best.
 - `LKH-3 sub-tour rebuild` (proposed): for large destroy windows,
-  run LKH-3 ([[C-030]]) on the residual subgraph.
+  run LKH-3 ([[C-030-lkh3-tsp-solver]]) on the residual subgraph.
 
 ### Operator weight adaptation
 

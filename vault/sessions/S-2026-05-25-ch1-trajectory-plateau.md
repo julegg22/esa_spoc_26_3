@@ -103,8 +103,8 @@ Ch1 trajectory at rank 3.
 
 ## Open paths preserved
 
-[[H-008]] (raan/argp/t0 sweep), [[H-009]] (WSB), [[H-010]] (backward
-shooting), [[H-011]] (STM-based DC) — all documented for later pickup.
+[[H-008-ch1-tier2-raan-t0-sweep]] (raan/argp/t0 sweep), [[H-009-ch1-tier3-wsb-sun-assisted]] (WSB), [[H-010-ch1-tier3-backward-shooting-fix]] (backward
+shooting), [[H-011-ch1-tier3-stm-based-dc]] (STM-based DC) — all documented for later pickup.
 The plane-change-at-SOI implementation (O-013) is partially built in
 `src/esa_spoc_26/ch1_soi_three_impulse.py` for future iteration.
 

@@ -166,17 +166,17 @@ pending.
 
 | node | content |
 |---|---|
-| [[C-017]] | Sub-tour bridge insertion for k > 5 missing clusters |
-| [[C-018]] | Reserved-budget construction (cap heuristic to preserve budget for repair) |
-| [[C-019]] | Hierarchical orbital-element decomposition for n ≥ 500 |
-| [[C-020]] | Bridge-prefilter (O(1) check vs O(L) walk; 30× speedup) |
-| [[M-006]] | No idle while rank-3 unmet with orthogonal families untried |
-| [[L-006]] | Warm-start polish from known-feasible baseline |
-| [[L-007]] | Cached evaluators may discard local-optimization gains |
-| [[L-008]] | Estimate evaluator cost × candidate count before launching |
-| [[L-009]] | Pipeline failure is family failure, not problem impossibility |
-| [[L-010]] | Barrier IP methods need strictly-interior warm-starts |
-| [[L-011]] | Standard TSP heuristics need domain-specific adaptation |
+| [[C-017-subtour-bridge-insertion-large-clusters]] | Sub-tour bridge insertion for k > 5 missing clusters |
+| [[C-018-reserved-budget-construction]] | Reserved-budget construction (cap heuristic to preserve budget for repair) |
+| [[C-019-hierarchical-orbital-element-decomposition]] | Hierarchical orbital-element decomposition for n ≥ 500 |
+| [[C-020-bridge-prefilter]] | Bridge-prefilter (O(1) check vs O(L) walk; 30× speedup) |
+| [[M-006-idle-pivot-on-unmet-targets]] | No idle while rank-3 unmet with orthogonal families untried |
+| [[L-006-polish-warmstart-never-worse]] | Warm-start polish from known-feasible baseline |
+| [[L-007-cached-evaluators-discard-polish]] | Cached evaluators may discard local-optimization gains |
+| [[L-008-estimate-cost-before-launch]] | Estimate evaluator cost × candidate count before launching |
+| [[L-009-pipeline-failure-is-family-failure]] | Pipeline failure is family failure, not problem impossibility |
+| [[L-010-barrier-ip-needs-strict-interior]] | Barrier IP methods need strictly-interior warm-starts |
+| [[L-011-tsp-heuristics-need-domain-adaptation]] | Standard TSP heuristics need domain-specific adaptation |
 
 ## Banked state at session pause (mid-day 2026-05-22)
 

@@ -20,7 +20,7 @@ WORSE results than the broken greedy evaluator it was meant to replace.*
 
 ## Definition
 
-For DP on a time-expanded graph (see [[C-026]]), the **precomputed
+For DP on a time-expanded graph (see [[C-026-dp-on-time-expanded-graph]]), the **precomputed
 Lambert table** must have:
 - Time quantum Δt sufficient to capture optimal departure times.
 - Tof grid step Δtof sufficient to capture optimal tofs.

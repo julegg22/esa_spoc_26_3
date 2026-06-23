@@ -76,7 +76,7 @@ Error: ≤ Δt per leg. Cumulative error ≤ n_legs × Δt / 2.
 ### Numba JIT speedup
 
 Pure Python: ~220 s per DP eval. Numba `@njit(cache=True)`: 2.5-3 s.
-**80× speedup**, makes DP-based ALNS feasible. See [[C-029]].
+**80× speedup**, makes DP-based ALNS feasible. See [[C-029-numba-jit-scientific-python]].
 
 ## In practice
 
@@ -92,12 +92,12 @@ Pure Python: ~220 s per DP eval. Numba `@njit(cache=True)`: 2.5-3 s.
 
 1. **Grid mismatch (the E-541 trap)**: a Δt too coarse for the
    instance scale gives DP results WORSE than walk_perm_chrono. See
-   [[C-031]]. Medium at Δt=0.5 d gave 380 d on bank; Δt=0.1 d gave
+   [[C-031-grid-quantization-mismatch]]. Medium at Δt=0.5 d gave 380 d on bank; Δt=0.1 d gave
    228.97 d. Validate Δt scales appropriately for the instance.
 2. **Per-pair vs per-leg precompute**: the Lambert table cost scales
    as O(n² · T · tof_grid). For large (n=1051), full table is
    intractable. Workarounds: per-leg fine precompute on bank's pairs
-   only (E-540, 13 min) or curated pair set (E-542). See [[C-030]]
+   only (E-540, 13 min) or curated pair set (E-542). See [[C-030-lkh3-tsp-solver]]
    for the per-pair-keyed organization.
 
 ## References

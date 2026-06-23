@@ -37,10 +37,10 @@ extended sweep) reach rank-3+. Tier 2/3 push toward rank-1.
 | Tier 1A polish (queued) | Ch1 trajectory | +1-2 | 1-2h | 1.0 | Nelder-Mead per pair; ready in scripts/ch1_polish_chromosome.py |
 | Tier 1B 3-impulse (queued) | Ch1 trajectory | +2-3 | 2-3h | 1.0 | dv1 mid-course; ready in scripts/ch1_3impulse_polish.py |
 | Tier 1C extend (queued) | Ch1 trajectory | +2-4 | 6h | 0.5 | pairs #500-2000; ready in scripts/ch1_extend_sweep.py |
-| [[H-008]] Tier 2: raan_e/t0 | Ch1 trajectory | +2-3 | 4-8 | 0.5 | sweep 3 free DOF; needs Tier 1 first |
-| [[H-009]] Tier 3: WSB | Ch1 trajectory | +5-8 | 16-32 | 0.3 | Sun-assisted ballistic capture; rank-1 ambition |
-| [[H-010]] Tier 3: back-shoot | Ch1 trajectory | +2-3 | 4-6 | 0.5 | fix O-012 residual; targets high-iE pairs |
-| [[H-011]] Tier 3: STM-DC | Ch1 trajectory | +3-5 | 16-24 | 0.2 | heyoka variational; enables full 160k sweep |
+| [[H-008-ch1-tier2-raan-t0-sweep]] Tier 2: raan_e/t0 | Ch1 trajectory | +2-3 | 4-8 | 0.5 | sweep 3 free DOF; needs Tier 1 first |
+| [[H-009-ch1-tier3-wsb-sun-assisted]] Tier 3: WSB | Ch1 trajectory | +5-8 | 16-32 | 0.3 | Sun-assisted ballistic capture; rank-1 ambition |
+| [[H-010-ch1-tier3-backward-shooting-fix]] Tier 3: back-shoot | Ch1 trajectory | +2-3 | 4-6 | 0.5 | fix O-012 residual; targets high-iE pairs |
+| [[H-011-ch1-tier3-stm-based-dc]] Tier 3: STM-DC | Ch1 trajectory | +3-5 | 16-24 | 0.2 | heyoka variational; enables full 160k sweep |
 | H-003 polish | Ch2 small | +2-4 | 4 | 0.75 | reduce 142.92 → 112d; LARGE ARCHITECTURAL change required |
 | H-007 (Ch2 medium) | Ch2 medium | 8 | 12 | 0.67 | reuse find_transfer + cluster-insertion pipeline |
 

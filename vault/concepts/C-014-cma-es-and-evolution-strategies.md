@@ -49,7 +49,7 @@ CMA-ES, but cheap and surprisingly effective for ruggedness.
 ## Why it matters here
 
 Ch2 KTTSP is a **145-dim real-valued** problem (48 td + 48 tof + 49
-permutation keys after [[C-015|argsort encoding]]) with a highly
+permutation keys after [[C-015-fcmaes-coordinated-retry|argsort encoding]]) with a highly
 non-convex Lambert-driven objective surface. Local search methods
 (2-opt, Or-opt, SA, LNS) have **convergence-confirmed** at 142.99 d
 across 7 methods (E-018→E-024); the remaining 31-d gap to rank-3

@@ -30,7 +30,7 @@ matters more than the algorithm itself for the hot path.
 
 ## Why it matters here
 
-The forward DP for Ch2 small (see [[C-026]]) in pure Python ran at
+The forward DP for Ch2 small (see [[C-026-dp-on-time-expanded-graph]]) in pure Python ran at
 **~220 s per perm evaluation**. With numba `@njit(cache=True)`:
 **~2.5 s per evaluation = 80× faster**. This made it practical to
 run DP-ALNS at hundreds of evaluations per minute per chain across
@@ -113,5 +113,5 @@ that spawn fresh interpreters — each worker doesn't recompile.
 
 ## References
 
-- [[C-026]] — the DP that numba's accelerating.
+- [[C-026-dp-on-time-expanded-graph]] — the DP that numba's accelerating.
 - E-029 / E-032 — measured 80× speedup.

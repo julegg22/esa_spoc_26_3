@@ -49,7 +49,7 @@ That's worse than our DP-ALNS bank (116 d) — because LKH minimizes
 the sum-of-min-tofs proxy, not the actual time-coupled makespan —
 but it's already in rank-5 territory in sub-second.
 
-**For large** (n=1051, see [[O-015]]): the cheap-edge graph
+**For large** (n=1051, see [[O-015-2026-06-07-large-structure-confirmed]]): the cheap-edge graph
 decomposes into [601, 150, 150, 150] components. The three small
 components are near-complete subgraphs (in/out degree ≈ 149 on 150
 nodes). For dense graphs, LKH-3 finds optimal Hamilton paths in
@@ -57,7 +57,7 @@ nodes). For dense graphs, LKH-3 finds optimal Hamilton paths in
 typical range (minutes).
 
 This is the inferred algorithmic structure of TGMA's June-5 large
-breakthrough (1143 → 424 d in 1 hour, see [[O-014]]):
+breakthrough (1143 → 424 d in 1 hour, see [[O-014-2026-06-07-competitor-algorithm-inference]]):
 1. Decompose into 4 components.
 2. LKH-3 per component (seconds each).
 3. Optimize 3 inter-comp bridges + 2 intra-comp exception slots.

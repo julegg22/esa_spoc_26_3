@@ -44,7 +44,7 @@ genuine difficulty:
 
 | E | hypothesis | verdict | finding |
 |---|---|---|---|
-| E-018 | full-horizon retime fixes CP-SAT | **refutes** | the **time-coupling** is the binding crux ([[O-008]]) |
+| E-018 | full-horizon retime fixes CP-SAT | **refutes** | the **time-coupling** is the binding crux ([[O-008-ch2-cheap-window-density-per-pair]]) |
 | E-019 | denser edge precompute lifts feasibility | **refutes** | 16× compute = ZERO new cheap edges; resolution saturated |
 | E-020 | multi-window CP-SAT (K=8 td-only) | **refutes** | static-tof per pair = wrong precompute target (ΣTOF=1312d) |
 | E-021 | joint (td, tof) v2 K=12 + diagnostics | **refutes** | 5-node sub-INFEASIBLE → graph topology; discrete CP-SAT cannot capture continuous time |

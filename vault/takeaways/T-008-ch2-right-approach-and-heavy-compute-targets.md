@@ -32,7 +32,7 @@ isolated:
 
 1. ✓ **Graph topology is fine** — static Ham-path with ≤5 exceptions
    exists (CP-SAT diagnostic OPTIMAL). 4-cluster structure
-   ([[O-007]]), no dead-ends at ≤600.
+   ([[O-007-ch2-small-structure-characterized]]), no dead-ends at ≤600.
 2. ✓ **Edge cost precompute is saturated** — E-019: 16× more compute
    yields ZERO new cheap edges. The 138 ≤100 + 837 (100,600] arcs
    are essentially complete.
