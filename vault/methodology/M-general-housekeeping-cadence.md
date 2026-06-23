@@ -57,4 +57,9 @@ reproduce/reconstruct/trace ([[M-general-commit-criteria-reproduce-reconstruct-t
 - `scripts/housekeeping_check.py` — the mechanical checker (run anytime;
   `--memory-dir` to point at the auto-memory dir).
 - Loop prompt: add "run housekeeping_check.py; fix any drift this tick."
-- Cron: weekly headless review → `vault/reviews/`.
+- Weekly: **durable cloud routine** (claude.ai/code, not a session-local cron —
+  survives session close, no 7-day expiry) `trig_01MKucasNSifXK2X91jmPuPV`,
+  Fridays 07:23 UTC (09:23 Europe/Berlin), model sonnet-4-6, runs the full audit
+  + writes `vault/reviews/`. Cloud runs work from the committed repo only (no
+  local memory/runs/cache), so the MEMORY-pointer check skips there by design.
+  Requires GitHub connected for the repo (/web-setup or the Claude GitHub App).
