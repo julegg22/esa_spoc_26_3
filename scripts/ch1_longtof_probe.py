@@ -12,7 +12,8 @@ from scipy.optimize import minimize
 sys.path.insert(0, "/home/julian/Projects/esa_spoc_26_3/src")
 sys.path.insert(0, "/home/julian/Projects/esa_spoc_26_3/scripts")
 from esa_spoc_26.ch1_trajectory import LtlTrajectory, V, T as TUNIT
-from ch1_backshoot_ecc import UDPBackEcc, official_row
+from ch1_backshoot_ecc import UDPBackEcc
+from ch1_ecc_fleet import official_row
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
 TWO_PI = 2 * math.pi
 
