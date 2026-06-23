@@ -43,15 +43,17 @@ def check_git_state():
 
 
 def check_dangling_links():
-    """[[wikilink]] targets with no matching vault note file."""
-    nodes = {Path(f).stem for f in glob.glob(str(ROOT / "vault/**/*.md"), recursive=True)}
+    """[[wikilink]] targets with no matching vault note file. Excludes _templates/ sources and NNN
+    placeholders (those are example scaffolding, not real drift)."""
+    md = [f for f in glob.glob(str(ROOT / "vault/**/*.md"), recursive=True) if "/_templates/" not in f]
+    nodes = {Path(f).stem for f in md}
     link_re = re.compile(r"\[\[([^\]|#]+)")
     dangling = {}
-    for f in glob.glob(str(ROOT / "vault/**/*.md"), recursive=True):
+    for f in md:
         txt = Path(f).read_text(encoding="utf-8", errors="ignore")
         for m in link_re.findall(txt):
             tgt = m.strip().split("/")[-1]
-            if tgt and tgt not in nodes and not tgt.endswith(".base"):
+            if tgt and tgt not in nodes and not tgt.endswith(".base") and not re.search(r"-?NNN", tgt):
                 dangling.setdefault(tgt, []).append(Path(f).name)
     if dangling:
         sample = sorted(dangling)[:10]
