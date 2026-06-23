@@ -10,7 +10,7 @@ related: ["[[M-general-commit-criteria-reproduce-reconstruct-trace]]", "[[M-001-
 
 A fast research campaign accretes drift that is invisible until something
 looks for it: untracked source scripts (reproducibility gaps), uncommitted
-journals (untraceable results), unpushed commits, dangling `[[wikilinks]]`,
+journals (untraceable results), unpushed commits, dangling wiki-links,
 `MEMORY.md` pointer rot, and gitignored caches with no committed generator.
 None of these surface in normal work; all of them corrode
 reproduce/reconstruct/trace ([[M-general-commit-criteria-reproduce-reconstruct-trace]]).

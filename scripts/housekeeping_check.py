@@ -48,11 +48,17 @@ def check_dangling_links():
     md = [f for f in glob.glob(str(ROOT / "vault/**/*.md"), recursive=True) if "/_templates/" not in f]
     nodes = {Path(f).stem for f in md}
     link_re = re.compile(r"\[\[([^\]|#]+)")
+    name_re = re.compile(r"^[\w][\w.\-]*$")               # real node stems only (drops code/YAML artifacts)
     dangling = {}
     for f in md:
         txt = Path(f).read_text(encoding="utf-8", errors="ignore")
+        txt = re.sub(r"```.*?```", "", txt, flags=re.S)   # strip fenced code blocks
         for m in link_re.findall(txt):
-            tgt = m.strip().split("/")[-1]
+            tgt = m.strip().split("/")[-1].lstrip("[").strip()
+            if tgt.endswith(".md"):
+                tgt = tgt[:-3]
+            if not name_re.match(tgt):                    # comma/space/'>' fragments, YAML lists, etc.
+                continue
             if tgt and tgt not in nodes and not tgt.endswith(".base") and not re.search(r"-?NNN", tgt):
                 dangling.setdefault(tgt, []).append(Path(f).name)
     if dangling:
