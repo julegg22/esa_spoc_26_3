@@ -61,18 +61,18 @@ def candidates(i, t, visited, K, exc_left):
                 break
     out.sort(key=lambda c: c[1])
     out = out[:K]
-    if len(out) < K and exc_left > 0:                              # hard frontier: allow an exception leg
+    if len(out) < 4 and exc_left > 0:                             # ONLY a near-stuck frontier spends an exception
         have = {c[0] for c in out}; exc = []
-        for (j, row) in OUT[i]:
+        for (j, row) in OUT[i][:40]:                              # bounded scan (neighbors sorted cheapest-first)
             if j in visited or j in have:
                 continue
             res = fine_cheap_arrival(i, j, row, t, kt.dv_exc)
             if res is not None:
                 exc.append((j, res[2], res[1], 1))
-                if len(exc) >= K:
+                if len(exc) >= 4:
                     break
         exc.sort(key=lambda c: c[1])
-        out = out + exc[:max(1, K - len(out))]
+        out = out + exc
     return out[:K]
 
 
