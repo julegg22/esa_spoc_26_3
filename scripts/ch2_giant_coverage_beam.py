@@ -24,7 +24,8 @@ from collections import defaultdict
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
 INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 Keplerian "
         "Tomato Traveling Salesperson Problem/problems/hard.kttsp")
-CKPT = f"{ROOT}/cache/ch2_giant_coverage_beam_best.json"
+def _ckpt(W_cov, Radd, targeted):                              # param-distinct so parallel runs don't clobber
+    return f"{ROOT}/cache/ch2_giant_coverage_beam_best_wc{W_cov}_r{Radd}{'_T' if targeted else ''}.json"
 kt = KTTSP(INST)
 d = np.load(f"{ROOT}/cache/ch2_giant_dense1d.npz")
 EPOCHS = d["epochs"]; KEYS = d["keys"]; VALS = d["vals"]; FIN = np.isfinite(VALS)
@@ -104,12 +105,19 @@ def dedup_keep(states, key, n):
     return keep
 
 
-def main(W_core=70, W_cov=40, K=18, thresh=40, Radd=6, start=-1):
-    RARE = set(c for c in cities if INDEG[c] < thresh)
+def main(W_core=70, W_cov=40, K=18, thresh=40, Radd=6, start=-1, rarefile=None):
+    RARE = set(c for c in cities if INDEG[c] < thresh)          # broad set: drives opportunistic offering
+    TARGET = RARE                                               # coverage-elite front maximizes THIS set
+    if rarefile:                                                # targeted feedback: focus the elite on the
+        TARGET = set(int(c) for c in json.load(open(rarefile)))  # specific cities that stranded last run
+        RARE = RARE | TARGET                                    # still offer both as candidates
+        print(f"[E-719b] TARGET={len(TARGET)} (from {rarefile}); RARE-offer={len(RARE)}", flush=True)
+    CKPT = _ckpt(W_cov, Radd, bool(rarefile))
     starts = [cities[start]] if start >= 0 else cities[:8]
     print(f"[E-719b] coverage beam W_core={W_core} W_cov={W_cov} K={K} thresh={thresh} (|RARE|={len(RARE)}) "
           f"Radd={Radd}; giant n={NG}; {len(starts)} seed(s)", flush=True)
-    beam = [{"t": 0.0, "last": s, "vis": {s}, "path": [s], "exc": 0, "rare": int(s in RARE)} for s in starts]
+    beam = [{"t": 0.0, "last": s, "vis": {s}, "path": [s], "exc": 0,
+             "rare": int(s in RARE), "targ": int(s in TARGET)} for s in starts]
     best = {"depth": 1, "path": list(beam[0]["path"]), "t": 0.0, "rare": beam[0]["rare"]}
     t0 = time.time(); pc = False
     for depth in range(1, NG):
@@ -117,7 +125,8 @@ def main(W_core=70, W_cov=40, K=18, thresh=40, Radd=6, start=-1):
         for st in beam:
             for (j, arr, tof, is_exc) in candidates(st["last"], st["t"], st["vis"], K, kt.n_exc - st["exc"], RARE, Radd):
                 succ.append({"t": arr, "last": j, "vis": st["vis"] | {j}, "path": st["path"] + [j],
-                             "exc": st["exc"] + is_exc, "rare": st["rare"] + (j in RARE)})
+                             "exc": st["exc"] + is_exc, "rare": st["rare"] + (j in RARE),
+                             "targ": st["targ"] + (j in TARGET)})
         if not pc:
             print(f"[E-719b] positive control: depth1 -> {len(succ)} successors "
                   f"({sum(s['rare'] for s in succ)} rare-capturing) [{time.time()-t0:.0f}s]", flush=True)
@@ -126,7 +135,7 @@ def main(W_core=70, W_cov=40, K=18, thresh=40, Radd=6, start=-1):
             print(f"[E-719b] beam stranded at depth {depth}", flush=True)
             break
         core = dedup_keep(succ, lambda s: s["t"], W_core)                       # efficient-core front
-        cov = dedup_keep(succ, lambda s: (-s["rare"], s["t"]), W_cov)           # coverage-elite front
+        cov = dedup_keep(succ, lambda s: (-s["targ"], s["t"]), W_cov)           # coverage-elite: maximize TARGET
         merged = {id(s): s for s in core}                                        # union (dedup by identity)
         for s in cov:
             merged[id(s)] = s
@@ -161,4 +170,5 @@ def main(W_core=70, W_cov=40, K=18, thresh=40, Radd=6, start=-1):
 if __name__ == "__main__":
     a = sys.argv
     main(int(a[1]) if len(a) > 1 else 70, int(a[2]) if len(a) > 2 else 40, int(a[3]) if len(a) > 3 else 18,
-         int(a[4]) if len(a) > 4 else 40, int(a[5]) if len(a) > 5 else 6, int(a[6]) if len(a) > 6 else -1)
+         int(a[4]) if len(a) > 4 else 40, int(a[5]) if len(a) > 5 else 6, int(a[6]) if len(a) > 6 else -1,
+         a[7] if len(a) > 7 else None)
