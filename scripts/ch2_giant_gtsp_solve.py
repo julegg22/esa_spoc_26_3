@@ -89,7 +89,8 @@ def main():
             D[a, dv] = val
     np.fill_diagonal(D, 0)
     print(f"[E-715-2] matrix built [{time.time()-t0:.0f}s]; solving ATSP with LKH ...", flush=True)
-    tour = elkai.solve_int_matrix(D.tolist())
+    RUNS = int(sys.argv[1]) if len(sys.argv) > 1 else 2
+    tour = elkai.solve_int_matrix(D.tolist(), runs=RUNS)
     # decode: walk tour, take one representative per cluster (entry node), in order of appearance
     seen = set(); order = []
     for n in tour:
