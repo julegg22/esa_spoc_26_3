@@ -83,7 +83,7 @@ rank-1 lever, if any, is improving the beam's **exact-clock periphery threading*
 the closing evidence. Hold large at the secure **rank-2 (932.53 d, +211 cushion)**. Highest *unrealized*
 board value remains **submitting the strong banks** (medium rank-1, large rank-2, trajectory) — all 0 pts
 until uploaded as `JE_MemExp`. New lesson candidate: *discretization fidelity must match the evaluator's
-feasible-band width before a global solver can help* (extends [[L-013-audit-misses-evaluator-resolution]]).
+feasible-band width before a global solver can help* (extends [[L-013-evaluator-resolution-phantom-wall]]).
 
 Refines [[E-713-ch2-large-rank1-attempt-suite]], [[E-710-ch2-large-time-aware-decomp]];
 case for [[M-general-architecture-change-on-large-gaps]] (the gap needs a different *formulation*, and the
