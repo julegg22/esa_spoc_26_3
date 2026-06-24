@@ -69,6 +69,21 @@ complete-tour LNS is therefore a dead end here.
   (static-LKH inflates; time-expanded GTSP refuted E-718); the *time-aware* cluster solve is unbuilt.
 - CP / scheduling-with-time-windows formulation — untouched.
 
+## Constructor attempts post-audit (all confirm the wall)
+
+| constructor | result | why it fails |
+|---|---|---|
+| regret-insertion (place hard cities first) | 600/601 @ **2394d** (4.0 d/leg, 240 strands) | placing hard cities early forces long legs; clock inflates past 950 → strand cascade |
+| inclination-cluster decomposition | 579/601 @ **957d** (1.0–1.5 d/leg/band) | band-restricted threading is WORSE than the beam's global cheapest-next (0.527); the 0.05d min-tofs aren't chronologically chainable; refutes "band-mixing is expensive" |
+| 35-block splice | 12/35 block-threadable | the 35 stranded are **scattered** (10.5% intra-density), NOT a cohesive cluster — can't thread as a block |
+
+The hard cities cost **1.2–4.0 d/leg** in every constructor we build vs the competitor's amortized 0.674. The
+gap is **order-optimization quality**: the competitor's order is near-optimal (LKH-class) on a time-aware
+graph; ours (greedy/beam/insertion) is not. And the near-optimal time-aware optimizer is the exact thing
+refuted — static-LKH inflates (time-infeasible), time-expanded GTSP fails on resolution (E-718). **That is
+the flaw in our reasoning made precise: we kept building *constructors*; the actual missing piece is a
+near-optimal *time-aware order optimizer*, which is a genuinely open algorithmic gap.**
+
 ## Verdict & open frontier
 
 Rank-1 is a **search/sequencing gap** on the 601-giant order, not structure/physics/exceptions/table/timing.
