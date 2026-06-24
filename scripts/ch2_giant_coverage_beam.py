@@ -27,7 +27,8 @@ INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 Kepleri
 def _ckpt(W_cov, Radd, targeted):                              # param-distinct so parallel runs don't clobber
     return f"{ROOT}/cache/ch2_giant_coverage_beam_best_wc{W_cov}_r{Radd}{'_T' if targeted else ''}.json"
 kt = KTTSP(INST)
-d = np.load(f"{ROOT}/cache/ch2_giant_dense1d.npz")
+import os
+d = np.load(os.environ.get("CH2_TABLE", f"{ROOT}/cache/ch2_giant_dense1d.npz"))
 EPOCHS = d["epochs"]; KEYS = d["keys"]; VALS = d["vals"]; FIN = np.isfinite(VALS)
 cities = sorted(set(KEYS[:, 0].tolist()) | set(KEYS[:, 1].tolist()))
 NG = len(cities)
