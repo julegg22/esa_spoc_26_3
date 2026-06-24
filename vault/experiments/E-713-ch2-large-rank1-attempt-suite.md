@@ -38,11 +38,21 @@ blocker is specifically **chronological feasibility**, not raw connectivity.
 ## Verdict
 
 **Large rank-1 requires a TIME-EXPANDED global solver** — GTSP on (city, epoch) nodes (the only construct
-that yields chronologically-feasible global orderings), i.e. the competitor's inferred multi-day cluster +
-time-expanded LKH/GLKH build. Every *tractable* tool (beam, rare-beam, insertion, cluster, static-LKH) is
-exhausted and precisely characterized. **EV for the hours window: low.** Recommend holding large at the
-secure **rank-2 (932.53, +211 cushion)** and redirecting compute to the closer **trajectory rank-5**
-(+16,179, the extended-tof sweep is banking), unless the user wants to commit to the multi-day GTSP build.
+that yields chronologically-feasible global orderings). **The time-expanded GTSP was BUILT and ATTEMPTED**
+(E-714/E-715): bidirectional/segmentation refuted (periphery is a trap, threads 23/61 among itself);
+sparsified time-expanded graph built (5703 nodes / 601 clusters / 12d buckets, ≤456d); Noon-Bean→ATSP +
+elkai(LKH). **Result: intractable** — LKH did not return on the 5703-node Noon-Bean instance in 33 min
+(runs=10) or 25+ min (runs=2), at ~3.7 GB (near-OOM). Noon-Bean's big-M offset is pathological for LKH's
+local search, and there is **no GLKH binary** for sparse-candidate GTSP. So the right formulation is
+confirmed but **beyond elkai+Noon-Bean's reach**; it needs GLKH or a custom time-expanded solver (days +
+external tooling).
+
+**Seven distinct approaches exhausted and characterized** (beam, rare-beam, insertion, orbital-cluster,
+static-LKH-iterate, bidirectional, time-expanded GTSP). **Verdict: Ch2-large rank-1 is not reachable with
+the tools available here.** Recommend holding large at the secure **rank-2 (932.53, +211 cushion)** and —
+as the highest *unrealized* value on the board — **submitting the strong banks** (medium rank-1, large
+rank-2, trajectory; all 0 pts until uploaded as `JE_MemExp`). A GLKH/custom-solver build remains the only
+rank-1 path, as a separate multi-day project if the user wants it.
 
 Refines [[E-710-ch2-large-time-aware-decomp]],
 [[M-general-architecture-change-on-large-gaps]]; this is the [[M-general-basin-overarching-search]] case
