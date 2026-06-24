@@ -79,5 +79,5 @@ starts/params still cap at 566, the beam architecture is confirmed exhausted and
 time-aware cluster decomposition (the one TGMA-style method never built). Rank-2 (932.53) stays secure.
 
 Refines the E-719 coverage/deadline beam work, [[E-718-ch2-large-glkh-resolution-mismatch]],
-[[E-710-ch2-large-time-aware-decomp]]; applies [[deep-single-prompt-audit]] and
-[[architecture-change-on-large-gaps]].
+[[E-710-ch2-large-time-aware-decomp]]; applies [[M-general-deep-single-prompt-audit]] and
+[[M-general-architecture-change-on-large-gaps]].
