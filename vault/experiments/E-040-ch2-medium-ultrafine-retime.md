@@ -8,7 +8,7 @@ bank_before: 195.7748
 bank_after: 192.9002
 instance: medium.kttsp (n=181)
 script: scripts/ch2_e568_medium_ultrafine_retime.py
-related: [[E-037-ch2-medium-epoch-aware-cluster-decomp]], [[E-038-ch2-small-epoch-aware-cluster-decomp]], [[O-016-leaderboard-2026-06-12]], [[ch2-medium-bank]]
+related: [[E-037-ch2-medium-epoch-aware-cluster-decomp]], [[E-038-ch2-small-epoch-aware-cluster-decomp]], [[O-016-leaderboard-2026-06-12]], [[E-040-ch2-medium-ultrafine-retime]]
 ---
 
 # E-040 — Ch2 medium: ultrafine re-time of the banked perm (RANK 1)

@@ -72,7 +72,7 @@ This closes the last accessible crack in the evaluator/edge layer for Ch2-small:
 Bank flight 109.99 d vs R1 101.65 d = **8.34 d** of route headroom that is NOT
 in our resolved cheap/exc edge set at any TOF resolution our Lambert model can
 represent. By exact analogy to the Ch1 trajectory A0 falsification
-([[ch1-trajectory-mass-lever-exhausted]] ★★★★): **our patched-conic / multi-rev
+([[E-049-ch1-trajectory-filled-pair-dof-exhausted]] ★★★★): **our patched-conic / multi-rev
 Lambert Delta-v is NOT the problem's transfer floor.** HRI's 101.65 d almost
 certainly uses transfers (or an edge set) that our `compute_transfer` model
 structurally cannot produce — finite-thrust, low-thrust, or a different feasible
@@ -98,4 +98,4 @@ No oscillation: each lever was quantitatively bounded against the gap and closed
 
 links: [[E-609-ch2-small-global-order-search]] [[E-606-ch2-small-edge-resolution]]
 [[E-608-ch2-small-e607-verification]] [[E-603-ch2-small-gap-anatomy]]
-[[ch1-trajectory-mass-lever-exhausted]] [[M-applying-methodology-triggers]]
+[[E-049-ch1-trajectory-filled-pair-dof-exhausted]] [[M-applying-methodology-triggers]]

@@ -11,7 +11,7 @@ status: AUDIT (no bank change) — applied the Ch1-trajectory lens (evaluator bu
   exception-reallocation sub-lever).
 date: 2026-06-22
 tags: [ch2, small, audit, basin-isolation, evaluator-mismatch, hostile-default, foundation-then-search]
-related: [[M-general-basin-overarching-search]], [[ch2-small-floor-14292]], [[ch2-small-audit-2026-05-30]],
+related: [[M-general-basin-overarching-search]], [[E-618-ch2-small-grasp-multistart-floor]], [[A-2026-05-30-ch2-small]],
   [[E-653-ch2-a1-falsified-truncated-edge-tables]], [[E-701-ch1-eccentric-departure-solver-fix]]
 ---
 # E-702 — Ch2-small: joint (order, schedule) basin audit on the official objective
@@ -67,7 +67,7 @@ objective** — the standing "basin-isolated at 112.996" claim is **upgraded fro
 official-metric-based**, which is the audit's value (it could have been a proxy artifact, as in Ch1; it
 is not). Descent to R3/R1 genuinely requires a **non-local re-interleave** — the time-expanded TD-TSP
 (nodes=(city,epoch), edges (i,t)→(j,t+tof) where cheap at THAT epoch), the competitor (TGMA) pipeline,
-never built. This is consistent with [[ch2-small-floor-14292]] but now rests on the official objective.
+never built. This is consistent with [[E-618-ch2-small-grasp-multistart-floor]] but now rests on the official objective.
 
 ## Caveats (honesty)
 - The neighbor test is **local** (small moves, warm start) — it proves local optimality, not global. A

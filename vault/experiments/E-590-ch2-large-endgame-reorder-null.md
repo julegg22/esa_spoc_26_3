@@ -6,7 +6,7 @@ date: 2026-06-13
 status: NULL — endgame joint reorder+retime does NOT beat the 932.5304 bank. No /tmp candidate written. Endgame order is LOCALLY OPTIMAL under chrono-walk+retime; large now floored for BOTH timing and intra-component endgame reorder under the fixed 5-exc assignment.
 instance: ch2-large (hard.kttsp, n=1051)
 script: scripts/ch2_e590_endgame_reorder.py (bg agent a4aafdcd)
-related: [[E-589-ch2-large-retime-dp-timing-floor]], [[E-587-ch2-large-lkh-trap-and-waiting-lever]], [[ch2-large-first-bank-topology]]
+related: [[E-589-ch2-large-retime-dp-timing-floor]], [[E-587-ch2-large-lkh-trap-and-waiting-lever]], [[E-034-ch2-large-epoch-aware-reorder]]
 ---
 
 # E-590 — Ch2 large: endgame joint reorder+retime is a NULL (bank stays 932.53)

@@ -36,7 +36,32 @@ MANUAL_MAP = {
     "E-001-ch1-matching-mip-highs": "E-001-ch1-matching-first-attempts",
     "E-034-ch2-large-bank": "E-034-ch2-large-epoch-aware-reorder",
     "E-034-ch2-large-first-bank": "E-034-ch2-large-epoch-aware-reorder",
+    # 2026-06-24 vault-consistency pass: memory-slug / old-ID -> current vault node (topic-verified)
+    "ch1-eccentric-orbit-fix": "E-701-ch1-eccentric-departure-solver-fix",
+    "ch1-coherent-model-r3": "A-2026-05-29-coherent-physics-model",
+    "ch1-trajectory-mass-lever-exhausted": "E-049-ch1-trajectory-filled-pair-dof-exhausted",
+    "ch1-trajectory-udp-floor-confirmed": "T-009-ch1-trajectory-architectural-plateau",
+    "ch1-lambert-dc-solver": "C-005-differential-correction-shooting",
+    "ch2-large-time-ordering-wall": "E-710-ch2-large-time-aware-decomp",
+    "ch2-large-bank": "E-034-ch2-large-epoch-aware-reorder",
+    "ch2-large-first-bank-topology": "E-034-ch2-large-epoch-aware-reorder",
+    "ch2-medium-bank": "E-040-ch2-medium-ultrafine-retime",
+    "ch2-medium-subtour-pattern": "C-013-cluster-bridge-insertion-pattern",
+    "ch2-find-transfer-pattern": "C-012-earliest-feasible-tof",
+    "ch2-compute-parallelization-roi": "E-019-ch2-edge-compute-marginal-value-zero",
+    "ch2-small-audit-2026-05-30": "A-2026-05-30-ch2-small",
+    "ch2-small-floor-14292": "E-618-ch2-small-grasp-multistart-floor",
+    "spoc4-leaderboard-api": "O-017-leaderboard-2026-06-13",
+    "submission-policy-rank3": "Q-001-rank3-each-regular-instance",
+    "objective-optimal-not-points": "S-2026-06-12-points-strategy-and-loop-operating-model",
+    "E-707-ch1-trajectory-longtof-probe": "E-708-ch1-trajectory-extended-tof-sweep",
+    "O-002-ch2-keplerian-tomato-tsp": "C-032-kttsp-problem",
+    "O-006-ch3-luna-tomato-advertising-grounding": "O-001-spoc4-problem-grounding",
+    "C-009-differential-evolution": "C-014-cma-es-and-evolution-strategies",
+    "C-010-memetic-algorithm": "C-011-metaheuristic-local-search-routing",
+    "M-015-cardinality-vs-constraint-satisfaction-framing": "C-009-constraint-programming-cp-sat",
 }
+MANUAL_MAP = {k: v for k, v in MANUAL_MAP.items() if v in stems}   # drop any target that isn't a real note
 
 
 def idpref(s):
@@ -118,7 +143,35 @@ print("\n-- MISSING (note never created / placeholder; left as-is):")
 for o, why in missing:
     print(f"   [[{o}]] ({why})")
 
-if APPLY and mapping:
+DELINK = "--delink" in sys.argv
+
+
+def delink_unresolved(txt):
+    """Strip [[ ]] from any link whose target is NOT an existing note (keep alias/basename text). Protects
+    inline + fenced code spans so methodology-note link EXAMPLES are untouched."""
+    spans = []
+
+    def mask(m):
+        spans.append(m.group(0)); return f"\x00{len(spans)-1}\x00"
+    txt = re.sub(r"```.*?```", mask, txt, flags=re.S)
+    txt = re.sub(r"`[^`\n]*`", mask, txt)
+
+    def repl(m):
+        inner = m.group(1); tgt = inner.split("|")[0].split("#")[0].split("/")[-1]
+        if tgt.endswith(".md"):
+            tgt = tgt[:-3]
+        if tgt in stems or tgt.endswith(".base") or re.search(r"-?NNN", tgt):
+            return m.group(0)                                 # valid link / placeholder -> keep
+        if not re.match(r"^[\w][\w.\-]*$", tgt):
+            return m.group(0)                                 # code/artifact -> leave
+        return inner.split("|", 1)[1] if "|" in inner else tgt  # de-link: keep alias else target text
+    txt = re.sub(r"\[\[([^\]]+)\]\]", repl, txt)
+    for i, s in enumerate(spans):
+        txt = txt.replace(f"\x00{i}\x00", s)
+    return txt
+
+
+if APPLY:
     # path-aware: matches [[old]], [[folder/old]], [[old|alias]], [[old#anchor]] (and escaped backslash)
     pats = [(re.compile(r"\[\[(?:[^\[\]|#\n]*?/)?" + re.escape(o) + r"(?=[\]|#])"), "[[" + n) for o, n in mapping.items()]
     changed = 0
@@ -127,7 +180,9 @@ if APPLY and mapping:
         orig = txt
         for pat, repl in pats:
             txt = pat.sub(repl, txt)
+        if DELINK:
+            txt = delink_unresolved(txt)
         if txt != orig:
             open(f, "w", encoding="utf-8").write(txt)
             changed += 1
-    print(f"\n[APPLIED] rewrote links in {changed} file(s).")
+    print(f"\n[APPLIED] rewrote {len(mapping)} mappings in {changed} file(s){' + de-linked unresolved' if DELINK else ''}.")

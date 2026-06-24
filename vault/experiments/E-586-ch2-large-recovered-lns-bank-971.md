@@ -7,7 +7,7 @@ status: BANKED — large 1013.2886 → 971.0669 d (−42.22 d), feasible (viols 
 instance: ch2-large (hard.kttsp, n=1051)
 script: scripts/ch2_e586_large_window_continue.py, scripts/ch2_e586_bank.py (bg agent a4f79ab6)
 log: runs/ch2_v3/ (E-586 continue seeds)
-related: [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-large-first-bank-topology]], [[O-017-leaderboard-2026-06-13]], [[feedback-experiment-health-checks]]
+related: [[E-034-ch2-large-epoch-aware-reorder]], [[E-034-ch2-large-epoch-aware-reorder]], [[O-017-leaderboard-2026-06-13]], feedback-experiment-health-checks
 ---
 
 # E-586 — Ch2 large: recovered + extended windowed-LNS bank → 971.07 d
@@ -63,7 +63,7 @@ multi-day global rebuild; do NOT chase incrementally.**
 ## Process lesson
 
 33.5 d of improvement sat unbanked because a crash killed the run before its
-banking step. Reinforces [[feedback-experiment-health-checks]]: long LNS runs
+banking step. Reinforces feedback-experiment-health-checks: long LNS runs
 must checkpoint-and-bank incrementally, not only at the end. The loop should
 sweep `/tmp/*cand*.json` for un-banked survivors after any run that died
 abnormally.

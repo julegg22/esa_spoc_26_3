@@ -7,7 +7,7 @@ status: BANKED — audit lever 3. Targeted extended-tof re-sweep of the 88 worst
   the cap. Trajectory 347,648 -> 356,550 kg (+8,902), officially validated. Session total +93,431.
 date: 2026-06-23
 tags: [ch1, trajectory, extended-tof, low-energy, audit, banked]
-related: [[E-707-ch1-trajectory-longtof-probe]], [[E-706-ch1-idd-reassign]], [[E-701-ch1-eccentric-departure-solver-fix]]
+related: [[E-708-ch1-trajectory-extended-tof-sweep]], E-706-ch1-idd-reassign, [[E-701-ch1-eccentric-departure-solver-fix]]
 ---
 # E-708 — Ch1 trajectory: extended-tof re-sweep (audit lever 3)
 

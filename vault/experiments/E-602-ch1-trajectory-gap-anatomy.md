@@ -7,7 +7,7 @@ date: 2026-06-13
 status: DIAGNOSTIC (no bank change) — the Ch1-trajectory "no further gains expected" verdict is exhaustion WITHIN the impulsive patched-conic architecture, not exhaustion of the problem. Measured the gap to the leaders and isolated the lever: lunar CAPTURE Δv into low-eccentricity Moon orbits (corr(dv,eL)=−0.71), addressed by WSB/Sun-assisted ballistic capture — NOT plane change (cheap) and NOT the matching (near-optimal).
 instance: ch1 trajectory (ltl, BCP-propagated official fitness)
 scripts: scripts/ch1_e600_idd_lever_probe.py, scripts/ch1_e601_gap_anatomy.py, scripts/ch1_e602_rematch_probe.py
-related: [[ch1-coherent-model-r3]], [[ch1-trajectory-mass-lever-exhausted]], [[ch1-iL-matching-breakthrough]], [[ch1-lambert-dc-solver]], [[E-036-ch1-wsb-ballistic-capture-prototype]], [[E-047-ch1-raan-argp-feasibility-refuted]]
+related: [[A-2026-05-29-coherent-physics-model]], [[E-049-ch1-trajectory-filled-pair-dof-exhausted]], ch1-iL-matching-breakthrough, [[C-005-differential-correction-shooting]], [[E-036-ch1-wsb-ballistic-capture-prototype]], [[E-047-ch1-raan-argp-feasibility-refuted]]
 ---
 
 > ⚠️ **REFRAMED 2026-06-22 by E-700 / E-697** (interpretation wrong, measurements right). Two claims
@@ -107,5 +107,5 @@ interface). The matching MIP and idD layers ARE closed.
 - corr(dv, eL)=−0.71 is on the SELECTED 301 bank pairs (biased toward cheap picks);
   the eL→capture-cost mechanism is physically expected but experiment 1 must
   confirm WSB actually realizes the saving under the official validator.
-- This reframes [[ch1-trajectory-mass-lever-exhausted]]: the IMPULSIVE per-pair
+- This reframes [[E-049-ch1-trajectory-filled-pair-dof-exhausted]]: the IMPULSIVE per-pair
   polish is exhausted (correct), but that ≠ Ch1-trajectory exhausted.

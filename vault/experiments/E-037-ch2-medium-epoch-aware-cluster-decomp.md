@@ -8,7 +8,7 @@ bank_before: 228.9748
 bank_after: 195.7748
 instance: medium.kttsp (n=181)
 script: scripts/ch2_e563_medium_epoch_aware.py
-related: [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-medium-bank]], [[ch2-large-first-bank-topology]]
+related: [[E-034-ch2-large-epoch-aware-reorder]], [[E-040-ch2-medium-ultrafine-retime]], [[E-034-ch2-large-epoch-aware-reorder]]
 ---
 
 # E-037 — Ch2 medium: epoch-aware cluster-decomposition

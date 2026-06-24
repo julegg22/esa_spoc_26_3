@@ -31,7 +31,7 @@ verdict: confirms (epoch-aware tof cost is the lever; banked −688.77 d total, 
 ## Setup
 
 First feasible large bank (E-559) was 2225.1654 d via the 5-bridge
-"comp0-last" topology (see [[ch2-large-first-bank-topology]]). Decomposition
+"comp0-last" topology (see [[E-034-ch2-large-epoch-aware-reorder]]). Decomposition
 (E-560) showed makespan = sum-of-1050-tofs EXACTLY, IDLE=0; the 5 bridges
 contribute only ~14 d. So the lever is the Hamiltonian ORDER: OR-Tools had
 minimized cheap-edge-COUNT (cost=1 per cheap edge), not tof.

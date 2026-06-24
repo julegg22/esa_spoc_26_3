@@ -73,7 +73,7 @@ strictly-interior start.
 **Cause**: 142.92 basin is the unique attractor of our greedy +
 cluster-insertion pipeline.
 **Unstuck**: confirmed floor; banked 142.9183 d as our toolchain's
-floor. → memory [[ch2-small-floor-14292.md]].
+floor. → memory ch2-small-floor-14292.
 
 **Banked**: Ch2 small **142.9183 d**.
 

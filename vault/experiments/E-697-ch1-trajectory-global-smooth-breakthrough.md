@@ -10,7 +10,7 @@ corrects: [E-619]
 date: 2026-06-22
 tags: [ch1, trajectory, basin-overarching, global-search, cmaes, smooth-penalty, breakthrough, circular-capture]
 related: [[M-general-basin-overarching-search]], [[E-700-ch1-trajectory-bugfix-journal]],
-  [[ch1-trajectory-udp-floor-confirmed]]
+  [[T-009-ch1-trajectory-architectural-plateau]]
 ---
 # E-697 — Ch1 trajectory: global smooth-penalty search breaks the basin-lock
 

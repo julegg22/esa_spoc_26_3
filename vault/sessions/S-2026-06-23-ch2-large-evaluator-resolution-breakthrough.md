@@ -76,7 +76,7 @@ A complete tour on this trajectory extrapolates to ~300–380 d < rank-1 424 →
 - New concepts C-033, C-034; extended [[C-031-grid-quantization-mismatch]]
   with the "phantom wall" (online-evaluator) manifestation; lesson
   [[L-013-evaluator-resolution-phantom-wall]].
-- Memory ([[ch2-large-time-ordering-wall]]) annotated: symptoms valid,
+- Memory ([[E-710-ch2-large-time-aware-decomp]]) annotated: symptoms valid,
   root-cause verdict superseded ([[M-general-retraction-annotation]]).
 - User codified the **commit criterion** (reproduce + reconstruct + trace);
   captured as [[M-general-commit-criteria-reproduce-reconstruct-trace]].

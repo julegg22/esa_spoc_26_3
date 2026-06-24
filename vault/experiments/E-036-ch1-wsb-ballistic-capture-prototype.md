@@ -32,7 +32,7 @@ R3 cutoff 463,513 kg, gap ~235k. The impulsive 3-impulse physics ceiling is
 ~371k kg, so R3 is UNREACHABLE impulsively — the leaders' avg dv (~3320 m/s)
 is below the 3940 m/s Hohmann floor, implying weak-stability-boundary
 (Belbruno-Miller Sun-assisted ballistic capture). L4 in the coherent model
-([[ch1-coherent-model-r3]]) estimated ~+60k from WSB. This prototype is the
+([[A-2026-05-29-coherent-physics-model]]) estimated ~+60k from WSB. This prototype is the
 GO/NO-GO gate before committing ~1-2 weeks to the full L4 build.
 
 ## Result (official fitness validated)
@@ -45,13 +45,13 @@ GO/NO-GO gate before committing ~1-2 weeks to the full L4 build.
   midcourse against an alignment-aware capture proxy, THEN the *exact*
   solve_arrival_eccentric dv2 (Nelder-Mead). Radius-only DC gives steep
   2.3 km/s encounters and LOSES (best 841 kg). This is the
-  [[ch1-eccentric-orbit-fix]] + exact-dv2 combination.
+  [[E-701-ch1-eccentric-departure-solver-fix]] + exact-dv2 combination.
 
 ## Capacity-discount analysis (does NOT invalidate L4 for ΔT≤120d)
 Measured-anchor fleet model on the (200−ΔT)·c_ld discount:
 - current idD assignment: 197/302 bank transfers win → **+62k kg fleet**.
 - idD Hungarian re-matching: 295/302 win → **+128k kg fleet** (needs the
-  deferred B4/B5 idD re-match — see [[ch1-b1b2b3-deferred]]).
+  deferred B4/B5 idD re-match — see ch1-b1b2b3-deferred).
 - every idL has an idD with c_ld≥15 (cap ≥1350 kg @110d); 326/400 disjoint
   such pairs exist (log lines 10-13).
 - gains decay fast with TOF: +98k@80d → +13k@170d → keep WSB TOF ≤~120d.
@@ -67,7 +67,7 @@ Measured-anchor fleet model on the (200−ΔT)·c_ld discount:
 
 ## Compute / parallelization
 ~2-4 min/pair, full sweep ~10-20 core-h — CHEAP and embarrassingly parallel.
-Fits the 3 cores E-554 frees at ~01:10 tonight. [[ch2-compute-parallelization-roi]]:
+Fits the 3 cores E-554 frees at ~01:10 tonight. [[E-019-ch2-edge-compute-marginal-value-zero]]:
 this is the rare Ch1 lever where compute is a genuine multiplier (the insight
 — eccentric exact-dv2 capture — is now proven).
 

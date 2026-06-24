@@ -6,7 +6,7 @@ date: 2026-06-12
 status: BANKED — tof-grid was a hidden bottleneck; bank 1041.33→1015.17d (−26.16d) by re-walking on a finer grid, NO reordering
 instance: hard.kttsp (n=1051)
 script: scripts/ch2_e582_large_grid_audit.py, scripts/ch2_e583_large_finegrid_rewalk.py
-related: [[E-044-ch2-large-ring-sweep]], [[E-043-ch2-large-legslack-phasemiss]], [[M-general-foundation-then-search]], [[ch2-large-bank]], [[M-applying-methodology-triggers]]
+related: [[E-044-ch2-large-ring-sweep]], [[E-043-ch2-large-legslack-phasemiss]], [[M-general-foundation-then-search]], [[E-034-ch2-large-epoch-aware-reorder]], [[M-applying-methodology-triggers]]
 ---
 
 # E-045 — Ch2 large: the tof grid was the bottleneck (evaluator audit)

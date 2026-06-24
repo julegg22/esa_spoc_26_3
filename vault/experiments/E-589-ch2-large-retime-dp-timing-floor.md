@@ -6,7 +6,7 @@ date: 2026-06-13
 status: BANKED — large 934.4452 → 932.5304 d (−1.91 d), feasible (viols [0,0,0,0]), independently re-scored + round-trip via scripts/ch2_e586_bank.py. Timing axis now FLOORED for the fixed tour.
 instance: ch2-large (hard.kttsp, n=1051)
 script: ch2_e590_retimedp_large (bg agent ae7a8945), guard-bank scripts/ch2_e586_bank.py (CAND repointed to /tmp/ch2_large_retimedp_cand.json, then reverted)
-related: [[E-587-ch2-large-lkh-trap-and-waiting-lever]], [[E-040-ch2-medium-ultrafine-retime]], [[ch2-large-first-bank-topology]]
+related: [[E-587-ch2-large-lkh-trap-and-waiting-lever]], [[E-040-ch2-medium-ultrafine-retime]], [[E-034-ch2-large-epoch-aware-reorder]]
 ---
 
 # E-589 — Ch2 large: global retime-DP floors the timing axis → 932.53 d

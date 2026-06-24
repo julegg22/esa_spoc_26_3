@@ -146,7 +146,9 @@ Option A is the safe choice. Option B is the path to R3 but requires
 the user to commit human attention to the work, not just compute time.
 
 ## Cross-references
-- C-022 — current production (BCP-apogee 3-impulse)
-- A-2026-05-27 — original audit (B6 found, but the audit-driven sprints
+- [[C-022-apogee-plane-change-3-impulse]] — current production (BCP-apogee 3-impulse)
+- [[C-021-extended-tof-bcp-sun-assist]] — extended-tof / Sun-assist lever in this model
+- [[A-2026-05-27-ch1-trajectory-audit]] — original audit (B6 found, but the audit-driven sprints
   fragmented the work; this document re-frames it)
-- C-023, C-024 — WSB design docs
+- [[C-023-wsb-low-energy-transfers]], [[C-024-wsb-design-v2]] — WSB design docs
+- [[C-025-pygmo-pair-udp-design]] — the per-pair UDP/solver these levers are optimized through

@@ -58,5 +58,5 @@ Same shape as Ch1-trajectory (optimised the 5% term, left the 95% term unbuilt).
    S1/S2 de-risk it.
 
 `cma` installed (pip). Both scripts instrumented per
-[[M-general-instrument-experiments-before-launch]]. See [[ch2-small-floor-14292]]
+[[M-general-instrument-experiments-before-launch]]. See [[E-618-ch2-small-grasp-multistart-floor]]
 (prior "floor" verdict now flagged as architecture-conditional).

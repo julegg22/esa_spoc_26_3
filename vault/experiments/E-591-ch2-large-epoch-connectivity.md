@@ -8,7 +8,7 @@ instance: ch2-large (hard.kttsp, n=1051)
 scripts: scripts/ch2_e591_epochconn_heavy.py, scripts/ch2_e591_epochconn_alltargets.py
 logs: runs/ch2_e591_epochconn.log, runs/ch2_e591_alltargets.log
 data: /tmp/ch2_large_epoch_conn.json, /tmp/ch2_large_epoch_conn_alltargets.json
-related: [[E-589-ch2-large-retime-dp-timing-floor]], [[E-590-ch2-large-endgame-reorder-null]], [[E-587-ch2-large-lkh-trap-and-waiting-lever]], [[ch2-large-first-bank-topology]]
+related: [[E-589-ch2-large-retime-dp-timing-floor]], [[E-590-ch2-large-endgame-reorder-null]], [[E-587-ch2-large-lkh-trap-and-waiting-lever]], [[E-034-ch2-large-epoch-aware-reorder]]
 ---
 
 # E-591 — Ch2 large: the r1 gap is ROUTING/PARTITION, not intrinsic-node connectivity

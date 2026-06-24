@@ -34,7 +34,7 @@ the small ultrafine table (→ `..._v2.npz`, ~47 min). `scripts/ch2_corrected_ta
 self-chains: swap corrected table into the load path → e617 4-chain 48h on the CORRECTED edge set.
 **Decisive test:** does the corrected table break 112.996? If yes → scale to medium (207 edges) and
 large (the high-EV one — short-epoch legs could approach the ~340 d static LB < live r1 424 ⇒ rank-1
-candidate, overturning the architecture-conditional EV≈0 in [[ch2-large-first-bank-topology]]).
+candidate, overturning the architecture-conditional EV≈0 in [[E-034-ch2-large-epoch-aware-reorder]]).
 
 ## Follow-up (2026-06-18 11:22): corrected table necessary but NOT sufficient for small
 

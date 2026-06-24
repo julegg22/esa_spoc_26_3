@@ -12,7 +12,7 @@ referenced_by: ["[[H-007-bannach-ddd-targeted-refinement]]"]
 > ADJACENT bug (under-determined residual in solve_transfer_back).
 > The *actual* root cause of Ch1 trajectory's poor mass was
 > `solve_arrival_dv` rejecting eccentric Moon orbits. See
-> [[LESSONS-LEARNED.md]] for the full diagnosis. The 14.82 kg result
+> LESSONS-LEARNED for the full diagnosis. The 14.82 kg result
 > this note explained is technically correct, but the conclusion
 > "needs research-grade fix" is wrong post-eccentric-orbit-fix.
 

@@ -6,7 +6,7 @@ date: 2026-06-12
 status: DECISIVE CHARACTERIZATION — three large-attack families ruled out; lever isolated to MONOTONE time-dependent local search on realized makespan
 instance: hard.kttsp (n=1051)
 scripts: [ch2_e572_large_global_epoch_lkh.py, ch2_e573_large_fixpoint.py, ch2_e576_large_td_greedy.py, ch1_e575_matching_gurobi.py]
-related: [[E-041-ch2-large-gap-decomposition]], [[ch2-large-first-bank-topology]], [[E-039-ch1-matching-evaluator-audit]], [[M-general-anti-oscillation-discipline]]
+related: [[E-041-ch2-large-gap-decomposition]], [[E-034-ch2-large-epoch-aware-reorder]], [[E-039-ch1-matching-evaluator-audit]], [[M-general-anti-oscillation-discipline]]
 ---
 
 # E-042 — Ch2 large: time-dependent-TSP characterization (3 families ruled out)

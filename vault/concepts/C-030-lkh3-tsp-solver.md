@@ -11,7 +11,7 @@ sources:
   - "Helsgaun — General k-opt submoves for the Lin-Kernighan TSP heuristic (Math Prog Comput, 2009)"
   - "LKH-3 manual: http://akira.ruc.dk/~keld/research/LKH-3/"
   - "elkai Python wrapper: https://github.com/fikisipi/elkai"
-related: ["[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-028-adaptive-large-neighborhood-search]]", "[[E-536-lkh-small-benchmark]]"]
+related: ["[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-028-adaptive-large-neighborhood-search]]", "E-536-lkh-small-benchmark"]
 ---
 
 # C-030 — Lin-Kernighan-Helsgaun (LKH-3) TSP solver

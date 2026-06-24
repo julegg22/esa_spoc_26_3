@@ -44,7 +44,7 @@ stay here.*
 ## Gaps
 
 - Not a specialist in combinatorial optimization or metaheuristics
-  — scaffolding in [[algorithm-menu]].
+  — scaffolding in algorithm-menu.
 - First exposure to pygmo patterns; learning them via this campaign.
 
 ## Working constraints

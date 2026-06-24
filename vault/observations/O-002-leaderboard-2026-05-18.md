@@ -14,7 +14,7 @@ superseded_by:
 > but our interpretation of "30000× gap on Ch1 trajectory" as
 > structural / research-grade-needed was wrong. The gap was entirely
 > due to a solve_arrival_dv bug rejecting eccentric Moon orbits. See
-> [[LESSONS-LEARNED.md]].
+> LESSONS-LEARNED.
 
 
 # O-002 — Leaderboard snapshot 2026-05-18 (regular instances)

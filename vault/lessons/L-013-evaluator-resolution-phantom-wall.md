@@ -92,5 +92,5 @@ correctness, before declaring the search exhausted.*
 The E-709 memory/journal verdict ("genuine wall, moonshot, hold rank-2")
 is **superseded** for the resolution claim; the time-ordering structure
 it described is real, but it is threadable once the evaluator sees the
-edges. Annotated in [[ch2-large-time-ordering-wall]] (memory) per
+edges. Annotated in [[E-710-ch2-large-time-aware-decomp]] (memory) per
 [[M-general-retraction-annotation]].

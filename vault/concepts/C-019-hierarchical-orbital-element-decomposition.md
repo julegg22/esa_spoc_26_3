@@ -7,7 +7,7 @@ scope: optimization/decomposition + orbital-mechanics
 confidence: medium
 created: 2026-05-22
 sources:
-  - "[[E-030-ch2-large-hierarchical-decomp]]"
+  - "E-030-ch2-large-hierarchical-decomp"
   - "[[O-010-m003-family-rethink-after-claimed-exhaustion]]"
   - "M-003 (orthogonal-family inventory)"
 related: ["[[C-006-lambert-problem-and-orbital-tsp]]", "[[C-010-constrained-hamiltonian-time-dependent-routing]]", "[[C-017-subtour-bridge-insertion-large-clusters]]"]

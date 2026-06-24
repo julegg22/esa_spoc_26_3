@@ -147,6 +147,6 @@ NOT funding a fourth variant. **Net deliverable: a VALIDATED −3.378 d improvem
   larger residual to R1, but is no longer the ONLY open row.
 
 links: [[E-610-ch2-small-tof-granularity-bound]] [[E-609-ch2-small-global-order-search]]
-[[E-606-ch2-small-edge-resolution]] [[ch2-small-floor-14292]]
+[[E-606-ch2-small-edge-resolution]] [[E-618-ch2-small-grasp-multistart-floor]]
 [[M-general-foundation-then-search]] [[M-applying-methodology-triggers]]
 [[M-general-anti-oscillation-discipline]]

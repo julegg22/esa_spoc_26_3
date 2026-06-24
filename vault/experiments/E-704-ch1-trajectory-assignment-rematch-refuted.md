@@ -9,7 +9,7 @@ status: REFUTED (no bank change) — the trajectory Earth↔Moon ASSIGNMENT re-m
   and the correct realized-ΔV cost matrix is computationally infeasible (400×400 × ~6min/solve).
 date: 2026-06-23
 tags: [ch1, trajectory, assignment, matching, refuted, headroom-check, proxy-failure]
-related: [[E-701-ch1-eccentric-departure-solver-fix]], [[ch1-trajectory-udp-floor-confirmed]], [[ch1-iL-matching-breakthrough]]
+related: [[E-701-ch1-eccentric-departure-solver-fix]], [[T-009-ch1-trajectory-architectural-plateau]], ch1-iL-matching-breakthrough
 ---
 # E-704 — Ch1 trajectory: ΔV-cost assignment re-match (lever a) — REFUTED
 

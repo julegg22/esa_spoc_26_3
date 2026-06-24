@@ -11,7 +11,7 @@ corrects: [E-697, E-700, E-619]
 date: 2026-06-22
 tags: [ch1, trajectory, breakthrough, eccentric-departure, bug-fix, circular-capture, backward-shooting, basin-overarching]
 related: [[E-697-ch1-trajectory-global-smooth-breakthrough]], [[E-700-ch1-trajectory-bugfix-journal]],
-  [[M-general-basin-overarching-search]], [[ch1-trajectory-udp-floor-confirmed]]
+  [[M-general-basin-overarching-search]], [[T-009-ch1-trajectory-architectural-plateau]]
 ---
 # E-701 — Ch1 trajectory: the eccentric departure-solver fix realizes the lever
 

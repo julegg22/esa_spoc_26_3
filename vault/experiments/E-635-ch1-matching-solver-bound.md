@@ -48,5 +48,5 @@ matching-ii (×4/3)** — the only clearly high-probability top-rank lever found
 the campaign. Until such a tool is available, matching is at its free-tool
 frontier; no further free-solver compute is warranted.
 
-See [[objective-optimal-not-points]] (high-probability architecture gate) and
+See [[S-2026-06-12-points-strategy-and-loop-operating-model]] (high-probability architecture gate) and
 [[M-general-basin-overarching-search]].

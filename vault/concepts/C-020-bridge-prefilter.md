@@ -7,7 +7,7 @@ scope: optimization/local-search + computational
 confidence: high
 created: 2026-05-21
 sources:
-  - "[[E-031-ch2-medium-first-feasible]]"
+  - "E-031-ch2-medium-first-feasible"
 related: ["[[C-013-cluster-bridge-insertion-pattern]]", "[[C-017-subtour-bridge-insertion-large-clusters]]"]
 ---
 

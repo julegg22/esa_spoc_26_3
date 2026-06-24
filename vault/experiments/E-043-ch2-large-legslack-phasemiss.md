@@ -6,7 +6,7 @@ date: 2026-06-12
 status: DECISIVE — ~500d of the 624d gap to r1 is intra-ring phase-miss (ordering), not forced; bridges are cheap; ring-sweep construction justified, windowed-LNS refuted
 instance: hard.kttsp (n=1051)
 script: scripts/ch2_e579_large_legslack.py
-related: [[E-041-ch2-large-gap-decomposition]], [[E-042-ch2-large-td-tsp-characterization]], [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-large-bank]], [[ch2-large-first-bank-topology]]
+related: [[E-041-ch2-large-gap-decomposition]], [[E-042-ch2-large-td-tsp-characterization]], [[E-034-ch2-large-epoch-aware-reorder]], [[E-034-ch2-large-epoch-aware-reorder]], [[E-034-ch2-large-epoch-aware-reorder]]
 ---
 
 # E-043 — Ch2 large: per-leg slack + ring-membership decomposition

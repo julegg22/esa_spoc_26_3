@@ -8,7 +8,7 @@ status: REFUTED (no bank change) — Ch2-small lever (b), the tof>8d table-cover
   thread is closed.
 date: 2026-06-23
 tags: [ch2, small, refuted, tof-coverage, probe, ceiling]
-related: [[E-703-ch2-small-cpsat-and-tdtsp-reaudit]], [[ch2-small-floor-14292]]
+related: [[E-703-ch2-small-cpsat-and-tdtsp-reaudit]], [[E-618-ch2-small-grasp-multistart-floor]]
 ---
 # E-705 — Ch2-small: tof>8d table-coverage hypothesis (lever b) — REFUTED
 

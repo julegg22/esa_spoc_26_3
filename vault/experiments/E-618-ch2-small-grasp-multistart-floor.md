@@ -88,4 +88,4 @@ crowded the 108–111 band is ⇒ low ROI vs submitting the existing banks.
 **Ch2-small free-method search frontier CLOSED.** Do not re-open without the
 joint sequence+epoch global-search architecture (not another
 construction/local-move method on the fixed graph). See
-[[ch2-small-floor-14292]], [[M-general-basin-overarching-search]], [[M-general-deep-single-prompt-audit]].
+[[E-618-ch2-small-grasp-multistart-floor]], [[M-general-basin-overarching-search]], [[M-general-deep-single-prompt-audit]].

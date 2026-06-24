@@ -7,7 +7,7 @@ status: EXHAUSTED — the 301 filled trajectory pairs are at their free-DoF (raa
 instance: ch1-trajectory
 script: scripts/ch1_e578_dof_reopt_gate.py (bg agent a10c1f95)
 log: runs/ch1/84_e578_dof_gate.log
-related: [[E-047-ch1-raan-argp-feasibility-refuted]], [[O-017-leaderboard-2026-06-13]], [[ch1-coherent-model-r3]], [[ch1-lambert-dc-solver]]
+related: [[E-047-ch1-raan-argp-feasibility-refuted]], [[O-017-leaderboard-2026-06-13]], [[A-2026-05-29-coherent-physics-model]], [[C-005-differential-correction-shooting]]
 ---
 
 # E-049 — Ch1 trajectory: per-pair free-DoF mass lever EXHAUSTED on filled pairs
@@ -58,7 +58,7 @@ gap). A full 301-pair re-opt would capture ~1.5% (+3,500 kg) for **0 points**.
 Not worth the multi-hour run.
 
 **Trajectory rank headroom is architectural, not a polish:** closing it needs
-the coherent impulsive-perfection (L1+L2) + WSB (L4) model ([[ch1-coherent-model-r3]]),
+the coherent impulsive-perfection (L1+L2) + WSB (L4) model ([[A-2026-05-29-coherent-physics-model]]),
 a multi-week build. The patched-conic apogee architecture is saturated at
 236,420 kg.
 

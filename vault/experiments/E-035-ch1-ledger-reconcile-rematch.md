@@ -54,7 +54,7 @@ gap ~235k. This experiment was reconciliation, NOT the lever — see below.
 All three are dv-bound (zero capacity-capped → lower-dv trajectories are the
 only lever; some banked pairs at <56% of theoretical mass = real headroom):
 1. **99 unused idE × 99 unused idL** — need the Lambert+DC pipeline
-   ([[ch1-lambert-dc-solver]] + [[ch1-eccentric-orbit-fix]]), NOT SADE (pygmo
+   ([[C-005-differential-correction-shooting]] + [[E-701-ch1-eccentric-departure-solver-fix]]), NOT SADE (pygmo
    log 70 got 0 valid on these).
 2. **~1,300 tier-1 pairs** await 3-impulse DC polish (tier-2 heavy run was
    truncated at ~200/1500 in log 75); historical 5-30% per-pair gains.

@@ -44,6 +44,6 @@ exhausted and precisely characterized. **EV for the hours window: low.** Recomme
 secure **rank-2 (932.53, +211 cushion)** and redirecting compute to the closer **trajectory rank-5**
 (+16,179, the extended-tof sweep is banking), unless the user wants to commit to the multi-day GTSP build.
 
-Refines [[ch2-large-time-ordering-wall]], [[E-710-ch2-large-time-aware-decomp]],
+Refines [[E-710-ch2-large-time-aware-decomp]],
 [[M-general-architecture-change-on-large-gaps]]; this is the [[M-general-basin-overarching-search]] case
 where the basin gap needs a different *formulation* (time-expanded), not a better local search.

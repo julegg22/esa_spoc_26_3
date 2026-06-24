@@ -56,5 +56,5 @@ Loss concentrated entirely in the time-dependent SCHEDULE. Same meta-shape as Ch
 3. **L3** (build) time-expanded greedy construction: step by min ARRIVAL time from
    (city,epoch) — walkable + time-minimal by construction (falsifies A2/A4); competitor arch.
 
-Relates to [[ch2-large-first-bank-topology]] (prior moonshot verdict = architecture-conditional),
+Relates to [[E-034-ch2-large-epoch-aware-reorder]] (prior moonshot verdict = architecture-conditional),
 [[E-650-ch2-small-assumption-audit]] (same flaw), [[M-general-instrument-experiments-before-launch]].

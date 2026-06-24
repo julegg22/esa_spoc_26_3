@@ -150,7 +150,7 @@ search, AND (B) jointly re-match to make the empties cheaply fillable. Both need
 E-610 priced the trajectory lever at +15-25k kg (stuck in rank 6) ASSUMING a
 ~3850 m/s floor. That floor is exactly what Steps 1/3 test. If it falls, the ceiling
 estimate is void and rank-5 (~372,729, +136k) re-enters scope. Cheap to test;
-high option value. See [[ch1-trajectory-mass-lever-exhausted]],
+high option value. See [[E-049-ch1-trajectory-filled-pair-dof-exhausted]],
 [[M-general-basin-overarching-search]], [[M-general-deep-single-prompt-audit]].
 
 ## ★★★ VERDICT (2026-06-15 ~17:30) — Lever-A floor test = DECISIVE NULL
@@ -194,14 +194,14 @@ FEASIBLE-MANIFOLD seeding (H5 + H3 + H4 together): free (e,l) assignment co-opti
 with low-energy/long-coast transfer families and a backward-from-target seeder that
 reaches non-Hohmann basins. This is the same architectural mismatch as Ch2-small
 (joint sequence+epoch global search = the competitor pipeline we never built) —
-[[ch2-small-floor-14292]], [[M-general-basin-overarching-search]].
+[[E-618-ch2-small-grasp-multistart-floor]], [[M-general-basin-overarching-search]].
 
 **E-610's "rank-6, do not fund the per-pair trajectory lever" verdict is
 RE-CONFIRMED and now rests on a SEARCHED floor, not an assumed one.** Rank-5 (+136k)
 re-enters scope ONLY via the multi-week joint-architecture build — high cost,
 uncertain payoff, 15 days left. With every other instance's search frontier also
 floored, the dominant realized-points lever remains SUBMISSION of the 6 banks
-(user-gated). See [[ch1-trajectory-mass-lever-exhausted]].
+(user-gated). See [[E-049-ch1-trajectory-filled-pair-dof-exhausted]].
 
 ### Lever-B closure (2026-06-15 ~17:35) — neighbour-seeding does NOT defeat H3; fill is rank-irrelevant regardless
 

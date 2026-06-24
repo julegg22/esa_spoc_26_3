@@ -8,7 +8,7 @@ bank_before: 116.3738
 bank_after: 116.3738
 instance: small.kttsp (easy, n~49)
 script: scripts/ch2_e564_small_epoch_aware.py
-related: [[E-037-ch2-medium-epoch-aware-cluster-decomp]], [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-small-floor-14292]], [[M-general-foundation-then-search]]
+related: [[E-037-ch2-medium-epoch-aware-cluster-decomp]], [[E-034-ch2-large-epoch-aware-reorder]], [[E-618-ch2-small-grasp-multistart-floor]], [[M-general-foundation-then-search]]
 ---
 
 # E-038 — Ch2 small: epoch-aware cluster-decomposition (REFUTED)

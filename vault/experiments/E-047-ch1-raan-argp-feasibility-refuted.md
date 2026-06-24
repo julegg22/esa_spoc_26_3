@@ -7,7 +7,7 @@ status: REFUTED — free RAAN/argp does NOT unlock stranded high-incl Earth→Mo
 instance: trajectory (Ch1 hard)
 script: scripts/ch1_e577_raan_verdict.py, scripts/ch1_e576_bank_inspect.py
 log: runs/ch1/83_e577_raan_verdict.log, runs/ch1/82_e576_bank_inspect.log
-related: [[E-039-ch1-matching-evaluator-audit]], [[M-general-foundation-then-search]], [[M-applying-methodology-triggers]], [[ch1-coherent-model-r3]]
+related: [[E-039-ch1-matching-evaluator-audit]], [[M-general-foundation-then-search]], [[M-applying-methodology-triggers]], [[A-2026-05-29-coherent-physics-model]]
 ---
 
 # E-047 — Ch1 trajectory: free RAAN/argp feasibility lead REFUTED
@@ -78,7 +78,7 @@ is dead as a feasibility play. The residual headroom is a tiny ASSIGNMENT
 question (~1 kg/slot, ≤~99 kg total against a bank of hundreds of thousands
 of kg) — negligible point-EV. **Do NOT pursue a raan-sweep re-solve.** The
 real Ch1 trajectory rank gap is the coherent impulsive-perfection + WSB model
-(see [[ch1-coherent-model-r3]]), a multi-week build, not free DoF.
+(see [[A-2026-05-29-coherent-physics-model]]), a multi-week build, not free DoF.
 
 Lesson reinforced: a NEGATIVE feasibility verdict is only trustworthy once
 the harness reproduces known-POSITIVE controls — here it took three harness

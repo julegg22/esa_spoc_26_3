@@ -9,8 +9,8 @@ claude_model: claude-opus-4-7[1m]
 commits: 3
 created_nodes:
   - "[[L-012-solver-assumption-audit-before-research-grade-verdict]]"
-  - "[[ch1-eccentric-orbit-fix]] (memory)"
-  - "[[LESSONS-LEARNED.md]] (top-level)"
+  - "[[E-701-ch1-eccentric-departure-solver-fix]] (memory)"
+  - "LESSONS-LEARNED (top-level)"
 banked_changes: []  # production sweep pending — sweep was killed for solver-speed optimization
 ---
 

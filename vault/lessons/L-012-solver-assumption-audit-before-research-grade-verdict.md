@@ -12,7 +12,7 @@ source: "5-day misdiagnosis of Ch1 trajectory as 'research-grade required' when 
 related:
   - "[[O-012-ch1-traj-under-determined-residual]]"
   - "[[O-002-leaderboard-2026-05-18]]"
-  - "[[ch1-eccentric-orbit-fix]] (memory)"
+  - "[[E-701-ch1-eccentric-departure-solver-fix]] (memory)"
 effort_person_hours: 5.0
 ---
 

@@ -6,7 +6,7 @@ date: 2026-06-12
 status: DECISIVE — 624d gap to r1 is ordering/phasing-recoverable; static 4-comp decomposition is an artifact; global epoch-aware rebuild justified
 instance: hard.kttsp (n=1051)
 script: scripts/ch2_e571_large_gap_probe.py
-related: [[E-034-ch2-large-epoch-aware-reorder]], [[ch2-large-first-bank-topology]], [[O-014-2026-06-07-competitor-algorithm-inference]], [[ch2-large-bank]]
+related: [[E-034-ch2-large-epoch-aware-reorder]], [[E-034-ch2-large-epoch-aware-reorder]], [[O-014-2026-06-07-competitor-algorithm-inference]], [[E-034-ch2-large-epoch-aware-reorder]]
 ---
 
 # E-041 — Ch2 large: gap-decomposition probe (1048d → r1=424d)

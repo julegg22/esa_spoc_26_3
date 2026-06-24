@@ -2,7 +2,7 @@
 date: 2026-06-23
 tags: [methodology, meta, version-control, reproducibility, provenance, hygiene]
 status: ACTIVE — codified from the 2026-06-23 commit-hygiene pass after the E-710 breakthrough
-related: ["[[M-general-instrument-experiments-before-launch]]", "[[feedback-persist-partials-survive-reboot]]", "[[M-general-foundation-then-search]]"]
+related: ["[[M-general-instrument-experiments-before-launch]]", "feedback-persist-partials-survive-reboot", "[[M-general-foundation-then-search]]"]
 ---
 # Commit criteria: reproduce + reconstruct + trace
 

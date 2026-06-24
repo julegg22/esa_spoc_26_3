@@ -6,7 +6,7 @@ date: 2026-06-13
 status: BANKED — large 942.0744 → 934.4452 d (−7.63 d), feasible (viols [0,0,0,0]), independently re-scored + round-trip via scripts/ch2_e586_bank.py. LKH per-component = clean NEGATIVE (epoch-shift trap at per-piece level); win came from the orthogonal E-588 departure-time waiting lever.
 instance: ch2-large (hard.kttsp, n=1051)
 script: scripts/ch2_e587_large_lkh.py, scripts/ch2_e587b_large_lkh_guarded.py, scripts/ch2_e588_large_waitlever.py (bg agent a5685879)
-related: [[E-586-ch2-large-recovered-lns-bank-971]], [[ch2-large-first-bank-topology]], [[E-034-ch2-large-epoch-aware-reorder]], [[M-applying-methodology-triggers]]
+related: [[E-586-ch2-large-recovered-lns-bank-971]], [[E-034-ch2-large-epoch-aware-reorder]], [[E-034-ch2-large-epoch-aware-reorder]], [[M-applying-methodology-triggers]]
 ---
 
 # E-587/E-588 — Ch2 large: LKH per-component (negative) + departure-time waiting lever (−7.63 d)
@@ -36,7 +36,7 @@ tof-sum) **orthogonal to the true objective** (chrono-walk makespan) once order
 changes — and a *stronger* solver makes it *worse*, exploiting the stale matrix
 more aggressively. **Verdict: pure node-reordering on large is a structural dead
 end; a better local TSP solver cannot help.** (Reinforces the proxy⊥reality lesson
-in [[ch2-large-first-bank-topology]].)
+in [[E-034-ch2-large-epoch-aware-reorder]].)
 
 ## Result 2 — the WIN: departure-time (waiting) lever (E-588), −7.63 d → BANKED
 The orthogonal lever the LKH diagnosis pointed at: the banked chrono walk takes
