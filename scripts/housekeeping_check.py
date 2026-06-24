@@ -53,6 +53,7 @@ def check_dangling_links():
     for f in md:
         txt = Path(f).read_text(encoding="utf-8", errors="ignore")
         txt = re.sub(r"```.*?```", "", txt, flags=re.S)   # strip fenced code blocks
+        txt = re.sub(r"`[^`\n]*`", "", txt)               # strip inline code (link syntax shown as examples)
         for m in link_re.findall(txt):
             tgt = m.strip().split("/")[-1].lstrip("[").strip()
             if tgt.endswith(".md"):
