@@ -15,6 +15,9 @@ giant = sorted(set(KEYS[:, 0].tolist()) | set(KEYS[:, 1].tolist()))
 gidx = {c: k for k, c in enumerate(giant)}
 
 
+KEEP = 5                                                     # max distinct departure-buckets per pair (sparsify)
+
+
 def main(bucket=12.0, horizon=456.0):
     nb = int(horizon // bucket) + 1
     print(f"[E-715] time-expanded build: bucket={bucket}d horizon={horizon}d -> {nb} buckets, "
@@ -30,7 +33,14 @@ def main(bucket=12.0, horizon=456.0):
             continue
         eb = (EPOCHS[es] // bucket).astype(int)             # departure buckets
         tofs = VALS[r, es]
+        seen_b = set(); kept = []                           # SPARSIFY: keep <=KEEP earliest distinct buckets
         for e1, tof in zip(eb, tofs):
+            if e1 in seen_b:
+                continue
+            seen_b.add(e1); kept.append((int(e1), float(tof)))
+            if len(kept) >= KEEP:
+                break
+        for e1, tof in kept:
             if e1 >= nb:
                 continue
             e2 = e1 + int(round(tof / bucket))
