@@ -22,7 +22,8 @@ PIDX = {(int(i), int(j)): r for r, (i, j) in enumerate(KEYS)}
 indeg = defaultdict(int)
 for (i, j) in KEYS:
     indeg[int(j)] += 1
-ck = json.load(open(f"{ROOT}/cache/ch2_giant_fine_beam_best.json"))
+BASE = sys.argv[1] if len(sys.argv) > 1 else f"{ROOT}/cache/ch2_giant_fine_beam_best.json"
+ck = json.load(open(BASE))
 order = list(ck["path"])
 cities = sorted(set(KEYS[:, 0].tolist()) | set(KEYS[:, 1].tolist()))
 stranded = [c for c in cities if c not in set(order)]
