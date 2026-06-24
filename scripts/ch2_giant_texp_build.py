@@ -5,7 +5,7 @@ exhausted, E-713/714). Node = (city, epoch-bucket). Edge (i,e1)->(j,e2): cheap t
 bucket e1, arriving bucket e2=e1+round(tof). GTSP = visit exactly one (city,*) copy per city, minimize sum
 of tofs (= makespan for a chronological tour). Bounded to buckets <= HORIZON (rank-1=424d, so 456d cap
 halves node count). Saves nodes + COO edges (src,dst,cost_milli) for the Noon-Bean->LKH solve (stage 2).
-Usage: python ch2_giant_texp_build.py [bucket_d=12] [horizon_d=456]"""
+Usage: python ch2_giant_texp_build.py [bucket_d=12] [horizon_d=456] [keep=5] [out=ch2_giant_texp.npz]"""
 import sys, time
 import numpy as np
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
@@ -15,10 +15,7 @@ giant = sorted(set(KEYS[:, 0].tolist()) | set(KEYS[:, 1].tolist()))
 gidx = {c: k for k, c in enumerate(giant)}
 
 
-KEEP = 5                                                     # max distinct departure-buckets per pair (sparsify)
-
-
-def main(bucket=12.0, horizon=456.0):
+def main(bucket=12.0, horizon=456.0, KEEP=5, out="ch2_giant_texp.npz"):
     nb = int(horizon // bucket) + 1
     print(f"[E-715] time-expanded build: bucket={bucket}d horizon={horizon}d -> {nb} buckets, "
           f"{len(giant)} cities, <= {len(giant)*nb} nodes", flush=True)
@@ -54,17 +51,19 @@ def main(bucket=12.0, horizon=456.0):
             print(f"  {r+1}/{len(KEYS)} pairs, {len(src)} edges [{time.time()-t0:.0f}s]", flush=True)
     nodes = np.where(used.ravel())[0]
     print(f"[E-715] DONE: {len(nodes)} live nodes, {len(src)} edges [{time.time()-t0:.0f}s]", flush=True)
-    np.savez_compressed(f"{ROOT}/cache/ch2_giant_texp.npz",
+    np.savez_compressed(f"{ROOT}/cache/{out}",
                         nodes=nodes, src=np.array(src, np.int64), dst=np.array(dst, np.int64),
                         cost=np.array(cost, np.int64), nb=nb, bucket=bucket, giant=np.array(giant))
     # per-city copy count (cluster sizes for GTSP)
     cc = used.sum(1)
     print(f"  per-city copies: min {cc.min()} med {int(np.median(cc))} max {cc.max()} "
-          f"(GTSP clusters = {len(giant)}); saved cache/ch2_giant_texp.npz", flush=True)
+          f"(GTSP clusters = {len(giant)}); saved cache/{out}", flush=True)
     print(f"[E-715] next: Noon-Bean GTSP->ATSP transform + LKH solve (stage 2).", flush=True)
 
 
 if __name__ == "__main__":
     b = float(sys.argv[1]) if len(sys.argv) > 1 else 12.0
     h = float(sys.argv[2]) if len(sys.argv) > 2 else 456.0
-    main(b, h)
+    k = int(sys.argv[3]) if len(sys.argv) > 3 else 5
+    o = sys.argv[4] if len(sys.argv) > 4 else "ch2_giant_texp.npz"
+    main(b, h, k, o)
