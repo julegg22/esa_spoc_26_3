@@ -2,7 +2,7 @@
 date: 2026-06-23
 tags: [methodology, meta, process, hygiene, vault, version-control, cadence]
 status: ACTIVE — codified 2026-06-23 after a commit-hygiene pass found 19 untracked scripts, an orphan journal, 128 dangling links
-related: ["[[M-general-commit-criteria-reproduce-reconstruct-trace]]", "[[M-001-proactive-concept-capture]]", "[[feedback-loop-doc-commit-submission-policy]]"]
+related: ["[[M-general-commit-criteria-reproduce-reconstruct-trace]]", "[[M-general-vault-link-and-naming-hygiene]]", "[[M-001-proactive-concept-capture]]"]
 ---
 # Housekeeping cadence: keeping the vault + git from drifting
 
