@@ -79,9 +79,22 @@ the beam still caps ~554–575 **regardless of graph completeness**. Insertion-r
    now-correct graph** (LNS/metaheuristic seeded from a complete <460d tour, e.g. the 563@342d; or a finer
    non-greedy constructor) — tractable and NOT a research moonshot, but unfinished in this window.
 
-Rank-2 (932.53) stays secure. **Highest next-step EV: LNS / global re-order on the recovered graph from the
-563@342d complete-ish seed.** Refutes [[E-720-ch2-large-ultradeep-audit]]'s premature verdict; extends
+Rank-2 (932.53) stays secure. Refutes [[E-720-ch2-large-ultradeep-audit]]'s premature verdict; extends
 [[M-general-foundation-then-search]] (audit the graph's COMPLETENESS before declaring search exhausted).
+
+### The retime obstacle blocking the LNS (E-721c, precise)
+
+Tried an LNS on the recovered graph (complete 601 seed = 563-tour + 38 appended, strand-penalized
+objective). It needs a FAST retime to search at scale, so it used the table-lookup `table_arr` (no Lambert).
+**That retime fundamentally diverges from the fine oracle over long orders:** the *original* 566-tour on the
+*original* table strands **253/566** under `table_arr` (not a resampling artifact — confirmed on the clean
+grid). Cause: `table_arr` departs at the GRID epoch with the stored min-tof, but feasibility needs departure
+at the EXACT accumulated clock + a verified tof; the grid-quantization error accumulates across hundreds of
+legs. So: the fast retime is unusable for global search, and the fine retime (`compute_transfer` per leg) is
+too slow for LNS-scale iteration. **This is THE remaining engineering blocker to 601@<405d, and it is
+well-defined and solvable** — build an exact-arrival oracle (a vectorized `compute_transfer` retime, or a
+table that stores, per (edge, fine-epoch), a *verified* arrival usable by raw lookup) → then LNS / global
+re-order on the now-correct graph. Not finished in this window.
 
 ## (original test plan)
 
