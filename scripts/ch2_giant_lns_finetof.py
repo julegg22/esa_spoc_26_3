@@ -16,7 +16,8 @@ from esa_spoc_26.ch2_kttsp import KTTSP
 from collections import defaultdict
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
 kt = KTTSP("reference/SpOC4/Challenge 2 Keplerian Tomato Traveling Salesperson Problem/problems/hard.kttsp")
-d = np.load(f"{ROOT}/cache/ch2_giant_dense1d.npz")
+import os
+d = np.load(os.environ.get("CH2_TABLE", f"{ROOT}/cache/ch2_giant_dense1d.npz"))
 EPOCHS = d["epochs"]; KEYS = d["keys"]; VALS = d["vals"]; FIN = np.isfinite(VALS)
 PIDX = {(int(i), int(j)): r for r, (i, j) in enumerate(KEYS)}
 HASEDGE = set(PIDX.keys())
@@ -48,6 +49,8 @@ def table_arr(i, j, t):
     if p >= fe.size:
         return None
     e = fe[p]
+    if e > e0 + 8:                                                # match the beam's ~8-epoch window: a leg is
+        return None                                              # feasible only if cheap soon (no far clock-jump)
     return max(t, float(EPOCHS[e])) + float(VALS[row, e])
 
 
@@ -67,14 +70,13 @@ def cheap_arr(i, j, t):                                          # alias used by
 
 
 def retime(order):
-    """FAST table retime; (makespan, strands, ok). Strands counted (allow a few = will be exc-bridged)."""
+    """FAST table retime; (cost, strands, ok). cost = real makespan + heavy strand penalty so LNS drives
+    strands -> 0. Always ok (allow many strands at start; the penalty does the work)."""
     t = 0.0; strand = 0
     for k in range(len(order) - 1):
         r = table_arr(order[k], order[k + 1], t)
         if r is None:
-            strand += 1; t += 6.0                                # soft penalty; >5 strands => infeasible-ish
-            if strand > kt.n_exc:
-                return t, strand, False
+            strand += 1; t += 50.0                               # heavy penalty: a strand ~ infeasible leg
         else:
             t = r
     return t, strand, True
@@ -131,10 +133,8 @@ def main(seed_json, op="mix", destroy_k=30, iters=100000, T0=8.0, tag="a"):
         order = order.get("path") or order.get("order")
     order = [int(c) for c in order]
     mk, exc, ok = retime(order)
-    if not ok:
-        mk = 9999.0
-    print(f"[P2-{tag}] LNS start: {len(order)} cities seed makespan {mk:.1f}d exc {exc}; op={op} k={destroy_k} T0={T0}", flush=True)
-    best_order = list(order); best_mk = mk; cur_mk = mk
+    print(f"[P2-{tag}] LNS start: {len(order)} cities seed cost {mk:.1f}d strands {exc}; op={op} k={destroy_k} T0={T0}", flush=True)
+    best_order = list(order); best_mk = mk; cur_mk = mk; best_strand = exc
     CKPT = f"{ROOT}/cache/ch2_giant_lns_best_{tag}.json"
     t0 = time.time(); acc = 0
     ops = ["seg", "worst", "scatter"]
@@ -152,12 +152,13 @@ def main(seed_json, op="mix", destroy_k=30, iters=100000, T0=8.0, tag="a"):
         if nmk < cur_mk or np_rng.random() < np.exp(-(nmk - cur_mk) / T):
             order = new; cur_mk = nmk; acc += 1
             if nmk < best_mk:
-                best_mk = nmk; best_order = list(new)
-                json.dump({"order": best_order, "makespan": best_mk, "exc": nexc}, open(CKPT, "w"))
-                if best_mk < 405:
-                    print(f"[P2-{tag}] *** giant {best_mk:.1f}d < 405 (=> full <424 RANK-1) at it{it}! exc {nexc}", flush=True)
+                best_mk = nmk; best_order = list(new); best_strand = nexc
+                json.dump({"order": best_order, "cost": best_mk, "strands": nexc}, open(CKPT, "w"))
+                if nexc == 0 and best_mk < 405:
+                    print(f"[P2-{tag}] *** COMPLETE 601 @ {best_mk:.1f}d < 405, 0 strands (=> full <424 "
+                          f"RANK-1) at it{it}! -> verify+stitch+escalate", flush=True)
         if it % 100 == 0:
-            print(f"[P2-{tag}] it{it}: cur {cur_mk:.1f}d best {best_mk:.1f}d (d/leg {best_mk/600:.3f}) "
+            print(f"[P2-{tag}] it{it}: cur {cur_mk:.1f}d best {best_mk:.1f}d strands~{best_strand} "
                   f"T={T:.2f} acc={acc} [{time.time()-t0:.0f}s]", flush=True)
     print(f"[P2-{tag}] DONE: best {best_mk:.1f}d after {iters} its [{time.time()-t0:.0f}s]", flush=True)
     json.dump({"order": best_order, "makespan": best_mk}, open(CKPT, "w"))
