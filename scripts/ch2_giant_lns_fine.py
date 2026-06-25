@@ -64,37 +64,46 @@ def cost(mk, strand):
     # double-counts intentionally to push strands hardest)
 
 
-def repair(kept, removed, times):
-    """insert each removed city at its min-local-delay feasible position (2 oracle calls/candidate); times
-    go stale as we insert (heuristic) — one full retime at the end gives the true makespan."""
-    order = list(kept); tms = list(times)
-    rem = list(removed); rng.shuffle(rem)
+def repair(kept, removed):
+    """insert each removed city (hardest=low-indeg first) at its min-delay feasible position, re-timing the
+    suffix INCREMENTALLY after each insert so the next placement uses accurate times."""
+    order = list(kept); tms, _, _ = retime(order)
+    rem = sorted(removed, key=lambda c: len(INADJ[c]))          # hardest (fewest predecessors) first
     for c in rem:
         cand = [k for k in range(len(order) - 1) if order[k] in INADJ[c] and order[k + 1] in OUTADJ[c]]
         best = None
         for k in cand:
-            ac = fine_arr(order[k], c, tms[k] if k < len(tms) else tms[-1])
+            ac = fine_arr(order[k], c, tms[k])
             if ac is None:
                 continue
             an = fine_arr(c, order[k + 1], ac)
             if an is None:
                 continue
-            delay = an - (tms[k + 1] if k + 1 < len(tms) else tms[-1])
-            if best is None or delay < best[0]:
-                best = (delay, k, ac)
-        if best is None:                                        # try append (may strand; LNS fixes later)
+            if best is None or (an - tms[k + 1]) < best[0]:
+                best = (an - tms[k + 1], k, ac)
+        if best is None:                                        # no feasible slot -> append (strands; SA fixes)
             ae = fine_arr(order[-1], c, tms[-1])
             order.append(c); tms.append(ae if ae is not None else tms[-1] + STRAND_PEN)
             continue
         _, k, ac = best
         order = order[:k + 1] + [c] + order[k + 1:]
-        tms = tms[:k + 1] + [ac] + tms[k + 1:]                   # stale suffix; corrected by final retime
+        tms = tms[:k + 1] + [ac]                                # re-time suffix from c onward (accurate)
+        t = ac
+        for q in range(k + 1, len(order) - 1):
+            r = fine_arr(order[q], order[q + 1], t)
+            t = r if r is not None else t + STRAND_PEN
+            tms.append(t)
     return order
 
 
 def destroy(order, times, k, op):
     n = len(order)
-    if op == "worst":                                           # remove cities on the longest legs
+    if op == "strand":                                          # remove the cities AT strand legs (+ a few random)
+        sc = [q + 1 for q in range(n - 1) if times[q + 1] - times[q] > 40.0]   # destinations of strand legs
+        idx = sc[:k]
+        if len(idx) < k:
+            idx = sorted(set(idx + rng.choice(n, k - len(idx), replace=False).tolist()))
+    elif op == "worst":                                         # cities on the longest (feasible) legs
         legs = sorted(((times[q + 1] - times[q], q) for q in range(n - 1)), reverse=True)
         idx = sorted(set([q for _, q in legs[:k]] + [q + 1 for _, q in legs[:k]]))[:k]
     elif op == "seg":
@@ -104,7 +113,6 @@ def destroy(order, times, k, op):
     rs = set(idx)
     removed = [order[q] for q in idx]
     kept = [order[q] for q in range(n) if q not in rs]
-    kept_times = []                                             # recompute kept clock once (cheap fine retime)
     return kept, removed
 
 
@@ -121,12 +129,12 @@ def main(seed_json, iters=20000, destroy_k=12, T0=6.0, tag="a"):
     print(f"[LNS-{tag}] seed {len(order)} cities, makespan {mk:.1f}d strands {strand} cost {cur:.0f} "
           f"[{time.time()-t0:.0f}s]", flush=True)
     CKPT = f"{ROOT}/cache/ch2_giant_lnsfine_best_{tag}.json"
-    ops = ["worst", "scatter", "seg"]; acc = 0
+    ops = ["strand", "strand", "worst", "scatter"]; acc = 0     # bias toward fixing strands
     for it in range(iters):
         T = T0 * (0.9997 ** it) + 0.05
-        op = ops[it % 3]
+        op = ops[it % len(ops)]
         kept, removed = destroy(order, times, destroy_k, op)
-        new = repair(kept, removed, retime(kept)[0])
+        new = repair(kept, removed)
         ntimes, nmk, nstrand = retime(new)
         nc = cost(nmk, nstrand)
         if nc < cur or rng.random() < np.exp(-(nc - cur) / max(T, 1e-6)):

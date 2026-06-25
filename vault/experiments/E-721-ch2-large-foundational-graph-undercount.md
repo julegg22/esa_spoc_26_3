@@ -82,6 +82,24 @@ the beam still caps ~554–575 **regardless of graph completeness**. Insertion-r
 Rank-2 (932.53) stays secure. Refutes [[E-720-ch2-large-ultradeep-audit]]'s premature verdict; extends
 [[M-general-foundation-then-search]] (audit the graph's COMPLETENESS before declaring search exhausted).
 
+### The CASCADE — why local search (LNS/insertion) can't reach rank-1 (E-721d, structural)
+
+Built the LNS properly on the correct graph: exact-arrival oracle (`fine_arr`, max_revs=2 fast verify, ~0.8s
+retime — correct: the 563-tour gives 2 strands, vs `table_arr`'s 428), strand-targeted destroy, incremental
+re-timing repair. The seed (563-tour + 38 appended) = 34 strands. **Decisive failure mode:** inserting a
+stranded city delays EVERYTHING downstream, and on a tight schedule those downstream legs miss their windows
+→ **one insertion cascades 34→220 strands.** This is the completeness↔efficiency tension at the retime level:
+in a TIME-DEPENDENT tour, any local move (insert / 2-opt / swap) re-times the whole suffix and cascades. So
+**no local-search completion reaches a tight (rank-1, <405d) 601 order** — the schedule has no slack to
+absorb the cascade. (Completing 601 at ANY makespan IS doable with a full-horizon 0-3000 table — the cascade
+then only inflates makespan, landing rank-2 — but that adds 0 points.)
+
+**Final precise verdict:** rank-1 requires a GLOBALLY TIGHT time-dependent 601-order (no leg-by-leg slack),
+which is the competitor's hard-won method; every tractable local constructor we have (beam caps ~575,
+insertion/LNS cascade, static-LKH inflates, time-expanded GTSP resolution-fails E-718) cannot produce it.
+The foundational graph is now CORRECT (the real win, +6200 edges, broke 566→575); the remaining rank-1 step
+is a genuine time-dependent global optimizer, not a quick build. Rank-2 (932.53) secure.
+
 ### The retime obstacle blocking the LNS (E-721c, precise)
 
 Tried an LNS on the recovered graph (complete 601 seed = 563-tour + 38 appended, strand-penalized
