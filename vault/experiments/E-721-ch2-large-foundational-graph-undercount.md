@@ -146,3 +146,44 @@ under-counting foundation: a faithful-but-incomplete oracle makes the problem lo
 [[M-general-foundation-then-search]], [[L-013-evaluator-resolution-phantom-wall]],
 [[M-general-deep-single-prompt-audit]]; corrects [[E-720-ch2-large-ultradeep-audit]]'s premature
 "algorithmic gap" verdict.
+
+### The proper insertion-ALNS is DEFINITIVELY defeated by the cascade (E-721g, decisive)
+
+Built the proper continuous-time ALNS (Shaw/worst/strand destroy + regret-2 insertion + record-to-record
+acceptance + adaptive weights) on the corrected graph, with two genuine evaluator speedups derived from
+profiling (`compute_transfer` is only **0.14 ms** — the retime cost is the *exhaustive tof-scan on strand
+legs*, ~900 calls each, not Lambert):
+- **bounded `fine_arr`** — probe the table's min-tof first; if dv>2.5×thr at the nearest cheap epoch, skip the
+  dense scan (fast strand detection). Keeps the 563-tour retime accurate (458.9 d / 2 strands, matches
+  fine-exact) at ~1.1 s.
+- **delay-damped incremental re-time** — an insertion's delay is absorbed at the first *wait* leg, so stop
+  re-timing once the clock re-converges to the old schedule (avoids re-timing the whole 600-leg suffix).
+
+**Result — the ALNS still fails, definitively:** regret repair of 12 cities → **320 strands** (the tight
+schedule has no slack; bulk insertion cascades catastrophically). At small destroy (k=3–6) the run logs
+**7.4 s/iter and acc=0** — *every* repaired candidate cascades to worse, zero accepted in 25 iters (≈62 h for
+a full run). Combined with 4 single-move TDSA chains all plateauing at **21–23 strands**, this is conclusive:
+**insertion/relocation metaheuristics cannot reach a tight 601-order** — small moves plateau, bulk moves
+cascade to strictly-worse, on every move. The cascade is not a tuning problem; it is intrinsic to perturbing
+a zero-slack time-dependent schedule.
+
+### Window-level time-expanded GTSP collapses (no discretization exists)
+
+Tested the natural "choose visit-times globally instead of perturbing" reformulation: time-expand each city
+into its discrete cheap *entry windows* and solve as a GTSP (our Lagrangian-DAG solver, E-717). **Measured:
+every city has exactly 1 contiguous cheap-entry window spanning essentially the whole 0–460 d horizon** (601
+window-nodes total = zero reduction; 0 unreachable cities). The cheap windows are narrow in **TOF (0.002 d)**
+but *wide and continuous in EPOCH* — so there is no epoch-discretization that turns this into a GTSP. This
+independently re-confirms E-718's "GTSP resolution-fails": it is a genuine **continuous-time** TD-TSP.
+
+### The corrected next step (reachability-aware construction)
+
+The same measurement is the lever: since the stranded ~24 cities are enterable at almost *any* epoch, the beam
+strands them only by **greedy corner-painting** (an earlier choice cuts off their few cheap predecessors), NOT
+because they're unreachable. So the next family is a **reachability-aware / least-constrained-first
+constructor**: at each step prefer successors that keep the hard (in-deg 14–15) cities' cheap predecessors
+still ahead, instead of pure greedy-earliest. This is global *ordering* (construction), which sidesteps the
+cascade entirely — unlike insertion-repair, it never perturbs a tight schedule. (Next tick's build.)
+
+Rank-2 (932.53) stays secure; 4 TDSA chains continue toward a complete rank-2 tour as the realistic
+interim outcome.

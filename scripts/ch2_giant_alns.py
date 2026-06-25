@@ -35,6 +35,10 @@ def fine_arr(i, j, t):
         if not FIN[row, e]:
             continue
         dep = max(t, float(EPOCHS[e])); h = float(VALS[row, e])
+        # quick probe at the table's min-tof; if it's far above threshold, this epoch isn't cheap at this
+        # clock -> skip the dense scan (fast strand detection; the cheap band sits within ~0.02d of h)
+        if ktf.compute_transfer(i, j, dep, h) > 2.5 * kt.dv_thr:
+            continue
         for tof in np.arange(max(kt.min_tof, h - 0.025), h + 0.025, 0.0005):
             if ktf.compute_transfer(i, j, dep, float(tof)) <= kt.dv_thr:
                 return dep + float(tof)
@@ -118,12 +122,16 @@ def regret_repair(kept, removed, k_regret=2):
             if regret > best_regret:
                 best_regret = regret; best_city = c; best_choice = costs[0]
         _, q, ac = best_choice
-        order = order[:q + 1] + [best_city] + order[q + 1:]
-        tms = tms[:q + 1] + [ac]; t = ac
-        for w in range(q + 1, len(order) - 1):
-            r = fine_arr(order[w], order[w + 1], t)
+        new = order[:q + 1] + [best_city] + order[q + 1:]      # delay-damped incremental re-time: stop once
+        nt = list(tms[:q + 1]) + [ac]; t = ac                  # the clock re-converges to the old schedule
+        absorbed = False
+        for p in range(q + 1, len(new) - 1):
+            r = fine_arr(new[p], new[p + 1], t)
             t = r if r is not None else t + SP
-            tms.append(t)
+            nt.append(t)
+            if abs(t - tms[p]) < 1e-6:                         # new[p+1]==order[p]; old arrival unchanged
+                nt.extend(tms[p + 1:]); absorbed = True; break
+        order = new; tms = nt
         rem.remove(best_city)
     return order
 
@@ -143,7 +151,7 @@ def main(seed_json, iters=30000, tag="a"):
     w = np.ones(len(DESTROYS)); sc = np.zeros(len(DESTROYS)); cnt = np.zeros(len(DESTROYS)); acc = 0
     for it in range(iters):
         times, _, st_cur = retime(order)
-        k = int(rng.integers(8, 26))
+        k = int(rng.integers(3, 7))                            # SMALL destroy: tight schedule cascades on big k
         di = int(rng.choice(len(DESTROYS), p=w / w.sum()))
         idx = set(int(x) for x in DESTROYS[di](order, times, k))
         removed = [order[q] for q in idx]; kept = [order[q] for q in range(len(order)) if q not in idx]
