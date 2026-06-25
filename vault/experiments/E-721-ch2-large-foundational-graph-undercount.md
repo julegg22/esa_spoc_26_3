@@ -100,6 +100,20 @@ insertion/LNS cascade, static-LKH inflates, time-expanded GTSP resolution-fails 
 The foundational graph is now CORRECT (the real win, +6200 edges, broke 566→575); the remaining rank-1 step
 is a genuine time-dependent global optimizer, not a quick build. Rank-2 (932.53) secure.
 
+### No FURTHER under-count — the ~576 completion cap is genuine (E-721f)
+
+Applied the user's skepticism to the *second* wall: the near-miss recovery only rescanned exc-close (≤600)
+pairs; ~226k pairs the 8-probe rejected as **>600** were never rescanned. Tested the hardest cities: of 120
+sampled >600-rejected predecessors each, **0 are actually cheap** — the 8-probe correctly rejected them as
+orbitally far. The hard cities' low cheap-in-degree (14-15) is **real physics** (high-inclination → few cheap
+transfers), not an artifact. So: the graph under-count was a real bug (fixed, 566→575); the remaining ~576
+cap across ALL methods (beam, insertion/LNS cascade, global TD-SA plateau ~25 strands) is a GENUINE
+time-dependent completion difficulty, not a hidden misconception. The faithful TD-SA (E-721e, or-opt/2-opt +
+strand-targeted relocate, fine makespan) descends 34→~25 strands then plateaus — confirming the hard ~25
+high-inc cities resist a rank-1-tight (<405d) ordering. Rank-1 needs the competitor's sophisticated
+TD-TSP completion (genuine research problem); a *complete* 601 tour at ~rank-2 (<932) is the realistic TD-SA
+outcome and would improve the large bank's robustness.
+
 ### The retime obstacle blocking the LNS (E-721c, precise)
 
 Tried an LNS on the recovered graph (complete 601 seed = 563-tour + 38 appended, strand-penalized
