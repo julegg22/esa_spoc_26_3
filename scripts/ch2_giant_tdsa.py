@@ -38,14 +38,45 @@ def fine_arr(i, j, t):
 
 
 def makespan(order):
-    t = 0.0; strand = 0
+    t = 0.0; strand = 0; times = [0.0]
     for k in range(len(order) - 1):
         r = fine_arr(order[k], order[k + 1], t)
         if r is None:
             strand += 1; t += STRAND_PEN
         else:
             t = r
-    return t, strand
+        times.append(t)
+    return t, strand, times
+
+
+def targeted_relocate(order, times):
+    """remove a city that CAUSES a strand and re-insert it at its best feasible (min-delay) position."""
+    sc = [k + 1 for k in range(len(order) - 1) if times[k + 1] - times[k] > 40.0]
+    if not sc:
+        return or_opt(order)
+    ci = int(rng.choice(sc)); c = order[ci]
+    rest = order[:ci] + order[ci + 1:]
+    rt, _, rtimes = times_cache(rest)
+    best = None
+    for k in range(len(rest) - 1):
+        if (rest[k], c) not in PIDX or (c, rest[k + 1]) not in PIDX:
+            continue
+        ac = fine_arr(rest[k], c, rtimes[k])
+        if ac is None:
+            continue
+        an = fine_arr(c, rest[k + 1], ac)
+        if an is None:
+            continue
+        if best is None or (an - rtimes[k + 1]) < best[0]:
+            best = (an - rtimes[k + 1], k)
+    if best is None:
+        return or_opt(order)
+    k = best[1]
+    return rest[:k + 1] + [c] + rest[k + 1:]
+
+
+def times_cache(order):
+    return makespan(order)
 
 
 def or_opt(order):
@@ -69,17 +100,23 @@ def main(seed_json, iters=40000, T0=40.0, tag="a"):
         order = order.get("order") or order.get("path")
     order = [int(c) for c in order]
     t0 = time.time()
-    mk, st = makespan(order); cur = mk + STRAND_PEN * st
+    mk, st, times = makespan(order); cur = mk + STRAND_PEN * st
     best = cur; best_order = list(order); best_mk = mk; best_st = st
     print(f"[TDSA-{tag}] seed {len(order)} cities, makespan {mk:.1f}d strands {st}; iters={iters} T0={T0}", flush=True)
     CKPT = f"{ROOT}/cache/ch2_giant_tdsa_best_{tag}.json"
     acc = 0
     for it in range(iters):
         T = T0 * (0.9998 ** it) + 0.1
-        new = or_opt(order) if rng.random() < 0.6 else two_opt(order)
-        nmk, nst = makespan(new); nc = nmk + STRAND_PEN * nst
+        u = rng.random()
+        if st > 0 and u < 0.55:                                  # while strands remain, mostly target them
+            new = targeted_relocate(order, times)
+        elif u < 0.8:
+            new = or_opt(order)
+        else:
+            new = two_opt(order)
+        nmk, nst, ntimes = makespan(new); nc = nmk + STRAND_PEN * nst
         if nc < cur or rng.random() < np.exp(-(nc - cur) / max(T, 1e-6)):
-            order = new; cur = nc; acc += 1
+            order = new; cur = nc; times = ntimes; st = nst; acc += 1
             if nc < best:
                 best = nc; best_order = list(new); best_mk = nmk; best_st = nst
                 json.dump({"order": best_order, "makespan": best_mk, "strands": best_st}, open(CKPT, "w"))
