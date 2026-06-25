@@ -58,8 +58,13 @@ Two beams, identical 566-params, same 0–460 grid, differing ONLY in edge recov
 566 by +9 *despite* the coarser grid (which alone cost the baseline −12). The "566 cap" was an artifact of
 the 8-probe under-counted graph. **The user's push was right; E-720's "algorithmic gap" verdict is refuted.**
 
-Next: graph-wide near-miss recompute (`ch2_giant_graph_nearmiss.py`, the 59903 exc-close-but-not-cheap pairs)
-recovers edges for ALL cities (the 35-focus was too narrow — whack-a-mole) → re-run beam toward 601 → rank-1.
+### Graph-wide recovery (E-721b near-miss)
+
+Rescanned the 59903 exc-close-but-not-cheap pairs (the 8-probe near-misses) properly: **+5138 previously-
+missing cheap edges recovered graph-wide** (96 min, 4 cores). Complete graph = 74208 → **79346 edges**; the
+low-degree count dropped (|RARE| 120→113: 7 cities crossed out of low-degree). 4 beam configs now running on
+the complete graph (`cache/ch2_giant_dense1d_aug.npz`); the decisive question is whether they thread toward
+601 at < ~405 d (giant) → full < 424.62 → rank-1.
 
 ## (original test plan)
 
