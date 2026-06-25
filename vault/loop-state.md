@@ -2,10 +2,17 @@
 
 Updated: 2026-06-25 (update this timestamp every write)
 
-**★ STANDING DIRECTIVE (user 2026-06-25):** proceed FULLY AUTONOMOUSLY on Ch2-large (and exploration
-broadly) — build/run/iterate without asking "shall I proceed?". Only **submissions** (never auto-submit)
-and destructive/outward actions stay gated. End turns with action+result, not confirmation requests. See
-memory `feedback-autonomous-ch2-large-no-confirmation`.
+**★ STANDING DIRECTIVE (user 2026-06-25):** proceed FULLY AUTONOMOUSLY — build/run/iterate without asking
+"shall I proceed?". Only **submissions** (never auto-submit) and destructive/outward actions stay gated. End
+turns with action+result, not confirmation requests. See `feedback-autonomous-ch2-large-no-confirmation`.
+
+**★ EXHAUSTION = TRANSITION, NOT STOP (user 2026-06-25; CLAUDE.md §5b,
+[[M-general-exhaustion-is-a-transition]]):** when a method family looks exhausted, do NOT stop or pivot the
+freed effort to lower-value busywork (busy ≠ exploring the top lever). MANDATORY: (1) name the next most
+plausible step; (2) TAKE it — "heavy/research-grade/multi-day/competitor's method" is a build spec, not a
+reason to defer; (3) if none, run a deep audit to derive one. Trigger phrases ("exhausted/wall/genuine
+problem/research-heavy/not a quick build") written as a stop-reason ARE the trigger to do this instead. Each
+loop tick: confirm effort is on the HIGHEST-EV named step, not lower-value occupants.
 
 **★★★★ TICK 2026-06-25 (CH2-LARGE FOUNDATIONAL BUG FOUND — the "566 wall" was an 8-probe graph under-count;
 user vindicated again).** E-720 ultradeep audit wrongly concluded "real algorithmic gap"; user pushed. E-721:

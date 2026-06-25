@@ -92,6 +92,49 @@ The general methodology (project-agnostic, blog-post-ready):
 The Ch1 trigger case that originated these:
 - `vault/methodology/M-2026-05-29-systematic-bug-surfacing.md`
 
+## 5b. Exhaustion is a transition, not a stop (never give up the top lever)
+
+When you judge a method *family* exhausted / plateaued / walled on the
+highest-value open goal, you are **forbidden** to stop, hand back to the
+user, or redirect the freed effort to a *lower-value* lever. "Keeping
+cores busy" on lesser work while the top lever still has an unbuilt next
+step **is** the failure mode — *busy is not the same as exploring the best
+lever.* (The older "no idle cores" rule does not cover this; you can be
+fully busy and still have given up.)
+
+**Mandatory sequence the moment you think a family is exhausted:**
+1. **Name** the next most plausible exploration step — a different method
+   family, a relaxed assumption, a faster/different primitive, a
+   sub-problem, or the bottleneck you just isolated.
+2. **Take it.** Build and run it. A step being "heavy / research-grade /
+   multi-day / the competitor's method" is a **specification of what to
+   build, not a reason to defer it.** Scope it and start; report progress,
+   not a request for permission.
+3. **If genuinely no next step exists,** run the deep audit
+   (`M-general-deep-single-prompt-audit`) that questions the *results and
+   assumptions* to **derive** one. The audit is itself the next step — it
+   has repeatedly turned a false "exhausted" into a live lever (Ch1
+   asymmetry bug, Ch2-small resolution, Ch2-large 8-probe graph).
+
+**Self-check — these phrases, when you write them as a reason to
+stop/defer/pivot, ARE the trigger to run the sequence above instead:**
+"exhausted", "plateau / ceiling / wall", "genuine/real <X> problem",
+"research-heavy", "multi-day / not a quick build", "beyond a quick fix",
+"the competitor's sophisticated method", "fundamental limit", "I'll build
+it if you want". The instant you catch one, name + take the next step.
+
+**The only legitimate stops:** (a) the submission gate (user-gated, never
+auto-submit) and destructive/outward actions; (b) a deep audit that
+*explicitly, with evidence,* concludes the admissible optimum is reached.
+"It's hard / it's a real research problem" is never one of them — that is
+a build spec.
+
+Case that named this rule (2026-06-25, Ch2-large rank-1): I correctly
+named the forward path (continuous-time TD-TSP metaheuristic + a fast
+drift-free evaluator), then used its difficulty to stop and pivot to a
+matching grind — until the user pushed. The difficulty WAS the spec.
+See `vault/methodology/M-general-exhaustion-is-a-transition.md`.
+
 ## 6. Commit conventions
 
 - **No AI-attribution trailer.** Do not append `Co-Authored-By:` or
