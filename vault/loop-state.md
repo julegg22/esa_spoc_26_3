@@ -1,6 +1,25 @@
 # Loop state — SpOC4 campaign autopilot
 
-Updated: 2026-06-22 (update this timestamp every write)
+Updated: 2026-06-25 (update this timestamp every write)
+
+**★ STANDING DIRECTIVE (user 2026-06-25):** proceed FULLY AUTONOMOUSLY on Ch2-large (and exploration
+broadly) — build/run/iterate without asking "shall I proceed?". Only **submissions** (never auto-submit)
+and destructive/outward actions stay gated. End turns with action+result, not confirmation requests. See
+memory `feedback-autonomous-ch2-large-no-confirmation`.
+
+**★★★★ TICK 2026-06-25 (CH2-LARGE FOUNDATIONAL BUG FOUND — the "566 wall" was an 8-probe graph under-count;
+user vindicated again).** E-720 ultradeep audit wrongly concluded "real algorithmic gap"; user pushed. E-721:
+the cheap-edge graph `ch2_e533_large_adj` was built by probing only **8 fixed (t,tof) cells/pair** over 3000d
+(`ch2_e533_large_structure.py`) → misses narrow recurring cheap windows → truly-cheap edges declared
+non-cheap & lost; dense1d only refined adj-accepted pairs (inherited every false negative). Confirmed: a hard
+city had 28 cheap preds ABSENT. FIX: rescanned stranded (E-721) + the 59903 near-miss pairs (E-721b) → **+6200
+cheap edges** (graph 74208→79346). IMPACT: recovered-graph beam threaded **575** vs 554 same-grid baseline;
+the 566 wall was substantially artifact. Beam caps ~575 on the correct graph (search limit). NEXT (active
+lever): global-LNS-on-correct-graph is blocked by ONE precise obstacle — the fast `table_arr` retime DIVERGES
+over long orders (253/566 strands on a good order; grid-departure+min-tof vs exact-clock error accumulates),
+and fine `compute_transfer` retime is too slow for naive LNS. **Building: exact-arrival oracle (fine retime,
+tight tof-seed + early-exit, on aug table) + LNS with LOCAL insertion-cost estimates.** Banks held — NEVER
+submit. Writeups E-720, E-721.
 
 **★★★★★ TICK 2026-06-22 (CH1-TRAJECTORY BREAKTHROUGH — the "per-pair CLOSED" wall was a BUG, lever now realizing).** Building the STM corrector (E-701, user-requested) surfaced the real blocker. Step 1 validated the heyoka variational STM (analytic Jacobian, machine-precision vs finite-diff) — but driving it on real pairs showed the back-shot seeds were ~600,000 km off (e≈0.986), NOT the ~1km the precision story assumed. **THE BUG (B9): `solve_departure_dv` builds a CIRCULAR departure orbit (resid targets e→0) and checks |e−e_e|<1e-6 — so it rejects all 399/400 ECCENTRIC Earth orbits.** It's the exact analog of the 2026-05-24 `solve_arrival_dv` eccentric-window fix, applied to the Moon end but NEVER mirrored to the Earth end. Every prior per-pair "floor" (E-619, E-681, E-687..691; ~8 solver methods) was defeated by this ONE downstream feasibility bug, not by physics. **FIX: `scripts/ch1_departure_ecc.py::solve_departure_dv_ecc` (the eccentric mirror).** Backward-shoot CMA now finds OFFICIAL-VALID (udp.fitness<0) sub-bank captures immediately: (241,50) bank 6617→4315-4797 (+592-715 kg), (139,31) 6532→4254 (+652), (334,312) 5906→4928 (+248). **3/3 expensive pairs improved, +1493 kg.** Departure window is ±a_e·e_e (km-scale) ⇒ NO STM corrector needed (validated, shelved). **FLEET SWEEP RUNNING: `scripts/ch1_ecc_fleet.py` 3 sharded workers (w{0,1,2}of3) over 289 expensive pairs (bank_dv>3200), checkpointed `cache/ch1_ecc_fleet_w*of3.json` (reboot-survive, resumable), keeps each pair's idD (uniqueness), strict mass guard. ETA ~4.5h.** Cores: 3 trajectory shards + 1 matching-i seed (s401; reallocated 2 matching cores per compute-discretion — trajectory +500kg/pair ≫ matching +4kg-from-rank3). Writeups E-701, E-700 (add B9), memory [[T-009-ch1-trajectory-architectural-plateau]] updated (per-pair CLOSED RETRACTED). User's "errors in the experiments" suspicion VINDICATED (asymmetry bug). NEXT: when shards done → merge checkpoints, assemble full 400-row fleet (swap improved rows, keep bank rows), whole-fleet udp.fitness validate, guard-bank if strictly better, measure total kg gain vs the +172k circular-capture lever / rank-3 (~472k). NEVER submit (escalate). Banks held.
 
