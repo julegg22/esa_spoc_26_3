@@ -45,7 +45,23 @@ a resampled-original table (0–460/230-epoch grid) → `cache/ch2_giant_dense1d
 **Recovered: +1059 cheap edges** for the 35 focus cities (~30/city; the low-degree ones ≈ double, e.g.
 477: 7→~15 in-deg) that the 8-probe had hidden.
 
-## The decisive test (running)
+## The decisive test — CONFIRMED (the under-count was the wall)
+
+Two beams, identical 566-params, same 0–460 grid, differing ONLY in edge recovery:
+
+| beam | cities threaded | rare threaded | d/leg |
+|---|---|---|---|
+| baseline (no recovery) | 554 | 93/120 | 0.568 |
+| **aug (35-city recovery)** | **575** | **105/120** | 0.652 |
+
+**Recovering just 35 cities' edges = +21 cities (554→575)**, and 575 beats the original 950-grid wall of
+566 by +9 *despite* the coarser grid (which alone cost the baseline −12). The "566 cap" was an artifact of
+the 8-probe under-counted graph. **The user's push was right; E-720's "algorithmic gap" verdict is refuted.**
+
+Next: graph-wide near-miss recompute (`ch2_giant_graph_nearmiss.py`, the 59903 exc-close-but-not-cheap pairs)
+recovers edges for ALL cities (the 35-focus was too narrow — whack-a-mole) → re-run beam toward 601 → rank-1.
+
+## (original test plan)
 
 Two beams, identical params (the 566-config), differing only in the graph:
 - `beam_aug` on the recovered graph;

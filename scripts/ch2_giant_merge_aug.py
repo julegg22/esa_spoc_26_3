@@ -22,7 +22,18 @@ for r, (i, j) in enumerate(VKEYS):
     k = (int(i), int(j))
     if k not in table:
         n_new += 1
-    table[k] = VVALS[r]                                          # v2 wins (properly rescanned)
+    table[k] = VVALS[r]                                          # v2 (focus) wins (properly rescanned)
+# overlay the near-miss graph-wide recovery if present
+import os
+NM = f"{ROOT}/cache/ch2_giant_dense1d_nm.npz"
+if os.path.exists(NM):
+    nm = np.load(NM); NMK = nm["keys"]; NMV = nm["vals"]
+    for r, (i, j) in enumerate(NMK):
+        k = (int(i), int(j))
+        if k not in table:
+            n_new += 1
+        table[k] = NMV[r]
+    print(f"overlaid near-miss recovery: {len(NMK)} edges")
 keys = np.array(list(table.keys()))
 vals = np.array(list(table.values()), dtype=np.float32)
 np.savez_compressed(f"{ROOT}/cache/ch2_giant_dense1d_aug.npz", epochs=NEP, keys=keys, vals=vals)
