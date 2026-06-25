@@ -58,13 +58,30 @@ Two beams, identical 566-params, same 0–460 grid, differing ONLY in edge recov
 566 by +9 *despite* the coarser grid (which alone cost the baseline −12). The "566 cap" was an artifact of
 the 8-probe under-counted graph. **The user's push was right; E-720's "algorithmic gap" verdict is refuted.**
 
-### Graph-wide recovery (E-721b near-miss)
+### Graph-wide recovery (E-721b near-miss) + result
 
-Rescanned the 59903 exc-close-but-not-cheap pairs (the 8-probe near-misses) properly: **+5138 previously-
-missing cheap edges recovered graph-wide** (96 min, 4 cores). Complete graph = 74208 → **79346 edges**; the
-low-degree count dropped (|RARE| 120→113: 7 cities crossed out of low-degree). 4 beam configs now running on
-the complete graph (`cache/ch2_giant_dense1d_aug.npz`); the decisive question is whether they thread toward
-601 at < ~405 d (giant) → full < 424.62 → rank-1.
+Rescanned the 59903 exc-close-but-not-cheap pairs properly: **+5138 cheap edges recovered graph-wide** (96
+min). Complete graph 74208 → **79346 edges**; |RARE| 120→113 (7 cities left low-degree); stranded cities'
+in-degree rose (e.g. 7→16). 4 beam configs on the complete graph threaded **554 / 562 / 563 / 557** — i.e.
+the beam still caps ~554–575 **regardless of graph completeness**. Insertion-repair on the complete graph
+(from 557@295d) threads the stranded cheaply (+0–3.5d each) but from a 295d base, +44 cities → ~427d giant →
+**rank-2**.
+
+### Verdict (corrected, two-layer)
+
+1. **The 8-probe under-count was REAL and is fixed** — the "566 wall" was substantially an artifact (broke to
+   575 on a *narrow* recovery; the graph is now correct, +6200 edges). The user's "there's always a hidden
+   misconception" pattern held; E-720's "real algorithmic gap" was wrong.
+2. **A second layer remains:** on the *correct* graph the **beam heuristic** still caps ~575 (path-dependent;
+   more edges shift its route, not its ceiling), and the **completeness↔efficiency tension** persists — beam
+   tours that thread more cities have higher makespan, so no base is both near-complete AND low-makespan
+   enough for insertion to finish 601 under 405d. Threading 601@<405d needs a **better global search on the
+   now-correct graph** (LNS/metaheuristic seeded from a complete <460d tour, e.g. the 563@342d; or a finer
+   non-greedy constructor) — tractable and NOT a research moonshot, but unfinished in this window.
+
+Rank-2 (932.53) stays secure. **Highest next-step EV: LNS / global re-order on the recovered graph from the
+563@342d complete-ish seed.** Refutes [[E-720-ch2-large-ultradeep-audit]]'s premature verdict; extends
+[[M-general-foundation-then-search]] (audit the graph's COMPLETENESS before declaring search exhausted).
 
 ## (original test plan)
 
