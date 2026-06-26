@@ -80,10 +80,12 @@ def windows(i, j, t, K, maxwait):
     return out
 
 
-def timebeam(order, K, W, maxwait, verbose=True):
-    """fixed-order forward time-beam; returns (best_makespan, strands, reached_depth)."""
-    # state = arrival time at current position; start position 0 at t=0
+def timebeam(order, K, W, maxwait, verbose=True, tolerate=False, SP=50.0):
+    """fixed-order forward time-beam; returns (makespan, strands, reached_depth). With tolerate=True, a leg with
+    no feasible window adds a penalty (SP) to every state and continues (so order-search gets a full objective
+    from any seed); strands counts such legs. tolerate=False stops at the first strand (clean validation)."""
     arrivals = [0.0]
+    strands = 0
     t0 = time.time()
     for p in range(len(order) - 1):
         i, j = order[p], order[p + 1]
@@ -92,16 +94,19 @@ def timebeam(order, K, W, maxwait, verbose=True):
             for (dep, arr) in windows(i, j, t, K, maxwait):
                 nxt.append(arr)
         if not nxt:
-            if verbose:
-                print(f"  STRAND at leg {p} ({i}->{j}); reached depth {p+1}/{len(order)} "
-                      f"[{time.time()-t0:.0f}s]", flush=True)
-            return None, len(order) - 1 - p, p + 1
+            if not tolerate:
+                if verbose:
+                    print(f"  STRAND at leg {p} ({i}->{j}); reached depth {p+1}/{len(order)} "
+                          f"[{time.time()-t0:.0f}s]", flush=True)
+                return None, len(order) - 1 - p, p + 1
+            arrivals = [t + SP for t in arrivals]; strands += 1   # penalize and carry the clock forward
+            continue
         nxt = sorted(set(round(x, 4) for x in nxt))[:W]      # keep W earliest (Pareto: smaller arr dominates)
         arrivals = nxt
         if verbose and (p % 50 == 0 or p == len(order) - 2):
             print(f"  leg {p+1}/{len(order)-1}: |states|={len(arrivals)} min_arr={arrivals[0]:.1f}d "
-                  f"(d/leg {arrivals[0]/(p+1):.3f}) [{time.time()-t0:.0f}s]", flush=True)
-    return arrivals[0], 0, len(order)
+                  f"(d/leg {arrivals[0]/(p+1):.3f}) strands={strands} [{time.time()-t0:.0f}s]", flush=True)
+    return arrivals[0], strands, len(order)
 
 
 def main(order_json="bank", K=4, W=250, maxwait=25):
