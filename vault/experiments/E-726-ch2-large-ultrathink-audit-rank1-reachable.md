@@ -108,3 +108,23 @@ LKH (E-726g) is the fix-attempt but E-562's analogous table-iterate FLOORED at 9
 (full-tof OR-Tools + epoch-aware iterate + timing-DP) reproduces ~932d=rank-2; rank-1 (424d) = the global
 PHASED short-tof TD-TSP remains the genuine unsolved hard problem.** The repeated optimism->refutation was, in
 EVERY case, a partial/optimistic evaluator (table makespan, short-tof windows, long-tof-blind retimer).
+
+## Comprehensive method exhaustion (2026-06-27) — rank-1 walls at rank-2 across ALL standard TD-TSP approaches
+
+After the retimer fix, ran the remaining levers on an honest evaluator:
+- **Static LKH (full-tof, bank's static-graph step):** 438/601, 163 strands — TD-infeasible ALONE.
+- **Epoch-aware iterated LKH (my impl):** DIVERGES (it0 163 -> it1 461 strands) — buggy re-cost (INF on
+  edges lacking a window at a bad-retime epoch). E-562's careful version converged but floored ~932=rank-2.
+- **GRASP (faithful short-tof):** caps ~239 (phasing).
+- **Faithful short-tof beam:** ~191. **Time-beam / order-search:** rank-2 floor or incomplete.
+- **Time-expanded GTSP (E-718):** intractable (near-OOM, no result).
+- **The bank recipe (full-tof OR-Tools + E-562 iterate + timing-DP):** the ONLY thing that produced complete
+  valid orders -> ~932d = rank-2 (already banked).
+
+**Verdict:** rank-1-large (424d, needs the giant in ~half the bank's time = a globally PHASED short-tof tour)
+is genuinely research-grade — every standard method either caps incomplete (~200-240), is TD-infeasible
+(static LKH), floors at rank-2 (E-562 iterate), or is intractable (time-expanded GTSP). The session's durable
+wins: reframed the problem (structurally reachable, not a moonshot), built the faithful evaluator + window
+table + fixed the long-tof-blind retimer (bank reproduces at 3 strands), and named the recurring root cause
+(optimistic/partial evaluators) in methodology. Rank-2 (932.53) is secure and reproducible; rank-1 is the
+competitor's hard-won TD-TSP, not crackable by our standard toolkit in this window.
