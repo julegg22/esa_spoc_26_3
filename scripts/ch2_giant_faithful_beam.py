@@ -40,14 +40,11 @@ if os.path.exists(_PC):
     print(f"[E-726b] loaded {len(_CACHE)} precomputed faithful edges", flush=True)
 
 
+_EMPTY = (np.array([]), np.array([]))
+
+
 def edge_windows(i, j):
-    c = _CACHE.get((i, j))
-    if c is not None:
-        return c
-    tof = ft.cheap_first_tof(OPAR[i], OPAR[j], DEPS_SEC, MINTOF * DAY, 13.0 * DAY, 0.02 * DAY, THR, MAXREV)
-    m = tof > 0
-    c = (DEPS[m], tof[m] / DAY); _CACHE[(i, j)] = c
-    return c
+    return _CACHE.get((i, j), _EMPTY)                            # pure lookup (precomputed short-tof edges only)
 
 
 def earliest(i, j, t, maxwait):
