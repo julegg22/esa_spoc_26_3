@@ -18,6 +18,21 @@ related: ["[[E-725-ch2-large-fast-faithful-evaluator]]", "[[E-723-ch2-large-bank
 
 # E-726 — Ch2-large ultrathink audit: rank-1 is REACHABLE, not a moonshot (user-triggered)
 
+> ⚠️ **SELF-CORRECTION 2026-06-26 (E-726c/d, same day).** The structural findings below STAND (932 d = one
+> static topology; short-TOF subgraph strongly-connected 601/601; rank-1 not structurally impossible). BUT the
+> headline claim *"the time-aware beam is already at rank-1 PACE (558 @ 283 d = 0.51 d/leg)"* was itself an
+> **evaluator-optimism artifact** — that 283 d came from the **sparse/optimistic TABLE**. A full **faithful**
+> (numba, official-max_revs) W=200 retime of the best beam order (583 cities) gives d/leg climbing 0.29→**1.8**
+> and the **tail strands 52** — i.e. ~bank pace, NOT rank-1 pace, and incomplete. So "we already found the fast
+> structure, only completeness is missing" is WRONG: we have **not** found a faithfully-fast order; the table
+> under-reported makespan everywhere. Net corrected verdict: rank-1 is **structurally reachable but NOT yet
+> achieved** — it needs a genuine **faithful-evaluator search** (precompute the faithful epoch-dense windows →
+> fast faithful beam / order-search), not "complete the existing beam." **Methodology:** this is the MIRROR of
+> the proxy-skew lesson — I re-stated the *pessimistic* metric (completeness) in the root objective but trusted
+> an *optimistic* evaluator (the table) without re-verifying the favorable number faithfully. The discipline
+> must cut both ways: **re-verify FAVORABLE numbers under the faithful/official evaluator too, not only
+> unfavorable ones.** See [[M-general-root-objective-and-proxy-skew]] (extended).
+
 User (2026-06-26): "How did we find 932d? Why couldn't we find a single OTHER similar solution? Moonshot? A
 lonely basin? Lucky seed? It is simply not likely that despite all our attempts we have not advanced."
 

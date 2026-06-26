@@ -61,3 +61,14 @@ When ONE premise correction reframes MANY nodes:
 **A correct result reported in the wrong metric is more dangerous than a wrong result — it survives every
 data check and quietly steers the whole program. Always re-state "we're walled" in the root objective before
 you believe it.**
+
+## Addendum (2026-06-26): the MIRROR — evaluator-optimism (re-verify FAVORABLE numbers too)
+
+The same day this node was written, the Ch2-large reframe (E-726) fell to the *mirror* of its own lesson: it
+correctly re-stated a *pessimistic* proxy (completeness 575/601) in the root objective — but then trusted an
+*optimistic* evaluator (the sparse table's "558 @ 283 d = rank-1 pace") **without re-verifying the favorable
+number under the faithful/official evaluator.** A faithful retime showed that order is ~1.8 d/leg (bank pace)
+and strands its tail — the 283 d was a table-optimism artifact. **Discipline cuts both ways: re-verify the
+numbers that *support* your new direction under the ground-truth evaluator, not only the ones that block it.**
+A favorable result from a cheap/optimistic evaluator is exactly as misleading as an unfavorable result from a
+proxy metric.
