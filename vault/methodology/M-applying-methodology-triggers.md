@@ -43,6 +43,8 @@ when X happens, do Y.
 | Adding a default value to chromosome / config / params | Hostile-default audit: what if this default were ADVERSARIAL? Does the function still work? | Bug-surfacing P4 |
 | New project / new challenge starts | Run the bootstrap checklist (below) | This doc |
 | Same computation done two ways | Diversity-of-method consistency check. They MUST agree. | Bug-surfacing P3 |
+| Conclusions across ≥3 experiments converge on a "wall / plateau / moonshot" | AUDIT THE METRIC. Re-state the wall in the ROOT objective (points/rank), not a proxy (completeness, strand-count, ΔV-floor, d/leg). A correct result in the wrong metric steers the whole program. | Root-objective & proxy-skew |
+| Writing any "wall / exhausted / moonshot" conclusion | Premise-tag it: name the proxy↔objective assumption it rests on, IN the conclusion, so a later premise correction has a clean propagation target. | Root-objective & proxy-skew |
 
 ## Bootstrap checklist for a NEW challenge / project
 

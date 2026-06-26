@@ -9,6 +9,13 @@ related: ["[[E-723-ch2-large-bank-reproduction-audit]]", "[[E-724...]]", "[[L-01
 
 # E-725 — Ch2-large rank-1: a fast AND officially-faithful numba transfer evaluator
 
+> 🔄 **Partially REFRAMED 2026-06-26 by [[E-726-ch2-large-ultrathink-audit-rank1-reachable|E-726]].** The
+> evaluator itself (numba multi-rev Lambert, residual-filtered, official-faithful) is a clean WIN and stands —
+> it is the enabler E-726 builds on. Only the surrounding **"order-search is a slow moonshot grind"** verdict
+> was skewed by the completeness-as-progress premise: the right use of this evaluator is **completing the
+> already-fast beam (E-726b)**, not local-move compression of the bank. See
+> [[M-general-root-objective-and-proxy-skew]].
+
 User decision (2026-06-26): "build the vectorized evaluator" (rank-1 large search was slow ~minutes/iter);
 "hold all submissions until ch2-large improves" (incl. the rank-1 medium).
 

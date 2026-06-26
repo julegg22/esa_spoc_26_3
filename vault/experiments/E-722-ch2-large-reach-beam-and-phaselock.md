@@ -8,6 +8,14 @@ status: ACTIVE — forward construction ceiling ~575 characterized; phase-lock c
 
 # E-722 — Ch2-large rank-1: reachability-aware beam + sub-tour bridge → the PHASE-LOCK crux
 
+> 🔄 **REFRAMED 2026-06-26 by [[E-726-ch2-large-ultrathink-audit-rank1-reachable|E-726]]** (data valid,
+> direction wrong). The measurements below — forward construction caps ~564–575, insertion/bridge cascade —
+> all stand. The **conclusion** ("a hard wall / phase-lock crux / needs a global TD-TSP moonshot") was skewed
+> by the premise **P: completeness (cities-threaded) measures progress toward rank-1.** Corrected premise
+> **P′:** the beam already threads 558 @ 283 d = **0.51 d/leg = rank-1 PACE**; the cap is *completeness only*,
+> not makespan. Under P′ this same result means **rank-1 is a COMPLETION problem on an already-fast structure,
+> not a 2× compression** — reachable, not a moonshot. See [[M-general-root-objective-and-proxy-skew]].
+
 After insertion/SA was proven cascade-defeated (E-721g), the next family was global *construction* that never
 perturbs a tight schedule. Two distinct constructors built and run on the corrected graph
 (`ch2_giant_dense1d_aug.npz`):

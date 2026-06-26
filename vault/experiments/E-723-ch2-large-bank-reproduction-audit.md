@@ -8,6 +8,14 @@ status: ACTIVE — frame fix (full-graph time-beam + fine-epoch fallback) valida
 
 # E-723 — Ch2-large: "can we reproduce our own bank?" audit → the search FRAME was mis-specified
 
+> 🔄 **REFRAMED 2026-06-26 by [[E-726-ch2-large-ultrathink-audit-rank1-reachable|E-726]]** (data valid,
+> direction wrong). The findings — horizon truncation, greedy-timing strands valid orders, the table is
+> epoch-sparse — stand. The **conclusion** ("rank-1 needs a from-scratch global TD solver = a ~2× compression
+> moonshot") was skewed by the premise **P: completeness measures progress / the 932 d makespan is the thing
+> to beat down.** Corrected **P′:** we *already* have the fast structure (time-aware beam at rank-1 pace); the
+> short-TOF subgraph is strongly connected (601/601). Rank-1 = *complete the fast beam*, reachable. See
+> [[M-general-root-objective-and-proxy-skew]].
+
 **User audit (2026-06-26):** "Did 48h make progress toward a complete tour? Why did no experiment give a
 closed tour near our banked solution? Can we reproduce the bank with the currently selected graph?" This
 forced a stop-and-check that overturned the recent direction.

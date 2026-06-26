@@ -4,8 +4,17 @@ type: experiment
 tags: [ch2, large, rank-1, audit, ultrathink, structure, short-tof, reframe]
 date: 2026-06-26
 status: ACTIVE — audit reframes rank-1 from "moonshot" to "complete the fast beam"; build launched
-related: ["[[E-725-ch2-large-fast-faithful-evaluator]]", "[[E-723-ch2-large-bank-reproduction-audit]]", "[[ch2-large-time-ordering-wall]]"]
+reframes: [E-721, E-722, E-723, E-724, E-725]
+related: ["[[E-725-ch2-large-fast-faithful-evaluator]]", "[[E-723-ch2-large-bank-reproduction-audit]]", "[[ch2-large-time-ordering-wall]]", "[[M-general-root-objective-and-proxy-skew]]"]
 ---
+
+> ↩ **This node REFRAMES a cluster** (E-721d/f/g, E-722, E-723, E-724, E-725) via ONE shared corrected premise
+> — not five independent retractions. **Shared skewed premise P:** *"completeness (cities the beam threads)
+> measures progress toward rank-1, so 575/601 is a wall and rank-1 means compressing the 932 d bank ~2×."*
+> **Corrected P′:** *the time-aware beam already threads 558 @ 283 d = 0.51 d/leg = rank-1 PACE; the deficit is
+> completeness only, and the short-TOF subgraph is strongly connected (601/601) — so rank-1 = COMPLETE the fast
+> beam, a reachable completion problem.* Those nodes' DATA is valid; only the direction P implied was wrong.
+> Convention + lesson: [[M-general-root-objective-and-proxy-skew]], [[M-general-retraction-annotation]].
 
 # E-726 — Ch2-large ultrathink audit: rank-1 is REACHABLE, not a moonshot (user-triggered)
 
