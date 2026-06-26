@@ -1,0 +1,25 @@
+[E-711] insertion repair: order 540/601, 61 stranded (in-deg 7..158)
+[E-711] base retimed: makespan 258.9d, exc 0/5
+  inserted 1/61 (city 753 indeg 7 @pos 501); makespan 276.2d exc 0 [2s]
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/site-packages/numpy/_core/fromnumeric.py", line 57, in _wrapfunc
+    return bound(*args, **kwds)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_insertion_repair.py", line 120, in <module>
+    main()
+    ~~~~^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_insertion_repair.py", line 87, in main
+    r1 = cheap_arr(a, j, t_a, kt.dv_thr); use_exc = 0
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_insertion_repair.py", line 37, in cheap_arr
+    e0 = np.searchsorted(EPOCHS, t)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/site-packages/numpy/_core/fromnumeric.py", line 1526, in searchsorted
+    return _wrapfunc(a, 'searchsorted', v, side=side, sorter=sorter)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/site-packages/numpy/_core/fromnumeric.py", line 66, in _wrapfunc
+    return _wrapit(obj, method, *args, **kwds)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/site-packages/numpy/_core/fromnumeric.py", line 46, in _wrapit
+    result = getattr(arr, method)(*args, **kwds)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'

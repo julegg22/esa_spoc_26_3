@@ -1,0 +1,3 @@
+[E-717] Lagrangian DAG solver: 5703 nodes / 601 cities / 370838 arcs
+  it0: path 1 nodes, covers 1/601 cities (0 dup); best_cover=1 [0s]
+Interrupted system call ; error code 4

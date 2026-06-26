@@ -1,0 +1,3 @@
+[E-710 M1'] FINE table-seeded retime. bank coarse-walk=931d, bank actual=932.5d, rank-1=424.62
+[E-710 M1'] bank-order: reached 52/1050 legs, makespan=15.1d, exc=5, strands=1, mean cheap tof=0.2909d [0s]
+[E-710 M1'] fine retime did NOT collapse the bank order (15d) -> the bank ORDER itself is long-tof-bound; need a different (fine-tof-constructed) order, not just retiming.

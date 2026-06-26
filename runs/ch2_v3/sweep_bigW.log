@@ -1,0 +1,12 @@
+[E-719b] coverage beam W_core=120 W_cov=80 K=18 thresh=40 (|RARE|=120) Radd=6; giant n=601; 8 seed(s)
+[E-719b] positive control: depth1 -> 130 successors (39 rare-capturing) [0s]
+  depth 2: |beam|=112 best_depth=2 min_t=0.0d (d/leg 0.050) | max_rare_in_beam=2/120 [0s]
+  depth 3: |beam|=200 best_depth=3 min_t=0.3d (d/leg 0.136) | max_rare_in_beam=3/120 [8s]
+  depth 4: |beam|=200 best_depth=4 min_t=0.4d (d/leg 0.143) | max_rare_in_beam=4/120 [24s]
+  depth 5: |beam|=200 best_depth=5 min_t=0.6d (d/leg 0.142) | max_rare_in_beam=5/120 [39s]
+  depth 21: |beam|=200 best_depth=21 min_t=4.5d (d/leg 0.224) | max_rare_in_beam=21/120 [280s]
+  depth 41: |beam|=200 best_depth=41 min_t=9.0d (d/leg 0.226) | max_rare_in_beam=41/120 [595s]
+  depth 61: |beam|=200 best_depth=61 min_t=13.0d (d/leg 0.217) | max_rare_in_beam=59/120 [978s]
+  depth 81: |beam|=200 best_depth=81 min_t=17.3d (d/leg 0.216) | max_rare_in_beam=79/120 [1322s]
+  depth 101: |beam|=200 best_depth=101 min_t=21.3d (d/leg 0.213) | max_rare_in_beam=89/120 [1728s]
+  depth 121: |beam|=200 best_depth=121 min_t=27.3d (d/leg 0.227) | max_rare_in_beam=89/120 [2184s]

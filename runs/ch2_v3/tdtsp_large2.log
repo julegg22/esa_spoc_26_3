@@ -1,0 +1,2 @@
+[s0] control: table-walk(bank)=1197.42 vs official 932.53 (must be close ~932.53 for faithful eval)
+[s0] ABORT: table-walk evaluator off for large (table too coarse?) — refine epochs.

@@ -1,0 +1,11 @@
+[WALK-SA] bank order table-DP=118.5255d (official 112.996). SA 40000 iters ...
+  it 5000: cur=123.475 best=118.525 T=1.57 pool=42 [6s]
+  it 10000: cur=130.879 best=118.525 T=1.23 pool=106 [11s]
+  it 15000: cur=125.978 best=118.525 T=0.96 pool=184 [17s]
+  it 20000: cur=124.529 best=118.525 T=0.75 pool=236 [23s]
+  it 25000: cur=123.329 best=118.525 T=0.59 pool=288 [29s]
+  it 30000: cur=124.929 best=118.525 T=0.46 pool=334 [35s]
+  it 35000: cur=125.028 best=118.525 T=0.36 pool=384 [41s]
+[WALK-SA] best table-DP order = 118.5255d (bank table-DP 118.53). retiming top orders ...
+  table-DP=118.525 -> official-retime=118.5255 (+5.529) [144s]
+  table-DP=118.525 -> official-retime=118.5255 (+5.529) [255s]

@@ -1,0 +1,4 @@
+[E-714] bidirectional/meet-in-middle test: 61 stranded periphery cities
+  intra-S cheap edges (periphery<->periphery): 357 (vs 3660 possible -> 9.8% density)
+[E-714] beam restricted to stranded set threads 23/61 [5s]
+[E-714] -> periphery SHATTERS (23/61 threaded; intra-density 9.8%). Confirms TRAP STRUCTURE: periphery connects to the CORE, not to each other. NO segmentation / bidirectional construction helps. Time-expanded GTSP is the only lever. Proceed to GTSP.

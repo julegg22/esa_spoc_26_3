@@ -1,0 +1,56 @@
+[W200p0.5] BEAM from-scratch (W=200 pen=0.5 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p2.0] BEAM from-scratch (W=200 pen=2.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p8.0] BEAM from-scratch (W=200 pen=8.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p0.0] BEAM from-scratch (W=200 pen=0.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p0.5]   beam step 50/601 live=200 best_ep=9 (0.18 d/leg) [5s]
+[W200p8.0]   beam step 50/601 live=200 best_ep=9 (0.18 d/leg) [6s]
+[W200p2.0]   beam step 50/601 live=200 best_ep=9 (0.18 d/leg) [6s]
+[W200p0.0]   beam step 50/601 live=200 best_ep=9 (0.18 d/leg) [6s]
+[W200p2.0]   beam step 100/601 live=200 best_ep=18 (0.18 d/leg) [10s]
+[W200p0.5]   beam step 100/601 live=200 best_ep=18 (0.18 d/leg) [10s]
+[W200p0.0]   beam step 100/601 live=200 best_ep=18 (0.18 d/leg) [10s]
+[W200p8.0]   beam step 100/601 live=200 best_ep=18 (0.18 d/leg) [10s]
+[W200p2.0]   beam step 150/601 live=200 best_ep=33 (0.22 d/leg) [11s]
+[W200p0.0]   beam step 150/601 live=200 best_ep=30 (0.20 d/leg) [12s]
+[W200p8.0]   beam step 150/601 live=200 best_ep=32 (0.21 d/leg) [12s]
+[W200p0.5]   beam step 150/601 live=200 best_ep=33 (0.22 d/leg) [12s]
+[W200p2.0]   beam step 200/601 live=200 best_ep=53 (0.26 d/leg) [16s]
+[W200p0.0]   beam step 200/601 live=200 best_ep=53 (0.26 d/leg) [16s]
+[W200p8.0]   beam step 200/601 live=199 best_ep=53 (0.26 d/leg) [16s]
+[W200p0.5]   beam step 200/601 live=200 best_ep=53 (0.26 d/leg) [16s]
+[W200p2.0]   beam step 250/601 live=200 best_ep=61 (0.25 d/leg) [20s]
+[W200p0.0]   beam step 250/601 live=200 best_ep=61 (0.24 d/leg) [20s]
+[W200p0.5]   beam step 250/601 live=200 best_ep=61 (0.25 d/leg) [21s]
+[W200p8.0]   beam step 250/601 live=200 best_ep=61 (0.25 d/leg) [21s]
+[W200p0.0]   beam step 300/601 live=200 best_ep=72 (0.24 d/leg) [22s]
+[W200p2.0]   beam step 300/601 live=200 best_ep=74 (0.25 d/leg) [22s]
+[W200p0.5]   beam step 300/601 live=200 best_ep=74 (0.25 d/leg) [23s]
+[W200p8.0]   beam step 300/601 live=200 best_ep=71 (0.24 d/leg) [23s]
+[W200p0.0]   beam step 350/601 live=200 best_ep=125 (0.36 d/leg) [23s]
+[W200p2.0]   beam step 350/601 live=200 best_ep=124 (0.35 d/leg) [23s]
+[W200p0.5]   beam step 350/601 live=199 best_ep=127 (0.36 d/leg) [24s]
+[W200p8.0]   beam step 350/601 live=200 best_ep=121 (0.35 d/leg) [24s]
+[W200p2.0]   beam step 400/601 live=200 best_ep=149 (0.37 d/leg) [28s]
+[W200p0.0]   beam step 400/601 live=200 best_ep=147 (0.37 d/leg) [28s]
+[W200p0.5]   beam step 400/601 live=200 best_ep=149 (0.37 d/leg) [28s]
+[W200p8.0]   beam step 400/601 live=200 best_ep=148 (0.37 d/leg) [29s]
+[W200p2.0]   beam step 450/601 live=200 best_ep=157 (0.35 d/leg) [31s]
+[W200p0.5]   beam step 450/601 live=200 best_ep=157 (0.35 d/leg) [31s]
+[W200p0.0]   beam step 450/601 live=200 best_ep=155 (0.35 d/leg) [31s]
+[W200p0.5]   beam step 500/601 live=171 best_ep=182 (0.36 d/leg) [33s]
+[W200p2.0]   beam step 500/601 live=200 best_ep=174 (0.35 d/leg) [33s]
+[W200p0.0]   beam step 500/601 live=160 best_ep=176 (0.35 d/leg) [33s]
+[W200p0.5]   beam step 550/601 live=106 best_ep=251 (0.46 d/leg) [33s]
+[W200p0.5]   beam DEAD at step 562/601 (all beams stranded)
+[W200p0.5] beam stranded
+[W200p8.0]   beam step 450/601 live=200 best_ep=156 (0.35 d/leg) [33s]
+[W200p0.0]   beam step 550/601 live=38 best_ep=248 (0.45 d/leg) [33s]
+[W200p0.0]   beam DEAD at step 553/601 (all beams stranded)
+[W200p0.0] beam stranded
+[W200p2.0]   beam step 550/601 live=107 best_ep=236 (0.43 d/leg) [33s]
+[W200p2.0]   beam DEAD at step 564/601 (all beams stranded)
+[W200p2.0] beam stranded
+[W200p8.0]   beam step 500/601 live=196 best_ep=166 (0.33 d/leg) [35s]
+[W200p8.0]   beam step 550/601 live=124 best_ep=236 (0.43 d/leg) [35s]
+[W200p8.0]   beam DEAD at step 580/601 (all beams stranded)
+[W200p8.0] beam stranded

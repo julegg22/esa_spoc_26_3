@@ -1,0 +1,22 @@
+[s2] insertion build (start 63, 601 cities; bank-giant=913, target ~240)
+[s3] insertion build (start 261, 601 cities; bank-giant=913, target ~240)
+[s0] insertion build (start 2, 601 cities; bank-giant=913, target ~240)
+[s1] insertion build (start 731, 601 cities; bank-giant=913, target ~240)
+[s3]   insertion 50/601 t_end~384 (3s)
+[s1]   insertion 50/601 t_end~384 (3s)
+[s1]   insertion STUCK at 70/601 (no cheap window) — fail
+[s1] insertion failed
+[s3]   insertion 100/601 t_end~784 (6s)
+[s0]   insertion 50/601 t_end~377 (7s)
+[s2]   insertion 50/601 t_end~376 (7s)
+[s3]   insertion STUCK at 126/601 (no cheap window) — fail
+[s3] insertion failed
+[s2]   insertion 100/601 t_end~776 (12s)
+[s0]   insertion 100/601 t_end~775 (12s)
+[s2]   insertion 150/601 t_end~965 (16s)
+[s0]   insertion 150/601 t_end~969 (16s)
+[s2]   insertion STUCK at 193/601 (no cheap window) — fail
+[s2] insertion failed
+[s0]   insertion 200/601 t_end~1048 (18s)
+[s0]   insertion STUCK at 212/601 (no cheap window) — fail
+[s0] insertion failed

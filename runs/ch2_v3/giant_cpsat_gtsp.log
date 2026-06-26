@@ -1,0 +1,3 @@
+[E-716] CP-SAT GTSP: 5703 nodes / 601 clusters / 370838 arcs; solving (tl=900s, multi-core)
+[E-716] status=UNKNOWN obj=n/a [900s]
+[E-716] no feasible GTSP tour found in budget.

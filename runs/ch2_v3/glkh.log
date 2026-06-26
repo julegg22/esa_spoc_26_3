@@ -1,0 +1,194 @@
+Reading PROBLEM_FILE: "/home/julian/Projects/esa_spoc_26_3/reference/GLKH-1.1/GTSPLIB/ch2giant.gtsp" ... done
+ASCENT_CANDIDATES = 500
+BACKBONE_TRIALS = 0
+BACKTRACKING = NO
+# CANDIDATE_FILE =
+CANDIDATE_SET_TYPE = ALPHA
+EXCESS = 8.76578e-05
+EXTRA_CANDIDATES = 0 
+EXTRA_CANDIDATE_SET_TYPE = QUADRANT
+GAIN23 = YES
+GAIN_CRITERION = YES
+INITIAL_PERIOD = 1000
+INITIAL_STEP_SIZE = 1
+INITIAL_TOUR_ALGORITHM = WALK
+# INITIAL_TOUR_FILE = 
+INITIAL_TOUR_FRACTION = 1.000
+# INPUT_TOUR_FILE = 
+KICK_TYPE = 0
+KICKS = 1
+# MAX_BREADTH =
+MAX_CANDIDATES = 30 
+MAX_SWAPS = 11408
+MAX_TRIALS = 5000
+# MERGE_TOUR_FILE =
+MOVE_TYPE = 5
+# NONSEQUENTIAL_MOVE_TYPE = 5
+# OPTIMUM =
+OUTPUT_TOUR_FILE = /home/julian/Projects/esa_spoc_26_3/reference/GLKH-1.1/ch2giant.tour
+PATCHING_A = 1 
+PATCHING_C = 0 
+# PI_FILE = 
+POPMUSIC_INITIAL_TOUR = NO
+POPMUSIC_MAX_NEIGHBORS = 5
+POPMUSIC_SAMPLE_SIZE = 10
+POPMUSIC_SOLUTIONS = 50
+POPMUSIC_TRIALS = 1
+POPULATION_SIZE = 1
+PRECISION = 1
+PROBLEM_FILE = /home/julian/Projects/esa_spoc_26_3/reference/GLKH-1.1/GTSPLIB/ch2giant.gtsp
+RECOMBINATION = IPT
+RESTRICTED_SEARCH = YES
+RUNS = 1
+SEED = 1
+STOP_AT_OPTIMUM = YES
+SUBGRADIENT = YES
+# SUBPROBLEM_SIZE =
+# SUBPROBLEM_TOUR_FILE = 
+SUBSEQUENT_MOVE_TYPE = 5
+SUBSEQUENT_PATCHING = YES
+TIME_LIMIT = 1800.0
+# TOUR_FILE = 
+TRACE_LEVEL = 1
+
+# 1: Cost = 180326799, Time = 6.07 sec.
+# 3: Cost = 170334100, Time = 11.80 sec.
+# 4: Cost = 150362131, Time = 15.09 sec.
+# 6: Cost = 150314793, Time = 25.22 sec.
+# 9: Cost = 140351235, Time = 40.94 sec.
+# 18: Cost = 140321978, Time = 83.48 sec.
+# 38: Cost = 130344192, Time = 191.38 sec.
+# 41: Cost = 120364554, Time = 207.95 sec.
+# 82: Cost = 120364051, Time = 463.84 sec.
+# 86: Cost = 120337615, Time = 492.75 sec.
+# 266: Cost = 110369263, Time = 1555.54 sec.
+Run 1: Cost = 110369263, Time = 1570.21 sec.
+
+Post-optimization [Cost = 110369263]
+# 1: Cost = 110393325, Gap = 0.0218%, Time = 0.01 sec.
+# 2: Cost = 110392310, Gap = 0.0209%, Time = 0.01 sec.
+# 4: Cost = 100404554, Gap = -9.0285%, Time = 0.02 sec.
+# 5: Cost = 100399657, Gap = -9.0330%, Time = 0.03 sec.
+# 6: Cost = 90402753, Gap = -18.0906%, Time = 0.03 sec.
+# 8: Cost = 90401843, Gap = -18.0915%, Time = 0.03 sec.
+# 14: Cost = 90390598, Gap = -18.1017%, Time = 0.05 sec.
+# 17: Cost = 90390548, Gap = -18.1017%, Time = 0.06 sec.
+# 20: Cost = 90388209, Gap = -18.1038%, Time = 0.07 sec.
+# 23: Cost = 90382902, Gap = -18.1086%, Time = 0.08 sec.
+# 24: Cost = 90381987, Gap = -18.1095%, Time = 0.08 sec.
+# 26: Cost = 80415307, Gap = -27.1398%, Time = 0.09 sec.
+# 27: Cost = 80410096, Gap = -27.1445%, Time = 0.10 sec.
+# 31: Cost = 80410033, Gap = -27.1445%, Time = 0.12 sec.
+# 33: Cost = 80403636, Gap = -27.1503%, Time = 0.13 sec.
+# 39: Cost = 80397859, Gap = -27.1556%, Time = 0.15 sec.
+# 47: Cost = 80397259, Gap = -27.1561%, Time = 0.19 sec.
+# 71: Cost = 80396078, Gap = -27.1572%, Time = 0.30 sec.
+# 127: Cost = 80394699, Gap = -27.1584%, Time = 0.56 sec.
+# 140: Cost = 80392452, Gap = -27.1605%, Time = 0.63 sec.
+# 151: Cost = 80391715, Gap = -27.1611%, Time = 0.68 sec.
+# 162: Cost = 80390718, Gap = -27.1620%, Time = 0.74 sec.
+# 217: Cost = 80389770, Gap = -27.1629%, Time = 1.00 sec.
+# 240: Cost = 80388773, Gap = -27.1638%, Time = 1.13 sec.
+# 292: Cost = 80388710, Gap = -27.1639%, Time = 1.40 sec.
+# 738: Cost = 80386965, Gap = -27.1654%, Time = 3.65 sec.
+# 745: Cost = 80386902, Gap = -27.1655%, Time = 3.68 sec.
+# 1018: Cost = 80386819, Gap = -27.1656%, Time = 5.04 sec.
+# 1122: Cost = 80386795, Gap = -27.1656%, Time = 5.58 sec.
+# 1267: Cost = 80386171, Gap = -27.1662%, Time = 6.31 sec.
+# 1630: Cost = 80386093, Gap = -27.1662%, Time = 8.28 sec.
+Run 1: Cost = 80386093, Gap = -27.1662%, Time = 26.76 sec.
+
+                  K-opt = 80386093
+                  C-opt = 80385201
+# 1: Cost = 90408582, Gap = 12.4692%, Time = 0.01 sec.
+# 3: Cost = 90402150, Gap = 12.4612%, Time = 0.02 sec.
+# 4: Cost = 90401639, Gap = 12.4605%, Time = 0.02 sec.
+# 5: Cost = 90400912, Gap = 12.4596%, Time = 0.02 sec.
+# 7: Cost = 90397367, Gap = 12.4552%, Time = 0.02 sec.
+# 10: Cost = 80407414, Gap = 0.0276%, Time = 0.03 sec.
+# 11: Cost = 80405943, Gap = 0.0258%, Time = 0.04 sec.
+# 15: Cost = 80405784, Gap = 0.0256%, Time = 0.06 sec.
+# 23: Cost = 80397137, Gap = 0.0148%, Time = 0.09 sec.
+# 33: Cost = 80396986, Gap = 0.0147%, Time = 0.12 sec.
+# 48: Cost = 70408454, Gap = -12.4112%, Time = 0.18 sec.
+# 49: Cost = 70407639, Gap = -12.4122%, Time = 0.18 sec.
+# 51: Cost = 70405102, Gap = -12.4153%, Time = 0.19 sec.
+# 61: Cost = 70401246, Gap = -12.4201%, Time = 0.23 sec.
+# 92: Cost = 70401196, Gap = -12.4202%, Time = 0.34 sec.
+# 102: Cost = 70399692, Gap = -12.4221%, Time = 0.38 sec.
+# 205: Cost = 70396436, Gap = -12.4261%, Time = 0.74 sec.
+# 216: Cost = 70395370, Gap = -12.4275%, Time = 0.78 sec.
+# 225: Cost = 70395303, Gap = -12.4275%, Time = 0.81 sec.
+# 230: Cost = 70395240, Gap = -12.4276%, Time = 0.83 sec.
+# 252: Cost = 70395091, Gap = -12.4278%, Time = 0.92 sec.
+# 318: Cost = 70394920, Gap = -12.4280%, Time = 1.14 sec.
+# 1627: Cost = 70393816, Gap = -12.4294%, Time = 6.40 sec.
+# 1663: Cost = 70393350, Gap = -12.4300%, Time = 6.56 sec.
+# 1665: Cost = 70393179, Gap = -12.4302%, Time = 6.57 sec.
+# 1666: Cost = 70393112, Gap = -12.4303%, Time = 6.57 sec.
+# 1755: Cost = 70393005, Gap = -12.4304%, Time = 6.98 sec.
+# 1968: Cost = 70392995, Gap = -12.4304%, Time = 7.93 sec.
+# 2412: Cost = 70392381, Gap = -12.4312%, Time = 9.95 sec.
+# 4302: Cost = 70392303, Gap = -12.4313%, Time = 18.57 sec.
+Run 1: Cost = 70392303, Gap = -12.4313%, Time = 21.87 sec.
+
+                  K-opt = 70392303
+                  C-opt = 60411763
+# 1: Cost = 90396139, Gap = 49.6333%, Time = 0.01 sec.
+# 2: Cost = 90395325, Gap = 49.6320%, Time = 0.01 sec.
+# 3: Cost = 90394511, Gap = 49.6306%, Time = 0.01 sec.
+# 4: Cost = 90389261, Gap = 49.6220%, Time = 0.02 sec.
+# 5: Cost = 90388595, Gap = 49.6209%, Time = 0.02 sec.
+# 9: Cost = 90386000, Gap = 49.6166%, Time = 0.03 sec.
+# 11: Cost = 90385531, Gap = 49.6158%, Time = 0.04 sec.
+# 12: Cost = 90384764, Gap = 49.6145%, Time = 0.04 sec.
+# 15: Cost = 90384590, Gap = 49.6142%, Time = 0.05 sec.
+# 16: Cost = 80388769, Gap = 33.0681%, Time = 0.05 sec.
+# 20: Cost = 80387363, Gap = 33.0657%, Time = 0.06 sec.
+# 22: Cost = 70390493, Gap = 16.5179%, Time = 0.07 sec.
+# 25: Cost = 70390228, Gap = 16.5174%, Time = 0.08 sec.
+# 26: Cost = 70389761, Gap = 16.5166%, Time = 0.08 sec.
+# 40: Cost = 60405033, Gap = -0.0111%, Time = 0.13 sec.
+# 41: Cost = 60404858, Gap = -0.0114%, Time = 0.14 sec.
+# 43: Cost = 50407008, Gap = -16.5609%, Time = 0.14 sec.
+# 70: Cost = 50404036, Gap = -16.5659%, Time = 0.24 sec.
+# 82: Cost = 50403936, Gap = -16.5660%, Time = 0.29 sec.
+# 111: Cost = 50403336, Gap = -16.5670%, Time = 0.38 sec.
+# 130: Cost = 50403187, Gap = -16.5673%, Time = 0.45 sec.
+# 273: Cost = 50402646, Gap = -16.5682%, Time = 1.04 sec.
+# 279: Cost = 50401815, Gap = -16.5695%, Time = 1.07 sec.
+# 541: Cost = 50401666, Gap = -16.5698%, Time = 2.02 sec.
+# 2655: Cost = 50401200, Gap = -16.5706%, Time = 9.86 sec.
+# 2660: Cost = 50401133, Gap = -16.5707%, Time = 9.88 sec.
+# 2665: Cost = 50400962, Gap = -16.5709%, Time = 9.90 sec.
+Run 1: Cost = 50400962, Gap = -16.5709%, Time = 18.85 sec.
+
+                  K-opt = 50400962
+                  C-opt = 40443165
+# 1: Cost = 80351618, Gap = 98.6779%, Time = 0.01 sec.
+# 3: Cost = 70358117, Gap = 73.9679%, Time = 0.01 sec.
+# 4: Cost = 70352304, Gap = 73.9535%, Time = 0.02 sec.
+# 6: Cost = 60358829, Gap = 49.2436%, Time = 0.02 sec.
+# 10: Cost = 60355087, Gap = 49.2343%, Time = 0.04 sec.
+# 16: Cost = 50375730, Gap = 24.5593%, Time = 0.07 sec.
+# 19: Cost = 50372852, Gap = 24.5522%, Time = 0.08 sec.
+# 21: Cost = 50369391, Gap = 24.5436%, Time = 0.10 sec.
+# 22: Cost = 40379655, Gap = -0.1570%, Time = 0.10 sec.
+# 23: Cost = 40378956, Gap = -0.1588%, Time = 0.10 sec.
+# 25: Cost = 40375622, Gap = -0.1670%, Time = 0.11 sec.
+# 40: Cost = 40374574, Gap = -0.1696%, Time = 0.17 sec.
+# 52: Cost = 40374123, Gap = -0.1707%, Time = 0.21 sec.
+# 56: Cost = 40374073, Gap = -0.1708%, Time = 0.23 sec.
+# 67: Cost = 40374056, Gap = -0.1709%, Time = 0.28 sec.
+# 96: Cost = 40374011, Gap = -0.1710%, Time = 0.39 sec.
+# 100: Cost = 40373556, Gap = -0.1721%, Time = 0.41 sec.
+# 135: Cost = 40373305, Gap = -0.1727%, Time = 0.56 sec.
+# 161: Cost = 40370807, Gap = -0.1789%, Time = 0.67 sec.
+# 3287: Cost = 40370193, Gap = -0.1804%, Time = 13.35 sec.
+# 4000: Cost = 40370115, Gap = -0.1806%, Time = 16.34 sec.
+Run 1: Cost = 40370115, Gap = -0.1806%, Time = 20.35 sec.
+
+                  K-opt = 40370115
+Writing OUTPUT_TOUR_FILE: "/home/julian/Projects/esa_spoc_26_3/reference/GLKH-1.1/ch2giant.tour" ... done
+Value = 40370115, Time = 1902.1 sec.
+

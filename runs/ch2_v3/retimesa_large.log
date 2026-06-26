@@ -1,0 +1,2 @@
+[E-662] control: retime(bank)=None vs official 932.53 [41s, cache 1350]
+[ABORT] retime control off >2% — evaluator not faithful enough.

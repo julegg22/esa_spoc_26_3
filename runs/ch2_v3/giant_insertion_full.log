@@ -1,0 +1,14 @@
+[E-711] insertion repair: order 540/601, 61 stranded (in-deg 7..158)
+[E-711] base retimed: makespan 258.9d, exc 0/5
+  inserted 1/61 (city 753 indeg 7 @pos 501); makespan 276.2d exc 0 [2s]
+  inserted 5/61 (city 419 indeg 9 @pos 298); makespan 594.9d exc 0 [10s]
+  inserted 10/61 (city 858 indeg 9 @pos 304); makespan 619.0d exc 0 [19s]
+  inserted 15/61 (city 720 indeg 10 @pos 520); makespan 704.7d exc 0 [27s]
+  inserted 20/61 (city 531 indeg 11 @pos 512); makespan 756.2d exc 0 [37s]
+  inserted 25/61 (city 878 indeg 11 @pos 303); makespan 762.0d exc 0 [46s]
+  inserted 30/61 (city 731 indeg 13 @pos 303); makespan 808.2d exc 0 [58s]
+  inserted 35/61 (city 198 indeg 61 @pos 431); makespan 808.2d exc 0 [71s]
+  inserted 40/61 (city 98 indeg 151 @pos 371); makespan 816.2d exc 0 [366s]
+
+[E-711] DONE: inserted 44/61 -> 584/601 visited, makespan 816.2d, exc 0/5; rank-1=424.62 [1134s]
+[E-711] partial: closed 44 of 61. Remaining need 2-opt slack / different base order.

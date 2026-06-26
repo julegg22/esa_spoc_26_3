@@ -1,0 +1,26 @@
+[s0] FAITHFUL greedy (start 2, 601 cities, lam=0.0; bank 913@1.53; target ~240@0.4)
+[s2] FAITHFUL greedy (start 2, 601 cities, lam=0.15; bank 913@1.53; target ~240@0.4)
+[s1] FAITHFUL greedy (start 2, 601 cities, lam=0.05; bank 913@1.53; target ~240@0.4)
+[s3] FAITHFUL greedy (start 2, 601 cities, lam=0.4; bank 913@1.53; target ~240@0.4)
+[s2]   greedy 25/601 ep=37 (1.54 d/leg) lam=0.15 [5s c314]
+[s1]   greedy 25/601 ep=25 (1.06 d/leg) lam=0.05 [6s c370]
+[s1]   greedy 50/601 ep=52 (1.06 d/leg) lam=0.05 [23s c1767]
+[s0]   greedy 25/601 ep=4 (0.18 d/leg) lam=0.0 [35s c3493]
+[s1]   greedy 75/601 ep=61 (0.83 d/leg) lam=0.05 [50s c4985]
+[s0]   greedy 50/601 ep=9 (0.18 d/leg) lam=0.0 [68s c6552]
+[s1]   greedy 100/601 ep=69 (0.69 d/leg) lam=0.05 [76s c7678]
+[s1]   greedy 125/601 ep=75 (0.60 d/leg) lam=0.05 [94s c9755]
+[s0]   greedy 75/601 ep=14 (0.19 d/leg) lam=0.0 [95s c8933]
+[s1]   greedy 150/601 ep=81 (0.55 d/leg) lam=0.05 [104s c11229]
+[s1]   greedy 175/601 ep=88 (0.51 d/leg) lam=0.05 [109s c12084]
+[s0]   greedy 100/601 ep=19 (0.19 d/leg) lam=0.0 [112s c10791]
+[s0]   greedy 125/601 ep=24 (0.19 d/leg) lam=0.0 [121s c12016]
+[s0]   greedy 150/601 ep=29 (0.19 d/leg) lam=0.0 [126s c12637]
+[s0]   greedy 175/601 ep=52 (0.30 d/leg) lam=0.0 [129s c12815]
+[s0]   greedy 200/601 ep=66 (0.33 d/leg) lam=0.0 [143s c14166]
+[s0]   greedy 225/601 ep=70 (0.31 d/leg) lam=0.0 [175s c17468]
+[s0]   greedy 250/601 ep=76 (0.31 d/leg) lam=0.0 [207s c20150]
+[s0]   greedy 275/601 ep=81 (0.30 d/leg) lam=0.0 [225s c22262]
+[s0]   greedy 300/601 ep=86 (0.29 d/leg) lam=0.0 [233s c23744]
+[s0]   greedy 325/601 ep=90 (0.28 d/leg) lam=0.0 [236s c24628]
+[s0]   greedy 350/601 ep=104 (0.30 d/leg) lam=0.0 [237s c24911]

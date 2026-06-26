@@ -1,0 +1,15 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[WALK-SA] bank order table-DP=118.5255d (official 112.996). SA 40000 iters ...
+  it 5000: cur=128.079 best=118.525 T=1.57 pool=77 [5s]
+  it 10000: cur=124.828 best=118.525 T=1.23 pool=132 [10s]
+  it 15000: cur=124.728 best=118.525 T=0.96 pool=188 [16s]
+  it 20000: cur=125.178 best=118.525 T=0.75 pool=249 [21s]
+  it 25000: cur=124.728 best=118.525 T=0.59 pool=303 [26s]
+  it 30000: cur=122.429 best=118.525 T=0.46 pool=349 [32s]
+  it 35000: cur=121.975 best=118.525 T=0.36 pool=370 [37s]
+  it 40000: cur=121.875 best=118.525 T=0.28 pool=390 [42s]
+[WALK-SA] best table-DP order = 118.5255d (bank table-DP 118.53). retiming top orders ...
+  table-DP=118.525 -> official-retime=118.5255 (+5.529) [136s]
+  table-DP=118.525 -> official-retime=118.5255 (+5.529) [227s]

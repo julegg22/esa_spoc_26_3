@@ -1,0 +1,8 @@
+[2026-06-18 09:19:07] edge-probe chain begin (S2 -> M2 -> L2)
+[2026-06-18 09:19:07] START S2 small edge probe
+[2026-06-18 09:19:17] DONE  S2 small edge probe (exit 0)
+[2026-06-18 09:19:17] START M2 medium edge probe
+[2026-06-18 09:20:58] DONE  M2 medium edge probe (exit 0)
+[2026-06-18 09:20:58] START L2 large edge probe
+[2026-06-18 09:21:05] DONE  L2 large edge probe (exit 0)
+[2026-06-18 09:21:05] edge-probe chain complete

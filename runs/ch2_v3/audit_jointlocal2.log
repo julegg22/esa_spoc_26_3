@@ -1,0 +1,13 @@
+[AUDIT v2] positive control: warm official retime of BANK order = 112.9960 (expect 112.996) [90s]
+[AUDIT v2] warm official retime of 76 small order-neighbors (seed=bank schedule) ...
+  ..12/76 done; feas=1; best-neighbor=112.9960 [776s]
+  ..24/76 done; feas=1; best-neighbor=112.9960 [1370s]
+  ..36/76 done; feas=1; best-neighbor=112.9960 [1970s]
+  ..48/76 done; feas=1; best-neighbor=112.9960 [2566s]
+  ..60/76 done; feas=1; best-neighbor=112.9960 [3155s]
+  ..72/76 done; feas=1; best-neighbor=112.9960 [3749s]
+
+[AUDIT v2] 1/76 neighbors feasible; best-neighbor makespan = 112.9960 (bank 112.996)
+[AUDIT v2] NO small order move beats 112.996 under free official schedule ⇒ the bank is a genuine LOCAL joint (order,schedule) optimum on the true objective.
+[AUDIT v2] -> basin-isolation holds locally; any descent needs a NON-local re-interleave (time-expanded TD-TSP), consistent with the prior verdict — but now proven on the OFFICIAL metric.
+[AUDIT v2] DONE [3951s]

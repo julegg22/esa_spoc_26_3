@@ -1,0 +1,5 @@
+[E-662] control: retime(bank)=940.16 vs official 932.53 [318s, cache 9495]
+[E-662] control PASS — retime faithful (+7.6d). Full-order SA begins.
+NEW BEST retime=940.16 -> OFFICIAL 942.07 feas=True (bank 932.53) it=3 [1244s]
+NEW BEST retime=940.16 -> OFFICIAL 952.58 feas=True (bank 932.53) it=4 [1803s]
+NEW BEST retime=940.16 -> OFFICIAL 947.80 feas=True (bank 932.53) it=8 [2941s]

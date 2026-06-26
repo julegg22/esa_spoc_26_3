@@ -1,0 +1,54 @@
+[s3] SEG-STITCH build (start 412, 601 cities; bank-giant 913@1.53; target ~240@0.4)
+[s0] SEG-STITCH build (start 2, 601 cities; bank-giant 913@1.53; target ~240@0.4)
+[s1] SEG-STITCH build (start 134, 601 cities; bank-giant 913@1.53; target ~240@0.4)
+[s2] SEG-STITCH build (start 261, 601 cities; bank-giant 913@1.53; target ~240@0.4)
+[s2]   build 25/601 ep=21 (0.88 d/leg) stitch=0 [10s c1069]
+[s3]   build 25/601 ep=5 (0.20 d/leg) stitch=0 [34s c3508]
+[s0]   build 25/601 ep=4 (0.18 d/leg) stitch=0 [34s c3493]
+[s1]   build 25/601 ep=7 (0.29 d/leg) stitch=0 [36s c3147]
+[s2]   build 50/601 ep=26 (0.54 d/leg) stitch=0 [43s c4414]
+[s1]   build 50/601 ep=12 (0.24 d/leg) stitch=0 [67s c6253]
+[s3]   build 50/601 ep=10 (0.19 d/leg) stitch=0 [67s c6497]
+[s0]   build 50/601 ep=9 (0.18 d/leg) stitch=0 [67s c6552]
+[s2]   build 75/601 ep=31 (0.42 d/leg) stitch=0 [72s c7166]
+[s1]   build 75/601 ep=15 (0.20 d/leg) stitch=0 [90s c8776]
+[s2]   build 100/601 ep=36 (0.37 d/leg) stitch=0 [93s c9287]
+[s0]   build 75/601 ep=14 (0.19 d/leg) stitch=0 [94s c8933]
+[s3]   build 75/601 ep=16 (0.22 d/leg) stitch=0 [94s c8940]
+[s2]   build 125/601 ep=40 (0.32 d/leg) stitch=0 [104s c10826]
+[s1]   build 100/601 ep=24 (0.25 d/leg) stitch=0 [105s c10351]
+[s2]   build 150/601 ep=44 (0.30 d/leg) stitch=0 [107s c11754]
+[s2]   build 175/601 ep=56 (0.32 d/leg) stitch=0 [109s c12081]
+[s2]   STRAND at 180/601 ep=64 stitches=0
+[s2] seg-stitch stranded
+[s3]   build 100/601 ep=21 (0.21 d/leg) stitch=0 [109s c10801]
+[s0]   build 100/601 ep=19 (0.19 d/leg) stitch=0 [111s c10791]
+[s1]   build 125/601 ep=39 (0.32 d/leg) stitch=0 [112s c11490]
+[s3]   build 125/601 ep=25 (0.20 d/leg) stitch=0 [115s c12030]
+[s1]   build 150/601 ep=44 (0.30 d/leg) stitch=0 [117s c12461]
+[s3]   build 150/601 ep=31 (0.21 d/leg) stitch=0 [118s c12681]
+[s0]   build 125/601 ep=24 (0.19 d/leg) stitch=0 [119s c12016]
+[s1]   build 175/601 ep=51 (0.29 d/leg) stitch=0 [119s c12830]
+[s3]   build 175/601 ep=51 (0.29 d/leg) stitch=0 [120s c12866]
+[s1]   STRAND at 196/601 ep=88 stitches=0
+[s1] seg-stitch stranded
+[s0]   build 150/601 ep=29 (0.19 d/leg) stitch=0 [124s c12637]
+[s3]   build 200/601 ep=75 (0.38 d/leg) stitch=0 [127s c13391]
+[s0]   build 175/601 ep=52 (0.30 d/leg) stitch=0 [127s c12815]
+[s0]   build 200/601 ep=66 (0.33 d/leg) stitch=0 [140s c14166]
+[s3]   build 225/601 ep=81 (0.36 d/leg) stitch=0 [153s c16851]
+[s0]   build 225/601 ep=70 (0.31 d/leg) stitch=0 [168s c17468]
+[s3]   build 250/601 ep=85 (0.34 d/leg) stitch=0 [178s c19676]
+[s0]   build 250/601 ep=76 (0.31 d/leg) stitch=0 [196s c20150]
+[s3]   build 275/601 ep=90 (0.33 d/leg) stitch=0 [199s c21901]
+[s3]   build 300/601 ep=96 (0.32 d/leg) stitch=0 [210s c23504]
+[s0]   build 275/601 ep=81 (0.30 d/leg) stitch=0 [212s c22262]
+[s3]   build 325/601 ep=101 (0.31 d/leg) stitch=0 [215s c24522]
+[s3]   build 350/601 ep=106 (0.30 d/leg) stitch=0 [217s c24925]
+[s3]   STRAND at 352/601 ep=107 stitches=0
+[s3] seg-stitch stranded
+[s0]   build 300/601 ep=86 (0.29 d/leg) stitch=0 [220s c23744]
+[s0]   build 325/601 ep=90 (0.28 d/leg) stitch=0 [222s c24628]
+[s0]   build 350/601 ep=104 (0.30 d/leg) stitch=0 [223s c24911]
+[s0]   STRAND at 361/601 ep=128 stitches=0
+[s0] seg-stitch stranded

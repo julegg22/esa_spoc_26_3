@@ -1,0 +1,12 @@
+[E-709b] e533 adjacency: 139828 cheap directed edges (12.67%); components (top sizes): [601, 150, 150, 150]
+[E-709b] dense-rechecking 300 pairs e533 marked NON-cheap (120 epochs x 75 tofs each) ...
+  50/300: 0 actually-cheap so far [35s]
+  100/300: 0 actually-cheap so far [81s]
+  150/300: 0 actually-cheap so far [127s]
+  200/300: 1 actually-cheap so far [174s]
+  250/300: 1 actually-cheap so far [218s]
+  300/300: 1 actually-cheap so far [264s]
+
+[E-709b] 1/300 (0%) of e533-'non-cheap' pairs are ACTUALLY cheap under a dense scan
+  their cheap tofs: min 2.400 med 2.400 (mostly missed because e533's shortest probe tof was 0.5d)
+[E-709b] -> adjacency mostly correct (0% error); the sparse graph is real, the wall is genuine, gap is the global TD-TSP order (heavy build).

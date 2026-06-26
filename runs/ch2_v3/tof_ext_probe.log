@@ -1,0 +1,9 @@
+[E-705] probing 1157 edge pairs x 100 epochs x 34 ext-tofs
+  200/1157 | pairs-helped 1 max_gain 32.45d [63s]
+  400/1157 | pairs-helped 2 max_gain 32.45d [129s]
+  600/1157 | pairs-helped 2 max_gain 32.45d [195s]
+  800/1157 | pairs-helped 3 max_gain 32.45d [259s]
+  1000/1157 | pairs-helped 3 max_gain 32.45d [319s]
+
+[E-705] VERDICT: 3/1157 pairs gain an EARLIER-arriving cheap edge via tof>8d (29 epoch-instances, max earlier-by 32.45d)
+[E-705] -> tof>8 adds little/no earlier-arrival cheap reachability -> hypothesis WEAK; Ch2-small lever (b) likely dead (consistent with competitor 2.1 d/leg = short legs, not long).

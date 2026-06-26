@@ -1,0 +1,12 @@
+[E-658] n=49 bank=112.996 | giant=40 sats=[3, 3, 3]
+  [it0] giant table-walk makespan=145.979d (static LKH was 69.06 cheap-cost)
+  [it1] giant table-walk makespan=144.475d (static LKH was 69.06 cheap-cost)
+  [it2] giant table-walk makespan=145.979d (static LKH was 69.06 cheap-cost)
+  [it3] giant table-walk makespan=144.475d (static LKH was 69.06 cheap-cost)
+  [it4] giant table-walk makespan=145.979d (static LKH was 69.06 cheap-cost)
+  [it5] giant table-walk makespan=144.475d (static LKH was 69.06 cheap-cost)
+  [it6] giant table-walk makespan=145.979d (static LKH was 69.06 cheap-cost)
+  [it7] giant table-walk makespan=144.475d (static LKH was 69.06 cheap-cost)
+  [it8] giant table-walk makespan=145.979d (static LKH was 69.06 cheap-cost)
+  [it9] giant table-walk makespan=144.475d (static LKH was 69.06 cheap-cost)
+[giant] best epoch-aware giant table-walk makespan=144.475d

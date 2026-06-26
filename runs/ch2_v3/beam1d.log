@@ -1,0 +1,88 @@
+[W500p300.0] BEAM from-scratch (W=500 pen=300.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W500p250.0] BEAM from-scratch (W=500 pen=250.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W500p200.0] BEAM from-scratch (W=500 pen=200.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W500p150.0] BEAM from-scratch (W=500 pen=150.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W500p300.0]   beam step 50/601 live=500 best_ep=9 (0.17 d/leg) [32s]
+[W500p250.0]   beam step 50/601 live=500 best_ep=9 (0.17 d/leg) [32s]
+[W500p150.0]   beam step 50/601 live=500 best_ep=9 (0.17 d/leg) [32s]
+[W500p200.0]   beam step 50/601 live=500 best_ep=9 (0.17 d/leg) [32s]
+[W500p300.0]   beam step 100/601 live=500 best_ep=17 (0.17 d/leg) [60s]
+[W500p150.0]   beam step 100/601 live=500 best_ep=17 (0.17 d/leg) [59s]
+[W500p200.0]   beam step 100/601 live=500 best_ep=17 (0.17 d/leg) [60s]
+[W500p250.0]   beam step 100/601 live=500 best_ep=17 (0.17 d/leg) [62s]
+[W500p200.0]   beam step 150/601 live=500 best_ep=31 (0.21 d/leg) [79s]
+[W500p150.0]   beam step 150/601 live=500 best_ep=31 (0.21 d/leg) [79s]
+[W500p250.0]   beam step 150/601 live=500 best_ep=33 (0.22 d/leg) [82s]
+[W500p300.0]   beam step 150/601 live=500 best_ep=31 (0.21 d/leg) [83s]
+[W500p150.0]   beam step 200/601 live=500 best_ep=50 (0.25 d/leg) [112s]
+[W500p200.0]   beam step 200/601 live=500 best_ep=52 (0.26 d/leg) [113s]
+[W500p250.0]   beam step 200/601 live=500 best_ep=52 (0.26 d/leg) [115s]
+[W500p300.0]   beam step 200/601 live=500 best_ep=52 (0.26 d/leg) [117s]
+[W500p200.0]   beam step 250/601 live=500 best_ep=60 (0.24 d/leg) [139s]
+[W500p250.0]   beam step 250/601 live=500 best_ep=60 (0.24 d/leg) [139s]
+[W500p150.0]   beam step 250/601 live=500 best_ep=59 (0.23 d/leg) [139s]
+[W500p300.0]   beam step 250/601 live=500 best_ep=60 (0.24 d/leg) [142s]
+[W500p150.0]   beam step 300/601 live=478 best_ep=73 (0.24 d/leg) [152s]
+[W500p200.0]   beam step 300/601 live=488 best_ep=75 (0.25 d/leg) [153s]
+[W500p250.0]   beam step 300/601 live=500 best_ep=77 (0.26 d/leg) [156s]
+[W500p300.0]   beam step 300/601 live=499 best_ep=74 (0.25 d/leg) [157s]
+[W500p200.0]   beam step 350/601 live=477 best_ep=132 (0.38 d/leg) [174s]
+[W500p150.0]   beam step 350/601 live=492 best_ep=132 (0.38 d/leg) [174s]
+[W500p250.0]   beam step 350/601 live=479 best_ep=131 (0.37 d/leg) [179s]
+[W500p300.0]   beam step 350/601 live=494 best_ep=131 (0.37 d/leg) [182s]
+[W500p200.0]   beam step 400/601 live=463 best_ep=142 (0.35 d/leg) [200s]
+[W500p150.0]   beam step 400/601 live=465 best_ep=142 (0.35 d/leg) [200s]
+[W500p250.0]   beam step 400/601 live=486 best_ep=139 (0.35 d/leg) [203s]
+[W500p300.0]   beam step 400/601 live=487 best_ep=140 (0.35 d/leg) [207s]
+[W500p200.0]   beam step 450/601 live=443 best_ep=151 (0.33 d/leg) [216s]
+[W500p250.0]   beam step 450/601 live=433 best_ep=148 (0.33 d/leg) [219s]
+[W500p150.0]   beam step 450/601 live=441 best_ep=151 (0.34 d/leg) [219s]
+[W500p300.0]   beam step 450/601 live=448 best_ep=149 (0.33 d/leg) [224s]
+[W500p200.0]   beam step 500/601 live=339 best_ep=181 (0.36 d/leg) [224s]
+[W500p150.0]   beam step 500/601 live=341 best_ep=179 (0.36 d/leg) [226s]
+[W500p250.0]   beam step 500/601 live=342 best_ep=195 (0.39 d/leg) [227s]
+[W500p200.0]   beam step 550/601 live=261 best_ep=257 (0.47 d/leg) [229s]
+[W500p200.0]   beam DEAD at step 568/601 — return best partial len=568 ep=291
+[W500p150.0]   beam step 550/601 live=278 best_ep=262 (0.48 d/leg) [232s]
+[W500p300.0]   beam step 500/601 live=389 best_ep=194 (0.39 d/leg) [234s]
+[W500p150.0]   beam DEAD at step 583/601 — return best partial len=583 ep=373
+[W500p250.0]   beam step 550/601 live=266 best_ep=279 (0.51 d/leg) [234s]
+[W500p250.0]   beam DEAD at step 575/601 — return best partial len=575 ep=322
+[W500p300.0]   beam step 550/601 live=277 best_ep=290 (0.53 d/leg) [240s]
+[W500p300.0]   beam DEAD at step 594/601 — return best partial len=594 ep=411
+[W500p200.0] beam partial 568/601 (faithful_mk=1066); repairing 33 via cheap-window insertion
+[W500p200.0] order len=601/601 [267s] — faithful retime next
+[W500p200.0]   retime leg 100/600 ep=24 (0s)
+[W500p200.0]   retime leg 200/600 ep=100 (0s)
+[W500p200.0]   retime leg 300/600 ep=272 (0s)
+[W500p200.0]   retime leg 400/600 ep=549 (5s)
+[W500p150.0] beam partial 583/601 (faithful_mk=1136); repairing 18 via cheap-window insertion
+[W500p150.0] order len=601/601 [273s] — faithful retime next
+[W500p150.0]   retime leg 100/600 ep=25 (0s)
+[W500p150.0]   retime leg 200/600 ep=121 (2s)
+[W500p250.0] beam partial 575/601 (faithful_mk=1123); repairing 26 via cheap-window insertion
+[W500p250.0] order len=601/601 [277s] — faithful retime next
+[W500p250.0]   retime leg 100/600 ep=25 (0s)
+[W500p250.0]   retime leg 200/600 ep=102 (1s)
+[W500p250.0]   retime leg 300/600 ep=284 (2s)
+[W500p200.0]   retime leg 500/600 ep=802 (12s)
+[W500p300.0] beam partial 594/601 (faithful_mk=1125); repairing 7 via cheap-window insertion
+[W500p300.0] order len=601/601 [281s] — faithful retime next
+[W500p300.0]   retime leg 100/600 ep=25 (0s)
+[W500p150.0]   retime leg 300/600 ep=354 (8s)
+[W500p300.0]   retime leg 200/600 ep=99 (1s)
+[W500p300.0]   retime leg 300/600 ep=281 (5s)
+[W500p150.0]   retime leg 400/600 ep=604 (15s)
+[W500p250.0]   retime leg 400/600 ep=586 (13s)
+[W500p200.0]   retime leg 600/600 ep=1099 (23s)
+[W500p200.0] *** BEAM giant = 1099.1d (1.832 d/leg, 601/601 cities) [290s] vs bank 913, target ~405 -> partial/no-improve
+[W500p300.0]   retime leg 400/600 ep=556 (12s)
+[W500p150.0]   retime leg 500/600 ep=842 (21s)
+[W500p250.0]   retime leg 500/600 ep=858 (20s)
+[W500p300.0]   retime leg 500/600 ep=809 (17s)
+[W500p150.0]   retime leg 600/600 ep=1146 (31s)
+[W500p150.0] *** BEAM giant = 1145.9d (1.910 d/leg, 601/601 cities) [304s] vs bank 913, target ~405 -> partial/no-improve
+[W500p250.0]   retime leg 600/600 ep=1165 (32s)
+[W500p250.0] *** BEAM giant = 1164.8d (1.941 d/leg, 601/601 cities) [309s] vs bank 913, target ~405 -> partial/no-improve
+[W500p300.0]   retime leg 600/600 ep=1135 (30s)
+[W500p300.0] *** BEAM giant = 1135.2d (1.892 d/leg, 601/601 cities) [311s] vs bank 913, target ~405 -> partial/no-improve

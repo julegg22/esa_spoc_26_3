@@ -1,0 +1,24 @@
+L2 control: compute_transfer(bank leg0, tof=0.01) -> dv=756 (evaluator live)
+L2: probing 200 sampled bank legs; short-ToF [0.0007,0.025) + wide-epoch sweep; ~1min
+  [40/200] cheap-at-short-tof=1 faster-than-walked=22 [1s]
+  [80/200] cheap-at-short-tof=2 faster-than-walked=25 [2s]
+  [120/200] cheap-at-short-tof=2 faster-than-walked=47 [3s]
+  [160/200] cheap-at-short-tof=2 faster-than-walked=54 [4s]
+  [200/200] cheap-at-short-tof=2 faster-than-walked=68 [5s]
+
+=== L2 DONE (200 sampled bank legs) ===
+  cheap edges at SHORT tof (<0.025, at banked epoch): 2/200
+  legs with a SHORTER cheap tof available (wide-epoch): 68/200 (median walked tof was 0.633d)
+    64->345: short cheap tof=0.0219d vs walked 1.399d
+    141->869: short cheap tof=0.0192d vs walked 1.232d
+    398->292: short cheap tof=0.0086d vs walked 1.066d
+    845->549: short cheap tof=0.0219d vs walked 1.066d
+    137->822: short cheap tof=0.0219d vs walked 1.033d
+    140->113: short cheap tof=0.0060d vs walked 1.016d
+    600->633: short cheap tof=0.0086d vs walked 0.849d
+    76->168: short cheap tof=0.0113d vs walked 0.849d
+    578->121: short cheap tof=0.0245d vs walked 0.849d
+    766->591: short cheap tof=0.0060d vs walked 0.783d
+    180->890: short cheap tof=0.0166d vs walked 0.766d
+    837->958: short cheap tof=0.0245d vs walked 0.766d
+  -> A1 FALSIFIED: faster cheap edges exist below the table's ToF floor / outside its epoch window -> large order search ran on a truncated SLOW candidate set.

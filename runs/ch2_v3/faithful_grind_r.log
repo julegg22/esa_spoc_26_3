@@ -1,0 +1,20 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[s0] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s1] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s2] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s3] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s2] it=10 cur=112.9960 best=112.9960 acc=1 T=0.495 [98s]
+[s1] it=10 cur=112.9960 best=112.9960 acc=2 T=0.495 [189s]
+[s1] it=20 cur=112.9960 best=112.9960 acc=2 T=0.490 [189s]
+[s2] it=20 cur=112.9960 best=112.9960 acc=3 T=0.490 [276s]
+[s3] it=10 cur=112.9960 best=112.9960 acc=3 T=0.495 [278s]
+[s1] it=30 cur=112.9960 best=112.9960 acc=3 T=0.485 [280s]
+[s0] it=10 cur=112.9960 best=112.9960 acc=3 T=0.495 [280s]
+[s2] it=30 cur=112.9960 best=112.9960 acc=5 T=0.485 [473s]
+[s3] it=20 cur=112.9960 best=112.9960 acc=5 T=0.490 [478s]
+[s0] it=20 cur=112.9960 best=112.9960 acc=5 T=0.490 [479s]
+[s0] it=30 cur=112.9960 best=112.9960 acc=5 T=0.485 [479s]
+[s2] it=40 cur=112.9960 best=112.9960 acc=6 T=0.480 [577s]
+[s1] it=40 cur=112.9960 best=112.9960 acc=6 T=0.480 [579s]

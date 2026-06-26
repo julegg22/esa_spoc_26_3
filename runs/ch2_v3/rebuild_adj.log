@@ -1,0 +1,49 @@
+E-533 large structure. n=1051, n_exc=5, max_time=3000.0, probes=8
+  row 50/1051  elapsed=1.3min pairs/s=692 eta=25.3min calls=0.4M
+  row 100/1051  elapsed=2.5min pairs/s=706 eta=23.6min calls=0.8M
+  row 150/1051  elapsed=3.7min pairs/s=709 eta=22.3min calls=1.1M
+  row 200/1051  elapsed=5.0min pairs/s=696 eta=21.4min calls=1.5M
+  row 250/1051  elapsed=6.2min pairs/s=710 eta=19.7min calls=1.9M
+  row 300/1051  elapsed=7.2min pairs/s=725 eta=18.1min calls=2.3M
+  row 350/1051  elapsed=8.4min pairs/s=731 eta=16.8min calls=2.7M
+  row 400/1051  elapsed=9.6min pairs/s=727 eta=15.7min calls=3.1M
+  row 450/1051  elapsed=10.8min pairs/s=731 eta=14.4min calls=3.4M
+  row 500/1051  elapsed=11.9min pairs/s=735 eta=13.1min calls=3.8M
+  row 550/1051  elapsed=13.1min pairs/s=733 eta=12.0min calls=4.2M
+  row 600/1051  elapsed=14.3min pairs/s=733 eta=10.8min calls=4.6M
+  row 650/1051  elapsed=15.5min pairs/s=735 eta=9.6min calls=5.0M
+  row 700/1051  elapsed=16.7min pairs/s=732 eta=8.4min calls=5.4M
+  row 750/1051  elapsed=17.9min pairs/s=733 eta=7.2min calls=5.8M
+  row 800/1051  elapsed=19.3min pairs/s=727 eta=6.0min calls=6.1M
+  row 850/1051  elapsed=20.5min pairs/s=725 eta=4.8min calls=6.5M
+  row 900/1051  elapsed=21.7min pairs/s=726 eta=3.6min calls=6.9M
+  row 950/1051  elapsed=22.9min pairs/s=728 eta=2.4min calls=7.3M
+  row 1000/1051  elapsed=24.1min pairs/s=727 eta=1.2min calls=7.7M
+  row 1050/1051  elapsed=25.3min pairs/s=726 eta=0.0min calls=8.1M
+
+Detection done in 25.3min, 8.1M Lambert calls
+
+Directed pair densities (probe-detected):
+  cheap arcs (any t with dv≤100): 139828/1103550 = 12.67%
+  exc-only arcs (100<dv≤600):    109358/1103550 = 9.91%
+
+Connected components (cheap-edge, undirected): 4
+  Top 10 by size: [601, 150, 150, 150]
+  Total nodes in top-4 comps: 1051
+  Smallest comp sizes: [601, 150, 150, 150]
+
+Top-4 component details:
+  comp_rank=0 size=601
+    top-out-deg nodes (high out-bridge potential): [(11, 163), (1003, 163), (479, 162), (496, 162), (805, 162)]
+    top-in-deg nodes (high in-bridge potential):   [(642, 163), (288, 162), (583, 162), (791, 162), (809, 162)]
+  comp_rank=1 size=150
+    top-out-deg nodes (high out-bridge potential): [(51, 149), (84, 149), (220, 149), (270, 149), (361, 149)]
+    top-in-deg nodes (high in-bridge potential):   [(15, 149), (36, 149), (41, 149), (81, 149), (151, 149)]
+  comp_rank=2 size=150
+    top-out-deg nodes (high out-bridge potential): [(28, 149), (140, 149), (155, 149), (157, 149), (168, 149)]
+    top-in-deg nodes (high in-bridge potential):   [(44, 149), (121, 149), (140, 149), (155, 149), (157, 149)]
+  comp_rank=3 size=150
+    top-out-deg nodes (high out-bridge potential): [(21, 149), (33, 149), (69, 149), (96, 149), (100, 149)]
+    top-in-deg nodes (high in-bridge potential):   [(33, 149), (69, 149), (87, 149), (96, 149), (112, 149)]
+
+Saved /home/julian/Projects/esa_spoc_26_3/cache/ch2_e533_large_adj.npz

@@ -1,0 +1,20 @@
+[PRESCAN] coarse-classifying 2352 pairs (grid 100x40) ...
+  prescan 500/2352 | edges so far 254 [65s]
+  prescan 1000/2352 | edges so far 472 [142s]
+  prescan 1500/2352 | edges so far 717 [209s]
+  prescan 2000/2352 | edges so far 966 [276s]
+[PRESCAN] 1157/2352 edge pairs (dv<= 700.0) in 313s
+[PRECOMPUTE] fine-scan 1157 edge pairs, T=4000 q=0.05d, workers=4
+  100/1157 rate=0.0/s elapsed=2122s eta=374min
+  200/1157 rate=0.1/s elapsed=3770s eta=301min
+  300/1157 rate=0.1/s elapsed=5514s eta=263min
+  400/1157 rate=0.1/s elapsed=7422s eta=234min
+  500/1157 rate=0.1/s elapsed=9067s eta=199min
+  600/1157 rate=0.1/s elapsed=10857s eta=168min
+  700/1157 rate=0.1/s elapsed=12644s eta=138min
+  800/1157 rate=0.1/s elapsed=14396s eta=107min
+  900/1157 rate=0.1/s elapsed=16091s eta=77min
+  1000/1157 rate=0.1/s elapsed=17680s eta=46min
+  1100/1157 rate=0.1/s elapsed=19220s eta=17min
+
+[PRECOMPUTE] DONE in 336min. Saved /home/julian/Projects/esa_spoc_26_3/cache/ch2_small_tcoupled_ultrafine.npz. cheap cells 454971/9408000 = 4.84%

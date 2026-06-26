@@ -1,0 +1,15 @@
+[s1] [E-662] control: retime(bank)=940.16 vs official 932.53 [166s, cache 9495]
+[s1] [E-662] control PASS — retime faithful (+7.6d). Full-order SA begins.
+[s0] [E-662] control: retime(bank)=940.16 vs official 932.53 [168s, cache 9495]
+[s0] [E-662] control PASS — retime faithful (+7.6d). Full-order SA begins.
+[s2] [E-662] control: retime(bank)=940.16 vs official 932.53 [170s, cache 9495]
+[s2] [E-662] control PASS — retime faithful (+7.6d). Full-order SA begins.
+[s3] [E-662] control: retime(bank)=940.16 vs official 932.53 [172s, cache 9495]
+[s3] [E-662] control PASS — retime faithful (+7.6d). Full-order SA begins.
+[s3] NEW BEST retime=938.26 -> OFFICIAL 952.58 feas=True (bank 932.53) it=1 [602s]
+[s2] NEW BEST retime=936.34 -> OFFICIAL 979.46 feas=True (bank 932.53) it=2 [811s]
+[s0] NEW BEST retime=940.16 -> OFFICIAL 942.07 feas=True (bank 932.53) it=3 [1160s]
+[s0] NEW BEST retime=940.16 -> OFFICIAL 952.58 feas=True (bank 932.53) it=4 [1550s]
+[s0] NEW BEST retime=940.16 -> OFFICIAL 947.80 feas=True (bank 932.53) it=8 [2605s]
+[s1] NEW BEST retime=938.26 -> OFFICIAL 1014.28 feas=True (bank 932.53) it=10 [3106s]
+[s1] NEW BEST retime=938.26 -> OFFICIAL 1024.76 feas=True (bank 932.53) it=17 [4729s]

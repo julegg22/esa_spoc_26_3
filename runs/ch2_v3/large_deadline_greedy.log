@@ -1,0 +1,5 @@
+[E-709c] giant n=601; testing window-deadline metrics (baseline degree-greedy stranded ~350/601)
+  metric=min_arrival   : best threads 367/601 (start 31, strands=1, mk~464d) [6s]  ** THREADS PAST 350! **
+  metric=edf           : best threads 160/601 (start 20, strands=1, mk~615d) [2s]
+  metric=edf_reachable : best threads 207/601 (start 13, strands=1, mk~788d) [5s]
+[E-709c] VERDICT: if any metric threads >>350 -> window-deadline ordering breaks the wall (degree was the wrong proxy). If all ~350 -> the wall is global, needs full TD-TSP (VRPTW/time-expanded).

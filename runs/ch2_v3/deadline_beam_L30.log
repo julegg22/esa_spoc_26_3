@@ -1,0 +1,10 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-719] deadline beam W=80 K=18 thresh=40 (|P|=120) LAMBDA=30.0 urg=60.0d; giant n=601; 8 seed(s)
+[E-719] positive control: depth1 -> 128 successors (17 into periphery) [1s]
+  depth 2: |beam|=80 best_depth=2 min_t=0.0d (d/leg 0.050) periph_in_path=0/120 [1s]
+  depth 3: |beam|=80 best_depth=3 min_t=0.3d (d/leg 0.136) periph_in_path=0/120 [11s]
+  depth 4: |beam|=80 best_depth=4 min_t=0.4d (d/leg 0.143) periph_in_path=0/120 [23s]
+  depth 5: |beam|=80 best_depth=5 min_t=0.6d (d/leg 0.142) periph_in_path=0/120 [34s]
+  depth 21: |beam|=80 best_depth=21 min_t=4.5d (d/leg 0.224) periph_in_path=0/120 [253s]

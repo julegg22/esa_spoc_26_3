@@ -1,0 +1,12 @@
+[E-709] bank makespan 932.53d (rank-1 424.62). Re-timing bank ORDER, dense short-tof (min_tof 0.0007d, 100 tofs), n_exc=5
+  leg 150/1050: t=79.1d exc=0 strands=1 mean_tof=0.529 [0s]
+  leg 300/1050: t=218.5d exc=5 strands=2 mean_tof=0.718 [1s]
+  leg 450/1050: t=406.3d exc=5 strands=18 mean_tof=0.814 [1s]
+  leg 600/1050: t=507.5d exc=5 strands=19 mean_tof=0.779 [2s]
+  leg 750/1050: t=736.6d exc=5 strands=47 mean_tof=0.826 [2s]
+  leg 900/1050: t=800.7d exc=5 strands=48 mean_tof=0.756 [2s]
+  leg 1050/1050: t=931.4d exc=5 strands=61 mean_tof=0.728 [2s]
+
+[E-709] dense-short-tof walk of BANK ORDER: makespan=931.38d (bank 932.53, rank-1 424.62)
+  exc_used=5/5  strands(no cheap/exc found)=61  mean cheap tof=0.728d (bank mean 0.860)
+[E-709] -> no collapse -> short-tof timing alone insufficient for the bank order; gap is in the ORDER (genuine global re-interleaving). Adjacency may still be under-sampled for OTHER orders.

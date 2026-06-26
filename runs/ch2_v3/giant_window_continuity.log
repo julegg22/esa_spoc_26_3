@@ -1,0 +1,9 @@
+[E-710 M0c] epoch-continuity of cheap windows; grid spacing=1.00d. 40 cells.
+  10/40: median window so far 12.00d [2s]
+  20/40: median window so far 12.00d [5s]
+  30/40: median window so far 12.00d [8s]
+  40/40: median window so far 12.00d [10s]
+
+[E-710 M0c] cheap-epoch WINDOW width: median 12.00d  p25 10.69d  p75 12.00d  (grid spacing 1.00d)
+  fraction of windows WIDER than the grid spacing: 88%
+[E-710 M0c] -> (A) CONTINUOUS windows, well-sampled by 950-grid; cheap edges abundant & servable at any departure via FINE tof root-find. Prior walls were COARSE-TOF blindness. Build a fine-tof greedy/beam -> should thread >>367 -> rank-1 reachable. THE FLAW.

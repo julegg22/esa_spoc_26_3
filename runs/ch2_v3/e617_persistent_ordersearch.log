@@ -1,0 +1,348 @@
+E-617 cheapest-insertion DP-ALNS. n_chains=4 wall_h=48.0
+[c0] loading ultrafine table...
+[c1] loading ultrafine table...
+[c2] loading ultrafine table...
+[c3] loading ultrafine table...
+[c0] table+rank ready in 0.4s q=0.05d T=4000
+[c3] table+rank ready in 0.4s q=0.05d T=4000
+[c2] table+rank ready in 0.4s q=0.05d T=4000
+[c0] init bank mk=112.9960d
+[c0] resumed ckpt mk=112.9960d
+[c3] init bank mk=112.9960d
+[c3] resumed ckpt mk=112.9960d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c2] init bank mk=112.9960d
+[c2] resumed ckpt mk=112.9960d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1] table+rank ready in 0.5s q=0.05d T=4000
+[c1] init bank mk=112.9960d
+[c1] resumed ckpt mk=112.9960d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)
+[c1] iter=5 elapsed=0.1min DP_ok=1 DP_fail=4 accepted=0 rate=58.6/min state=112.9960 best=112.9960 kick=3 stale=1
+[c0] iter=5 elapsed=0.1min DP_ok=3 DP_fail=2 accepted=0 rate=41.7/min state=112.9960 best=112.9960 kick=3 stale=3
+[c1] iter=10 elapsed=0.3min DP_ok=5 DP_fail=5 accepted=0 rate=38.8/min state=112.9960 best=112.9960 kick=3 stale=5
+[c0] iter=10 elapsed=0.3min DP_ok=7 DP_fail=3 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=3 stale=7
+[c3] iter=10 elapsed=0.3min DP_ok=7 DP_fail=3 accepted=0 rate=29.3/min state=112.9960 best=112.9960 kick=3 stale=7
+[c2] iter=10 elapsed=0.4min DP_ok=8 DP_fail=2 accepted=0 rate=26.0/min state=112.9960 best=112.9960 kick=3 stale=8
+[c1] iter=15 elapsed=0.4min DP_ok=8 DP_fail=7 accepted=0 rate=37.6/min state=112.9960 best=112.9960 kick=3 stale=8
+[c0] iter=15 elapsed=0.4min DP_ok=9 DP_fail=6 accepted=0 rate=37.5/min state=112.9960 best=112.9960 kick=3 stale=9
+[c3] iter=15 elapsed=0.5min DP_ok=10 DP_fail=5 accepted=0 rate=29.5/min state=112.9960 best=112.9960 kick=3 stale=10
+[c2] iter=15 elapsed=0.6min DP_ok=13 DP_fail=2 accepted=0 rate=25.3/min state=112.9960 best=112.9960 kick=3 stale=13
+[c1] iter=20 elapsed=0.6min DP_ok=13 DP_fail=7 accepted=0 rate=32.9/min state=112.9960 best=112.9960 kick=3 stale=13
+[c3] iter=20 elapsed=0.6min DP_ok=13 DP_fail=7 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=3 stale=13
+[c0] iter=25 elapsed=0.7min DP_ok=14 DP_fail=11 accepted=0 rate=38.2/min state=112.9960 best=112.9960 kick=3 stale=14
+[c1] iter=25 elapsed=0.8min DP_ok=17 DP_fail=8 accepted=0 rate=32.4/min state=112.9960 best=112.9960 kick=3 stale=17
+[c0] iter=30 elapsed=0.8min DP_ok=18 DP_fail=12 accepted=0 rate=36.8/min state=112.9960 best=112.9960 kick=3 stale=18
+[c2] iter=25 elapsed=0.9min DP_ok=18 DP_fail=7 accepted=0 rate=28.2/min state=112.9960 best=112.9960 kick=3 stale=18
+[c1] iter=30 elapsed=0.9min DP_ok=21 DP_fail=9 accepted=0 rate=32.0/min state=112.9960 best=112.9960 kick=3 stale=21
+[c0] iter=35 elapsed=0.9min DP_ok=21 DP_fail=14 accepted=0 rate=37.1/min state=112.9960 best=112.9960 kick=3 stale=21
+[c3] iter=40 elapsed=1.0min DP_ok=22 DP_fail=18 accepted=0 rate=39.5/min state=112.9960 best=112.9960 kick=3 stale=22
+[c0] iter=40 elapsed=1.1min DP_ok=24 DP_fail=16 accepted=0 rate=37.2/min state=112.9960 best=112.9960 kick=3 stale=24
+[c1] iter=35 elapsed=1.1min DP_ok=25 DP_fail=10 accepted=0 rate=31.6/min state=112.9960 best=112.9960 kick=3 stale=25
+[c3] iter=45 elapsed=1.1min DP_ok=25 DP_fail=20 accepted=0 rate=39.7/min state=112.9960 best=112.9960 kick=3 stale=25
+[c2] iter=35 elapsed=1.2min DP_ok=26 DP_fail=9 accepted=0 rate=28.6/min state=112.9960 best=112.9960 kick=3 stale=26
+[c3] iter=50 elapsed=1.3min DP_ok=28 DP_fail=22 accepted=0 rate=39.8/min state=112.9960 best=112.9960 kick=3 stale=28
+[c2] iter=40 elapsed=1.4min DP_ok=29 DP_fail=11 accepted=0 rate=29.6/min state=112.9960 best=112.9960 kick=3 stale=29
+[c1] iter=45 elapsed=1.4min DP_ok=31 DP_fail=14 accepted=0 rate=33.2/min state=112.9960 best=112.9960 kick=3 stale=31
+[c0] iter=55 elapsed=1.5min DP_ok=32 DP_fail=23 accepted=0 rate=36.4/min state=112.9960 best=112.9960 kick=3 stale=32
+[c2] iter=45 elapsed=1.6min DP_ok=33 DP_fail=12 accepted=0 rate=28.9/min state=112.9960 best=112.9960 kick=3 stale=33
+[c1] iter=50 elapsed=1.6min DP_ok=36 DP_fail=14 accepted=0 rate=32.1/min state=112.9960 best=112.9960 kick=3 stale=36
+[c0] iter=60 elapsed=1.6min DP_ok=34 DP_fail=26 accepted=0 rate=37.6/min state=112.9960 best=112.9960 kick=3 stale=34
+[c3] iter=65 elapsed=1.8min DP_ok=39 DP_fail=26 accepted=0 rate=37.1/min state=112.9960 best=112.9960 kick=3 stale=39
+[c2] iter=60 elapsed=1.9min DP_ok=39 DP_fail=21 accepted=0 rate=31.7/min state=112.9960 best=112.9960 kick=3 stale=39
+[c3] iter=75 elapsed=2.0min DP_ok=44 DP_fail=31 accepted=0 rate=38.2/min state=112.9960 best=112.9960 kick=3 stale=44
+[c0] iter=75 elapsed=2.0min DP_ok=44 DP_fail=31 accepted=0 rate=36.7/min state=112.9960 best=112.9960 kick=3 stale=44
+[c1] iter=65 elapsed=2.1min DP_ok=45 DP_fail=20 accepted=0 rate=31.6/min state=112.9960 best=112.9960 kick=3 stale=45
+[c2] iter=65 elapsed=2.1min DP_ok=43 DP_fail=22 accepted=0 rate=31.5/min state=112.9960 best=112.9960 kick=3 stale=43
+[c0] iter=85 elapsed=2.2min DP_ok=48 DP_fail=37 accepted=0 rate=38.7/min state=112.9960 best=112.9960 kick=3 stale=48
+[c1] iter=70 elapsed=2.3min DP_ok=50 DP_fail=20 accepted=0 rate=31.0/min state=112.9960 best=112.9960 kick=3 stale=50
+[c3] iter=85 elapsed=2.3min DP_ok=52 DP_fail=33 accepted=0 rate=37.5/min state=112.9960 best=112.9960 kick=3 stale=52
+[c2] iter=75 elapsed=2.4min DP_ok=49 DP_fail=26 accepted=0 rate=31.3/min state=112.9960 best=112.9960 kick=3 stale=49
+[c0] iter=95 elapsed=2.4min DP_ok=53 DP_fail=42 accepted=0 rate=39.2/min state=112.9960 best=112.9960 kick=3 stale=53
+[c2] iter=80 elapsed=2.5min DP_ok=52 DP_fail=28 accepted=0 rate=31.8/min state=112.9960 best=112.9960 kick=3 stale=52
+[c1] iter=80 elapsed=2.6min DP_ok=57 DP_fail=23 accepted=0 rate=30.7/min state=112.9960 best=112.9960 kick=3 stale=57
+[c0] iter=100 elapsed=2.6min DP_ok=57 DP_fail=43 accepted=0 rate=38.1/min state=112.9960 best=112.9960 kick=3 stale=57
+[c2] iter=85 elapsed=2.6min DP_ok=55 DP_fail=30 accepted=0 rate=32.3/min state=112.9960 best=112.9960 kick=3 stale=55
+[c3] iter=100 elapsed=2.7min DP_ok=60 DP_fail=40 accepted=0 rate=37.6/min state=112.9960 best=112.9960 kick=4 stale=60
+[c0] iter=105 elapsed=2.8min DP_ok=60 DP_fail=45 accepted=0 rate=38.1/min state=112.9960 best=112.9960 kick=4 stale=60
+[c2] iter=90 elapsed=2.8min DP_ok=58 DP_fail=32 accepted=0 rate=32.6/min state=112.9960 best=112.9960 kick=3 stale=58
+[c3] iter=105 elapsed=2.8min DP_ok=64 DP_fail=41 accepted=0 rate=37.0/min state=112.9960 best=112.9960 kick=4 stale=64
+[c0] iter=110 elapsed=2.9min DP_ok=63 DP_fail=47 accepted=0 rate=38.2/min state=112.9960 best=112.9960 kick=4 stale=63
+[c2] iter=95 elapsed=2.9min DP_ok=62 DP_fail=33 accepted=0 rate=32.5/min state=112.9960 best=112.9960 kick=4 stale=62
+[c1] iter=90 elapsed=2.9min DP_ok=64 DP_fail=26 accepted=0 rate=30.5/min state=112.9960 best=112.9960 kick=4 stale=64
+[c3] iter=110 elapsed=3.0min DP_ok=68 DP_fail=42 accepted=0 rate=36.7/min state=112.9960 best=112.9960 kick=4 stale=68
+[c0] iter=115 elapsed=3.1min DP_ok=66 DP_fail=49 accepted=0 rate=37.2/min state=112.9960 best=112.9960 kick=4 stale=66
+[c2] iter=100 elapsed=3.1min DP_ok=67 DP_fail=33 accepted=0 rate=31.9/min state=112.9960 best=112.9960 kick=4 stale=67
+[c3] iter=115 elapsed=3.2min DP_ok=72 DP_fail=43 accepted=0 rate=36.2/min state=112.9960 best=112.9960 kick=4 stale=72
+[c1] iter=100 elapsed=3.2min DP_ok=70 DP_fail=30 accepted=0 rate=31.2/min state=112.9960 best=112.9960 kick=4 stale=70
+[c3] iter=120 elapsed=3.3min DP_ok=76 DP_fail=44 accepted=0 rate=35.9/min state=112.9960 best=112.9960 kick=4 stale=76
+[c1] iter=105 elapsed=3.3min DP_ok=73 DP_fail=32 accepted=0 rate=31.4/min state=112.9960 best=112.9960 kick=4 stale=73
+[c2] iter=110 elapsed=3.4min DP_ok=73 DP_fail=37 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=4 stale=73
+[c2] iter=115 elapsed=3.6min DP_ok=76 DP_fail=39 accepted=0 rate=32.3/min state=112.9960 best=112.9960 kick=4 stale=76
+[c0] iter=135 elapsed=3.6min DP_ok=77 DP_fail=58 accepted=0 rate=37.2/min state=112.9960 best=112.9960 kick=4 stale=77
+[c1] iter=115 elapsed=3.6min DP_ok=79 DP_fail=36 accepted=0 rate=31.7/min state=112.9960 best=112.9960 kick=4 stale=79
+[c3] iter=130 elapsed=3.6min DP_ok=83 DP_fail=47 accepted=0 rate=35.8/min state=112.9960 best=112.9960 kick=4 stale=83
+[c2] iter=120 elapsed=3.7min DP_ok=80 DP_fail=40 accepted=0 rate=32.3/min state=112.9960 best=112.9960 kick=4 stale=80
+[c1] iter=120 elapsed=3.8min DP_ok=82 DP_fail=38 accepted=0 rate=31.9/min state=112.9960 best=112.9960 kick=4 stale=82
+[c0] iter=140 elapsed=3.8min DP_ok=81 DP_fail=59 accepted=0 rate=36.9/min state=112.9960 best=112.9960 kick=4 stale=81
+[c1] iter=125 elapsed=3.9min DP_ok=85 DP_fail=40 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=4 stale=85
+[c0] iter=145 elapsed=3.9min DP_ok=83 DP_fail=62 accepted=0 rate=37.0/min state=112.9960 best=112.9960 kick=4 stale=83
+[c3] iter=140 elapsed=3.9min DP_ok=89 DP_fail=51 accepted=0 rate=35.7/min state=112.9960 best=112.9960 kick=4 stale=89
+[c2] iter=125 elapsed=3.9min DP_ok=85 DP_fail=40 accepted=0 rate=31.9/min state=112.9960 best=112.9960 kick=4 stale=85
+[c1] iter=130 elapsed=3.9min DP_ok=86 DP_fail=44 accepted=0 rate=33.1/min state=112.9960 best=112.9960 kick=4 stale=86
+[c3] iter=145 elapsed=4.1min DP_ok=93 DP_fail=52 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=4 stale=93
+[c1] iter=135 elapsed=4.1min DP_ok=90 DP_fail=45 accepted=0 rate=32.6/min state=112.9960 best=112.9960 kick=4 stale=90
+[c0] iter=155 elapsed=4.2min DP_ok=88 DP_fail=67 accepted=0 rate=36.8/min state=112.9960 best=112.9960 kick=4 stale=88
+[c3] iter=150 elapsed=4.2min DP_ok=96 DP_fail=54 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=4 stale=96
+[c2] iter=135 elapsed=4.2min DP_ok=91 DP_fail=44 accepted=0 rate=31.9/min state=112.9960 best=112.9960 kick=4 stale=91
+[c1] iter=140 elapsed=4.3min DP_ok=94 DP_fail=46 accepted=0 rate=32.4/min state=112.9960 best=112.9960 kick=4 stale=94
+[c0] iter=160 elapsed=4.3min DP_ok=91 DP_fail=69 accepted=0 rate=36.8/min state=112.9960 best=112.9960 kick=4 stale=91
+[c2] iter=140 elapsed=4.4min DP_ok=95 DP_fail=45 accepted=0 rate=31.8/min state=112.9960 best=112.9960 kick=4 stale=95
+[c1] iter=145 elapsed=4.4min DP_ok=96 DP_fail=49 accepted=0 rate=32.6/min state=112.9960 best=112.9960 kick=4 stale=96
+[c0] iter=165 elapsed=4.5min DP_ok=95 DP_fail=70 accepted=0 rate=36.4/min state=112.9960 best=112.9960 kick=4 stale=95
+[c3] iter=160 elapsed=4.6min DP_ok=103 DP_fail=57 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=4 stale=103
+[c2] iter=150 elapsed=4.7min DP_ok=102 DP_fail=48 accepted=0 rate=32.1/min state=112.9960 best=112.9960 kick=4 stale=102
+[c3] iter=165 elapsed=4.7min DP_ok=107 DP_fail=58 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=4 stale=107
+[c0] iter=170 elapsed=4.7min DP_ok=100 DP_fail=70 accepted=0 rate=36.0/min state=112.9960 best=112.9960 kick=4 stale=100
+[c2] iter=155 elapsed=4.8min DP_ok=105 DP_fail=50 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=4 stale=105
+[c1] iter=160 elapsed=4.8min DP_ok=105 DP_fail=55 accepted=0 rate=33.0/min state=112.9960 best=112.9960 kick=4 stale=105
+[c2] iter=160 elapsed=5.0min DP_ok=109 DP_fail=51 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=4 stale=109
+[c0] iter=180 elapsed=5.0min DP_ok=104 DP_fail=76 accepted=0 rate=36.0/min state=112.9960 best=112.9960 kick=4 stale=104
+[c1] iter=175 elapsed=5.1min DP_ok=111 DP_fail=64 accepted=0 rate=34.1/min state=112.9960 best=112.9960 kick=4 stale=111
+[c0] iter=185 elapsed=5.2min DP_ok=108 DP_fail=77 accepted=0 rate=35.8/min state=112.9960 best=112.9960 kick=4 stale=108
+[c0] iter=190 elapsed=5.3min DP_ok=111 DP_fail=79 accepted=0 rate=35.9/min state=112.9960 best=112.9960 kick=4 stale=111
+[c1] iter=180 elapsed=5.3min DP_ok=114 DP_fail=66 accepted=0 rate=34.0/min state=112.9960 best=112.9960 kick=4 stale=114
+[c3] iter=190 elapsed=5.4min DP_ok=119 DP_fail=71 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=4 stale=119
+[c1] iter=185 elapsed=5.5min DP_ok=118 DP_fail=67 accepted=0 rate=33.8/min state=112.9960 best=112.9960 kick=4 stale=118
+[c2] iter=175 elapsed=5.5min DP_ok=121 DP_fail=54 accepted=0 rate=31.9/min state=112.9960 best=112.9960 kick=5 stale=121
+[c3] iter=195 elapsed=5.6min DP_ok=122 DP_fail=73 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=5 stale=122
+[c0] iter=200 elapsed=5.6min DP_ok=117 DP_fail=83 accepted=0 rate=35.7/min state=112.9960 best=112.9960 kick=4 stale=117
+[c2] iter=180 elapsed=5.6min DP_ok=125 DP_fail=55 accepted=0 rate=31.9/min state=112.9960 best=112.9960 kick=5 stale=125
+[c2] iter=185 elapsed=5.7min DP_ok=127 DP_fail=58 accepted=0 rate=32.3/min state=112.9960 best=112.9960 kick=5 stale=127
+[c3] iter=200 elapsed=5.8min DP_ok=127 DP_fail=73 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=127
+[c1] iter=200 elapsed=5.8min DP_ok=124 DP_fail=76 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=5 stale=124
+[c3] iter=205 elapsed=5.9min DP_ok=129 DP_fail=76 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=5 stale=129
+[c1] iter=205 elapsed=5.9min DP_ok=126 DP_fail=79 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=5 stale=126
+[c0] iter=210 elapsed=5.9min DP_ok=123 DP_fail=87 accepted=0 rate=35.7/min state=112.9960 best=112.9960 kick=5 stale=123
+[c2] iter=190 elapsed=5.9min DP_ok=131 DP_fail=59 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=5 stale=131
+[c0] iter=215 elapsed=6.0min DP_ok=125 DP_fail=90 accepted=0 rate=36.1/min state=112.9960 best=112.9960 kick=5 stale=125
+[c3] iter=210 elapsed=6.0min DP_ok=134 DP_fail=76 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=134
+[c2] iter=195 elapsed=6.1min DP_ok=134 DP_fail=61 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=5 stale=134
+[c1] iter=210 elapsed=6.1min DP_ok=130 DP_fail=80 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=5 stale=130
+[c0] iter=220 elapsed=6.2min DP_ok=128 DP_fail=92 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=5 stale=128
+[c3] iter=215 elapsed=6.2min DP_ok=135 DP_fail=80 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=135
+[c1] iter=215 elapsed=6.2min DP_ok=133 DP_fail=82 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=133
+[c2] iter=200 elapsed=6.2min DP_ok=138 DP_fail=62 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=5 stale=138
+[c1] iter=220 elapsed=6.3min DP_ok=136 DP_fail=84 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=136
+[c2] iter=205 elapsed=6.4min DP_ok=142 DP_fail=63 accepted=0 rate=32.2/min state=112.9960 best=112.9960 kick=5 stale=142
+[c0] iter=230 elapsed=6.5min DP_ok=134 DP_fail=96 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=5 stale=134
+[c3] iter=225 elapsed=6.5min DP_ok=142 DP_fail=83 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=142
+[c1] iter=225 elapsed=6.5min DP_ok=139 DP_fail=86 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=5 stale=139
+[c3] iter=230 elapsed=6.6min DP_ok=145 DP_fail=85 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=145
+[c2] iter=215 elapsed=6.6min DP_ok=148 DP_fail=67 accepted=0 rate=32.4/min state=112.9960 best=112.9960 kick=5 stale=148
+[c1] iter=230 elapsed=6.6min DP_ok=142 DP_fail=88 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=142
+[c2] iter=220 elapsed=6.7min DP_ok=150 DP_fail=70 accepted=0 rate=32.8/min state=112.9960 best=112.9960 kick=5 stale=150
+[c1] iter=240 elapsed=6.8min DP_ok=146 DP_fail=94 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=5 stale=146
+[c2] iter=230 elapsed=6.9min DP_ok=155 DP_fail=75 accepted=0 rate=33.3/min state=112.9960 best=112.9960 kick=5 stale=155
+[c3] iter=240 elapsed=6.9min DP_ok=153 DP_fail=87 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=5 stale=153
+[c1] iter=245 elapsed=7.0min DP_ok=149 DP_fail=96 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=5 stale=149
+[c2] iter=240 elapsed=7.0min DP_ok=158 DP_fail=82 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=5 stale=158
+[c1] iter=250 elapsed=7.1min DP_ok=152 DP_fail=98 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=5 stale=152
+[c3] iter=250 elapsed=7.1min DP_ok=157 DP_fail=93 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=5 stale=157
+[c0] iter=250 elapsed=7.2min DP_ok=147 DP_fail=103 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=5 stale=147
+[c1] iter=255 elapsed=7.2min DP_ok=154 DP_fail=101 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=5 stale=154
+[c2] iter=250 elapsed=7.2min DP_ok=162 DP_fail=88 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=162
+[c0] iter=255 elapsed=7.4min DP_ok=152 DP_fail=103 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=152
+[c3] iter=260 elapsed=7.4min DP_ok=164 DP_fail=96 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=5 stale=164
+[c2] iter=260 elapsed=7.4min DP_ok=167 DP_fail=93 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=5 stale=167
+[c1] iter=265 elapsed=7.5min DP_ok=162 DP_fail=103 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=5 stale=162
+[c0] iter=260 elapsed=7.6min DP_ok=157 DP_fail=103 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=5 stale=157
+[c2] iter=265 elapsed=7.6min DP_ok=170 DP_fail=95 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=5 stale=170
+[c3] iter=265 elapsed=7.6min DP_ok=168 DP_fail=97 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=168
+[c1] iter=275 elapsed=7.7min DP_ok=167 DP_fail=108 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=5 stale=167
+[c3] iter=270 elapsed=7.8min DP_ok=170 DP_fail=100 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=170
+[c0] iter=270 elapsed=7.8min DP_ok=161 DP_fail=109 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=5 stale=161
+[c1] iter=280 elapsed=7.9min DP_ok=170 DP_fail=110 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=5 stale=170
+[c0] iter=275 elapsed=8.0min DP_ok=165 DP_fail=110 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=5 stale=165
+[c2] iter=280 elapsed=8.0min DP_ok=178 DP_fail=102 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=178
+[c2] iter=285 elapsed=8.2min DP_ok=182 DP_fail=103 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=6 stale=182
+[c3] iter=285 elapsed=8.3min DP_ok=180 DP_fail=105 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=6 stale=180
+[c1] iter=295 elapsed=8.4min DP_ok=181 DP_fail=114 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=6 stale=181
+[c2] iter=290 elapsed=8.4min DP_ok=186 DP_fail=104 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=6 stale=186
+[c3] iter=290 elapsed=8.4min DP_ok=183 DP_fail=107 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=6 stale=183
+[c2] iter=295 elapsed=8.6min DP_ok=190 DP_fail=105 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=6 stale=190
+[c0] iter=300 elapsed=8.6min DP_ok=174 DP_fail=126 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=174
+[c3] iter=305 elapsed=8.7min DP_ok=190 DP_fail=115 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=6 stale=190
+[c1] iter=305 elapsed=8.7min DP_ok=187 DP_fail=118 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=6 stale=187
+[c0] iter=305 elapsed=8.7min DP_ok=177 DP_fail=128 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=5 stale=177
+[c3] iter=310 elapsed=8.8min DP_ok=193 DP_fail=117 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=6 stale=193
+[c2] iter=305 elapsed=8.9min DP_ok=196 DP_fail=109 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=6 stale=196
+[c0] iter=315 elapsed=9.0min DP_ok=182 DP_fail=133 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=6 stale=182
+[c2] iter=310 elapsed=9.1min DP_ok=201 DP_fail=109 accepted=0 rate=34.1/min state=112.9960 best=112.9960 kick=6 stale=201
+[c1] iter=315 elapsed=9.1min DP_ok=193 DP_fail=122 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=6 stale=193
+[c3] iter=320 elapsed=9.1min DP_ok=200 DP_fail=120 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=6 stale=200
+[c0] iter=320 elapsed=9.1min DP_ok=186 DP_fail=134 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=6 stale=186
+[c1] iter=320 elapsed=9.2min DP_ok=196 DP_fail=124 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=6 stale=196
+[c2] iter=320 elapsed=9.3min DP_ok=206 DP_fail=114 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=6 stale=206
+[c0] iter=330 elapsed=9.4min DP_ok=190 DP_fail=140 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=6 stale=190
+[c3] iter=330 elapsed=9.4min DP_ok=206 DP_fail=124 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=6 stale=206
+[c2] iter=325 elapsed=9.5min DP_ok=210 DP_fail=115 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=6 stale=210
+[c0] iter=335 elapsed=9.5min DP_ok=193 DP_fail=142 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=6 stale=193
+[c1] iter=335 elapsed=9.7min DP_ok=205 DP_fail=130 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=6 stale=205
+[c1] iter=340 elapsed=9.8min DP_ok=208 DP_fail=132 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=6 stale=208
+[c3] iter=345 elapsed=9.9min DP_ok=214 DP_fail=131 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=6 stale=214
+[c0] iter=350 elapsed=9.9min DP_ok=201 DP_fail=149 accepted=0 rate=35.3/min state=112.9960 best=112.9960 kick=6 stale=201
+[c1] iter=345 elapsed=10.0min DP_ok=212 DP_fail=133 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=6 stale=212
+[c2] iter=340 elapsed=10.0min DP_ok=221 DP_fail=119 accepted=0 rate=33.9/min state=112.9960 best=112.9960 kick=6 stale=221
+[c0] iter=355 elapsed=10.1min DP_ok=206 DP_fail=149 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=6 stale=206
+[c3] iter=360 elapsed=10.2min DP_ok=220 DP_fail=140 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=6 stale=220
+[c2] iter=350 elapsed=10.4min DP_ok=227 DP_fail=123 accepted=0 rate=33.8/min state=112.9960 best=112.9960 kick=6 stale=227
+[c1] iter=360 elapsed=10.4min DP_ok=222 DP_fail=138 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=6 stale=222
+[c0] iter=370 elapsed=10.5min DP_ok=214 DP_fail=156 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=6 stale=214
+[c3] iter=370 elapsed=10.5min DP_ok=228 DP_fail=142 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=6 stale=228
+[c1] iter=365 elapsed=10.6min DP_ok=225 DP_fail=140 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=6 stale=225
+[c2] iter=360 elapsed=10.6min DP_ok=233 DP_fail=127 accepted=0 rate=34.0/min state=112.9960 best=112.9960 kick=6 stale=233
+[c0] iter=375 elapsed=10.6min DP_ok=218 DP_fail=157 accepted=0 rate=35.3/min state=112.9960 best=112.9960 kick=6 stale=218
+[c0] iter=380 elapsed=10.7min DP_ok=220 DP_fail=160 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=6 stale=220
+[c2] iter=370 elapsed=10.8min DP_ok=238 DP_fail=132 accepted=0 rate=34.1/min state=112.9960 best=112.9960 kick=6 stale=238
+[c1] iter=380 elapsed=11.0min DP_ok=234 DP_fail=146 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=6 stale=234
+[c3] iter=395 elapsed=11.1min DP_ok=240 DP_fail=155 accepted=0 rate=35.7/min state=112.9960 best=112.9960 kick=7 stale=240
+[c2] iter=385 elapsed=11.2min DP_ok=244 DP_fail=141 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=7 stale=244
+[c1] iter=390 elapsed=11.3min DP_ok=240 DP_fail=150 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=7 stale=240
+[c3] iter=405 elapsed=11.3min DP_ok=247 DP_fail=158 accepted=0 rate=35.7/min state=112.9960 best=112.9960 kick=7 stale=247
+[c3] iter=410 elapsed=11.5min DP_ok=251 DP_fail=159 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=3 stale=1
+[c0] iter=405 elapsed=11.6min DP_ok=236 DP_fail=169 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=6 stale=236
+[c3] iter=415 elapsed=11.7min DP_ok=256 DP_fail=159 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=3 stale=6
+[c1] iter=405 elapsed=11.7min DP_ok=248 DP_fail=157 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=7 stale=248
+[c0] iter=415 elapsed=11.8min DP_ok=241 DP_fail=174 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=7 stale=241
+[c0] iter=420 elapsed=11.9min DP_ok=244 DP_fail=176 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=7 stale=244
+[c3] iter=425 elapsed=12.0min DP_ok=262 DP_fail=163 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=3 stale=12
+[c1] iter=415 elapsed=12.0min DP_ok=254 DP_fail=161 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=3 stale=4
+[c2] iter=415 elapsed=12.1min DP_ok=261 DP_fail=154 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=3 stale=11
+[c3] iter=430 elapsed=12.2min DP_ok=267 DP_fail=163 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=3 stale=17
+[c1] iter=425 elapsed=12.3min DP_ok=259 DP_fail=166 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=3 stale=9
+[c0] iter=430 elapsed=12.3min DP_ok=253 DP_fail=177 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=3 stale=3
+[c2] iter=425 elapsed=12.4min DP_ok=267 DP_fail=158 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=3 stale=17
+[c1] iter=430 elapsed=12.5min DP_ok=264 DP_fail=166 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=14
+[c3] iter=440 elapsed=12.5min DP_ok=276 DP_fail=164 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=3 stale=26
+[c3] iter=445 elapsed=12.7min DP_ok=280 DP_fail=165 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=3 stale=30
+[c1] iter=440 elapsed=12.8min DP_ok=271 DP_fail=169 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=21
+[c2] iter=440 elapsed=12.8min DP_ok=276 DP_fail=164 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=3 stale=26
+[c3] iter=455 elapsed=12.9min DP_ok=286 DP_fail=169 accepted=0 rate=35.3/min state=112.9960 best=112.9960 kick=3 stale=36
+[c0] iter=450 elapsed=12.9min DP_ok=263 DP_fail=187 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=3 stale=13
+[c1] iter=445 elapsed=12.9min DP_ok=275 DP_fail=170 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=3 stale=25
+[c1] iter=450 elapsed=13.0min DP_ok=278 DP_fail=172 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=28
+[c2] iter=450 elapsed=13.0min DP_ok=282 DP_fail=168 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=32
+[c2] iter=455 elapsed=13.2min DP_ok=285 DP_fail=170 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=35
+[c1] iter=460 elapsed=13.2min DP_ok=282 DP_fail=178 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=3 stale=32
+[c3] iter=465 elapsed=13.3min DP_ok=295 DP_fail=170 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=3 stale=45
+[c2] iter=465 elapsed=13.5min DP_ok=290 DP_fail=175 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=3 stale=40
+[c0] iter=470 elapsed=13.5min DP_ok=276 DP_fail=194 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=3 stale=26
+[c1] iter=470 elapsed=13.6min DP_ok=289 DP_fail=181 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=3 stale=39
+[c0] iter=475 elapsed=13.6min DP_ok=278 DP_fail=197 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=3 stale=28
+[c3] iter=480 elapsed=13.6min DP_ok=302 DP_fail=178 accepted=0 rate=35.3/min state=112.9960 best=112.9960 kick=3 stale=52
+[c1] iter=475 elapsed=13.7min DP_ok=292 DP_fail=183 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=3 stale=42
+[c2] iter=475 elapsed=13.8min DP_ok=297 DP_fail=178 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=47
+[c3] iter=490 elapsed=13.8min DP_ok=307 DP_fail=183 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=3 stale=57
+[c0] iter=485 elapsed=13.8min DP_ok=282 DP_fail=203 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=3 stale=32
+[c1] iter=480 elapsed=13.8min DP_ok=295 DP_fail=185 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=3 stale=45
+[c2] iter=480 elapsed=13.9min DP_ok=301 DP_fail=179 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=51
+[c3] iter=495 elapsed=13.9min DP_ok=311 DP_fail=184 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=4 stale=61
+[c0] iter=490 elapsed=14.0min DP_ok=286 DP_fail=204 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=3 stale=36
+[c0] iter=495 elapsed=14.1min DP_ok=289 DP_fail=206 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=3 stale=39
+[c1] iter=490 elapsed=14.2min DP_ok=302 DP_fail=188 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=52
+[c3] iter=505 elapsed=14.2min DP_ok=317 DP_fail=188 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=4 stale=67
+[c2] iter=490 elapsed=14.3min DP_ok=309 DP_fail=181 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=3 stale=59
+[c3] iter=510 elapsed=14.3min DP_ok=320 DP_fail=190 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=4 stale=70
+[c1] iter=495 elapsed=14.4min DP_ok=304 DP_fail=191 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=3 stale=54
+[c3] iter=515 elapsed=14.5min DP_ok=324 DP_fail=191 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=4 stale=74
+[c1] iter=500 elapsed=14.5min DP_ok=308 DP_fail=192 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=3 stale=58
+[c1] iter=505 elapsed=14.6min DP_ok=310 DP_fail=195 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=4 stale=60
+[c0] iter=515 elapsed=14.7min DP_ok=301 DP_fail=214 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=3 stale=51
+[c3] iter=520 elapsed=14.7min DP_ok=329 DP_fail=191 accepted=0 rate=35.3/min state=112.9960 best=112.9960 kick=4 stale=79
+[c2] iter=505 elapsed=14.8min DP_ok=320 DP_fail=185 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=4 stale=70
+[c0] iter=520 elapsed=14.8min DP_ok=303 DP_fail=217 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=3 stale=53
+[c3] iter=530 elapsed=14.9min DP_ok=332 DP_fail=198 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=4 stale=82
+[c1] iter=515 elapsed=14.9min DP_ok=315 DP_fail=200 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=4 stale=65
+[c0] iter=525 elapsed=14.9min DP_ok=306 DP_fail=219 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=3 stale=56
+[c3] iter=535 elapsed=15.0min DP_ok=336 DP_fail=199 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=4 stale=86
+[c0] iter=530 elapsed=15.1min DP_ok=310 DP_fail=220 accepted=0 rate=35.2/min state=112.9960 best=112.9960 kick=4 stale=60
+[c3] iter=545 elapsed=15.2min DP_ok=340 DP_fail=205 accepted=0 rate=35.8/min state=112.9960 best=112.9960 kick=4 stale=90
+[c2] iter=525 elapsed=15.3min DP_ok=330 DP_fail=195 accepted=0 rate=34.4/min state=112.9960 best=112.9960 kick=4 stale=80
+[c0] iter=535 elapsed=15.3min DP_ok=315 DP_fail=220 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=4 stale=65
+[c3] iter=550 elapsed=15.4min DP_ok=345 DP_fail=205 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=4 stale=95
+[c2] iter=530 elapsed=15.4min DP_ok=334 DP_fail=196 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=4 stale=84
+[c0] iter=540 elapsed=15.5min DP_ok=319 DP_fail=221 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=69
+[c2] iter=535 elapsed=15.6min DP_ok=337 DP_fail=198 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=4 stale=87
+[c3] iter=555 elapsed=15.6min DP_ok=348 DP_fail=207 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=4 stale=98
+[c0] iter=545 elapsed=15.7min DP_ok=322 DP_fail=223 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=4 stale=72
+[c2] iter=540 elapsed=15.8min DP_ok=342 DP_fail=198 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=4 stale=92
+[c3] iter=560 elapsed=15.8min DP_ok=352 DP_fail=208 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=4 stale=102
+[c0] iter=555 elapsed=15.9min DP_ok=327 DP_fail=228 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=77
+[c1] iter=550 elapsed=15.9min DP_ok=337 DP_fail=213 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=4 stale=87
+[c3] iter=565 elapsed=15.9min DP_ok=354 DP_fail=211 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=4 stale=104
+[c2] iter=545 elapsed=16.0min DP_ok=346 DP_fail=199 accepted=0 rate=34.1/min state=112.9960 best=112.9960 kick=4 stale=96
+[c1] iter=555 elapsed=16.1min DP_ok=341 DP_fail=214 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=4 stale=91
+[c0] iter=560 elapsed=16.1min DP_ok=331 DP_fail=229 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=4 stale=81
+[c2] iter=555 elapsed=16.2min DP_ok=351 DP_fail=204 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=4 stale=101
+[c0] iter=565 elapsed=16.2min DP_ok=332 DP_fail=233 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=82
+[c1] iter=560 elapsed=16.2min DP_ok=344 DP_fail=216 accepted=0 rate=34.5/min state=112.9960 best=112.9960 kick=4 stale=94
+[c3] iter=575 elapsed=16.2min DP_ok=361 DP_fail=214 accepted=0 rate=35.4/min state=112.9960 best=112.9960 kick=4 stale=111
+[c1] iter=565 elapsed=16.3min DP_ok=347 DP_fail=218 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=4 stale=97
+[c2] iter=560 elapsed=16.4min DP_ok=355 DP_fail=205 accepted=0 rate=34.1/min state=112.9960 best=112.9960 kick=4 stale=105
+[c0] iter=575 elapsed=16.5min DP_ok=338 DP_fail=237 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=4 stale=88
+[c1] iter=575 elapsed=16.6min DP_ok=352 DP_fail=223 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=4 stale=102
+[c2] iter=565 elapsed=16.6min DP_ok=359 DP_fail=206 accepted=0 rate=34.1/min state=112.9960 best=112.9960 kick=4 stale=109
+[c1] iter=580 elapsed=16.7min DP_ok=356 DP_fail=224 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=4 stale=106
+[c0] iter=585 elapsed=16.8min DP_ok=342 DP_fail=243 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=92
+[c3] iter=600 elapsed=16.9min DP_ok=374 DP_fail=226 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=5 stale=124
+[c1] iter=590 elapsed=16.9min DP_ok=360 DP_fail=230 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=110
+[c0] iter=590 elapsed=16.9min DP_ok=346 DP_fail=244 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=96
+[c2] iter=585 elapsed=17.1min DP_ok=368 DP_fail=217 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=4 stale=118
+[c1] iter=600 elapsed=17.1min DP_ok=364 DP_fail=236 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=4 stale=114
+[c0] iter=600 elapsed=17.2min DP_ok=351 DP_fail=249 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=101
+[c3] iter=610 elapsed=17.2min DP_ok=381 DP_fail=229 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=5 stale=131
+[c1] iter=605 elapsed=17.3min DP_ok=368 DP_fail=237 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=4 stale=118
+[c2] iter=590 elapsed=17.3min DP_ok=372 DP_fail=218 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=5 stale=122
+[c3] iter=615 elapsed=17.3min DP_ok=384 DP_fail=231 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=5 stale=134
+[c0] iter=610 elapsed=17.5min DP_ok=357 DP_fail=253 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=107
+[c2] iter=600 elapsed=17.6min DP_ok=379 DP_fail=221 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=5 stale=129
+[c3] iter=625 elapsed=17.6min DP_ok=389 DP_fail=236 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=5 stale=139
+[c0] iter=615 elapsed=17.6min DP_ok=360 DP_fail=255 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=110
+[c1] iter=620 elapsed=17.7min DP_ok=377 DP_fail=243 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=5 stale=127
+[c3] iter=630 elapsed=17.7min DP_ok=391 DP_fail=239 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=5 stale=141
+[c0] iter=620 elapsed=17.8min DP_ok=364 DP_fail=256 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=4 stale=114
+[c1] iter=630 elapsed=18.0min DP_ok=382 DP_fail=248 accepted=0 rate=35.1/min state=112.9960 best=112.9960 kick=5 stale=132
+[c0] iter=630 elapsed=18.1min DP_ok=371 DP_fail=259 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=121
+[c2] iter=620 elapsed=18.1min DP_ok=391 DP_fail=229 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=5 stale=141
+[c3] iter=645 elapsed=18.1min DP_ok=399 DP_fail=246 accepted=0 rate=35.6/min state=112.9960 best=112.9960 kick=5 stale=149
+[c1] iter=635 elapsed=18.2min DP_ok=387 DP_fail=248 accepted=0 rate=35.0/min state=112.9960 best=112.9960 kick=5 stale=137
+[c2] iter=625 elapsed=18.3min DP_ok=394 DP_fail=231 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=5 stale=144
+[c0] iter=640 elapsed=18.4min DP_ok=377 DP_fail=263 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=5 stale=127
+[c2] iter=630 elapsed=18.4min DP_ok=396 DP_fail=234 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=5 stale=146
+[c1] iter=640 elapsed=18.4min DP_ok=392 DP_fail=248 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=142
+[c3] iter=655 elapsed=18.4min DP_ok=406 DP_fail=249 accepted=0 rate=35.5/min state=112.9960 best=112.9960 kick=5 stale=156
+[c1] iter=645 elapsed=18.5min DP_ok=395 DP_fail=250 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=145
+[c2] iter=635 elapsed=18.5min DP_ok=400 DP_fail=235 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=5 stale=150
+[c1] iter=650 elapsed=18.6min DP_ok=398 DP_fail=252 accepted=0 rate=34.9/min state=112.9960 best=112.9960 kick=5 stale=148
+[c2] iter=640 elapsed=18.7min DP_ok=403 DP_fail=237 accepted=0 rate=34.3/min state=112.9960 best=112.9960 kick=5 stale=153
+[c0] iter=650 elapsed=18.7min DP_ok=386 DP_fail=264 accepted=0 rate=34.7/min state=112.9960 best=112.9960 kick=5 stale=136
+[c3] iter=670 elapsed=18.8min DP_ok=413 DP_fail=257 accepted=0 rate=35.7/min state=112.9960 best=112.9960 kick=5 stale=163
+[c2] iter=645 elapsed=18.8min DP_ok=407 DP_fail=238 accepted=0 rate=34.2/min state=112.9960 best=112.9960 kick=5 stale=157
+[c0] iter=655 elapsed=18.9min DP_ok=389 DP_fail=266 accepted=0 rate=34.6/min state=112.9960 best=112.9960 kick=5 stale=139
+[c3] iter=680 elapsed=18.9min DP_ok=416 DP_fail=264 accepted=0 rate=36.0/min state=112.9960 best=112.9960 kick=5 stale=166
+[c1] iter=660 elapsed=19.0min DP_ok=404 DP_fail=256 accepted=0 rate=34.8/min state=112.9960 best=112.9960 kick=5 stale=154
+Interrupted system call ; error code 4

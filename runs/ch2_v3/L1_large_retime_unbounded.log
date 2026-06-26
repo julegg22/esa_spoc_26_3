@@ -1,0 +1,16 @@
+[BASE] bank mk=932.5304 WAIT_MAX=200.0 DCOARSE=0.1 DFINE=0.01 N_STEPS=2400
+  [DP] leg 0/1050 t=0.08 waited=0 idle=0.00 (8s)
+  [DP] leg 100/1050 t=43.46 waited=38 idle=2.42 (728s)
+  [DP] leg 200/1050 t=127.88 waited=51 idle=4.39 (1251s)
+  [DP] leg 300/1050 t=218.77 waited=59 idle=5.84 (1834s)
+  [DP] leg 400/1050 t=369.55 waited=80 idle=11.23 (3123s)
+  [DP] leg 500/1050 t=429.27 waited=113 idle=13.06 (3726s)
+  [DP] leg 600/1050 t=499.95 waited=139 idle=15.96 (4338s)
+  [DP] leg 700/1050 t=658.87 waited=163 idle=21.21 (5595s)
+  [DP] leg 800/1050 t=769.35 waited=179 idle=23.42 (6127s)
+  [DP] leg 900/1050 t=799.61 waited=210 idle=25.44 (6965s)
+  [DP] leg 1000/1050 t=848.48 waited=235 idle=26.97 (7624s)
+[DP] done in 8459s | waited 248 legs, total idle 29.59d
+[VERDICT] retime-DP mk=932.5304 feas=True viols=[0, 0, 0, 0] | bank=932.5304 delta=+0.0000
+[CHRONO] walk ok=False last_leg=958 exc=5
+[OUT] BEATS BANK — wrote /tmp/ch2_large_retimedp_cand.json | reval mk=932.5304 feas=True viols=[0, 0, 0, 0]

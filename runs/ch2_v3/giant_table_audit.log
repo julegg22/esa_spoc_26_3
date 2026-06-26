@@ -1,0 +1,12 @@
+[E-710 M0b] auditing 200 table-cheap cells (precision of cache/ch2_giant_dense1d.npz)
+  50/200: exact_ok=50 scan_cheap=6 hard_FP=44 [0s]
+  100/200: exact_ok=100 scan_cheap=10 hard_FP=90 [0s]
+  150/200: exact_ok=150 scan_cheap=15 hard_FP=135 [0s]
+  200/200: exact_ok=200 scan_cheap=22 hard_FP=178 [1s]
+
+[E-710 M0b] RESULTS on 200 table-cheap cells:
+  stored (epoch,tof) verifies faithfully: 200/200 (100%)
+  full scan at epoch finds cheap:         22/200 (11%)
+  HARD false positives (nothing cheap at epoch): 178/200 (89%)
+  tof gap |true - stored| (when scan-cheap): med 0.002d  p90 0.008d  max 0.015d
+[E-710 M0b] VERDICT: FP=89% sets candidate-pruning waste; tof-gap sets refine width. If FP<15% and p90 gap<0.1d -> table is a usable proposer (cheap verify recovers). If FP high -> table corrupt, rebuild candidate oracle.

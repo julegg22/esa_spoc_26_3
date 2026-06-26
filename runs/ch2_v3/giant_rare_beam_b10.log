@@ -1,0 +1,8 @@
+[E-711 rare-beam] W=80 K=20 rare_bonus=10.0; 120 rare/601; 8 starts
+[E-711 rare-beam] positive control: depth1 expanded to 140 successors [0s]
+  depth 2: |beam|=80 best_depth=2 min_t=0.0d (d/leg 0.050) rare_max=2/120 [0s]
+  depth 3: |beam|=80 best_depth=3 min_t=1.5d (d/leg 0.772) rare_max=3/120 [7s]
+  depth 4: |beam|=80 best_depth=4 min_t=2.3d (d/leg 0.777) rare_max=4/120 [14s]
+  depth 5: |beam|=80 best_depth=5 min_t=2.9d (d/leg 0.728) rare_max=5/120 [20s]
+  depth 21: |beam|=80 best_depth=21 min_t=23.8d (d/leg 1.191) rare_max=21/120 [75s]
+Interrupted system call ; error code 4

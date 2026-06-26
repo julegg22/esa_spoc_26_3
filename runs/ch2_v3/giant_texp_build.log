@@ -1,0 +1,8 @@
+[E-715] time-expanded build: bucket=12.0d horizon=456.0d -> 39 buckets, 601 cities, <= 23439 nodes
+  15000/74208 pairs, 6916400 edges [16s]
+  30000/74208 pairs, 13874541 edges [31s]
+  45000/74208 pairs, 20834303 edges [47s]
+  60000/74208 pairs, 27759026 edges [62s]
+[E-715] DONE: 23439 live nodes, 34311012 edges [77s]
+  per-city copies: min 39 med 39 max 39 (GTSP clusters = 601); saved cache/ch2_giant_texp.npz
+[E-715] next: Noon-Bean GTSP->ATSP transform + LKH solve (stage 2).

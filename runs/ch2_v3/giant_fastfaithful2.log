@@ -1,0 +1,6 @@
+[E-710 M0] positive control: table-propose+1-verify vs full faithful scan, 25 random cheap edges
+[E-710 M0] agreement 21/25 on cheap/not-cheap; speed: fast 175.9ms/edge vs scan 2.9ms/edge (0x faster)
+[E-710 M0] -> WARN: primitive disagrees or not fast enough; inspect before building search.
+
+[E-710 M1] fast-faithful min-arrival greedy from a few starts ...
+Interrupted system call ; error code 4

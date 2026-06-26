@@ -1,0 +1,11 @@
+[E-710 M0] positive control: table-propose+1-verify vs full faithful scan, 25 random cheap edges
+[E-710 M0] agreement 14/25 on cheap/not-cheap; speed: fast 0.1ms/edge vs scan 3.1ms/edge (31x faster)
+[E-710 M0] -> WARN: primitive disagrees or not fast enough; inspect before building search.
+
+[E-710 M1] fast-faithful min-arrival greedy from a few starts ...
+  start 2: threaded 133/601, makespan~164d [1s]
+  start 3: threaded 174/601, makespan~192d [1s]
+  start 6: threaded 195/601, makespan~238d [1s]
+  start 7: threaded 187/601, makespan~220d [1s]
+  start 9: threaded 174/601, makespan~192d [1s]
+[E-710 M1] best fast-faithful greedy: 195/601 @ 238d (start 6). FAITHFUL+FAST confirmed -> ready for the beam (M2: global lookahead to thread the stranded tail).

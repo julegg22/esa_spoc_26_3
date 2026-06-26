@@ -1,0 +1,6 @@
+[2026-06-18 09:46:20] waiting for short-ToF augment to finish...
+[2026-06-18 10:12:20] augment done.
+[2026-06-18 10:12:20] swapped corrected table into /tmp/ch2_small_tcoupled_ultrafine.npz (truncated backed up)
+[2026-06-18 10:12:20] launching e617 4-chain 48h on CORRECTED table
+scripts/ch2_corrected_table_research.sh: line 23: 3364967 Killed                  micromamba run -n spoc26 python scripts/ch2_e617_dp_alns_cheapest_repair.py 4 48 > runs/ch2_v3/e617_corrected_table.log 2>&1
+[2026-06-18 10:27:13] e617-corrected exited

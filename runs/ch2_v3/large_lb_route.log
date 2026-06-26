@@ -1,0 +1,6 @@
+[E-709d #2 LB] assignment-relaxation LB on giant makespan: 14.8d (over 601 cheap-assignable; 0 forced non-cheap). rank-1=424.62, our giant ~520, perfect-cheap LB shows headroom=HUGE.
+  per-leg: LB 0.025 d/leg vs rank-1 0.404 vs bank 0.86
+[E-709d #3] solving global TSP on 601-city static min-tof matrix (OR-Tools GLS 120s)...
+[E-709d #3] static-TSP order len 601; faithful-walking it ...
+[E-709d #3] faithful walk of static-TSP order: reached 10/601 cities, makespan~9d, exc=5, strand_at=10 [0s]
+[E-709d #3] -> static-TSP order STRANDS when walked (10/601) -> static cost provably insufficient; the time-coupling is essential. Purpose-built STATIC solvers cannot crack it.

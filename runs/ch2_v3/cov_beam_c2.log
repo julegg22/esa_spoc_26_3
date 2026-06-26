@@ -1,0 +1,40 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-719b] coverage beam W_core=60 W_cov=60 K=18 thresh=40 (|RARE|=120) Radd=8; giant n=601; 8 seed(s)
+[E-719b] positive control: depth1 -> 130 successors (39 rare-capturing) [1s]
+  depth 2: |beam|=78 best_depth=2 min_t=0.0d (d/leg 0.050) | max_rare_in_beam=2/120 [1s]
+  depth 3: |beam|=120 best_depth=3 min_t=0.3d (d/leg 0.136) | max_rare_in_beam=3/120 [11s]
+  depth 4: |beam|=120 best_depth=4 min_t=0.4d (d/leg 0.143) | max_rare_in_beam=4/120 [28s]
+  depth 5: |beam|=120 best_depth=5 min_t=0.6d (d/leg 0.142) | max_rare_in_beam=5/120 [41s]
+  depth 21: |beam|=120 best_depth=21 min_t=4.5d (d/leg 0.224) | max_rare_in_beam=21/120 [257s]
+  depth 41: |beam|=120 best_depth=41 min_t=9.4d (d/leg 0.234) | max_rare_in_beam=41/120 [526s]
+  depth 61: |beam|=120 best_depth=61 min_t=13.6d (d/leg 0.227) | max_rare_in_beam=59/120 [755s]
+  depth 81: |beam|=120 best_depth=81 min_t=17.8d (d/leg 0.223) | max_rare_in_beam=79/120 [963s]
+  depth 101: |beam|=120 best_depth=101 min_t=22.8d (d/leg 0.228) | max_rare_in_beam=89/120 [1190s]
+  depth 121: |beam|=120 best_depth=121 min_t=26.6d (d/leg 0.222) | max_rare_in_beam=89/120 [1420s]
+  depth 141: |beam|=120 best_depth=141 min_t=36.6d (d/leg 0.261) | max_rare_in_beam=89/120 [1624s]
+  depth 161: |beam|=120 best_depth=161 min_t=51.3d (d/leg 0.320) | max_rare_in_beam=89/120 [1784s]
+  depth 181: |beam|=120 best_depth=181 min_t=65.1d (d/leg 0.362) | max_rare_in_beam=89/120 [1970s]
+  depth 201: |beam|=120 best_depth=201 min_t=69.3d (d/leg 0.346) | max_rare_in_beam=89/120 [2210s]
+  depth 221: |beam|=120 best_depth=221 min_t=73.6d (d/leg 0.335) | max_rare_in_beam=89/120 [2418s]
+  depth 241: |beam|=120 best_depth=241 min_t=77.6d (d/leg 0.323) | max_rare_in_beam=89/120 [2583s]
+  depth 261: |beam|=120 best_depth=261 min_t=82.0d (d/leg 0.315) | max_rare_in_beam=55/120 [2745s]
+  depth 281: |beam|=120 best_depth=281 min_t=86.2d (d/leg 0.308) | max_rare_in_beam=75/120 [2933s]
+  depth 301: |beam|=120 best_depth=301 min_t=91.9d (d/leg 0.306) | max_rare_in_beam=89/120 [3122s]
+  depth 321: |beam|=120 best_depth=321 min_t=106.4d (d/leg 0.333) | max_rare_in_beam=89/120 [3272s]
+  depth 341: |beam|=120 best_depth=341 min_t=133.3d (d/leg 0.392) | max_rare_in_beam=89/120 [3422s]
+  depth 361: |beam|=120 best_depth=361 min_t=159.5d (d/leg 0.443) | max_rare_in_beam=89/120 [3589s]
+  depth 381: |beam|=120 best_depth=381 min_t=168.7d (d/leg 0.444) | max_rare_in_beam=89/120 [3802s]
+  depth 401: |beam|=120 best_depth=401 min_t=174.2d (d/leg 0.435) | max_rare_in_beam=89/120 [4043s]
+  depth 421: |beam|=120 best_depth=421 min_t=178.0d (d/leg 0.424) | max_rare_in_beam=89/120 [4270s]
+  depth 441: |beam|=120 best_depth=441 min_t=182.5d (d/leg 0.415) | max_rare_in_beam=89/120 [4436s]
+  depth 461: |beam|=120 best_depth=461 min_t=188.2d (d/leg 0.409) | max_rare_in_beam=86/120 [4592s]
+  depth 481: |beam|=120 best_depth=481 min_t=193.8d (d/leg 0.404) | max_rare_in_beam=89/120 [4775s]
+  depth 501: |beam|=120 best_depth=501 min_t=204.8d (d/leg 0.410) | max_rare_in_beam=73/120 [4925s]
+  depth 521: |beam|=102 best_depth=521 min_t=225.7d (d/leg 0.434) | max_rare_in_beam=87/120 [4984s]
+  depth 541: |beam|=34 best_depth=541 min_t=254.7d (d/leg 0.472) | max_rare_in_beam=88/120 [4999s]
+[E-719b] beam stranded at depth 559
+
+[E-719b] DONE: deepest 559/601, makespan 309.4d (d/leg 0.554); rare threaded 97/120; rank-1=424.62 (E-710 baseline 558@283d) [5001s]
+[E-719b] 559/601 (> E-710's 558) -> coverage-elite threads more; push params.

@@ -1,0 +1,52 @@
+[s0] FAITHFUL greedy (start 2, 601 cities; bank-giant 913 @1.53 d/leg; target ~240 @0.4)
+[s1] FAITHFUL greedy (start 134, 601 cities; bank-giant 913 @1.53 d/leg; target ~240 @0.4)
+[s2] FAITHFUL greedy (start 261, 601 cities; bank-giant 913 @1.53 d/leg; target ~240 @0.4)
+[s3] FAITHFUL greedy (start 412, 601 cities; bank-giant 913 @1.53 d/leg; target ~240 @0.4)
+[s2]   greedy 25/601 ep=21 (0.88 d/leg) [61s c1069]
+[s3]   greedy 25/601 ep=5 (0.20 d/leg) [205s c3508]
+[s0]   greedy 25/601 ep=4 (0.18 d/leg) [207s c3493]
+[s1]   greedy 25/601 ep=7 (0.29 d/leg) [219s c3147]
+[s2]   greedy 50/601 ep=26 (0.54 d/leg) [250s c4414]
+[s1]   greedy 50/601 ep=12 (0.24 d/leg) [292s c6253]
+[s0]   greedy 50/601 ep=9 (0.18 d/leg) [292s c6552]
+[s3]   greedy 50/601 ep=10 (0.19 d/leg) [292s c6497]
+[s2]   greedy 75/601 ep=31 (0.42 d/leg) [296s c7166]
+[s2]   greedy 100/601 ep=36 (0.37 d/leg) [316s c9287]
+[s1]   greedy 75/601 ep=15 (0.20 d/leg) [316s c8776]
+[s3]   greedy 75/601 ep=16 (0.22 d/leg) [319s c8940]
+[s0]   greedy 75/601 ep=14 (0.19 d/leg) [320s c8933]
+[s2]   greedy 125/601 ep=40 (0.32 d/leg) [328s c10826]
+[s2]   greedy 150/601 ep=44 (0.30 d/leg) [331s c11754]
+[s1]   greedy 100/601 ep=24 (0.25 d/leg) [332s c10351]
+[s2]   greedy 175/601 ep=56 (0.32 d/leg) [333s c12081]
+[s3]   greedy 100/601 ep=21 (0.21 d/leg) [334s c10801]
+[s0]   greedy 100/601 ep=19 (0.19 d/leg) [339s c10791]
+[s1]   greedy 125/601 ep=39 (0.32 d/leg) [339s c11490]
+[s3]   greedy 125/601 ep=25 (0.20 d/leg) [341s c12030]
+[s3]   greedy 150/601 ep=31 (0.21 d/leg) [343s c12681]
+[s1]   greedy 150/601 ep=44 (0.30 d/leg) [344s c12461]
+[s3]   greedy 175/601 ep=51 (0.29 d/leg) [346s c12866]
+[s0]   greedy 125/601 ep=24 (0.19 d/leg) [347s c12016]
+[s1]   greedy 175/601 ep=51 (0.29 d/leg) [347s c12830]
+[s0]   greedy 150/601 ep=29 (0.19 d/leg) [353s c12637]
+[s3]   greedy 200/601 ep=75 (0.38 d/leg) [353s c13391]
+[s0]   greedy 175/601 ep=52 (0.30 d/leg) [356s c12815]
+[s0]   greedy 200/601 ep=66 (0.33 d/leg) [370s c14166]
+[s3]   greedy 225/601 ep=81 (0.36 d/leg) [383s c16851]
+[s0]   greedy 225/601 ep=70 (0.31 d/leg) [402s c17468]
+[s3]   greedy 250/601 ep=85 (0.34 d/leg) [411s c19676]
+[s0]   greedy 250/601 ep=76 (0.31 d/leg) [433s c20150]
+[s3]   greedy 275/601 ep=90 (0.33 d/leg) [434s c21901]
+[s3]   greedy 300/601 ep=96 (0.32 d/leg) [447s c23504]
+[s3]   greedy 325/601 ep=101 (0.31 d/leg) [452s c24522]
+[s0]   greedy 275/601 ep=81 (0.30 d/leg) [452s c22262]
+[s3]   greedy 350/601 ep=106 (0.30 d/leg) [454s c24925]
+[s0]   greedy 300/601 ep=86 (0.29 d/leg) [461s c23744]
+[s0]   greedy 325/601 ep=90 (0.28 d/leg) [464s c24628]
+[s0]   greedy 350/601 ep=104 (0.30 d/leg) [465s c24911]
+[s0]   STRAND at 361/601 ep=128
+[s0] greedy stranded
+[s1]   STRAND at 196/601 ep=88
+[s1] greedy stranded
+[s2]   STRAND at 180/601 ep=64
+[s2] greedy stranded

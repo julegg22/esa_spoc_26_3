@@ -1,0 +1,23 @@
+[E-663] giant=601 cities | cost matrix from table (74803 cheap entries) | entry_epoch=0.0 | KEY TEST: does iterated LKH<->retime converge?
+  [bank-giant] leg 50/600 epoch=88.3 (1s, cache 50)
+  [bank-giant] leg 100/600 epoch=156.9 (1s, cache 100)
+  [bank-giant] leg 150/600 epoch=204.5 (1s, cache 150)
+  [bank-giant] leg 200/600 epoch=317.4 (2s, cache 200)
+  [bank-giant] leg 250/600 epoch=368.1 (2s, cache 250)
+  [bank-giant] leg 300/600 epoch=440.5 (2s, cache 300)
+  [bank-giant] leg 350/600 epoch=515.0 (3s, cache 350)
+  [bank-giant] leg 400/600 epoch=634.2 (4s, cache 400)
+  [bank-giant] leg 450/600 epoch=726.7 (4s, cache 450)
+  [bank-giant] leg 500/600 epoch=763.4 (4s, cache 500)
+  [bank-giant] leg 550/600 epoch=817.6 (5s, cache 550)
+  [bank-giant] leg 600/600 epoch=921.2 (5s, cache 600)
+[E-663] BANK giant sub-order retime (from epoch 0.0) = 921.21d (601 legs)
+  [it0] leg 50/600 epoch=116.5 (1s, cache 650)
+  [it0] leg 100/600 epoch=238.0 (1s, cache 700)
+  [it0] leg 150/600 epoch=357.6 (2s, cache 750)
+  [it0] leg 200/600 epoch=495.4 (3s, cache 800)
+  [it0] leg 250/600 epoch=632.6 (4s, cache 850)
+  [it0] leg 300/600 epoch=752.4 (5s, cache 900)
+  [it0] leg 350/600 epoch=869.5 (6s, cache 950)
+  [it0] STRANDED at leg 384 (no cheap transfer) — order not walkable
+[E-663] it0 LKH order STRANDED — needs exc within giant / different cost

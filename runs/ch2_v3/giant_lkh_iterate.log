@@ -1,0 +1,9 @@
+[E-713] LKH+fine-retime on giant n=601; elkai; target <405d (rank-1)
+  it0: LKH tour -> realized makespan 2481.7d, exc 5, strands 144 [376s]
+  it1: LKH tour -> realized makespan 2590.7d, exc 5, strands 153 [611s]
+  it2: LKH tour -> realized makespan 2648.1d, exc 5, strands 161 [903s]
+  it3: LKH tour -> realized makespan 2827.4d, exc 5, strands 176 [1133s]
+  it4: LKH tour -> realized makespan 2808.7d, exc 5, strands 183 [1416s]
+  it5: LKH tour -> realized makespan 2846.9d, exc 5, strands 183 [1656s]
+
+[E-713] no strand-free LKH tour found in 6 iters.

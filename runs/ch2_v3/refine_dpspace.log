@@ -1,0 +1,8 @@
+[control] bank official mk=112.9960; refining bank order as control...
+  [control-bank] warm-start official mk=112.9960 feas=True
+  [control-bank] refined official mk=112.9960 (-0.0000 vs bank) [203s 20016 evals]
+[control] PASS (control 112.9960 ~ bank 112.9960); refining LKH/DP orders.
+[start] 2 distinct candidate orders (dp_mk 116.375..117.126); budget 40000/order
+  [cand0-dp116.38] warm-start official mk=116.3755 feas=True
+  [cand0-dp116.38] refined official mk=116.3755 (+3.3795 vs bank) [410s 40008 evals]
+  [cand1-dp117.13] warm-start official mk=117.1256 feas=True

@@ -1,0 +1,35 @@
+[s1]   greedy step 50/600 ep=392 (0s)
+[s2]   greedy step 50/600 ep=391 (0s)
+[s1]   greedy step 100/600 ep=791 (0s)
+[s3]   greedy step 50/600 ep=391 (0s)
+[s1]   greedy step 150/600 ep=966 (0s)
+[s1]   greedy step 200/600 ep=1019 (0s)
+[s2]   greedy step 100/600 ep=791 (0s)
+[s2]   greedy step 150/600 ep=965 (0s)
+[s2] greedy-NN failed to complete
+[s3]   greedy step 100/600 ep=790 (0s)
+[s1]   greedy step 250/600 ep=1032 (0s)
+[s3]   greedy step 150/600 ep=982 (0s)
+[s3]   greedy step 200/600 ep=1001 (0s)
+[s1]   greedy step 300/600 ep=1044 (0s)
+[s1]   greedy step 350/600 ep=1060 (0s)
+[s1] greedy-NN failed to complete
+[s3]   greedy step 250/600 ep=1014 (0s)
+[s3]   greedy step 300/600 ep=1026 (0s)
+[s3]   greedy step 350/600 ep=1080 (0s)
+[s3] greedy-NN failed to complete
+  [bank] leg 100/600 ep=153 (35s c1300)
+  [bank] leg 200/600 ep=310 (78s c2600)
+  [bank] leg 300/600 ep=433 (96s c3900)
+  [bank] leg 400/600 ep=623 (139s c5200)
+  [bank] leg 500/600 ep=756 (165s c6500)
+  [bank] leg 600/600 ep=914 (223s c7800)
+[s0] bank-giant baseline = 913.7d (601 legs, 1.53d/leg; min-tof~0.15)
+[s0]   greedy step 50/600 ep=391 (0s)
+[s0]   greedy step 100/600 ep=791 (0s)
+[s0]   greedy step 150/600 ep=966 (0s)
+[s0] greedy-NN failed to complete
+[s0] SA start from bank-giant mk=913.7
+[s3] SA start from bank-giant mk=913.7
+[s1] SA start from bank-giant mk=913.7
+[s2] SA start from bank-giant mk=913.7

@@ -1,0 +1,70 @@
+[W200p0.0] BEAM from-scratch (W=200 pen=0.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p8.0] BEAM from-scratch (W=200 pen=8.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p0.5] BEAM from-scratch (W=200 pen=0.5 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p2.0] BEAM from-scratch (W=200 pen=2.0 start=2 601 cities; bank 913@1.53, target ~405@0.68)
+[W200p0.0]   beam step 50/601 live=200 best_ep=391 (7.83 d/leg) [6s]
+[W200p0.5]   beam step 50/601 live=200 best_ep=391 (7.83 d/leg) [7s]
+[W200p2.0]   beam step 50/601 live=200 best_ep=391 (7.83 d/leg) [7s]
+[W200p8.0]   beam step 50/601 live=200 best_ep=391 (7.83 d/leg) [7s]
+[W200p0.0]   beam step 100/601 live=200 best_ep=790 (7.90 d/leg) [11s]
+[W200p0.5]   beam step 100/601 live=200 best_ep=790 (7.90 d/leg) [12s]
+[W200p2.0]   beam step 100/601 live=200 best_ep=790 (7.90 d/leg) [12s]
+[W200p8.0]   beam step 100/601 live=200 best_ep=790 (7.90 d/leg) [12s]
+Process Process-4:
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 128, in main
+    order = beam_search(neigh, tab, epochs, start, entry, m, W, pen, log)
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 88, in beam_search
+    score = arr + pen * (1.0 / (rem_deg + 1))
+                         ~~~~^~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+Process Process-3:
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 128, in main
+    order = beam_search(neigh, tab, epochs, start, entry, m, W, pen, log)
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 88, in beam_search
+    score = arr + pen * (1.0 / (rem_deg + 1))
+                         ~~~~^~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+[W200p0.0]   beam step 150/601 live=200 best_ep=963 (6.42 d/leg) [13s]
+Process Process-1:
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 128, in main
+    order = beam_search(neigh, tab, epochs, start, entry, m, W, pen, log)
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 88, in beam_search
+    score = arr + pen * (1.0 / (rem_deg + 1))
+                         ~~~~^~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+[W200p0.5]   beam step 150/601 live=200 best_ep=960 (6.40 d/leg) [14s]
+Process Process-2:
+Traceback (most recent call last):
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 128, in main
+    order = beam_search(neigh, tab, epochs, start, entry, m, W, pen, log)
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_beam.py", line 88, in beam_search
+    score = arr + pen * (1.0 / (rem_deg + 1))
+                         ~~~~^~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero

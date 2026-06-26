@@ -1,0 +1,8 @@
+[E-720] FAST insertion repair (order=cost, max_retime=80): base 557/601, 44 stranded (indeg 16..156)
+[E-720] base retimed: makespan 295.34d, exc 0/5
+  ins 1/44 city 348(indeg 165)@pos 537 +0.00d -> mk 295.34d exc 0 | 43 left [418s]
+  ins 2/44 city 467(indeg 65)@pos 533 +0.00d -> mk 295.34d exc 0 | 42 left [827s]
+  ins 3/44 city 32(indeg 166)@pos 546 +3.50d -> mk 298.83d exc 0 | 41 left [1236s]
+  ins 4/44 city 34(indeg 135)@pos 553 +3.37d -> mk 302.20d exc 0 | 40 left [1639s]
+  ins 5/44 city 788(indeg 16)@pos 527 +17.28d -> mk 319.48d exc 0 | 39 left [2036s]
+  ins 6/44 city 491(indeg 16)@pos 503 +0.85d -> mk 320.34d exc 0 | 38 left [2431s]

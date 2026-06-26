@@ -1,0 +1,10 @@
+[s0] FAITHFUL greedy (start 2, 601 cities, lam=0.0; bank 913@1.53; target ~240@0.4)
+[s1] FAITHFUL greedy (start 2, 601 cities, lam=0.05; bank 913@1.53; target ~240@0.4)
+[s1]   greedy 25/601 ep=28 (1.19 d/leg) lam=0.05 [23s c520]
+[s0]   greedy 25/601 ep=4 (0.18 d/leg) lam=0.0 [32s c3493]
+[s0]   greedy 50/601 ep=9 (0.18 d/leg) lam=0.0 [63s c6552]
+[s0]   greedy 75/601 ep=14 (0.19 d/leg) lam=0.0 [89s c8933]
+[s0]   greedy 100/601 ep=19 (0.19 d/leg) lam=0.0 [106s c10791]
+[s0]   greedy 125/601 ep=24 (0.19 d/leg) lam=0.0 [114s c12016]
+[s0]   greedy 150/601 ep=29 (0.19 d/leg) lam=0.0 [120s c12637]
+[s0]   greedy 175/601 ep=52 (0.30 d/leg) lam=0.0 [129s c12861]

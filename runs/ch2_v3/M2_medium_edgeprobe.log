@@ -1,0 +1,103 @@
+S2 control: compute_transfer(0,1,t=5,tof=0.01) -> dv=32061 (evaluator live)
+S2: scanning ToF in [0.001,0.0245] (UNSAMPLED), 32580 pairs x 30 epochs x 8 tofs; ~22min
+  [400/32580] cheap-in-shortToF=2 fast-exc=16 [1s]
+  [800/32580] cheap-in-shortToF=7 fast-exc=34 [3s]
+  [1200/32580] cheap-in-shortToF=10 fast-exc=52 [4s]
+  [1600/32580] cheap-in-shortToF=12 fast-exc=53 [5s]
+  [2000/32580] cheap-in-shortToF=12 fast-exc=54 [6s]
+  [2400/32580] cheap-in-shortToF=18 fast-exc=65 [7s]
+  [2800/32580] cheap-in-shortToF=20 fast-exc=76 [9s]
+  [3200/32580] cheap-in-shortToF=24 fast-exc=93 [10s]
+  [3600/32580] cheap-in-shortToF=26 fast-exc=110 [11s]
+  [4000/32580] cheap-in-shortToF=29 fast-exc=121 [12s]
+  [4400/32580] cheap-in-shortToF=33 fast-exc=136 [13s]
+  [4800/32580] cheap-in-shortToF=33 fast-exc=144 [14s]
+  [5200/32580] cheap-in-shortToF=33 fast-exc=152 [16s]
+  [5600/32580] cheap-in-shortToF=37 fast-exc=170 [17s]
+  [6000/32580] cheap-in-shortToF=37 fast-exc=176 [19s]
+  [6400/32580] cheap-in-shortToF=40 fast-exc=186 [20s]
+  [6800/32580] cheap-in-shortToF=41 fast-exc=200 [21s]
+  [7200/32580] cheap-in-shortToF=41 fast-exc=204 [22s]
+  [7600/32580] cheap-in-shortToF=47 fast-exc=217 [24s]
+  [8000/32580] cheap-in-shortToF=50 fast-exc=234 [25s]
+  [8400/32580] cheap-in-shortToF=50 fast-exc=235 [26s]
+  [8800/32580] cheap-in-shortToF=52 fast-exc=243 [27s]
+  [9200/32580] cheap-in-shortToF=53 fast-exc=257 [29s]
+  [9600/32580] cheap-in-shortToF=55 fast-exc=274 [30s]
+  [10000/32580] cheap-in-shortToF=59 fast-exc=289 [31s]
+  [10400/32580] cheap-in-shortToF=61 fast-exc=303 [32s]
+  [10800/32580] cheap-in-shortToF=67 fast-exc=320 [33s]
+  [11200/32580] cheap-in-shortToF=73 fast-exc=333 [34s]
+  [11600/32580] cheap-in-shortToF=73 fast-exc=336 [35s]
+  [12000/32580] cheap-in-shortToF=74 fast-exc=344 [36s]
+  [12400/32580] cheap-in-shortToF=77 fast-exc=354 [37s]
+  [12800/32580] cheap-in-shortToF=78 fast-exc=361 [39s]
+  [13200/32580] cheap-in-shortToF=80 fast-exc=374 [40s]
+  [13600/32580] cheap-in-shortToF=82 fast-exc=384 [41s]
+  [14000/32580] cheap-in-shortToF=84 fast-exc=386 [42s]
+  [14400/32580] cheap-in-shortToF=84 fast-exc=392 [44s]
+  [14800/32580] cheap-in-shortToF=87 fast-exc=409 [45s]
+  [15200/32580] cheap-in-shortToF=89 fast-exc=423 [46s]
+  [15600/32580] cheap-in-shortToF=89 fast-exc=428 [47s]
+  [16000/32580] cheap-in-shortToF=89 fast-exc=431 [49s]
+  [16400/32580] cheap-in-shortToF=92 fast-exc=441 [50s]
+  [16800/32580] cheap-in-shortToF=95 fast-exc=458 [51s]
+  [17200/32580] cheap-in-shortToF=98 fast-exc=479 [53s]
+  [17600/32580] cheap-in-shortToF=105 fast-exc=496 [54s]
+  [18000/32580] cheap-in-shortToF=107 fast-exc=512 [55s]
+  [18400/32580] cheap-in-shortToF=110 fast-exc=528 [56s]
+  [18800/32580] cheap-in-shortToF=118 fast-exc=548 [58s]
+  [19200/32580] cheap-in-shortToF=121 fast-exc=566 [59s]
+  [19600/32580] cheap-in-shortToF=124 fast-exc=584 [60s]
+  [20000/32580] cheap-in-shortToF=127 fast-exc=591 [61s]
+  [20400/32580] cheap-in-shortToF=129 fast-exc=604 [63s]
+  [20800/32580] cheap-in-shortToF=129 fast-exc=618 [64s]
+  [21200/32580] cheap-in-shortToF=131 fast-exc=627 [65s]
+  [21600/32580] cheap-in-shortToF=135 fast-exc=640 [66s]
+  [22000/32580] cheap-in-shortToF=135 fast-exc=645 [68s]
+  [22400/32580] cheap-in-shortToF=137 fast-exc=656 [69s]
+  [22800/32580] cheap-in-shortToF=142 fast-exc=682 [70s]
+  [23200/32580] cheap-in-shortToF=144 fast-exc=688 [72s]
+  [23600/32580] cheap-in-shortToF=144 fast-exc=696 [73s]
+  [24000/32580] cheap-in-shortToF=147 fast-exc=709 [74s]
+  [24400/32580] cheap-in-shortToF=152 fast-exc=720 [75s]
+  [24800/32580] cheap-in-shortToF=159 fast-exc=740 [76s]
+  [25200/32580] cheap-in-shortToF=161 fast-exc=745 [77s]
+  [25600/32580] cheap-in-shortToF=163 fast-exc=756 [79s]
+  [26000/32580] cheap-in-shortToF=166 fast-exc=761 [80s]
+  [26400/32580] cheap-in-shortToF=169 fast-exc=777 [81s]
+  [26800/32580] cheap-in-shortToF=179 fast-exc=802 [83s]
+  [27200/32580] cheap-in-shortToF=179 fast-exc=811 [84s]
+  [27600/32580] cheap-in-shortToF=180 fast-exc=813 [85s]
+  [28000/32580] cheap-in-shortToF=180 fast-exc=821 [87s]
+  [28400/32580] cheap-in-shortToF=180 fast-exc=830 [88s]
+  [28800/32580] cheap-in-shortToF=181 fast-exc=834 [89s]
+  [29200/32580] cheap-in-shortToF=184 fast-exc=861 [90s]
+  [29600/32580] cheap-in-shortToF=185 fast-exc=878 [91s]
+  [30000/32580] cheap-in-shortToF=186 fast-exc=881 [92s]
+  [30400/32580] cheap-in-shortToF=189 fast-exc=885 [94s]
+  [30800/32580] cheap-in-shortToF=190 fast-exc=892 [95s]
+  [31200/32580] cheap-in-shortToF=190 fast-exc=899 [96s]
+  [31600/32580] cheap-in-shortToF=195 fast-exc=916 [97s]
+  [32000/32580] cheap-in-shortToF=198 fast-exc=925 [98s]
+  [32400/32580] cheap-in-shortToF=207 fast-exc=949 [100s]
+
+=== S2 DONE: in the UNSAMPLED ToF<0.025 regime ===
+  CHEAP edges (dv<=100): 207/32580 pairs (the table MISSES these)
+  fast EXCEPTION edges (100<dv<=600): 965/32580
+    60->42: dv=19.9 at t=39.0 tof=0.0245d
+    42->60: dv=19.9 at t=39.0 tof=0.0245d
+    21->92: dv=28.0 at t=70.1 tof=0.0245d
+    92->21: dv=28.0 at t=70.1 tof=0.0245d
+    18->102: dv=30.9 at t=58.4 tof=0.0245d
+    102->18: dv=30.9 at t=58.4 tof=0.0245d
+    68->147: dv=32.6 at t=3.9 tof=0.0245d
+    147->68: dv=32.6 at t=3.9 tof=0.0245d
+    48->68: dv=35.3 at t=74.0 tof=0.0245d
+    68->48: dv=35.3 at t=74.0 tof=0.0245d
+    40->179: dv=36.6 at t=62.3 tof=0.0245d
+    179->40: dv=36.6 at t=62.3 tof=0.0245d
+    106->3: dv=36.8 at t=27.3 tof=0.0245d
+    3->106: dv=36.8 at t=27.3 tof=0.0245d
+    23->178: dv=38.2 at t=109.1 tof=0.0245d
+  -> A1 FALSIFIED: 207 cheap edges exist below the table's ToF floor -> order search ran on a TRUNCATED candidate set; rebuild table from ToF=0.001.

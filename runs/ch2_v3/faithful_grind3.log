@@ -1,0 +1,15 @@
+[s0] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s1] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s2] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s3] control: bank order official mk=112.9960 feas=True (expect 112.9960)
+[s2] it=10 cur=112.9960 best=112.9960 acc=1 T=0.495 [70s]
+[s1] it=10 cur=112.9960 best=112.9960 acc=2 T=0.495 [142s]
+[s1] it=20 cur=112.9960 best=112.9960 acc=2 T=0.490 [142s]
+[s0] it=10 cur=112.9960 best=112.9960 acc=3 T=0.495 [207s]
+[s1] it=30 cur=112.9960 best=112.9960 acc=3 T=0.485 [212s]
+[s2] it=20 cur=112.9960 best=112.9960 acc=3 T=0.490 [212s]
+[s3] it=10 cur=112.9960 best=112.9960 acc=3 T=0.495 [213s]
+[s0] it=20 cur=112.9960 best=112.9960 acc=5 T=0.490 [344s]
+[s0] it=30 cur=112.9960 best=112.9960 acc=5 T=0.485 [344s]
+[s2] it=30 cur=112.9960 best=112.9960 acc=5 T=0.485 [352s]
+[s3] it=20 cur=112.9960 best=112.9960 acc=5 T=0.490 [355s]

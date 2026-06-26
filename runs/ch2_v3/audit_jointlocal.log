@@ -1,0 +1,4 @@
+[AUDIT] positive control: greedy-official schedule of BANK order = 161.4480 feasible=True (bank official 112.996; greedy may over-report)
+[AUDIT] official CMA retime of BANK order = 161.4480 (expect ~112.996)
+[AUDIT] SCREEN 126 order-neighbors by greedy-official makespan ...
+  screened 20/126, best-screen=153.424 [251s]

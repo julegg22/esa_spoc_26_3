@@ -1,0 +1,8 @@
+[s3] [E-662] control: retime(bank)=None vs official 932.53 [71s, cache 7254]
+[s3] [ABORT] retime control off >2% — evaluator not faithful enough.
+[s0] [E-662] control: retime(bank)=None vs official 932.53 [73s, cache 7254]
+[s0] [ABORT] retime control off >2% — evaluator not faithful enough.
+[s1] [E-662] control: retime(bank)=None vs official 932.53 [74s, cache 7254]
+[s1] [ABORT] retime control off >2% — evaluator not faithful enough.
+[s2] [E-662] control: retime(bank)=None vs official 932.53 [75s, cache 7254]
+[s2] [ABORT] retime control off >2% — evaluator not faithful enough.

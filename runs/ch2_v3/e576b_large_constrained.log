@@ -1,0 +1,41 @@
+[E-576b] n=1051 bank=932.53 r1=424.62 | 14 starts x 4 lam = 56 combos, 4 workers
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: divide by zero encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: divide by zero encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: invalid value encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: divide by zero encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+  [1/56] start=492 lam=2.0 stuck [69s]
+  [2/56] start=492 lam=0.5 stuck [97s]
+  [3/56] start=492 lam=1.0 stuck [97s]
+  [4/56] start=492 lam=0.0 stuck [98s]
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: invalid value encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+  [5/56] start=134 lam=0.5 stuck [63s]
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: invalid value encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+  [6/56] start=134 lam=1.0 stuck [66s]
+  [7/56] start=134 lam=2.0 stuck [66s]
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: divide by zero encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+  [8/56] start=134 lam=0.0 stuck [96s]
+  [9/56] start=163 lam=0.5 stuck [36s]
+  [10/56] start=163 lam=1.0 stuck [37s]
+  [11/56] start=163 lam=2.0 stuck [37s]
+  [12/56] start=163 lam=0.0 stuck [70s]
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e576b_large_constrained_greedy.py:56: RuntimeWarning: invalid value encountered in scalar divide
+  score = tof / (1.0 + lam / (rem_deg[j] + 1.0))
+  [13/56] start=89 lam=0.0 stuck [61s]
+  [14/56] start=89 lam=0.5 stuck [62s]
+  [15/56] start=89 lam=1.0 stuck [63s]
+  [16/56] start=89 lam=2.0 stuck [62s]
+  [17/56] start=987 lam=0.5 stuck [64s]
+  [18/56] start=987 lam=0.0 stuck [71s]
+  [19/56] start=987 lam=1.0 stuck [72s]
+  [20/56] start=987 lam=2.0 stuck [67s]
+  [21/56] start=947 lam=2.0 stuck [37s]
+  [22/56] start=947 lam=0.0 stuck [70s]
+  [23/56] start=947 lam=0.5 stuck [92s]
+  [24/56] start=947 lam=1.0 stuck [93s]
