@@ -93,3 +93,18 @@ at table-optimistic makespan). **The remaining hard problem is the genuine TD-TS
 all 601 on short-tof edges.** Enablers built (faithful evaluator + window table); next lever = LKH/Concorde on
 the faithful short-tof cost (the competitor's inferred method, GLKH available from E-718), or a metaheuristic
 that optimizes phasing globally rather than greedily. Not solved by greedy construction.
+
+## Audit #3 (user: "why never a complete solution?") — retimer was long-tof-blind; LKH order genuinely TD-infeasible
+
+User pressed on the central worry: we have a complete 932d bank but NO method this session threads even 400.
+Findings: (1) **Our faithful precompute was short-tof-only (TOF_HI=1.3d) but the bank uses tof up to 6.71d (17%
+of legs >1.3d)** — so every faithful short-tof method was STRUCTURALLY unable to complete. (2) **Our RETIMER
+was long-tof-blind** (fine-scan med±0.8) — it stranded the bank's OWN order 12x; fixed to full-tof -> bank
+order now threads **598/601 (3 strands = satellite gaps), makespan 1104d** (near-reproduces the bank; my
+earliest-arrival retime vs the bank's timing-DP gives 1104 vs 932). So we CAN reproduce the bank. (3) BUT the
+static short-tof **LKH order is genuinely TD-INFEASIBLE: 206 strands even with the fixed retimer** (not an
+artifact) — the static min-tof order doesn't phase. This is the real static->TD gap; the epoch-aware iterated
+LKH (E-726g) is the fix-attempt but E-562's analogous table-iterate FLOORED at 932. **Net: the bank recipe
+(full-tof OR-Tools + epoch-aware iterate + timing-DP) reproduces ~932d=rank-2; rank-1 (424d) = the global
+PHASED short-tof TD-TSP remains the genuine unsolved hard problem.** The repeated optimism->refutation was, in
+EVERY case, a partial/optimistic evaluator (table makespan, short-tof windows, long-tof-blind retimer).
