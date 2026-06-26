@@ -1,0 +1,9 @@
+[E-692] init ...
+[E-692] CMA-ES archipelago (6 islands x gen 250) on 6 expensive non-circular pairs
+          pair    bank    archi       Δ  beats? [   t]
+  ( 396, 225)    5392     5392      +0      no [85s]
+  ( 328, 257)    5127     5127      -0      no [169s]
+  ( 134, 273)    4840     4840      -0      no [253s]
+  (  16, 238)    4488     4488      -0      no [343s]
+/home/julian/micromamba/envs/spoc26/lib/python3.13/multiprocessing/resource_tracker.py:400: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown: {'/loky-101240-nd39gkiu', '/loky-101240-hpl4vna9', '/loky-101240-5on1jy7u', '/loky-101240-rglz_im5', '/loky-101240-ci7b3m7z', '/loky-101240-bu7k9ydo'}
+  warnings.warn(

@@ -1,0 +1,16 @@
+[E-723] FIXED-ORDER time-beam: order len 601, K=4 W=300 maxwait=120d, full graph 0-950d. Greedy strands this order at 111; bank makespan=932.5
+  leg 1/600: |states|=4 min_arr=1.0d (d/leg 0.970) [0s]
+  leg 51/600: |states|=215 min_arr=93.8d (d/leg 1.839) [44s]
+  leg 101/600: |states|=286 min_arr=161.0d (d/leg 1.594) [103s]
+  leg 151/600: |states|=223 min_arr=210.6d (d/leg 1.395) [162s]
+  leg 201/600: |states|=207 min_arr=342.2d (d/leg 1.702) [249s]
+  leg 251/600: |states|=254 min_arr=387.7d (d/leg 1.545) [306s]
+  leg 301/600: |states|=209 min_arr=455.9d (d/leg 1.515) [358s]
+  leg 351/600: |states|=30 min_arr=533.2d (d/leg 1.519) [430s]
+  leg 401/600: |states|=62 min_arr=677.4d (d/leg 1.689) [528s]
+  leg 451/600: |states|=279 min_arr=772.7d (d/leg 1.713) [593s]
+  leg 501/600: |states|=300 min_arr=800.0d (d/leg 1.597) [654s]
+  leg 551/600: |states|=239 min_arr=842.6d (d/leg 1.529) [761s]
+  STRAND at leg 584 (181->739); reached depth 585/601 [813s]
+
+[E-723] order strands (16) even with K=4 window-branching at depth 585; the ORDER (not just timing) blocks it -> need order search with this time-beam evaluator.

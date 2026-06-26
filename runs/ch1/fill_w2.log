@@ -1,0 +1,32 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-701 FILL] restarts=5 gen=180 shard=2/3
+[E-701 FILL] 74 matched empty-slot triples (|iE-iL| range 0.013..1.179 rad)
+[PC] WARNING: easiest triple (301,32) did not validate at low budget (may need full budget) — continuing
+  [1/24] FILL (167,300,d345) |di|=0.175 -> dv=4165 mass=776 kg [274s]
+  [2/24] (74,308) |di|=0.236 -> no valid transfer [394s]
+  [3/24] FILL (332,380,d378) |di|=0.419 -> dv=4594 mass=609 kg [691s]
+  [4/24] FILL (47,368,d306) |di|=0.450 -> dv=4611 mass=143 kg [1056s]
+  [5/24] FILL (73,358,d324) |di|=0.491 -> dv=4475 mass=653 kg [1249s]
+  [6/24] FILL (234,357,d361) |di|=0.571 -> dv=4645 mass=590 kg [1432s]
+  [7/24] FILL (243,301,d365) |di|=0.599 -> dv=4284 mass=727 kg [1687s]
+  [8/24] FILL (384,58,d396) |di|=0.633 -> dv=4227 mass=550 kg [1937s]
+  [9/24] FILL (210,383,d356) |di|=0.652 -> dv=4523 mass=635 kg [2160s]
+  [10/24] FILL (370,341,d391) |di|=0.684 -> dv=4656 mass=586 kg [2531s]
+  [11/24] FILL (105,313,d330) |di|=0.713 -> dv=4111 mass=799 kg [2784s]
+  [12/24] FILL (125,329,d338) |di|=0.780 -> dv=5135 mass=328 kg [2953s]
+  [13/24] FILL (223,360,d358) |di|=0.826 -> dv=4294 mass=405 kg [3184s]
+  [14/24] FILL (361,327,d388) |di|=0.846 -> dv=4535 mass=630 kg [3494s]
+  [15/24] FILL (375,385,d392) |di|=0.856 -> dv=4321 mass=712 kg [3619s]
+  [16/24] FILL (228,389,d360) |di|=0.888 -> dv=4911 mass=499 kg [3805s]
+  [17/24] FILL (177,138,d348) |di|=0.910 -> dv=4240 mass=43 kg [4130s]
+  [18/24] FILL (366,132,d389) |di|=0.921 -> dv=4643 mass=520 kg [4395s]
+  [19/24] FILL (153,317,d341) |di|=0.958 -> dv=4277 mass=334 kg [4607s]
+  [20/24] FILL (235,398,d362) |di|=0.996 -> dv=4519 mass=174 kg [4943s]
+  [21/24] FILL (53,134,d321) |di|=1.019 -> dv=4411 mass=333 kg [5339s]
+  [22/24] FILL (204,118,d355) |di|=1.030 -> dv=4171 mass=773 kg [5739s]
+  [23/24] FILL (321,375,d374) |di|=1.071 -> dv=3893 mass=860 kg [6079s]
+  [24/24] FILL (120,13,d335) |di|=1.157 -> dv=4522 mass=581 kg [6348s]
+
+[E-701 FILL] shard 2 DONE: 23 slots filled, +12262 kg [6348s]

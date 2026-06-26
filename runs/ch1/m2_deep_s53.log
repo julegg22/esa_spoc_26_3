@@ -1,0 +1,5 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-678 s53] LP-rounded start=69503.05 sel=8589 | bank=73253.48 leader=73714.03 | random-destroy 0.62
+Interrupted system call ; error code 4

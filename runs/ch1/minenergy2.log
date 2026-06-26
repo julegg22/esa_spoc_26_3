@@ -1,0 +1,5 @@
+[E-698] init ...
+[E-698] test: per-pair min-energy solver on 3 most-expensive pairs
+          pair    eL    bank      nrg     Δdv    +kg  beats? [   t]
+  --- (241,50) bank=6617 ---
+      rs0: feas 7015, official-refine landed 13000 (>1.2e4 = still off-window)

@@ -1,0 +1,6 @@
+[E-698] init ...
+[E-698] test: per-pair min-energy solver on 4 most-expensive pairs
+          pair    eL    bank      nrg     Δdv    +kg  beats? [   t]
+  --- (241,50) bank=6617 ---
+      rs0: feas_dv=6199 but official REJECTED (precision/window)
+      rs1: feas_dv=8134 but official REJECTED (precision/window)

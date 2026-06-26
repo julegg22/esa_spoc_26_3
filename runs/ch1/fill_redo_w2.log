@@ -1,0 +1,8 @@
+[E-701 FILL] restarts=12 gen=200 shard=2/3
+[E-701 FILL] 6 matched empty-slot triples (|iE-iL| range 0.120..1.233 rad)
+[PC] easiest (173,116) -> official dv=4711 mass=245 OK
+[RESUME] 23 slots already solved
+  [1/2] FILL (74,308,d325) |di|=0.236 -> dv=4233 mass=748 kg [486s]
+  [2/2] FILL (165,88,d344) |di|=1.233 -> dv=4684 mass=42 kg [1270s]
+
+[E-701 FILL] shard 2 DONE: 2 slots filled, +790 kg [1270s]

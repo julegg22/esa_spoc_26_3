@@ -1,0 +1,6 @@
+[E-696] init ...
+          pair bank_dv  bsfix_dv       Δ  beats? [   t]
+  ( 241,  50)    6617      FAIL [154s]
+  ( 139,  31)    6532      FAIL [290s]
+  ( 354, 305)    5926      FAIL [369s]
+  ( 334, 312)    5906      FAIL [441s]

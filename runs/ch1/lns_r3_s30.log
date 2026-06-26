@@ -1,0 +1,9 @@
+[E-678 s30] current-bank start=73031.29 sel=9139 | bank=72206.52 leader=73714.03 | random-destroy 0.55
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_lns_from_lp.py", line 87, in <module>
+    main(int(sys.argv[1]) if len(sys.argv) > 1 else 600, int(sys.argv[2]) if len(sys.argv) > 2 else 0, drop)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_lns_from_lp.py", line 53, in main
+    dropped = rng.choice(sel, size=drop_n, replace=False)
+  File "numpy/random/_generator.pyx", line 869, in numpy.random._generator.Generator.choice
+ValueError: a cannot be empty unless no samples are taken

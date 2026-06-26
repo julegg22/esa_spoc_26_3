@@ -1,0 +1,17 @@
+[E-688] init ...
+[E-688] continuation on 10 highest-mid-burn bank pairs (dv1->0, re-converge dv0)
+          pair bank_tot    dv1 | total at alpha=  1.0   0.75   0.5   0.25   0.0     verdict
+  (  84, 126)     5229   1706 |   5229    FAIL    FAIL    FAIL    FAIL      infeas
+  (  83, 148)     5196   1706 |   5196    FAIL    FAIL    FAIL    FAIL      infeas
+  ( 393,  75)     5350   1706 |   5350    FAIL    FAIL    FAIL    FAIL      infeas
+  ( 151, 110)     5443   1704 |   5443    FAIL    FAIL    FAIL    FAIL      infeas
+  (  46, 144)     5308   1704 |   5308    FAIL    FAIL    FAIL    FAIL      infeas
+  ( 209,  23)     5295   1704 |   5295    FAIL    FAIL    FAIL    FAIL      infeas
+  ( 148,  38)     5276   1703 |   5276    FAIL    FAIL    FAIL    FAIL      infeas
+  (  89,  47)     5490   1703 |   5490    FAIL   16577    FAIL   15894     optimal
+  (  91,  69)     5325   1698 |   5325    FAIL    FAIL   14989    FAIL      infeas
+  ( 134, 273)     4840   1607 |   4840    FAIL   14505   10929    FAIL      infeas
+
+[E-688] VERDICT: 0/10 pairs improve as dv1->0 (mid-burn is a CRUTCH)
+  many CRUTCH -> +86-100k lever real -> build the clean-2-impulse fleet re-solve
+  ~all optimal -> mid-burn needed -> lever closes, gap is elsewhere

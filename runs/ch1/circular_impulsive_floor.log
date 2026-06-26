@@ -1,0 +1,9 @@
+[E-683] init: heyoka BCP + orbits ...
+[E-683] 176 circular(eL<0.1) bank pairs; FRESH (non-bank) impulsive search on 6 most expensive
+  per-pair Hohmann-multiphasing + random seeds, sade gen=150 (original short-time bounds)
+  DECISIVE: does fresh search beat the bank's circular dv (toward ~3975 hand-estimate)?
+          pair  bank_dv  fresh_dv     Δdv  beats? [   t]
+  ( 241,  50)     6617   1000000 -993383      no [469s]
+  ( 139,  31)     6532   1000000 -993468      no [910s]
+  ( 354, 305)     5926   1000000 -994074      no [1347s]
+  ( 334, 312)     5906   1000000 -994094      no [1801s]

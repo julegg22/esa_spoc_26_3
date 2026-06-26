@@ -1,0 +1,19 @@
+[E-687] init ...
+[E-687] 150 non-circular bank pairs; testing 12 with the LARGEST mid-burn (dv1)
+          pair bank_tot bank_dv1  2imp_tot    Δtot  beats?
+  ( 134, 273)     4840     1607  DC-FAIL (lam 3684)
+  ( 315, 224)     4354     1085      7017   -2663      no
+  (  48, 203)     4332     1046  DC-FAIL (lam 3977)
+  (  29, 265)     4179     1028  DC-FAIL (lam 3702)
+  (   5, 192)     4158      981  DC-FAIL (lam 3810)
+  ( 212, 233)     4194      981      5126    -932      no
+  ( 172, 219)     4109      963      4403    -295      no
+  ( 126, 286)     4114      956      7017   -2903      no
+  ( 396, 225)     5392      922  DC-FAIL (lam 3987)
+  (   7, 155)     4237      914  DC-FAIL (lam 3846)
+  (  77, 248)     4067      904  DC-FAIL (lam 3680)
+  (  16, 238)     4488      903  DC-FAIL (lam 4138)
+
+[E-687] VERDICT: 0/12 beaten by clean 2-impulse; mean Δtot=0 m/s
+  >0 -> mid-burn IS waste -> +86k lever real (scale 2-impulse re-solve fleet-wide)
+  ~0 -> mid-burn is needed (the 3-impulse is genuinely optimal) -> lever closes

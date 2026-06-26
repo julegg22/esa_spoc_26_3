@@ -1,0 +1,5 @@
+[E-694] init ...
+[E-694] perilune-capture probe: best achievable dv0+dv2 (NM, perilune->a) vs bank, circular pairs
+          pair    eL bank_dv  peri_dv  peri_km  beats? [   t]
+  ( 241,  50)  0.00    6617  NO-PERI [135s]
+  ( 139,  31)  0.00    6532  NO-PERI [269s]

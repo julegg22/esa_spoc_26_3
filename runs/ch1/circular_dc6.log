@@ -1,0 +1,13 @@
+[E-685] init: heyoka BCP + orbits ...
+[E-685] 6-DOF midcourse DC on 6 expensive circular pairs; splits 0.3/0.5/0.7
+          pair  bank_dv lam_seed    dc6_dv Δvs_bank  beats? [   t]
+  ( 241,  50)     6617     4008  DC6-FAIL               no [11s]
+  ( 139,  31)     6532     3886  DC6-FAIL               no [23s]
+  ( 354, 305)     5926     3987  DC6-FAIL               no [34s]
+  ( 334, 312)     5906     3990  DC6-FAIL               no [45s]
+  ( 244, 105)     5828     4076  DC6-FAIL               no [56s]
+  ( 249,  22)     5768     3735  DC6-FAIL               no [65s]
+
+[E-685] VERDICT: 0/6 expensive circular pairs beaten by 6-DOF DC; mean Δdv=0
+  >0 -> bank's expensive circular captures are SOLVER failures -> lever PROVEN, scale + guard-bank
+  0  -> cheap Lambert NOT BCP-realizable (Sun cost real) -> bank near floor, lever closes

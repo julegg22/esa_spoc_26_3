@@ -1,0 +1,4 @@
+[E-701 FLEET] restarts=4 gen=180 dv_thresh=3200.0
+[PC] bank row (0,0) dv=4063 mass=819.4 -> reproduces fitness OK
+[E-701 FLEET] 289 expensive pairs (bank_dv>3200.0) of 326 filled
+  [1/289] (241,50) bank dv=6617 m=71 -> dv=4447 m=663 (+592 kg) [164s]

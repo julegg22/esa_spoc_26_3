@@ -1,0 +1,5 @@
+[E-681] testing 10 HIGHEST-ΔV bank pairs with the full 12-DOF BCP-direct UDP (sade)
+            pair  bank_dV  bank_kg    UDP_dV   UDP_kg      Δkg  <3940?
+  ( 241,  50):     6617       71      6617       71       -0      no  [213s]
+  ( 139,  31):     6532       87      6532       87       +0      no  [410s]
+  ( 354, 305):     5926      216      5926      216       -0      no  [619s]

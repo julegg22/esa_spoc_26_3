@@ -1,0 +1,23 @@
+[E-682] init: compiling heyoka BCP propagator + loading orbits ...
+[E-682] circular-capture probe: 176 circular(eL<0.1) bank pairs; testing 3 most expensive
+  extended bounds T1<=~150d T2<=~50d (vs impulsive <=43d); fresh global search, gen=90
+  DECISIVE: any pair reach sub-4000 m/s (toward leader 3255)?  [Tunit=4.348d]
+          pair    eL  imp_dv   ext_dv  ext_dt  <4000? [   t]
+    .. (241,50) gen 15/90 best_dv=1000000 (imp 6617) dt=  nand [102s]
+    .. (241,50) gen 30/90 best_dv=1000000 (imp 6617) dt=  nand [190s]
+    .. (241,50) gen 45/90 best_dv=1000000 (imp 6617) dt=  nand [266s]
+    .. (241,50) gen 60/90 best_dv=1000000 (imp 6617) dt=  nand [339s]
+    .. (241,50) gen 75/90 best_dv=1000000 (imp 6617) dt=  nand [403s]
+    .. (241,50) gen 90/90 best_dv=1000000 (imp 6617) dt=  nand [474s]
+  ( 241,  50) 0.004    6617  1000000    nand      no [474s]
+    .. (139,31) gen 15/90 best_dv=1000000 (imp 6532) dt=  nand [552s]
+    .. (139,31) gen 30/90 best_dv=1000000 (imp 6532) dt=  nand [638s]
+    .. (139,31) gen 45/90 best_dv=1000000 (imp 6532) dt=  nand [715s]
+    .. (139,31) gen 60/90 best_dv=1000000 (imp 6532) dt=  nand [805s]
+    .. (139,31) gen 75/90 best_dv=1000000 (imp 6532) dt=  nand [874s]
+    .. (139,31) gen 90/90 best_dv=1000000 (imp 6532) dt=  nand [957s]
+  ( 139,  31) 0.003    6532  1000000    nand      no [957s]
+    .. (354,305) gen 15/90 best_dv=1000000 (imp 5926) dt=  nand [1034s]
+    .. (354,305) gen 30/90 best_dv=1000000 (imp 5926) dt=  nand [1090s]
+    .. (354,305) gen 45/90 best_dv=1000000 (imp 5926) dt=  nand [1183s]
+    .. (354,305) gen 60/90 best_dv=1000000 (imp 5926) dt=  nand [1258s]

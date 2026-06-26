@@ -1,0 +1,6 @@
+[E-693] init ...
+[E-693] backward-shooting on 8 most-expensive bank pairs (tangential capture by construction)
+          pair    eL bank_dv bank_kg    bs_dv   bs_kg     Δkg  beats? [   t]
+  ( 241,  50)  0.00    6617      71     FAIL [212s]
+  ( 139,  31)  0.00    6532      87     FAIL [296s]
+  ( 354, 305)  0.01    5926     216     FAIL [379s]

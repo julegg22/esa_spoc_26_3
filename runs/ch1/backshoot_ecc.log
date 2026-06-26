@@ -1,0 +1,11 @@
+[E-701] backshoot-ECC: eccentric departure solver (the real fix)
+[E-701] 3 most-expensive pairs (arrival exact; departure eccentric-aware)
+  --- (241,50) bank=6617 eL=0.004 eE=3.32e-03 ---
+      rs0: feas 4797 -> OFFICIAL VALID dv=4797 mass=537
+      rs1: feas 10096, off-rej f=3.17e+02
+      rs2: feas 5435, off-rej f=0.00e+00
+      rs3: feas 4315 -> OFFICIAL VALID dv=4315 mass=715
+      rs4: feas 8180, off-rej f=1.58e+02
+      rs5: feas 4713, off-rej f=4.71e+03
+      rs6: feas 4609, off-rej f=4.61e+03
+Interrupted system call ; error code 4

@@ -1,0 +1,4 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-724-bank] seed: makespan 1489.9d strands 12 obj 2089.9 (rank-1<425). iters=4000 W=50 [345s warmup]

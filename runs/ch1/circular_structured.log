@@ -1,0 +1,13 @@
+[E-684] init: heyoka BCP + orbits ...
+[E-684] 90 expensive circular(eL<0.1,dv>=4800) bank pairs; structured re-solve on 6
+          pair  bank_dv  struct_dv     Δdv  beats? [    t]
+  ( 241,  50)     6617    DC-FAIL (lambert seed dv=4008)      no [3s]
+  ( 139,  31)     6532    DC-FAIL (lambert seed dv=3886)      no [8s]
+  ( 354, 305)     5926    DC-FAIL (lambert seed dv=3987)      no [11s]
+  ( 334, 312)     5906    DC-FAIL (lambert seed dv=3990)      no [16s]
+  ( 244, 105)     5828    DC-FAIL (lambert seed dv=4076)      no [22s]
+  ( 249,  22)     5768    DC-FAIL (lambert seed dv=3735)      no [24s]
+
+[E-684] VERDICT: 0/6 expensive circular pairs beaten by the structured solver; mean Δdv=0
+  >0 -> per-pair re-solve headroom on circular captures (tractable lever, guard-bank + scale)
+  0  -> bank at structured per-pair floor -> expensive circular pairs intrinsically costly -> lever is RE-ASSIGNMENT

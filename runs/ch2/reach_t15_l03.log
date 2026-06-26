@@ -1,0 +1,13 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-722] reach-beam W=160 K=18 thresh=15 (|HARD|=2) LAM=0.3 Crit=5; n=601; 8 seed(s)
+[E-722] positive control: depth1 -> 135 successors [0s]
+  depth 2: |beam|=112 best_depth=2 min_t=0.0d (d/leg 0.036) | max_hard_in_beam=1/2 [0s]
+  depth 3: |beam|=160 best_depth=3 min_t=0.1d (d/leg 0.055) | max_hard_in_beam=0/2 [14s]
+  depth 4: |beam|=160 best_depth=4 min_t=0.2d (d/leg 0.061) | max_hard_in_beam=0/2 [30s]
+  depth 5: |beam|=160 best_depth=5 min_t=0.5d (d/leg 0.134) | max_hard_in_beam=0/2 [45s]
+  depth 21: |beam|=160 best_depth=21 min_t=4.3d (d/leg 0.215) | max_hard_in_beam=0/2 [310s]
+  depth 41: |beam|=160 best_depth=41 min_t=8.4d (d/leg 0.210) | max_hard_in_beam=0/2 [654s]
+  depth 61: |beam|=160 best_depth=61 min_t=12.3d (d/leg 0.205) | max_hard_in_beam=0/2 [1052s]
+  depth 81: |beam|=160 best_depth=81 min_t=17.1d (d/leg 0.213) | max_hard_in_beam=0/2 [1508s]

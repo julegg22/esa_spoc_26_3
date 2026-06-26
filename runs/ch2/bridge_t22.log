@@ -1,0 +1,24 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-722b] main tour 564 cities, makespan 333.4d strands 0; cluster to bridge = 37; Wsub=30
+  splice@5 (t=1d): detour covers 1/37 -> tour 565 cities, makespan 16378.9d strands 313 (threaded 252) [1s]
+  splice@19 (t=4d): detour covers 1/37 -> tour 565 cities, makespan 15385.5d strands 294 (threaded 271) [3s]
+  splice@33 (t=7d): detour covers 1/37 -> tour 565 cities, makespan 13937.5d strands 264 (threaded 301) [4s]
+  splice@47 (t=10d): detour covers 1/37 -> tour 565 cities, makespan 13937.5d strands 264 (threaded 301) [6s]
+  splice@62 (t=13d): detour covers 1/37 -> tour 565 cities, makespan 13937.5d strands 265 (threaded 300) [7s]
+  splice@76 (t=16d): detour covers 1/37 -> tour 565 cities, makespan 13419.5d strands 254 (threaded 311) [9s]
+  splice@90 (t=19d): detour covers 1/37 -> tour 565 cities, makespan 13419.5d strands 254 (threaded 311) [10s]
+  splice@104 (t=22d): detour covers 1/37 -> tour 565 cities, makespan 13419.5d strands 254 (threaded 311) [12s]
+  splice@119 (t=26d): detour covers 1/37 -> tour 565 cities, makespan 10213.3d strands 190 (threaded 375) [13s]
+  splice@133 (t=31d): detour covers 9/37 -> tour 573 cities, makespan 10876.5d strands 203 (threaded 370) [16s]
+  splice@147 (t=43d): detour covers 7/37 -> tour 571 cities, makespan 10223.5d strands 191 (threaded 380) [26s]
+  splice@162 (t=51d): detour covers 12/37 -> tour 576 cities, makespan 9570.7d strands 179 (threaded 397) [35s]
+  splice@176 (t=53d): detour covers 12/37 -> tour 576 cities, makespan 9570.7d strands 179 (threaded 397) [45s]
+  splice@190 (t=56d): detour covers 12/37 -> tour 576 cities, makespan 9570.7d strands 179 (threaded 397) [55s]
+  splice@204 (t=58d): detour covers 12/37 -> tour 576 cities, makespan 9579.8d strands 181 (threaded 395) [65s]
+  splice@219 (t=61d): detour covers 12/37 -> tour 576 cities, makespan 9579.8d strands 181 (threaded 395) [76s]
+  splice@233 (t=65d): detour covers 12/37 -> tour 576 cities, makespan 8996.4d strands 169 (threaded 407) [91s]
+  splice@247 (t=67d): detour covers 12/37 -> tour 576 cities, makespan 8996.4d strands 169 (threaded 407) [105s]
+  splice@262 (t=70d): detour covers 11/37 -> tour 575 cities, makespan 8664.7d strands 163 (threaded 412) [118s]
+  splice@276 (t=74d): detour covers 12/37 -> tour 576 cities, makespan 9236.5d strands 176 (threaded 400) [132s]

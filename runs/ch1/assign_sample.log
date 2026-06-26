@@ -1,0 +1,5 @@
+[E-704] 391/400 re-matched; sampling 12 to realize
+[E-704] mean|iE-iL| bank 18.63 -> opt 13.45 deg
+  E392: bank(l394)=796 -> remix(l391)=560 (Δ-236) [338s]
+  E7: bank(l155)=747 -> remix(l40)=729 (Δ-17) [704s]
+  E241: bank(l50)=663 -> remix(l188)=662 (Δ-1) [931s]

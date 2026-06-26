@@ -1,0 +1,5 @@
+[E-691] init ...
+[E-691] bank total for (396,225) = 5392 m/s
+[E-691] (396,225) N=8 tof=50d seed_lam=3987 | seed constraint-norm=3.26e+00 (continuity ok, terminal violated)
+[E-691] multi-shoot done [36s]: total_dv=3612 m/s | constraint-norm 3.3e+00->1.0e-04  (3+ orders => CONVERGENCE FIX WORKS)
+  ★ POLISHED + OFFICIALLY VALID: terminal 0.00km | total_dv=7018 m/s | mass=1 kg  (bank-dv was higher) -> 2-IMPULSE FLOOR REALIZED

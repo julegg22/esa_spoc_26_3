@@ -1,0 +1,13 @@
+[E-699] init backward-shooting global solver ...
+[E-699] backward-global on 3 most-expensive pairs (arrival EXACT by construction)
+  --- (241,50) bank=6617 eL=0.004 ---
+      rs0: feas 13003, official rejected
+      rs1: feas 13062, official rejected
+      rs2: feas 13000, official rejected
+      rs3: feas 13000, official rejected
+      rs4: feas 13000, official rejected
+      rs5: feas 13000, official rejected
+      rs6: feas 13720, official rejected
+      rs7: feas 13011, official rejected
+  (241,50) bank=6617 -> FAIL [175s]
+  --- (139,31) bank=6532 eL=0.003 ---

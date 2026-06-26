@@ -1,0 +1,7 @@
+[E-698] init ...
+[E-698] test: per-pair min-energy solver on 1 most-expensive pairs
+          pair    eL    bank      nrg     Δdv    +kg  beats? [   t]
+  --- (241,50) bank=6617 ---
+  ( 241,  50)  0.00    6617     FAIL [195s]
+
+[E-698] VERDICT: 0/1 beaten; +0 kg on these pairs

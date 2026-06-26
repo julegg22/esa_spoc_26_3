@@ -1,0 +1,14 @@
+[E-707] 196 short(<3d)+high-ΔV(>4000) transfers; sampling 10 with tof_ub=30.0 nondim (~130d)
+  E308,L319: cur ΔV=4127 -> long ΔV=4113 (Δ-14; mass 792->798) [408s]
+  E43,L393: cur ΔV=4000 -> long ΔV=4136 (Δ+136; mass 847->788) [783s]
+  E178,L59: cur ΔV=4211 -> long ΔV=4127 (Δ-84; mass 757->792) [1412s]
+  E191,L102: cur ΔV=4272 -> long ΔV=4243 (Δ-29; mass 732->744) [1904s]
+  E66,L108: cur ΔV=4444 -> long ΔV=4223 (Δ-221; mass 664->752) [2345s]
+  E145,L351: cur ΔV=4937 -> long ΔV=4755 (Δ-182; mass 491->552) [2724s]
+  E125,L329: cur ΔV=5135 -> long ΔV=4566 (Δ-569; mass 428->619) [3015s]
+  E53,L134: cur ΔV=4411 -> long ΔV=4754 (Δ+342; mass 677->552) [3393s]
+  E310,L64: cur ΔV=4554 -> long ΔV=4743 (Δ+189; mass 623->556) [3784s]
+  E244,L105: cur ΔV=4806 -> long ΔV=4331 (Δ-475; mass 534->709) [4282s]
+
+[E-707] 5/10 reduced ΔV; mean ΔV 4490 -> 4399 (Δ-91/transfer)
+[E-707] -> long tof does NOT reduce ΔV; the short-transfer ΔV is near the BCP floor for these geometries.

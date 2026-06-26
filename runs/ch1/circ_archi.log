@@ -1,0 +1,9 @@
+[E-695] init ...
+          pair    bank    archi       Δ  beats? [   t]
+  ( 241,  50)    6617     6617      -0      no [88s]
+  ( 139,  31)    6532     6532      +0      no [177s]
+  ( 354, 305)    5926     5926      -0      no [268s]
+  ( 334, 312)    5906     5906      -0      no [356s]
+
+[E-695] VERDICT: 0/4 expensive circular pairs beaten
+  >0 -> circular captures WERE never optimized -> the floored conclusion was a SOLVER BUG -> lever ALIVE

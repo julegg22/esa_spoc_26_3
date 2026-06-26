@@ -1,0 +1,2 @@
+[E-726b] faithful coverage beam W_core=80 W_cov=60 K=18 |RARE|=120 Radd=8; n=601; 8 seeds
+  depth 2: |beam|=97 best_depth=2 min_t=0.1d (d/leg 0.061) edges=347 [445s]

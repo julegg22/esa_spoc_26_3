@@ -1,0 +1,11 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-701 FILL] restarts=12 gen=200 shard=0/3
+[E-701 FILL] 6 matched empty-slot triples (|iE-iL| range 0.120..1.233 rad)
+[PC] WARNING: easiest triple (173,116) did not validate at low budget (may need full budget) — continuing
+[RESUME] 22 slots already solved
+  [1/2] FILL (173,116,d346) |di|=0.120 -> dv=4465 mass=245 kg [782s]
+  [2/2] FILL (257,2,d366) |di|=0.802 -> dv=4267 mass=734 kg [1659s]
+
+[E-701 FILL] shard 0 DONE: 2 slots filled, +979 kg [1659s]

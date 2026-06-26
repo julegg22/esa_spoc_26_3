@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_matching_lns_warmbank.py", line 23, in <module>
+    from esa_spoc_26.ch1_matching import coop_mip_lns, load_instance
+ModuleNotFoundError: No module named 'esa_spoc_26.ch1_matching'

@@ -1,0 +1,3 @@
+[E-678 s52] LP-rounded start=69503.05 sel=8589 | bank=73253.48 leader=73714.03 | random-destroy 0.6
+[E-678 s52] it=100 cur=64002.81 best=69503.05 [1458s]
+Interrupted system call ; error code 4

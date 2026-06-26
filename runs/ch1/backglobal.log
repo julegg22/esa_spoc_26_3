@@ -1,0 +1,9 @@
+[E-699] init backward-shooting global solver ...
+[E-699] backward-global on 6 most-expensive pairs (arrival EXACT by construction)
+  --- (241,50) bank=6617 eL=0.004 ---
+      rs0: infeasible 14926
+      rs1: infeasible 13000
+      rs2: infeasible 13000
+      rs3: infeasible 14435
+      rs4: infeasible 13000
+      rs5: infeasible 13018

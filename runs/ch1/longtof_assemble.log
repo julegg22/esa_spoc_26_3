@@ -1,0 +1,6 @@
+[E-708-ASM] bank 359683 kg feasible=True
+[E-708-ASM] 114 improved extended-tof rows
+[E-708-ASM] swapped 114 extended-tof rows
+[E-708-ASM] raw (pre-idd-reopt): None feasible=False
+[E-708-ASM] FINAL (extended-tof + idd-reopt): 361013.548649371 feasible=True gain +1330
+[E-708-ASM] GUARD-BANKED 359683 -> 361014 kg (round-trip 361014, feasible=True, .bak4) | rank-5 372,729 dist +11715

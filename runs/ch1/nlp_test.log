@@ -1,0 +1,5 @@
+[E-690] init ...
+[E-690] NLP test on 6 expensive pairs (3 circular + 3 eccentric)
+          pair    bank      nlp       Δ  beats? [   t]
+  ( 241,  50)    6617     FAIL [124s]
+  ( 139,  31)    6532     FAIL [208s]

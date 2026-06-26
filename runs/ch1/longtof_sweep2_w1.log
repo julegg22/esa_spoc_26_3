@@ -1,0 +1,4 @@
+[E-708] 287 transfers ΔV>4000.0; shard 1/3 -> 96; tof_ub=30.0 restarts=5
+[RESUME] 141 done
+
+[E-708] shard 1 DONE: 27 improved, ΣΔV saved 8449 m/s [0s]

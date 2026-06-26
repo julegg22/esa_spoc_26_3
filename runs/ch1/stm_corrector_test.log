@@ -1,0 +1,61 @@
+[E-701] STM corrector test on (241,50) bank dv=6617
+  cma rs0: champ f=13276.4  [29s]
+  cma rs1: champ f=13000.0  [44s]
+  cma rs2: champ f=13000.1  [66s]
+  cma rs3: champ f=13000.0  [86s]
+  cma rs4: champ f=13000.0  [110s]
+  cma rs5: champ f=13000.0  [126s]
+  cma rs6: champ f=13001.4  [146s]
+  cma rs7: champ f=13000.0  [161s]
+  cma rs8: champ f=13000.0  [193s]
+  cma rs9: champ f=13000.2  [212s]
+
+[E-701] best CMA seed f=13000.0; applying correctors to the 4 best seeds
+  seed f=13000: pre-DC a_miss=634841725m e=9.86e-01 i=1.33e-10
+    it0: |r|=1.924e+00  (a_miss=634841725.0m e=9.86e-01 i=1.33e-10)
+     -> STM-DC: ok=False a_miss=634841725.0m |r|=1.92e+00 it=40
+     official: rejected
+  seed f=13000: pre-DC a_miss=517042405m e=9.84e-01 i=3.36e-09
+    it0: |r|=1.666e+00  (a_miss=517042405.2m e=9.84e-01 i=3.36e-09)
+     -> STM-DC: ok=False a_miss=517042405.2m |r|=1.67e+00 it=40
+     official: rejected
+  seed f=13000: pre-DC a_miss=632867626m e=9.86e-01 i=9.20e-09
+    it0: |r|=1.919e+00  (a_miss=632867625.7m e=9.86e-01 i=9.20e-09)
+     -> STM-DC: ok=False a_miss=632867625.7m |r|=1.92e+00 it=40
+     official: rejected
+  seed f=13000: pre-DC a_miss=588035959m e=9.85e-01 i=7.37e-08
+    it0: |r|=1.820e+00  (a_miss=588035959.2m e=9.85e-01 i=7.37e-08)
+    it1: |r|=1.159e+00  (a_miss=353933189.8m e=2.11e-01 i=6.72e-01)
+    it2: |r|=1.156e+00  (a_miss=349429663.9m e=2.09e-01 i=6.82e-01)
+    it3: |r|=1.155e+00  (a_miss=344942318.8m e=2.07e-01 i=6.97e-01)
+    it4: |r|=1.121e+00  (a_miss=346512037.4m e=1.01e-01 i=6.58e-01)
+    it5: |r|=1.118e+00  (a_miss=342302188.4m e=1.06e-01 i=6.68e-01)
+    it6: |r|=1.117e+00  (a_miss=337941634.3m e=1.11e-01 i=6.80e-01)
+    it7: |r|=1.115e+00  (a_miss=336139531.5m e=1.13e-01 i=6.83e-01)
+    it8: |r|=1.113e+00  (a_miss=334296864.2m e=1.14e-01 i=6.86e-01)
+    it9: |r|=1.112e+00  (a_miss=332409370.7m e=1.16e-01 i=6.89e-01)
+    it10: |r|=1.110e+00  (a_miss=330474442.9m e=1.19e-01 i=6.92e-01)
+    it11: |r|=1.104e+00  (a_miss=328192372.8m e=1.27e-01 i=6.89e-01)
+    it12: |r|=1.104e+00  (a_miss=374585656.7m e=9.70e-02 i=5.09e-01)
+    it13: |r|=1.083e+00  (a_miss=377833881.5m e=1.18e-01 i=4.38e-01)
+    it14: |r|=1.059e+00  (a_miss=376923935.6m e=1.30e-01 i=3.79e-01)
+    it15: |r|=1.047e+00  (a_miss=379806833.0m e=1.34e-01 i=3.19e-01)
+    it16: |r|=1.027e+00  (a_miss=377327605.0m e=1.33e-01 i=2.71e-01)
+    it17: |r|=1.019e+00  (a_miss=379622855.3m e=1.25e-01 i=2.19e-01)
+    it18: |r|=1.002e+00  (a_miss=376303742.9m e=1.16e-01 i=1.79e-01)
+    it19: |r|=9.966e-01  (a_miss=377850754.2m e=9.52e-02 i=1.34e-01)
+    it20: |r|=9.820e-01  (a_miss=374454957.1m e=7.63e-02 i=9.82e-02)
+    it21: |r|=9.679e-01  (a_miss=369690534.9m e=6.76e-02 i=8.54e-02)
+    it22: |r|=9.652e-01  (a_miss=369802998.9m e=4.49e-02 i=6.43e-02)
+    it23: |r|=9.616e-01  (a_miss=368526394.0m e=4.22e-02 i=6.13e-02)
+    it24: |r|=9.609e-01  (a_miss=368338710.2m e=4.06e-02 i=5.89e-02)
+    it25: |r|=9.607e-01  (a_miss=368312586.9m e=4.00e-02 i=5.77e-02)
+    it26: |r|=9.600e-01  (a_miss=368086018.8m e=3.95e-02 i=5.67e-02)
+    it27: |r|=9.593e-01  (a_miss=367903313.5m e=3.72e-02 i=5.41e-02)
+    it28: |r|=9.589e-01  (a_miss=367768545.5m e=3.72e-02 i=5.31e-02)
+    it29: |r|=9.589e-01  (a_miss=367782613.0m e=3.70e-02 i=5.24e-02)
+    it30: |r|=9.587e-01  (a_miss=367716314.3m e=3.69e-02 i=5.22e-02)
+     -> STM-DC: ok=False a_miss=367716314.3m |r|=9.59e-01 it=40
+     official: rejected
+
+[E-701] VERDICT: no official-valid solution [213s]

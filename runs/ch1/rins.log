@@ -1,0 +1,2 @@
+[E-676] bank=72206.52 sel=9111 | LP=75360 | leader=73714.03
+  fix1>0.9 fix0<0.1: |fix1|=1016 |free|=21926 -> val=59158.90 feas=True (-13047.62 vs bank) [150s]
