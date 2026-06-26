@@ -80,3 +80,16 @@ OFFICIAL per-leg verify (max_revs=20) + stitch satellites + udp.fitness<=0 + gua
 This is the pattern the user predicted: not a wall, but a **mismeasured result + wrong-foundation search**.
 Corrects the "moonshot/lonely-basin" reads in [[ch2-large-first-bank-topology]] and this session's E-724/725
 verdicts. Banks secure; nothing submitted.
+
+## E-726b/d result (faithful beam on the precomputed window table) — honest
+
+Built the faithful epoch-dense short-tof window table (E-726d, 58555 edges) and ran the pure-lookup faithful
+coverage beam on it. **Result: threads ~140 cities at d/leg 0.40-0.43 (RANK-1 PACE, FAITHFULLY confirmed),
+then strands at ~191** — and expanding the precompute top-50→top-120 did NOT help (193→191). So the cap is
+**time-PHASING**, not edge coverage: the rare (~6%-open) short-tof windows can't be globally phased by a
+greedy/coverage beam (corner-paint). Net: short-tof rank-1 PACE is real (the key positive), but the greedy
+beam can't COMPLETE 601 at that pace; neither can the table beam (reaches 575 only by spending long-tof edges,
+at table-optimistic makespan). **The remaining hard problem is the genuine TD-TSP: a global PHASED ordering of
+all 601 on short-tof edges.** Enablers built (faithful evaluator + window table); next lever = LKH/Concorde on
+the faithful short-tof cost (the competitor's inferred method, GLKH available from E-718), or a metaheuristic
+that optimizes phasing globally rather than greedily. Not solved by greedy construction.
