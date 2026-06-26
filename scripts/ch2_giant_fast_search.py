@@ -19,7 +19,7 @@ OPAR = kt.opar.astype(np.float64)
 THR = kt.dv_thr; MAXREV = kt.max_revs; MINTOF = kt.min_tof; DAY = 86400.0
 SP = 50.0
 HORIZON = 460.0
-DEPS = np.arange(0.0, HORIZON, 0.2)                              # departure grid (days)
+DEPS = np.arange(0.0, HORIZON, 0.4)                              # departure grid (days)
 DEPS_SEC = DEPS * DAY
 TOF_LO, TOF_HI, TOF_STEP = max(MINTOF, 0.3), 13.0, 0.04          # tof scan (days)
 _CACHE = {}                                                     # (i,j) -> (cheap_deps[], cheap_tofs[]) in days
