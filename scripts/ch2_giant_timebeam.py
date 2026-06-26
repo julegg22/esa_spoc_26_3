@@ -38,10 +38,10 @@ def fine_scan_edge(i, j):
     key = (i, j)
     if key in _FINE:
         return _FINE[key]
-    tlo, thi, tstep = kt.min_tof, 8.0, 0.03                 # FULL tof range (bank uses up to 6.7d; med±0.8 was
-    #                                                        long-tof-BLIND -> stranded valid long-tof legs)
+    tlo, thi, tstep = kt.min_tof, 8.0, 0.05                 # FULL tof range (bank uses up to 6.7d; med±0.8 was
+    #                                                        long-tof-BLIND); coarsened for speed on gap-heavy orders
     wins = []
-    eps = np.arange(0.0, float(EPOCHS[-1]), 0.2)
+    eps = np.arange(0.0, float(EPOCHS[-1]), 0.4)
     tgrid = np.arange(tlo, thi, tstep)
     for dep in eps:
         for tof in tgrid:
