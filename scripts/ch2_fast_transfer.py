@@ -167,6 +167,8 @@ def lambert_dv(r1x, r1y, r1z, v1x, v1y, v1z, r2x, r2y, r2z, v2x, v2y, v2z, tof_s
                 if x <= -1.0 or np.isnan(x):
                     continue
                 y = _compute_y(x, ll)
+                if abs(_tof_eq_y(x, y, T, ll, M)) > 1e-3:        # reject non-converged roots (spurious low-dv)
+                    continue
                 Vr1 = gamma * ((ll * y - x) - rho * (ll * y + x)) / r1
                 Vr2 = -gamma * ((ll * y - x) + rho * (ll * y + x)) / r2
                 Vt1 = gamma * sigma * (y + ll * x) / r1
