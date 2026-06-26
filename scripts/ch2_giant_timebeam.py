@@ -38,14 +38,8 @@ def fine_scan_edge(i, j):
     key = (i, j)
     if key in _FINE:
         return _FINE[key]
-    row = PIDX.get((i, j))
-    if row is not None and FIN[row].any():
-        tofs_known = VALS[row][FIN[row]]
-        med = float(np.median(tofs_known))
-        tlo, thi = max(kt.min_tof, med - 0.8), med + 0.8
-        tstep = 0.04
-    else:
-        tlo, thi, tstep = kt.min_tof, 12.0, 0.08            # absent edge: broad tof sweep
+    tlo, thi, tstep = kt.min_tof, 8.0, 0.03                 # FULL tof range (bank uses up to 6.7d; med±0.8 was
+    #                                                        long-tof-BLIND -> stranded valid long-tof legs)
     wins = []
     eps = np.arange(0.0, float(EPOCHS[-1]), 0.2)
     tgrid = np.arange(tlo, thi, tstep)
