@@ -15,10 +15,14 @@ import sys, json, time, os
 import numpy as np
 sys.path.insert(0, "/home/julian/Projects/esa_spoc_26_3/src")
 from esa_spoc_26.ch2_kttsp import KTTSP
+import ch2_fast_transfer as ft
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
 INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 Keplerian "
         "Tomato Traveling Salesperson Problem/problems/hard.kttsp")
 kt = KTTSP(INST); ktf = KTTSP(INST, max_revs=2)
+_OPAR = kt.opar.astype(__import__("numpy").float64); _MR = kt.max_revs; _DAY = 86400.0
+def CT(i, j, dep, tof):
+    return ft.transfer_dv(_OPAR[i], _OPAR[j], dep * _DAY, tof * _DAY, _MR)
 d = np.load(os.environ.get("CH2_TABLE", f"{ROOT}/cache/ch2_giant_dense1d.npz"))   # FULL 0-950 horizon
 EPOCHS = d["epochs"]; KEYS = d["keys"]; VALS = d["vals"]; FIN = np.isfinite(VALS)
 PIDX = {(int(i), int(j)): r for r, (i, j) in enumerate(KEYS)}
@@ -47,7 +51,7 @@ def fine_scan_edge(i, j):
     tgrid = np.arange(tlo, thi, tstep)
     for dep in eps:
         for tof in tgrid:
-            if ktf.compute_transfer(i, j, float(dep), float(tof)) <= kt.dv_thr:
+            if CT(i, j, float(dep), float(tof)) <= kt.dv_thr:
                 wins.append((float(dep), float(tof))); break    # one window per epoch
     _FINE[key] = wins
     return wins
@@ -64,10 +68,10 @@ def windows(i, j, t, K, maxwait):
             if not FIN[row, e]:
                 continue
             dep = max(t, float(EPOCHS[e])); h = float(VALS[row, e])
-            if ktf.compute_transfer(i, j, dep, h) > 2.5 * kt.dv_thr:
+            if CT(i, j, dep, h) > 2.5 * kt.dv_thr:
                 continue
             for tof in np.arange(max(kt.min_tof, h - 0.025), h + 0.025, 0.0005):
-                if ktf.compute_transfer(i, j, dep, float(tof)) <= kt.dv_thr:
+                if CT(i, j, dep, float(tof)) <= kt.dv_thr:
                     out.append((dep, dep + float(tof))); break
             if len(out) >= K:
                 break
