@@ -185,3 +185,25 @@ def transfer_dv(rowi, rowj, t_dep_sec, tof_sec, max_revs):
     r1x, r1y, r1z, v1x, v1y, v1z = kep_eph(rowi, t_dep_sec)
     r2x, r2y, r2z, v2x, v2y, v2z = kep_eph(rowj, t_dep_sec + tof_sec)
     return lambert_dv(r1x, r1y, r1z, v1x, v1y, v1z, r2x, r2y, r2z, v2x, v2y, v2z, tof_sec, max_revs)
+
+
+from numba import prange
+
+
+@njit(cache=True, parallel=True)
+def cheap_first_tof(rowi, rowj, deps_sec, tof_lo, tof_hi, tof_step, thr, max_revs):
+    """for each departure in deps_sec, return the FIRST tof in [tof_lo,tof_hi) with dv<=thr (or -1). Parallel
+    over departures. Returns arr[len(deps)] of tof_sec (or -1.0)."""
+    nd = len(deps_sec)
+    out = np.full(nd, -1.0)
+    for k in prange(nd):
+        dsec = deps_sec[k]
+        r1x, r1y, r1z, v1x, v1y, v1z = kep_eph(rowi, dsec)
+        tof = tof_lo
+        while tof < tof_hi:
+            r2x, r2y, r2z, v2x, v2y, v2z = kep_eph(rowj, dsec + tof)
+            dv = lambert_dv(r1x, r1y, r1z, v1x, v1y, v1z, r2x, r2y, r2z, v2x, v2y, v2z, tof, max_revs)
+            if dv <= thr:
+                out[k] = tof; break
+            tof += tof_step
+    return out
