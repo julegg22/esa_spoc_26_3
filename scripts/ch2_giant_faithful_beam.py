@@ -32,7 +32,12 @@ for i in OUTADJ:
     OUTADJ[i].sort(key=lambda j: GMIN.get((i, j), 9.0))          # prefer short-min-tof neighbours
 DEPS = np.arange(0.0, 460.0, 0.2)                                # epoch grid (days)
 DEPS_SEC = DEPS * DAY
+# load the precomputed FAITHFUL epoch-dense short-tof window table (E-726d) -> instant lookups
+_PC = f"{ROOT}/cache/ch2_giant_faithful_windows.npz"
 _CACHE = {}
+if os.path.exists(_PC):
+    _CACHE = np.load(_PC, allow_pickle=True)["windows"].item()
+    print(f"[E-726b] loaded {len(_CACHE)} precomputed faithful edges", flush=True)
 
 
 def edge_windows(i, j):
