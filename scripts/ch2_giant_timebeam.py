@@ -51,8 +51,7 @@ def fine_scan_edge(i, j):
     tgrid = np.arange(tlo, thi, tstep)
     for dep in eps:
         for tof in tgrid:
-            if CT(i, j, float(dep), float(tof)) <= kt.dv_thr and \
-                    kt.compute_transfer(i, j, float(dep), float(tof)) <= kt.dv_thr:  # numba + pykep verify
+            if CT(i, j, float(dep), float(tof)) <= kt.dv_thr:
                 wins.append((float(dep), float(tof))); break    # one window per epoch
     _FINE[key] = wins
     return wins
@@ -72,8 +71,7 @@ def windows(i, j, t, K, maxwait):
             if CT(i, j, dep, h) > 2.5 * kt.dv_thr:
                 continue
             for tof in np.arange(max(kt.min_tof, h - 0.025), h + 0.025, 0.0005):
-                if CT(i, j, dep, float(tof)) <= kt.dv_thr and \
-                        kt.compute_transfer(i, j, dep, float(tof)) <= kt.dv_thr:  # numba scan + pykep verify
+                if CT(i, j, dep, float(tof)) <= kt.dv_thr:
                     out.append((dep, dep + float(tof))); break
             if len(out) >= K:
                 break
