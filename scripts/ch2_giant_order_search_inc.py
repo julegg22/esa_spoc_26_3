@@ -22,9 +22,10 @@ class IncBeam:
         n = len(order)
         self.arr = [None] * n; self.scum = [0] * n
         self.arr[0] = [0.0]; self.scum[0] = 0
-        self._retime(self.order, 0, commit=True)
+        _, _, cols = self._retime(self.order, 0)
+        self.commit(self.order, 0, cols)
 
-    def _retime(self, order, p, commit):
+    def _retime(self, order, p):
         """re-time positions p..n-1 for `order` starting from cached arr[p]; return (makespan, strands, newcols)
         where newcols is the list of (arrivals, scum) for positions p+1..n-1 (to commit on accept)."""
         n = len(order)
@@ -73,12 +74,12 @@ def main(seed_json="bank", W=40, K=4, maxwait=120, iters=200000, tag="a"):
         new = list(cur_order)
         if rng.random() < 0.5:
             i = int(rng.integers(1, n - 2)); j = int(rng.integers(i + 1, min(n - 1, i + 60)))   # bounded reversal
-            new[i:j] = new[i:j][::-1]; p = i
+            new[i:j] = new[i:j][::-1]; p = i - 1                  # last UNCHANGED position (arr[p] still valid)
         else:
             L = int(rng.integers(1, 4)); i = int(rng.integers(1, n - L - 1))
             seg = new[i:i + L]; del new[i:i + L]
-            k = int(rng.integers(1, n - 1)); new[k:k] = seg; p = min(i, k)
-        mk, st, cols = ib._retime(new, p, commit=False)
+            k = int(rng.integers(1, n - 1)); new[k:k] = seg; p = max(0, min(i, k) - 1)
+        mk, st, cols = ib._retime(new, p)
         o = mk + SP * st
         if o < best:
             best = o; acc += 1; ib.commit(new, p, cols)
