@@ -68,7 +68,7 @@ def windows(i, j, t, K, maxwait):
             if not FIN[row, e]:
                 continue
             dep = max(t, float(EPOCHS[e])); h = float(VALS[row, e])
-            if CT(i, j, dep, h) > 2.5 * kt.dv_thr:
+            if CT(i, j, dep, h) > 1.05 * kt.dv_thr:
                 continue
             for tof in np.arange(max(kt.min_tof, h - 0.025), h + 0.025, 0.0005):
                 if CT(i, j, dep, float(tof)) <= kt.dv_thr:
