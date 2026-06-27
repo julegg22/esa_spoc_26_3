@@ -44,7 +44,12 @@ HORIZON = 250.0                                                 # any sub-189d t
 T = int(round(HORIZON / TQ)); INF_INT = 10 ** 9
 _DEPS = np.arange(0.0, HORIZON, TQ); _DEPS_SEC = _DEPS * DAY
 print(f"[E-731] labeling-DP evaluator TQ={TQ}d tofstep={TOFSTEP}d horizon={HORIZON}d", flush=True)
+import pickle
 _EDGE = {}
+_BASE = f"{ROOT}/cache/ch2_medium_edgewin_{TQ}_{TOFSTEP}.pkl"    # shared edge-window cache (one warmup, all chains)
+if os.path.exists(_BASE):
+    _EDGE = pickle.load(open(_BASE, "rb"))
+    print(f"[E-731] loaded {len(_EDGE)} cached edge-windows from base", flush=True)
 
 
 def _build_idx(et):
@@ -145,6 +150,9 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
     if ti is not None:
         omk, ov = official(border, ti, tf)
         print(f"[E-731] bank order official re-score from retimer schedule: {omk:.2f}d viols {ov}", flush=True)
+    if os.environ.get("CH2_SAVEBASE"):                          # build the shared base from the bank's edges, exit
+        pickle.dump(_EDGE, open(_BASE, "wb"))
+        print(f"[E-731] saved {len(_EDGE)} edge-windows to base {_BASE}", flush=True); return
     # OR-OPT / LNS search (per-chain seed + tag for parallel runs)
     TAG = os.environ.get("CH2_TAG", "m")
     rng = int(os.environ.get("CH2_SEED", "20260627"))
