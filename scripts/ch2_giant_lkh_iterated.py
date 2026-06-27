@@ -84,7 +84,9 @@ def build_cost(epoch_of):
             c = int(round(mt * 1000))                            # not yet placed -> static min-tof
         else:
             tf = tof_at(i, j, e)
-            c = int(round(tf * 1000)) if tf is not None else BIG
+            # window at reached epoch -> its faithful tof; else SOFT penalty (static + 3d), NOT BIG
+            # (BIG forbade edges based on a bad-retime epoch -> divergence; soft keeps the edge usable)
+            c = int(round(tf * 1000)) if tf is not None else int(round(mt * 1000)) + 3000
         cost[idx[i], idx[j]] = c
     cost[N, :] = 0; cost[:, N] = 0; np.fill_diagonal(cost, 0)
     return cost
