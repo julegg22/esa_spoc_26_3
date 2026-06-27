@@ -60,6 +60,21 @@ states** avoids that. Results (seed strand-count under retime_tol W=16): greedy 
 Reseeded the fragstart CLS chains from it (descending 44→42…). NB this is the E-710 time-aware beam idea, now
 (a) measured by STRANDS on the faithful retimer and (b) launched from fragility-ranked starts.
 
+## E-730c — DECISIVE: makespan converges to RANK-2 across ALL basins at feasibility (rank-1 unreachable)
+
+The beam seeds (87→16 strands) raised the hope "short-tof time-aware order → CLS to 0 strands → rank-1 makespan."
+**Refuted by the data.** Penalty-adjusted true makespan as each chain nears feasibility:
+- bank basin: bcls 1 strand → ~894 d, bcls2 2 → ~908 d.
+- beam (fragstart) basin: fcls 10 → ~983 d, fcls2 7 → ~987 d.
+
+**All chains converge to ~900–985 d (d/leg ~1.5 = RANK-2), independent of seed/topology.** None approaches the
+<500 d that would signal rank-1. Tighter maxwait (mw=10 vs 12) gave MORE strands (22 vs 16) at the SAME ~1480 d
+— you cannot tighten your way to rank-1; the waits are *required* for feasibility. This is the strongest evidence
+yet that rank-1 is **structurally unreachable by feasibility-seeking methods**: two independent basins (bank
+topology + a genuinely different beam topology, edge-Jaccard ~0) both bottom out at rank-2 makespan. The
+competitor's 424 d tour exists but lives in a tightly-phased basin our constructors/local-search cannot enter.
+The rank-1 gap is now empirically a basin-reachability wall, not a "we haven't searched enough" gap.
+
 ## CAVEAT (user asked re: orbital isolation index) — static node features only weakly predict ACTUAL strands
 
 Decisive test: per-city involvement in actual strand legs (across staticLKH/fragstart/bcls orders) vs each
