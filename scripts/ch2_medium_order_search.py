@@ -17,8 +17,7 @@ INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 Kepleri
 kt = KTTSP(INST); OPAR = kt.opar.astype(np.float64)
 THR = kt.dv_thr; EXC_THR = kt.dv_exc; NEXC = kt.n_exc; MAXREV = kt.max_revs
 MINTOF = max(kt.min_tof, 0.01); MAXT = kt.max_time; DAY = 86400.0; N = kt.n
-WIN = np.load(f"{ROOT}/cache/ch2_medium_windows.npz", allow_pickle=True)["windows"].item()
-print(f"[E-731] medium n={N} dv_thr={THR} exc_thr={EXC_THR} n_exc={NEXC}; windows {len(WIN)} cheap edges", flush=True)
+print(f"[E-731] medium n={N} dv_thr={THR} exc_thr={EXC_THR} n_exc={NEXC}; lazy fine-scan evaluator", flush=True)
 
 
 def cheap_arr(i, j, t, maxwait):
@@ -35,39 +34,35 @@ def cheap_arr(i, j, t, maxwait):
 
 # ---- EXACT forward DP scheduler (E-568) over the coarse 0.5d window grid (reproduces the bank's optimum) -------
 from numba import njit
-# infer the grid quantum from the precomputed window departures (must match the precompute dep_step)
-_some = next(iter(WIN.values()))[0]
-TQ = float(round(np.min(np.diff(np.unique(_some))), 4)) if len(_some) > 1 else 0.1
-T = int(round(MAXT / TQ))                                       # time-index horizon
-print(f"[E-731] window grid TQ={TQ}d  T={T}", flush=True)
-INF_INT = 10 ** 9
-# precompute per-edge coarse arrival-index arrays (cheap), once, from WIN: cidx[(i,j)] = arr_index per dep_index
-_CIDX = {}
-for (i, j), (deps, tofs) in WIN.items():
-    arr = np.full(T, INF_INT, dtype=np.int32)
-    di = np.round(deps / TQ).astype(np.int64)
-    ai = np.round((deps + tofs) / TQ).astype(np.int64)
-    ok = (di >= 0) & (ai < T) & (ai > di)
-    arr[di[ok]] = np.minimum(arr[di[ok]], ai[ok])
-    _CIDX[(i, j)] = arr
-_EXC_CACHE = {}
+# LAZY FINE evaluator: scan each edge's cheap/exception windows on demand at fine resolution (catches narrow
+# windows the coarse precompute misses), cached. Avoids a multi-hour full precompute.
+TQ = 0.05; T = int(round(MAXT / TQ)); INF_INT = 10 ** 9
+_DEPS = np.arange(0.0, MAXT, TQ); _DEPS_SEC = _DEPS * DAY
+print(f"[E-731] lazy fine evaluator TQ={TQ}d T={T}", flush=True)
+_EDGE = {}
 
 
-def _exc_idx(i, j):
-    """arrival-index array for EXCEPTION transfers (100<dv<=600) on i->j, per dep-index; numba scan, cached."""
-    if (i, j) in _EXC_CACHE:
-        return _EXC_CACHE[(i, j)]
-    deps = np.arange(0.0, MAXT, TQ)
-    et = ft.cheap_first_tof(OPAR[i], OPAR[j], deps * DAY, MINTOF * DAY, 6.0 * DAY, 0.05 * DAY, EXC_THR, MAXREV)
+def _build_idx(et):
     arr = np.full(T, INF_INT, dtype=np.int32)
     m = et > 0
     if m.any():
-        di = np.round(deps[m] / TQ).astype(np.int64)
-        ai = np.round((deps[m] + et[m] / DAY) / TQ).astype(np.int64)
-        ok = (ai < T) & (ai > di)
-        arr[di[ok]] = ai[ok]
-    _EXC_CACHE[(i, j)] = arr
+        di = np.round(_DEPS[m] / TQ).astype(np.int64)
+        ai = np.round((_DEPS[m] + et[m] / DAY) / TQ).astype(np.int64)
+        ok = (ai < T) & (ai > di) & (di >= 0)
+        np.minimum.at(arr, di[ok], ai[ok])                     # min arrival index per departure index
     return arr
+
+
+def _edge_idx(i, j):
+    """lazy fine per-edge (c_arr, e_arr) arrival-index arrays: cheap (dv<=100) and exception (dv<=600). Cached."""
+    key = (i, j)
+    if key in _EDGE:
+        return _EDGE[key]
+    cc = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 6.0 * DAY, 0.02 * DAY, THR, MAXREV)
+    ee = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 6.0 * DAY, 0.02 * DAY, EXC_THR, MAXREV)
+    out = (_build_idx(cc), _build_idx(ee))
+    _EDGE[key] = out
+    return out
 
 
 @njit(cache=True)
@@ -102,12 +97,8 @@ def retime(order, K=0, W=0, maxwait=0):
     c_arr = np.full((nl, T), INF_INT, dtype=np.int32)
     e_arr = np.full((nl, T), INF_INT, dtype=np.int32)
     for k in range(nl):
-        ij = (order[k], order[k + 1])
-        ca = _CIDX.get(ij)
-        if ca is not None:
-            c_arr[k] = ca
-        else:                                                  # no cheap window -> forced exception (numba scan)
-            e_arr[k] = _exc_idx(ij[0], ij[1])
+        c, e = _edge_idx(order[k], order[k + 1])
+        c_arr[k] = c; e_arr[k] = e
     reach, pdep, pe = _fwd_dp(c_arr, e_arr, nl, T, NEXC)
     # best final arrival index over exc levels
     best_t = -1; best_e = -1
@@ -123,9 +114,12 @@ def retime(order, K=0, W=0, maxwait=0):
     times = [0.0] * nl; tofs = [0.0] * nl
     t, e = best_t, best_e
     for k in range(nl, 0, -1):
-        tp = int(pdep[k, t, e]); used = int(pe[k, t, e])
+        tp = int(pdep[k, t, e])
+        if tp < 0:                                            # no recorded predecessor -> can't backtrack
+            return float("inf"), None, None, NEXC + 1
+        used = max(0, int(pe[k, t, e]))
         times[k - 1] = tp * TQ; tofs[k - 1] = (t - tp) * TQ
-        e = e - used; t = tp
+        e = max(0, e - used); t = tp
     return best_t * TQ, times, tofs, best_e
 
 
