@@ -33,48 +33,100 @@ def cheap_arr(i, j, t, maxwait):
     return None
 
 
-def exc_arr(i, j, t, maxwait):
-    """earliest EXCEPTION arrival (dv<=EXC_THR) on i->j departing >= t (numba scan), else None. Used <=NEXC times."""
-    deps = np.arange(t, min(t + maxwait + 8.0, MAXT), 0.25) * DAY
-    tofs = ft.cheap_first_tof(OPAR[i], OPAR[j], deps, MINTOF * DAY, 6.0 * DAY, 0.05 * DAY, EXC_THR, MAXREV)
-    m = tofs > 0
+# ---- EXACT forward DP scheduler (E-568) over the coarse 0.5d window grid (reproduces the bank's optimum) -------
+from numba import njit
+# infer the grid quantum from the precomputed window departures (must match the precompute dep_step)
+_some = next(iter(WIN.values()))[0]
+TQ = float(round(np.min(np.diff(np.unique(_some))), 4)) if len(_some) > 1 else 0.1
+T = int(round(MAXT / TQ))                                       # time-index horizon
+print(f"[E-731] window grid TQ={TQ}d  T={T}", flush=True)
+INF_INT = 10 ** 9
+# precompute per-edge coarse arrival-index arrays (cheap), once, from WIN: cidx[(i,j)] = arr_index per dep_index
+_CIDX = {}
+for (i, j), (deps, tofs) in WIN.items():
+    arr = np.full(T, INF_INT, dtype=np.int32)
+    di = np.round(deps / TQ).astype(np.int64)
+    ai = np.round((deps + tofs) / TQ).astype(np.int64)
+    ok = (di >= 0) & (ai < T) & (ai > di)
+    arr[di[ok]] = np.minimum(arr[di[ok]], ai[ok])
+    _CIDX[(i, j)] = arr
+_EXC_CACHE = {}
+
+
+def _exc_idx(i, j):
+    """arrival-index array for EXCEPTION transfers (100<dv<=600) on i->j, per dep-index; numba scan, cached."""
+    if (i, j) in _EXC_CACHE:
+        return _EXC_CACHE[(i, j)]
+    deps = np.arange(0.0, MAXT, TQ)
+    et = ft.cheap_first_tof(OPAR[i], OPAR[j], deps * DAY, MINTOF * DAY, 6.0 * DAY, 0.05 * DAY, EXC_THR, MAXREV)
+    arr = np.full(T, INF_INT, dtype=np.int32)
+    m = et > 0
     if m.any():
-        k = np.argmax(m)
-        return float(deps[k] / DAY + tofs[k] / DAY)
-    return None
+        di = np.round(deps[m] / TQ).astype(np.int64)
+        ai = np.round((deps[m] + et[m] / DAY) / TQ).astype(np.int64)
+        ok = (ai < T) & (ai > di)
+        arr[di[ok]] = ai[ok]
+    _EXC_CACHE[(i, j)] = arr
+    return arr
 
 
-def retime(order, K=6, W=40, maxwait=8.0):
-    """forward beam retime with <=NEXC exceptions; returns (makespan, times, tofs, n_exc) or (inf,...). State =
-    (arrival_time, exc_used). Keeps W states by (arrival, exc_used)."""
-    states = [(0.0, 0, [], [])]                                # (t, exc_used, times_list, tofs_list) ; times=dep
-    for p in range(len(order) - 1):
-        i, j = order[p], order[p + 1]
-        nxt = []
-        for (t, eu, tl, fl) in states:
-            w = WIN.get((i, j))
-            if w is not None:
-                deps, tofs = w; q = np.searchsorted(deps, t)
-                if q < len(deps) and deps[q] <= t + maxwait:
-                    dep = float(deps[q]); tof = float(tofs[q])
-                    nxt.append((dep + tof, eu, tl + [dep], fl + [tof]))
-            if eu < NEXC:                                      # also try an exception placement (branch)
-                ea = exc_arr(i, j, t, maxwait)
-                if ea is not None:
-                    # recover dep,tof for the exception
-                    dgrid = np.arange(t, min(t + maxwait + 8.0, MAXT), 0.25) * DAY
-                    et = ft.cheap_first_tof(OPAR[i], OPAR[j], dgrid, MINTOF * DAY, 6.0 * DAY, 0.05 * DAY, EXC_THR, MAXREV)
-                    mm = et > 0
-                    if mm.any():
-                        kk = int(np.argmax(mm)); dep = float(dgrid[kk] / DAY); tof = float(et[kk] / DAY)
-                        nxt.append((dep + tof, eu + 1, tl + [dep], fl + [tof]))
-        if not nxt:
-            return float("inf"), None, None, NEXC + 1
-        nxt.sort(key=lambda s: (s[0], s[1]))
-        # dedup-ish: keep W best by arrival
-        states = nxt[:W]
-    best = min(states, key=lambda s: s[0])
-    return best[0], best[2], best[3], best[1]
+@njit(cache=True)
+def _fwd_dp(c_arr, e_arr, n_legs, T, nexc):
+    reach = np.zeros((n_legs + 1, T, nexc + 1), dtype=np.bool_)
+    pdep = np.full((n_legs + 1, T, nexc + 1), -1, dtype=np.int32)
+    pe = np.full((n_legs + 1, T, nexc + 1), -1, dtype=np.int8)
+    reach[0, 0, 0] = True
+    for k in range(n_legs):
+        for e in range(nexc + 1):
+            tmin = -1
+            for t in range(T):
+                if reach[k, t, e]:
+                    tmin = t; break
+            if tmin < 0:
+                continue
+            for tp in range(tmin, T):
+                a = c_arr[k, tp]
+                if a < T and not reach[k + 1, a, e]:
+                    reach[k + 1, a, e] = True; pdep[k + 1, a, e] = tp; pe[k + 1, a, e] = 0
+                if e < nexc:
+                    a2 = e_arr[k, tp]
+                    if a2 < T and not reach[k + 1, a2, e + 1]:
+                        reach[k + 1, a2, e + 1] = True; pdep[k + 1, a2, e + 1] = tp; pe[k + 1, a2, e + 1] = 1
+    return reach, pdep, pe
+
+
+def retime(order, K=0, W=0, maxwait=0):
+    """EXACT forward-DP schedule for `order` on the coarse grid (<=NEXC exceptions). Returns
+    (makespan_days, times, tofs, n_exc) or (inf, None, None, NEXC+1). times/tofs in days for kt.fitness."""
+    nl = len(order) - 1
+    c_arr = np.full((nl, T), INF_INT, dtype=np.int32)
+    e_arr = np.full((nl, T), INF_INT, dtype=np.int32)
+    for k in range(nl):
+        ij = (order[k], order[k + 1])
+        ca = _CIDX.get(ij)
+        if ca is not None:
+            c_arr[k] = ca
+        else:                                                  # no cheap window -> forced exception (numba scan)
+            e_arr[k] = _exc_idx(ij[0], ij[1])
+    reach, pdep, pe = _fwd_dp(c_arr, e_arr, nl, T, NEXC)
+    # best final arrival index over exc levels
+    best_t = -1; best_e = -1
+    for e in range(NEXC + 1):
+        for t in range(T):
+            if reach[nl, t, e]:
+                if best_t < 0 or t < best_t:
+                    best_t = t; best_e = e
+                break
+    if best_t < 0:
+        return float("inf"), None, None, NEXC + 1
+    # backtrack
+    times = [0.0] * nl; tofs = [0.0] * nl
+    t, e = best_t, best_e
+    for k in range(nl, 0, -1):
+        tp = int(pdep[k, t, e]); used = int(pe[k, t, e])
+        times[k - 1] = tp * TQ; tofs[k - 1] = (t - tp) * TQ
+        e = e - used; t = tp
+    return best_t * TQ, times, tofs, best_e
 
 
 def official(order, times, tofs):
