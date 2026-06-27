@@ -27,9 +27,12 @@ recurring "the evaluator, not the search, was the problem.")
 
 1. **LNS / insertion-repair "cascade" verdict** ([[E-721-ch2-large-foundational-graph-undercount|E-721d/g]]):
    "inserting a stranded city cascades 34→220 strands; local repair structurally blocked." **Tools: T1+T2+T3.**
-   A large fraction of those "strands" were the evaluator FAILING TO FIND windows that exist. **RE-TRY**
-   destroy-repair/ALNS on the faithful evaluator + full-tof retimer + timing-DP re-schedule. (This is the
-   planned rank-1 LNS/SA attack.)
+   ✅ **EXECUTED + CLOSED 2026-06-27 ([[E-727-ch2-large-faithful-insertion-repair|E-727]]).** Re-ran insertion-
+   repair (greedy + regret-2) on the faithful W-beam retimer + combined windows. Result: **still walls** — greedy
+   reaches 438/601 but makespan blows to 908 d (rank-2 pace); regret holds 461 d but caps 385/601 (corner-paint).
+   The E-721 *strand numbers* were tool-inflated, but the *conclusion* (insertion can't complete at rank-1 pace)
+   STANDS on correct tools = genuine phasing. **Remaining sub-item:** the ALNS destroy-repair loop (acceptance-
+   based escape) has a destroy-rebridge bug (see E-727 "named next step") — fix + run before calling LNS exhausted.
 2. **Sub-tour bridge "1-city insert → 300 strands"** ([[E-722-ch2-large-reach-beam-and-phaselock|E-722b]]):
    **Tools: T1+T2.** The 300 strands were largely retimer blindness. **RE-TRY** bridge insertion with the
    fixed retimer.
