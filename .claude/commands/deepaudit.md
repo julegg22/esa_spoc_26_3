@@ -13,18 +13,31 @@ it" is the tell. The gap is almost never raw search effort — it is an assumpti
 shared by *every* branch we tried. Your job is a **diagnostic: find the flaw in
 our own reasoning, not to optimize further.**
 
-## Step 0 — Orient (do this first, with tools)
+## Step 0 — Orient: concentrate on THIS challenge's vault tree (do this first, with tools)
 
-1. **Identify the target X (ground truth that beats us).** Recall or fetch the
+1. **Scope the vault tree to $ARGUMENTS and read it.** This audit is about
+   **$ARGUMENTS only** — build the focused subtree first, don't skim the whole
+   vault. Find the relevant nodes by keyword/tag, e.g.
+   `git grep -il "$ARGUMENTS" vault/` and
+   `ls vault/experiments/ | grep -i <challenge-keyword>`, then read the relevant
+   `vault/experiments/E-*.md`, `vault/analysis/A-*.md`, the memory pointers
+   (`MEMORY.md`), and the latest `vault/sessions/` entry that touches it. Build a
+   short map: the bank/best, the chain of verdicts, and every node that recorded
+   an "exhausted/walled/floored/ceiling" conclusion. Stay on this challenge's
+   branch — ignore unrelated challenges.
+2. **Identify the target X (ground truth that beats us).** Recall or fetch the
    live leaderboard / bound for $ARGUMENTS: read-only
    `micromamba run -n spoc26 python scripts/fetch_leaderboards.py` (GraphQL
-   `query` only — never submit). State our best **Y** (the bank) and the
-   known-better **X**, and the gap.
-2. **Read the whole exploration tree for $ARGUMENTS** — the relevant
-   `vault/experiments/E-*.md`, `vault/analysis/A-*.md`, session notes, and the
-   banked artifact (decision vector / order / edge tables in `cache/`). Treat any
-   "exhausted/walled" conclusion as a **false conclusion to be diagnosed**, per
-   the discipline in `vault/methodology/M-general-anti-oscillation-discipline.md`.
+   `query` only — never submit). State our best **Y** (the bank), the known-better
+   **X**, and the gap.
+3. **QUESTION the recorded results — do not trust them.** Every "exhausted/walled"
+   verdict in this subtree is a **false conclusion to be diagnosed**, per
+   `vault/methodology/M-general-anti-oscillation-discipline.md`. For each
+   load-bearing claim (a floor number, a "all methods converge", a "no feasible
+   X"), ask: on what artifact was it measured? was the evaluator faithful (this
+   campaign's recurring bug — optimistic/partial evaluators)? could it be an
+   artifact of architecture / search-basin / probe-resolution rather than the
+   problem? Re-derive the decisive number yourself in Phase 2 before believing it.
 
 ## The four phases (run all four, in order)
 
@@ -69,11 +82,15 @@ branches.**
 
 ## Deliverable (end your run with this)
 
-1. **Verdict** — one paragraph: is the "exhausted/walled" claim false? What
-   single unexamined assumption, named in Phase 1 and measured in Phase 2, is the
-   load-bearing flaw (or, with evidence, why it genuinely holds)?
-2. **The 3 ranked experiments** (cheapest information-gain first), each naming the
-   assumption it violates and the binary outcome that would falsify it.
+1. **Verdict** — one paragraph: is the "exhausted/walled" claim false? Which
+   single unexamined assumption, named in Phase 1 and *measured* in Phase 2, is the
+   load-bearing flaw (or, with explicit evidence, why it genuinely holds)?
+2. **Further exploration paths (the centerpiece)** — the 3 ranked experiment lines
+   from Phase 4, cheapest information-gain first. For each: the assumption it
+   violates, the concrete probe (what to build/measure, roughly how cheap), and
+   the **binary outcome that would falsify the assumption** (what result reopens
+   the lever vs. confirms the wall). These are *new directions that question the
+   recorded results*, not refinements of branches already in the tree.
 3. **Record it**: write the audit as a new `vault/experiments/E-NNN-*.md` node
    (next free E-number) with `corrects:`/`reframes:` links to the verdicts it
    overturns, and add a one-line `vault/index.md` / session-note pointer. Commit
