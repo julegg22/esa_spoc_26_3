@@ -16,6 +16,8 @@ INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 Kepleri
         "Tomato Traveling Salesperson Problem/problems/medium.kttsp")
 kt = KTTSP(INST); OPAR = kt.opar.astype(np.float64)
 THR = kt.dv_thr; EXC_THR = kt.dv_exc; NEXC = kt.n_exc; MAXREV = kt.max_revs
+NEXC_PROXY = NEXC + 2                                           # relaxed proxy budget (grid rounding over-counts);
+#                                                                official kt.fitness still enforces the real NEXC=5
 MINTOF = max(kt.min_tof, 0.01); MAXT = kt.max_time; DAY = 86400.0; N = kt.n
 print(f"[E-731] medium n={N} dv_thr={THR} exc_thr={EXC_THR} n_exc={NEXC}; lazy fine-scan evaluator", flush=True)
 
@@ -36,9 +38,10 @@ def cheap_arr(i, j, t, maxwait):
 from numba import njit
 # LAZY FINE evaluator: scan each edge's cheap/exception windows on demand at fine resolution (catches narrow
 # windows the coarse precompute misses), cached. Avoids a multi-hour full precompute.
-TQ = 0.05; T = int(round(MAXT / TQ)); INF_INT = 10 ** 9
-_DEPS = np.arange(0.0, MAXT, TQ); _DEPS_SEC = _DEPS * DAY
-print(f"[E-731] lazy fine evaluator TQ={TQ}d T={T}", flush=True)
+TQ = 0.05; HORIZON = 250.0                                      # any sub-189d tour fits in 250d; halves scan+DP cost
+T = int(round(HORIZON / TQ)); INF_INT = 10 ** 9
+_DEPS = np.arange(0.0, HORIZON, TQ); _DEPS_SEC = _DEPS * DAY
+print(f"[E-731] lazy fine evaluator TQ={TQ}d horizon={HORIZON}d T={T}", flush=True)
 _EDGE = {}
 
 
@@ -58,8 +61,8 @@ def _edge_idx(i, j):
     key = (i, j)
     if key in _EDGE:
         return _EDGE[key]
-    cc = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 6.0 * DAY, 0.02 * DAY, THR, MAXREV)
-    ee = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 6.0 * DAY, 0.02 * DAY, EXC_THR, MAXREV)
+    cc = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, 0.02 * DAY, THR, MAXREV)
+    ee = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, 0.02 * DAY, EXC_THR, MAXREV)
     out = (_build_idx(cc), _build_idx(ee))
     _EDGE[key] = out
     return out
@@ -99,10 +102,10 @@ def retime(order, K=0, W=0, maxwait=0):
     for k in range(nl):
         c, e = _edge_idx(order[k], order[k + 1])
         c_arr[k] = c; e_arr[k] = e
-    reach, pdep, pe = _fwd_dp(c_arr, e_arr, nl, T, NEXC)
-    # best final arrival index over exc levels
+    reach, pdep, pe = _fwd_dp(c_arr, e_arr, nl, T, NEXC_PROXY)  # relaxed: grid rounding over-counts exceptions;
+    # the EXACT official kt.fitness gate enforces the real <=5 limit. best final arrival index over exc levels
     best_t = -1; best_e = -1
-    for e in range(NEXC + 1):
+    for e in range(NEXC_PROXY + 1):
         for t in range(T):
             if reach[nl, t, e]:
                 if best_t < 0 or t < best_t:
