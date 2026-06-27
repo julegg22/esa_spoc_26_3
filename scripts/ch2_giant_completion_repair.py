@@ -44,6 +44,23 @@ def CT(i, j, dep, tof):
     return ft.transfer_dv(OPAR[i], OPAR[j], dep * DAY, tof * DAY, MAXREV)
 
 
+def retime_tol(order, maxwait, K=3, W=12, SP=30.0):
+    """TOLERANT W-beam retime over a COMPLETE order: a leg with no cheap window does NOT stop the walk — it
+    penalty-carries the clock (+SP) and increments a STRAND counter. Returns (makespan, n_strands). This is the
+    objective for complete-order local search: never drop a city; drive n_strands -> 0 instead. (The constructive
+    methods all DROP cities and strand; this one keeps all 601 and penalizes infeasible legs = robust by design.)"""
+    states = [0.0]; strands = 0; slegs = []
+    for p in range(len(order) - 1):
+        i, j = order[p], order[p + 1]
+        nxt = []
+        for t in states:
+            nxt.extend(windows_k(i, j, t, K, maxwait))
+        if not nxt:
+            states = [t + SP for t in states]; strands += 1; slegs.append(p); continue
+        states = sorted(set(round(x, 4) for x in nxt))[:W]
+    return states[0], strands, slegs
+
+
 def windows_k(i, j, t, K, maxwait):
     """up to K feasible arrival times on i->j departing in [t, t+maxwait], at distinct cheap phases (ascending
     arrival). Combined source: faithful short-tof (epoch-dense) + dense1d (long-tof), CT-verified on dense1d."""
@@ -192,20 +209,27 @@ def lns_loop(seed, maxwait, tag, t0, iters=100000):
     for it in range(iters):
         order, arr, missing = cur
         rng = (rng * 1103515245 + 12345) & 0x7fffffff          # deterministic LCG (no Math.random dependence)
-        # DESTROY: remove a contiguous window around the worst-wait leg + a random window
+        # DESTROY: remove ONE contiguous window (single gap -> bridgeable by one insertion; two windows would
+        # leave two simultaneous gaps and deadlock the per-insertion lazy validation). Bias half the time to the
+        # worst-wait leg (the rank-2-pace cost), half to a random spot (diversify which adjacencies get rebuilt).
         waits = [arr[p + 1] - arr[p] for p in range(len(order) - 1)]
-        wp = max(range(len(waits)), key=lambda p: waits[p]) if waits else 0
-        wlen = 4 + (rng % 9)                                   # 4..12
-        rp = rng % max(1, len(order) - wlen)
-        rmset = set(order[max(0, wp - wlen // 2): wp + wlen // 2 + 1]) | set(order[rp: rp + wlen])
-        rmset.discard(order[0])                                # keep the anchor start
+        wlen = 4 + (rng % 9)                                   # 4..12 cities
+        if rng % 2 == 0 and waits:
+            wp = max(range(len(waits)), key=lambda p: waits[p])
+            lo = max(1, wp - wlen // 2)                         # keep order[0] anchor
+        else:
+            lo = 1 + (rng % max(1, len(order) - wlen - 1))
+        rmset = set(order[lo: lo + wlen])
         norder = [c for c in order if c not in rmset]
-        narr, st = retime(norder, maxwait, stop_on_strand=True)
-        if st is not None:
-            continue                                           # destroy broke feasibility (rare) -> skip
+        # do NOT require the gapped order feasible here (the re-join a->b strands until a bridge is inserted);
+        # penalty-carry retime gives a ranking arr, insert_all re-bridges the gap, then we validate the result.
+        narr, _ = retime(norder, maxwait, stop_on_strand=False)
         nmiss = list(missing) + list(rmset)
         norder, narr, nmiss = insert_all(norder, narr, nmiss, maxwait)
-        cand = (norder, narr, nmiss)
+        fnarr, st = retime(norder, maxwait, stop_on_strand=True)  # validate: gap actually re-bridged?
+        if st is not None:
+            continue                                           # could not re-bridge the gap -> discard move
+        cand = (norder, fnarr, nmiss)
         accept = score(cand) >= score(cur) or (rng % 20 == 0 and len(cand[0]) >= len(cur[0]) - 3)
         if accept:
             cur = cand
@@ -222,6 +246,53 @@ def lns_loop(seed, maxwait, tag, t0, iters=100000):
                   f"{len(best[0])} mk {best[1][-1]:.1f}d [{time.time()-t0:.0f}s]", flush=True)
 
 
+def cls_loop(seed, maxwait, tag, t0, iters=2000000):
+    """COMPLETE-order penalty local search — the robust-against-strands method (answers 'why can't we allocate
+    all cities?'). Every constructive method (beam/GRASP/insertion) DROPS cities it can't place. This instead
+    keeps ALL 601 in the order at all times and minimises (n_strands, makespan) by or-opt relocations + SA, so
+    it can never 'fail to allocate' — it drives infeasible legs to zero. Seed = any complete order (static LKH
+    is TD-infeasible ~163 strands); success = reach 0 strands = a second complete solution, NOT the OR-Tools
+    recipe. Then keep descending makespan toward rank-1 (<425d)."""
+    order = [int(c) for c in seed]
+    mk, st, slegs = retime_tol(order, maxwait)
+    cur = (order, mk, st, slegs); best = (list(order), mk, st)
+    ckpt = f"{ROOT}/cache/ch2_giant_cls_{tag}.json"
+    print(f"[E-727][{tag}] CLS start: complete order {len(order)} cities -> {st} strands, makespan {mk:.1f}d "
+          f"[{time.time()-t0:.0f}s]", flush=True)
+    rng = (sum(ord(ch) * (i + 7) for i, ch in enumerate(tag)) * 2654435761) & 0x7fffffff or 987654321
+    n = len(order); acc = 0                                     # rng seeded from tag -> chains on same seed diverge
+    for it in range(iters):
+        order, mk, st, slegs = cur
+        rng = (rng * 1103515245 + 12345) & 0x7fffffff
+        # STRAND-TARGETED move (when strands exist): relocate a city involved in a random strand leg to a random
+        # spot — directly attacks the infeasibility (random or-opt almost never hits a strand-fixing move). Else
+        # plain or-opt to descend makespan once feasible.
+        if slegs and (rng % 4 != 0):
+            sp = slegs[rng % len(slegs)]
+            a = sp + ((rng >> 5) & 1)                          # one endpoint of the stranded leg
+            a = min(max(1, a), n - 2); L = 1
+        else:
+            L = 1 + (rng % 3); a = 1 + (rng % (n - L - 1))
+        seg = order[a:a + L]; rest = order[:a] + order[a + L:]
+        b = 1 + ((rng >> 8) % (len(rest) - 1))
+        cand = rest[:b] + seg + rest[b:]
+        cmk, cst, cslegs = retime_tol(cand, maxwait)
+        # accept: fewer strands always; equal strands & not-worse makespan; rare uphill (escape local minima)
+        if cst < st or (cst == st and cmk <= mk) or ((rng % 40 == 0) and cst <= st + 1):
+            cur = (cand, cmk, cst, cslegs); acc += 1
+        if (cst, cmk) < (best[2], best[1]):
+            best = (list(cand), cmk, cst)
+            json.dump({"path": cand, "makespan": cmk, "depth": n, "strands": cst}, open(ckpt, "w"))
+            print(f"[E-727][{tag}] CLS it{it}: NEW best strands {cst} makespan {cmk:.1f}d "
+                  f"(d/leg {cmk/(n-1):.3f}) acc {acc} [{time.time()-t0:.0f}s]", flush=True)
+            if cst == 0:
+                print(f"[E-727][{tag}] *** 0 STRANDS — complete feasible tour {cmk:.0f}d via local search "
+                      f"(NOT OR-Tools) = robust reproduction! {'RANK-1!' if cmk < 425 else ''}", flush=True)
+        if it % 100 == 0:
+            print(f"[E-727][{tag}] CLS it{it}: cur strands {cur[2]} mk {cur[1]:.1f}d | best strands {best[2]} "
+                  f"mk {best[1]:.1f}d | acc {acc} [{time.time()-t0:.0f}s]", flush=True)
+
+
 def main(seed_json="grasp_best_k", maxwait=40, tag="k", mode="single"):
     ft.transfer_dv(OPAR[0], OPAR[1], 10 * DAY, 1 * DAY, MAXREV)  # JIT warm
     if seed_json.startswith("grasp_best_"):
@@ -234,6 +305,8 @@ def main(seed_json="grasp_best_k", maxwait=40, tag="k", mode="single"):
           f"[positive-control {time.time()-t0:.0f}s]", flush=True)
     if mode == "lns":
         lns_loop(seed, maxwait, tag, t0)
+    elif mode == "cls":
+        cls_loop(seed, maxwait, tag, t0)
     else:
         repair(seed, maxwait, tag, t0)
 
