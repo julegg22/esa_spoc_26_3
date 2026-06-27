@@ -345,6 +345,9 @@ def cls_loop(seed, maxwait, tag, t0, iters=2000000):
             if cst == 0:
                 print(f"[E-727][{tag}] *** 0 STRANDS — complete feasible tour {cmk:.0f}d via local search "
                       f"(NOT OR-Tools) = robust reproduction! {'RANK-1!' if cmk < 425 else ''}", flush=True)
+        # NB: ILS kicks were tried and REMOVED — extreme timing fragility means ANY perturbation that shifts early
+        # timing cascades (3-city relocation: 2 strands -> 107). Escape must come from non-cascading (tail) moves,
+        # which the strand-targeted/cheap-slot moves already attempt. See E-729.
         if it % 100 == 0:
             print(f"[E-727][{tag}] CLS it{it}: cur strands {cur[2]} mk {cur[1]:.1f}d | best strands {best[2]} "
                   f"mk {best[1]:.1f}d | acc {acc} [{time.time()-t0:.0f}s]", flush=True)
