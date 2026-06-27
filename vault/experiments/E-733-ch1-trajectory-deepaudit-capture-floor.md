@@ -3,8 +3,9 @@ id: E-733
 type: experiment
 tags: [ch1, trajectory, deep-audit, capture, dv2, rank-5, lever]
 date: 2026-06-27
-status: ACTIVE — /deepaudit ch1-trajectory; locates the residual gap in the CAPTURE burn (DV2), not departure
+status: DONE — /deepaudit ch1-trajectory; per-pair tooling near-floor (dep+capture+idd), one expensive JOINT-matching lever open
 reframes: [E-706, E-707, E-708]
+self-corrected: "capture solver-floored" hypothesis REFUTED in-audit by corr(DV2,eL)=-0.71 → capture is PHYSICS-floored (circular Moon orbits)
 related: ["[[M-general-deep-single-prompt-audit]]", "[[ch1-trajectory-udp-floor-confirmed]]", "[[ch1-trajectory-mass-lever-exhausted]]", "[[E-701...]]"]
 ---
 # E-733 — /deepaudit ch1-trajectory: the residual gap is CAPTURE (DV2), not departure or tof
@@ -58,27 +59,52 @@ record (solve_arrival v1 rejected 150/400; B7 acceptance-window too tight; WSB "
 | idl matching re-opt | refuted on |iE−iL| proxy (E-704); true matrix 280 CPU-h "infeasible" | the cost-scope ("all 400²") may be the artifact — restricting to the ~100 worst is cheap |
 | longer-tof re-solve (E-707/708) | partial (88 swept) | **refuted on current bank** (short-tof not more expensive) |
 
-## Verdict
+## Phase 2 SELF-CORRECTION — capture is PHYSICS-floored, not solver-floored (the number overruled the story)
 
-**The "356,550 is near our tooling's floor" verdict is only TRUE for departure + idd; it is FALSE for capture.**
-The residual ~550 m/s gap to the rank-1-tier ΔV lives almost entirely in the **capture burn DV2 (median 1096 vs
-an achievable 462)**, and 46/400 transfers prove cheap capture is reachable on this very problem. Given the
-campaign's history of capture-side solver/feasibility bugs (the exact shape that hid the departure B9 lever for
-8 methods), **DV2 is the prime suspect for being solver-floored, not physics-floored.**
+The cheap probe for A-CAPTURE (no-solve correlation on the bank + Moon orbits) **refuted my own hypothesis**:
+- **corr(DV2, Moon eL) = −0.715; corr(DV2, Moon a) = −0.688.** Expensive-capture transfers (DV2>1200, n=90)
+  are **near-CIRCULAR low Moon orbits (eL≈0.028)**; cheap-capture (DV2<500, n=46) are **eccentric (eL≈0.616)**.
+- So high DV2 is **causal physics**: capturing into a circular low LLO needs ~1000+ m/s (no slow apolune
+  arrival, narrow WSB window) — *exactly* E-604's WSB-refuted-for-circular case, here confirmed causal (this is
+  the real meaning of E-602's −0.71, for the capture leg specifically). The 46 cheap captures are simply the
+  eccentric Moon orbits, not a solver advantage. **DV2 is physics-floored; the departure-B9 analog does NOT hold
+  for capture.**
 
-## Further exploration paths (3, cheapest info-gain first)
+## Verdict (corrected)
 
-1. **Capture-floor probe (cheapest, decisive)** — violates A-CAPTURE. Take ~10 high-DV2 transfers (DV2>1200),
-   re-solve ONLY the capture (vary capture geometry / coast / apolune-plane-change) on the official BCP fitness.
-   **Binary:** any meaningful fraction drops DV2 toward ~462 ⇒ capture is *solver-floored* (departure-B9 analog)
-   ⇒ a fleet-scale capture lever ≈ the whole +rank-3/rank-1 gap. Holds firm ⇒ capture is physics-floored, gap
-   real. ~minutes (10 pair solves on `ch1_pair_udp.py` / the eccentric backshoot).
-2. **B1 apolune-plane-change on the 81 high-total tail** — violates "3-impulse geometry fixed"; the deferred
-   B1 fix whose "~350k revisit trigger" is now MET. Plane change at apolune (cheap) vs perilune. **Binary:**
-   tail ΔV drops (dep+cap) ⇒ +up-to-11.5 k toward rank-5. Skeleton exists (`ch1_bcp_apolune.py`).
-3. **Matching (idl) re-opt restricted to the ~100 worst transfers via the FAST eccentric solver** — violates
-   "matching closed (E-704)". E-704 refuted the |iE−iL| proxy and called the true 400² matrix infeasible
-   (280 CPU-h); restricting to the cld-capped 65 + high-DV2 ~50 transfers' *alternative* idl is ~1 % of that.
-   **Binary:** any re-match improves total ⇒ E-704's "infeasible" was a cost-scope artifact, matching reopens.
+**The bank IS near our per-transfer tooling's floor: departure floored (2772, eccentric fix), capture
+physics-floored (circular Moon orbits, corr −0.71), idd Hungarian-optimal (E-706), longer-tof refuted.** My
+in-audit hypothesis "capture is solver-floored" was overturned by the correlation. The residual ~550 m/s /
++16k-to-rank-5 therefore lives in the **JOINT layer** — *which* Earth orbit is matched to each unavoidable
+circular Moon orbit, and to which high-cld destination — i.e. the **realized-ΔV (+cld) matching**, which E-704
+refuted only on the `|iE−iL|` *proxy* and never ran on the true objective (deemed 280 CPU-h). This is a genuine
+"near-floor for the per-pair tooling, one expensive joint lever open" state — not a false ceiling. NB this also
+sharpens, not refutes, the standing record: the circular-capture penalty is real and shared (we and the
+competitor both pay it), consistent with [[ch1-trajectory-udp-floor-confirmed]].
 
-Diagnostic only — no bank change, nothing submitted (user-gated). Per CLAUDE.md §5b, taking probe #1 next.
+## Further exploration paths (re-ranked after the in-audit self-correction)
+
+Probe #1 below (capture-floor) was the planned cheapest test — **and the audit already RAN its cheapest form
+(the no-solve correlation) and REFUTED it: capture is physics-floored.** So the surviving live levers re-rank:
+
+1. **(was #3) Joint realized-cost matching re-opt — the surviving lever.** Violates "matching closed (E-704)".
+   The circular Moon orbits (eL<0.1, ~90 of them) MUST all be captured into (~1000+ m/s, irreducible per-orbit);
+   the only freedom is *which* Earth orbit (and idd destination) pairs with each. E-704 refuted the `|iE−iL|`
+   *proxy* and called the true 400² realized-ΔV(+cld) matrix infeasible (280 CPU-h) — but a **bipartite re-match
+   restricted to the ~140 worst transfers** (90 circular-capture + cld-capped 65, overlap) using the fast
+   eccentric solver is ~1 % of that. **Build:** realized-cost sub-matrix on those rows × their k≈15 nearest
+   alternative idl, Hungarian on the sub-block holding the rest fixed. **Binary:** any feasible re-match lowers
+   fleet total ⇒ E-704's "infeasible" was a cost-scope artifact, matching reopens (→ rank-5 +16k). No change ⇒
+   matching is genuinely at its joint optimum. *Cheapest of the survivors; take this first.*
+2. **(was #2) B1 apolune-plane-change on the high-ΔV tail.** Violates "3-impulse geometry fixed"; deferred B1
+   whose ~350k revisit trigger is MET. The high-iL circular captures (expensive tail, iL≈0.84) may shed ΔV via a
+   plane change at apolune (cheap radius) instead of perilune. **Binary:** tail ΔV drops ⇒ +toward rank-5.
+3. **WSB / low-energy capture for the circular targets, re-examined as a possible bug-class (NOT a refinement).**
+   E-604 refuted WSB for circular targets on a *narrow window scan*; given the departure-B9 precedent, re-verify
+   the WSB capture window for ~5 circular Moon orbits is genuinely empty and not a scan-resolution artifact.
+   **Binary:** a feasible sub-1000 m/s WSB capture exists for any circular target ⇒ E-604 was resolution-limited,
+   capture reopens after all. (Lowest prior — the −0.71 physics correlation argues it holds — but it is the only
+   path that could reduce the *irreducible* circular-capture floor itself.)
+
+Diagnostic only — no bank change, nothing submitted (user-gated). The cheapest *surviving* assumption-falsifying
+probe is #1 (joint matching re-opt); next session takes it. The Ch2-medium rank-1 campaign continues in parallel.
