@@ -6,7 +6,7 @@ date: 2026-06-27
 status: DONE — /deepaudit ch1-trajectory; per-pair tooling near-floor (dep+capture+idd), one expensive JOINT-matching lever open
 reframes: [E-706, E-707, E-708]
 self-corrected: "capture solver-floored" hypothesis REFUTED in-audit by corr(DV2,eL)=-0.71 → capture is PHYSICS-floored (circular Moon orbits)
-related: ["[[M-general-deep-single-prompt-audit]]", "[[ch1-trajectory-udp-floor-confirmed]]", "[[ch1-trajectory-mass-lever-exhausted]]", "[[E-701...]]"]
+related: ["[[M-general-deep-single-prompt-audit]]", "[[ch1-trajectory-udp-floor-confirmed]]", "[[ch1-trajectory-mass-lever-exhausted]]", "[[E-701-ch1-eccentric-departure-solver-fix]]"]
 ---
 # E-733 — /deepaudit ch1-trajectory: the residual gap is CAPTURE (DV2), not departure or tof
 
