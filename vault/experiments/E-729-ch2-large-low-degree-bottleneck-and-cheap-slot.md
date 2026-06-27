@@ -53,5 +53,27 @@ for hundreds of iters). Deployed across the 4-chain fleet.
    cycle), forcing ≥1 long leg (a real rank-1 floor)? = a conflict-graph check on the low-degree cities' cheap
    pred/succ sets. **This is the crux: it decides whether rank-1 is reachable at all.**
 
+## Conflict-graph check result (the crux) — NO structural floor, but a 118-city contended subgraph
+
+Ran the conflict check (distinct-cheap-predecessor bipartite matching + "all cheap-preds also low-degree?"):
+- **The low-degree population is LARGE: 118/601 cities have ≤20 cheap pred/succ** (not the 6–16 that happened to
+  strand in two orders — those were just the tail symptoms). ~20% of the giant is low-degree.
+- **It is a CONTENDED, internally-connected subgraph:** ~93/118 low-degree cities have cheap-preds that are ALL
+  *also* low-degree — i.e. they can only be entered cheaply *from each other*. So they are NOT independently
+  sandwichable between abundant high-degree cities (my "anchor 16 cities" plan was too optimistic); they must be
+  threaded as a coherent low-degree cluster embedded among the ~480 easy high-degree cities.
+- **BUT there is NO Hall-level obstruction:** a perfect distinct-cheap-predecessor matching exists (118/118).
+  So rank-1 is **not structurally blocked** at the matching level — a consistent predecessor assignment exists.
+  (Caveat: matching ⊉ Hamiltonian path — the arcs may form subtours; matching is a necessary, not sufficient,
+  condition. Full Hamiltonicity is NP-hard. But no *trivial* impossibility was found.)
+
+**Verdict:** rank-1 is a **hard SEARCH problem on a 118-city contended low-degree subgraph**, not a proven floor.
+The sharper attack this implies: **decompose** — extract the 118-city low-degree subgraph, find a cheap
+(short-tof) Hamiltonian path through it using its internal cheap edges, then insert the ~480 easy high-degree
+cities into that backbone. This is the one constructive decomposition never tried (constructive methods place
+hard cities last; this makes them the skeleton). The cheap-slot move is the local-search analogue and is already
+descending. NB: the bank-basin CLS chains optimise toward rank-2 (long-tof seed); rank-1 needs this short-tof
+118-subgraph solved.
+
 Banks held. Sharpens [[E-720-ch2-large-ultradeep-audit]] ("hard cities cost 1.2–4.0 d/leg") with the precise
 mechanism (low cheap-degree → predecessor constraint) and a working lever.
