@@ -69,3 +69,6 @@ Ch2-large 932.53 (~r2), Ch2-med 189.10 (~r2 now), Ch2-small 112.996 (~r6), Ch1-t
 decisions: (1) submissions — medium degraded r1→r2 while held, field improving; (2) allocation — rank-1-large
 decisively walled, untouched Ch1 levers (E-701 fleet #36, matching-II #35) likely higher total-points EV for the
 final 3 days.** User directive standing: keep all 4 on rank-1, HOLD submissions.
+
+## Addendum — /deepaudit ch2 medium (E-731)
+User ran /deepaudit on medium (now a LIVE lever: lost rank-1 window, need -2.83d). Verdict: the 189.10 "floor" is the retime-optimum of a FROZEN, edge-truncated order (A1 falsified: 207 unsampled cheap edges; order never globally re-searched for walked cost). Measured: 177.2d flight + 11.9d idle; 71 legs >1d (132.7d) inflated ~6x. Medium has ~30-40% headroom; reclaiming rank-1 needs 1.5%. 3 paths in [[E-731-ch2-medium-deepaudit-frozen-order]]; taking the cheapest (long-leg reorder probe) next.
