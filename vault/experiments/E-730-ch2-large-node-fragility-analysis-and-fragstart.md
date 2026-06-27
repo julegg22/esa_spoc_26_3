@@ -50,5 +50,21 @@ from it (tags fcls/fcls2, a fresh time-aware basin distinct from both bank and s
 As the bank-seeded CLS chains reduce strands via cheap-slot, they **drift from the bank topology** (edge-Jaccard
 0.97 → 0.72) — strand reduction genuinely rewires the order, not just polishing. The CLS explores real structure.
 
+## CAVEAT (user asked re: orbital isolation index) — static node features only weakly predict ACTUAL strands
+
+Decisive test: per-city involvement in actual strand legs (across staticLKH/fragstart/bcls orders) vs each
+static feature:
+- fragility (max_gap): **r=+0.095**, low-degree: **+0.146**, orbital isolation: **+0.099**. ALL WEAK.
+- orbital isolation vs strand-residual-after-fragility = +0.088 → isolation carries the SAME weak signal,
+  **adds no orthogonal value** (don't add it as a prior).
+- strand-involvement spreads over **259 cities**, not a small hard set.
+
+**Reconciliation with E-729:** in NEAR-feasible orders (1–6 strands) the few remaining strands ARE the
+low-degree/fragile cities (why cheap-slot helps the ENDGAME). In FAR-from-feasible orders (88–153 strands) the
+timing CASCADE strands easy cities too, so the difficulty spreads. **Net: static per-node features (degree,
+fragility, isolation) are an ENDGAME tie-breaker only; the core difficulty is GLOBAL timing coherence, not a
+per-node property.** Don't over-invest in node indices — the lever is global (the time-aware constructor/seed,
+e.g. fragstart's 87, which came from the START + earliest-arrival, not per-node prioritisation).
+
 Banks held. Builds on [[E-729-ch2-large-low-degree-bottleneck-and-cheap-slot]] (low-degree = the same set, 92 %
 overlap) and gives the constructor the fragility-priority START + precomputed arrival-window priors.
