@@ -38,10 +38,12 @@ def cheap_arr(i, j, t, maxwait):
 from numba import njit
 # LAZY FINE evaluator: scan each edge's cheap/exception windows on demand at fine resolution (catches narrow
 # windows the coarse precompute misses), cached. Avoids a multi-hour full precompute.
-TQ = 0.05; HORIZON = 250.0                                      # any sub-189d tour fits in 250d; halves scan+DP cost
+TQ = float(os.environ.get("CH2_TQ", "0.05"))                   # dep-grid resolution (finer = lower handicap, slower)
+TOFSTEP = float(os.environ.get("CH2_TOFSTEP", "0.02"))         # tof scan step
+HORIZON = 250.0                                                 # any sub-189d tour fits in 250d
 T = int(round(HORIZON / TQ)); INF_INT = 10 ** 9
 _DEPS = np.arange(0.0, HORIZON, TQ); _DEPS_SEC = _DEPS * DAY
-print(f"[E-731] lazy fine evaluator TQ={TQ}d horizon={HORIZON}d T={T}", flush=True)
+print(f"[E-731] labeling-DP evaluator TQ={TQ}d tofstep={TOFSTEP}d horizon={HORIZON}d", flush=True)
 _EDGE = {}
 
 
@@ -76,8 +78,8 @@ def _edge_win(i, j):
     key = (i, j)
     if key in _EDGE:
         return _EDGE[key]
-    cc = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, 0.02 * DAY, THR, MAXREV)
-    ee = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, 0.02 * DAY, EXC_THR, MAXREV)
+    cc = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, TOFSTEP * DAY, THR, MAXREV)
+    ee = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, TOFSTEP * DAY, EXC_THR, MAXREV)
     mc = cc > 0
     me = (ee > 0) & ~mc                                          # exception-only departures (no cheap there)
     out = (_suffix_min(_DEPS[mc], _DEPS[mc] + cc[mc] / DAY),
@@ -143,31 +145,43 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
     if ti is not None:
         omk, ov = official(border, ti, tf)
         print(f"[E-731] bank order official re-score from retimer schedule: {omk:.2f}d viols {ov}", flush=True)
-    # OR-OPT / LNS search
-    rng = 20260627
-    cur = border; cur_mk = mk; best = border; best_mk = mk; acc = 0
-    ckpt = f"{ROOT}/cache/ch2_medium_ordersearch_best.json"
+    # OR-OPT / LNS search (per-chain seed + tag for parallel runs)
+    TAG = os.environ.get("CH2_TAG", "m")
+    rng = int(os.environ.get("CH2_SEED", "20260627"))
+    move = os.environ.get("CH2_MOVE", "oropt")                 # oropt | 2opt
+    cur = border; cur_mk = mk; best_proxy = mk; best_off = 189.10; acc = 0
+    ckpt = f"{ROOT}/cache/ch2_medium_ordersearch_{TAG}.json"
+    pbest = f"{ROOT}/cache/ch2_medium_proxybest_{TAG}.json"
     for it in range(iters):
         rng = (rng * 1103515245 + 12345) & 0x7fffffff
-        L = 1 + (rng % 3); a = 1 + (rng % (len(cur) - L - 1))
-        seg = cur[a:a + L]; rest = cur[:a] + cur[a + L:]
-        b = 1 + ((rng >> 8) % (len(rest) - 1))
-        cand = rest[:b] + seg + rest[b:]
+        if move == "2opt":                                     # segment reversal
+            a = 1 + (rng % (len(cur) - 3)); b = a + 2 + ((rng >> 8) % (len(cur) - a - 2))
+            cand = cur[:a] + cur[a:b][::-1] + cur[b:]
+        else:                                                  # or-opt: relocate a 1-3 city segment
+            L = 1 + (rng % 3); a = 1 + (rng % (len(cur) - L - 1))
+            seg = cur[a:a + L]; rest = cur[:a] + cur[a + L:]
+            b = 1 + ((rng >> 8) % (len(rest) - 1))
+            cand = rest[:b] + seg + rest[b:]
         cmk, cti, ctf, ceu = retime(cand, K, W, maxwait)
         if cmk < cur_mk or (rng % 25 == 0 and cmk < cur_mk + 1.0):
             cur, cur_mk = cand, cmk; acc += 1
-        if cmk < best_mk - 1e-6 and cti is not None:
-            omk, ov = official(cand, cti, ctf)               # FINAL gate
-            if max(ov) <= 1e-6 and omk < 189.10:
-                best, best_mk = cand, omk
-                json.dump({"order": cand, "times": cti, "tofs": ctf, "makespan": omk},
-                          open(ckpt, "w"))
-                tag = "*** RANK-1 (<186.27)!" if omk < 186.27 else "better-than-bank"
-                print(f"[E-731] it{it}: OFFICIAL {omk:.3f}d (retimer {cmk:.2f}) viols ok -> {tag} "
+        if cmk < best_proxy - 1e-6 and cti is not None:        # new best in PROXY space -> validate officially
+            best_proxy = cmk
+            json.dump({"order": cand, "proxy": cmk}, open(pbest, "w"))
+            omk, ov = official(cand, cti, ctf)                 # FINAL exact gate (enforces real <=5 exceptions)
+            feas = max(ov) <= 1e-6
+            if feas and omk < best_off:
+                best_off = omk
+                json.dump({"order": cand, "times": cti, "tofs": ctf, "makespan": omk}, open(ckpt, "w"))
+                tg = "*** RANK-1 (<186.27)!" if omk < 186.27 else "better-than-bank"
+                print(f"[E-731][{TAG}] it{it}: OFFICIAL {omk:.3f}d (proxy {cmk:.2f}) -> {tg} "
+                      f"[{time.time()-t0:.0f}s]", flush=True)
+            else:
+                print(f"[E-731][{TAG}] it{it}: proxy-best {cmk:.2f}d (official {omk:.2f}d feas={feas}) "
                       f"[{time.time()-t0:.0f}s]", flush=True)
         if it % 500 == 0:
-            print(f"[E-731] it{it}: cur {cur_mk:.2f} best {best_mk:.2f} acc {acc} [{time.time()-t0:.0f}s]",
-                  flush=True)
+            print(f"[E-731][{TAG}] it{it}: cur {cur_mk:.2f} proxy-best {best_proxy:.2f} off-best {best_off:.2f} "
+                  f"acc {acc} [{time.time()-t0:.0f}s]", flush=True)
 
 
 if __name__ == "__main__":
