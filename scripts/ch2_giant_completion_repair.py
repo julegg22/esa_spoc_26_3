@@ -296,24 +296,42 @@ def cls_loop(seed, maxwait, tag, t0, iters=2000000):
           f"[{time.time()-t0:.0f}s]", flush=True)
     rng = (sum(ord(ch) * (i + 7) for i, ch in enumerate(tag)) * 2654435761) & 0x7fffffff or 987654321
     n = len(order); acc = 0                                     # rng seeded from tag -> chains on same seed diverge
+    # E-729: the rank-1 obstacle is LOW-DEGREE cities (~7-14 cheap preds vs median 152). To place one cheaply its
+    # immediate predecessor must be one of its ~10 cheap preds (~1.7% random hit) -> random moves never satisfy it.
+    # Precompute giant-restricted cheap pred/succ sets + the low-degree set; targeted "cheap-slot" move places a
+    # stranded low-degree city between a cheap pred and a cheap succ.
+    GID = set(cities)
+    CP = {c: (INADJ[c] & GID) for c in cities}; CS = {c: (OUTADJ[c] & GID) for c in cities}
+    LOWDEG = set(c for c in cities if min(len(CP[c]), len(CS[c])) <= 30)
     for it in range(iters):
         order, mk, st, slegs, hist, cum = cur
         rng = (rng * 1103515245 + 12345) & 0x7fffffff
-        # STRAND-TARGETED move (when strands exist): relocate a city involved in a random strand leg to a random
-        # spot — directly attacks the infeasibility (random or-opt almost never hits a strand-fixing move). Else
-        # plain or-opt to descend makespan once feasible.
-        if slegs and (rng % 4 != 0):
-            sp = slegs[rng % len(slegs)]
-            a = sp + ((rng >> 5) & 1)                          # one endpoint of the stranded leg
-            a = min(max(1, a), n - 2); L = 1
-        else:
-            L = 1 + (rng % 3); a = 1 + (rng % (n - L - 1))
-        seg = order[a:a + L]; rest = order[:a] + order[a + L:]
-        b = 1 + ((rng >> 8) % (len(rest) - 1))
-        cand = rest[:b] + seg + rest[b:]
-        # first divergence is at position min(a,b); leg (q-1) already ENDS at the changed city, so restart the
-        # re-time from q-1 (its arriving states hist[q-1] are still valid; leg q-1's destination changed).
-        q = max(0, min(a, b) - 1)                              # prefix [0,q] arriving-states unchanged
+        cand = None
+        # MOVE 1 (cheap-slot, E-729): if a stranded leg involves a low-degree city, relocate it between one of its
+        # cheap preds and cheap succs -> directly satisfies its rare entry/exit constraint.
+        if slegs:
+            scl = [c for p in slegs for c in (order[p], order[p + 1]) if c in LOWDEG]
+            if scl and (rng % 3 != 0):
+                c = scl[rng % len(scl)]
+                ci = order.index(c); rest = order[:ci] + order[ci + 1:]
+                slots = [p for p in range(len(rest) - 1) if rest[p] in CP[c] and rest[p + 1] in CS[c]]
+                if not slots:
+                    slots = [p for p in range(len(rest) - 1) if rest[p] in CP[c]]   # at least cheap entry
+                if slots:
+                    sp = slots[(rng >> 7) % len(slots)]
+                    cand = rest[:sp + 1] + [c] + rest[sp + 1:]
+        if cand is None:                                       # MOVE 2/3: strand-targeted or plain or-opt relocate
+            if slegs and (rng % 4 != 0):
+                sp = slegs[rng % len(slegs)]; a = min(max(1, sp + ((rng >> 5) & 1)), n - 2); L = 1
+            else:
+                L = 1 + (rng % 3); a = 1 + (rng % (n - L - 1))
+            seg = order[a:a + L]; rest = order[:a] + order[a + L:]
+            b = 1 + ((rng >> 8) % (len(rest) - 1))
+            cand = rest[:b] + seg + rest[b:]
+        q = 0                                                  # first divergence; leg q-1 may change -> restart q-1
+        while q < n and q < len(cand) and cand[q] == order[q]:
+            q += 1
+        q = max(0, q - 1)
         cmk, cst = retime_inc(cand, q, hist[q], cum[q], maxwait)
         # accept: fewer strands always; equal strands & not-worse makespan; rare uphill (escape local minima)
         if cst < st or (cst == st and cmk <= mk) or ((rng % 40 == 0) and cst <= st + 1):
