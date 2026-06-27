@@ -8,6 +8,12 @@ status: ACTIVE — foundational under-count CONFIRMED + recovered; beam aug-vs-b
 
 # E-721 — Ch2-large: the foundational cheap-edge graph was built by an 8-sample probe (under-count bug)
 
+> 🔧 **TOOL-ARTIFACT — RE-TRY (2026-06-27, [[A-2026-06-27-broken-tool-retry-queue]]).** The E-721d/g "LNS /
+> insertion-repair cascades 34→220 strands; local repair structurally BLOCKED" verdict was largely caused by
+> NOW-FIXED broken tools (epoch-sparse table T1, long-tof-blind retimer T2, max_revs=2 T3) — many of those
+> "strands" were the evaluator failing to FIND windows that exist. **RE-RUN destroy-repair / ALNS on the
+> faithful evaluator (E-725) + full-tof retimer + timing-DP re-schedule before trusting "blocked."**
+
 **User push (correct):** "every challenge we first concluded SOA exhausted, then found a wrong assumption /
 implicit constraint / bug. Redo the audit on patterns we left out." This overturned my E-720 "real
 algorithmic gap" conclusion — the gap was a **foundational under-counting bug**, the same family as the Ch1

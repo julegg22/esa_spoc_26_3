@@ -16,6 +16,11 @@ status: ACTIVE — forward construction ceiling ~575 characterized; phase-lock c
 > not makespan. Under P′ this same result means **rank-1 is a COMPLETION problem on an already-fast structure,
 > not a 2× compression** — reachable, not a moonshot. See [[M-general-root-objective-and-proxy-skew]].
 
+> 🔧 **TOOL-ARTIFACT — RE-TRY (2026-06-27, [[A-2026-06-27-broken-tool-retry-queue]]).** The "sub-tour bridge:
+> 1-city insert → 300 strands" result used the epoch-sparse table (T1) + long-tof-blind retimer (T2); much of
+> that cascade was the evaluator failing to find windows. **RE-TRY bridge/insertion on the faithful evaluator
+> (E-725) + full-tof retimer.** (The forward-beam ~575 cap is PARTIAL: also genuine phasing.)
+
 After insertion/SA was proven cascade-defeated (E-721g), the next family was global *construction* that never
 perturbs a tight schedule. Two distinct constructors built and run on the corrected graph
 (`ch2_giant_dense1d_aug.npz`):

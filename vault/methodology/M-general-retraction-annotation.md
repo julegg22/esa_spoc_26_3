@@ -53,6 +53,14 @@ reader on the new node must see what it corrected.
   a symptom, not the cause). Pin the interpretation, keep the data.
 - **NARROWED** — the conclusion holds only under an assumption later
   shown non-binding (note the assumption explicitly).
+- **TOOL-ARTIFACT — RE-TRY** — the negative conclusion (failed / blocked /
+  cascaded / capped) was *caused by a now-FIXED tool defect* (a buggy
+  evaluator, an under-resolved table, a wrong solver setting), not by the
+  approach. **Recoverable**: re-run with the corrected tool before
+  believing it. Mark with 🔧, name the defect + its fix, and add the node
+  to a central re-try queue (e.g. `A-2026-06-27-broken-tool-retry-queue`).
+  Distinct from RETRACTED (the *result* was wrong) — here the result was
+  an artifact of the measuring instrument, and the branch may still be alive.
 
 Pick by *what actually changed* — a wrong number is RETRACTED; a wrong
 "why" behind a right number is REFRAMED. This distinction is itself

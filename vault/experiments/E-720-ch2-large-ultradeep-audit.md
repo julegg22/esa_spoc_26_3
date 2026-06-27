@@ -8,6 +8,12 @@ status: ACTIVE — assumption audit; reframes rank-1 as a search/sequencing gap;
 
 # E-720 — Ch2-large rank-1: ultradeep assumption audit (find the flaw, not the optimum)
 
+> 🔧 **PARTIAL TOOL-ARTIFACT — RE-TRY (2026-06-27, [[A-2026-06-27-broken-tool-retry-queue]]).** The "real
+> algorithmic gap / 575 cap" verdict rested partly on the epoch-sparse table (T1, fixed by E-726d faithful
+> windows) — already refuted/REFRAMED by [[E-721-ch2-large-foundational-graph-undercount|E-721]] and
+> [[E-726-ch2-large-ultrathink-audit-rank1-reachable|E-726]]. PARTIAL: the completion cap is ALSO genuine
+> phasing, so re-running construction on faithful windows still hits a residual wall.
+
 **Mandate (user):** treat as ground truth that solutions ≤424.62 (X) exist; our best Y is incomplete
 (566/601 @ 298d) or rank-2 (932.53). So "no further gains" is FALSE — find the flaw in our reasoning. Four
 parallel investigation agents + direct UDP audit. This **partly overturns** the E-719 "rank-1 not reachable"
