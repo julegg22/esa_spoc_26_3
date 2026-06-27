@@ -75,5 +75,28 @@ hard cities last; this makes them the skeleton). The cheap-slot move is the loca
 descending. NB: the bank-basin CLS chains optimise toward rank-2 (long-tof seed); rank-1 needs this short-tof
 118-subgraph solved.
 
+## Skeleton constructor — TRIED, FAILED (the obstacle is timing, not edge choice)
+
+Hypothesis: a short-tof order that threads the low-degree subgraph as a backbone would seed the CLS far better
+than the min-DV staticLKH (153 strands). Built greedy NN on the cheap short-tof (min-tof) graph, with and without
+low-degree-first priority. **Result: min-tof greedy = 165 strands, low-degree-first = 215 — both WORSE than
+staticLKH's 153.** Decisive lesson: **static seeds are all ~150–215 strands regardless of edge-cheapness
+heuristic, because the strands come from TIMING/phasing infeasibility, not edge selection.** A "better static
+order" cannot help — the obstacle is time-dependent. So the decompose-skeleton idea is refuted *as a static
+constructor*; the time-aware CLS (which has the retimer in its objective) remains the only tool that addresses
+phasing.
+
+## Honest consolidated state (two separable obstacles)
+
+The CLS objective (strands, makespan) exposes that rank-1 has TWO obstacles, and we're only beating one:
+1. **Strand count** (are all legs short-tof-feasible?) — the cheap-slot move WORKS: bcls 6→3 strands, descending.
+2. **Makespan / waits** (tight phasing — arriving as each window opens, minimal waiting) — UNSOLVED. bcls at 3
+   strands is ~982 d ≈ rank-2 pace: the legs are short-tof but the WAITS between them are large. Rank-1 (424 d)
+   needs ~560 d of waits removed = global tight phasing — the genuine hard core, and the bank basin can't reach
+   it (basin separation, [[E-720-ch2-large-ultradeep-audit]]).
+
+So: CLS+cheap-slot is converging toward a robust **rank-2** reproduction (short-tof legs, loose phasing). Rank-1
+remains walled on **tight global phasing**, now precisely separated from the (solved) leg-feasibility obstacle.
+
 Banks held. Sharpens [[E-720-ch2-large-ultradeep-audit]] ("hard cities cost 1.2–4.0 d/leg") with the precise
-mechanism (low cheap-degree → predecessor constraint) and a working lever.
+mechanism (low cheap-degree → predecessor constraint) and a working lever (cheap-slot, strand side only).
