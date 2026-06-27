@@ -56,74 +56,74 @@ def _build_idx(et):
     return arr
 
 
-def _edge_idx(i, j):
-    """lazy fine per-edge (c_arr, e_arr) arrival-index arrays: cheap (dv<=100) and exception (dv<=600). Cached."""
+def _suffix_min(dep, arr):
+    """given departures `dep` (sorted) and arrivals `arr`, return (dep_sorted, smin, sdep, stof) where for each
+    index q, smin[q]=min arrival over deps>=dep[q], and sdep/stof are the departure/tof achieving it. So the best
+    (min-arrival) transfer departing at >= t is found by one searchsorted into dep."""
+    n = len(dep)
+    if n == 0:
+        return (np.array([0.0]), np.array([np.inf]), np.array([0.0]), np.array([0.0]))
+    sidx = np.empty(n, dtype=np.int64); sidx[n - 1] = n - 1
+    for q in range(n - 2, -1, -1):
+        sidx[q] = q if arr[q] <= arr[sidx[q + 1]] else sidx[q + 1]
+    smin = arr[sidx]; sdep = dep[sidx]; stof = smin - sdep
+    return (dep, smin, sdep, stof)
+
+
+def _edge_win(i, j):
+    """lazy fine per-edge CONTINUOUS windows (no grid): suffix-min structures for cheap (dv<=100) and exception
+    (100<dv<=600) transfers. Cached. Used by the exact labeling DP."""
     key = (i, j)
     if key in _EDGE:
         return _EDGE[key]
     cc = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, 0.02 * DAY, THR, MAXREV)
     ee = ft.cheap_first_tof(OPAR[i], OPAR[j], _DEPS_SEC, MINTOF * DAY, 8.0 * DAY, 0.02 * DAY, EXC_THR, MAXREV)
-    out = (_build_idx(cc), _build_idx(ee))
+    mc = cc > 0
+    me = (ee > 0) & ~mc                                          # exception-only departures (no cheap there)
+    out = (_suffix_min(_DEPS[mc], _DEPS[mc] + cc[mc] / DAY),
+           _suffix_min(_DEPS[me], _DEPS[me] + ee[me] / DAY))
     _EDGE[key] = out
     return out
 
 
-@njit(cache=True)
-def _fwd_dp(c_arr, e_arr, n_legs, T, nexc):
-    reach = np.zeros((n_legs + 1, T, nexc + 1), dtype=np.bool_)
-    pdep = np.full((n_legs + 1, T, nexc + 1), -1, dtype=np.int32)
-    pe = np.full((n_legs + 1, T, nexc + 1), -1, dtype=np.int8)
-    reach[0, 0, 0] = True
-    for k in range(n_legs):
-        for e in range(nexc + 1):
-            tmin = -1
-            for t in range(T):
-                if reach[k, t, e]:
-                    tmin = t; break
-            if tmin < 0:
-                continue
-            for tp in range(tmin, T):
-                a = c_arr[k, tp]
-                if a < T and not reach[k + 1, a, e]:
-                    reach[k + 1, a, e] = True; pdep[k + 1, a, e] = tp; pe[k + 1, a, e] = 0
-                if e < nexc:
-                    a2 = e_arr[k, tp]
-                    if a2 < T and not reach[k + 1, a2, e + 1]:
-                        reach[k + 1, a2, e + 1] = True; pdep[k + 1, a2, e + 1] = tp; pe[k + 1, a2, e + 1] = 1
-    return reach, pdep, pe
-
-
-def retime(order, K=0, W=0, maxwait=0):
-    """EXACT forward-DP schedule for `order` on the coarse grid (<=NEXC exceptions). Returns
-    (makespan_days, times, tofs, n_exc) or (inf, None, None, NEXC+1). times/tofs in days for kt.fitness."""
+def retime(order, *args):
+    """EXACT labeling DP (continuous time, no grid): track min arrival per exception level (waiting allowed ->
+    earlier arrival dominates, so one value per exc level is optimal). Returns (makespan, times, tofs, n_exc) or
+    (inf, None, None, NEXC+1). times/tofs in days for kt.fitness. EXACT and fast."""
     nl = len(order) - 1
-    c_arr = np.full((nl, T), INF_INT, dtype=np.int32)
-    e_arr = np.full((nl, T), INF_INT, dtype=np.int32)
+    NE = NEXC + 1
+    arr = [0.0] + [float("inf")] * NEXC                        # arr[e] = min arrival with e exceptions
+    # backptr[k][e] = (dep, tof, prev_e) for the transition into position k+1 at exc e
+    bptr = [[None] * NE for _ in range(nl)]
     for k in range(nl):
-        c, e = _edge_idx(order[k], order[k + 1])
-        c_arr[k] = c; e_arr[k] = e
-    reach, pdep, pe = _fwd_dp(c_arr, e_arr, nl, T, NEXC_PROXY)  # relaxed: grid rounding over-counts exceptions;
-    # the EXACT official kt.fitness gate enforces the real <=5 limit. best final arrival index over exc levels
-    best_t = -1; best_e = -1
-    for e in range(NEXC_PROXY + 1):
-        for t in range(T):
-            if reach[nl, t, e]:
-                if best_t < 0 or t < best_t:
-                    best_t = t; best_e = e
-                break
-    if best_t < 0:
+        (cd, csmin, csdep, cstof), (ed, esmin, esdep, estof) = _edge_win(order[k], order[k + 1])
+        new = [float("inf")] * NE
+        for e in range(NE):
+            t = arr[e]
+            if t == float("inf"):
+                continue
+            qc = np.searchsorted(cd, t)                        # best (min-arrival) cheap transfer departing >= t
+            if qc < len(csmin):
+                a = float(csmin[qc])
+                if a < new[e]:
+                    new[e] = a; bptr[k][e] = (float(csdep[qc]), float(cstof[qc]), e)
+            if e < NEXC:                                       # exception transfer -> exc level e+1
+                qe = np.searchsorted(ed, t)
+                if qe < len(esmin):
+                    a2 = float(esmin[qe])
+                    if a2 < new[e + 1]:
+                        new[e + 1] = a2; bptr[k][e + 1] = (float(esdep[qe]), float(estof[qe]), e)
+        arr = new
+    best_e = min((e for e in range(NE) if arr[e] < float("inf")), key=lambda e: arr[e], default=-1)
+    if best_e < 0:
         return float("inf"), None, None, NEXC + 1
-    # backtrack
-    times = [0.0] * nl; tofs = [0.0] * nl
-    t, e = best_t, best_e
-    for k in range(nl, 0, -1):
-        tp = int(pdep[k, t, e])
-        if tp < 0:                                            # no recorded predecessor -> can't backtrack
+    times = [0.0] * nl; tofs = [0.0] * nl; e = best_e
+    for k in range(nl - 1, -1, -1):
+        bp = bptr[k][e]
+        if bp is None:
             return float("inf"), None, None, NEXC + 1
-        used = max(0, int(pe[k, t, e]))
-        times[k - 1] = tp * TQ; tofs[k - 1] = (t - tp) * TQ
-        e = max(0, e - used); t = tp
-    return best_t * TQ, times, tofs, best_e
+        times[k] = bp[0]; tofs[k] = bp[1]; e = bp[2]
+    return float(arr[best_e]), times, tofs, best_e
 
 
 def official(order, times, tofs):
