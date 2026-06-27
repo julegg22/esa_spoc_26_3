@@ -61,6 +61,41 @@ def retime_tol(order, maxwait, K=3, W=12, SP=30.0):
     return states[0], strands, slegs
 
 
+def retime_full(order, maxwait, K=3, W=12, SP=30.0):
+    """retime_tol + per-position CACHE: hist[p] = beam states upon ARRIVING at position p (after legs 0..p-1);
+    cum[p] = strands incurred in legs 0..p-1. Lets a later move that only changes the order from position q
+    onward be re-timed incrementally (retime_inc) instead of from scratch. Called on each ACCEPTED order."""
+    states = [0.0]; strands = 0; slegs = []
+    hist = [list(states)]; cum = [0]
+    for p in range(len(order) - 1):
+        i, j = order[p], order[p + 1]
+        nxt = []
+        for t in states:
+            nxt.extend(windows_k(i, j, t, K, maxwait))
+        if not nxt:
+            states = [t + SP for t in states]; strands += 1; slegs.append(p)
+        else:
+            states = sorted(set(round(x, 4) for x in nxt))[:W]
+        hist.append(list(states)); cum.append(strands)
+    return states[0], strands, slegs, hist, cum
+
+
+def retime_inc(order, q, states0, strands0, maxwait, K=3, W=12, SP=30.0):
+    """incremental re-time of order from position q, reusing cached arriving-states (states0) and prefix strand
+    count (strands0) at q. Only legs q..n-2 are recomputed -> candidate eval cost ~ (n-q)/n of a full retime.
+    Returns (makespan, total_strands). Prefix [0,q) must be identical to the order that produced (states0,strands0)."""
+    states = list(states0); strands = strands0
+    for p in range(q, len(order) - 1):
+        i, j = order[p], order[p + 1]
+        nxt = []
+        for t in states:
+            nxt.extend(windows_k(i, j, t, K, maxwait))
+        if not nxt:
+            states = [t + SP for t in states]; strands += 1; continue
+        states = sorted(set(round(x, 4) for x in nxt))[:W]
+    return states[0], strands
+
+
 def windows_k(i, j, t, K, maxwait):
     """up to K feasible arrival times on i->j departing in [t, t+maxwait], at distinct cheap phases (ascending
     arrival). Combined source: faithful short-tof (epoch-dense) + dense1d (long-tof), CT-verified on dense1d."""
@@ -254,15 +289,15 @@ def cls_loop(seed, maxwait, tag, t0, iters=2000000):
     is TD-infeasible ~163 strands); success = reach 0 strands = a second complete solution, NOT the OR-Tools
     recipe. Then keep descending makespan toward rank-1 (<425d)."""
     order = [int(c) for c in seed]
-    mk, st, slegs = retime_tol(order, maxwait)
-    cur = (order, mk, st, slegs); best = (list(order), mk, st)
+    mk, st, slegs, hist, cum = retime_full(order, maxwait)
+    cur = (order, mk, st, slegs, hist, cum); best = (list(order), mk, st)
     ckpt = f"{ROOT}/cache/ch2_giant_cls_{tag}.json"
     print(f"[E-727][{tag}] CLS start: complete order {len(order)} cities -> {st} strands, makespan {mk:.1f}d "
           f"[{time.time()-t0:.0f}s]", flush=True)
     rng = (sum(ord(ch) * (i + 7) for i, ch in enumerate(tag)) * 2654435761) & 0x7fffffff or 987654321
     n = len(order); acc = 0                                     # rng seeded from tag -> chains on same seed diverge
     for it in range(iters):
-        order, mk, st, slegs = cur
+        order, mk, st, slegs, hist, cum = cur
         rng = (rng * 1103515245 + 12345) & 0x7fffffff
         # STRAND-TARGETED move (when strands exist): relocate a city involved in a random strand leg to a random
         # spot — directly attacks the infeasibility (random or-opt almost never hits a strand-fixing move). Else
@@ -276,10 +311,14 @@ def cls_loop(seed, maxwait, tag, t0, iters=2000000):
         seg = order[a:a + L]; rest = order[:a] + order[a + L:]
         b = 1 + ((rng >> 8) % (len(rest) - 1))
         cand = rest[:b] + seg + rest[b:]
-        cmk, cst, cslegs = retime_tol(cand, maxwait)
+        # first divergence is at position min(a,b); leg (q-1) already ENDS at the changed city, so restart the
+        # re-time from q-1 (its arriving states hist[q-1] are still valid; leg q-1's destination changed).
+        q = max(0, min(a, b) - 1)                              # prefix [0,q] arriving-states unchanged
+        cmk, cst = retime_inc(cand, q, hist[q], cum[q], maxwait)
         # accept: fewer strands always; equal strands & not-worse makespan; rare uphill (escape local minima)
         if cst < st or (cst == st and cmk <= mk) or ((rng % 40 == 0) and cst <= st + 1):
-            cur = (cand, cmk, cst, cslegs); acc += 1
+            _, _, cslegs, chist, ccum = retime_full(cand, maxwait)  # accepted -> rebuild cache for next moves
+            cur = (cand, cmk, cst, cslegs, chist, ccum); acc += 1
         if (cst, cmk) < (best[2], best[1]):
             best = (list(cand), cmk, cst)
             json.dump({"path": cand, "makespan": cmk, "depth": n, "strands": cst}, open(ckpt, "w"))
