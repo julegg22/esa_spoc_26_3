@@ -44,10 +44,15 @@ def main(N=70, dep_step=0.4, tof_step=0.03, T_MAX=960.0, TOF_HI=8.5):
         if a in comp0 and b in comp0:
             edgeset.add((a, b)); nb += 1
     edges = sorted(edgeset)
-    print(f"[E-735full] {len(edges)} edges (top-{N} out-nbrs + {nb} bank comp0 edges), "
-          f"deps[0,{T_MAX}] step {dep_step}, tof_hi {TOF_HI} step {tof_step}", flush=True)
+    SHARD = int(os.environ.get("CH2_SHARD", "0")); NSHARD = int(os.environ.get("CH2_NSHARD", "1"))
+    out_ckpt = CKPT if NSHARD == 1 else f"{ROOT}/cache/ch2_giant_faithful_full_shard{SHARD}.npz"
+    if NSHARD > 1:
+        edges = edges[SHARD::NSHARD]
+    print(f"[E-735full] shard {SHARD}/{NSHARD}: {len(edges)} edges, "
+          f"deps[0,{T_MAX}] step {dep_step}, tof_hi {TOF_HI} step {tof_step} -> {out_ckpt}", flush=True)
     deps = np.arange(0.0, T_MAX, dep_step); deps_sec = deps * DAY
     done = {}
+    CKPT = out_ckpt
     if os.path.exists(CKPT):
         z = np.load(CKPT, allow_pickle=True); done = z["windows"].item()
         print(f"[E-735full] resumed: {len(done)} edges already done", flush=True)
