@@ -1,0 +1,16 @@
+[E-726b] loaded 58555 precomputed faithful edges
+[E-726b] faithful coverage beam W_core=120 W_cov=80 K=18 |RARE|=120 Radd=8; n=601; 8 seeds
+  depth 2: |beam|=83 best_depth=2 min_t=0.1d (d/leg 0.051) edges=58555 [0s]
+  depth 3: |beam|=130 best_depth=3 min_t=0.4d (d/leg 0.213) edges=58555 [0s]
+  depth 21: |beam|=200 best_depth=21 min_t=7.7d (d/leg 0.383) edges=58555 [1s]
+  depth 41: |beam|=200 best_depth=41 min_t=16.1d (d/leg 0.401) edges=58555 [3s]
+  depth 61: |beam|=200 best_depth=61 min_t=24.5d (d/leg 0.408) edges=58555 [5s]
+  depth 81: |beam|=200 best_depth=81 min_t=32.9d (d/leg 0.411) edges=58555 [6s]
+  depth 101: |beam|=200 best_depth=101 min_t=41.4d (d/leg 0.414) edges=58555 [8s]
+  depth 121: |beam|=200 best_depth=121 min_t=50.5d (d/leg 0.420) edges=58555 [9s]
+  depth 141: |beam|=168 best_depth=141 min_t=59.7d (d/leg 0.426) edges=58555 [10s]
+  depth 161: |beam|=48 best_depth=161 min_t=111.6d (d/leg 0.698) edges=58555 [10s]
+  depth 181: |beam|=31 best_depth=181 min_t=139.9d (d/leg 0.777) edges=58555 [10s]
+[E-726b] stranded at depth 191 [10s]
+
+[E-726b] DONE deepest 191/601 makespan 152.5d (d/leg 0.803) rare 34/120 [vs E-710 558@283d / cap 575] [10s]

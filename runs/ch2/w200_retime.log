@@ -1,0 +1,13 @@
+W=200 faithful retime of ch2_giant_reach_beam_w40_l0.5_c3.json (583 cities)...
+  leg 1/582: |states|=4 min_arr=0.8d (d/leg 0.832) strands=0 [0s]
+  leg 51/582: |states|=178 min_arr=14.8d (d/leg 0.290) strands=0 [10s]
+  leg 101/582: |states|=187 min_arr=34.4d (d/leg 0.341) strands=0 [22s]
+  leg 151/582: |states|=191 min_arr=76.4d (d/leg 0.506) strands=0 [47s]
+  leg 201/582: |states|=200 min_arr=128.6d (d/leg 0.640) strands=0 [67s]
+  leg 251/582: |states|=195 min_arr=209.3d (d/leg 0.834) strands=0 [80s]
+  leg 301/582: |states|=105 min_arr=331.5d (d/leg 1.101) strands=0 [95s]
+  leg 351/582: |states|=89 min_arr=491.0d (d/leg 1.399) strands=0 [147s]
+  leg 401/582: |states|=200 min_arr=637.7d (d/leg 1.590) strands=0 [181s]
+  leg 451/582: |states|=174 min_arr=778.7d (d/leg 1.727) strands=0 [194s]
+  leg 501/582: |states|=200 min_arr=914.9d (d/leg 1.826) strands=0 [207s]
+RESULT: makespan 3594.9d strands 52 (threaded 531/583) d/leg 6.177 [368s]

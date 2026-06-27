@@ -1,0 +1,20 @@
+[E-726f] 601 giant cities, 74201 short-tof edges (min-tof<= 8.0d); building LKH ATSP
+[E-726f] running LKH (RUNS=10, 1200s limit)...
+* 2: Cost = 18015115, Time = 0.01 sec. 
+* 9: Cost = 9015136, Time = 0.05 sec. 
+* 10: Cost = 9015086, Time = 0.05 sec. 
+* 19: Cost = 9015069, Time = 0.11 sec. 
+* 24: Cost = 15305, Time = 0.15 sec. 
+* 29: Cost = 15221, Time = 0.18 sec. 
+* 371: Cost = 15207, Time = 2.77 sec. 
+Run 10: Cost = 15207, Time = 10.03 sec. 
+
+Successes/Runs = 0/10
+Cost.min = 15203, Cost.avg = 15203.80, Cost.max = 15207
+Gap.min = 0.0000%, Gap.avg = 0.0053%, Gap.max = 0.0263%
+Trials.min = 1204, Trials.avg = 1204.0, Trials.max = 1204
+Time.min = 7.67 sec., Time.avg = 11.26 sec., Time.max = 14.10 sec.
+Time.total = 113.77 sec.
+
+[E-726f] LKH tour: 601 cities [114s]; faithful retime...
+[E-726f] LKH order faithful retime: makespan 9372.0d strands 163 (threaded 438/601) d/leg 15.620 [489s]

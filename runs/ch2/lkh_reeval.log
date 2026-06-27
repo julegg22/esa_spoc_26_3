@@ -1,0 +1,2 @@
+ch2_giant_lkh_order.json: FIXED retimer -> threaded 395/601 strands 206 makespan 11586.4d (was 210 w/ blind retimer) [1379s]
+Interrupted system call ; error code 4
