@@ -32,6 +32,7 @@ found a real flaw, but the end state is honest:
 ## The honest verdict (rank-1 = research-grade; rank-2 = secure)
 
 Tested/reasoned through EVERY standard TD-TSP approach; all wall:
+> 🔧 **PARTIAL TOOL-ARTIFACT (propagated 2026-06-27, [[A-2026-06-27-broken-tool-retry-queue]]):** the LNS/cascade and iterated-LKH-divergence rows were NOW-FIXED tool artifacts (broken evaluator / BIG-penalty bug), NOT genuine walls — the LNS family is untried with correct tools. "All wall" is overstated.
 - construction (beam/GRASP) caps ~190 (short-tof, rank-1 pace) → ~329 (wait-budget, rank-2 pace), never
   complete; **wait-budget has a sweet spot ~60 (larger = worse, wastes time on long waits)**.
 - static LKH (full-tof) = TD-infeasible (163-strand); my epoch-aware iterated LKH DIVERGES (buggy re-cost);

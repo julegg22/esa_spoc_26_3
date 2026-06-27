@@ -61,6 +61,13 @@ reader on the new node must see what it corrected.
   to a central re-try queue (e.g. `A-2026-06-27-broken-tool-retry-queue`).
   Distinct from RETRACTED (the *result* was wrong) — here the result was
   an artifact of the measuring instrument, and the branch may still be alive.
+  **PROPAGATE it:** annotations do NOT auto-flow through child branches
+  (`[[links]]` are navigational, not inheritance), but a tool-artifact at a
+  parent invalidates the reasoning chain of every descendant that repeated
+  or depended on it. So when you mark a node TOOL-ARTIFACT, **walk its
+  descendants and propagate the 🔧 marker to any whose load-bearing
+  conclusion rests on the artifact** (same as premise-propagation in
+  `M-general-root-objective-and-proxy-skew`).
 
 Pick by *what actually changed* — a wrong number is RETRACTED; a wrong
 "why" behind a right number is REFRAMED. This distinction is itself

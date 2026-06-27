@@ -55,3 +55,17 @@ recurring "the evaluator, not the search, was the problem.")
 Before re-citing any "cascade / blocked / floored / capped" Ch2-large conclusion, check this table: if its tool
 is now fixed, RE-RUN before believing it. The immediate actionable: the **LNS/SA rank-1 attack** (#1) on a
 complete order from the (now-converging) iterated LKH.
+
+## PROPAGATION RULE (annotations do NOT auto-flow through child branches)
+
+The vault is per-node; `[[links]]` are navigational, not inheritance — a 🔧 marker on a parent does NOT
+propagate to descendants automatically. But a tool-artifact at a parent invalidates the **reasoning chain** of
+every child that built on it. **So marking a node TOOL-ARTIFACT REQUIRES manually walking its descendants** and
+propagating the marker to any whose load-bearing conclusion *rests on* the artifact (same idea as premise-
+propagation in [[M-general-root-objective-and-proxy-skew]]).
+
+**Done for this set:** the broken-tool conclusion "LNS/insertion cascades → local repair blocked → toolkit
+exhausted" originated at E-721d/g and was repeated down the chain → E-722 (phase-lock) → E-726 (comprehensive
+exhaustion) → S-2026-06-27 (session note). 🔧 banners now sit on ALL of them (E-720/721/722 + the E-726
+exhaustion section + the session note), each flagging the LNS/cascade/divergence sub-verdicts as recoverable.
+When the LNS/SA re-run completes, update this queue and clear/confirm each propagated marker.

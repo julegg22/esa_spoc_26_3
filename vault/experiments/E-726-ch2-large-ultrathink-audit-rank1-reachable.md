@@ -111,6 +111,14 @@ EVERY case, a partial/optimistic evaluator (table makespan, short-tof windows, l
 
 ## Comprehensive method exhaustion (2026-06-27) — rank-1 walls at rank-2 across ALL standard TD-TSP approaches
 
+> 🔧 **PARTIAL TOOL-ARTIFACT — propagated from [[A-2026-06-27-broken-tool-retry-queue]] (2026-06-27).** Two rows
+> below are NOW-FIXED tool artifacts, NOT genuine walls: (a) **"iterated LKH DIVERGES"** = the T5 BIG-penalty
+> bug — FIXED (soft penalty), now CONVERGES (163→153…); (b) **"LNS/insertion cascade"** = largely the broken
+> evaluator (T1 sparse table + T2 long-tof-blind retimer) failing to find windows — to be RE-RUN on the faithful
+> evaluator (the planned LNS/SA rank-1 attack). So "ALL standard approaches wall" is OVERSTATED: the LNS family
+> is **untried with correct tools.** GENUINE walls that stand: static-LKH TD-infeasibility, time-expanded GTSP
+> intractability, the short-tof phasing cap.
+
 After the retimer fix, ran the remaining levers on an honest evaluator:
 - **Static LKH (full-tof, bank's static-graph step):** 438/601, 163 strands — TD-infeasible ALONE.
 - **Epoch-aware iterated LKH (my impl):** DIVERGES (it0 163 -> it1 461 strands) — buggy re-cost (INF on
