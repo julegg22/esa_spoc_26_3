@@ -98,5 +98,19 @@ The CLS objective (strands, makespan) exposes that rank-1 has TWO obstacles, and
 So: CLS+cheap-slot is converging toward a robust **rank-2** reproduction (short-tof legs, loose phasing). Rank-1
 remains walled on **tight global phasing**, now precisely separated from the (solved) leg-feasibility obstacle.
 
+## Capstone: EXTREME TIMING FRAGILITY (why rank-1 can't be reached by perturbation)
+
+Tried an ILS kick to escape the bank chains' 2-strand plateau. **Both kick strengths catastrophically cascade:**
+a double-bridge took 2 strands → 151; a *gentle* 3-city relocation took 2 strands → **107**. Reverted (net-
+harmful). The cause is structural: the retimer is a forward sweep and short-tof windows are rare (~6% of epochs
+open), so relocating *any* early-positioned city shifts every downstream arrival and the rare windows close →
+mass strand cascade. **The feasible solution is a knife-edge: its phasing is globally coherent and cannot be
+perturbed into or out of without shattering.** This explains, at the deepest level, the whole campaign's
+Ch2-large difficulty: local search can only make non-cascading (tail / timing-preserving) moves, deep local
+minima can't be escaped by kicks, and rank-1 must be *constructed* with globally-coherent timing — it cannot be
+reached by improving a rank-2 solution (basin separation is really *timing rigidity*). The CLS+cheap-slot reaches
+2 strands (near rank-2) and there it sticks; that is the floor of perturbative methods on this problem.
+
 Banks held. Sharpens [[E-720-ch2-large-ultradeep-audit]] ("hard cities cost 1.2–4.0 d/leg") with the precise
-mechanism (low cheap-degree → predecessor constraint) and a working lever (cheap-slot, strand side only).
+mechanism (low cheap-degree → predecessor constraint), a working lever (cheap-slot, strand side only), and the
+timing-fragility reason perturbative rank-1 attacks fail.
