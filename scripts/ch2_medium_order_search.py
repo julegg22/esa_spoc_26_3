@@ -145,9 +145,21 @@ def official(order, times, tofs):
     return float(fit[0]), [float(x) for x in fit[1:]]
 
 
+def _load_best_order():
+    """seed from the best order found so far (chains continuous improvement across restarts), else the bank."""
+    bf = f"{ROOT}/cache/ch2_medium_BEST.json"
+    if os.path.exists(bf):
+        try:
+            dv = json.load(open(bf))[0]["decisionVector"]
+            return [int(c) for c in dv[2 * (N - 1):]]
+        except Exception:
+            pass
+    bank = json.load(open(f"{ROOT}/solutions/upload/medium.json"))[0]["decisionVector"]
+    return [int(c) for c in bank[2 * (N - 1):]]
+
+
 def main(iters=200000, K=6, W=40, maxwait=8.0):
-    bank = np.array(json.load(open(f"{ROOT}/solutions/upload/medium.json"))[0]["decisionVector"])
-    border = bank[2 * (N - 1):].astype(int).tolist()
+    border = _load_best_order()
     # POSITIVE CONTROL: retime the bank order, compare to official 189.10
     t0 = time.time()
     mk, ti, tf, eu = retime(border, K, W, maxwait)
@@ -201,6 +213,14 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
             else:
                 print(f"[E-731][{TAG}] it{it}: proxy-best {cmk:.2f}d (official {omk:.2f}d feas={feas}) "
                       f"[{time.time()-t0:.0f}s]", flush=True)
+        if it % 2000 == 1999:                                  # periodically adopt the campaign-best (cross-chain)
+            bo = _load_best_order()
+            if bo != cur:
+                bmk, bti, btf, beu = retime(bo, K, W, maxwait)
+                if bmk < cur_mk:
+                    cur, cur_mk = bo, bmk
+                    if bmk < best_proxy:
+                        best_proxy = bmk
         if it % 500 == 0:
             print(f"[E-731][{TAG}] it{it}: cur {cur_mk:.2f} proxy-best {best_proxy:.2f} off-best {best_off:.2f} "
                   f"acc {acc} [{time.time()-t0:.0f}s]", flush=True)
