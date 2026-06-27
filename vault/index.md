@@ -104,3 +104,4 @@ epoch-aware cluster-decomposition build (transfers the large
 ## Discipline
 
 All work follows `../META.md`. Templates in `_templates/`.
+- [[E-733-ch1-trajectory-deepaudit-capture-floor]] — /deepaudit ch1-traj: residual ~550 m/s gap is the CAPTURE burn DV2 (median 1096 vs achievable 462; 46/400 already <500) not departure/tof; likely solver-floored (departure-B9 analog). 3 probes: capture-floor, B1 apolune, restricted idl re-match.
