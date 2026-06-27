@@ -50,6 +50,12 @@ _BASE = f"{ROOT}/cache/ch2_medium_edgewin_{TQ}_{TOFSTEP}.pkl"    # shared edge-w
 if os.path.exists(_BASE):
     _EDGE = pickle.load(open(_BASE, "rb"))
     print(f"[E-731] loaded {len(_EDGE)} cached edge-windows from base", flush=True)
+# cheap directed-edge adjacency (from the 0.1d precompute) -> restrict moves to cheap edges (avoid scanning junk)
+CHEAP = set()
+_CW = f"{ROOT}/cache/ch2_medium_windows.npz"
+if os.path.exists(_CW):
+    CHEAP = set(map(tuple, np.load(_CW, allow_pickle=True)["windows"].item().keys()))
+    print(f"[E-731] cheap adjacency: {len(CHEAP)} edges", flush=True)
 
 
 def _build_idx(et):
@@ -160,16 +166,24 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
     cur = border; cur_mk = mk; best_proxy = mk; best_off = 189.10; acc = 0
     ckpt = f"{ROOT}/cache/ch2_medium_ordersearch_{TAG}.json"
     pbest = f"{ROOT}/cache/ch2_medium_proxybest_{TAG}.json"
+    def cheap_ok(*edges):                                      # all listed directed edges must be cheap (or no CHEAP set)
+        return (not CHEAP) or all(e in CHEAP for e in edges)
     for it in range(iters):
-        rng = (rng * 1103515245 + 12345) & 0x7fffffff
-        if move == "2opt":                                     # segment reversal
-            a = 1 + (rng % (len(cur) - 3)); b = a + 2 + ((rng >> 8) % (len(cur) - a - 2))
-            cand = cur[:a] + cur[a:b][::-1] + cur[b:]
-        else:                                                  # or-opt: relocate a 1-3 city segment
-            L = 1 + (rng % 3); a = 1 + (rng % (len(cur) - L - 1))
-            seg = cur[a:a + L]; rest = cur[:a] + cur[a + L:]
-            b = 1 + ((rng >> 8) % (len(rest) - 1))
-            cand = rest[:b] + seg + rest[b:]
+        cand = None
+        for _try in range(40):                                 # find a move whose NEW edges are cheap (set lookup)
+            rng = (rng * 1103515245 + 12345) & 0x7fffffff
+            if move == "2opt":                                 # segment reversal: check reversed boundary edges
+                a = 1 + (rng % (len(cur) - 3)); b = a + 2 + ((rng >> 8) % (len(cur) - a - 2))
+                if cheap_ok((cur[a - 1], cur[b - 1]), (cur[a], cur[b])):
+                    cand = cur[:a] + cur[a:b][::-1] + cur[b:]; break
+            else:                                              # or-opt: relocate a 1-3 city segment
+                L = 1 + (rng % 3); a = 1 + (rng % (len(cur) - L - 1))
+                seg = cur[a:a + L]; rest = cur[:a] + cur[a + L:]
+                b = 1 + ((rng >> 8) % (len(rest) - 1))
+                if cheap_ok((cur[a - 1], cur[a + L]), (rest[b - 1], seg[0]), (seg[-1], rest[b])):
+                    cand = rest[:b] + seg + rest[b:]; break
+        if cand is None:
+            continue
         cmk, cti, ctf, ceu = retime(cand, K, W, maxwait)
         if cmk < cur_mk or (rng % 25 == 0 and cmk < cur_mk + 1.0):
             cur, cur_mk = cand, cmk; acc += 1
