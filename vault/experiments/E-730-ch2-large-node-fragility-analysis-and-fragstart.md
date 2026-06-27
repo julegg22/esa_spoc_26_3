@@ -50,6 +50,16 @@ from it (tags fcls/fcls2, a fresh time-aware basin distinct from both bank and s
 As the bank-seeded CLS chains reduce strands via cheap-slot, they **drift from the bank topology** (edge-Jaccard
 0.97 → 0.72) — strand reduction genuinely rewires the order, not just polishing. The CLS explores real structure.
 
+## E-730b — W>1 time-aware BEAM constructor (the real win): seed strand-count 87 → 44 → 30
+
+`scripts/ch2_beamfrag_constructor.py`. The greedy fragstart commits to the earliest-arrival window and strands
+when that phase has no continuation; a **W>1 beam that branches over windows and keeps the deepest-then-earliest
+states** avoids that. Results (seed strand-count under retime_tol W=16): greedy fragstart **87** → beam W=20
+**44** → beam W=30 **30** (start 725). Each is the best Ch2-large seed on record (static min-DV/min-tof = 150–165).
+**Wider beams keep improving the seed** — the lever is *time-aware beam construction*, not node-feature priors.
+Reseeded the fragstart CLS chains from it (descending 44→42…). NB this is the E-710 time-aware beam idea, now
+(a) measured by STRANDS on the faithful retimer and (b) launched from fragility-ranked starts.
+
 ## CAVEAT (user asked re: orbital isolation index) — static node features only weakly predict ACTUAL strands
 
 Decisive test: per-city involvement in actual strand legs (across staticLKH/fragstart/bcls orders) vs each
