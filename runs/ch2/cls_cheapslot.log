@@ -1,0 +1,6 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+[E-727][cheapslottest] SEED depth 601/601 retimes to STRAND@164 makespan 263.8d (d/leg 0.440) maxwait=12.0 mode=cls [positive-control 1s]
+[E-727][cheapslottest] CLS start: complete order 601 cities -> 6 strands, makespan 1024.9d [5s]
+[E-727][cheapslottest] CLS it0: cur strands 6 mk 1024.9d | best strands 6 mk 1024.9d | acc 0 [8s]
+[E-727][cheapslottest] CLS it2: NEW best strands 6 makespan 1023.9d (d/leg 1.707) acc 1 [15s]
+[E-727][cheapslottest] CLS it21: NEW best strands 5 makespan 1023.9d (d/leg 1.707) acc 5 [70s]

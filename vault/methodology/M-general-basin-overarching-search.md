@@ -231,6 +231,50 @@ anything but the seed," suspect the PENALTY landscape, not the problem.
 Make the infeasible region smoothly informative (gradient toward
 feasibility) before concluding the basin is unreachable.*
 
+## Extension (2026-06-27, Ch2-large): basin-LOCK vs basin-UNREACHABILITY — when even the basin-overarching recipe fails
+
+The recipe above (acceptance metaheuristic + targeted destroy + structural
+rebuild, on a smooth feasibility landscape) assumes the better basin is
+**reachable by perturbation** once you stop corner-painting. Ch2-large rank-1
+is a case where that assumption *also* fails — and diagnosing it gives a
+**stronger, more honest wall verdict than "basin-locked": basin-UNREACHABLE.**
+
+We built the full recipe (CLS = complete-order penalty search that never drops a
+city, + strand-targeted/cheap-slot destroy-rebuild, + SA acceptance). It still
+walled at rank-2. The three diagnostics that *upgraded* the verdict from
+"suspected exhausted" to "demonstrated structural":
+
+1. **Multi-basin convergence test.** Run the search from genuinely *different*
+   topologies (here: bank-basin vs a min-distance LKH basin sharing ~0 edges).
+   If **every** independent basin converges to the *same* sub-optimal value at
+   feasibility (here ~rank-2 makespan, regardless of seed), the better region is
+   not "one basin we haven't hit" — it is **unreachable by feasibility-seeking
+   search**. (One basin converging is luck; all of them converging is structure.)
+2. **Perturbation-cascade (knife-edge) test.** Perturb a near-feasible solution
+   minimally and re-evaluate. If a *tiny* move (3-city relocation) **cascades
+   catastrophically** (2→107 violations), the feasible solution is a **knife-edge**:
+   its global coherence (here, tight time-phasing) cannot survive perturbation, so
+   **no** perturbative method (ILS kicks, SA, LNS) can bridge to a distant basin —
+   the escape moves all land in the infeasible sea. Fix: the better solution must
+   be **CONSTRUCTED with the global coherence built in**, not searched/perturbed
+   into. (ILS kicks were tried and *reverted* — they only destroy.)
+3. **Feature-vs-actual-failure test (don't over-invest in node priors).** When
+   tempted to prioritise "hard nodes" by a static feature (degree, fragility,
+   orbital isolation), validate the feature by its correlation with the **actual
+   failure events** (which nodes really strand), not with each other. Here all
+   static features correlated only ~0.1 with real strands → the difficulty is a
+   **global coherence property, not a per-node one**; node priors help only the
+   endgame. A feature that predicts other features but not failure is decoration.
+
+**Generalized rule:** *basin-LOCK (escapable: smooth the landscape + acceptance
+metaheuristic + diverse init) is not the same as basin-UNREACHABILITY (a
+knife-edge landscape where every basin converges to the same sub-optimum and
+perturbations cascade). Distinguish them with the multi-basin-convergence and
+perturbation-cascade tests before either (a) burning compute on more search or
+(b) concluding "impossible." Basin-unreachability is a build spec — the better
+solution exists but must be globally constructed — not a stop.* See
+[[M-general-exhaustion-is-a-transition]] and [[E-730-ch2-large-node-fragility-analysis-and-fragstart]].
+
 ## Companion docs
 
 - `M-general-anti-oscillation-discipline.md` — recognizing a false

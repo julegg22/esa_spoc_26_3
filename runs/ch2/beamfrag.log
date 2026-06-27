@@ -1,0 +1,5 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+  start 682: NEW best strands 171 mk 5925d depth_threaded=601 [15s]
+  start 725: NEW best strands 155 mk 5501d depth_threaded=601 [30s]
+  start 491: NEW best strands 44 mk 2222d depth_threaded=601 [55s]
+DONE beam best strands 44 (greedy fragstart=87) [91s]

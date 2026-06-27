@@ -1,0 +1,5 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+  start 682: NEW best strands 163 mk 5729d [18s]
+  start 725: NEW best strands 30 mk 1837d [53s]
+  start 289: NEW best strands 16 mk 1457d [343s]
+DONE beam best strands 16 from start 289 (greedy fragstart=87) [498s]

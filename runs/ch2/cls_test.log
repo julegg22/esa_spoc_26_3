@@ -1,0 +1,5 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+[E-727][testcls] SEED depth 601/601 retimes to STRAND@164 makespan 263.8d (d/leg 0.440) maxwait=12.0 mode=cls [positive-control 1s]
+[E-727][testcls] CLS start: complete order 601 cities -> 18 strands, makespan 1342.1d [4s]
+[E-727][testcls] CLS it0: cur strands 18 mk 1342.1d | best strands 18 mk 1342.1d | acc 0 [7s]
+[E-727][testcls] CLS it6: NEW best strands 17 makespan 1335.4d (d/leg 2.226) acc 1 [26s]

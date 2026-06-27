@@ -1,0 +1,16 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+[E-727][g] SEED depth 328/601 retimes to full makespan 452.0d (d/leg 1.382) maxwait=60.0 [positive-control 0s]
+[E-727][g] inserted 10 -> depth 338/601 makespan 452.0d (d/leg 1.341) missing 263 [12s]
+[E-727][g] inserted 20 -> depth 348/601 makespan 439.6d (d/leg 1.267) missing 253 [23s]
+[E-727][g] inserted 30 -> depth 358/601 makespan 439.6d (d/leg 1.231) missing 243 [31s]
+[E-727][g] inserted 40 -> depth 368/601 makespan 439.6d (d/leg 1.198) missing 233 [38s]
+[E-727][g] inserted 50 -> depth 378/601 makespan 773.8d (d/leg 2.052) missing 223 [49s]
+[E-727][g] inserted 60 -> depth 388/601 makespan 788.7d (d/leg 2.038) missing 213 [73s]
+[E-727][g] inserted 70 -> depth 398/601 makespan 810.4d (d/leg 2.041) missing 203 [100s]
+[E-727][g] inserted 80 -> depth 408/601 makespan 842.1d (d/leg 2.069) missing 193 [127s]
+[E-727][g] inserted 90 -> depth 418/601 makespan 879.7d (d/leg 2.109) missing 183 [155s]
+[E-727][g] inserted 100 -> depth 428/601 makespan 889.4d (d/leg 2.083) missing 173 [185s]
+[E-727][g] inserted 110 -> depth 438/601 makespan 908.5d (d/leg 2.079) missing 163 [217s]
+[E-727][g] NO feasible insertion for any of 159 remaining -> CAP at 438/601, makespan 908.5d (d/leg 2.079) [229s]
+
+[E-727][g] FINAL depth 438/601 makespan 908.5d (d/leg 2.079) inserted 110 [229s]

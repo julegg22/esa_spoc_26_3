@@ -1,0 +1,6 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+  start 682: NEW best strands 91 mk 3708d [16s]
+  start 477: NEW best strands 87 mk 3610d [68s]
+  start 420: NEW best strands 60 mk 2547d [295s]
+  start 131: NEW best strands 14 mk 1175d [362s]
+DONE best strands 14 mk 1175d from start 131 [533s]

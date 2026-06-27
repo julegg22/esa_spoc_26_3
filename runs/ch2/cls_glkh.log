@@ -1,0 +1,11 @@
+[E-727] dense1d 74208 edges (0-950d), faithful short-tof 58555 edges, n=601
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_completion_repair.py", line 309, in <module>
+    main(a[1] if len(a) > 1 else "grasp_best_k", float(a[2]) if len(a) > 2 else 40.0,
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         a[3] if len(a) > 3 else "k", a[4] if len(a) > 4 else "single")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_giant_completion_repair.py", line 293, in main
+    obj = json.load(open(seed_json)); seed = [int(c) for c in (obj["path"] if isinstance(obj, dict) else obj)]
+                                                               ~~~^^^^^^^^
+KeyError: 'path'
