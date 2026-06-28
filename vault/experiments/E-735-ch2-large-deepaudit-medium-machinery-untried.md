@@ -127,3 +127,25 @@ TD construction, not local reorder.
 **Next lever (named, per CLAUDE.md §5b):** probe #1c = a **faithful global beam** for comp0 completion using the
 fine oracle (the asset above) — the one attack the prior beams couldn't make because they lacked a faithful
 evaluator. Deferred to the next work block (substantial build); the segmented reorder is exhausted as a rank lever.
+
+---
+## Probe #1c RESULT — faithful global beam blocked by EVALUATOR SPEED (the real wall, named)
+Built `scripts/ch2_giant_faithful_beam_v2.py`: a global beam over comp0 (601), dominance by last-city, expanding
+K cheapest-min-tof unvisited neighbours per state, **earliest arrival from the FINE FAITHFUL oracle** — the first
+comp0 beam on a faithful evaluator (prior beams used the optimistic table, stranded 558-575). Result: **even at
+BW=12/K=6 it did not reach depth 25 in minutes** — the faithful oracle is ~**250ms/eval** (cheap_first_tof over a
+[t,t+W] dep window at 0.02d), and a 601-depth beam needs ~10⁴–10⁶ evals. **The construction is computationally
+infeasible at useful width with this evaluator.**
+
+### CONCLUDING the Ch2-large investigation (probe #1 + #1c)
+The 11-deep verdict chain + this audit now converge on a **single, sharp, honest** statement of the wall:
+**large is not walled by the routing being impossible, nor by the "reorder trap", nor by narrow bands — it is
+walled by the lack of a FAST faithful time-dependent evaluator.** Faithful evaluation costs ~250ms/edge (a Lambert
+multi-rev scan); local reorder with it gives only marginal gains (~43d, still rank-3); global construction with it
+is too slow to run. The 682/391 competitors must have a **batched/vectorized faithful evaluator** (Lambert over
+many edges×epochs at once) that makes global TD optimization tractable — the one tool we have never built. That is
+the true, named next lever for any future Ch2-large rank push: **a fast batched faithful transfer evaluator**, not
+another search heuristic. Until then large is **rank-2-walled** (bank 932.53 secure rank-2 unless the board moves
+again; the ~43d reorder gain → ~890d does not change rank, so HELD/unsubmitted). Corrects the recorded rationale
+(E-710 band claim, E-587 reorder-trap) without changing the bank. **Decision: Ch2-large lever exhausted for this
+window; redirect to the open Ch1 lever (E-733 restricted joint matching).**
