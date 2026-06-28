@@ -43,8 +43,8 @@ def build():
     for nid in range(NN):
         i = int(node_city[nid]); ta = node_t[nid]
         js = allj[allj != i]
-        arrs, _ = ft.batch_earliest(OPAR, i, ta * DAY, js, 4.0 * DAY, 0.05 * DAY, MINTOF * DAY,
-                                    TOFHI * DAY, 0.02 * DAY, THR, MR)
+        arrs, _ = ft.batch_earliest(OPAR, i, ta * DAY, js, 4.0 * DAY, 0.10 * DAY, MINTOF * DAY,
+                                    TOFHI * DAY, 0.04 * DAY, THR, MR)
         for q in range(len(js)):
             if arrs[q] <= 0:
                 continue
