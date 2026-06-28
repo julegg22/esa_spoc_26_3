@@ -1,0 +1,8 @@
+[E-746b] graph: 50500 arcs, 46651 exception arcs; sweeping PEN
+[E-746b] PEN=2.0M: STRAND@37 [489s]
+[E-746b] PEN=3.5M: STRAND@19 [989s]
+[E-746b] PEN=5.0M: STRAND@35 [1501s]
+[E-746b] PEN=7.0M: STRAND@13 [1992s]
+[E-746b] PEN=9.0M: STRAND@18 [2493s]
+[E-746b] PEN=9.8M: STRAND@20 [3001s]
+[E-746b] no feasible <=5-exc tour found in sweep -> need finer windows or hard exc-constraint

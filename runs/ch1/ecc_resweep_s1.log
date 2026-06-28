@@ -1,0 +1,12 @@
+[E-701 FLEET] restarts=8 gen=300 dv_thresh=4500.0 shard=1/2
+[PC] bank row (0,0) dv=4063 mass=819.4 -> reproduces fitness OK
+[E-701 FLEET] shard 1/2: 10 of 21 expensive (bank_dv>4500.0) of 400 filled
+  [1/10] (209,23) bank dv=5207 m=407 -> dv=4114 m=656 (+249 kg) [878s]
+  [2/10] (133,53) bank dv=5044 m=457 -> dv=4334 m=691 (+234 kg) [1671s]
+  [3/10] (228,389) bank dv=4911 m=499 -> dv=4431 m=613 (+114 kg) [2469s]
+  [4/10] (242,145) bank dv=4812 m=532 -> dv=4007 m=635 (+102 kg) [3464s]
+  [5/10] (151,110) bank dv=4735 m=559 -> dv=4334 m=672 (+113 kg) [4601s]
+  [6/10] (366,132) bank dv=4643 -> no improvement [5531s]
+  [7/10] (345,55) bank dv=4590 m=610 -> dv=4343 m=681 (+70 kg) [6352s]
+  [8/10] (382,67) bank dv=4535 -> no improvement [7478s]
+  [9/10] (239,302) bank dv=4524 m=634 -> dv=4474 m=653 (+19 kg) [8209s]

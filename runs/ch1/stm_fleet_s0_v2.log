@@ -1,0 +1,34 @@
+[E-738 STM-FLEET] restarts=8 gen=250 dv_thresh=4300.0 shard=0/3
+[PC] bank row (0,0) dv=4063 mass=819.4 -> reproduces fitness OK
+[E-738 STM-FLEET] shard 0/3: 26 of 76 expensive (bank_dv>4300.0) of 400 filled
+  [1/26] (125,329) bank dv=4799 -> no improvement [513s]
+  [2/26] (345,55) bank dv=4590 m=610 -> dv=4421 m=673 (+63 kg) [1208s]
+  [3/26] (37,79) bank dv=4535 m=630 -> dv=4110 m=672 (+41 kg) [1822s]
+  [4/26] (210,383) bank dv=4523 m=635 -> dv=4301 m=684 (+49 kg) [2797s]
+  [5/26] (380,133) bank dv=4494 -> no improvement [3120s]
+  [6/26] (381,104) bank dv=4480 -> no improvement [3482s]
+  [7/26] (364,397) bank dv=4455 m=660 -> dv=4317 m=673 (+12 kg) [4201s]
+  [8/26] (383,314) bank dv=4450 m=662 -> dv=4393 m=684 (+22 kg) [4758s]
+  [9/26] (228,389) bank dv=4431 -> no improvement [5403s]
+  [10/26] (355,355) bank dv=4421 m=673 -> dv=3901 m=892 (+218 kg) [6129s]
+  --- progress: 6 improved, +406 kg total [6129s] ---
+  [11/26] (180,27) bank dv=4418 m=674 -> dv=3951 m=869 (+195 kg) [7218s]
+  [12/26] (53,134) bank dv=4411 m=677 -> dv=4398 m=682 (+5 kg) [8055s]
+  [13/26] (89,47) bank dv=4400 -> no improvement [8642s]
+  [14/26] (135,123) bank dv=4395 m=683 -> dv=4007 m=844 (+161 kg) [9288s]
+  [15/26] (344,52) bank dv=4391 -> no improvement [10102s]
+  [16/26] (151,110) bank dv=4378 -> no improvement [10983s]
+  [17/26] (350,343) bank dv=4375 m=691 -> dv=4291 m=725 (+33 kg) [11587s]
+  [18/26] (241,50) bank dv=4370 m=693 -> dv=4335 m=707 (+14 kg) [12206s]
+  [19/26] (315,224) bank dv=4354 m=699 -> dv=4024 m=836 (+137 kg) [12725s]
+  [20/26] (320,326) bank dv=4344 -> no improvement [13300s]
+  --- progress: 12 improved, +951 kg total [13300s] ---
+  [21/26] (162,194) bank dv=4337 -> no improvement [14289s]
+  [22/26] (48,203) bank dv=4332 m=708 -> dv=4125 m=793 (+85 kg) [15519s]
+  [23/26] (224,113) bank dv=4328 m=710 -> dv=3926 m=880 (+171 kg) [16704s]
+  [24/26] (375,385) bank dv=4321 m=712 -> dv=4133 m=789 (+77 kg) [17903s]
+  [25/26] (318,348) bank dv=4307 m=718 -> dv=4094 m=806 (+88 kg) [18794s]
+  [26/26] (2,168) bank dv=4300 m=721 -> dv=4218 m=754 (+33 kg) [20025s]
+
+[E-738 STM-FLEET] DONE: 17 pairs improved, +1405 kg total [20025s]
+  checkpoint: /home/julian/Projects/esa_spoc_26_3/cache/ch1_stm_fleet_w0of3.json

@@ -34,3 +34,7 @@ warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
 [E-727][fcls] CLS it1500: cur strands 8 mk 1223.5d | best strands 8 mk 1223.5d | acc 21 [3169s]
 [E-727][fcls] CLS it1600: cur strands 8 mk 1223.5d | best strands 8 mk 1223.5d | acc 22 [3339s]
 [E-727][fcls] CLS it1700: cur strands 8 mk 1223.5d | best strands 8 mk 1223.5d | acc 23 [3533s]
+[E-727][fcls] CLS it1800: cur strands 8 mk 1223.5d | best strands 8 mk 1223.5d | acc 23 [3740s]
+[E-727][fcls] CLS it1900: cur strands 8 mk 1223.5d | best strands 8 mk 1223.5d | acc 23 [3934s]
+[E-727][fcls] CLS it2000: cur strands 8 mk 1223.5d | best strands 8 mk 1223.5d | acc 23 [4224s]
+[E-727][fcls] CLS it2013: NEW best strands 8 makespan 1218.8d (d/leg 2.031) acc 25 [4278s]

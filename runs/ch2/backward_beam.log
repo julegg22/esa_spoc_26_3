@@ -1,0 +1,3 @@
+[E-719c] BACKWARD beam T=420.0 W_core=90 W_cov=50 K=18 thresh=45 (|RARE|=121) Radd=6; n=601
+[E-719c] positive control: depth1 -> 106 predecessors [1s]
+  depth 2: |beam|=90 best_depth=2 t_first=419.5d span=0.5d (d/leg 0.515) [1s]

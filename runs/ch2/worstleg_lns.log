@@ -1,0 +1,6 @@
+[E-747] baseline 890.99d, 5 bridges, R=12, rounds=300
+[E-747] it0: try infeas (best 890.99) [264s]
+[E-747] it15: try infeas (best 890.99) [1026s]
+[E-747] it30: try infeas (best 890.99) [1231s]
+[E-747] it45: try infeas (best 890.99) [1433s]
+[E-747] it60: try infeas (best 890.99) [1635s]

@@ -1,0 +1,7 @@
+[E-735][c0] warm cache full-table: 25565 edges
+[E-735][c0] 25565 warm edges, 601 cheap-candidate cities, T0=0.0, lazy fallback ON
+[E-735][c0] bank comp0 segments: [(267, 67.1), (241, 469.1), (93, 818.8)] (total 601 cities)
+[E-735][c0] seg s0 (267c) baseline STRANDS at leg 155 from t=67.1 -> skip (table still filling?)
+[E-735][c0] seg s1 (241c) baseline STRANDS at leg 83 from t=469.1 -> skip (table still filling?)
+[E-735][c0] seg s2 (93c) baseline STRANDS at leg 76 from t=818.8 -> skip (table still filling?)
+[E-735][c0] ALL SEGMENTS DONE: total comp0 duration saved 0.00d (bank 932.53 -> ~932.5d if it cascades; beat r2=682 needs -250d)

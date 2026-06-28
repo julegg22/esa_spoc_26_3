@@ -1,0 +1,4 @@
+[E-735full] 25601 edges (top-50 out-nbrs + 598 bank comp0 edges), deps[0,960.0] step 0.5, tof_hi 4.0 step 0.04
+[E-735full] 1000/25601 (1.9/s, ETA 3.68h) [538s]
+[E-735full] 2000/25601 (2.0/s, ETA 3.27h) [999s]
+[E-735full] 3000/25601 (2.1/s, ETA 3.06h) [1462s]

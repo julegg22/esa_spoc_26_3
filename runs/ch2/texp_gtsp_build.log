@@ -1,0 +1,3 @@
+[E-745] 601 cities, K~8 -> 4808 nodes (avg 8.0/city)
+[E-745] arcs: node 0/4808 (108 arcs) [19s]
+[E-745] arcs: node 500/4808 (39719 arcs) [4249s]

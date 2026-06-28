@@ -1,0 +1,10 @@
+[E-735full] shard 2/3: 8533 edges, deps[0,960.0] step 0.5, tof_hi 4.0 step 0.04 -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_giant_faithful_full_shard2.npz
+[E-735full] 1000/8533 (1.0/s, ETA 2.14h) [1024s]
+[E-735full] 2000/8533 (0.9/s, ETA 2.08h) [2297s]
+[E-735full] 3000/8533 (0.9/s, ETA 1.71h) [3346s]
+[E-735full] 4000/8533 (0.9/s, ETA 1.38h) [4382s]
+[E-735full] 5000/8533 (0.9/s, ETA 1.07h) [5431s]
+[E-735full] 6000/8533 (0.9/s, ETA 0.76h) [6470s]
+[E-735full] 7000/8533 (0.9/s, ETA 0.46h) [7539s]
+[E-735full] 8000/8533 (0.9/s, ETA 0.16h) [8581s]
+[E-735full] DONE 8533 edges -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_giant_faithful_full_shard2.npz [9153s]

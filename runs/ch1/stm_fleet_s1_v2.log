@@ -1,0 +1,33 @@
+[E-738 STM-FLEET] restarts=8 gen=250 dv_thresh=4300.0 shard=1/3
+[PC] bank row (0,0) dv=4063 mass=819.4 -> reproduces fitness OK
+[E-738 STM-FLEET] shard 1/3: 25 of 76 expensive (bank_dv>4300.0) of 400 filled
+  [1/25] (366,132) bank dv=4643 -> no improvement [883s]
+  [2/25] (234,357) bank dv=4578 -> no improvement [1502s]
+  [3/25] (239,302) bank dv=4524 m=634 -> dv=4390 m=680 (+45 kg) [2012s]
+  [4/25] (154,42) bank dv=4519 -> no improvement [2666s]
+  [5/25] (16,238) bank dv=4488 -> no improvement [3182s]
+  [6/25] (73,358) bank dv=4475 m=653 -> dv=4315 m=686 (+33 kg) [3871s]
+  [7/25] (310,64) bank dv=4453 m=661 -> dv=4421 m=673 (+12 kg) [4581s]
+  [8/25] (368,92) bank dv=4449 m=662 -> dv=4366 m=689 (+27 kg) [5389s]
+  [9/25] (208,70) bank dv=4425 -> no improvement [6054s]
+  [10/25] (217,25) bank dv=4421 -> no improvement [7123s]
+  --- progress: 4 improved, +118 kg total [7123s] ---
+  [11/25] (358,1) bank dv=4417 m=675 -> dv=4229 m=750 (+75 kg) [7945s]
+  [12/25] (317,29) bank dv=4408 -> no improvement [8617s]
+  [13/25] (386,60) bank dv=4399 -> no improvement [9174s]
+  [14/25] (157,365) bank dv=4395 m=684 -> dv=3914 m=886 (+202 kg) [9650s]
+  [15/25] (47,368) bank dv=4390 m=685 -> dv=4145 m=785 (+99 kg) [10558s]
+  [16/25] (399,395) bank dv=4377 m=691 -> dv=3809 m=897 (+206 kg) [11317s]
+  [17/25] (326,392) bank dv=4374 m=691 -> dv=4307 m=718 (+27 kg) [12133s]
+  [18/25] (85,321) bank dv=4370 -> no improvement [12807s]
+  [19/25] (27,17) bank dv=4354 m=700 -> dv=4302 m=720 (+21 kg) [13529s]
+  [20/25] (367,381) bank dv=4343 m=704 -> dv=4251 m=741 (+37 kg) [14220s]
+  --- progress: 11 improved, +784 kg total [14220s] ---
+  [21/25] (133,53) bank dv=4334 -> no improvement [15234s]
+  [22/25] (365,85) bank dv=4331 -> no improvement [16054s]
+  [23/25] (173,116) bank dv=4324 -> no improvement [17274s]
+  [24/25] (49,162) bank dv=4316 m=715 -> dv=4161 m=778 (+63 kg) [18821s]
+  [25/25] (360,74) bank dv=4304 -> no improvement [19944s]
+
+[E-738 STM-FLEET] DONE: 12 pairs improved, +847 kg total [19944s]
+  checkpoint: /home/julian/Projects/esa_spoc_26_3/cache/ch1_stm_fleet_w1of3.json

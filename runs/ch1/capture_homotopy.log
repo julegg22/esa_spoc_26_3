@@ -1,0 +1,7 @@
+[E-749p1] 250 circular(eM<0.05) bank pairs; homotopy on 5 worst (bank dv2 1812..1388 m/s)
+[E-749p1] (291,364) eM=0.005 bank_dv2=1812 -> homotopy dv2=1080 tot=3538 valid_row=False  [505s]
+[E-749p1] (382,67) eM=0.003 bank_dv2=1523 -> homotopy dv2=1185 tot=8967 valid_row=False  [1248s]
+[E-749p1] (366,132) eM=0.018 bank_dv2=1469 -> homotopy dv2=1409 tot=7869 valid_row=False  [1854s]
+[E-749p1] (144,48) eM=0.003 bank_dv2=1395: homotopy LOST branch (f=13000) [2525s]
+[E-749p1] (40,21) eM=0.001 bank_dv2=1388 -> homotopy dv2=1657 tot=4774 valid_row=False  [3032s]
+[E-749p1] DONE: 0/5 circular pairs reached dv2<700 via homotopy. no win -> circular capture energy-floored OR homotopy needs work [3032s]

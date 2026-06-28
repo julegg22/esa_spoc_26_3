@@ -1,0 +1,4 @@
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] lazy fine evaluator TQ=0.05d T=10000
+[E-731] POS-CONTROL bank order: retimer makespan infd (exc 6) vs official 189.10 [881s]
+[E-731] it0: cur inf best inf acc 0 [914s]

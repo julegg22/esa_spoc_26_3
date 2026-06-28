@@ -1,0 +1,5 @@
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] labeling-DP evaluator TQ=0.05d tofstep=0.02d horizon=250.0d
+[E-731] POS-CONTROL bank order: retimer makespan 191.00d (exc 5) vs official 189.10 [677s]
+[E-731] bank order official re-score from retimer schedule: 191.00d viols [0.0, 0.0, 0.0, 0.0]
+[E-731] saved 180 edge-windows to base /home/julian/Projects/esa_spoc_26_3/cache/ch2_medium_edgewin_0.05_0.02.pkl

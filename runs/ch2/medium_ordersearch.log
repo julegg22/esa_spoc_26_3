@@ -1,0 +1,5 @@
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] lazy fine evaluator TQ=0.05d horizon=250.0d T=5000
+[E-731] POS-CONTROL bank order: retimer makespan 191.00d (exc 5) vs official 189.10 [678s]
+[E-731] bank order official re-score from retimer schedule: 191.00d viols [0.0, 0.0, 0.0, 0.0]
+[E-731] it0: cur 191.00 best 191.00 acc 0 [718s]

@@ -1,0 +1,2 @@
+[BASE] bank mk=189.1000 | grid TQ=0.05 N_TOF=480 T=10000 workers=3
+  [SCAN] 20/180 legs (261s)

@@ -36,3 +36,7 @@
 [E-727][fcls2] CLS it1400: cur strands 7 mk 1188.1d | best strands 7 mk 1188.1d | acc 38 [3115s]
 [E-727][fcls2] CLS it1500: cur strands 7 mk 1188.1d | best strands 7 mk 1188.1d | acc 39 [3323s]
 [E-727][fcls2] CLS it1600: cur strands 7 mk 1188.1d | best strands 7 mk 1188.1d | acc 39 [3521s]
+[E-727][fcls2] CLS it1700: cur strands 7 mk 1188.1d | best strands 7 mk 1188.1d | acc 39 [3714s]
+[E-727][fcls2] CLS it1800: cur strands 7 mk 1188.1d | best strands 7 mk 1188.1d | acc 40 [3907s]
+[E-727][fcls2] CLS it1900: cur strands 7 mk 1188.1d | best strands 7 mk 1188.1d | acc 40 [4185s]
+[E-727][fcls2] CLS it1938: NEW best strands 6 makespan 1158.1d (d/leg 1.930) acc 41 [4291s]

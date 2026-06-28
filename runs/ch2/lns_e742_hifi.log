@@ -1,0 +1,6 @@
+[E-742] bank kt.fitness 932.53d
+[E-742] 5 exc bridge legs at [149, 416, 566, 807, 957]
+[E-742] POS-CONTROL retimed bank 931.63d feas=True (vs 932.53) [220s]
+[E-742] assembled finesearch into 3/3 comp0 segments
+[E-742] ASSEMBLED makespan 924.93d feas=True (gain +7.60d) [416s]
+[E-742] GUARD-BANKED large -> 924.93d; rank-3 headroom vs next 1028.59 = 104d. NOT submitted.

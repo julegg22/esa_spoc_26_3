@@ -1,0 +1,21 @@
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] labeling-DP evaluator TQ=0.05d tofstep=0.02d horizon=250.0d
+[E-731] loaded 180 cached edge-windows from base
+[E-731] cheap adjacency: 3152 edges
+[pre-all] TQ=0.05 scanning 3152 cheap edges; base has 180 already
+[pre-all] 200/3152 (367 cached) [516s]
+[pre-all] 400/3152 (556 cached) [953s]
+[pre-all] 600/3152 (743 cached) [1481s]
+[pre-all] 800/3152 (933 cached) [2078s]
+[pre-all] 1000/3152 (1123 cached) [2534s]
+[pre-all] 1200/3152 (1313 cached) [3133s]
+[pre-all] 1400/3152 (1504 cached) [3747s]
+[pre-all] 1600/3152 (1690 cached) [4257s]
+[pre-all] 1800/3152 (1879 cached) [4641s]
+[pre-all] 2000/3152 (2069 cached) [5171s]
+[pre-all] 2200/3152 (2261 cached) [5704s]
+[pre-all] 2400/3152 (2451 cached) [6155s]
+[pre-all] 2600/3152 (2637 cached) [6516s]
+[pre-all] 2800/3152 (2825 cached) [7123s]
+[pre-all] 3000/3152 (3013 cached) [7693s]
+[pre-all] DONE 3157 edge-windows -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_medium_edgewin_0.05_0.02.pkl [7981s]

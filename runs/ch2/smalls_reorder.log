@@ -1,0 +1,8 @@
+[E-743] bank 924.93d
+[E-743] smalls [150, 150, 150] entries [0.0, 351.8, 748.5]
+[E-743] small@0 (150c) reordered [572s]
+[E-743] small@417 (150c) reordered [1104s]
+[E-743] small@808 (150c) reordered [1672s]
+[E-743] reordered 3/3 smalls; faithful full-tour retime (mr=20)...
+[E-743] NEW makespan 899.69d feas=True (gain +25.24d) [1865s]
+[E-743] GUARD-BANKED large -> 899.69d; headroom vs next 1028.59 = 129d; r2=682 gap 218d. NOT submitted.

@@ -1,0 +1,7 @@
+[E-710 M2] fine-tof beam W=300 K=24; giant n=601; 8 seed start(s)
+[E-710 M2] positive control: depth1 expanded to 164 successors [1s]
+  depth 2: |beam|=164 best_depth=2 min_t=0.0d (d/leg 0.036) [1s]
+  depth 3: |beam|=300 best_depth=3 min_t=0.1d (d/leg 0.056) [23s]
+  depth 4: |beam|=300 best_depth=4 min_t=0.2d (d/leg 0.061) [77s]
+  depth 5: |beam|=300 best_depth=5 min_t=0.4d (d/leg 0.098) [130s]
+  depth 21: |beam|=300 best_depth=21 min_t=3.9d (d/leg 0.196) [1288s]

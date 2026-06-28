@@ -1,0 +1,8 @@
+[E-744] comp0 601 cities; cost matrix built (74802 finite edges) [4s]
+[E-744] iter 0: LKH static comp0 10014.1d; CHRONO-WALK STRAND@0 makespan 0.0d (0.000 d/leg) [bank comp0 818d, greedy beam 338/601] [136s]
+[E-744] iter 0: updated 0 edge costs to realized (epoch-aware) [136s]
+[E-744] iter 1: LKH static comp0 10014.1d; CHRONO-WALK STRAND@0 makespan 0.0d (0.000 d/leg) [bank comp0 818d, greedy beam 338/601] [209s]
+[E-744] iter 1: updated 0 edge costs to realized (epoch-aware) [210s]
+[E-744] iter 2: LKH static comp0 10014.1d; CHRONO-WALK STRAND@1 makespan 1.8d (1.801 d/leg) [bank comp0 818d, greedy beam 338/601] [270s]
+[E-744] iter 2: updated 1 edge costs to realized (epoch-aware) [270s]
+[E-744] DONE [270s]

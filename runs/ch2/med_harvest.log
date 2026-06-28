@@ -1,0 +1,6 @@
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] labeling-DP evaluator TQ=0.025d tofstep=0.02d horizon=250.0d
+[E-731] loaded 180 cached edge-windows from base
+[E-731] cheap adjacency: 3152 edges
+[harvest] 0.025d re-validation of finder proxy-bests; bank=189.1, live r1=186.27
+[harvest] m1: 0.05-proxy 183.15 -> OFFICIAL 183.145d feasible -> *** RANK-1 (<186.27)! ESCALATE (saved /home/julian/Projects/esa_spoc_26_3/cache/ch2_medium_BEST_183.145.json) [583s]

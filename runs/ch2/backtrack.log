@@ -1,0 +1,11 @@
+[E-741] backtracking DFS: 601 comp0, mr=5 tofhi=2.5 wait=2.5 branch=6 maxexp=400000; start 2 @ 67.1d (beam walled 338; r2=682 needs ~0.65 d/leg)
+[E-741] depth 2/601 (2.281 d/leg) exp=2 cache=1 [1s]
+[E-741] depth 25/601 (1.488 d/leg) exp=25 cache=24 [10s]
+[E-741] depth 50/601 (1.633 d/leg) exp=59 cache=57 [14s]
+[E-741] depth 75/601 (1.596 d/leg) exp=101 cache=97 [33s]
+[E-741] depth 100/601 (1.413 d/leg) exp=126 cache=122 [63s]
+[E-741] depth 125/601 (1.295 d/leg) exp=151 cache=147 [95s]
+[E-741] depth 150/601 (1.187 d/leg) exp=176 cache=172 [126s]
+[E-741] depth 175/601 (1.123 d/leg) exp=201 cache=197 [159s]
+[E-741] depth 200/601 (1.033 d/leg) exp=226 cache=222 [191s]
+[E-741] DONE no complete tour; best depth 217/601 exp=400001 (greedy beam walled 338) [858s]

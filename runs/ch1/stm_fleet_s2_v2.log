@@ -1,0 +1,33 @@
+[E-738 STM-FLEET] restarts=8 gen=250 dv_thresh=4300.0 shard=2/3
+[PC] bank row (0,0) dv=4063 mass=819.4 -> reproduces fitness OK
+[E-738 STM-FLEET] shard 2/3: 25 of 76 expensive (bank_dv>4300.0) of 400 filled
+  [1/25] (319,114) bank dv=4637 -> no improvement [527s]
+  [2/25] (382,67) bank dv=4535 -> no improvement [1515s]
+  [3/25] (334,312) bank dv=4523 m=635 -> dv=4389 m=666 (+31 kg) [2079s]
+  [4/25] (332,380) bank dv=4494 m=646 -> dv=4360 m=681 (+35 kg) [2988s]
+  [5/25] (312,131) bank dv=4481 m=650 -> dv=4295 m=660 (+10 kg) [3614s]
+  [6/25] (220,44) bank dv=4462 -> no improvement [4284s]
+  [7/25] (144,48) bank dv=4450 -> no improvement [4756s]
+  [8/25] (219,9) bank dv=4432 m=669 -> dv=4289 m=683 (+14 kg) [5528s]
+  [9/25] (116,86) bank dv=4422 -> no improvement [6303s]
+  [10/25] (302,372) bank dv=4419 -> no improvement [7074s]
+  --- progress: 4 improved, +90 kg total [7074s] ---
+  [11/25] (316,226) bank dv=4412 -> no improvement [7948s]
+  [12/25] (156,83) bank dv=4401 m=681 -> dv=4325 m=690 (+9 kg) [8729s]
+  [13/25] (59,124) bank dv=4397 -> no improvement [9440s]
+  [14/25] (361,327) bank dv=4394 m=684 -> dv=4354 m=688 (+4 kg) [10269s]
+  [15/25] (213,19) bank dv=4381 m=689 -> dv=4246 m=743 (+54 kg) [11181s]
+  [16/25] (300,72) bank dv=4376 m=691 -> dv=4277 m=730 (+39 kg) [12033s]
+  [17/25] (63,247) bank dv=4370 -> no improvement [12917s]
+  [18/25] (72,338) bank dv=4360 m=697 -> dv=4196 m=763 (+66 kg) [13989s]
+  [19/25] (314,268) bank dv=4348 -> no improvement [15109s]
+  [20/25] (325,342) bank dv=4339 m=705 -> dv=4263 m=736 (+30 kg) [16506s]
+  --- progress: 10 improved, +292 kg total [16506s] ---
+  [21/25] (169,253) bank dv=4333 m=708 -> dv=4206 m=759 (+51 kg) [18031s]
+  [22/25] (305,73) bank dv=4329 m=709 -> dv=4292 m=724 (+15 kg) [19571s]
+  [23/25] (311,121) bank dv=4322 m=712 -> dv=4172 m=773 (+61 kg) [20629s]
+  [24/25] (128,95) bank dv=4312 m=716 -> dv=4298 m=722 (+6 kg) [21503s]
+  [25/25] (175,361) bank dv=4301 m=720 -> dv=4157 m=779 (+59 kg) [22135s]
+
+[E-738 STM-FLEET] DONE: 15 pairs improved, +484 kg total [22135s]
+  checkpoint: /home/julian/Projects/esa_spoc_26_3/cache/ch1_stm_fleet_w2of3.json

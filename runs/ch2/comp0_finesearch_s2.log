@@ -1,0 +1,7 @@
+[E-735b][f2] seg2: 93c base finish 933.53d (dur 114.7d, 1.247 d/leg) [13s]
+[E-735b][f2] seg2 it20: NEW BEST 931.63d (-1.90d vs base, 1.227 d/leg) acc1 cache1023 [124s]
+[E-735b][f2] seg2 it40: NEW BEST 929.72d (-3.80d vs base, 1.206 d/leg) acc2 cache1431 [164s]
+[E-735b][f2] seg2 it150: NEW BEST 927.83d (-5.70d vs base, 1.185 d/leg) acc3 cache2924 [300s]
+[E-735b][f2] seg2 it953: NEW BEST 925.94d (-7.58d vs base, 1.165 d/leg) acc10 cache8160 [971s]
+[E-735b][f2] seg2 it1000: cur 925.94 best 925.94 (-7.58d) acc10 cache8449 [1010s]
+[E-735b][f2] seg2 it1496: NEW BEST 924.94d (-8.58d vs base, 1.154 d/leg) acc12 cache10328 [1347s]

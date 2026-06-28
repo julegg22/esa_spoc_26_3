@@ -1,0 +1,5 @@
+[E-740] small n=49 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] labeling-DP evaluator TQ=0.05d tofstep=0.02d horizon=130.0d
+[E-731] POS-CONTROL bank order: retimer makespan 114.39d (exc 5) vs official 189.10 [361s]
+[E-731] bank order official re-score from retimer schedule: 114.39d viols [0.0, 0.0, 0.0, 0.0]
+[E-731][s1] it0: cur 114.39 proxy-best 114.39 off-best 189.10 acc 0 [392s]

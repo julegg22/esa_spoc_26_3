@@ -1,0 +1,48 @@
+[E-746] 49 cities, K=50 -> 2450 nodes; building faithful arcs (full adjacency)
+[E-746] arcs node 0/2450 (27 arcs) [1s]
+[E-746] arcs node 300/2450 (6535 arcs) [314s]
+[E-746] arcs node 600/2450 (12751 arcs) [623s]
+[E-746] arcs node 900/2450 (18024 arcs) [954s]
+[E-746] arcs node 1200/2450 (23363 arcs) [1284s]
+[E-746] arcs node 1500/2450 (29601 arcs) [1605s]
+[E-746] arcs node 1800/2450 (35112 arcs) [1938s]
+[E-746] arcs node 2100/2450 (42107 arcs) [2337s]
+[E-746] arcs node 2400/2450 (49158 arcs) [2819s]
+[E-746] BUILT 2450 nodes, 50500 arcs -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_small_texp_graph.npz [2902s]
+[E-746] AGTSP 2451 nodes (2450+depot), 50 sets, 50500 arcs
+[E-746] running GLKH (TL=900s)...
+ Cost = 67045112, Time = 1.60 sec.
+# 13: Cost = 57053999, Time = 1.78 sec.
+# 34: Cost = 53040481, Time = 4.02 sec.
+# 39: Cost = 45063902, Time = 4.63 sec.
+# 90: Cost = 45063155, Time = 10.28 sec.
+# 541: Cost = 45062018, Time = 61.90 sec.
+# 786: Cost = 45061518, Time = 88.46 sec.
+# 797: Cost = 45061438, Time = 89.48 sec.
+# 915: Cost = 45061279, Time = 101.41 sec.
+# 935: Cost = 44064341, Time = 103.32 sec.
+# 1257: Cost = 42071764, Time = 136.05 sec.
+# 1597: Cost = 42071742, Time = 170.36 sec.
+# 1724: Cost = 42071643, Time = 182.61 sec.
+# 1749: Cost = 42070082, Time = 185.04 sec.
+# 2007: Cost = 41072762, Time = 209.39 sec.
+# 3134: Cost = 41072360, Time = 319.20 sec.
+# 3304: Cost = 41071380, Time = 335.04 sec.
+Run 2: Cost = 41071380, Time = 343.62 sec.
+
+Post-optimization [Cost = 34100096]
+# 1: Cost = 34100096, Gap = 0.0000%, Time = 0.00 sec.
+Run 1: Cost = 34100096, Gap = 0.0000%, Time = 0.00 sec.
+
+                  C-opt = 34099619
+# 1: Cost = 34099619, Gap = 0.0000%, Time = 0.00 sec.
+Run 1: Cost = 34099619, Gap = 0.0000%, Time = 0.00 sec.
+
+Writing OUTPUT_TOUR_FILE: "/home/julian/Projects/esa_spoc_26_3/reference/GLKH-1.1/ch2smalltexp.tour" ... done
+Value = 34099619, Time = 900.3 sec.
+
+
+[E-746] decoded 49/49 cities; faithful chrono-walk...
+[E-746] GLKH order 49 cities, COMPLETE makespan 75.208d [bank 112.996 rank6, rank1~101.65]
+[E-746] kt.fitness 75.208d feas=False (bank 112.996, gain +37.788)
+[E-746] done

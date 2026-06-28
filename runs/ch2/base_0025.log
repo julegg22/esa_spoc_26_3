@@ -1,0 +1,8 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; lazy fine-scan evaluator
+[E-731] labeling-DP evaluator TQ=0.025d tofstep=0.02d horizon=250.0d
+[E-731] POS-CONTROL bank order: retimer makespan 189.10d (exc 5) vs official 189.10 [1365s]
+[E-731] bank order official re-score from retimer schedule: 189.10d viols [0.0, 0.0, 0.0, 0.0]
+[E-731] saved 180 edge-windows to base /home/julian/Projects/esa_spoc_26_3/cache/ch2_medium_edgewin_0.025_0.02.pkl

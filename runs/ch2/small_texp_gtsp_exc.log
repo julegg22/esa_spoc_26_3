@@ -1,0 +1,44 @@
+[E-746] 49 cities, K=30 -> 1470 nodes; building faithful arcs (full adjacency)
+[E-746] arcs node 0/1470 (27 arcs) [1s]
+[E-746] arcs node 300/1470 (6611 arcs) [295s]
+[E-746] arcs node 600/1470 (11797 arcs) [616s]
+[E-746] arcs node 900/1470 (17557 arcs) [923s]
+[E-746] arcs node 1200/1470 (23809 arcs) [1260s]
+[E-746] BUILT 1470 nodes, 29933 arcs -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_small_texp_graph.npz [1632s]
+[E-746] AGTSP 1471 nodes (1470+depot), 50 sets, 29933 arcs
+[E-746] running GLKH (TL=600s)...
+Time = 1.34 sec.
+# 31: Cost = 53050063, Time = 2.18 sec.
+# 1519: Cost = 52054121, Time = 113.75 sec.
+# 2072: Cost = 52052542, Time = 155.67 sec.
+# 4177: Cost = 51056018, Time = 314.85 sec.
+Run 1: Cost = 51056018, Time = 376.71 sec.
+
+# 1: Cost = 71042314, Time = 0.07 sec.
+# 3: Cost = 63035363, Time = 0.21 sec.
+# 6: Cost = 54047187, Time = 0.40 sec.
+# 530: Cost = 54044425, Time = 40.63 sec.
+# 916: Cost = 53048225, Time = 71.05 sec.
+# 945: Cost = 53047624, Time = 73.08 sec.
+# 954: Cost = 53046084, Time = 73.72 sec.
+# 956: Cost = 53045664, Time = 73.83 sec.
+# 967: Cost = 52052901, Time = 74.49 sec.
+# 1070: Cost = 52052742, Time = 82.41 sec.
+# 1095: Cost = 52052141, Time = 84.01 sec.
+# 1189: Cost = 52050683, Time = 89.85 sec.
+# 1314: Cost = 51057324, Time = 98.13 sec.
+# 2055: Cost = 51056624, Time = 152.82 sec.
+# 2085: Cost = 51056585, Time = 154.96 sec.
+Run 2: Cost = 51056585, Time = 177.30 sec.
+
+Post-optimization [Cost = 51056018]
+# 1: Cost = 51056018, Gap = 0.0000%, Time = 0.00 sec.
+Run 1: Cost = 51056018, Gap = 0.0000%, Time = 0.00 sec.
+
+Writing OUTPUT_TOUR_FILE: "/home/julian/Projects/esa_spoc_26_3/reference/GLKH-1.1/ch2smalltexp.tour" ... done
+Value = 51056018, Time = 600.2 sec.
+
+
+[E-746] decoded 49/49 cities; faithful chrono-walk...
+[E-746] GLKH order 49 cities, STRAND@22 makespan 22.702d [bank 112.996 rank6, rank1~101.65]
+[E-746] done

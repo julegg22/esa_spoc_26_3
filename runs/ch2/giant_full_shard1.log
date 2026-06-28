@@ -1,0 +1,13 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/julian/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+[E-735full] shard 1/3: 8534 edges, deps[0,960.0] step 0.5, tof_hi 4.0 step 0.04 -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_giant_faithful_full_shard1.npz
+[E-735full] 1000/8534 (1.0/s, ETA 2.20h) [1049s]
+[E-735full] 2000/8534 (0.9/s, ETA 2.10h) [2311s]
+[E-735full] 3000/8534 (0.9/s, ETA 1.72h) [3348s]
+[E-735full] 4000/8534 (0.9/s, ETA 1.38h) [4386s]
+[E-735full] 5000/8534 (0.9/s, ETA 1.07h) [5425s]
+[E-735full] 6000/8534 (0.9/s, ETA 0.76h) [6474s]
+[E-735full] 7000/8534 (0.9/s, ETA 0.46h) [7552s]
+[E-735full] 8000/8534 (0.9/s, ETA 0.16h) [8623s]
+[E-735full] DONE 8534 edges -> /home/julian/Projects/esa_spoc_26_3/cache/ch2_giant_faithful_full_shard1.npz [9196s]

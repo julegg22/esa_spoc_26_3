@@ -1,0 +1,4 @@
+[E-731] medium n=181 dv_thr=100.0 exc_thr=600.0 n_exc=5; windows 3152 cheap edges
+[E-731] window grid TQ=0.1d  T=5000
+[E-731] POS-CONTROL bank order: retimer makespan infd (exc 6) vs official 189.10 [7s]
+[E-731] it0: cur inf best inf acc 0 [7s]
