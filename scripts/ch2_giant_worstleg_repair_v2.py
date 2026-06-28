@@ -9,8 +9,8 @@ import numpy as np
 sys.path.insert(0, "/home/julian/Projects/esa_spoc_26_3/scripts")
 import ch2_giant_lns_e742 as e
 ROOT = e.ROOT; kt = e.kt; THR = e.THR
-MS = [8, 12, 18, 26, 36]                                          # window sizes tried per worst leg
-WS = 80                                                            # in-window beam width
+MS = [12, 22]                                                     # window sizes tried per worst leg (light: fast rounds)
+WS = 45                                                            # in-window beam width
 
 
 def window_beam(entry, interior, exit_c, t_entry, Ws=WS):
@@ -75,7 +75,7 @@ def main():
         cand = sorted(((tf[kk], kk) for kk in range(N - 1)
                        if order[kk] in comp0 and order[kk + 1] in comp0 and kk not in bp), reverse=True)
         improved = False
-        for _, kk in cand[:60]:                                   # the 60 worst comp0 legs this round
+        for _, kk in cand[:18]:                                   # the worst comp0 legs this round (light)
             run = next((r for r in runs if r[0] <= kk < r[1] - 1), None)
             if run is None:
                 continue
