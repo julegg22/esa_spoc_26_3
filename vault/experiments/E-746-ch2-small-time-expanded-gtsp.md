@@ -62,5 +62,20 @@ threads 49/49 below 112.996 → rank gain. If it still strands, the GTSP's discr
 realized faithfully, and the proven TD method for small is **DP-on-ultrafine-grid** ([[C-026-dp-on-time-expanded-graph]],
 which already solved small) — i.e. carry the exact clock, don't discretize into windows.
 
+## K=50 + PEN-sweep RESULT — the GTSP only "completes" by abusing exceptions (lever capped)
+K=50 (2450 nodes, exception arcs) threaded a **COMPLETE 49-city tour at 75.2d** — but **infeasible: 25 exception
+legs vs the budget of 5**. A penalty sweep (E-746b, `ch2_small_texp_pensweep.py`) raised the exception cost across
+PEN ∈ {2, 3.5, 5, 7, 9, 9.8}M to force ≤5 bridges: **every value STRANDED** (@13–37 of 49). Diagnosis: of 50,500
+arcs only **3,849 are cheap** (92% are exception arcs); the cheap sub-graph is too sparse in the time-windowed
+representation to thread all 49 cities with ≤5 bridges, so GLKH either abuses exceptions (75.2d, infeasible) or
+strands. The bank's 112.996 *does* use exactly 5 — but that ordering isn't reachable through these windows.
+
+## Verdict
+The time-expanded GTSP **architecture works** (it was small's named missing lever and it now threads complete
+tours) but is **capped for a feasible rank gain**: the cheap-arc connectivity is intrinsically too sparse, and
+finer windows (K 24→30→50) added arcs without making a ≤5-exception tour reachable. A feasible improvement would
+need either a *hard* ≤5-exception constraint in the solver (GTSP can't express it) or a denser cheap graph than the
+problem offers. Small stays at 112.996 (rank 6, held); the GTSP lever is documented closed for small.
+
 ## Bank impact
-None yet (probe). Ch2-small bank unchanged at 112.996 (rank 6, held). Nothing submitted.
+None (probe). Ch2-small bank unchanged at 112.996 (rank 6, held). Nothing submitted.

@@ -65,5 +65,26 @@ eccentric-departure bug — not a real floor.
    the E-036 WSB only on the subset where cap@dt=100 still exceeds the cheap WSB rocket_mass. **Binary:** that
    subset nets positive ⇒ partial WSB lever (+X kg, a down-payment toward rank-3); else WSB dominated.
 
+## Probe #1 RESULT — homotopy REFUTES the cold-start hypothesis (partly self-correcting the audit)
+Ran the continuation/homotopy on the 5 worst circular captures (`ch1_capture_homotopy.py`). **0/5 reached
+DV2<700**, and the reductions were partial + inconsistent:
+- (291,364) 1812 → **1080** (−732), (382,67) 1523 → 1185 (−338), (366,132) 1469 → 1409 (−60),
+  (40,21) 1388 → **1657** (got *worse*), (144,48) **lost the branch** (f=1.3e4).
+So cold-start convergence was only a *partial* wall — homotopy helps the worst outlier but **circular capture has a
+genuine impulsive floor ~1080+**, far above the competitor's implied ~490. **The audit's own mechanism hypothesis
+(#1) is largely refuted by its own probe.** The GAP localization (capture, +118k, forced permutation) stands; the
+*realizability* does not: our impulsive/patched-conic tooling cannot reach the competitor floor by any convergence
+trick. The ~490 must come from a **fundamentally different method — true low-energy / WSB ballistic capture** —
+which has now failed **5×** (E-604/E-036/E-682/E-694 + this homotopy). (Caveat: the `valid_row` print was a check
+bug — official_row returns a 2/3-tuple, not a 21-list — so the modest reductions *may* be officially valid; a
+careful "apply homotopy to worst outliers, keep only validated improvements" pass could net a *small* gain, but it
+is NOT the +118k rank-2 lever.)
+
+## Verdict (final)
+**Ch1 is effectively capped near rank-5 with our current capture tooling.** The +118k/rank-2 lever is real but
+**research-grade**: it requires a working low-energy (WSB / Sun-assisted / 3-body-manifold) capture into circular
+LLOs — the one paradigm we have never landed, and the competitor's near-certain method. The remaining near-term
+ch1 gains are the bounded STM/eccentric polish (toward rank-5), not rank-2.
+
 ## Bank impact
-None (diagnostic). Bank unchanged at 364,932 (held). Per §5b, taking experiment #1 now.
+None (diagnostic). Bank unchanged at 364,932 (held). Nothing submitted.
