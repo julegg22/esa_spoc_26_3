@@ -84,6 +84,15 @@ def main():
         return all((a in ADJ and b in ADJ[a]) for (a, b) in edges)
     cur = list(cities); cur_fin = base; best = base; bestord = list(cities); rng = SEED; acc = 0; L_ = len(cur)
     pbest = f"{ROOT}/cache/ch2_giant_comp0_fine_{TAG}_seg{SEGI}.json"
+    if os.path.exists(pbest):                                    # RESUME from prior best order
+        try:
+            pd = json.load(open(pbest)); po = [int(c) for c in pd["cities"]]
+            pf, pnl = walk(po, t_entry)
+            if pf is not None and pf < base and set(po) == set(cities):
+                cur = po; cur_fin = pf; best = pf; bestord = po
+                print(f"[E-735b][{TAG}] seg{SEGI} RESUMED from {pf:.2f}d (-{base-pf:.2f}d)", flush=True)
+        except Exception:
+            pass
     for it in range(ITERS):
         cand = None
         for _try in range(40):

@@ -80,3 +80,30 @@ it reuses validated machinery.
 
 Diagnostic only — no bank change, nothing submitted (user-gated). Per CLAUDE.md §5b + the 8h autonomous window,
 building probe #1 now.
+
+---
+## Probe #1 RESULT (2026-06-28, in progress) — fine oracle works; faithful reorder helps but is decelerating
+
+Built the medium-machinery order search for large; the path produced three concrete results:
+
+1. **Dense-table evaluator is mis-resolutioned (NOT the answer).** Built a full faithful window table (epoch
+   0-960, tof≤4d, dep_step 0.5d, sharded 3×, 25,601 edges, 289MB). The bank's comp0 segments STRAND on it: the
+   coarse 0.5d departure grid + 4d tof cap makes the greedy walk take long-tof entries, drift ~2d/leg, and
+   strand. Re-confirms E-710's "need fine resolution" — but see #2.
+2. **E-710's "~0.002d narrow cheap-tof bands" claim is REFUTED.** Measured cheap-departure bands at 0.005d
+   resolution on 4 comp0 edges: cheap departures are **WIDE** — (2,847),(224,34),(351,106) are cheap across
+   ~100% of a 40d window; (374,1040) 99%. The bands are not the obstacle; the coarse table was.
+3. **A FINE LOCAL oracle reproduces the bank faithfully and is fast enough.** `earliest(i,j,t)` =
+   `cheap_first_tof` over [t,t+6] at 0.02d, tof≤8.5d, cached by 0.2d epoch-bucket. Walks the bank's s0 segment
+   (267c) to **379.3d vs bank 380.4d** — faithful, ~10s. (`scripts/ch2_giant_comp0_finesearch.py`.)
+
+**Faithful reorder lever — measured (segmented, fixed endpoints + entry epochs):** or-opt/2-opt per comp0
+segment from its bank entry epoch. After ~25min: s0 −16.7d (1.174→1.111 d/leg), s1 −8.6d, s2 −8.6d =
+**~34d total and still dropping, but clearly DECELERATING** (most of s0's gain by it~800). To beat r2=682 needs
+comp0 **−250d** (segments to ~0.65 d/leg); the segmented reorder is tracking toward a plateau **far short** of
+that. **Tentative verdict (b): faithful local reorder gives a genuine but MARGINAL gain — it refutes the absolute
+"reorder is trapped" claim (E-587), but does NOT reach rank-2; beating 682 needs a globally-tight TD optimizer
+(free segment boundaries / inter-segment moves / the competitor's solver), which the segmented probe deliberately
+does not attempt.** Full plateau still accumulating (2opt + thread-capped restart running). The ~34d+ IS a real
+improvement to the 932 bank (→ ~900d) but does not change rank (still >682). Continuing to pin the plateau before
+finalizing (b) and deciding probe #3 (global free-boundary reorder / faithful-oracle beam completion).
