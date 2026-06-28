@@ -70,6 +70,13 @@ epoch-aware cluster-decomposition build (transfers the large
   hierarchical orbital-element decomposition for very-large TSP.
 - [[concepts/C-020-bridge-prefilter|C-020]]: bridge-prefilter
   for fast LNS candidate evaluation.
+- [[concepts/C-035-time-expanded-gtsp|C-035]]: time-expanded GTSP —
+  city→time-window copies, GTSP one-per-cluster picks order+epoch
+  jointly (GLKH/AGTSP); the resolution-vs-tractability tradeoff and the
+  faithful-arc fix (E-718→744→745).
+- [[concepts/C-036-epoch-shift-trap|C-036]]: the epoch-shift trap —
+  static cost lies in time-dependent routing (static-optimal order
+  inflates/strands on chrono-walk); order & timing are inseparable.
 - [[methodology/M-006-idle-pivot-on-unmet-targets|M-006]]: no
   idle in autonomous-loop while rank-3 targets are unmet (hard
   rule, refinement of M-003).
