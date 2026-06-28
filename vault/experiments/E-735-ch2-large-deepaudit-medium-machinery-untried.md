@@ -3,7 +3,7 @@ id: E-735
 type: experiment
 tags: [ch2, large, deep-audit, order-search, labeling-dp, reorder-trap, rank-2]
 date: 2026-06-28
-status: ACTIVE — 3rd /deepaudit ch2-large; finds the load-bearing flaw the two prior audits (E-720, E-726) shared
+status: DONE — 3rd /deepaudit ch2-large; probe #1 verdict (b): faithful reorder genuine but MARGINAL (~34d), large stays rank-2-walled; fine oracle = new asset for a faithful global beam (probe #1c, deferred)
 corrects: [E-587, E-591]
 reframes: [E-720, E-726, E-727]
 related: ["[[ch2-large-first-bank-topology]]", "[[ch2-medium-bank]]", "[[E-734-ch2-medium-rank1-reclaimed-182]]", "[[ch2-large-time-ordering-wall]]"]
@@ -97,13 +97,33 @@ Built the medium-machinery order search for large; the path produced three concr
    `cheap_first_tof` over [t,t+6] at 0.02d, tof≤8.5d, cached by 0.2d epoch-bucket. Walks the bank's s0 segment
    (267c) to **379.3d vs bank 380.4d** — faithful, ~10s. (`scripts/ch2_giant_comp0_finesearch.py`.)
 
-**Faithful reorder lever — measured (segmented, fixed endpoints + entry epochs):** or-opt/2-opt per comp0
-segment from its bank entry epoch. After ~25min: s0 −16.7d (1.174→1.111 d/leg), s1 −8.6d, s2 −8.6d =
-**~34d total and still dropping, but clearly DECELERATING** (most of s0's gain by it~800). To beat r2=682 needs
-comp0 **−250d** (segments to ~0.65 d/leg); the segmented reorder is tracking toward a plateau **far short** of
-that. **Tentative verdict (b): faithful local reorder gives a genuine but MARGINAL gain — it refutes the absolute
-"reorder is trapped" claim (E-587), but does NOT reach rank-2; beating 682 needs a globally-tight TD optimizer
-(free segment boundaries / inter-segment moves / the competitor's solver), which the segmented probe deliberately
-does not attempt.** Full plateau still accumulating (2opt + thread-capped restart running). The ~34d+ IS a real
-improvement to the 932 bank (→ ~900d) but does not change rank (still >682). Continuing to pin the plateau before
-finalizing (b) and deciding probe #3 (global free-boundary reorder / faithful-oracle beam completion).
+**Faithful reorder lever — measured (segmented, fixed endpoints + entry epochs):** or-opt per comp0 segment from
+its bank entry epoch. Full curve (s0): rapid early gains decelerating to **−16.69d by it919, flat by it1000**
+(1.174→1.111 d/leg). s1 −8.59d, s2 −8.58d. **PLATEAU ≈ 34d total.** To beat r2=682 needs comp0 **−250d**
+(segments to ~0.65 d/leg) — the segmented reorder reaches **~14% of that and stalls.**
+
+### FINAL probe #1 verdict (b) — faithful reorder is GENUINE but MARGINAL; the wall is global TD optimization
+The "932 is reorder-trapped" claim (E-587) is **refuted in the small**: faithful reorder *does* improve the bank
+(−34d, to ~898d), so it is not an absolute trap. **But it is marginal for rank** — it reaches ~14% of the 250d
+needed and stalls, because the probe is constrained to **within-segment** moves (fixed endpoints, fixed entry
+epochs, no inter-segment city moves, fixed 3 bridges). The unconstrained lever — a **global, free-boundary,
+time-dependent reorder/reconstruction of all 601 comp0 cities** — is exactly the from-scratch global TD optimizer
+the prior 10-deep verdict chain (E-713/718/726/729) already identified as the unbuilt competitor tool, and it is
+blocked by the same **completion wall** (no feasible complete single-cheap-path comp0 seed exists to do global
+or-opt on; the bank's comp0 is 3 segments joined by non-cheap bridge "seams"). So probe #1 **sharpens** the
+standing verdict rather than overturning it: large is rank-2-walled for our toolkit; r2/r1 needs global faithful
+TD construction, not local reorder.
+
+### Genuine assets this probe produced (reusable)
+1. **Fine local faithful oracle** (`scripts/ch2_giant_comp0_finesearch.py::earliest`): cheap_first_tof over
+   [t,t+W] at 0.02d, cached by epoch-bucket — reproduces the bank faithfully and is fast (~37ms/leg). This is the
+   faithful evaluator E-710's beam LACKED (it ran on the optimistic table). A faithful global beam built on THIS
+   oracle is the genuinely-new next attack (probe #1c), distinct from every prior beam.
+2. **E-710's "~0.002d narrow cheap bands" premise is REFUTED** (bands are wide, ~100%/40d) — corrects the
+   recorded rationale for why faithful search was thought intractable.
+3. **A ~34d real improvement to the 932 bank** (pbest `cache/ch2_giant_comp0_fine_f{0,1,2}_seg*.json`) — does NOT
+   change rank (898 > r2 682), so not worth submitting alone (HELD).
+
+**Next lever (named, per CLAUDE.md §5b):** probe #1c = a **faithful global beam** for comp0 completion using the
+fine oracle (the asset above) — the one attack the prior beams couldn't make because they lacked a faithful
+evaluator. Deferred to the next work block (substantial build); the segmented reorder is exhausted as a rank lever.
