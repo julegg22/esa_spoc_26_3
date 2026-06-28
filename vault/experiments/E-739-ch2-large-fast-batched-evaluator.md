@@ -35,3 +35,14 @@ Running (BW=25, K=8, mr=3, tofhi=2, start city 2 @67.1d). **Binary:** completes 
 +smalls+bridges, validate kt.fitness; if <682 ⇒ RANK-2 lever realized. Strands/drifts ⇒ the phasing bottleneck
 (E-729 low-degree cities) is real even with the right fast tool, and rank-2 needs more (wider beam / backtracking
 / the multi-rev edges). Result pending (~2.5h). Bank unchanged, nothing submitted.
+
+## Beam run 1 result (BW=25, mr=3, tofhi=2)
+**Threaded 339/601 faithfully at 0.24-0.27 d/leg, then STRANDED** (no feasible successor). This is the key
+datum: **339 vs the prior FAITHFUL beam's 191** — the fast evaluator nearly doubled faithful reach, at
+*well-below-r1 pace* (0.27 vs r1 0.65). It strands because mr=3/tofhi=2 restricts connectivity (66/150 reachable)
+— the low-degree bottleneck cities (E-729) need the multi-rev edges. So: the fast evaluator unlocks faithful
+construction, and a plain greedy beam gets to 339; completion is gated by the connectivity/phasing wall, not pace.
+**Run 2 (mr=5, tofhi=2.5 → 79/150 reachable, BW=35) launched** to push past 339. If a complete 601 emerges at
+<0.65 d/leg, the comp0 path (~160-250d vs bank 876d) assembles toward a rank-2/rank-1 large tour. If it still
+strands, the residual is backtracking / a wider beam / a proper TD-LKH on the faithful short-tof cost — but the
+*evaluator* lever (the named E-735 missing tool) is delivered and demonstrably effective (191→339 faithful).
