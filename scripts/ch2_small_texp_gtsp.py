@@ -19,7 +19,8 @@ GLKHDIR = f"{ROOT}/reference/GLKH-1.1"; GLKH = f"{GLKHDIR}/GLKH"
 INST_KT = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 Keplerian "
            "Tomato Traveling Salesperson Problem/problems/easy.kttsp")
 kt = KTTSP(INST_KT)
-OPAR = kt.opar.astype(np.float64); THR = kt.dv_thr; MINTOF = kt.min_tof; DAY = 86400.0
+OPAR = kt.opar.astype(np.float64); THR = kt.dv_thr; EXC = kt.dv_exc; MINTOF = kt.min_tof; DAY = 86400.0
+PEN = 1_000_000                                                  # exception-bridge penalty (< BIG, >> cheap tof): GLKH uses ≤few
 NC = OPAR.shape[0]                                                # 49 cities
 K = int(os.environ.get("CH2_K", "30")); H = float(os.environ.get("CH2_H", "130"))
 MR = int(os.environ.get("CH2_MR", "20")); TOFHI = float(os.environ.get("CH2_TOFHI", "8.0"))
@@ -44,17 +45,20 @@ def build():
     for nid in range(NN):
         i = int(node_city[nid]); ta = node_t[nid]
         js = allj[allj != i]
-        arrs, _ = ft.batch_earliest(OPAR, i, ta * DAY, js, 4.0 * DAY, DSTEP * DAY, MINTOF * DAY,
-                                    TOFHI * DAY, TOFSTEP * DAY, THR, MR)
-        for q in range(len(js)):
-            if arrs[q] <= 0:
-                continue
-            j = int(js[q]); arr_d = arrs[q] / DAY
-            cand = wins[wins >= arr_d - 1e-6]
-            if not len(cand):
-                continue
-            tb = cand.min(); dest = cluster[j][int(np.where(wins == tb)[0][0])]
-            rows.append(nid); cols.append(dest); vals.append(int((arr_d - ta) * 1000) + 1)
+        # cheap arcs (dv<=THR, cost=tof) + exception-bridge arcs (dv<=EXC, cost=tof+PEN) so GLKH can connect the
+        # multi-component cheap graph using <=5 bridges (the bank uses exactly 5). min() keeps cheap over exc.
+        for thr, pen in ((THR, 0), (EXC, PEN)):
+            arrs, _ = ft.batch_earliest(OPAR, i, ta * DAY, js, 4.0 * DAY, DSTEP * DAY, MINTOF * DAY,
+                                        TOFHI * DAY, TOFSTEP * DAY, thr, MR)
+            for q in range(len(js)):
+                if arrs[q] <= 0:
+                    continue
+                j = int(js[q]); arr_d = arrs[q] / DAY
+                cand = wins[wins >= arr_d - 1e-6]
+                if not len(cand):
+                    continue
+                tb = cand.min(); dest = cluster[j][int(np.where(wins == tb)[0][0])]
+                rows.append(nid); cols.append(dest); vals.append(int((arr_d - ta) * 1000) + 1 + pen)
         if nid % 300 == 0:
             print(f"[E-746] arcs node {nid}/{NN} ({len(rows)} arcs) [{time.time()-t0:.0f}s]", flush=True)
     np.savez(GRAPHF, node_city=node_city, node_t=node_t,
@@ -90,12 +94,18 @@ def solve():
 
 
 def chrono_walk(order, t0=0.0, W=6.0):
-    t = t0; tofs = []
+    t = t0; tofs = []; nexc = 0
     for k in range(len(order) - 1):
         deps = np.arange(t, t + W, 0.02)
-        tof = ft.cheap_first_tof(OPAR[order[k]], OPAR[order[k + 1]], deps * DAY, MINTOF * DAY, TOFHI * DAY,
-                                 0.02 * DAY, THR, MR)
-        m = tof > 0
+        m = None
+        for thr in (THR, EXC):                                    # cheap first; fall back to exception bridge
+            tof = ft.cheap_first_tof(OPAR[order[k]], OPAR[order[k + 1]], deps * DAY, MINTOF * DAY, TOFHI * DAY,
+                                     0.02 * DAY, thr, MR)
+            m = tof > 0
+            if m.any():
+                if thr == EXC:
+                    nexc += 1
+                break
         if not m.any():
             return t, k, tofs
         ix = np.argmin(deps[m] + tof[m] / DAY); t = float(deps[m][ix] + tof[m][ix] / DAY); tofs.append((float(deps[m][ix]), float(tof[m][ix] / DAY)))

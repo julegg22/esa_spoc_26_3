@@ -29,12 +29,23 @@ fine (it threads 5 legs, and the bank tour threads all 49), confirming the misse
 This is the resolution-vs-tractability tradeoff of [[C-035-time-expanded-gtsp]] reappearing at the **evaluator**
 level: coarse=fast-but-sparse, fine=dense-but-slow. The architecture is correct; the arc oracle was under-resolved.
 
-## Next step (launched) — fine arcs
-Rebuild with **dep step 0.02 d** (matching the decode resolution that demonstrably sees the bands) + K=30, using
-the now-free cores (STM fleet completed this tick). Expect a far denser arc set and a chrono-feasible GLKH order.
-If it threads 49/49 and beats 112.996 → rank gain → guard-bank + escalate. If still strands → the true fix is a
-**fine-faithful edge-epoch table** (small analogue of `dense1d`: scan each of 49×48 edges once at fine departure
-resolution, then arcs by lookup) — heavier but the principled oracle.
+## Fine-arc retry — REFUTED the resolution hypothesis
+Rebuilt with dep step 0.02 d (5× finer). **Node-300 arc count was 536 — identical to the coarse build's 536.**
+So finer scanning found the *exact same* arcs (6× slower for zero gain): the strand is **not** a resolution
+artifact. Killed it. (Anti-oscillation: the measurement overruled the story.)
+
+## Real cause (measured) — the graph was cheap-only, missing the ≤5 exception bridges
+The small bank uses **exactly 5 exception legs** (dv 100–600) — the max budget — because the cheap (dv≤100) graph
+is **multi-component** (audit: 4-component, 5.9% dense). My time-expanded graph was built with `thr=THR=100`
+(cheap arcs only), so it had **no exception-bridge arcs** → GLKH cannot connect the components → it substitutes
+11 BIG edges → chrono-walk strands. The strand was a **modeling omission**, not resolution and not architecture.
+
+## Fix (launched) — exception-bridge arcs
+Add a second arc pass at `thr=EXC=600` with a penalty `PEN=1e6` (< BIG, ≫ cheap tof) so GLKH bridges components
+using as few exception arcs as possible; the decode chrono-walk falls back to EXC at bridges and `kt.fitness`
+enforces the ≤5 constraint. This mirrors the large problem's comp0+bridges structure. Coarse build steps (the
+resolution refutation means 0.10 d is fine and ~6× faster). If GLKH now threads 49/49 with ≤5 exceptions and
+beats 112.996 → rank gain (→ guard-bank + escalate); headroom is 2.12 d to rank-3, 11.35 d to rank-1.
 
 ## Bank impact
 None yet (probe). Ch2-small bank unchanged at 112.996 (rank 6, held). Nothing submitted.
