@@ -209,3 +209,34 @@ def cheap_first_tof(rowi, rowj, deps_sec, tof_lo, tof_hi, tof_step, thr, max_rev
                 out[k] = tof; break
             tof += tof_step
     return out
+
+
+@njit(cache=True, parallel=True)
+def batch_earliest(rows, i, t0_sec, js, W_sec, dstep_sec, tof_lo, tof_hi, tof_step, thr, max_revs):
+    """E-739 fast batched evaluator for BEAM EXPANSION: from city i departing at/after t0_sec, return for EACH
+    neighbour j in js the EARLIEST cheap (dv<=thr) ARRIVAL time (sec) over departures in [t0,t0+W], scanning tof
+    [tof_lo,tof_hi). Parallel over neighbours. Returns (arr[len(js)] earliest-arrival sec or -1, tof[len(js)])."""
+    nj = len(js)
+    out_arr = np.full(nj, -1.0)
+    out_tof = np.full(nj, -1.0)
+    for jj in prange(nj):
+        j = js[jj]
+        best_arr = 1.0e30
+        best_tof = -1.0
+        dep = t0_sec
+        while dep < t0_sec + W_sec:
+            r1x, r1y, r1z, v1x, v1y, v1z = kep_eph(rows[i], dep)
+            tof = tof_lo
+            while tof < tof_hi:
+                r2x, r2y, r2z, v2x, v2y, v2z = kep_eph(rows[j], dep + tof)
+                dv = lambert_dv(r1x, r1y, r1z, v1x, v1y, v1z, r2x, r2y, r2z, v2x, v2y, v2z, tof, max_revs)
+                if dv <= thr:
+                    arr = dep + tof
+                    if arr < best_arr:
+                        best_arr = arr; best_tof = tof
+                    break                                        # first cheap tof at this dep
+                tof += tof_step
+            dep += dstep_sec
+        if best_arr < 1.0e30:
+            out_arr[jj] = best_arr; out_tof[jj] = best_tof
+    return out_arr, out_tof
