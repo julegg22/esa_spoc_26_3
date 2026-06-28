@@ -46,3 +46,15 @@ construction, and a plain greedy beam gets to 339; completion is gated by the co
 <0.65 d/leg, the comp0 path (~160-250d vs bank 876d) assembles toward a rank-2/rank-1 large tour. If it still
 strands, the residual is backtracking / a wider beam / a proper TD-LKH on the faithful short-tof cost — but the
 *evaluator* lever (the named E-735 missing tool) is delivered and demonstrably effective (191→339 faithful).
+
+## Beam run 2 (mr=5, tofhi=2.5, BW=35) + VERDICT
+**Stranded at 338/601 — essentially identical to run 1's 339**, despite more connectivity (79 vs 66 reachable)
+and wider beam. ⇒ the strand is a **structural bottleneck at a specific tour position (~338)**, NOT a general
+connectivity/width issue — a plain greedy beam walls there regardless. **Final verdict:** the fast evaluator (the
+named E-735 lever) is DELIVERED and effective — it took the faithful comp0 beam from 191→338 at *well-below-r1
+pace* (0.25 d/leg). But **completion of 601 needs more than a greedy beam**: the residual sub-lever is
+**backtracking** (on strand, pop the deepest committed state and try alternates) or a TD-LKH / large-neighborhood
+search on the faithful short-tof cost using `batch_earliest` as the move evaluator. That is the clean, named next
+build for any future Ch2-large rank push — the evaluator that makes it tractable now exists and is validated.
+NB: 338 faithful at 0.25 d/leg means the *easy* 56% of comp0 is threadable at rank-1 pace; the hard ~263 cities
+(the E-729 low-degree set) are the structural completion problem the backtracking search must solve.
