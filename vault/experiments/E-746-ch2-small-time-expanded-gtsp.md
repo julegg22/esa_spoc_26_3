@@ -1,0 +1,40 @@
+---
+id: E-746
+type: experiment
+tags: [ch2, small, gtsp, time-expanded, glkh, arc-resolution]
+date: 2026-06-28
+status: IN-PROGRESS — pipeline runs end-to-end; first run STRANDS (coarse arcs too sparse). Refined fine-arc retry launched. Architecture is small's named missing lever; strand is a tool-resolution artifact, not a wall
+related: ["[[E-745-ch2-large-faithful-time-expanded-gtsp]]", "[[C-035-time-expanded-gtsp]]", "[[C-036-epoch-shift-trap]]", "[[ch2-small-floor-14292]]", "[[E-710-ch2-large-time-ordering-wall-overturned]]", "[[foundation-then-search-methodology]]"]
+---
+# E-746 — Ch2-small time-expanded GTSP: pipeline works, first run strands on coarse-arc sparsity
+
+The Ch2-small floor (112.996, rank 6) is diagnosed ([[ch2-small-floor-14292]]) as a SEARCH-ARCHITECTURE gap whose
+named missing lever is **joint sequence+epoch global search** — i.e. the time-expanded GTSP ([[C-035-time-expanded-gtsp]]).
+At n=49 this is tractable in GLKH *size* terms (unlike n=1051, [[E-745]]). Built it (`ch2_small_texp_gtsp.py`):
+49 cities × K=24 uniform-fine windows = 1176 nodes, full adjacency, faithful arcs via `batch_earliest`, AGTSP
+with dummy-depot open path, GLKH, faithful chrono-walk decode.
+
+## First run (K=24, coarse build steps dstep=0.10 / tof=0.04) — STRAND
+- Build: 1176 nodes but only **1820 arcs (~1.5/node)** — very sparse.
+- GLKH: Value 110071026 ≈ **11 × BIG(10M)** penalty edges — i.e. the optimal "tour" had to cross ~11 non-existent
+  edges because no dense feasible path exists in the sparse graph.
+- Decode: 49/49 cities decoded but faithful chrono-walk **STRAND@5** (makespan 11.3d at the break) — the
+  GTSP order is not chronologically realizable.
+
+## Diagnosis — arc resolution, not architecture (same lesson as E-710)
+The cheap feasible bands are **~0.002 d wide** ([[E-710-ch2-large-time-ordering-wall-overturned]]). The coarse
+build scan (dep step 0.10 d) **steps over** ~95% of those bands ⇒ most real cheap arcs are never found ⇒ the graph
+is starved ⇒ GLKH falls back on BIG edges ⇒ the order strands. The *decode* chrono-walk (step 0.02 d) sees arcs
+fine (it threads 5 legs, and the bank tour threads all 49), confirming the misses are a **build-side** artifact.
+This is the resolution-vs-tractability tradeoff of [[C-035-time-expanded-gtsp]] reappearing at the **evaluator**
+level: coarse=fast-but-sparse, fine=dense-but-slow. The architecture is correct; the arc oracle was under-resolved.
+
+## Next step (launched) — fine arcs
+Rebuild with **dep step 0.02 d** (matching the decode resolution that demonstrably sees the bands) + K=30, using
+the now-free cores (STM fleet completed this tick). Expect a far denser arc set and a chrono-feasible GLKH order.
+If it threads 49/49 and beats 112.996 → rank gain → guard-bank + escalate. If still strands → the true fix is a
+**fine-faithful edge-epoch table** (small analogue of `dense1d`: scan each of 49×48 edges once at fine departure
+resolution, then arcs by lookup) — heavier but the principled oracle.
+
+## Bank impact
+None yet (probe). Ch2-small bank unchanged at 112.996 (rank 6, held). Nothing submitted.

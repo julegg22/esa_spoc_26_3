@@ -23,6 +23,7 @@ OPAR = kt.opar.astype(np.float64); THR = kt.dv_thr; MINTOF = kt.min_tof; DAY = 8
 NC = OPAR.shape[0]                                                # 49 cities
 K = int(os.environ.get("CH2_K", "30")); H = float(os.environ.get("CH2_H", "130"))
 MR = int(os.environ.get("CH2_MR", "20")); TOFHI = float(os.environ.get("CH2_TOFHI", "8.0"))
+DSTEP = float(os.environ.get("CH2_DSTEP", "0.10")); TOFSTEP = float(os.environ.get("CH2_TOFSTEP", "0.04"))
 GRAPHF = f"{ROOT}/cache/ch2_small_texp_graph.npz"
 TAG = "ch2smalltexp"; GINST = f"{GLKHDIR}/GTSPLIB/{TAG}.gtsp"; PAR = f"{GLKHDIR}/{TAG}.par"; TOURF = f"{GLKHDIR}/{TAG}.tour"
 BIG = 10_000_000
@@ -43,8 +44,8 @@ def build():
     for nid in range(NN):
         i = int(node_city[nid]); ta = node_t[nid]
         js = allj[allj != i]
-        arrs, _ = ft.batch_earliest(OPAR, i, ta * DAY, js, 4.0 * DAY, 0.10 * DAY, MINTOF * DAY,
-                                    TOFHI * DAY, 0.04 * DAY, THR, MR)
+        arrs, _ = ft.batch_earliest(OPAR, i, ta * DAY, js, 4.0 * DAY, DSTEP * DAY, MINTOF * DAY,
+                                    TOFHI * DAY, TOFSTEP * DAY, THR, MR)
         for q in range(len(js)):
             if arrs[q] <= 0:
                 continue
