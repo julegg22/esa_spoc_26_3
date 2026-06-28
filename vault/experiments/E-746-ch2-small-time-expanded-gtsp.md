@@ -47,5 +47,20 @@ enforces the ≤5 constraint. This mirrors the large problem's comp0+bridges str
 resolution refutation means 0.10 d is fine and ~6× faster). If GLKH now threads 49/49 with ≤5 exceptions and
 beats 112.996 → rank gain (→ guard-bank + escalate); headroom is 2.12 d to rank-3, 11.35 d to rank-1.
 
+## Exception-arc result (K=30) — bridge fix WORKS, but still strands@22 (window misalignment)
+Adding exception arcs densified the graph **13×** (node-600: 11,797 arcs vs 911 cheap-only) — confirming the
+sparsity diagnosis. GLKH solved; the decode threaded **22/49 cities** (vs 5 with the cheap-only graph) before
+stranding — clear progress from the bridge fix. But GLKH still used ~5 BIG edges (value 51M) and the chrono-walk
+strands@22: a pair is adjacent in the GTSP order that has **no feasible transfer at the realized epoch** (even
+with EXC fallback). This is the residual **window-discretization vs realized-clock** gap of
+[[C-035-time-expanded-gtsp]] — the order is feasible in the K=30 windows but the actual chained clock lands
+between windows. Same family as the epoch-shift trap ([[C-036-epoch-shift-trap]], [[E-747]]).
+
+## Next — finer windows (K=50, running)
+At n=49, K=50 (2450 nodes) is still trivial for GLKH; finer windows give the order finer epoch choices. If it
+threads 49/49 below 112.996 → rank gain. If it still strands, the GTSP's discretized order fundamentally cannot be
+realized faithfully, and the proven TD method for small is **DP-on-ultrafine-grid** ([[C-026-dp-on-time-expanded-graph]],
+which already solved small) — i.e. carry the exact clock, don't discretize into windows.
+
 ## Bank impact
 None yet (probe). Ch2-small bank unchanged at 112.996 (rank 6, held). Nothing submitted.
