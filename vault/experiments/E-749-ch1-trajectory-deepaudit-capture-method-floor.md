@@ -38,11 +38,25 @@ m/s** — cheap capture is demonstrably achievable on *this* problem. The flaw s
 single load-bearing lever: **a capture scheme that reduces circular-orbit DV2 from ~1139 to ~490 at affordable
 (short–moderate) TOF** — worth **+118k kg ⇒ rank-2**, the largest single lever in the whole campaign.
 
+## Prior method attempts ALL failed — but on CONVERGENCE, not physics (the decisive clue)
+Cheap circular capture has been attacked ~4 ways and every one failed: WSB ballistic (E-604, refuted for
+circular — one pipeline), perilune-targeting (E-694, **"NO-PERI" = no feasible capture found**), extended-TOF
+global search (E-682, **best_dv = 1,000,000 / dt = nan = did not converge**), eccentric-backshoot (E-697/738,
+works for *eccentric*, floors circular at 1139). **All four failures are convergence-shaped** (1e6 / NO-PERI /
+nan), not physics-shaped (no run *proved* a high floor — they failed to *find* a solution). Combined with the
+competitor's 1220 kg/transfer and our own 42 transfers <500, this is the campaign's signature pattern: a
+**cold-start feasibility/convergence wall on the razor-thin circular-LLO target**, the same class as the E-701
+eccentric-departure bug — not a real floor.
+
 ## Further exploration paths (3 ranked by information gain)
-1. **Capture-ΔV-vs-TOF map on 5 circular pairs (cheapest, ~1–2 h).** Violates "single-impulse short-TOF is the
-   only capture." For 5 circular pairs (eL<0.05, DV2~1139) sweep capture TOF 2→80 d under the bicircular
-   propagator (reuse E-036 WSB + a 2–3-impulse bi-elliptic variant), record min DV2(TOF). **Binary:** any point
-   with DV2<700 at TOF<60 d ⇒ method lever OPEN (rank-2 path); DV2 stuck ~1139 ∀TOF ⇒ genuinely floored.
+1. **CONTINUATION / homotopy from a working eccentric capture to circular (cheapest, ~2–3 h; the refined #1).**
+   Violates the shared "cold-start the circular solve" assumption that defeated E-682/E-694. The 150 eccentric
+   orbits capture cheaply and converge; the 250 circular ones cold-start-fail. Take a *converged* cheap eccentric
+   capture and **homotope eL→0** (and a→target) in small steps, re-converging the DC/shooter each step, tracking
+   the solution onto the circular target. **Binary:** if the path tracks to eL<0.05 with DV2<700 ⇒ the floor was
+   cold-start convergence (lever OPEN, +118k/rank-2 realizable); if the branch *physically* turns back / DV2
+   blows up as eL→0 ⇒ circular capture is genuinely energy-floored for impulsive schemes (lever closed, WSB-class
+   long-TOF is the only door and it's cap-penalised).
 2. **Sun-assisted capture-phase scan (cheap-medium).** Violates "capture epoch/phase is fixed by the row." The
    dynamics ARE bicircular (Sun-perturbed); scan arrival phase for 5 circular pairs at TOF 20–60 d for
    Sun-perturbation-assisted low-energy windows. **Binary:** any phase with DV2<700 ⇒ free epoch DOF we never
