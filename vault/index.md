@@ -59,6 +59,8 @@ epoch-aware cluster-decomposition build (transfers the large
 2225→1049d method to medium), candidate-to-/tmp, guard-bank if feasibly
 < 228.97d.
 
+- [[experiments/E-749-ch1-trajectory-deepaudit-capture-method-floor|E-749]]: /deepaudit ch1-traj — the +118k-kg gap to rank-2 is CIRCULAR-orbit capture, floored by our single-impulse METHOD (not physics, not matching: idL is a forced permutation). Lever = cheap capture (multi-impulse/WSB/Sun-assisted) at short-moderate TOF.
+
 ## Concepts banked this campaign
 
 - [[concepts/C-017-subtour-bridge-insertion-large-clusters|C-017]]:
