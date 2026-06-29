@@ -48,21 +48,30 @@ circular pairs. **Binary:** any pair with moderate-TOF mass > bank+5 ⇒ lever A
 corrected fleet (potentially large: rocket-limited + huge headroom). Zero wins ⇒ moderate TOF does not
 lower ΔV for circular captures; E-754 lever is genuinely dead and the bank's short-TOF ΔV is near-floor.
 
-## RESULT — lever SALVAGED (correct-idD forced-test, 2026-06-29)
-Forced-moderate-TOF test on the worst circular pair **(125,329): bank ΔV 4799 → moderate 4126 m/s @
-tof 36d (−673 m/s), valid=True**. So moderate TOF *does* lower total ΔV for circular captures, and
-(250/250 rocket-limited + cargo cap ≫ mass) that ΔV drop converts ~fully to mass. ⇒ the moderate-TOF
-lever is **real** — the idD=0 bug had masked it by selecting the wrong pairs (the buggy fleet's
-"winners" were pairs where moderate TOF *raised* ΔV; the real winners like (125,329) need the corrected
-metric). Built `scripts/ch1_moderate_fleet_v2.py` (REAL-idD validation via `official_row_idD`, pairs
-sorted lowest-bank-mass first = most ΔV room) and launched it (shards 0,1). It banks per-pair gains to
-`cache/ch1_moderate_v2_fleet_w*of3.json` (assemble with `ch1_stm_assemble.py`, which already validates
-at the real idD). Multi-hour, resumable.
+## RESULT — mechanism real, but OFFICIAL FEASIBILITY is the binding wall (anti-oscillation correction)
+First read (premature): forced-test (125,329) ΔV 4799→4126 "valid=True" looked like a salvage. **But
+that "valid" is the CMA penalty threshold (`f < 1.3e4`), NOT official feasibility.** Direct official
+validation (`ch1_validate_125_329.py`, real idD=354): best moderate ΔV **4161 < bank 4799**, yet the
+row is **OFFICIALLY INVALID** (udp.fitness ≥ 0). So moderate TOF lowers ΔV in the CMA's internal model
+but the trajectory does **not** close under the official UDP — the **E-749 cold-start / feasibility
+wall**, still unresolved. The v2 fleet's first completed pair (lowest mass): **0 wins** too.
+
+So the lever decomposes:
+- **Cargo cap is NOT the wall** (250/250 rocket-limited, cargo cap ≫ mass) — SOLID.
+- **ΔV reduction exists in the CMA model** — shown, but NOT officially feasible for the cases tested.
+- **Binding constraint = official feasibility of moderate-TOF rows** (cold-start convergence to a
+  closing trajectory), which is exactly the E-749 wall. The "+60k salvage" is **NOT confirmed**.
+
+`ch1_moderate_fleet_v2.py` validates officially (`official_row_idD` requires udp.fitness<0), so it
+will bank ONLY genuinely-valid gains — left running as the honest arbiter. If it finds valid wins, the
+lever is partially real; if it dry-runs like (125,329), the circular-capture lever is feasibility-walled
+(consistent with E-749's cold-start verdict and the competitor likely using a genuinely different — true
+WSB — method).
 
 ## Verdict
-E-754's **fleet** was refuted (idD=0 artifact; +611 kg illusory, bank never corrupted), but the
-**underlying lever is alive**: moderate TOF genuinely lowers circular-capture ΔV and the cargo cap is
-non-binding, so the corrected v2 fleet realizes real mass on the lowest-mass (highest-ΔV) circular
-pairs. The methodology win: an aggregate "+611 kg gain" was a faithful-evaluator (idD) bug — caught by
-the assembler's correct-idD revalidation (applied 0/246), per CLAUDE.md §5a. Trajectory is rank 7 with
-large room, so the realized v2 gains are the top live points lever for Ch1.
+E-754's fleet is **refuted** (idD=0 artifact; +611 kg illusory; bank 365,597 never corrupted — the
+assembler's correct-idD revalidation caught it, the methodology win per CLAUDE.md §5a). The *salvage*
+is **NOT established**: moderate TOF lowers the CMA-model ΔV but the rows are officially infeasible for
+the pairs tested (cold-start/feasibility wall, E-749). v2 fleet runs as arbiter. Do not claim a
+trajectory gain until v2 banks an officially-valid pair. **Lesson: never trust a solver-internal
+"valid" flag — re-validate with the official UDP** (the same class as the idD=0 bug itself).
