@@ -24,3 +24,12 @@ cheap-core + grafted-tail beats 879.53, that's the gain. This is the next build.
 
 ## Bank impact
 None. Large unchanged at 879.53 (rank-3, held). Forward 546-order preserved at cache/ch2_giant_fine_beam_546.json.
+
+## E-751 follow-up — completion-by-insertion REFUTES the cheaper-backbone idea
+Grafted the 55 hard cities onto the 546 cheap-core (dense1d-scored cheapest-insertion + faithful retime).
+Result: complete 601 comp0, **only 1 exception leg (feasible)** but **makespan 1338d ≫ bank's 804d**. The
+546-core's 255d is cheap *because it omits the hard cities*; adding them back faithfully costs ~20d each (each
+hard city must wait for its narrow cheap window or take a long detour). **The bank's 804d comp0 ordering is
+already good** — it interleaves the hard-shell efficiently. Verdict: large rank-2 (comp0 needs ~610d) is
+**hard-shell-bound** — it requires the ~33-55 low-cheap-degree cities to be reachable cheaper than the cheap graph
+allows. Reordering/completion cannot deliver it; the bank (879.53, rank-3) is near our method floor.
