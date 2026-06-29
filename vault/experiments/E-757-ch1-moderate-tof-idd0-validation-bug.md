@@ -68,6 +68,16 @@ lever is partially real; if it dry-runs like (125,329), the circular-capture lev
 (consistent with E-749's cold-start verdict and the competitor likely using a genuinely different — true
 WSB — method).
 
+## v2 arbiter FINAL (2026-06-29) — feasibility wall CONFIRMED, fleet stopped
+The corrected v2 fleet (official-idD validation, pairs sorted lowest-mass/highest-ΔV first = the
+most-promising candidates) ran **31 circular pairs → 0 officially-valid wins**. The best candidates
+yielding nothing confirms moderate-TOF rows do not close under the official UDP (E-749 cold-start
+wall). Even a full-sweep success (~a few × ~200 kg) cannot cross rank 7 (365,597), so the lever has
+~0 rank-ROI. Fleet stopped — no better rank-positive lever remains (matching-i/ii, ch2-small all
+walled); endgame value is the held reveals (medium 182.11 r1, large 879.528 r3). Circular-capture
+lever = feasibility-walled; closing it would need a genuinely different method (true WSB / low-energy
+transfer), not moderate-TOF cold-start CMA.
+
 ## Verdict
 E-754's fleet is **refuted** (idD=0 artifact; +611 kg illusory; bank 365,597 never corrupted — the
 assembler's correct-idD revalidation caught it, the methodology win per CLAUDE.md §5a). The *salvage*
