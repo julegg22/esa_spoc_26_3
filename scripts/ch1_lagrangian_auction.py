@@ -15,11 +15,16 @@ import numpy as np
 sys.path.insert(0, "/home/julian/Projects/esa_spoc_26_3/scripts")
 from ch1_auction import auction_assignment
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
-F = f"{ROOT}/reference/SpOC4/Challenge 1 Luna Tomato Logistics/matching-ii.txt"
-BANK = 72206.52; LEADER = 73714.03; LPUB = 75360.0; GREEDY1D = 63328.6
+_DIR = f"{ROOT}/reference/SpOC4/Challenge 1 Luna Tomato Logistics"
+# E-756 exp#3: same machinery on matching-i (dual-guided primal repair = a DIFFERENT primal generator
+# than local search). matching-i targets measured in E-756 (LP=34120.53 IPM).
+_INST = {"ii": (f"{_DIR}/matching-ii.txt", 72206.52, 73714.03, 75360.0, 63328.6),
+         "i":  (f"{_DIR}/matching-i.txt", 33490.458, 33555.0, 34120.53, 0.0)}
 
 
-def main(iters=60):
+def main(iters=60, inst="ii"):
+    F, BANK, LEADER, LPUB, GREEDY1D = _INST[inst]
+    print(f"[E-673b/E-756] instance matching-{inst}", flush=True)
     rows = np.loadtxt(F)
     e = rows[:, 0].astype(np.int64); l = rows[:, 1].astype(np.int64)
     d = rows[:, 2].astype(np.int64); w = rows[:, 3].astype(np.float64)
@@ -94,4 +99,5 @@ def main(iters=60):
 
 
 if __name__ == "__main__":
-    main(int(sys.argv[1]) if len(sys.argv) > 1 else 60)
+    main(int(sys.argv[1]) if len(sys.argv) > 1 else 60,
+         sys.argv[2] if len(sys.argv) > 2 else "ii")

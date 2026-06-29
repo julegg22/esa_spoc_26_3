@@ -69,6 +69,12 @@ after the user picks (META.md §6). Expectations cut per [[user]]
 
 ## Narrative log — the frontier has history (§5)
 
+- **2026-06-29 (matching-i deep audit — missed attack = augmentation, not better swaps)** —
+  [[experiments/E-756-ch1-matching-i-deepaudit-augmentation|E-756]]: bank 33,490 (+65 to leader)
+  is a MAXIMAL matching (0 free insertions, measured), LP 45% fractional (loose). All 4 walled
+  families use fixed-cardinality weight-swaps / loose-LP B&B; the canonical
+  **cardinality-augmenting alternating-path / ejection-chain** move was never built. Live lever:
+  ejection-chain local search (exp #1, building now). Corrects E-615 "multi-basin ceiling".
 - **2026-05-24 (Ch1 trajectory unlocked; Tier 2/3 hypotheses opened)** —
   Bug in solve_arrival_dv (rejected eccentric Moon orbits) found and
   fixed ([[lessons/L-012-solver-assumption-audit-before-research-grade-verdict|L-012]],
