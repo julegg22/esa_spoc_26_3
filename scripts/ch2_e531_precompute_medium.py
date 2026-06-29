@@ -26,7 +26,7 @@ INST = ("/home/julian/Projects/esa_spoc_26_3/reference/SpOC4/Challenge 2 "
 OUT = '/tmp/ch2_medium_tcoupled.npz'
 
 T_QUANTUM = 0.5
-T_STARTS = np.arange(0.0, 500.0, T_QUANTUM)   # 1000
+T_STARTS = np.arange(0.0, 220.0, T_QUANTUM)   # capped to medium tour span (<182d)+margin: 44% cost
 TOFS = np.linspace(0.025, 12.0, 50)            # 50 (step ~0.24)
 DV_CAP = 100.0
 DV_EXC = 600.0

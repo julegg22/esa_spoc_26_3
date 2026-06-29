@@ -32,7 +32,7 @@ COARSE = '/tmp/ch2_medium_tcoupled.npz'
 OUT = '/tmp/ch2_medium_fine_pair_set.npz'
 
 T_QUANTUM = 0.1
-T_STARTS = np.arange(0.0, 500.0, T_QUANTUM)  # 5000 buckets
+T_STARTS = np.arange(0.0, 220.0, T_QUANTUM)  # capped to medium tour span (<182d)+margin (e545 reads len from table)
 TOFS = np.linspace(0.025, 12.0, 100)         # 100 points
 DV_CAP = 100.0
 DV_EXC = 600.0
