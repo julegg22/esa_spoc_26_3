@@ -18,6 +18,7 @@ udp = LtlTrajectory("reference/SpOC4/Challenge 1 Luna Tomato Logistics/")
 def main():
     ntop = int(sys.argv[1]) if len(sys.argv) > 1 else 8
     restarts = int(sys.argv[2]) if len(sys.argv) > 2 else 24
+    offset = int(sys.argv[3]) if len(sys.argv) > 3 else 0   # shard: start at this rank in the v_inf-sorted list
     bank = json.load(open("solutions/upload/trajectory.json"))[0]["decisionVector"]; N = len(bank) // 21
     md = np.array(udp.moon_data)
     cand = []
@@ -33,9 +34,11 @@ def main():
         f = udp.fitness(r)[0]; cur = -f if f < 0 else 0
         cand.append((vinf, idE, idL, idD, cur))
     cand.sort(reverse=True)                                   # highest v_inf first
-    print(f"[E-758] re-solve top {ntop} highest-v_inf transfers, restarts={restarts} (free TOF 2.2-52d)", flush=True)
+    cand = cand[offset:offset + ntop]
+    print(f"[E-758] re-solve v_inf-rank [{offset},{offset+ntop}) transfers, restarts={restarts} (free TOF 2.2-52d)", flush=True)
     t0 = time.time(); wins = 0; tg = 0.0; out = []
-    for vinf, idE, idL, idD, cur in cand[:ntop]:
+    OUTF = f"cache/ch1_vinf_resolve_wins_off{offset}.json"
+    for vinf, idE, idL, idD, cur in cand:
         prob = UDPBackEcc(udp, idE, idL); pgp = pg.problem(prob)
         cma = pg.algorithm(pg.cmaes(gen=250, force_bounds=True, ftol=1e-7))
         lb, ub = prob.get_bounds(); lb = np.array(lb); ub = np.array(ub); rng = np.random.default_rng(idE * 13 + idL)
@@ -64,7 +67,7 @@ def main():
         else:
             print(f"  (E={idE},L={idL},D={idD}) v_inf={vinf:.0f} bank_m={cur:.0f} -> resolve INVALID [{time.time()-t0:.0f}s]", flush=True)
     if out:
-        json.dump(out, open("cache/ch1_vinf_resolve_wins.json", "w"))
+        json.dump(out, open(OUTF, "w"))
     print(f"[E-758] DONE {wins}/{ntop} wins, +{tg:.0f} kg [{time.time()-t0:.0f}s]. "
           f"{'LEVER REAL -> v_inf was a basin miss; scale fleet' if wins else 'no win -> v_inf BCP-coupled-optimal, capture floored-in-context'}", flush=True)
 
