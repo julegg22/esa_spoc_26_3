@@ -62,6 +62,7 @@ def main():
                 wins += 1; tg += mass - cur
                 out.append({"idE": idE, "idL": idL, "idD": idD, "bank_mass": cur, "new_mass": mass,
                             "gain": mass - cur, "row": row})
+                json.dump(out, open(OUTF, "w"))            # PERSIST after every win (survive kill)
             print(f"  (E={idE},L={idL},D={idD}) v_inf={vinf:.0f} bank_m={cur:.0f} -> resolve VALID mass={mass:.0f} "
                   f"(dv2 {newvinf_dv2:.0f}) {flag} [{time.time()-t0:.0f}s]", flush=True)
         else:
