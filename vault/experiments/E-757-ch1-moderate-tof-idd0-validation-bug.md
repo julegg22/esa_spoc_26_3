@@ -48,8 +48,21 @@ circular pairs. **Binary:** any pair with moderate-TOF mass > bank+5 ⇒ lever A
 corrected fleet (potentially large: rocket-limited + huge headroom). Zero wins ⇒ moderate TOF does not
 lower ΔV for circular captures; E-754 lever is genuinely dead and the bank's short-TOF ΔV is near-floor.
 
-## Verdict (interim)
-E-754 "moderate-TOF capture → +60k → rank-3" is **refuted as built** — the +611 kg fleet gains were an
-idD=0 evaluation artifact (rejected at assembly; bank safe). The *physics* question (does moderate TOF
-lower circular-capture ΔV?) is decided by the running correct-idD test, not the buggy fleet. Cargo
-headroom is confirmed huge, so IF moderate TOF lowers ΔV the lever is real and large.
+## RESULT — lever SALVAGED (correct-idD forced-test, 2026-06-29)
+Forced-moderate-TOF test on the worst circular pair **(125,329): bank ΔV 4799 → moderate 4126 m/s @
+tof 36d (−673 m/s), valid=True**. So moderate TOF *does* lower total ΔV for circular captures, and
+(250/250 rocket-limited + cargo cap ≫ mass) that ΔV drop converts ~fully to mass. ⇒ the moderate-TOF
+lever is **real** — the idD=0 bug had masked it by selecting the wrong pairs (the buggy fleet's
+"winners" were pairs where moderate TOF *raised* ΔV; the real winners like (125,329) need the corrected
+metric). Built `scripts/ch1_moderate_fleet_v2.py` (REAL-idD validation via `official_row_idD`, pairs
+sorted lowest-bank-mass first = most ΔV room) and launched it (shards 0,1). It banks per-pair gains to
+`cache/ch1_moderate_v2_fleet_w*of3.json` (assemble with `ch1_stm_assemble.py`, which already validates
+at the real idD). Multi-hour, resumable.
+
+## Verdict
+E-754's **fleet** was refuted (idD=0 artifact; +611 kg illusory, bank never corrupted), but the
+**underlying lever is alive**: moderate TOF genuinely lowers circular-capture ΔV and the cargo cap is
+non-binding, so the corrected v2 fleet realizes real mass on the lowest-mass (highest-ΔV) circular
+pairs. The methodology win: an aggregate "+611 kg gain" was a faithful-evaluator (idD) bug — caught by
+the assembler's correct-idD revalidation (applied 0/246), per CLAUDE.md §5a. Trajectory is rank 7 with
+large room, so the realized v2 gains are the top live points lever for Ch1.
