@@ -127,12 +127,17 @@ def main():
     bi = np.array(sorted(best))
     feasible = len(set(E[bi])) == len(bi) == len(set(L[bi])) == len(set(D[bi]))
     print(f"[E-756rr] VERIFY best: {len(bi)} triples w={W[bi].sum():.3f} feasible={feasible}", flush=True)
+    probe_only = len(sys.argv) > 5 and sys.argv[5] == "probe"
     if feasible and best_w > base + 1e-3:
-        newbv = np.zeros(n, dtype=int); newbv[bi] = 1
-        shutil.copy(BANKF, f"{BANKF}.bak_ruinrecreate")
-        json.dump([{"decisionVector": [int(x) for x in newbv], "problem": "matching-i",
-                    "challenge": "spoc-4-luna-tomato-logistics"}], open(BANKF, "w"))
-        print(f"[E-756rr] *** GUARD-BANKED matching-i -> {best_w:.3f} (was {base:.3f}) -> ESCALATE re-submit", flush=True)
+        if probe_only:
+            np.save(f"{ROOT}/cache/ch1_matching_rr_probe_seed{seed}.npy", bi)
+            print(f"[E-756rr] PROBE found {best_w:.3f} (>bank {base:.3f}); saved indices, NOT banking (parallel-safe) -> ESCALATE", flush=True)
+        else:
+            newbv = np.zeros(n, dtype=int); newbv[bi] = 1
+            shutil.copy(BANKF, f"{BANKF}.bak_ruinrecreate")
+            json.dump([{"decisionVector": [int(x) for x in newbv], "problem": "matching-i",
+                        "challenge": "spoc-4-luna-tomato-logistics"}], open(BANKF, "w"))
+            print(f"[E-756rr] *** GUARD-BANKED matching-i -> {best_w:.3f} (was {base:.3f}) -> ESCALATE re-submit", flush=True)
 
 
 if __name__ == "__main__":
