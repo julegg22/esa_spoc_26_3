@@ -16,7 +16,9 @@ N = 49
 
 def score(dv):
     f = kt.fitness(dv)
-    feas = max(float(x) for x in f[1:]) <= 1e-6
+    # CORRECT feasibility (kt.is_feasible): perm==0, all transfers ok (f[2]==0), ALL chronological (f[3]==0),
+    # exc within budget (f[4]<=0). NOTE: f[2]/f[3] are EQUALITIES — negative = infeasible (the 0.039 exploit bug).
+    feas = (abs(f[1]) <= 1e-6 and abs(f[2]) <= 1e-6 and abs(f[3]) <= 1e-6 and f[4] <= 1e-6)
     return float(f[0]), feas
 
 
