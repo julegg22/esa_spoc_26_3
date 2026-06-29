@@ -37,7 +37,8 @@ def main():
 
     # collect gain>0 cache rows
     cands = []
-    for f in sorted(glob.glob(f"{ROOT}/cache/ch1_*fleet_w*of*.json")):
+    globs = glob.glob(f"{ROOT}/cache/ch1_*fleet_w*of*.json") + glob.glob(f"{ROOT}/cache/ch1_vinf_resolve_wins*.json")
+    for f in sorted(globs):
         for e in json.load(open(f)):
             if e.get("gain", 0) > 0 and "row" in e:
                 cands.append(e)
