@@ -39,5 +39,18 @@ less-restricted move set / a directed-time-aware decomposition for large), on th
 the same reason large walled 7+ methods — but the cheapest next test is on small:
 does relaxing the cheap-edge move restriction / a larger neighborhood beat 111.96?
 
-**Bank impact.** None. This is a diagnostic re-labeling (L4→L3) + an honest
-retraction of the over-broad L7 ruleout.
+**Follow-up (proper L7 test, now done).** Wider or-opt neighborhood (maxseg=12,
+2M iters) → still **111.96**. Greedy constructor (49 starts, a *different*
+architecture) → **can't thread a feasible tour at all**. So the neighborhood-
+search family (or-opt/2-opt LNS from the bank) is **genuinely converged at 111.96**,
+and it is already far stronger than greedy. **L7 (the local-search operator
+family) is now properly exhausted.** The L3 rank-1 lever therefore needs a
+**fundamentally different sequencer architecture** (L6) — a sophisticated ALNS
+with destroy/repair, GRASP with strong randomized construction, LKH-style, or the
+time-aware beam scaled — not another neighborhood variant. **Continuing to spawn
+neighborhood tweaks would be the R5 grind; stopped.** This is a genuine,
+well-characterized research frontier; the next lever is a multi-day build (heavy,
+uncertain), surfaced to the user rather than launched autonomously.
+
+**Bank impact.** None. This is a diagnostic re-labeling (L4→L3), an honest
+retraction + proper re-test of the L7 ruleout, and a characterized frontier.
