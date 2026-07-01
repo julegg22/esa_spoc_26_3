@@ -18,6 +18,10 @@ overlay). **Fix each flagged item now** — don't batch it:
 - untracked scripts / uncommitted vault → stage by name + commit;
 - cache-without-generator → commit the generator or note it;
 - un-triaged assumptions → run the §15 **T6** cascade (step 3).
+- **reproducibility gap** → any new/uncommitted `E-` node without a `commit:`
+  SHA, or a banked result whose run log shows `[PROV] … +DIRTY`, is not
+  replayable. Fill `commit:` from the run log's `[PROV]` line; if the producing
+  run was `+DIRTY`, re-run on a clean tree before trusting/banking it.
 
 ## 2. Judgment review (M-001)
 Ask, and act:

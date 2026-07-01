@@ -145,10 +145,31 @@ def check_assumption_register():
     return []
 
 
+def check_reproducibility():
+    """Repro gap (META §2): new/uncommitted E-nodes without a run-time commit SHA in frontmatter.
+    Scoped to changed files (on-touch policy) so it doesn't spam the legacy backlog."""
+    changed = [ln[3:].strip() for ln in git("status", "--porcelain", "vault/experiments/").splitlines()]
+    missing = []
+    for p in changed:
+        if not (p.endswith(".md") and "E-" in p):
+            continue
+        fp = ROOT / p
+        if not fp.exists():
+            continue
+        head = fp.read_text(errors="ignore")[:1500]
+        if not re.search(r"^commit:\s*[0-9a-f]{7}", head, re.M):
+            missing.append(Path(p).name)
+    if missing:
+        return [("REPRO-NO-COMMIT",
+                 f"{len(missing)} new/uncommitted E-node(s) missing a commit: SHA (fill from the run log [PROV] line)",
+                 missing[:8])]
+    return []
+
+
 def main():
     all_findings = []
     for fn in (check_git_state, check_dangling_links, check_memory_pointers, check_cache_without_generator,
-               check_assumption_register):
+               check_assumption_register, check_reproducibility):
         all_findings += fn()
     print("=" * 64)
     print("HOUSEKEEPING DRIFT-CHECK")

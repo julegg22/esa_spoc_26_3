@@ -39,7 +39,12 @@ defines the canonical tree.
 > - **Falsifiability before testing.** A hypothesis states a concrete
 >   prediction (metric + threshold) before its first experiment runs.
 > - **Reproducibility by construction.** Every experiment captures code
->   path, commit SHA, inputs, seed, env. Replayable a year from now.
+>   path, commit SHA, inputs, seed, env — **captured at RUN time**, not
+>   reconstructed: each script calls `_prov.stamp(__file__, seed=…)`, which
+>   writes `[PROV] commit=<sha>[+DIRTY]` into the run log; that SHA fills
+>   `E.commit`. A `+DIRTY` stamp means the result maps to no commit and is
+>   not replayable — so **any run whose output is banked runs on a clean
+>   tree** (§4, §6). Replayable a year from now.
 > - **Written analysis at close.** Hypotheses never move to
 >   `corroborated`/`refuted` without an analysis block citing the E nodes.
 > - **Modification rationale on every continuation.** A child hypothesis
@@ -409,8 +414,9 @@ while deadline not reached and frontier not empty:
     H  ← argmax_ROI(open-paths)
     H.status ← "testing"; stamp H.tested_start
     for each designed experiment E of H:
-        commit code  → record commit SHA in E
-        run          → capture metrics, resources, outputs
+        commit code (CLEAN tree before a banking run)   → note the SHA
+        run  → _prov.stamp(__file__) emits [PROV] commit=<sha>[+DIRTY] to the log;
+               copy that SHA to E.commit; capture metrics, resources, outputs
         write verdict + 2–5 lines of analysis in E body
         embed ≥ 1 plot of quantitative results in E body
     aggregate into H's Analysis section (terse; links to all E)

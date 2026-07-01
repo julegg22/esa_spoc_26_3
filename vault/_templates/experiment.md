@@ -15,7 +15,7 @@ duration_runtime:
 
 # reproducibility (replayable a year from now — §2)
 code:                    # repo-relative entrypoint path
-commit:                  # git SHA at run time
+commit:                  # git SHA — COPY from the run log's [PROV] line (_prov.stamp); +DIRTY ⇒ not replayable, commit first
 inputs:                  # instance files / params
 outputs:                 # path(s) to result artefacts (E-NNN/ folder if heavy)
 plots: []                # path(s) — >= 1 plot required for quantitative results (§2)
@@ -24,6 +24,11 @@ env:                     # env name / lockfile / OS
 
 # provenance (§4, §15) — repo-relative source paths the run depended on
 code_dependencies: []    # path | {path: ..., verified_by: [[L-NNN]] | [[E-NNN-smoke]]}
+
+# ladder + assumption provenance (§4, doc_methodology)
+level:                   # abstraction-ladder rung this E probes/targets (L1..L8)
+wall_level:              # if a "walled/exhausted" verdict: the rung it is exhausted at (R1)
+assumes: []              # Assumption-Register IDs (vault/assumptions.md) this conclusion rests on
 
 # resources (§8)
 compute:

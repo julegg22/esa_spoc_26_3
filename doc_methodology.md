@@ -359,6 +359,12 @@ abstraction level. Reconciling them (amendments now in META):
   / structure-existence, not only a score).
 - **Experiment (E)** — carries `assumes:` + `wall_level:`; a ladder sweep is a
   **diagnostic** E whose metrics are the per-rung ruled-out/suspect verdicts.
+  **Reproducibility is not optional:** every E binds to its exact code version,
+  captured *at run time* — each script calls `_prov.stamp(__file__, seed=…)`,
+  which writes `[PROV] commit=<sha>[+DIRTY]` into the run log; that SHA fills
+  `E.commit`. **Clean-tree-before-bank** — a `+DIRTY` run maps to no commit and
+  isn't replayable, so commit the code before any banking run. A result you
+  cannot replay is not a result. (META §2 invariant, §4 schema, §6 loop.)
 - **Takeaway (T)** — the **register bridge**: a T that establishes/refutes a
   load-bearing premise creates/flips its `vault/assumptions.md` row and (on flip)
   runs the T6 cascade.

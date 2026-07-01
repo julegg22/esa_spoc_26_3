@@ -5,6 +5,8 @@ status: analyzed — method VALIDATED, small bank 112.996 -> 111.96 (feasible); 
 date: 2026-07-02
 level: L6                      # the RE-RUN swaps the solver (GLKH -> exact-DP+LNS) at the same lever
 wall_level: L4                # residual gap to rank-1 (100.4) is the encoding, after L7 was ruled out
+code: scripts/ch2_small_order_search.py
+commit: 78b1a8d                # validated 111.96 run at this script state (backfilled per _prov discipline)
 assumes: [ENC-grid, SOLVER-gtsp-exc, EVAL-lambert, MODEL-official-feas]
 related: ["[[E-746-ch2-small-time-expanded-gtsp]]", "[[assumptions]]", "[[M-general-abstraction-ladder-audit]]", "[[M-general-assumption-provenance-and-invalidation]]"]
 ---
