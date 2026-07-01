@@ -37,17 +37,23 @@ def main():
     kt = KTTSP(INST)
     nodes = json.load(open("cache/ch2_large_clusters.json"))["clusters"][cid]
     S = set(nodes); nc = len(nodes)
-    W = np.load("cache/ch2_giant_faithful_full.npz", allow_pickle=True)["windows"].item()
-    # build intra-cluster cheap edge windows (suffix-min); count coverage
+    # dense1d: keys=(74208,2) edges, vals[edge,epoch]=realizing tof of a cheap transfer (inf if none),
+    # epochs 0..950 step 1d. Complete + consistent source (validated: epoch+tof gives dv<=100).
+    dd = np.load("cache/ch2_giant_dense1d.npz")
+    EP = dd["epochs"].astype(float); KEYS = dd["keys"]; VALS = dd["vals"]
+    KD = {(int(a), int(b)): r for r, (a, b) in enumerate(KEYS)}
     EDGE = {}; cov = 0
     for i in nodes:
         for j in nodes:
             if i == j:
                 continue
-            v = W.get((i, j))
-            if v is None or len(v[0]) == 0:
+            r = KD.get((i, j))
+            if r is None:
                 continue
-            dep = np.asarray(v[0], float); tof = np.asarray(v[1], float)
+            row = VALS[r]; m = np.isfinite(row)
+            if not m.any():
+                continue
+            dep = EP[m]; tof = row[m]
             sm = suffix_min(dep, dep + tof)
             if sm is not None:
                 EDGE[(i, j)] = sm; cov += 1
