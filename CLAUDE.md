@@ -67,6 +67,16 @@ goal, sub-goals, goal-domain rules) and `META.md` for *how* we work
 toward those goals (research methodology, vault structure,
 invariants). Adhere to the spirit of both.
 
+The **central synthesis** of our optimization methodology — the
+abstraction ladder (why we get stuck and at which level: objective →
+model → structure → encoding → evaluator → solver → operators →
+params), the vault structures that mirror it (the Assumption Register
+`vault/assumptions.md` + `assumes:` provenance), and the processes on
+them (top-down sweep, the §15 T6 invalidation cascade, housekeeping) —
+is **`doc_methodology.md`** at repo root. **Keep it in sync**: when the
+ladder, the rules R1–R5, the register schema, or the cascade change,
+update `doc_methodology.md` in the *same commit*.
+
 ## 5a. Investigation discipline (anti-oscillation + bug-surfacing)
 
 This project uses an explicit **anti-oscillation** discipline. When
