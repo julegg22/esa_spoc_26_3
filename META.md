@@ -112,6 +112,16 @@ defines the canonical tree.
 >   whether to commit. Local-search refinement past convergence
 >   without an orthogonal-family probe attempt is an explicit
 >   violation.
+> - **Ladder-breadth before depth.** The frontier always carries
+>   ≥ 1 live hypothesis at a **Tier-A/B rung** of the abstraction
+>   ladder (L1 objective / L2 model / L3 structure / L4 encoding /
+>   L5 evaluator) — not only Tier-C (L6 solver / L7 operators / L8
+>   params). The §5 ROI formula systematically under-prices
+>   high-rung hypotheses (high effort, uncertain payoff) — the R5
+>   cost-asymmetry bias encoded *in selection itself*; this
+>   invariant counters it. Grinding only Tier-C past a plateau or
+>   convergence is an explicit violation → fire the ladder sweep
+>   (`doc_methodology.md §1–2`) before the next selection.
 > - **Toolchain audit at bootstrap.** Before any code, inventory
 >   the env (`pip list`), read every helper file in the starter
 >   kit, and inspect any submission / reference URLs. Unusual
@@ -174,6 +184,16 @@ frontmatter so nothing is lost conceptually.
   `estimated_effort_h`, `priority`, `mode` ∈ {`full`, `lite`}
 - content: `claim`, `falsifiable_prediction`, `modification_rationale`
   (nullable only when rooted directly on a question)
+- ladder: `level` — the abstraction-ladder rung this H concerns (L1–L8;
+  `doc_methodology.md §1`). Makes the frontier organizable by level and the §2
+  *Ladder-breadth* invariant checkable. `assumes` — Assumption-Register IDs
+  (`vault/assumptions.md`) this H rests on; effective validity = `assumes` ∪ the
+  branch's inherited set (up `parent`).
+- `falsifiable_prediction` may be **level-appropriate**: a metric+threshold
+  (Tier-C), OR a representability / expressiveness / structure-existence /
+  evaluator-fidelity claim (Tier-A/B) — e.g. *"the window-indexed encoding can
+  represent a tour ≤ Q that the uniform-grid encoding cannot."* A high-rung H is
+  not exempt from falsifiability; its prediction is just not always a score.
 - supersession (nullable): `invalidated_by` (`[[L-NNN]]`),
   `superseded_by` (`[[H-NNN]]`), `invalidated_at`
 
@@ -258,6 +278,12 @@ evidence links, implications, a **Position vs goal** block
 (contribution, where we stand, next move), and caveats. A takeaway
 is the **citable artefact** — descendants link `[[T-NNN]]`, not
 H-body prose.
+
+**Register bridge.** When a takeaway *establishes or refutes a load-bearing
+assumption* (a premise other conclusions rest on), create or flip its row in
+`vault/assumptions.md` and — on a flip — run the §15 **T6** cascade. Tag the T
+with the ladder `level` it concerns. This is how problem-side learning enters
+the assumption-dependency DAG instead of staying siloed in one branch.
 
 **lesson** — minimum required fields:
 
@@ -351,6 +377,15 @@ Tie-breakers in order:
 2. **Diversity.** Don't stack all effort on one sub-goal when similar
    ROI exists elsewhere.
 3. **Unblocking.** Prefer hypotheses whose outcome prunes many siblings.
+
+**Ladder gate (runs BEFORE ROI ranking).** ROI alone under-prices high-rung
+hypotheses (see the §2 *Ladder-breadth* invariant), so guard selection with two
+rules: (a) if a **plateau or convergence** trigger is active
+(`doc_methodology.md §7.1 #3/#8`), run the **abstraction-ladder sweep first** and
+reprioritize — the sweep is a mandatory diagnostic gate, not an ROI competitor;
+(b) never let the frontier collapse to Tier-C-only — if it has, promote or open a
+Tier-A/B hypothesis before picking. The wall is fixed at the *highest* mismatched
+rung, which ROI would never surface on its own.
 
 Reprice the frontier after every experiment. Record dated re-pricings
 in `open-paths.md` — the frontier has history.
@@ -446,6 +481,12 @@ When a hypothesis closes, any continuation must include
 - 2–3 lines: what this hypothesis changes, and why that change narrows
   the gap to the root goal — **cite the parent's `[[T-NNN]]` by link,
   not H-body prose**
+- 1 line: the **ladder level of the refutation**, and whether it hit the
+  **lever** (abstraction — so the child moves to a *different* level / new
+  approach) or the **implementation** (tool — so the child is a *minimal
+  same-level swap* per R2, and the lever's H stays open). Filing an
+  implementation wall (e.g. L6 solver) as lever death is the recurring
+  error (`doc_lessons.md` F2).
 
 Until this field is filled, the child stays `status: draft` and does
 not enter the frontier.

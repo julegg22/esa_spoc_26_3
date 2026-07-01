@@ -172,10 +172,10 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
         pickle.dump(_EDGE, open(_BASE, "wb"))
         print(f"[E-731] saved {len(_EDGE)} edge-windows to base {_BASE}", flush=True); return
     # OR-OPT / LNS search (per-chain seed + tag for parallel runs)
-    TAG = os.environ.get("CH2_TAG", "m")
+    TAG = os.environ.get("CH2_TAG", "s")
     rng = int(os.environ.get("CH2_SEED", "20260627"))
     move = os.environ.get("CH2_MOVE", "oropt")                 # oropt | 2opt
-    cur = border; cur_mk = mk; best_proxy = mk; best_off = 189.10; acc = 0
+    cur = border; cur_mk = mk; best_proxy = mk; best_off = 112.996; acc = 0   # small bank (rank6); rank3=111.76 rank1=100.4
     ckpt = f"{ROOT}/cache/ch2_small_ordersearch_{TAG}.json"
     pbest = f"{ROOT}/cache/ch2_small_proxybest_{TAG}.json"
     def cheap_ok(*edges):                                      # all listed directed edges must be cheap (or no CHEAP set)
@@ -207,7 +207,7 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
             if feas and omk < best_off:
                 best_off = omk
                 json.dump({"order": cand, "times": cti, "tofs": ctf, "makespan": omk}, open(ckpt, "w"))
-                tg = "*** RANK-1 (<186.27)!" if omk < 186.27 else "better-than-bank"
+                tg = ("*** RANK-1 (<=100.4)!" if omk <= 100.4 else "** rank-3 (<=111.76)" if omk <= 111.76 else "better-than-bank")
                 print(f"[E-731][{TAG}] it{it}: OFFICIAL {omk:.3f}d (proxy {cmk:.2f}) -> {tg} "
                       f"[{time.time()-t0:.0f}s]", flush=True)
             else:

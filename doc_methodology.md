@@ -328,7 +328,42 @@ Each tick:
   already embeds the ladder as its Phase-1 spine — build `/sweep` only if we want
   the quick check separate from the full audit.
 
-## 8. Change log (keep this current)
+## 8. The scientific loop, laddered (O/Q/H/E/T × abstraction level)
+
+The classic scientific loop (`META.md §1`) is a **horizontal** tree — branching
+by hypothesis. The ladder adds an orthogonal **vertical** axis: every node's
+abstraction level. Reconciling them (amendments now in META):
+
+- **Key finding — the ROI bias.** `META.md §5` selects by `ROI =
+  expected_points / effort`, which **systematically under-prices high-rung
+  hypotheses** (re-encoding / re-modelling is high-effort, uncertain-payoff → low
+  ROI → never picked). That is **R5 encoded in the scientific method's own
+  selection layer** — the reason we kept grinding L7/L8. Fixed by the new
+  **Ladder-breadth invariant** (`META.md §2`: the frontier always carries a
+  Tier-A/B hypothesis) + the **ladder gate** (`META.md §5`: a plateau/convergence
+  fires the sweep *before* ROI ranking).
+- **Observation (O)** — tag with `level`; privilege **evaluator-fidelity** (L5)
+  observations (they gate all downstream measurement) and **relaxation/bound**
+  observations (R4 — a relaxed run beating the target is a bound, not a wall).
+- **Question (Q)** — "at which level is the wall?" is the meta-question; the
+  ladder sweep *generates* the per-rung sub-questions.
+- **Hypothesis (H)** — now carries `level`, `assumes:` (register IDs), and a
+  **level-appropriate** falsifiable prediction (representability / expressiveness
+  / structure-existence, not only a score).
+- **Experiment (E)** — carries `assumes:` + `wall_level:`; a ladder sweep is a
+  **diagnostic** E whose metrics are the per-rung ruled-out/suspect verdicts.
+- **Takeaway (T)** — the **register bridge**: a T that establishes/refutes a
+  load-bearing premise creates/flips its `vault/assumptions.md` row and (on flip)
+  runs the T6 cascade.
+- **Branching (§7)** — level-aware: a refutation names whether it hit the
+  **lever** (change level) or the **implementation** (R2 same-level swap, keep
+  the lever's H open).
+
+Net: the research tree becomes **layered** (branch × level), validity is overlaid
+as the assumption-DAG (§4), and selection is guarded so the frontier never
+collapses to the cheap rungs.
+
+## 9. Change log (keep this current)
 
 - **2026-07-01** — Created. Consolidates the abstraction-ladder audit, the
   assumption-provenance / multi-level invalidation model, and the
@@ -338,3 +373,7 @@ Each tick:
   taxonomy + table, the `/loop`(explore)–`/goal`(exploit) two-level control
   model, the corrected `/loop` skeleton (the old plateau branch was an R5
   violation), and proposed `/cascade` + `/sweep` commands.
+- **2026-07-01** — Added §8 The scientific loop, laddered: reconciled O/Q/H/E/T
+  with the ladder (level tags, `assumes:` on H, level-appropriate predictions,
+  the T→register bridge, level-aware branching); flagged + fixed the ROI-selection
+  R5 bias via the META §2 Ladder-breadth invariant + §5 ladder gate.
