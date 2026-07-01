@@ -75,16 +75,36 @@ def main():
             times[k] = float(sdep[q]); tofs[k] = float(stof[q]); t = float(smin[q])
         return t, times, tofs                       # makespan = final arrival from t=0
 
-    rng = np.random.default_rng(seed)
-    # multi-start: seed from a few random orders, keep the best that retimes finite
-    cur = None
-    for _ in range(200):
-        o = [nodes[0]] + list(rng.permutation(nodes[1:]))
-        mk, ti, tf = retime(o)
-        if mk < float("inf") and (cur is None or mk < cur[0]):
-            cur = (mk, o)
+    # CONSTRUCTIVE init: nearest cheap-arrival greedy that FOLLOWS cheap edges (random-start can't on a
+    # sparse directed cheap graph). Threads from a start iff a cheap directed Hamiltonian path exists there.
+    def greedy_path(start):
+        unvis = set(nodes) - {start}; order = [start]; t = 0.0; cur = start
+        while unvis:
+            best = None
+            for j in unvis:
+                e = EDGE.get((cur, j))
+                if e is None:
+                    continue
+                cd, smin, sdep, stof = e; q = np.searchsorted(cd, t)
+                if q < len(smin):
+                    a = float(smin[q])
+                    if best is None or a < best[0]:
+                        best = (a, j)
+            if best is None:
+                return None, None
+            a, j = best; order.append(j); unvis.discard(j); t = a; cur = j
+        return t, order
+    cur = None; threaded = 0
+    for s in nodes:
+        mk, o = greedy_path(s)
+        if o is not None:
+            threaded += 1
+            if cur is None or mk < cur[0]:
+                cur = (mk, o)
+    print(f"[E-763][{cid}] greedy threaded {threaded}/{len(nodes)} starts", flush=True)
     if cur is None:
-        print(f"[E-763][{cid}] no finite-makespan order from 200 random starts -> cluster not cheap-Hamiltonian in this window set", flush=True)
+        print(f"[E-763][{cid}] NO cheap Hamiltonian path from any start -> cluster is NOT cheap-directed-Hamiltonian "
+              f"(decomposition needs directed/time-aware clustering, or intra-cluster exceptions)", flush=True)
         return
     cur_mk, cur_o = cur; best = cur_mk
     print(f"[E-763][{cid}] init makespan {cur_mk:.3f}d [{0}s]", flush=True)
