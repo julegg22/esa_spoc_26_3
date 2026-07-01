@@ -53,9 +53,15 @@ if os.path.exists(_BASE):
 # cheap directed-edge adjacency (from the 0.1d precompute) -> restrict moves to cheap edges (avoid scanning junk)
 CHEAP = set()
 _CW = f"{ROOT}/cache/ch2_small_windows.npz"
+_EDG = f"{ROOT}/edges_small.npz"
 if os.path.exists(_CW):
     CHEAP = set(map(tuple, np.load(_CW, allow_pickle=True)["windows"].item().keys()))
     print(f"[E-731] cheap adjacency: {len(CHEAP)} edges", flush=True)
+elif os.path.exists(_EDG):                                     # fallback: restrict moves to precomputed usable edges
+    _dv = np.load(_EDG)["dv"]; _n = _dv.shape[0]               # (dv<=600 = the 975 warmed edges) -> no lazy dv>600 scans
+    CHEAP = {(i, j) for i in range(_n) for j in range(_n)
+             if i != j and np.isfinite(_dv[i, j]) and _dv[i, j] <= 600.0}
+    print(f"[E-731] usable adjacency from edges_small (dv<=600): {len(CHEAP)} edges", flush=True)
 
 
 def _build_idx(et):
