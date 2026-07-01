@@ -135,7 +135,8 @@ def check_assumption_register():
         body = f.read_text(errors="ignore")
         if "assumes:" not in body:
             continue
-        cited = {i for i in flipped if i in body.split("assumes:", 1)[1][:200]}
+        assumes_line = body.split("assumes:", 1)[1].split("\n", 1)[0]   # ONLY the assumes: line (not reruns:/others)
+        cited = {i for i in flipped if i in assumes_line}
         if cited and "invalidation:" not in body:
             untriaged.append(f"{f.name} -> {sorted(cited)}")
     if untriaged:
