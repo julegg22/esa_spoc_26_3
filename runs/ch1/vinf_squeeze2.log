@@ -1,0 +1,10 @@
+[E-758] re-solve v_inf-rank [40,70) transfers, restarts=10 (free TOF 2.2-52d)
+  (E=383,L=314,D=307) v_inf=1759 bank_m=684 -> resolve VALID mass=684 (dv2 1179)  [698s]
+  (E=368,L=92,D=361) v_inf=1755 bank_m=689 -> resolve VALID mass=646 (dv2 1072)  [1197s]
+  (E=127,L=5,D=116) v_inf=1750 bank_m=785 -> resolve VALID mass=961 (dv2 889) <<WIN +176 [1887s]
+  (E=211,L=4,D=176) v_inf=1748 bank_m=770 -> resolve VALID mass=945 (dv2 949) <<WIN +175 [2496s]
+  (E=317,L=29,D=350) v_inf=1741 bank_m=571 -> resolve VALID mass=571 (dv2 1524)  [3298s]
+  (E=153,L=317,D=9) v_inf=1741 bank_m=730 -> resolve VALID mass=776 (dv2 1126) <<WIN +46 [4134s]
+  (E=324,L=328,D=301) v_inf=1740 bank_m=743 -> resolve VALID mass=777 (dv2 1145) <<WIN +35 [5064s]
+  (E=115,L=376,D=6) v_inf=1738 bank_m=825 -> resolve VALID mass=905 (dv2 1074) <<WIN +80 [6039s]
+  (E=357,L=82,D=382) v_inf=1737 bank_m=735 -> resolve INVALID [6764s]

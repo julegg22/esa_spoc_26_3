@@ -1,3 +1,27 @@
 [E-719c] BACKWARD beam T=420.0 W_core=90 W_cov=50 K=18 thresh=45 (|RARE|=121) Radd=6; n=601
 [E-719c] positive control: depth1 -> 106 predecessors [1s]
   depth 2: |beam|=90 best_depth=2 t_first=419.5d span=0.5d (d/leg 0.515) [1s]
+  depth 3: |beam|=95 best_depth=3 t_first=419.4d span=0.6d (d/leg 0.294) [5s]
+  depth 4: |beam|=106 best_depth=4 t_first=418.4d span=1.6d (d/leg 0.530) [9s]
+  depth 5: |beam|=140 best_depth=5 t_first=417.4d span=2.6d (d/leg 0.639) [13s]
+  depth 21: |beam|=140 best_depth=21 t_first=406.5d span=13.5d (d/leg 0.677) [95s]
+  depth 41: |beam|=140 best_depth=41 t_first=393.4d span=26.6d (d/leg 0.665) [207s]
+  depth 61: |beam|=140 best_depth=61 t_first=378.4d span=41.6d (d/leg 0.694) [308s]
+  depth 81: |beam|=140 best_depth=81 t_first=362.4d span=57.6d (d/leg 0.720) [400s]
+  depth 101: |beam|=140 best_depth=101 t_first=345.4d span=74.6d (d/leg 0.746) [476s]
+  depth 121: |beam|=140 best_depth=121 t_first=325.3d span=94.7d (d/leg 0.789) [535s]
+  depth 141: |beam|=140 best_depth=141 t_first=301.3d span=118.7d (d/leg 0.848) [578s]
+  depth 161: |beam|=140 best_depth=161 t_first=262.2d span=157.8d (d/leg 0.986) [613s]
+  depth 181: |beam|=140 best_depth=181 t_first=233.2d span=186.8d (d/leg 1.038) [694s]
+  depth 201: |beam|=113 best_depth=201 t_first=218.3d span=201.7d (d/leg 1.009) [766s]
+  depth 221: |beam|=140 best_depth=221 t_first=203.3d span=216.7d (d/leg 0.985) [846s]
+  depth 241: |beam|=140 best_depth=241 t_first=188.2d span=231.8d (d/leg 0.966) [917s]
+  depth 261: |beam|=131 best_depth=261 t_first=171.2d span=248.8d (d/leg 0.957) [967s]
+  depth 281: |beam|=125 best_depth=281 t_first=150.2d span=269.8d (d/leg 0.964) [999s]
+  depth 301: |beam|=68 best_depth=301 t_first=124.1d span=295.9d (d/leg 0.986) [1016s]
+  depth 321: |beam|=6 best_depth=321 t_first=60.0d span=360.0d (d/leg 1.125) [1019s]
+[E-719c] backward beam stranded at depth 324
+
+[E-719c] DONE: backward order 324/601, span 372.0d (start t=48.0, end T=420.0); stranded 277 [1019s]
+[E-719c] forward-stranded=35 backward-stranded=277 OVERLAP=33 | forward-only=2 backward-only=244
+[E-719c] 33 cities stranded BOTH ways -> bidirectionally hard; rank-1 likely beam-infeasible for these.

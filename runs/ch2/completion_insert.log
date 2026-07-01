@@ -1,0 +1,7 @@
+[E-751] core 546, missing 55; dense1d 74201 cheap edges [2s]
+[E-751] inserted 15/55 (cost -0.163) [2s]
+[E-751] inserted 30/55 (cost 0.037) [2s]
+[E-751] inserted 45/55 (cost 0.103) [2s]
+[E-751] all 55 inserted -> 601 cities; faithful retime... [2s]
+[E-751] COMPLETE comp0 601/601: makespan 1338.1d, 1 EXCEPTION legs [bank comp0 804d; budget=5 TOTAL incl bridges] [46s]
+[E-751] backbone 1338>=804, no gain

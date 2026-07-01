@@ -1,0 +1,13 @@
+matching-ii: bank mass 73253.478 (9155 sel), 2 workers x 900s warm-started
+[coop seed=0 f=0.30] r=25 best=73253.5 t=1s
+[coop seed=1 f=0.45] r=25 best=73253.5 t=5s
+[coop seed=0 f=0.65] r=50 best=73253.5 t=98s
+[coop seed=1 f=0.65] r=50 best=73253.5 t=164s
+[coop seed=0 f=0.65] r=75 best=73253.5 t=301s
+[coop seed=1 f=0.65] r=75 best=73253.5 t=367s
+[coop seed=0 f=0.65] r=100 best=73253.5 t=503s
+[coop seed=1 f=0.65] r=100 best=73253.5 t=583s
+[coop seed=0 f=0.65] r=125 best=73253.5 t=737s
+[coop seed=1 f=0.65] r=125 best=73253.5 t=815s
+best across workers: 73253.478 (seed 0, 138 rounds)
+=== NO IMPROVEMENT (best 73253.478 <= bank 73253.478); bank untouched ===

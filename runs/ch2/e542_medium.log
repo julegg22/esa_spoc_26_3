@@ -1,0 +1,33 @@
+E-542 medium curated fine precompute. n=181
+Bank perm: start=3 end=44 legs=180
+Pair set: |bank+cheap|=3182, +1500 exc-extra = 4682 unique pairs
+Total cells: 1,030,040,000
+Est wall on 4 cores: ~0.6h (based on E-540 rate ~120k cells/s/core)
+  200/4682 pairs  rate=0.2/s elapsed=0.27h eta=5.95h
+  400/4682 pairs  rate=0.2/s elapsed=0.49h eta=5.27h
+  600/4682 pairs  rate=0.2/s elapsed=0.73h eta=4.94h
+  800/4682 pairs  rate=0.2/s elapsed=0.94h eta=4.55h
+  1000/4682 pairs  rate=0.2/s elapsed=1.26h eta=4.64h
+  1200/4682 pairs  rate=0.2/s elapsed=1.48h eta=4.29h
+  1400/4682 pairs  rate=0.2/s elapsed=1.60h eta=3.74h
+  1600/4682 pairs  rate=0.2/s elapsed=1.78h eta=3.43h
+  1800/4682 pairs  rate=0.3/s elapsed=1.98h eta=3.17h
+  2000/4682 pairs  rate=0.3/s elapsed=2.16h eta=2.89h
+  2200/4682 pairs  rate=0.3/s elapsed=2.43h eta=2.74h
+  2400/4682 pairs  rate=0.2/s elapsed=2.75h eta=2.62h
+  2600/4682 pairs  rate=0.2/s elapsed=2.96h eta=2.37h
+  2800/4682 pairs  rate=0.2/s elapsed=3.12h eta=2.10h
+  3000/4682 pairs  rate=0.3/s elapsed=3.31h eta=1.85h
+  3200/4682 pairs  rate=0.3/s elapsed=3.50h eta=1.62h
+  3400/4682 pairs  rate=0.3/s elapsed=3.67h eta=1.38h
+  3600/4682 pairs  rate=0.3/s elapsed=3.86h eta=1.16h
+  3800/4682 pairs  rate=0.3/s elapsed=4.04h eta=0.94h
+  4000/4682 pairs  rate=0.3/s elapsed=4.25h eta=0.72h
+  4200/4682 pairs  rate=0.3/s elapsed=4.47h eta=0.51h
+  4400/4682 pairs  rate=0.3/s elapsed=4.74h eta=0.30h
+  4600/4682 pairs  rate=0.3/s elapsed=4.97h eta=0.09h
+
+Done in 18084s (5.02h)
+Saved /tmp/ch2_medium_fine_pair_set.npz
+Cheap cells (per stored pairs): 6668102 / 10300400 = 64.7%
+Exc cells   (per stored pairs): 10286254 / 10300400 = 99.9%

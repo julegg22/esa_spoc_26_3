@@ -1,0 +1,8 @@
+E-545 medium DP-ALNS (fixed). n_chains=1 wall_h=99999.0
+[c0] loading fine pair-set table...
+[c0] table loaded 1.0s (n=181, T=2200)
+[c0] init bank mk=182.1100d
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:85: RuntimeWarning: invalid value encountered in cast
+  c_arr_full = np.arange(T) + np.ceil(c_row / q).astype(np.int32)
+/home/julian/Projects/esa_spoc_26_3/scripts/ch2_dp_numba.py:86: RuntimeWarning: invalid value encountered in cast
+  e_arr_full = np.arange(T) + np.ceil(e_row / q).astype(np.int32)

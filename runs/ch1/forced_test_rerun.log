@@ -1,0 +1,2 @@
+[E-754t] FORCED-moderate-TOF (35-60d) test on 5 worst circular pairs vs bank
+[E-754t] (125,329) bank total 4799 (dv2 1382) -> forced-moderate total 4126 @ tof 36d valid=True <<WIN (basin exists, CMA missed it) [430s]

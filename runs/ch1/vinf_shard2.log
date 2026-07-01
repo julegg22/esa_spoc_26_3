@@ -1,0 +1,8 @@
+[E-758] re-solve v_inf-rank [6,12) transfers, restarts=10 (free TOF 2.2-52d)
+  (E=3,L=340,D=389) v_inf=1954 bank_m=748 -> resolve VALID mass=853 (dv2 1140) <<WIN +104 [1275s]
+  (E=40,L=21,D=40) v_inf=1952 bank_m=750 -> resolve VALID mass=840 (dv2 1175) <<WIN +90 [2561s]
+  (E=125,L=329,D=354) v_inf=1952 bank_m=467 -> resolve VALID mass=467 (dv2 1263)  [3308s]
+  (E=302,L=372,D=328) v_inf=1949 bank_m=672 -> resolve VALID mass=672 (dv2 1150)  [4204s]
+  (E=89,L=47,D=332) v_inf=1944 bank_m=680 -> resolve VALID mass=680 (dv2 1380)  [5078s]
+  (E=154,L=42,D=335) v_inf=1943 bank_m=635 -> resolve INVALID [5678s]
+[E-758] DONE 2/6 wins, +194 kg [5678s]. LEVER REAL -> v_inf was a basin miss; scale fleet

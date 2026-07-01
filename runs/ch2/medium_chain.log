@@ -1,0 +1,18 @@
+Precompute MEDIUM coarse: n=181, pairs=32580, t_starts=1000 (Δ=0.5d), tofs=50, total=1,629,000,000
+Est wall: ~67.9h
+E-542 medium curated fine precompute. n=181
+Bank perm: start=3 end=44 legs=180
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e542_medium_fine_pair_set.py", line 169, in <module>
+    main(workers=w)
+    ~~~~^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e542_medium_fine_pair_set.py", line 114, in main
+    pair_list, n_after_cheap = select_pairs(kt, perm, n_extra=N_EXC_PAIRS_EXTRA)
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch2_e542_medium_fine_pair_set.py", line 79, in select_pairs
+    d = np.load(COARSE)
+  File "/home/julian/micromamba/envs/spoc26/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/ch2_medium_tcoupled.npz'
+ERR fine pair-set table missing

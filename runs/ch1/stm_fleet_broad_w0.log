@@ -1,0 +1,25 @@
+[E-738 STM-FLEET] restarts=5 gen=200 dv_thresh=3000.0 shard=0/3
+[PC] bank row (0,0) dv=4063 mass=819.4 -> reproduces fitness OK
+[E-738 STM-FLEET] shard 0/3: 121 of 363 expensive (bank_dv>3000.0) of 400 filled
+[RESUME] 26 pairs already swept
+  [2/121] (382,67) bank dv=4535 -> no improvement [409s]
+  [4/121] (220,44) bank dv=4462 -> no improvement [625s]
+  [5/121] (208,70) bank dv=4425 m=672 -> dv=4304 m=687 (+16 kg) [829s]
+  [6/121] (217,25) bank dv=4421 -> no improvement [1186s]
+  [7/121] (316,226) bank dv=4412 -> no improvement [1508s]
+  [8/121] (386,60) bank dv=4399 -> no improvement [1822s]
+  [10/121] (334,312) bank dv=4389 -> no improvement [2152s]
+  --- progress: 2 improved, +37 kg total [2152s] ---
+  [11/121] (85,321) bank dv=4370 -> no improvement [2446s]
+  [12/121] (361,327) bank dv=4354 -> no improvement [2850s]
+  [14/121] (365,85) bank dv=4331 -> no improvement [3124s]
+  [16/121] (360,74) bank dv=4304 -> no improvement [3471s]
+  [17/121] (322,93) bank dv=4300 m=721 -> dv=4276 m=730 (+9 kg) [4050s]
+  [18/121] (312,131) bank dv=4295 -> no improvement [4282s]
+  [19/121] (33,323) bank dv=4293 m=724 -> dv=4228 m=750 (+26 kg) [4572s]
+  [21/121] (359,28) bank dv=4288 -> no improvement [4988s]
+  [22/121] (165,88) bank dv=4287 m=726 -> dv=4213 m=756 (+30 kg) [5352s]
+  [23/121] (243,301) bank dv=4284 m=727 -> dv=3960 m=865 (+137 kg) [5624s]
+  [24/121] (81,37) bank dv=4279 m=729 -> dv=4261 m=736 (+7 kg) [5837s]
+  [25/121] (300,72) bank dv=4277 -> no improvement [6109s]
+  [26/121] (191,102) bank dv=4272 m=732 -> dv=4171 m=774 (+42 kg) [6392s]

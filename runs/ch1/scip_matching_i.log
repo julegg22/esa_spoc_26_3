@@ -1,0 +1,35 @@
+[SCIP matching-i] n=25000 bank=33490.4580 valid=True time=2400.0s
+[SCIP matching-i] warm-start bank accepted=True
+1/1 feasible solution given by solution candidate storage, new primal bound 3.349046e+04
+
+presolving:
+(round 1, exhaustive) 2 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 0 chg coeffs, 15000 upgd conss, 0 impls, 15000 clqs, 0 implints
+   (0.8s) probing: 51/24998 (0.2%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (0.8s) probing aborted: 50/50 successive totally useless probings
+   (0.9s) symmetry computation started: requiring (bin +, int +, cont +), (fixed: bin -, int -, cont -)
+   (0.9s) no symmetry present (symcode time: 0.01)
+presolving (2 rounds: 2 fast, 2 medium, 2 exhaustive):
+ 2 deleted vars, 0 deleted constraints, 0 added constraints, 0 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 15000 cliques, 0 implied integral variables (0 bin, 0 int, 0 cont)
+presolved problem has 24998 variables (24998 bin, 0 int, 0 cont) and 15000 constraints
+  15000 constraints of type <setppc>
+transformed objective value is always integral (scale: 0.001)
+Presolving Time: 0.79
+transformed 2/2 original solutions to the transformed problem space
+
+ time | node  | left  |LP iter|LP it/n|mem/heur|mdpt |vars |cons |rows |cuts |sepa|confs|strbr|  dualbound   | primalbound  |  gap   | compl. 
+  472s|     1 |     0 |100608 |     - |   192M |   0 |  24k|  15k|  15k|   0 |  0 |   0 |   0 | 3.412053e+04 | 3.349046e+04*|   1.88%| unknown
+  608s|     1 |     0 |111815 |     - |   245M |   0 |  24k|  15k|  15k|   6 |  1 |   0 |   0 | 3.411891e+04 | 3.349046e+04*|   1.88%| unknown
+  690s|     1 |     0 |114602 |     - |   248M |   0 |  24k|  15k|  15k|   8 |  2 |   0 |   0 | 3.411879e+04 | 3.349046e+04*|   1.88%| unknown
+  768s|     1 |     0 |120467 |     - |   254M |   0 |  24k|  15k|  15k|  13 |  3 |   0 |   0 | 3.411855e+04 | 3.349046e+04*|   1.88%| unknown
+ 2400s|     1 |     2 |130467 |     - |   268M |   0 |  24k|  15k|  15k|  13 |  4 |   0 |   0 | 3.411855e+04 | 3.349046e+04*|   1.88%| unknown
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 2400.28
+Solving Nodes      : 1
+Primal Bound       : +3.34904579999999e+04 (13 solutions)
+Dual Bound         : +3.41185491970147e+04
+Gap                : 1.88 %
+
+[SCIP matching-i] status=timelimit elapsed=2400s obj=33490.4580 bound=34118.5492 gap=1.8754% | rescore mass=33490.4580 valid=True nsel=4479
+[SCIP matching-i] gain=+0.0000 vs bank 33490.4580 -> no gain

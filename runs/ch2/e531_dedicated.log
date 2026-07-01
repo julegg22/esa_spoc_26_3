@@ -1,0 +1,35 @@
+Precompute MEDIUM coarse: n=181, pairs=32580, t_starts=440 (Δ=0.5d), tofs=50, total=716,760,000
+Est wall: ~14.9h
+  200/32580  rate=0.5/s  elapsed=0.1h  eta=19.8h
+  400/32580  rate=0.6/s  elapsed=0.2h  eta=15.9h
+  600/32580  rate=0.6/s  elapsed=0.3h  eta=15.5h
+  800/32580  rate=0.5/s  elapsed=0.4h  eta=16.4h
+  1000/32580  rate=0.5/s  elapsed=0.5h  eta=16.3h
+  1200/32580  rate=0.5/s  elapsed=0.6h  eta=16.2h
+  1400/32580  rate=0.6/s  elapsed=0.7h  eta=15.7h
+  1600/32580  rate=0.6/s  elapsed=0.8h  eta=15.1h
+  1800/32580  rate=0.6/s  elapsed=0.9h  eta=14.6h
+  2000/32580  rate=0.6/s  elapsed=0.9h  eta=14.2h
+  2200/32580  rate=0.6/s  elapsed=1.0h  eta=14.0h
+  2400/32580  rate=0.6/s  elapsed=1.1h  eta=14.1h
+  2600/32580  rate=0.6/s  elapsed=1.2h  eta=13.8h
+  2800/32580  rate=0.6/s  elapsed=1.3h  eta=13.8h
+  3000/32580  rate=0.6/s  elapsed=1.4h  eta=13.8h
+  3200/32580  rate=0.6/s  elapsed=1.5h  eta=13.5h
+  3400/32580  rate=0.6/s  elapsed=1.6h  eta=13.4h
+  3600/32580  rate=0.6/s  elapsed=1.6h  eta=13.0h
+  3800/32580  rate=0.6/s  elapsed=1.7h  eta=12.7h
+  4000/32580  rate=0.6/s  elapsed=1.8h  eta=12.6h
+  4200/32580  rate=0.6/s  elapsed=1.8h  eta=12.3h
+  4400/32580  rate=0.6/s  elapsed=1.9h  eta=12.2h
+  4600/32580  rate=0.7/s  elapsed=2.0h  eta=11.9h
+  4800/32580  rate=0.7/s  elapsed=2.0h  eta=11.7h
+  5000/32580  rate=0.7/s  elapsed=2.1h  eta=11.4h
+  5200/32580  rate=0.7/s  elapsed=2.1h  eta=11.2h
+  5400/32580  rate=0.7/s  elapsed=2.2h  eta=11.0h
+  5600/32580  rate=0.7/s  elapsed=2.3h  eta=10.9h
+  5800/32580  rate=0.7/s  elapsed=2.3h  eta=10.7h
+  6000/32580  rate=0.7/s  elapsed=2.4h  eta=10.6h
+  6200/32580  rate=0.7/s  elapsed=2.5h  eta=10.5h
+  6400/32580  rate=0.7/s  elapsed=2.5h  eta=10.4h
+  6600/32580  rate=0.7/s  elapsed=2.6h  eta=10.2h

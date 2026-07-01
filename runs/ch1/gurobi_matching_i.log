@@ -1,0 +1,27 @@
+[matching-i] n=25000 bank=33490.4580 valid=True
+Restricted license - for non-production use only - expires 2027-11-29
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 2400
+Set parameter Threads to value 2
+Set parameter MIPFocus to value 2
+Set parameter MIPGap to value 0
+Gurobi Optimizer version 13.0.2 build v13.0.2rc1 (linux64 - "Ubuntu 24.04.4 LTS")
+
+CPU model: Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 4 logical processors, using up to 2 threads
+
+Non-default parameters:
+TimeLimit  2400
+MIPGap  0
+MIPFocus  2
+Threads  2
+
+Traceback (most recent call last):
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_e575_matching_gurobi.py", line 101, in <module>
+    solve(problem, time_s, threads)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/julian/Projects/esa_spoc_26_3/scripts/ch1_e575_matching_gurobi.py", line 71, in solve
+    m.optimize()
+    ~~~~~~~~~~^^
+  File "src/gurobipy/_model.pyx", line 926, in gurobipy._model.Model.optimize
+gurobipy._exception.GurobiError: Model too large for size-limited license; visit https://gurobi.com/unrestricted for more information

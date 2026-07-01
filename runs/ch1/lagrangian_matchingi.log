@@ -1,0 +1,23 @@
+[E-673b/E-756] instance matching-i
+[E-673b] matching-II n=25000 |E|=5000|L|=5000|D|=5000 | bank=33490.458 leader=33555.0 LP=34120.53 | EXACT-auction subproblem
+  it=  0 |sel|=4915 D-over=1292 dual=37802 best_dual=37802 primal=29568.3 best=29568.3 [0s]
+  it=  5 |sel|=4788 D-over=1167 dual=35914 best_dual=35914 primal=29617.7 best=29617.7 [1s]
+  it= 10 |sel|=4757 D-over=1098 dual=35330 best_dual=35330 primal=29714.6 best=29749.8 [2s]
+  it= 15 |sel|=4746 D-over=1106 dual=34980 best_dual=34980 primal=29650.5 best=29900.0 [2s]
+  it= 20 |sel|=4727 D-over=1075 dual=34800 best_dual=34800 primal=29754.2 best=29959.4 [3s]
+  it= 25 |sel|=4716 D-over=1051 dual=34695 best_dual=34695 primal=29741.1 best=29981.5 [3s]
+  it= 30 |sel|=4700 D-over=1042 dual=34598 best_dual=34598 primal=29960.5 best=30183.2 [4s]
+  it= 35 |sel|=4715 D-over=1035 dual=34545 best_dual=34542 primal=29910.9 best=30183.2 [4s]
+  it= 40 |sel|=4707 D-over=1028 dual=34479 best_dual=34479 primal=30050.1 best=30183.2 [4s]
+  it= 45 |sel|=4712 D-over=997 dual=34455 best_dual=34455 primal=29936.2 best=30183.2 [5s]
+  it= 50 |sel|=4696 D-over=991 dual=34425 best_dual=34425 primal=30060.1 best=30183.2 [5s]
+  it= 55 |sel|=4693 D-over=987 dual=34399 best_dual=34392 primal=29955.2 best=30183.2 [6s]
+  it= 60 |sel|=4691 D-over=996 dual=34371 best_dual=34371 primal=29963.6 best=30183.2 [6s]
+  it= 65 |sel|=4710 D-over=964 dual=34355 best_dual=34355 primal=29997.4 best=30183.2 [7s]
+  it= 70 |sel|=4678 D-over=983 dual=34336 best_dual=34332 primal=29913.0 best=30183.2 [7s]
+  it= 75 |sel|=4712 D-over=996 dual=34323 best_dual=34323 primal=30048.6 best=30245.0 [7s]
+  it= 79 |sel|=4697 D-over=985 dual=34314 best_dual=34314 primal=30121.6 best=30245.0 [8s]
+
+[E-673b] DONE best_primal=30245.0 best_dual(UB)=34314.4 | greedy1D=0 bank=33490.458 leader=33555.0 LP=34120.53
+  PRIMAL vs bank: -3245.5  (below bank)  | vs leader: -3310.0
+  DUAL UB 34314 vs LP 34121: not tighter | leader is BELOW this UB

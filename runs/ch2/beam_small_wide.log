@@ -1,0 +1,11 @@
+[E-656] n=49 bank=112.996 | beam K=6000, table q=0.05 T=4000
+  [step 0/48] beam=867 best_proxy=0.075 [0s]
+  [step 8/48] beam=6000 best_proxy=2.783 [4s]
+  [step 16/48] beam=2688 best_proxy=19.635 [6s]
+  [step 24/48] beam=1750 best_proxy=54.594 [7s]
+  [step 32/48] beam=427 best_proxy=80.575 [7s]
+  [step 37] beam DIED (all paths stranded) — widen K or exc
+[beam done] 0 complete tours; validating top 120 faithfully...
+
+[DONE] 0/0 validated feasible | best official mk=1000000000.000 vs bank 112.996 | rank4=111.76 rank3=110.88
+  -> beam did NOT beat bank. INFO: best beam tour = 1000000000.000 (proxy ranks by table-epoch; gap to official shows phasing residual).

@@ -1,0 +1,7 @@
+[E-754f] shard 0/3: 84 circular pairs; restarts=16 gen=250
+[RESUME] 3 done
+  [3/84] (381,104) bank_m=545 -> m=747 (+202 kg) tot=4235 [1909s]
+  --- 1 improved, +202 kg [5/84] [3406s] ---
+  --- 1 improved, +202 kg [10/84] [6989s] ---
+  [15/84] (312,131) bank_m=660 -> m=883 (+223 kg) tot=3919 [11048s]
+  --- 2 improved, +425 kg [15/84] [11048s] ---

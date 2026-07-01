@@ -1,0 +1,6 @@
+[E-758] re-solve v_inf-rank [12,26) transfers, restarts=8 (free TOF 2.2-52d)
+  (E=208,L=70,D=329) v_inf=1930 bank_m=687 -> resolve VALID mass=560 (dv2 1541)  [1315s]
+  (E=386,L=60,D=358) v_inf=1927 bank_m=682 -> resolve VALID mass=605 (dv2 889)  [2587s]
+  (E=319,L=114,D=336) v_inf=1897 bank_m=639 -> resolve INVALID [3751s]
+  (E=381,L=104,D=381) v_inf=1895 bank_m=545 -> resolve VALID mass=545 (dv2 1403)  [4631s]
+  (E=197,L=356,D=7) v_inf=1888 bank_m=776 -> resolve VALID mass=861 (dv2 1143) <<WIN +85 [6210s]

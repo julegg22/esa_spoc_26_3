@@ -1,0 +1,5 @@
+[E-756#1] bank 33490.458, 4479 matched, 521 unmatched E, maxdepth=5, budget=500000, 150s seed0
+[E-756#1] pass 1: no net-positive augmenting tree over 521 unmatched E [20s]
+[E-756#1] cyclic-exchange pass: no improving k-cycle over 4479 matched triples [147s]
+[E-756#1] DONE: 0 augmenting + 0 cyclic, total 33490.458 (bank 33490.458, +0.000) [147s]
+[E-756#1] VERDICT: NO net-positive augmenting tree (depth<=5) -> bank is augmentation-optimal for this neighborhood; wall holds. Escalate exp#2 (alt exact-2-DM).

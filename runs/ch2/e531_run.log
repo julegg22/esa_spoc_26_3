@@ -1,0 +1,4 @@
+Precompute MEDIUM coarse: n=181, pairs=32580, t_starts=1000 (Δ=0.5d), tofs=50, total=1,629,000,000
+Est wall: ~45.2h
+  200/32580  rate=0.2/s  elapsed=0.3h  eta=46.1h
+  400/32580  rate=0.2/s  elapsed=0.5h  eta=36.5h

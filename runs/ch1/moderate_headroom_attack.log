@@ -1,0 +1,6 @@
+[attack] 250 circular pairs; testing top 8 by cargo headroom, restarts=8
+  (E=180,L=27,D=156) head=10759 bank=869 -> moderate VALID mass=717 dt=59d  [516s]
+  (E=78,L=24,D=71) head=9226 bank=810 -> moderate row INVALID (didn't close) [939s]
+  (E=221,L=45,D=184) head=5970 bank=768 -> moderate row INVALID (didn't close) [1334s]
+  (E=174,L=8,D=151) head=4718 bank=796 -> moderate row INVALID (didn't close) [1731s]
+  (E=50,L=51,D=47) head=4553 bank=764 -> moderate row INVALID (didn't close) [2164s]

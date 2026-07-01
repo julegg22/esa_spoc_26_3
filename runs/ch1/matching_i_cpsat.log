@@ -1,0 +1,5 @@
+  using hint from solutions/upload/matching-i.json
+[matching-i] status=FEASIBLE elapsed=2400.0s
+  obj=33490.458 bound=34413.379 gap=2.6819%
+  rescore mass=33490.458 valid=True nsel=4479
+  wrote cache/matching_i_cpsat.json
