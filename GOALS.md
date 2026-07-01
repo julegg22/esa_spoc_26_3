@@ -11,21 +11,44 @@ fork this file. `META.md` should remain unchanged.
 
 ## 1. Root goal
 
-**Maximize the overall (global) SpOC4 score by 2026-06-30 AoE.**
+**Match rank-1 performance on every SpOC4 instance. Open-ended — no
+deadline.**
 
-User directive 2026-06-11: the target is the best achievable **global
-score** = sum of points over all six regular instances, where each
-instance awards (11 − rank) × weight for ranks 1–10 (weights in §2:
-easy ×1, medium ×4/3, hard ×(4/3)² ≈ 1.78). This supersedes the
-2026-05-18 "rank-3 on each instance" framing (kept in git history).
-Consequences: (a) every rank step inside the top-10 has value — a
-hard-instance rank 7→4 (+5.33 pts) outweighs an easy-instance 5→4
-(+1 pt); (b) all time resources (analytics, development, compute) are
-priced by expected **points** per invested hour; (c) unsubmitted banks
-score zero, so submission timing is part of the optimization —
-submissions remain user-only (§4). Ch3 (`tie-breaker`) stays deferred:
-it only breaks global ties. Late submissions (after 2026-06-30 AoE)
-don't count.
+User directive 2026-07-01 (post-challenge): the SpOC4 submission
+deadline has passed; our final standing was **7th overall**. The
+challenge is now a **research investigation** with no time limit. The
+new root goal is to reach **rank-1-equivalent objective values on all
+six instances** — close the gap to the best-known (rank-1) solution on
+each, one instance at a time. Points/rank weighting (kept in §2) is now
+only a *prioritization* heuristic for which gap to attack first, not a
+deadline-bound score to bank.
+
+**Why we were walled, and the method that beats it (intelligence from
+the rank-1 team, HRI, 2026-07-01):** rank-1 did **not** use risky
+beyond-state-of-the-art physics or novelty research; and although they
+had 10–20× our compute, **compute was not the cause** of their edge.
+Their edge was **structure discovery + structure-specialized
+metaheuristics**:
+- Ch2 **medium**: they found *super-narrow time-window basins* and
+  specially optimized against them.
+- Ch2 **large**: they found *cluster substructures*, optimized each
+  individually, then **coupled** them within a larger system.
+
+**Methodological goal (the meta-target):** understand *how to proceed to
+the top rank* as a repeatable method. Working thesis: **search the
+structure, not the encoding** — first discover the problem's native
+structure (narrow phasing windows; node clusters) and its scale, match
+the representation and evaluator resolution to that scale, decompose
+along the structure, optimize each part with a specialized local method,
+and add an explicit coupling layer; only then run the metaheuristic — on
+the structured representation. Every past "wall" is re-read as *generic
+search exhausted on a mismatched encoding*, not the problem's optimum.
+Explore-and-exploit **better metaheuristics** is the operative lever.
+This refines [[architecture-change-on-large-gaps]],
+[[foundation-then-search-methodology]], and
+[[basin-overarching-search]] with rank-1 ground truth.
+
+Submissions remain user-only (§4).
 
 The current rank-3 cutoff per instance (live leaderboard, read-only
 GraphQL `https://api.optimize.esa.int/graphql/`; snapshot

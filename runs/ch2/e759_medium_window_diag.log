@@ -1,0 +1,36 @@
+[E-759] medium bank makespan=182.1100d feasible=True (perm_c=0 dv_cnt=0 time_cnt=0 exc=0) n=181
+[E-759] makespan 182.110d = transfer 169.720d + idle 12.390d (first-dep wait 0.000d)
+[E-759] idle: legs with idle>0.05d = 38/180; top idle legs (leg_idx, idle_d): [(50, 0.66), (133, 0.54), (102, 0.52), (136, 0.42), (47, 0.41), (61, 0.39), (125, 0.38), (135, 0.37)]
+[E-759] leg Delta-v: cheap(<=100)=175 exc(100-600)=5 [0s]
+[E-759] probing 25 highest-idle legs (step=0.02d):
+  leg 50 (24->98) idle=0.660d tof=1.41 band_at_bank=0.310d | no earlier cheap window (phasing-forced)
+  leg133 (2->156) idle=0.540d tof=1.87 band_at_bank=0.165d | no earlier cheap window (phasing-forced)
+  leg102 (92->67) idle=0.520d tof=0.35 band_at_bank=0.000d | no earlier cheap window (phasing-forced)
+  leg136 (47->124) idle=0.420d tof=0.45 band_at_bank=0.000d | no earlier cheap window (phasing-forced)
+  leg 47 (32->120) idle=0.410d tof=1.43 band_at_bank=0.155d | no earlier cheap window (phasing-forced)
+  leg 61 (80->35) idle=0.390d tof=3.01 band_at_bank=0.300d | no earlier cheap window (phasing-forced)
+  leg125 (91->62) idle=0.380d tof=1.39 band_at_bank=0.320d | no earlier cheap window (phasing-forced)
+  leg135 (87->47) idle=0.370d tof=3.13 band_at_bank=0.380d | no earlier cheap window (phasing-forced)
+  leg124 (41->91) idle=0.340d tof=4.67 band_at_bank=0.520d | no earlier cheap window (phasing-forced)
+  leg116 (167->83) idle=0.330d tof=2.29 band_at_bank=0.100d | no earlier cheap window (phasing-forced)
+  leg 58 (88->142) idle=0.330d tof=3.03 band_at_bank=0.475d | no earlier cheap window (phasing-forced)
+  leg121 (26->169) idle=0.330d tof=2.21 band_at_bank=0.200d | no earlier cheap window (phasing-forced)
+  leg 54 (10->11) idle=0.320d tof=3.09 band_at_bank=0.100d | no earlier cheap window (phasing-forced)
+  leg 59 (142->89) idle=0.320d tof=3.11 band_at_bank=0.320d | no earlier cheap window (phasing-forced)
+  leg126 (62->34) idle=0.310d tof=2.37 band_at_bank=0.090d | no earlier cheap window (phasing-forced)
+  leg 56 (129->152) idle=0.300d tof=0.71 band_at_bank=0.235d | no earlier cheap window (phasing-forced)
+  leg 60 (89->80) idle=0.290d tof=1.71 band_at_bank=0.490d | no earlier cheap window (phasing-forced)
+  leg134 (156->87) idle=0.280d tof=0.63 band_at_bank=0.450d | no earlier cheap window (phasing-forced)
+  leg 70 (154->77) idle=0.270d tof=0.87 band_at_bank=0.215d | no earlier cheap window (phasing-forced)
+  leg 82 (7->33) idle=0.260d tof=0.45 band_at_bank=0.000d | no earlier cheap window (phasing-forced)
+  leg 57 (152->88) idle=0.240d tof=1.77 band_at_bank=0.240d | no earlier cheap window (phasing-forced)
+  leg 19 (18->36) idle=0.200d tof=0.35 band_at_bank=0.000d | no earlier cheap window (phasing-forced)
+  leg 62 (35->135) idle=0.190d tof=3.11 band_at_bank=0.460d | no earlier cheap window (phasing-forced)
+  leg117 (83->17) idle=0.160d tof=2.31 band_at_bank=0.020d | no earlier cheap window (phasing-forced)
+  leg131 (79->61) idle=0.160d tof=2.01 band_at_bank=0.150d | no earlier cheap window (phasing-forced)
+
+[E-759] SUMMARY
+  makespan 182.110d  transfer 169.720d  idle 12.390d
+  removable-idle (upper bound, top-25 legs, retime-earlier) >= 0.000d
+  cheap-band width at banked departure: median=0.215d min=0.000d max=0.520d  (grid quantum 0.1d)
+  => if bands << 0.1d and removable-idle is large: continuous-time window-snapping retimer is the lever. If bands wide + no earlier window: idle is order-forced (reorder).
