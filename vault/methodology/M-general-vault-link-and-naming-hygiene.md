@@ -75,7 +75,7 @@ Rule: connect orphan concepts/analyses/methodology and live follow-ups; leave re
 `tools/housekeeping_check.py` flags dangling links every `/loop` tick, at session boundaries, and in the
 weekly cloud routine ([[M-general-housekeeping-cadence]]). Rules:
 - **Dangling links are a tracked backlog, fixed promptly — never allowed to accumulate.**
-- Fix with `scripts/fix_dangling_links.py` (bare-ID→canonical, exact topic-suffix across reassigned IDs,
+- Fix with `tools/fix_dangling_links.py` (bare-ID→canonical, exact topic-suffix across reassigned IDs,
   same-ID reslug, memory-slug→vault-node map, escaped-link repair). It applies only *confident* rewrites and
   reports ambiguous/missing for human triage — never guesses (a wrong link is worse than a dangling one).
 - The checker ignores `_templates/`, `NNN` placeholders, code-block fragments and YAML-list artifacts, so

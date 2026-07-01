@@ -98,7 +98,10 @@ its trigger fires* — not per-tick cognitive load.
 **Code is separated the same way** (META §12): **`src/esa_spoc_26/`** = library
 (shared model/evaluators/utilities), **`scripts/`** = experiment entrypoints (the
 science — reproducibility discipline applies), **`tools/`** = process/scaffolding
-(`housekeeping_check.py`, `fetch_leaderboards.py` — how we work, not the science).
+(`housekeeping_check.py`, `fetch_leaderboards.py`, `fix_dangling_links.py` — how
+we work, not the science). **`tools/README.md` is the canonical inventory** of
+all scaffolding / method / process files (scripts, `_prov` helper, command defs,
+docs).
 
 If two docs describe the same mechanism, the **owner above wins** and the other
 links to it. That is the fix for the fragmentation this framework risks.
