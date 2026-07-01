@@ -182,6 +182,7 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
     TAG = os.environ.get("CH2_TAG", "s")
     rng = int(os.environ.get("CH2_SEED", "20260627"))
     move = os.environ.get("CH2_MOVE", "oropt")                 # oropt | 2opt
+    MAXSEG = int(os.environ.get("CH2_MAXSEG", "3"))            # or-opt segment length (larger = wider neighborhood, L7 test)
     cur = border; cur_mk = mk; best_proxy = mk; best_off = 112.996; acc = 0   # small bank (rank6); rank3=111.76 rank1=100.4
     ckpt = f"{ROOT}/cache/ch2_small_ordersearch_{TAG}.json"
     pbest = f"{ROOT}/cache/ch2_small_proxybest_{TAG}.json"
@@ -196,7 +197,7 @@ def main(iters=200000, K=6, W=40, maxwait=8.0):
                 if cheap_ok((cur[a - 1], cur[b - 1]), (cur[a], cur[b])):
                     cand = cur[:a] + cur[a:b][::-1] + cur[b:]; break
             else:                                              # or-opt: relocate a 1-3 city segment
-                L = 1 + (rng % 3); a = 1 + (rng % (len(cur) - L - 1))
+                L = 1 + (rng % MAXSEG); a = 1 + (rng % (len(cur) - L - 1))
                 seg = cur[a:a + L]; rest = cur[:a] + cur[a + L:]
                 b = 1 + ((rng >> 8) % (len(rest) - 1))
                 if cheap_ok((cur[a - 1], cur[a + L]), (rest[b - 1], seg[0]), (seg[-1], rest[b])):
