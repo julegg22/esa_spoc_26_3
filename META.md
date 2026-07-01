@@ -243,6 +243,9 @@ corrected substrate).
   branch's inherited set (walk up `parent`/`hypothesis`). Required on
   **load-bearing** conclusions (banks, floors, "walled/exhausted"
   verdicts); optional on exploratory probes. Enables the §15 T6 cascade.
+  `assumes` = premises it **depends on holding**; a conclusion that is the
+  **RE-RUN of a refuted row** lists it under `reruns:` (it addresses the flip,
+  it does not depend on the old premise) — so it isn't a false un-triaged dependent.
 - wall provenance: `wall_level` — for any "walled/exhausted/closed"
   verdict, the ladder rung it is exhausted at (L1–L8). A verdict without
   `wall_level` is inadmissible (ladder-audit R1).
