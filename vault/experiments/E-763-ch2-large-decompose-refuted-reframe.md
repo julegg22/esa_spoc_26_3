@@ -42,5 +42,18 @@ bank (E-652 analog); if the bank's legs are long-tof vs available short-tof
 windows → L4 confirmed shared; the fix is the L4 rebuild for the whole family, not
 decomposition.
 
+**L4 reframe REFUTED too (self-correction via measurement).** The tof-inflation
+probe on the large bank: median leg tof 0.421 d, and **only 33/588 legs** have a
+cheaper short-tof window near the banked epoch (median excess 0.031 d). So the
+bank already uses near-minimal tofs — large is **NOT** the small/medium L4
+wall. The 879 vs 424 gap is the **long-leg tail** (mean tof 0.81 ≫ median 0.42,
+p90 1.94) → a **sequencing (L3) problem**: a better *order* avoids the long legs.
+`wall_level: L3` — the original hard large problem (threading/sequencing walls
+7+ methods; beam threads 558–575/601), now with the decomposition detour AND the
+L4 hypothesis both ruled out. rank-1 424 needs either a **directed/time-aware
+decomposition** (cluster by directed cheap-reachability, not undirected
+modularity) or a **fundamentally better global sequencer** — genuine research.
+
 **Bank impact.** None. Method/plumbing validated (dense1d source, sub-solver,
-greedy) even though the decomposition target was refuted.
+greedy) even though both the decomposition and L4 targets were refuted.
+
