@@ -314,8 +314,15 @@ Each tick:
   NEVER auto-stop (open-ended). NEVER auto-submit (user-gated).
 ```
 
-### 7.4 Proposed commands (build when recurrence justifies it)
+### 7.4 Commands
 
+- **`/housekeeping [push]`** *(built)* — one pass over the whole hygiene cadence:
+  mechanical drift (`housekeeping_check.py`) → judgment review (M-001) → the §15
+  invalidation-cascade checklist (T1–T6) → doc-sync → stage-by-name + commit the
+  vault. *Trigger:* resume, wind-down, every loop tick. **Git push rides on it**
+  — housekeeping *is* the pre-push gate (clean tree, no drift, docs synced), so
+  `/housekeeping push` pushes only after the pass is green; there is no separate
+  push command (pushing without the gate lets drift escape to the remote).
 - **`/cascade <assumption-id | description>`** — runs the T6 procedure
   end-to-end: flip/confirm the register row, `git grep` the dependents, add
   `invalidation:{level}` overlays, print the RE-RUN / REFRAME / STILL-HOLDS
