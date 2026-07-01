@@ -363,7 +363,53 @@ Net: the research tree becomes **layered** (branch × level), validity is overla
 as the assumption-DAG (§4), and selection is guarded so the frontier never
 collapses to the cheap rungs.
 
-## 9. Change log (keep this current)
+## 9. Consultation levels — advisory, never blocking
+
+The scientific loop runs autonomously toward the goal. Human consultation is
+**advisory, not a stopping gate**: at every level the process **continues
+pursuing the goal on its best-judgment default if the human does not
+intervene.** Three levels set only *how often and how actively* it surfaces
+strategic forks for steering.
+
+**Invariants (all levels).**
+1. The process **never idles or stops** for lack of human input — an unanswered
+   consultation resolves to the recommended default and work continues.
+2. Two **hard gates always BLOCK** regardless of level and are *not*
+   "consultation": **submissions** and **destructive / outward-facing actions**
+   (user-gated, `GOALS.md §4`). Consultation is about *direction*, not permission.
+
+**Consultation points** (strategic forks worth surfacing — nothing else is):
+- a fork with ≥ 2 comparable levers / instances (which to pursue);
+- a **milestone** (method validated, objective/rank gained, instance solved);
+- a **reframing assumption-flip** (a register row flips at a high rung → the map
+  changes);
+- **before a large compute commitment** (>10 h, or a big multi-agent run);
+- a **ladder sweep that localizes a wall to a high rung (L3/L4)** implying an
+  architecture change.
+Routine ticks, mechanical fixes, obvious next steps, and low-stakes choices are
+**never** consultation points at any level.
+
+| Level | Mode | Surfaces | Behavior | Use when |
+|-------|------|----------|----------|----------|
+| **L0 Autopilot** | inform-only, never ask | milestones + hard-gate reaches only | decides everything itself on highest-EV; silent otherwise; continues | "away for hours/days — maximize progress" |
+| **L1 Signpost** *(default)* | decide-and-inform | every consultation point | states the decision + the alternatives *not* taken + why ("took X over Y/Z because…; redirect welcome"), then continues on X; human redirects asynchronously, applied next tick | "keep going, tell me the big turns so I can steer" |
+| **L2 Consult** | ask-at-major-forks | the highest-stakes forks (new instance, heavy multi-day build, architecture pivot); lower-stakes as L1 | poses options + a recommendation (AskUserQuestion) while keeping other cores busy; if a decision is forced before an answer, proceeds on the recommendation | "let's steer the big decisions together" |
+
+Escalation L0→L1→L2 lowers the surfacing threshold and shifts *inform → ask* —
+but **none of them block the goal.**
+
+**Setting the level.** A session/loop parameter `consult: L0|L1|L2`, default
+**L1**. The user sets it per session ("go autopilot / L0", "run at L2"); the
+`/loop` directive carries the current level and applies the matching surfacing
+behavior at each consultation point. Absent any setting, assume **L1**.
+
+**Relation to existing rules.** Refines "never wait — pick the highest-EV lever
+yourself": still true; consultation never waits, it informs or asks-without-
+blocking. Distinct from the exhaustion rule (`CLAUDE.md §5b`, which forbids
+*stopping*): consultation is not stopping — it is *surfacing direction while
+continuing*.
+
+## 10. Change log (keep this current)
 
 - **2026-07-01** — Created. Consolidates the abstraction-ladder audit, the
   assumption-provenance / multi-level invalidation model, and the
@@ -377,3 +423,6 @@ collapses to the cheap rungs.
   with the ladder (level tags, `assumes:` on H, level-appropriate predictions,
   the T→register bridge, level-aware branching); flagged + fixed the ROI-selection
   R5 bias via the META §2 Ladder-breadth invariant + §5 ladder gate.
+- **2026-07-02** — Added §9 Consultation levels (L0 autopilot / L1 signpost /
+  L2 consult) — advisory, never blocking; the goal always continues on the
+  recommended default; submissions + destructive actions stay hard-gated.

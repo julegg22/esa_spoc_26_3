@@ -80,6 +80,15 @@ when the ladder, the rules R1–R5, the register schema, or the cascade
 change, update `doc_methodology.md` in the *same commit*; when a wall is
 broken or a process root-cause is found, add a case to `doc_lessons.md`.
 
+The loop runs at a **consultation level** (`doc_methodology.md §9`),
+default **L1**: consultation is *advisory, never blocking* — the process
+always continues on its best-judgment default if the human doesn't
+intervene. **L0** = autopilot (inform-only), **L1** = signpost strategic
+forks/milestones then continue, **L2** = ask-at-major-forks (recommendation
+given, other cores kept busy, proceeds on the recommendation if a decision
+is forced). Only **submissions** and **destructive/outward actions** are
+hard blocking gates, at every level. The user sets the level per session.
+
 ## 5a. Investigation discipline (anti-oscillation + bug-surfacing)
 
 This project uses an explicit **anti-oscillation** discipline. When
