@@ -84,10 +84,18 @@ Key triggers (full list in the doc):
   decomposition OR explain the unexplained residual
 - Default values added → hostile-default audit (what if maximally
   adversarial?)
+- "Stuck / walled / exhausted", or the urge to add compute / try another
+  solver variant → run the **abstraction-ladder sweep** top-down
+  (objective → model → structure → encoding → evaluator → solver →
+  operators → params). The wall is the *highest* mismatched rung, not the
+  cheap bottom one you reach for first; a tool wall is a solver-level fact,
+  not lever death; no "exhausted" verdict without naming its level.
+  (`vault/methodology/M-general-abstraction-ladder-audit.md`)
 
 The general methodology (project-agnostic, blog-post-ready):
 - `vault/methodology/M-general-anti-oscillation-discipline.md`
 - `vault/methodology/M-general-bug-surfacing-for-scientific-code.md`
+- `vault/methodology/M-general-abstraction-ladder-audit.md`
 
 The Ch1 trigger case that originated these:
 - `vault/methodology/M-2026-05-29-systematic-bug-surfacing.md`

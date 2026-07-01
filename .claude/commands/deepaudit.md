@@ -39,13 +39,33 @@ our own reasoning, not to optimize further.**
    artifact of architecture / search-basin / probe-resolution rather than the
    problem? Re-derive the decisive number yourself in Phase 2 before believing it.
 
+## The abstraction ladder — the spine of Phase 1 (sweep TOP-DOWN)
+
+Full procedure: `vault/methodology/M-general-abstraction-ladder-audit.md`. A
+wall can sit at any level of abstraction; the higher it sits, the more futile
+*all* effort below it. Sweep these rungs **top-down**; for each, state the
+current choice + the cheapest probe that would reveal a mismatch:
+
+- **L1 Objective** — right root goal, or a proxy?
+- **L2 Model/Formulation** — model faithful to the real problem (feasibility, physics)?
+- **L3 Structure** — native structure (windows/clusters/components) identified & decomposed along?
+- **L4 Encoding** — can the representation even *express* a solution as good as X, at the structure's scale?
+- **L5 Evaluator** — is fitness/feasibility faithful and at the right resolution?
+- **L6 Solver** — right algorithm family; can it express ALL constraints natively?
+- **L7 Operators** — can the moves/acceptance reach the optimum's basin?
+- **L8 Parameters/Compute** — tuning, resolution, iterations, restarts.
+
+The wall is the **highest** rung whose probe returns "mismatch." We habitually
+grind L7/L8 (cheap) while the gap sits at L3/L4/L6 (expensive to reconsider) —
+the top-down order exists to counter that bias.
+
 ## The four phases (run all four, in order)
 
-**Phase 1 — Assumption audit.** List *every* implicit assumption shared across
-ALL branches: representation/encoding, how the objective is computed, the
-moves/operators, what was held fixed, and what was **never measured**. For each,
-state concretely **what a solution that violates it would look like**. (Make the
-assumptions named and falsifiable so they stop being invisible.)
+**Phase 1 — Assumption audit, ladder-structured.** Walk the ladder above
+rung-by-rung; for EACH level list the implicit assumptions and state concretely
+**what a solution that violates it would look like**. Do not skip a rung
+because it is expensive to change — mark it ruled-out (by measurement) or
+SUSPECT. A flat, un-laddered list is exactly what let "encoding" hide last time.
 
 **Phase 2 — Gap accounting.** Derive/estimate a theoretical bound. Decompose the
 gap between Y and X into **named, additive pieces**, and say **where the loss is
@@ -74,8 +94,21 @@ branches.**
   experiments**, not a bank change. Writing nothing to the bank is the expected,
   correct outcome. Do NOT submit (user-gated) and do NOT alter banks.
 - **Flaw shape to hunt:** the standing verdict is almost always conditional on
-  **(architecture | search basin | probe resolution)**, never on the problem —
-  "exhausted WITHIN an architecture/basin/model is not exhausted OF the problem."
+  a LEVEL of the abstraction ladder (objective | model | structure | encoding |
+  evaluator | solver | operators | params), never on the problem — "exhausted
+  WITHIN a level is not exhausted OF the problem."
+- **R1 — name the level.** No "exhausted/walled/closed" verdict is admissible
+  unless it states *"exhausted at level L, levels above ruled out by measurement M."*
+- **R2 — a tool wall is a solver-level fact, not lever death.** Before
+  abandoning a lever, try the minimal level-changing swap (e.g. a solver that
+  expresses the constraint the last one couldn't). Separate abstraction from
+  implementation.
+- **R3 — sibling-transfer scan.** Ask whether a tool/insight from a
+  structurally-similar *sibling* instance realizes this lever; search its subtree.
+- **R4 — relaxation-beats-target ⇒ constraint-handling gap.** If relaxing a
+  constraint blows past X, the structure CONTAINS the solution and the gap is
+  constraint-handling (encoding/solver), not search — find a tool that enforces
+  the constraint natively; never file "capped."
 - If the audit instead concludes — *with explicit measured evidence* — that the
   admissible optimum is genuinely reached, say so plainly; that is the one
   legitimate "done."

@@ -45,6 +45,10 @@ when X happens, do Y.
 | Same computation done two ways | Diversity-of-method consistency check. They MUST agree. | Bug-surfacing P3 |
 | Conclusions across ≥3 experiments converge on a "wall / plateau / moonshot" | AUDIT THE METRIC. Re-state the wall in the ROOT objective (points/rank), not a proxy (completeness, strand-count, ΔV-floor, d/leg). A correct result in the wrong metric steers the whole program. | Root-objective & proxy-skew |
 | Writing any "wall / exhausted / moonshot" conclusion | Premise-tag it: name the proxy↔objective assumption it rests on, IN the conclusion, so a later premise correction has a clean propagation target. | Root-objective & proxy-skew |
+| Any "stuck / walled / plateau / exhausted" verdict forms, OR the instinct is "more compute / another solver variant" | Run the ABSTRACTION-LADDER SWEEP top-down (L1 objective → L2 model → L3 structure → L4 encoding → L5 evaluator → L6 solver → L7 operators → L8 params). The wall is the HIGHEST rung a cheap probe flags as mismatch; fix there. Reaching for L7/L8 without a completed sweep is the tell. | Abstraction-ladder audit |
+| Naming any "exhausted/walled/closed" verdict | R1: it is INADMISSIBLE unless it states "exhausted at level L, levels above ruled out by measurement M." Exhausted within a level ≠ exhausted of the problem. | Abstraction-ladder audit |
+| A specific tool/solver walls (can't express a constraint, strands, times out) and you're about to abandon the LEVER | R2: a tool wall is an L6 fact, not lever death. Try the minimal level-changing swap (a solver that expresses the constraint). R3: sibling-transfer scan — does a structurally-similar sibling instance's machinery realize this lever? | Abstraction-ladder audit |
+| A relaxed/unconstrained run achieves an objective far PAST the target | R4: the structure CONTAINS the solution; the gap is constraint-handling (encoding/solver), not search. Next step = a tool that enforces the constraint natively. Never file "capped." | Abstraction-ladder audit |
 
 ## Bootstrap checklist for a NEW challenge / project
 
