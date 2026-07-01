@@ -29,7 +29,7 @@ STILL-HOLDS**. Never delete the old conclusion — it was true under its assumpt
 
 | ID | L | Assumption (falsifiable) | Status | Underpins | On-flip |
 |----|---|--------------------------|--------|-----------|---------|
-| `STRUCT-large-monolithic` | L3 | Ch2-large is best attacked as one 601-giant walk (not cluster-decomposed + coupled). | **suspect** (HRI intel: they cluster-decompose+couple) | large "601-giant wall" verdicts (E-710/E-750) | build cluster-decompose → per-cluster solve → couple |
+| `STRUCT-large-monolithic` | L3 | Ch2-large is best attacked as one 601-giant walk (not cluster-decomposed + coupled). | **REFUTING** (E-762: comp0 = 5 clusters, modularity 0.676, only 89 coupling edges) | large "601-giant wall" verdicts (E-710/E-750) | decompose->solve->couple (E-763) |
 
 ## Refuted (flipped — dependents need triage)
 
