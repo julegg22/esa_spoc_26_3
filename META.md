@@ -215,7 +215,16 @@ corrected substrate).
 - link: `hypothesis`
 - chronology: `created`, `ran_start`, `ran_end`, `duration_runtime`
 - reproducibility: `code`, `commit`, `inputs`, `outputs`, `plots`,
-  `seed`, `env`
+  `seed`, `env`. **Capture provenance at RUN time, not later:** every
+  experiment script calls `_prov.stamp(__file__, seed=...)` at the top of
+  `main()`, which prints a `[PROV] commit=<sha>[+DIRTY] script=… sha1=…`
+  line into the run log. Copy that `commit` SHA into the `commit:` field
+  when writing the E node — this is how a result is bound to a code version
+  (git history of the *note's* commit is not the code the run *used*, since
+  we routinely edit→run→commit). **Clean-tree-before-bank:** any run whose
+  output gets banked/committed as a result must run on a *clean* tree — a
+  `+DIRTY` stamp means the result maps to no SHA and is not reproducible;
+  commit the code first. (Historical E nodes backfill `commit` only on touch.)
 - provenance: `code_dependencies` — list of repo-relative source
   paths (or commit-pinned artefacts) the run depended on. Each
   entry may be a bare path string, or a mapping

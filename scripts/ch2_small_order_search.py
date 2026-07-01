@@ -165,6 +165,7 @@ def _load_best_order():
 
 
 def main(iters=200000, K=6, W=40, maxwait=8.0):
+    import _prov; _prov.stamp(__file__, iters=iters)          # run-time provenance -> log header
     border = _load_best_order()
     # POSITIVE CONTROL: retime the bank order, compare to official 189.10
     t0 = time.time()
