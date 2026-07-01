@@ -25,6 +25,91 @@ Canonical sources:
 
 ---
 
+## Operating model — how the parts compose (READ FIRST)
+
+The pieces are one machine, not a pile of rules. How they interlock:
+
+**The spine.** The **goal** (`GOALS.md`) is the root. The **scientific loop**
+(`META.md` O→Q→H→E→T, ROI-selected, recorded in the vault tree) is the horizontal
+engine turning questions into recorded results. The **abstraction ladder** (§1) is
+the vertical axis: every node has a `level` (L1–L8); a wall is the *highest
+mismatched rung*, never "the problem is hard."
+
+**Two scales of explore/exploit** (the user's "different levels") — different
+tools drive each:
+
+| Scale | Explore | Exploit | Driver |
+|-------|---------|---------|--------|
+| **Macro** (which level/lever) | ladder sweep on a plateau; the Ladder-breadth invariant keeps a high-rung lever on the frontier | ROI-select the best open lever and commit | `/loop` (outer) + `open-paths.md` |
+| **Micro** (within a lever) | the metaheuristic's diversification (SA acceptance, ruin-recreate, multi-seed) | drive the chosen lever to its target | `/goal` (inner) + the search |
+
+The classic failure (**R5**) is endless micro-exploit while never macro-exploring
+— grinding L8 params instead of asking whether the wall is L4. The **ladder gate**
+(META §5) + **Ladder-breadth invariant** (META §2) force macro-exploration; the
+plateau trigger (§7.1 #3) converts a stalled micro-search into a macro sweep.
+
+**Validity is an overlay.** Results are valid only under their branch's
+assumptions. The **Assumption Register** (§4) + `assumes:` make that a first-class,
+invalidatable DAG *over* the derivation tree; a flip runs the **T6 cascade** (§5.1)
+re-triaging dependents. This is the general case — META §15's H/E/T status-overlay
+is its *machinery*, and the retraction annotation is how one node *wears* the
+result. (Three names, one mechanism; the register is canonical.)
+
+**When each thing fires** is the **cadence & trigger** layer (§7). The trigger
+table (§7.1) is the **master registry**; enforcement lives in META §2
+(invariants/watchdogs), META §15 (T1–T6), and CLAUDE §5a (the always-loaded
+self-checks) — all feed the registry, none competes with it. **The human** enters
+via **consultation levels** (§9): advisory, never blocking. **Reproducibility**
+(§8, META §2) binds every result to its code version at run time.
+**Housekeeping** (`/housekeeping`) keeps the representation honest each cadence.
+
+### The hot path (what ALWAYS fires) vs reference (pulled on trigger)
+
+The framework is large; **most of it is reference**, consulted only when a
+trigger fires. The **hot path** an agent applies essentially every tick is short:
+
+1. **On a result** — re-verify with the *official* evaluator; record verdict +
+   `assumes` + `commit` (from the `[PROV]` line).
+2. **On stuck/plateau** — **name the level (R1)**; run the ladder sweep; do *not*
+   grind L8.
+3. **Before a >10 h run** — the resource gate.
+4. **Each tick** — `/housekeeping` (light); keep cores busy.
+5. **At a fork/milestone** — signpost per the consultation level.
+6. **Never** auto-submit; **never** take a destructive/outward action.
+
+Everything else (full cascade, deep audit, schemas) is reference you pull in *when
+its trigger fires* — not per-tick cognitive load.
+
+### Canonical source map (who owns what — state once, link elsewhere)
+
+- **`GOALS.md`** — what we optimize (root goal, instances, scoring).
+- **`CLAUDE.md`** — always-loaded *hot* rules: coding discipline + trigger
+  self-checks + doc pointers. (The hot path lives here.)
+- **`doc_methodology.md`** *(this file)* — the **operating model / integration
+  layer**: how the parts compose. Primary for *composition*.
+- **`META.md`** — the scientific-loop **mechanics**: node schemas, ROI selection,
+  vault layout, the invalidation-cascade machinery. Primary for *schemas +
+  procedure*.
+- **`vault/methodology/M-*`** — atomic **deep-dives** of individual principles.
+  Primary source for each principle's detail; this file links them.
+- **`doc_lessons.md`** — the **case library** (evidence). **`vault/assumptions.md`**
+  — live assumption state. **`memory/`** — session-portable pointers.
+
+If two docs describe the same mechanism, the **owner above wins** and the other
+links to it. That is the fix for the fragmentation this framework risks.
+
+### Critical caveat — this framework is itself a hypothesis (n=1)
+
+We built most of it in one session and have validated it on **one instance**
+(Ch2-small, 112.996→111.96). Ch2-**medium is currently plateauing at the bank
+value** — early evidence the easy small win may *not* generalize to the larger
+rank-1 gaps without an L4 encoding rebuild. So: treat this as a *promising,
+largely-unvalidated* operating model; its own falsifiable prediction is
+rank-1-parity on medium and large. **The methodology must earn its keep in
+results, not in documents** — if a tick can either extend the process or advance
+an instance, advance the instance. (Meta-application of R5: don't grind the
+methodology when the real lever is solving medium/large.)
+
 ## 0. The core thesis — search the structure, not the encoding
 
 Our recurring failure was running **generic search** (ALNS / beam / DP / MILP)
@@ -254,7 +339,11 @@ The recurring error is running everything on the *time* heartbeat (babysitting)
 while the methodology's real triggers are *semantic*. Map each action to its
 **true** trigger.
 
-### 7.1 Trigger table
+### 7.1 Trigger table — the master registry
+
+This table is the **single registry** of when-fires-what. The enforcement lives
+elsewhere (META §2 invariants/watchdogs, META §15 T1–T6 cascade, CLAUDE §5a
+self-checks) but all of it *feeds this table* — consult here first, then the owner.
 
 | # | Action | Trigger (type) | When / cadence | Why | How |
 |---|--------|----------------|----------------|-----|-----|
@@ -310,7 +399,8 @@ Each tick:
      -> run the ABSTRACTION-LADDER SWEEP (top-down); act at the HIGHEST
      mismatched rung. Do NOT default to finer resolution / more operators.
   4. before any >10 h launch: resource-commitment gate.
-  5. report: stage + best-vs-target + which RUNG we are working; RESCHEDULE.
+  5. at a fork/milestone -> surface per the consultation level (§9); continue on the default.
+  6. report: stage + best-vs-target + which RUNG we are working; RESCHEDULE.
   NEVER auto-stop (open-ended). NEVER auto-submit (user-gated).
 ```
 
@@ -439,3 +529,11 @@ continuing*.
 - **2026-07-02** — Added §9 Consultation levels (L0 autopilot / L1 signpost /
   L2 consult) — advisory, never blocking; the goal always continues on the
   recommended default; submissions + destructive actions stay hard-gated.
+- **2026-07-02** — Reproducibility wired in consistently: run-time `_prov.stamp`
+  (§8, META §2/§4/§6), E-template + housekeeping check, clean-tree-before-bank.
+- **2026-07-02** — Meta-analysis / coherence pass: added the top **Operating
+  model** section (composition, two-scale explore/exploit, the **hot path** vs
+  reference to fight over-proceduralization, the **canonical source map** to fight
+  fragmentation, and the critical n=1 caveat). Marked §7.1 the master trigger
+  registry; wired consultation into the §7.3 loop skeleton; named the register the
+  canonical of the three invalidation notations.

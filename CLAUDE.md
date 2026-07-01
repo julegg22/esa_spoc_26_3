@@ -67,13 +67,17 @@ goal, sub-goals, goal-domain rules) and `META.md` for *how* we work
 toward those goals (research methodology, vault structure,
 invariants). Adhere to the spirit of both.
 
-The **central synthesis** of our optimization methodology — the
-abstraction ladder (why we get stuck and at which level: objective →
-model → structure → encoding → evaluator → solver → operators →
-params), the vault structures that mirror it (the Assumption Register
-`vault/assumptions.md` + `assumes:` provenance), and the processes on
-them (top-down sweep, the §15 T6 invalidation cascade, housekeeping) —
-is **`doc_methodology.md`** at repo root, with **`doc_lessons.md`** its
+The **central synthesis** of our optimization methodology is
+**`doc_methodology.md`** at repo root — start with its **Operating model
+(READ FIRST)** section: how all the parts compose, the **hot path** (the
+short list that fires every tick — don't load the whole framework per
+tick), the **canonical source map** (who owns what, to avoid duplication),
+and two-scale explore/exploit. It also holds the abstraction ladder (why we
+get stuck and at which level: objective → model → structure → encoding →
+evaluator → solver → operators → params), the Assumption Register
+(`vault/assumptions.md` + `assumes:` provenance), the cadence/trigger master
+registry, consultation levels, and reproducibility. Companion is
+**`doc_lessons.md`**, its
 companion case library (how we failed at the process level + the
 directives that broke walls, each now codified). **Keep both in sync**:
 when the ladder, the rules R1–R5, the register schema, or the cascade
