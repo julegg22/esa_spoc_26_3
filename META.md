@@ -127,6 +127,7 @@ defines the canonical tree.
 vault/
 ├── index.md                # root: goal, current best, pointers
 ├── open-paths.md           # frontier, prioritized
+├── assumptions.md          # load-bearing assumption register — the assumption-DAG for multi-level invalidation (§15 T6); M-general-assumption-provenance-and-invalidation (§14 tier-1)
 ├── abbreviations.md        # glossary of acronyms with primary-node links — update whenever a new acronym is introduced (§14 tier-1)
 ├── user.md                 # user profile + soft preferences — portable replacement for local Claude memory (§14)
 ├── _templates/             # YAML + body templates (copy → fill)
@@ -202,16 +203,26 @@ corrected substrate).
   grounding lesson / smoke test exists. Required for new E from
   §15 adoption forward; backfilled only when an existing E is
   touched.
+- assumption provenance: `assumes` — list of Assumption-Register IDs
+  (`vault/assumptions.md`) this conclusion is load-bearing on, at ANY
+  ladder level (not just code/L2). Effective validity = `assumes` ∪ the
+  branch's inherited set (walk up `parent`/`hypothesis`). Required on
+  **load-bearing** conclusions (banks, floors, "walled/exhausted"
+  verdicts); optional on exploratory probes. Enables the §15 T6 cascade.
+- wall provenance: `wall_level` — for any "walled/exhausted/closed"
+  verdict, the ladder rung it is exhausted at (L1–L8). A verdict without
+  `wall_level` is inadmissible (ladder-audit R1).
 - resources: `compute: {cpu_seconds, peak_memory_mb, cores}`,
   `effort_person_hours`
 - result: `metrics` (free-form dict), `verdict` ∈ {`supports`,
   `refutes`, `inconclusive`}
 - supersession (nullable): `invalidation` block with fields
-  `invalidated_by` (`[[L-NNN]]`), `superseded_by` (`[[E-NNN-redo]]`),
-  `invalidated_at`, `notes`. **The original `verdict` is not
-  rewritten** — the verdict was correct given the buggy code; the
-  `invalidation` overlay tells future readers the conclusion no
-  longer holds.
+  `invalidated_by` (`[[L-NNN]]` or Assumption-Register ID),
+  `superseded_by` (`[[E-NNN-redo]]`), `invalidated_at`, `level`
+  (ladder rung Lx of the failed assumption), `notes`. **The original
+  `verdict` is not rewritten** — it was correct given its assumptions;
+  the overlay tells future readers the conclusion is now conditional /
+  no longer holds, and at which level.
 
 **observation** — `source` is mandatory (file, URL, or `E-NNN`).
 Observations are append-only; corrections arrive as new observations
@@ -641,7 +652,7 @@ compactification:
 
 | tier | surface                                                                 | read when                               |
 |------|-------------------------------------------------------------------------|-----------------------------------------|
-| 1. active    | `CLAUDE.md`, `GOALS.md`, `META.md`, `vault/user.md`, `vault/index.md`, `vault/open-paths.md`, `vault/abbreviations.md` | every resume                            |
+| 1. active    | `CLAUDE.md`, `GOALS.md`, `META.md`, `vault/user.md`, `vault/index.md`, `vault/open-paths.md`, `vault/assumptions.md`, `vault/abbreviations.md` | every resume                            |
 | 2. recent    | newest `vault/sessions/S-*.md`                                          | every resume                            |
 | 3. rolled-up | newest `vault/reviews/YYYY-Www.md`                                      | only if tier-2 session is > 7 days old  |
 | 4. archived  | older sessions                                                          | on demand (`git log`, `git grep`, path) |
@@ -698,6 +709,14 @@ Trigger on any of (codified in
   cite in `modification_rationale`).
 - **T5**: a pattern-finding session whose explicit purpose is to
   identify wrong-tracks. Findings count as critical per T1.
+- **T6**: an **Assumption-Register** row (`vault/assumptions.md`) flips
+  to `suspect`/`refuted` at ANY ladder level (objective / model /
+  structure / encoding / evaluator / solver / operators / params).
+  Cascade over the dependents — `git grep "assumes:.*<ID>"` plus branch
+  inheritance; overlay `invalidation:{level: Lx}`; triage each into
+  **RE-RUN / REFRAME / STILL-HOLDS**. Generalizes the code-dependency
+  cascade (T2) to all abstraction levels. Procedure:
+  [[methodology/M-general-assumption-provenance-and-invalidation]].
 - A bug fix lands in code that an E previously depended on (T2).
 - A redo run of a foundational E diverges from the original
   beyond numerical noise.

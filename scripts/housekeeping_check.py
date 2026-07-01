@@ -110,9 +110,45 @@ def check_cache_without_generator():
     return []
 
 
+def check_assumption_register():
+    """Assumption-TMS drift (META §15 T6): a refuted/suspect assumption whose dependents were never
+    re-triaged. Flags vault nodes that cite a flipped assumption via `assumes:` without an
+    `invalidation:` overlay. Forward-looking: quiet until `assumes:` is adopted, then it bites."""
+    reg = ROOT / "vault" / "assumptions.md"
+    if not reg.exists():
+        return [("ASSUMPTION-REGISTER-MISSING", "vault/assumptions.md absent (assumption-DAG untracked)", [])]
+    flipped, section = set(), None
+    for line in reg.read_text(errors="ignore").splitlines():
+        low = line.lower()
+        if low.startswith("## "):
+            section = "flip" if ("refuted" in low or "suspect" in low) else "hold"
+        elif section == "flip":
+            m = re.match(r"\|\s*`([A-Za-z0-9\-]+)`", line)
+            if m:
+                flipped.add(m.group(1))
+    if not flipped:
+        return []
+    untriaged = []
+    for f in (ROOT / "vault").rglob("*.md"):
+        if f.name == "assumptions.md":
+            continue
+        body = f.read_text(errors="ignore")
+        if "assumes:" not in body:
+            continue
+        cited = {i for i in flipped if i in body.split("assumes:", 1)[1][:200]}
+        if cited and "invalidation:" not in body:
+            untriaged.append(f"{f.name} -> {sorted(cited)}")
+    if untriaged:
+        return [("ASSUMPTION-UNTRIAGED",
+                 f"{len(untriaged)} node(s) cite a refuted/suspect assumption without an invalidation overlay (run §15 T6)",
+                 untriaged[:8])]
+    return []
+
+
 def main():
     all_findings = []
-    for fn in (check_git_state, check_dangling_links, check_memory_pointers, check_cache_without_generator):
+    for fn in (check_git_state, check_dangling_links, check_memory_pointers, check_cache_without_generator,
+               check_assumption_register):
         all_findings += fn()
     print("=" * 64)
     print("HOUSEKEEPING DRIFT-CHECK")

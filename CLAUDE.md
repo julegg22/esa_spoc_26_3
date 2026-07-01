@@ -91,6 +91,12 @@ Key triggers (full list in the doc):
   cheap bottom one you reach for first; a tool wall is a solver-level fact,
   not lever death; no "exhausted" verdict without naming its level.
   (`vault/methodology/M-general-abstraction-ladder-audit.md`)
+- An assumption a past verdict relied on is refuted at ANY level (not just
+  a code bug) → flip its row in `vault/assumptions.md` and run the META §15
+  **T6** cascade (grep `assumes:`, overlay `invalidation:{level}`, triage
+  RE-RUN / REFRAME / STILL-HOLDS). A conclusion is only valid under its
+  branch's assumptions; record load-bearing ones with `assumes:`.
+  (`vault/methodology/M-general-assumption-provenance-and-invalidation.md`)
 
 The general methodology (project-agnostic, blog-post-ready):
 - `vault/methodology/M-general-anti-oscillation-discipline.md`
