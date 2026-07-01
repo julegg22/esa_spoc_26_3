@@ -95,6 +95,11 @@ its trigger fires* — not per-tick cognitive load.
 - **`doc_lessons.md`** — the **case library** (evidence). **`vault/assumptions.md`**
   — live assumption state. **`memory/`** — session-portable pointers.
 
+**Code is separated the same way** (META §12): **`src/esa_spoc_26/`** = library
+(shared model/evaluators/utilities), **`scripts/`** = experiment entrypoints (the
+science — reproducibility discipline applies), **`tools/`** = process/scaffolding
+(`housekeeping_check.py`, `fetch_leaderboards.py` — how we work, not the science).
+
 If two docs describe the same mechanism, the **owner above wins** and the other
 links to it. That is the fix for the fragmentation this framework risks.
 
@@ -285,7 +290,7 @@ When a register row flips to `suspect`/`refuted` at **any** level:
 under their assumptions; they gain an overlay and a triage bucket.
 
 ### 5.2 Housekeeping (keeps the mirror honest)
-`scripts/housekeeping_check.py` (run at resume + wind-down + every loop tick):
+`tools/housekeeping_check.py` (run at resume + wind-down + every loop tick):
 - `check_assumption_register` — refuted/suspect assumptions with dependents
   that cite them via `assumes:` but carry no `invalidation:` overlay (the
   un-triaged backlog). Forward-looking: quiet until `assumes:` is adopted.

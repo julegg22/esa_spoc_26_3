@@ -72,7 +72,7 @@ An orphan is a consistency smell, not always a defect. Triage by type:
 Rule: connect orphan concepts/analyses/methodology and live follow-ups; leave refuted dead-ends as leaves.
 
 ## The gate (enforcement)
-`scripts/housekeeping_check.py` flags dangling links every `/loop` tick, at session boundaries, and in the
+`tools/housekeeping_check.py` flags dangling links every `/loop` tick, at session boundaries, and in the
 weekly cloud routine ([[M-general-housekeeping-cadence]]). Rules:
 - **Dangling links are a tracked backlog, fixed promptly — never allowed to accumulate.**
 - Fix with `scripts/fix_dangling_links.py` (bare-ID→canonical, exact topic-suffix across reassigned IDs,

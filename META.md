@@ -666,8 +666,26 @@ dimensions.
   `vault/` as a vault (File → Open folder as vault).
 - If a dedicated Obsidian skill becomes available in the agent runtime,
   wire it in here (template insertion, graph queries). Not a blocker.
-- `src/` carries code; `vault/` carries knowledge. They reference each
-  other by path — never duplicate content across them.
+- **Code is separated by role into three tiers** (so the reproducibility
+  discipline targets the science, not the plumbing):
+  - **`src/esa_spoc_26/`** — the **library**: shared model/evaluator code
+    (the official-mirror scorers, physics, reusable solver primitives) and
+    shared experiment utilities (e.g. `_prov`-style helpers). Imported by
+    experiments; versioned by git; no per-run stamp.
+  - **`scripts/`** — **experiment entrypoints**: each runnable produces a
+    scientific result, maps to an E-node via `code:`, and is under the
+    reproducibility discipline (calls `_prov.stamp`, clean-tree-before-bank).
+    Underscore-prefixed files here (e.g. `_prov.py`) are shared *helpers*, not
+    experiments.
+  - **`tools/`** — **process / scaffolding**: how we *work*, not the science
+    — `housekeeping_check.py`, `fetch_leaderboards.py`, vault/workflow tooling.
+    Committed and tracked, but never experiments (no result, no E-node, no
+    run-time provenance stamp).
+  The distinguishing test: *does the file produce a scientific result (an
+  E-node)?* → `scripts/`. *Shared infrastructure imported by experiments?* →
+  `src/`. *Supports the process?* → `tools/`.
+- `src/`+`scripts/`+`tools/` carry code; `vault/` carries knowledge. They
+  reference each other by path — never duplicate content across them.
 
 ## 13. Spirit vs letter of goal rules
 

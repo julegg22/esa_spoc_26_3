@@ -54,7 +54,7 @@ The current rank-3 cutoff per instance (live leaderboard, read-only
 GraphQL `https://api.optimize.esa.int/graphql/`; snapshot
 [[observations/O-002-leaderboard-2026-05-18|O-002]]) is the binding
 falsifiability anchor for every active hypothesis.
-`scripts/fetch_leaderboards.py` is a stub — fetching is currently done
+`tools/fetch_leaderboards.py` is a stub — fetching is currently done
 via direct read-only GraphQL queries. Internal proxies are
 *diagnostic*, not closure criteria.
 

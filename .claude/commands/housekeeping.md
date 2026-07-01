@@ -9,7 +9,7 @@ every recurring hygiene action (CLAUDE.md §7 + META.md §15 + `doc_methodology.
 order; fix what you can; end with the vault committed and a short report.
 
 ## 1. Mechanical drift (automated)
-Run `python scripts/housekeeping_check.py` (use the project env python). It flags:
+Run `python tools/housekeeping_check.py` (use the project env python). It flags:
 uncommitted vault, untracked scripts, unpushed commits, dangling `[[links]]`,
 MEMORY.md pointer rot, cache-without-generator, and **un-triaged assumptions**
 (refuted register rows whose `assumes:` dependents lack an `invalidation:`

@@ -17,7 +17,7 @@ reproduce/reconstruct/trace ([[M-general-commit-criteria-reproduce-reconstruct-t
 
 ## The split: mechanical vs judgment
 
-- **Mechanical** (deterministic, scriptable, ~1 s) → `scripts/housekeeping_check.py`.
+- **Mechanical** (deterministic, scriptable, ~1 s) → `tools/housekeeping_check.py`.
   Detects: uncommitted vault, untracked scripts, unpushed commits, dangling
   links, MEMORY.md pointer drift, cache-without-generator. Exit 1 on drift so
   it can gate a tick or CI. It **flags**, it does not decide.
@@ -54,7 +54,7 @@ reproduce/reconstruct/trace ([[M-general-commit-criteria-reproduce-reconstruct-t
 
 ## In practice
 
-- `scripts/housekeeping_check.py` — the mechanical checker (run anytime;
+- `tools/housekeeping_check.py` — the mechanical checker (run anytime;
   `--memory-dir` to point at the auto-memory dir).
 - Loop prompt: add "run housekeeping_check.py; fix any drift this tick."
 - Weekly: **durable cloud routine** (claude.ai/code, not a session-local cron —

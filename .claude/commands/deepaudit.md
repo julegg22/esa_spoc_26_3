@@ -27,7 +27,7 @@ our own reasoning, not to optimize further.**
    branch — ignore unrelated challenges.
 2. **Identify the target X (ground truth that beats us).** Recall or fetch the
    live leaderboard / bound for $ARGUMENTS: read-only
-   `micromamba run -n spoc26 python scripts/fetch_leaderboards.py` (GraphQL
+   `micromamba run -n spoc26 python tools/fetch_leaderboards.py` (GraphQL
    `query` only — never submit). State our best **Y** (the bank), the known-better
    **X**, and the gap.
 3. **QUESTION the recorded results — do not trust them.** Every "exhausted/walled"

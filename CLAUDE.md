@@ -211,7 +211,7 @@ After reading, confirm the active frontier entry with `git log
 **Housekeeping triggers** (keep vault + git from drifting; see
 `vault/methodology/M-general-housekeeping-cadence.md`):
 - **At resume AND wind-down:** run
-  `python scripts/housekeeping_check.py` (mechanical drift: uncommitted
+  `python tools/housekeeping_check.py` (mechanical drift: uncommitted
   vault, untracked scripts, unpushed commits, dangling links, MEMORY.md
   pointer rot, cache-without-generator). Fix what it flags **before
   proceeding** — never batch it. Then do the *judgment* review
