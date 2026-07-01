@@ -11,6 +11,7 @@ for any run whose output gets banked (clean-tree-before-bank).
 import subprocess
 import hashlib
 import os
+import sys
 import time
 
 ROOT = "/home/julian/Projects/esa_spoc_26_3"
@@ -32,8 +33,11 @@ def stamp(script_file, **kv):
         h = hashlib.sha1(open(script_file, "rb").read()).hexdigest()[:8]
     except Exception:
         h = "?"
-    env = os.path.basename(os.environ.get("CONDA_PREFIX",
-                           os.environ.get("VIRTUAL_ENV", "?")))
+    env = os.path.basename(os.environ.get("CONDA_PREFIX", "").strip()
+                           or os.environ.get("VIRTUAL_ENV", "").strip())
+    if not env and "/envs/" in sys.executable:               # micromamba python not "activated"
+        env = sys.executable.split("/envs/")[-1].split("/")[0]
+    env = env or "?"
     extra = " ".join(f"{k}={v}" for k, v in kv.items())
     line = (f"[PROV] commit={sha}{'+DIRTY' if dirty else ''} "
             f"script={os.path.basename(script_file)} sha1={h} env={env} "
