@@ -107,6 +107,11 @@ Key triggers (full list in the doc):
   RE-RUN / REFRAME / STILL-HOLDS). A conclusion is only valid under its
   branch's assumptions; record load-bearing ones with `assumes:`.
   (`vault/methodology/M-general-assumption-provenance-and-invalidation.md`)
+- Plateau (K attempts / T hours at one rung, no target-progress) OR 3+
+  same-family methods converge → run the **ladder sweep** and act at the
+  highest mismatched rung. Do NOT reflexively reach for finer resolution /
+  more operators / more restarts — that low-rung grind is the R5 tell.
+  Cadence & the `/loop`(explore)–`/goal`(exploit) split: `doc_methodology.md` §7.
 
 The general methodology (project-agnostic, blog-post-ready):
 - `vault/methodology/M-general-anti-oscillation-discipline.md`

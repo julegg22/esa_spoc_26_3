@@ -239,9 +239,101 @@ advances + a kill criterion). Budget backward from any hard bound so the
 
 ---
 
-## 7. Change log (keep this current)
+## 7. Cadence & triggers — when each action fires
+
+Actions here are driven by **three kinds of trigger**, not one:
+- **Event/state triggers** (the majority) — a run completes, a wall verdict
+  forms, an assumption flips, a metric plateaus. Fire the moment the condition
+  holds, regardless of the clock.
+- **Time/cadence triggers** — the loop heartbeat (minutes), the weekly review.
+- **Pre-action gates** — a checklist that must pass BEFORE a heavy/irreversible
+  action (long compute, writing a wall verdict, adding a default).
+
+The recurring error is running everything on the *time* heartbeat (babysitting)
+while the methodology's real triggers are *semantic*. Map each action to its
+**true** trigger.
+
+### 7.1 Trigger table
+
+| # | Action | Trigger (type) | When / cadence | Why | How |
+|---|--------|----------------|----------------|-----|-----|
+| 1 | Health-check jobs + light housekeeping | heartbeat (time) | every `/loop` tick (~10–25 min) | keep cores productive; catch dead runs early | ps/grep liveness, log freshness, `housekeeping_check.py` |
+| 2 | Validate result; record verdict (+`assumes`,+`wall_level`); pick next lever | completion (event) | on task-notification / Monitor hit | act on results at once, not next heartbeat | re-verify with the official evaluator; write the E node |
+| 3 | **Ladder sweep → act at highest mismatched rung** | **plateau (state)** | K attempts / T hours at one rung, no target-progress | R5: stop grinding the cheap rung | §1–§2 top-down sweep; NOT a finer-resolution / more-operators reflex |
+| 4 | R1 admissibility check | wall-verdict (pre-write gate) | before writing "walled/exhausted/closed" | no false exhaustion | name the level + measurement ruling out higher rungs; else sweep first |
+| 5 | Register flip + **T6 cascade** | assumption-flip (event) | a sweep/audit/bugfix refutes a premise | propagate invalidation | flip row → grep `assumes:` → overlay `invalidation:{level}` → triage RE-RUN/REFRAME/HOLDS |
+| 6 | Resource-commitment gate | pre-long-launch (gate) | before any >10 h job | don't waste compute | 3 checks (confident / validated / monitored); budget backward |
+| 7 | Hostile-default audit | pre-default (gate) | adding a default value | bug-surfacing | what if maximally adversarial? |
+| 8 | Ladder sweep (upgraded convergence pivot) | convergence (state) | 3+ same-family methods converge (M-004) | family-convergence ≠ ceiling | run the full sweep, not just an orthogonal-family swap |
+| 9 | Orientation / housekeeping / session note / §15 checklist | session-boundary (event) | resume + wind-down | continuity + drift control | CLAUDE.md §7 reads; `housekeeping_check.py`; write the S node |
+| 10 | Weekly review + backlog drain | weekly (time) | cloud cron, 7-day | consolidation | `reviews/`; drain the RE-RUN queue, dangling links, un-triaged assumptions |
+
+### 7.2 Control primitives — `/loop` (explore) vs `/goal` (exploit)
+
+Two-level control that mirrors explore/exploit:
+
+- **`/loop` = the OUTER research loop (exploration).** Diagnosis-driven,
+  open-ended: health-check → on plateau run the **ladder sweep** → pick the
+  lever at the identified rung → maybe delegate a bounded sub-task to `/goal` →
+  on result, record + pivot. Handles triggers 1–3, 8. Time-paced heartbeat with
+  event-gating (Monitor / task-notification wake it sooner). **Never auto-stops
+  (open-ended research); never auto-submits.**
+- **`/goal` = the INNER bounded execution (exploitation).** Drive ONE
+  *validated, level-checked* lever to a *verifiable, reachable* target — e.g.
+  `/goal solutions/upload/small.json is_feasible AND makespan ≤ 111.76, OR stop
+  after 15 turns / after 5 turns with no proxy improvement`. The `/goal`
+  evaluator reads only the transcript, so **our turns must print the metric it
+  checks.** Two hard cautions: **(a)** always include an **escape clause**
+  (turn-cap or no-improvement-cap) so hitting a wall kicks back to `/loop` for a
+  ladder sweep — `/goal` has no sweep of its own and will otherwise grind a
+  mismatched level (an **R5 violation at the control layer**); **(b)** never put
+  a submission in a `/goal` condition (user-gated).
+
+Realization: heartbeat → `ScheduleWakeup`; completion → task-notification /
+`Monitor`; plateau → a counter carried in the loop state, checked each tick;
+weekly → `CronCreate` (cloud). The semantic gates (R1, T6, resource gate) fire
+**inline** by following the CLAUDE.md §5a triggers — they are not scheduled.
+
+### 7.3 Adjusted `/loop` directive skeleton
+
+The prior template's plateau branch ("finer resolution OR more operators") was
+itself an **R5 violation** — it jumped to L8/L7 without a sweep. Corrected:
+
+```
+Each tick:
+  1. health-check the active job(s); run housekeeping_check.py (light).
+  2. on completion/new-best: re-verify with the OFFICIAL evaluator; record the
+     verdict (+assumes +wall_level); if a premise was refuted, flip its
+     register row + run the T6 cascade; pick the next lever.
+  3. PLATEAU CHECK: if K ticks / T hours at one rung with no target-progress
+     -> run the ABSTRACTION-LADDER SWEEP (top-down); act at the HIGHEST
+     mismatched rung. Do NOT default to finer resolution / more operators.
+  4. before any >10 h launch: resource-commitment gate.
+  5. report: stage + best-vs-target + which RUNG we are working; RESCHEDULE.
+  NEVER auto-stop (open-ended). NEVER auto-submit (user-gated).
+```
+
+### 7.4 Proposed commands (build when recurrence justifies it)
+
+- **`/cascade <assumption-id | description>`** — runs the T6 procedure
+  end-to-end: flip/confirm the register row, `git grep` the dependents, add
+  `invalidation:{level}` overlays, print the RE-RUN / REFRAME / STILL-HOLDS
+  triage. *Trigger:* an assumption flips. *Why a command:* mechanical + recurring
+  (our history flips premises often) and benefits from a checklist.
+  **Recommended.**
+- **`/sweep <instance>`** — a fast standalone ladder sweep (§1–§2) emitting the
+  highest mismatched rung + the fix, *without* the full 4-phase `/deepaudit`.
+  *Trigger:* plateau / convergence / "stuck". *Why maybe not yet:* `/deepaudit`
+  already embeds the ladder as its Phase-1 spine — build `/sweep` only if we want
+  the quick check separate from the full audit.
+
+## 8. Change log (keep this current)
 
 - **2026-07-01** — Created. Consolidates the abstraction-ladder audit, the
   assumption-provenance / multi-level invalidation model, and the
   resource-commitment gate, derived post-challenge (final standing 7th) after
   HRI rank-1 intel (structure + specialized metaheuristics, not compute).
+- **2026-07-01** — Added §7 Cadence & triggers: the event/time/gate trigger
+  taxonomy + table, the `/loop`(explore)–`/goal`(exploit) two-level control
+  model, the corrected `/loop` skeleton (the old plateau branch was an R5
+  violation), and proposed `/cascade` + `/sweep` commands.
