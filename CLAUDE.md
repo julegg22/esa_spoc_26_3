@@ -73,9 +73,12 @@ model → structure → encoding → evaluator → solver → operators →
 params), the vault structures that mirror it (the Assumption Register
 `vault/assumptions.md` + `assumes:` provenance), and the processes on
 them (top-down sweep, the §15 T6 invalidation cascade, housekeeping) —
-is **`doc_methodology.md`** at repo root. **Keep it in sync**: when the
-ladder, the rules R1–R5, the register schema, or the cascade change,
-update `doc_methodology.md` in the *same commit*.
+is **`doc_methodology.md`** at repo root, with **`doc_lessons.md`** its
+companion case library (how we failed at the process level + the
+directives that broke walls, each now codified). **Keep both in sync**:
+when the ladder, the rules R1–R5, the register schema, or the cascade
+change, update `doc_methodology.md` in the *same commit*; when a wall is
+broken or a process root-cause is found, add a case to `doc_lessons.md`.
 
 ## 5a. Investigation discipline (anti-oscillation + bug-surfacing)
 

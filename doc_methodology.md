@@ -21,6 +21,7 @@ Canonical sources:
 - `vault/methodology/M-general-deep-single-prompt-audit.md` — the audit these plug into
 - `vault/assumptions.md` — the live Assumption Register
 - `META.md §15` — the invalidation cascade (now generalized to all levels)
+- `doc_lessons.md` — **companion case library**: how we failed (harness+methodology root causes) + the directives that broke walls, each now codified as a rung/rule/trigger
 
 ---
 
