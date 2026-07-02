@@ -483,6 +483,14 @@ intervene.** Three levels set only *how often and how actively* it surfaces
 strategic forks for steering.
 
 **Invariants (all levels).**
+0. **`AskUserQuestion` is BANNED as a blocking gate in autonomous operation.**
+   Consultation is *inform + recommend + proceed*, never *halt-and-wait*. Even L2
+   "asks" only by **stating the recommendation and continuing on it** — the goal
+   never blocks on a human answer. "Heavy / multi-day / research-grade / the
+   competitor's method" is a **build spec, not a reason to stop** (CLAUDE.md §5b);
+   a heavy fork is *signposted and taken on the highest-EV default*, not deferred.
+   (Failure 2026-07-02: used AskUserQuestion to pick a lever → violated §5b + this
+   framework. Never again.)
 1. The process **never idles or stops** for lack of human input — an unanswered
    consultation resolves to the recommended default and work continues.
 2. Two **hard gates always BLOCK** regardless of level and are *not*
